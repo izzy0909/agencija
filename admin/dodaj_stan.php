@@ -283,7 +283,13 @@ $(document).pngFix( );
 
 		<ul class="current"><li><a href="dodaj_stan.php"><b>Dodaj Stan</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+                <div class="select_sub show">
+			<ul class="sub">
+				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li class="sub_show"><a href="#nogo">Lista stanova</a></li>
+				<li><a href="#nogo">Nesto</a></li>
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
@@ -386,11 +392,7 @@ $(document).pngFix( );
 
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
-		<tr>
-			<th valign="top">Lokacija:</th>
-			<td><input type="text" class="inp-form" /></td>
-			<td></td>
-		</tr>
+		
 		<tr>
 			<th valign="top">Ulica i broj:</th>
 			<td><input type="text" class="inp-form-error" /></td>
@@ -398,6 +400,11 @@ $(document).pngFix( );
 			<div class="error-left"></div>
 			<div class="error-inner">This field is required.</div>
 			</td>
+		</tr>
+                <tr>
+			<th valign="top">Sprat:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
 		</tr>
 		<tr>
 		<th valign="top">Lokacija:</th>
@@ -421,24 +428,21 @@ $(document).pngFix( );
 		<td></td>
 		</tr>
 		<tr>
-		<th valign="top">Sub Category:</th>
-		<td>
-		<select  class="styledselect_form_1">
-			<option value="">All</option>
-			<option value="">Products</option>
-			<option value="">Categories</option>
-			<option value="">Clients</option>
-			<option value="">News</option>
-		</select>
-		</td>
-		<td></td>
-		</tr>
-		<tr>
-			<th valign="top">Price:</th>
+			<th valign="top">Telefon:</th>
 			<td><input type="text" class="inp-form" /></td>
 			<td></td>
 		</tr>
 		<tr>
+			<th valign="top">Cena:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
+		</tr>
+                <tr>
+			<th valign="top">Kvadratura:</th>
+			<td><input type="text" class="inp-form" /></td>
+			<td></td>
+		</tr>
+		<!--<tr>
 		<th valign="top">Select a date:</th>
 		<td class="noheight">
 
@@ -517,12 +521,13 @@ $(document).pngFix( );
 
 		</td>
 		<td></td>
-	</tr>
+	</tr>-->
 	<tr>
-		<th valign="top">Description:</th>
+		<th valign="top">Opis:</th>
 		<td><textarea rows="" cols="" class="form-textarea"></textarea></td>
 		<td></td>
 	</tr>
+        
 	<tr>
 	<th>Image 1:</th>
 	<td><input type="file" class="file_1" /></td>
@@ -559,7 +564,63 @@ $(document).pngFix( );
 
 	</td>
 	<td>
+        <!--  start related-activities -->
+	<div id="related-activities">
 
+		<!--  start related-act-top -->
+		<div id="related-act-top">
+		<img src="images/forms/header_related_act.gif" width="271" height="43" alt="" />
+		</div>
+		<!-- end related-act-top -->
+
+		<!--  start related-act-bottom -->
+		<div id="related-act-bottom">
+
+			<!--  start related-act-inner -->
+			<div id="related-act-inner">
+
+				<div class="left"><a href=""></a></div>
+				<div class="right">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+                                        <tr>
+                                                
+                                                <td><input  type="checkbox"/>Grejanje</td>
+                                                <td></td>
+                                        </tr>
+                                    
+					<tr>
+
+                                                <td><input  type="checkbox"/>Blah</td>
+                                                <td></td>
+                                        </tr>
+                                        <tr>
+
+                                                <td><input  type="checkbox"/>Nesto</td>
+                                                <td></td>
+                                        </tr>
+                                    </table>
+				</div>
+
+				<div class="clear"></div>
+				
+
+				
+
+				<div class="clear"></div>
+				
+
+				
+				
+
+			</div>
+			<!-- end related-act-inner -->
+			<div class="clear"></div>
+
+		</div>
+		<!-- end related-act-bottom -->
+
+	</div>
+	<!-- end related-activities -->
 	
 
 		
