@@ -4,27 +4,28 @@ require_once '../data_base_access/userDA.php';
 if(isset($_SESSION['uloga']) == 1)
 {
     header('Location: admin.php');
-}
+}else{
 
+	if(isset($_POST['submit']))
+	{
 
-if(isset($_POST['submit']))
-{
+	   $username = $_POST['username'];
+	   $password = $_POST['password'];
+		
+	   $row = loginUser($username, $password);
 
-   $username = $_POST['username'];
-   $password = $_POST['password'];
-    
-   $row = loginUser($username, $password);
+	   if(isset($row))
+	   {
+	   $_SESSION['uloga'] = $row['uloga'];
+	   $_SESSION['username'] = $row['username'];
+	   }
 
-   if(isset($row))
-   {
-   $_SESSION['uloga'] = $row['uloga'];
-   }
-
-   if($_SESSION['uloga'] == 1)
-{
-    header('Location: admin.php');
-}
-}
+	   if($_SESSION['uloga'] == 1)
+	   {
+			header('Location: admin.php');
+	   }
+	}
+ }
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

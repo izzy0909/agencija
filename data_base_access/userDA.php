@@ -15,5 +15,14 @@ function loginUser($username, $password)
         ));
    return $query->fetch();
 
-   
+}
+
+function prikaziSveKorisnike(){
+    global $conn;
+
+    $sql = "SELECT * FROM korisnici";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
+    
 }

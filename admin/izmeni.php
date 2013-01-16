@@ -1,13 +1,19 @@
-﻿<?php
-session_start();
+<?php
 
+include_once '../data_base_access/stanoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 }
-
+ 
+if (isset ($_GET['id'])){
+	
+	$id = $_GET['id'];
+	$stan = prikaziStan($id);
+	
+} 
+                     
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,7 +40,7 @@ $(function(){
 	return false;
 	});
 });
-</script>  
+</script>
 
 <![if !IE 7]>
 
@@ -45,11 +51,11 @@ $(document).ready(function() {
 	$('.styledselect').selectbox({ inputClass: "selectbox_styled" });
 });
 </script>
- 
+
 
 <![endif]>
 
-<!--  styled select box script version 2 --> 
+<!--  styled select box script version 2 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -58,7 +64,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled select box script version 3 --> 
+<!--  styled select box script version 3 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -66,11 +72,11 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled file upload script --> 
+<!--  styled file upload script -->
 <script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8">
   $(function() {
-      $("input.file_1").filestyle({ 
+      $("input.file_1").filestyle({
           image: "images/forms/choose-file.gif",
           imageheight : 21,
           imagewidth : 78,
@@ -81,7 +87,7 @@ $(document).ready(function() {
 
 <!-- Custom jquery scripts -->
 <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
- 
+
 <!-- Tooltips -->
 <script src="js/jquery/jquery.tooltip.js" type="text/javascript"></script>
 <script src="js/jquery/jquery.dimensions.js" type="text/javascript"></script>
@@ -90,14 +96,14 @@ $(function() {
 	$('a.info-tooltip ').tooltip({
 		track: true,
 		delay: 0,
-		fixPNG: true, 
+		fixPNG: true,
 		showURL: false,
 		showBody: " - ",
 		top: -35,
 		left: 5
 	});
 });
-</script> 
+</script>
 
 
 <!--  date picker script -->
@@ -140,7 +146,7 @@ $('#date-pick')
 			updateSelects(selected[0]);
 		}
 	);
-	
+
 var updateSelects = function (selectedDate)
 {
 	var selectedDate = new Date(selectedDate);
@@ -180,9 +186,9 @@ $(document).pngFix( );
 });
 </script>
 </head>
-<body> 
+<body>
 <!-- Start: page-top-outer -->
-<div id="page-top-outer">    
+<div id="page-top-outer">
 
 <!-- Start: page-top -->
 <div id="page-top">
@@ -192,7 +198,7 @@ $(document).pngFix( );
 	<a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>
 	</div>
 	<!-- end logo -->
-	
+
 	<!--  start top-search -->
 	<div id="top-search">
 		<table border="0" cellpadding="0" cellspacing="0">
@@ -205,7 +211,7 @@ $(document).pngFix( );
 			<option value=""> Categories</option>
 			<option value="">Clients</option>
 			<option value="">News</option>
-		</select> 
+		</select>
 		</td>
 		<td>
 		<input type="image" src="images/shared/top_search_btn.gif"  />
@@ -221,24 +227,24 @@ $(document).pngFix( );
 
 </div>
 <!-- End: page-top-outer -->
-	
+
 <div class="clear">&nbsp;</div>
- 
+
 <!--  start nav-outer-repeat................................................................................................. START -->
-<div class="nav-outer-repeat"> 
+<div class="nav-outer-repeat">
 <!--  start nav-outer -->
-<div class="nav-outer"> 
+<div class="nav-outer">
 
 		<!-- start nav-right -->
 		<div id="nav-right">
-		
+
 			<div class="nav-divider">&nbsp;</div>
 			<div class="showhide-account"><img src="images/shared/nav/nav_myaccount.gif" width="93" height="14" alt="" /></div>
 			<div class="nav-divider">&nbsp;</div>
 			<a href="logout.php" id="logout"><img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
 			<div class="clear">&nbsp;</div>
-		
-			<!--  start account-content -->	
+
+			<!--  start account-content -->
 			<div class="account-content">
 			<div class="account-drop-inner">
 				<a href="" id="acc-settings">Settings</a>
@@ -253,11 +259,11 @@ $(document).pngFix( );
 				<a href="" id="acc-inbox">Inbox</a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
-				<a href="" id="acc-stats">Statistics</a> 
+				<a href="" id="acc-stats">Statistics</a>
 			</div>
 			</div>
 			<!--  end account-content -->
-		
+
 		</div>
 		<!-- end nav-right -->
 
@@ -265,62 +271,56 @@ $(document).pngFix( );
 		<!--  start nav -->
 		<div class="nav">
 		<div class="table">
-		
-		<ul class="current"><li><a href="admin.php"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="select"><li><a href="admin.php"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		                    
-		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="current"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
+                <div class="select_sub show">
 			<ul class="sub">
-				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
-				<li class="sub_show"><a href="spisak_stanova.php">Spisak stanova</a></li>
-				<!--<li><a href="#nogo">Nesto</a></li>-->
+				<li class="sub_show"><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li><a href="spisak_stanova.php">Spisak stanova</a></li>
+				<li><a href="#nogo">Nesto</a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
-		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="select"><li><a href="send_mail.php"><b>Send Mails</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
-			<ul class="sub">
-				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
-				
-			</ul>
-		</div>
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
-		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="select"><li><a href="send_mail_using_elasticemail.php"><b>Elastic</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="#nogo"><b>News</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -334,7 +334,7 @@ $(document).pngFix( );
 <!--  start nav-outer-repeat................................................... END -->
 
   <div class="clear"></div>
- 
+
 <!-- start content-outer ........................................................................................................................START -->
 <div id="content-outer">
 <!-- start content -->
@@ -342,10 +342,10 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Add product</h1>
+		<h1>Izmeni Podatke</h1>
 	</div>
 	<!-- end page-heading -->
-
+        <form id="dodaj_stan" action="dodaj_stan.php" method="post">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -359,18 +359,297 @@ $(document).pngFix( );
 		<td>
 		<!--  start content-table-inner ...................................................................... START -->
 		<div id="content-table-inner">
-		
+
 			<!--  start table-content  -->
 			<div id="table-content">
-			<h2>Sub Heading ČĐŠĆ</h2>
-			<h3>Local Heading</h3>
+			<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+<tr>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt="" /></th>
+</tr>
+                            
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+
+	<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr valign="top">
+	<td>
+
+
+		<!--  start step-holder -->
+		<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Podaci o stanu</a></div>
 			
+		</div>
+		<!--  end step-holder -->
+
+		<!-- start id-form -->
+		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+		<tr>
+			<th valign="top">Vlasnik:</th>
+			<td><input type="text" class="inp-form-error" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
+			<td>
 			
+			</td>
+		</tr>
+		<tr>
+			<th valign="top">Ulica i broj:</th>
+			<td><input type="text" class="inp-form-error" name="adresa" value="<?php echo $stan['ulica_i_broj'];?>"/></td>
+			<td>
+			<div class="error-left"></div>
+			<div class="error-inner">This field is required.</div>
+			</td>
+		</tr>
+        <tr>
+			<th valign="top">Sprat:</th>
+			<td><input type="text" class="inp-form" name="sprat" value="<?php echo $stan['sprat'];?>"/></td>
+			<td></td>
+		</tr>
+		<tr>
+		<th valign="top">Lokacija:</th>
+		<td>
+          <?php echo $stan['opstina'];?>     
+		
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Telefon:</th>
+			<td><input type="text" class="inp-form" name="telefon" value="<?php echo $stan['telefon'];?>"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Cena:</th>
+			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
+			<td></td>
+		</tr>
+                <tr>
+			<th valign="top">Kvadratura:</th>
+			<td><input type="text" class="inp-form" name="kvadratura" value="<?php echo $stan['kvadratura'];?>"/></td>
+			<td></td>
+		</tr>
+		<!--<tr>
+		<th valign="top">Select a date:</th>
+		<td class="noheight">
+
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tr  valign="top">
+				<td>
+				<form id="chooseDateForm" action="#">
+
+				<select id="d" class="styledselect-day">
+					<option value="">dd</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				</td>
+				<td>
+					<select id="m" class="styledselect-month">
+						<option value="">mmm</option>
+						<option value="1">Jan</option>
+						<option value="2">Feb</option>
+						<option value="3">Mar</option>
+						<option value="4">Apr</option>
+						<option value="5">May</option>
+						<option value="6">Jun</option>
+						<option value="7">Jul</option>
+						<option value="8">Aug</option>
+						<option value="9">Sep</option>
+						<option value="10">Oct</option>
+						<option value="11">Nov</option>
+						<option value="12">Dec</option>
+					</select>
+				</td>
+				<td>
+					<select  id="y"  class="styledselect-year">
+						<option value="">yyyy</option>
+						<option value="2005">2005</option>
+						<option value="2006">2006</option>
+						<option value="2007">2007</option>
+						<option value="2008">2008</option>
+						<option value="2009">2009</option>
+						<option value="2010">2010</option>
+					</select>
+					</form>
+				</td>
+				<td><a href=""  id="date-pick"><img src="images/forms/icon_calendar.jpg"   alt="" /></a></td>
+			</tr>
+			</table>
+
+		</td>
+		<td></td>
+	</tr>-->
+	<tr>
+		<th valign="top">Opis:</th>
+		<td><textarea rows="" cols="" class="form-textarea" name="opis"><?php echo $stan['opis'];?></textarea></td>
+		<td></td>
+	</tr>
+        
+	<tr>
+	<th>Image 1:</th>
+	<td><input type="file" class="file_1" name="slika1" /></td>
+	<td>
+	<div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div>
+	</td>
+	</tr>
+	<tr>
+	<th>Image 2:</th>
+	<td>  <input type="file" class="file_1" name="slika2" /></td>
+	<td><div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div></td>
+	</tr>
+	<tr>
+	<th>Image 3:</th>
+	<td><input type="file" class="file_1" name="slika3" /></td>
+	<td><div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div></td>
+	</tr>
+	<tr>
+		<th>&nbsp;</th>
+		<td valign="top">
+                        <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
+                        <input type="submit" value="Dodaj" class="form-submit" name="dodaj_stan" id="dodaj_stan" />
+			<input type="reset" value="reset" class="form-reset" />
+		</td>
+		<td></td>
+	</tr>
+	</table>
+	<!-- end id-form  -->
+
+	</td>
+	<td>
+        <!--  start related-activities -->
+	<div id="related-activities">
+
+		<!--  start related-act-top -->
+		<div id="related-act-top">
+		<img src="images/forms/header_related_act.gif" width="271" height="43" alt="" />
+		</div>
+		<!-- end related-act-top -->
+
+		<!--  start related-act-bottom -->
+		<div id="related-act-bottom">
+
+			<!--  start related-act-inner -->
+			<div id="related-act-inner">
+
+				<div class="left"><a href=""></a></div>
+				<div class="right">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+                                        <tr>
+                                                
+                                                <td><input  type="checkbox"/>Grejanje</td>
+                                                <td></td>
+                                        </tr>
+                                    
+					<tr>
+
+                                                <td><input  type="checkbox"/>Blah</td>
+                                                <td></td>
+                                        </tr>
+                                        <tr>
+
+                                                <td><input  type="checkbox"/>Nesto</td>
+                                                <td></td>
+                                        </tr>
+                                    </table>
+				</div>
+
+				<div class="clear"></div>
+				
+
+				
+
+				<div class="clear"></div>
+				
+
+				
+				
+
+			</div>
+			<!-- end related-act-inner -->
+			<div class="clear"></div>
+
+		</div>
+		<!-- end related-act-bottom -->
+
+	</div>
+	<!-- end related-activities -->
+	
+
+		
+
+		
+
+</td>
+</tr>
+<tr>
+<td><img src="images/shared/blank.gif" width="695" height="1" alt="blank" /></td>
+<td></td>
+</tr>
+</table>
+
+<div class="clear"></div>
+
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</table>
+
+
 			</div>
 			<!--  end table-content  -->
-	
+
 			<div class="clear"></div>
-		 
+
 		</div>
 		<!--  end content-table-inner ............................................END  -->
 		</td>
@@ -382,6 +661,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
+        </form>
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -391,8 +671,8 @@ $(document).pngFix( );
 <!--  end content-outer........................................................END -->
 
 <div class="clear">&nbsp;</div>
-    
-<!-- start footer -->         
+
+<!-- start footer -->
 <div id="footer">
 <!-- <div id="footer-pad">&nbsp;</div> -->
 	<!--  start footer-left -->
@@ -402,6 +682,6 @@ $(document).pngFix( );
 	<div class="clear">&nbsp;</div>
 </div>
 <!-- end footer -->
- 
+
 </body>
 </html>

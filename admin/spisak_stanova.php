@@ -1,13 +1,15 @@
-﻿<?php
-session_start();
+<?php
 
+include_once '../data_base_access/stanoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
+	
 }
 
+     $stanovi = prikaziSveStanove();                   
+                        
 ?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -34,7 +36,7 @@ $(function(){
 	return false;
 	});
 });
-</script>  
+</script>
 
 <![if !IE 7]>
 
@@ -45,11 +47,11 @@ $(document).ready(function() {
 	$('.styledselect').selectbox({ inputClass: "selectbox_styled" });
 });
 </script>
- 
+
 
 <![endif]>
 
-<!--  styled select box script version 2 --> 
+<!--  styled select box script version 2 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -58,7 +60,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled select box script version 3 --> 
+<!--  styled select box script version 3 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -66,11 +68,11 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled file upload script --> 
+<!--  styled file upload script -->
 <script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8">
   $(function() {
-      $("input.file_1").filestyle({ 
+      $("input.file_1").filestyle({
           image: "images/forms/choose-file.gif",
           imageheight : 21,
           imagewidth : 78,
@@ -81,7 +83,7 @@ $(document).ready(function() {
 
 <!-- Custom jquery scripts -->
 <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
- 
+
 <!-- Tooltips -->
 <script src="js/jquery/jquery.tooltip.js" type="text/javascript"></script>
 <script src="js/jquery/jquery.dimensions.js" type="text/javascript"></script>
@@ -90,14 +92,14 @@ $(function() {
 	$('a.info-tooltip ').tooltip({
 		track: true,
 		delay: 0,
-		fixPNG: true, 
+		fixPNG: true,
 		showURL: false,
 		showBody: " - ",
 		top: -35,
 		left: 5
 	});
 });
-</script> 
+</script>
 
 
 <!--  date picker script -->
@@ -140,7 +142,7 @@ $('#date-pick')
 			updateSelects(selected[0]);
 		}
 	);
-	
+
 var updateSelects = function (selectedDate)
 {
 	var selectedDate = new Date(selectedDate);
@@ -180,9 +182,9 @@ $(document).pngFix( );
 });
 </script>
 </head>
-<body> 
+<body>
 <!-- Start: page-top-outer -->
-<div id="page-top-outer">    
+<div id="page-top-outer">
 
 <!-- Start: page-top -->
 <div id="page-top">
@@ -192,7 +194,7 @@ $(document).pngFix( );
 	<a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>
 	</div>
 	<!-- end logo -->
-	
+
 	<!--  start top-search -->
 	<div id="top-search">
 		<table border="0" cellpadding="0" cellspacing="0">
@@ -205,7 +207,7 @@ $(document).pngFix( );
 			<option value=""> Categories</option>
 			<option value="">Clients</option>
 			<option value="">News</option>
-		</select> 
+		</select>
 		</td>
 		<td>
 		<input type="image" src="images/shared/top_search_btn.gif"  />
@@ -221,24 +223,24 @@ $(document).pngFix( );
 
 </div>
 <!-- End: page-top-outer -->
-	
+
 <div class="clear">&nbsp;</div>
- 
+
 <!--  start nav-outer-repeat................................................................................................. START -->
-<div class="nav-outer-repeat"> 
+<div class="nav-outer-repeat">
 <!--  start nav-outer -->
-<div class="nav-outer"> 
+<div class="nav-outer">
 
 		<!-- start nav-right -->
 		<div id="nav-right">
-		
+
 			<div class="nav-divider">&nbsp;</div>
 			<div class="showhide-account"><img src="images/shared/nav/nav_myaccount.gif" width="93" height="14" alt="" /></div>
 			<div class="nav-divider">&nbsp;</div>
 			<a href="logout.php" id="logout"><img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
 			<div class="clear">&nbsp;</div>
-		
-			<!--  start account-content -->	
+
+			<!--  start account-content -->
 			<div class="account-content">
 			<div class="account-drop-inner">
 				<a href="" id="acc-settings">Settings</a>
@@ -253,11 +255,11 @@ $(document).pngFix( );
 				<a href="" id="acc-inbox">Inbox</a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
-				<a href="" id="acc-stats">Statistics</a> 
+				<a href="" id="acc-stats">Statistics</a>
 			</div>
 			</div>
 			<!--  end account-content -->
-		
+
 		</div>
 		<!-- end nav-right -->
 
@@ -265,17 +267,17 @@ $(document).pngFix( );
 		<!--  start nav -->
 		<div class="nav">
 		<div class="table">
-		
-		<ul class="current"><li><a href="admin.php"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="select"><li><a href="admin.php"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		                    
-		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="current"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
@@ -287,40 +289,40 @@ $(document).pngFix( );
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>	
 				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
-				
+			
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="#nogo"><b>News</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -334,7 +336,7 @@ $(document).pngFix( );
 <!--  start nav-outer-repeat................................................... END -->
 
   <div class="clear"></div>
- 
+
 <!-- start content-outer ........................................................................................................................START -->
 <div id="content-outer">
 <!-- start content -->
@@ -342,10 +344,10 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Add product</h1>
+		<h1>Spisak stanova</h1>
 	</div>
 	<!-- end page-heading -->
-
+        
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -362,13 +364,85 @@ $(document).pngFix( );
 		
 			<!--  start table-content  -->
 			<div id="table-content">
-			<h2>Sub Heading ČĐŠĆ</h2>
-			<h3>Local Heading</h3>
 			
-			
+				<!--  start product-table ..................................................................................... -->
+				<form id="mainform" action="">
+				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+				<tr>
+					<th class="table-header-check"><a id="toggle-all" ></a> </th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
+					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
+					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
+					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
+					<th class="table-header-options line-left"><a href="">Opcije</a></th>
+				</tr>
+				<?php
+					if(isset($stanovi)){
+					
+					foreach($stanovi as $stan){
+                          
+                        
+				?>
+				<tr>
+					<td><input  type="checkbox"/></td>
+					<td><?php echo $stan['vlasnik'];?></td>
+					<td><?php echo $stan['opstina'];?></td>
+					<td><?php echo $stan['ulica_i_broj'];?></td>
+					<td><?php echo $stan['telefon'];?></td>
+					<td><?php echo $stan['kvadratura'];?></td>
+					<td class="options-width">
+					<a href="izmeni.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
+					<a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
+					</td>-->
+				</tr>
+								
+				<?php
+						}
+					}
+				?>
+				</table>
+				<!--  end product-table................................... --> 
+				</form>
 			</div>
-			<!--  end table-content  -->
-	
+			<!--  end content-table  -->
+		
+			<!--  start actions-box ............................................... -->
+			<div id="actions-box">
+				<a href="" class="action-slider"></a>
+				<div id="actions-box-slider">
+					<a href="" class="action-edit">Edit</a>
+					<a href="" class="action-delete">Delete</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!-- end actions-box........... -->
+			
+			<!--  start paging..................................................... -->
+			<table border="0" cellpadding="0" cellspacing="0" id="paging-table">
+			<tr>
+			<td>
+				<a href="" class="page-far-left"></a>
+				<a href="" class="page-left"></a>
+				<div id="page-info">Page <strong>1</strong> / 15</div>
+				<a href="" class="page-right"></a>
+				<a href="" class="page-far-right"></a>
+			</td>
+			<td>
+			<select  class="styledselect_pages">
+				<option value="">Number of rows</option>
+				<option value="">1</option>
+				<option value="">2</option>
+				<option value="">3</option>
+			</select>
+			</td>
+			</tr>
+			</table>
+			<!--  end paging................ -->
+			
 			<div class="clear"></div>
 		 
 		</div>
@@ -382,6 +456,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
+		
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -391,8 +466,8 @@ $(document).pngFix( );
 <!--  end content-outer........................................................END -->
 
 <div class="clear">&nbsp;</div>
-    
-<!-- start footer -->         
+
+<!-- start footer -->
 <div id="footer">
 <!-- <div id="footer-pad">&nbsp;</div> -->
 	<!--  start footer-left -->
@@ -402,6 +477,6 @@ $(document).pngFix( );
 	<div class="clear">&nbsp;</div>
 </div>
 <!-- end footer -->
- 
+
 </body>
 </html>

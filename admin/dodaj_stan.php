@@ -281,13 +281,13 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="dodaj_stan.php"><b>Dodaj Stan</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="current"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
                 <div class="select_sub show">
 			<ul class="sub">
-				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
-				<li class="sub_show"><a href="#nogo">Lista stanova</a></li>
-				<li><a href="#nogo">Nesto</a></li>
+				<li class="sub_show"><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li><a href="spisak_stanova.php">Spisak stanova</a></li>
+				<!--<li><a href="#nogo">Nesto</a></li>-->
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -296,16 +296,22 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="send_mail.php"><b>Send Mails</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+		<div class="select_sub show">
+			<ul class="sub">
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>	
+				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+			
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="send_mail_using_elasticemail.php"><b>Elastic</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -345,7 +351,7 @@ $(document).pngFix( );
 		<h1>Dodaj Stan</h1>
 	</div>
 	<!-- end page-heading -->
-
+        <form id="dodaj_stan" action="dodaj_stan.php" method="post">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -392,54 +398,56 @@ $(document).pngFix( );
 
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
-		
+		<tr>
+			<th valign="top">Vlasnik:</th>
+			<td><input type="text" class="inp-form-error" name="vlasnik" /></td>
+			<td>
+			
+			</td>
+		</tr>
 		<tr>
 			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-form-error" /></td>
+			<td><input type="text" class="inp-form-error" name="adresa" /></td>
 			<td>
 			<div class="error-left"></div>
 			<div class="error-inner">This field is required.</div>
 			</td>
 		</tr>
-                <tr>
+        <tr>
 			<th valign="top">Sprat:</th>
-			<td><input type="text" class="inp-form" /></td>
+			<td><input type="text" class="inp-form" name="sprat" /></td>
 			<td></td>
 		</tr>
 		<tr>
 		<th valign="top">Lokacija:</th>
 		<td>
                   
-		<select  class="styledselect_form_1">
+		<select  class="styledselect_form_1" name="opstina">
                  <?php
 
                         foreach($row as $opstina){
                           echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
-                          //var_dump($opstina['opstina']);
+                          
                         }
                  ?>
-			<option value="">All</option>
-			<option value="">Products</option>
-			<option value="">Categories</option>
-			<option value="">Clients</option>
-			<option value="">News</option>
+			
 		</select>
 		</td>
 		<td></td>
 		</tr>
 		<tr>
 			<th valign="top">Telefon:</th>
-			<td><input type="text" class="inp-form" /></td>
+			<td><input type="text" class="inp-form" name="telefon"/></td>
 			<td></td>
 		</tr>
 		<tr>
 			<th valign="top">Cena:</th>
-			<td><input type="text" class="inp-form" /></td>
+			<td><input type="text" class="inp-form" name="cena" /></td>
 			<td></td>
 		</tr>
                 <tr>
 			<th valign="top">Kvadratura:</th>
-			<td><input type="text" class="inp-form" /></td>
+			<td><input type="text" class="inp-form" name="kvadratura" /></td>
 			<td></td>
 		</tr>
 		<!--<tr>
@@ -524,13 +532,13 @@ $(document).pngFix( );
 	</tr>-->
 	<tr>
 		<th valign="top">Opis:</th>
-		<td><textarea rows="" cols="" class="form-textarea"></textarea></td>
+		<td><textarea rows="" cols="" class="form-textarea" name="opis"></textarea></td>
 		<td></td>
 	</tr>
         
 	<tr>
 	<th>Image 1:</th>
-	<td><input type="file" class="file_1" /></td>
+	<td><input type="file" class="file_1" name="slika1" /></td>
 	<td>
 	<div class="bubble-left"></div>
 	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
@@ -539,14 +547,14 @@ $(document).pngFix( );
 	</tr>
 	<tr>
 	<th>Image 2:</th>
-	<td>  <input type="file" class="file_1" /></td>
+	<td>  <input type="file" class="file_1" name="slika2" /></td>
 	<td><div class="bubble-left"></div>
 	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
 	<div class="bubble-right"></div></td>
 	</tr>
 	<tr>
 	<th>Image 3:</th>
-	<td><input type="file" class="file_1" /></td>
+	<td><input type="file" class="file_1" name="slika3" /></td>
 	<td><div class="bubble-left"></div>
 	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
 	<div class="bubble-right"></div></td>
@@ -554,8 +562,9 @@ $(document).pngFix( );
 	<tr>
 		<th>&nbsp;</th>
 		<td valign="top">
-			<input type="button" value="" class="form-submit" />
-			<input type="reset" value="" class="form-reset"  />
+                        <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
+                        <input type="submit" value="Dodaj" class="form-submit" name="dodaj_stan" id="dodaj_stan" />
+			<input type="reset" value="reset" class="form-reset" />
 		</td>
 		<td></td>
 	</tr>
@@ -590,12 +599,27 @@ $(document).pngFix( );
                                     
 					<tr>
 
-                                                <td><input  type="checkbox"/>Blah</td>
+                                                <td><input  type="checkbox"/>Kablovska</td>
                                                 <td></td>
                                         </tr>
                                         <tr>
 
-                                                <td><input  type="checkbox"/>Nesto</td>
+                                                <td><input  type="checkbox"/>TV</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+
+                                                <td><input  type="checkbox"/>Klima</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+
+                                                <td><input  type="checkbox"/>Internet</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                <td><input  type="checkbox"/>Telefon</td>
+
                                                 <td></td>
                                         </tr>
                                     </table>
@@ -667,6 +691,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
+        </form>
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -690,3 +715,20 @@ $(document).pngFix( );
 
 </body>
 </html>
+<?php
+
+if (isset ($_POST['dodaj_stan'])){
+	
+	$vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
+    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
+    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
+    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
+    $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
+    $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+
+    dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
+	echo 'Stan Dodat';
+    //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
+}
