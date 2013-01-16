@@ -591,32 +591,32 @@ $(document).pngFix( );
                                     <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
                                         <tr>
                                                 
-                                                <td><input  type="checkbox"/>Grejanje</td>
+                                                <td><input  type="checkbox" name="grejanje" />Grejanje</td>
                                                 <td></td>
                                         </tr>
                                     
 					<tr>
 
-                                                <td><input  type="checkbox"/>Kablovska</td>
+                                                <td><input  type="checkbox" name="kablovska" />Kablovska</td>
                                                 <td></td>
                                         </tr>
                                         <tr>
 
-                                                <td><input  type="checkbox"/>TV</td>
+                                                <td><input  type="checkbox"name="tv" />TV</td>
                                                 <td></td>
                                         </tr>
 										<tr>
 
-                                                <td><input  type="checkbox"/>Klima</td>
+                                                <td><input  type="checkbox" name="klima" />Klima</td>
                                                 <td></td>
                                         </tr>
 										<tr>
 
-                                                <td><input  type="checkbox"/>Internet</td>
+                                                <td><input  type="checkbox" name="internet" />Internet</td>
                                                 <td></td>
                                         </tr>
 										<tr>
-                                                <td><input  type="checkbox"/>Telefon</td>
+                                                <td><input  type="checkbox" name="telefon" />Telefon</td>
 
                                                 <td></td>
                                         </tr>
@@ -727,6 +727,6 @@ if (isset ($_POST['dodaj_stan'])){
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
 
     dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
-	echo 'Stan Dodat';
+    
     //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
 }
