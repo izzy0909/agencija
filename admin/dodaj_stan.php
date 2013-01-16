@@ -400,17 +400,15 @@ $(document).pngFix( );
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
 			<th valign="top">Vlasnik:</th>
-			<td><input type="text" class="inp-form-error" name="vlasnik" /></td>
+			<td><input type="text" class="inp-form" name="vlasnik" /></td>
 			<td>
 			
 			</td>
 		</tr>
 		<tr>
 			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-form-error" name="adresa" /></td>
+			<td><input type="text" class="inp-form" name="adresa" /></td>
 			<td>
-			<div class="error-left"></div>
-			<div class="error-inner">This field is required.</div>
 			</td>
 		</tr>
         <tr>
