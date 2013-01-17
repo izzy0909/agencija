@@ -1,6 +1,7 @@
 ﻿<?php
 
 include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/dodatniTagoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -19,7 +20,7 @@ if($_SESSION['uloga'] != 1)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
-<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="stylesheet" href="css/screen.cs" type="text/css" media="screen" title="default" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
@@ -616,7 +617,7 @@ $(document).pngFix( );
                                                 <td></td>
                                         </tr>
 										<tr>
-                                                <td><input  type="checkbox" name="telefon" />Telefon</td>
+                                                <td><input  type="checkbox" name="ima_telefon" />Telefon</td>
 
                                                 <td></td>
                                         </tr>
@@ -725,8 +726,18 @@ if (isset ($_POST['dodaj_stan'])){
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
     $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
-
-    dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
     
+    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
+    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
+    $tv = isset($_POST['tv']) ? '1' : '0';
+    $klima = isset($_POST['klima']) ? '1' : '0';
+    $internet = isset($_POST['internet']) ? '1' : '0';
+    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
+
+    $stan_id = dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
+    
+    dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
+    
+    var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
 }

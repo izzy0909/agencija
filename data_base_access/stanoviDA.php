@@ -21,6 +21,7 @@ function dodajStan( $vlasnik, $lokacija_id, $ulica_i_broj, $telefon, $cena, $spr
         ':opis' => $opis
         ));
 
+    return $conn->lastInsertID();
 }
 
 function prikaziSveOpstine(){
