@@ -21,14 +21,11 @@ function dodajBroj($agencija, $broj)
 function pretraziImenik($broj){
     global $conn;
 
-    $sql = "SELECT * FROM podsetnik as p 
-			INNER JOIN korisnici as k
-			ON p.korisnik_id = k.id 
-			WHERE username = :username
-			ORDER BY datum DESC";
+    $sql = "SELECT * FROM imenik
+            WHERE broj LIKE '%:broj%'";
     $query = $conn->prepare($sql);
     $query->execute(array(
-		':username' => $user
+		':broj' => $broj
 		));
     return $query->fetchAll(PDO::FETCH_BOTH);
     

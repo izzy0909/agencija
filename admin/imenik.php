@@ -5,7 +5,12 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 }
+if (isset ($_POST['pretrazi_broj'])){
+
+    $broj_za_pretragu = isset($_POST['broj_za_pretragu']) ? $_POST['broj_za_pretragu'] : null;
+
     
+}
                    
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -13,7 +18,7 @@ if($_SESSION['uloga'] != 1)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
-<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="stylesheet" href="css/screen.cs" type="text/css" media="screen" title="default" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
@@ -324,7 +329,7 @@ $(document).pngFix( );
 		<h1>Dodaj Broj Agencije</h1>
 	</div>
 	<!-- end page-heading -->
-    <form id="dodaj_broj" action="imenik.php" method="post">
+    
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -358,6 +363,7 @@ $(document).pngFix( );
 
 	<table border="0" width="100%" cellpadding="0" cellspacing="0">
 	<tr valign="top">
+        <form id="dodaj_broj" action="imenik.php" method="post">
 	<td>
 
 
@@ -368,7 +374,7 @@ $(document).pngFix( );
 			
 		</div>
 		<!--  end step-holder -->
-
+                
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
@@ -393,11 +399,49 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 	</tr>
+        
 	</table>
 	<!-- end id-form  -->
 
 	</td>
-	
+        </form>
+            <form id="pretrazi_broj" action="imenik.php" method="post">
+	<td>
+
+
+		<!--  start step-holder -->
+		<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Pretrazi brojeve</a></div>
+
+		</div>
+		<!--  end step-holder -->
+
+		<!-- start id-form -->
+		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+		
+
+                <tr>
+                        <th valign="top">Broj:</th>
+                        <td><input type="text" class="inp-form" name="broj_za_pretragu" /></td>
+                        <td></td>
+                </tr>
+
+
+                <tr>
+                        <th>&nbsp;</th>
+                        <td valign="top">
+                                
+                                <input type="submit" value="Dodaj" class="form-submit" name="pretrazi_broj" id="pretrazi_broj" />
+                                
+                        </td>
+                        <td></td>
+                </tr>
+	</table>
+	<!-- end id-form  -->
+
+	</td>
+                </form>
 </tr>
 <tr>
 <td><img src="images/shared/blank.gif" width="695" height="1" alt="blank" /></td>
@@ -437,7 +481,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
-    </form>
+    
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -472,3 +516,4 @@ if (isset ($_POST['dodaj_broj'])){
     dodajBroj($agencija, $broj);
     
 }
+
