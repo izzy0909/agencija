@@ -43,7 +43,7 @@
         	<div class="main">
             	<nav>
                 <ul class="sf-menu">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Home</a>
                     	<ul>
                             <li><a href="more.html">Homes for Sale</a></li>
                             <li><a href="more.html">New Homes for Sale</a></li>
@@ -60,11 +60,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="index-1.html">About Us</a></li>
-                    <li><a href="index-2.html">Buying</a></li>
-                    <li><a href="index-3.html">Selling</a></li>
-                    <li><a href="index-4.html">Moving</a></li>
-                    <li><a class="active" href="index-5.html">Contacts</a></li>
+                    <li><a href="izdavanje.php">Izdavanje</a></li>
+                    <li><a href="prodaja.php">Prodaja</a></li>
+                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="onama.php">O nama</a></li>
+                    <li><a class="active" href="kontakt.php">Kontakt</a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            
@@ -78,7 +78,7 @@
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_8">
-                	<h3>How to find us</h3>
+                	<h3>Kako do nas</h3>
                     <figure class="page6-img1">
                             <iframe width="600" height="307" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed">
                             </iframe>
@@ -101,29 +101,29 @@
                         </dl>
                 </article>
                 <article class="grid_4">
-                	<h3>Contact form</h3>
+                	<h3>Kontakt forma</h3>
                      <form id="form1">
-                        <div class="success">Contact form submitted!<strong> We will be in touch soon.</strong></div>
+                        <div class="success">Uspešno ste poslali poruku!<strong> Ubrzo ćemo Vam odgovoriti.</strong></div>
                           <fieldset>
                               <label class="name">
                                     <input type="text" value="Name:">
-                                    <span class="error">*This is not a valid name.</span> <span class="empty">*This field is required.</span> 
+                                    <span class="error">*Pogrešan unos.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label>                                        
                                 <label class="email">
                                     <input type="text" value="E-mail:">
-                                    <span class="error">*This is not a valid email address.</span> <span class="empty">*This field is required.</span> 
+                                    <span class="error">*Ova e-mail adresa nije validna.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label> 
                                  <label class="phone">
                                     <input type="tel" value="Phone:">
-                                    <span class="error">*This is not a valid phone number.</span> <span class="empty">*This field is required.</span> 
+                                    <span class="error">*Broj telefona nije validan.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label>                                                                    
                                <label class="message">
                               <textarea>Message</textarea>
-                              <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span> </label>
+                              <span class="error">*Poruka je prekratka.</span> <span class="empty">*Ovo polje je obavezno.</span> </label>
                               <div class="clear"></div>
                               <div class="link-form"> 
-                              <a class="button1" href="#" data-type="reset">clear</a>                              
-                              <a class="button1 p33" href="#" data-type="submit">Send</a>                              
+                              <a class="button1" href="#" data-type="reset">Obriši</a>                              
+                              <a class="button1 p33" href="#" data-type="submit">Pošalji</a>                              
                               </div>											
                           </fieldset>           
                       </form>
@@ -133,54 +133,7 @@
     </section>
     
 	<!--==============================footer=================================-->
-    <footer>
-        <div class="container_12">
-        	<div class="wrapper border2">
-            	<article class="grid_2">
-                	<h5>Company</h5>
-                    <ul class="list2">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Presentation</a></li>
-                        <li><a href="#">Clients</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>Properties</h5>
-                    <ul class="list2">
-                        <li><a href="#">Commercial</a></li>
-                        <li><a href="#">Residential</a></li>
-                        <li><a href="#">Luxury</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>Advice</h5>
-                    <ul class="list2">
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>For Clients</h5>
-                    <ul class="list2">
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Forums</a></li>
-                        <li><a href="#">Promotions</a></li>
-                    </ul>
-                </article>
-                <article class="grid_4">
-                	<h5>Real Estate</h5>
-                  <div class="foot-page2">
-                    8901 Marmora Road, Glasgow, D04 89GR<br />
-                    Phone: +1 800 784 3489<br />
-                    E-mail: <a class="link5" href="#">mail@demolink.org</a>
-                    </div>
-                </article>
-            </div>
-            <div class="foot-page1">
-            	<span>Real<strong>Estate</strong></span> &copy; 2012&nbsp; |&nbsp;  <a class="link4" href="index-6.html">Privacy Policy</a>
-            </div>       
-        </div>
-    </footer>
+<?php include 'includes/footer.php'; ?>
+        
 </body>
 </html>

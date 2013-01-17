@@ -14,7 +14,7 @@
     margin: 0 auto 0 -700px;
     position: absolute;
     width: 1400px;
-    z-index: 2;
+    z-index: 2;  
 }
 
 .items {
@@ -28,7 +28,7 @@
     right: 230px;
     top: 385px;
     width: 530px;
-	z-index:999;
+    z-index:999; 
 }
 
 .pagination {

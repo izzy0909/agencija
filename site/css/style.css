@@ -126,7 +126,7 @@ header h1 {
 .head-box2 {
     float: right;
     margin-right: 9px;
-    padding-top: 41px;
+    padding-top: 38px; /* promenjeno sa 41 kad su ubačene socijalne ikonice */
 	text-align:right;
 }
 
@@ -136,7 +136,7 @@ header h1 {
 }
 
 .head-box1 {
-	margin-bottom:33px;
+	margin-bottom:28px; /* promenjeno sa 33 */
 }
 
 .link1:hover {
@@ -1115,11 +1115,28 @@ margin-bottom:18px;
 	text-decoration:none;
 }
 
-
+                                                                                                
 .list2 li {
     background: url("../images/marker4.png") no-repeat scroll 1px 4px transparent;
     display: block;
     line-height: 15px;
     padding-bottom: 9px;
     padding-left: 13px;
+}
+                                                                                            /* lista za socijalne ikonice */
+.list9 ul {
+    background: url("../images/marker4.png") no-repeat scroll 1px 4px transparent;
+    display: block;
+    line-height: 15px;
+    padding-bottom: 9px;
+    padding-left: 13px;
+    list-style-type: none;
+}
+.list9 a {
+	color:#959595;
+	font-size:12px;
+}
+.list9 a:hover {
+	color:#e2a616;
+	text-decoration:none;
 }

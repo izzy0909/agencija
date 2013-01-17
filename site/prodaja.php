@@ -43,7 +43,7 @@
         	<div class="main">
             	<nav>
                 <ul class="sf-menu">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.php">Početna</a>
                     	<ul>
                             <li><a href="more.html">Homes for Sale</a></li>
                             <li><a href="more.html">New Homes for Sale</a></li>
@@ -60,11 +60,11 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="index-1.html">About Us</a></li>
-                    <li><a href="index-2.html">Buying</a></li>
-                    <li><a class="active" href="index-3.html">Selling</a></li>
-                    <li><a href="index-4.html">Moving</a></li>
-                    <li><a href="index-5.html">Contacts</a></li>
+                    <li><a href="izdavanje.php">Izdavanje</a></li>
+                    <li><a class="active" href="prodaja.php">Prodaja</a></li>
+                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="onama.php">O nama</a></li>
+                    <li><a href="kontakt.php">Kontakt</a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            
@@ -131,54 +131,7 @@ smod felis nec dui accumsan iaculis. Nunc aliquet sagittis risus, at porta lacus
     </section>
     
 	<!--==============================footer=================================-->
-    <footer>
-        <div class="container_12">
-        	<div class="wrapper border2">
-            	<article class="grid_2">
-                	<h5>Company</h5>
-                    <ul class="list2">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Presentation</a></li>
-                        <li><a href="#">Clients</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>Properties</h5>
-                    <ul class="list2">
-                        <li><a href="#">Commercial</a></li>
-                        <li><a href="#">Residential</a></li>
-                        <li><a href="#">Luxury</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>Advice</h5>
-                    <ul class="list2">
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </article>
-                <article class="grid_2">
-                	<h5>For Clients</h5>
-                    <ul class="list2">
-                        <li><a href="#">Sign Up</a></li>
-                        <li><a href="#">Forums</a></li>
-                        <li><a href="#">Promotions</a></li>
-                    </ul>
-                </article>
-                <article class="grid_4">
-                	<h5>Real Estate</h5>
-                  <div class="foot-page2">
-                    8901 Marmora Road, Glasgow, D04 89GR<br />
-                    Phone: +1 800 784 3489<br />
-                    E-mail: <a class="link5" href="#">mail@demolink.org</a>
-                    </div>
-                </article>
-            </div>
-            <div class="foot-page1">
-            	<span>Real<strong>Estate</strong></span> &copy; 2012&nbsp; |&nbsp;  <a class="link4" href="index-6.html">Privacy Policy</a>
-            </div>       
-        </div>
-    </footer>
+<?php include 'includes/footer.php'; ?>
+        
 </body>
 </html>
