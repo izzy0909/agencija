@@ -1,3 +1,19 @@
+﻿<?php
+
+include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/dodatniTagoviDA.php';
+
+    
+    
+   $row = prikaziSveOpstine();
+
+
+//var_dump($row);
+                        
+                        
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +45,7 @@
     	<div class="head-bg">
         <div class="main">
         	<div class="head-box1">
-            <h1><a class="logo" href="index.html">logo</a></h1>
+            <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
             	<span>1-800-555-1234</span>
                 <div class="clear"></div>
@@ -77,55 +93,123 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-            	<article class="grid_4">
+                    
+            	<article class="grid_12">
                 	<h3 class="title">Pošaljite vašu nekretninu</h3>
-                    <form id="form3" class="jqtransform p5" method="get">
-                              	<div class="inner7">
-                                <span class="text2">Select move type</span>
-                                	 <select name="adult1"><option></option></select>
-                                 <span class="text2">Move size</span>
-                                	 <select name="adult2"><option></option></select>                                
-                                </div>
-                                <div class="inner8">
-                                <span class="text2">Move date</span>
-                                <div class="clear"></div>
-                                	 <div class="a1"><select name="adult1"><option>December</option></select></div>
-                                     <div class="a1"><select name="adult1"><option>05</option></select></div>
-                                     <div class="fleft"><select name="adult1"><option>2012</option></select></div>
-                                     <div class="clear"></div>
-                                </div>
-                                  <div class="clear"></div>         				
-                                <a onClick="document.getElementById('form3').submit()" class="button1 fright p12">Search</a>
-                                <div class="clear"></div>
-                            </form>
-    <form id="pro_form1" class="jqtransform p5">
-        <label><span class="pro_text-form">First Name:</span><input type="text"></label>
-        ...
-        <label>
-            <span class="pro_text-form fleft">Country:</span>
-            <select>
-                <option>United States</option>
-                <option>United States</option>
-            </select>
-        </label>
-        <label>
-            <div class="pro_text-form">Message:</div>
-            <textarea></textarea>
-        </label>
-        <div class="pro_wrapper">
-            <input type="radio" name="group1"><div class="pro_text-form2 fleft">Male</div>
-        </div>
-        <div class="pro_wrapper">
-            <input type="radio" name="group1"><div class="pro_text-form2 fleft">Female</div>
-        </div>
-        <div class="pro_wrapper">
-            <input type="checkbox"><div class="pro_text-form3 fleft">Sign me up for your newsletter</div>
-        </div>
-        <a class="pro_btn">Send</a>
-    </form>
+        <!--<form id="form_send" class="jqtransform p5"> -->
+                
+                <form id="form_send" action="posalji_stan.php" method="post">
+                <table>
+                <tr>
+                <td>    
+                    
+		<table>
+		<tr>
+			<th>Vlasnik:</th>
+			<td><input type="text" name="vlasnik" size="57" /></td>
+		</tr>
+		<tr>
+			<th>Ulica i broj:</th>
+			<td><input type="text" name="adresa" size="57" /></td>
+		</tr>
+        <tr>
+			<th>Sprat:</th>
+			<td><input type="text" name="sprat" /></td>
+		</tr>
+		<tr>
+                    <th>Lokacija:</th>
+                    <td>
+                    <select name="opstina">
+                                     <?php
 
-                </article>
-  
+                        foreach($row as $opstina){
+                          echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                          
+                        }
+                 ?>
+                </select>
+                    </td>
+
+                <tr>
+                <th>Telefon:</th>
+                <td><input type="text" name="telefon" /></td>
+                </tr>    
+                <tr>
+                <th>Cena:</th>
+                <td><input type="text" name="cena" /></td>
+                </tr>     
+                <tr>
+                <th>Kvadratura:</th>
+                <td><input type="text" name="kvadratura" /></td>
+                </tr>
+                <tr>
+                <th>Nameštenost</th>
+                <td>
+                    <select name="namestenost">
+                        <option value="Namešten">Namešten</option>
+                        <option value="Nenamešten">Nenamešten</option>
+                    </select>
+                </td>
+                </tr>
+                <tr>
+                <th>Opis:</th>
+                <td><textarea rows="4" cols="42" name="opis"></textarea></td>
+                </tr>
+                <tr>
+                <th>Slika 1:</th>
+                <td><input type="file" name="slika1" /></td>
+                </tr>
+                <tr>
+                <th>Slika 2:</th>
+                <td><input type="file" name="slika2" /></td>
+                </tr>                
+                <tr>
+                <th>Slika 3:</th>
+                <td><input type="file" name="slika3" /></td>
+                </tr>                
+                <tr>
+		<th>&nbsp;</th>
+		<td>
+                <input type="submit" value="Pošalji" name="posalji_stan" />
+		<input type="reset" value="Obriši" />
+		</td>
+                </tr>                
+                </table>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+            <table>
+                <tr>
+                    <th><input type="checkbox" name="grejanje" ></th>
+                    <td>Grejanje</td>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name="kablovska" ></th>
+                    <td>Kablovska</td>
+                </tr>   
+                <tr>
+                    <th><input type="checkbox" name="tv" ></th>
+                    <td>Tv</td>
+                </tr>     
+                <tr>
+                    <th><input type="checkbox" name="klima" ></th>
+                    <td>Klima</td>
+                </tr>                
+                <tr>
+                    <th><input type="checkbox" name="internet" ></th>
+                    <td>Internet</td>
+                </tr>                
+                <tr>
+                    
+                <th><input type="checkbox" name="telefon" ></th>
+                <td>Telefon</td></tr>                
+            </table>
+                </td>
+                </tr>
+                </table>
+                
+    </form>
+     </article>            
             </div>
         </div>
     </section>

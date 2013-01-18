@@ -29,7 +29,7 @@
     	<div class="head-bg">
         <div class="main">
         	<div class="head-box1">
-            <h1><a class="logo" href="index.html">logo</a></h1>
+            <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
             	<span>1-800-555-1234</span>
                 <div class="clear"></div>
