@@ -1140,3 +1140,72 @@ margin-bottom:18px;
 	color:#e2a616;
 	text-decoration:none;
 }
+
+
+/* stilovi za formu */
+#sforma{
+    
+}
+
+#sforma th{
+    padding:4px 2px;
+}
+
+#sforma input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #c0c0c0;
+width:304px;
+margin:2px 0 20px 10px;
+}
+
+#sforma input.button{
+width:150px;
+height:31px;
+background:#555555;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+}
+
+#sforma input.button:hover{
+    background: #c0c0c0;
+    color:#000000;
+    cursor:default;
+}
+
+#sforma select{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border: solid 1px #c0c0c0;
+    width: 310px;
+    margin: 2px 0 20px 10px;
+}
+
+#sforma textarea{
+    float:left;
+    font-size:12px;
+    border: solid 1px #c0c0c0;
+    width: 308px;
+    margin: 2px 0 20px 10px;
+}
+
+#sforma input[type='checkbox']{
+    float:left;
+    width:20px;
+    border:solid 1px #c0c0c0;
+    margin: 2px 0 20px 10px;
+    alignment:left;
+}
+
+#sforma file {
+        float:left;
+        font-size:12px;
+	border: 1px solid #c0c0c0;
+        width:310px;
+	padding: 2px 0 20px 10px;
+}

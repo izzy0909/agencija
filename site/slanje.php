@@ -94,10 +94,12 @@ include_once '../data_base_access/dodatniTagoviDA.php';
         <div class="container_12">
         	<div class="wrapper">
                     
-            	<article class="grid_12">
-                	<h3 class="title">Pošaljite vašu nekretninu</h3>
+            	<article class="grid_8">
+                	
         <!--<form id="form_send" class="jqtransform p5"> -->
                 
+                <div id="sforma">
+                    <h3 class="title">Pošaljite vašu nekretninu</h3>
                 <form id="form_send" action="posalji_stan.php" method="post">
                 <table>
                 <tr>
@@ -106,7 +108,7 @@ include_once '../data_base_access/dodatniTagoviDA.php';
 		<table>
 		<tr>
 			<th>Vlasnik:</th>
-			<td><input type="text" name="vlasnik" size="57" /></td>
+			<td><input type="text" name="vlasnik" /></td>
 		</tr>
 		<tr>
 			<th>Ulica i broj:</th>
@@ -153,11 +155,11 @@ include_once '../data_base_access/dodatniTagoviDA.php';
                 </tr>
                 <tr>
                 <th>Opis:</th>
-                <td><textarea rows="4" cols="42" name="opis"></textarea></td>
+                <td><textarea style="resize: none;" rows="4" cols="42" name="opis"></textarea></td>
                 </tr>
                 <tr>
                 <th>Slika 1:</th>
-                <td><input type="file" name="slika1" /></td>
+                <td><input type="file" id="file" name="slika1" /></td>
                 </tr>
                 <tr>
                 <th>Slika 2:</th>
@@ -170,46 +172,67 @@ include_once '../data_base_access/dodatniTagoviDA.php';
                 <tr>
 		<th>&nbsp;</th>
 		<td>
-                <input type="submit" value="Pošalji" name="posalji_stan" />
-		<input type="reset" value="Obriši" />
+                <input type="submit" value="Pošalji" class="button" name="posalji_stan"  />
+		<input type="reset" value="Obriši" class="button" />
 		</td>
                 </tr>                
                 </table>
                 </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td>
             <table>
                 <tr>
-                    <th><input type="checkbox" name="grejanje" ></th>
-                    <td>Grejanje</td>
-                </tr>
+                    <td><input type="checkbox" name="grejanje" >Grejanje</td>
+                    </tr>
                 <tr>
-                    <th><input type="checkbox" name="kablovska" ></th>
-                    <td>Kablovska</td>
-                </tr>   
+                    <td><input type="checkbox" name="kablovska" >Kablovska</td>
+                    </tr>   
                 <tr>
-                    <th><input type="checkbox" name="tv" ></th>
-                    <td>Tv</td>
+                    <td><input type="checkbox" name="tv" >TV</td>
                 </tr>     
                 <tr>
-                    <th><input type="checkbox" name="klima" ></th>
-                    <td>Klima</td>
+                    <td><input type="checkbox" name="klima" >Klima</td>
                 </tr>                
                 <tr>
-                    <th><input type="checkbox" name="internet" ></th>
-                    <td>Internet</td>
+                    <td><input type="checkbox" name="internet" >Internet</td>
                 </tr>                
                 <tr>
-                    
-                <th><input type="checkbox" name="telefon" ></th>
-                <td>Telefon</td></tr>                
+                <td><input type="checkbox" name="telefon" id="check" class="check" >Telefon</td>
+                </tr>                
             </table>
                 </td>
                 </tr>
                 </table>
                 
     </form>
-     </article>            
+                </div>
+     </article>    
+                    <article class="grid_4">
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>
+                        Dodatne informacije nekeDodatne informacije neke<br/>                        
+                    </article>
             </div>
         </div>
     </section>
