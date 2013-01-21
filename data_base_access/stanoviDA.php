@@ -72,3 +72,13 @@ function izbrisiStan($id){
 		));
     
 }
+
+function ukupanBrojStanova(){
+    global $conn;
+
+    $sql = "SELECT COUNT(*) as broj FROM stanovi";
+    $query = $conn->prepare($sql);
+    $query->execute();
+	return $query->fetch();
+    
+}
