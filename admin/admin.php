@@ -362,7 +362,7 @@ $(document).pngFix( );
 		
 			<!--  start table-content  -->
 			<div id="table-content">
-			<h2>Sub Heading</h2>
+			<h2>Sub Heading 1</h2>
 			<h3>Local Heading</h3>
 			
 			
