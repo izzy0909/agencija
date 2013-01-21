@@ -8,17 +8,24 @@ if($_SESSION['uloga'] != 1)
 if (isset ($_POST['pretrazi_broj'])){
 
     $broj_za_pretragu = isset($_POST['broj_za_pretragu']) ? $_POST['broj_za_pretragu'] : null;
-
-    
+	$brojevi = pretraziImenik($broj_za_pretragu);
+    var_dump($brojevi);
 }
-                   
+if (isset ($_POST['obrisi_broj'])){
+	die('asd');
+	$id = $_GET['id'];
+	izbrisiBroj($id);
+	
+	
+	
+}                   
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
-<link rel="stylesheet" href="css/screen.cs" type="text/css" media="screen" title="default" />
+<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
@@ -275,7 +282,7 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
@@ -289,7 +296,7 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="send_mail_using_elasticemail.php"><b>Elastic</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="current"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -369,7 +376,7 @@ $(document).pngFix( );
 
 		<!--  start step-holder -->
 		<div id="step-holder">
-			<div class="step-no">1</div>
+			<div class="step-no"></div>
 			<div class="step-dark-left"><a href="">Dodaj Broj Agencije</a></div>
 			
 		</div>
@@ -411,7 +418,7 @@ $(document).pngFix( );
 
 		<!--  start step-holder -->
 		<div id="step-holder">
-			<div class="step-no">1</div>
+			<div class="step-no"></div>
 			<div class="step-dark-left"><a href="">Pretrazi brojeve</a></div>
 
 		</div>
@@ -432,7 +439,7 @@ $(document).pngFix( );
                         <th>&nbsp;</th>
                         <td valign="top">
                                 
-                                <input type="submit" value="Dodaj" class="form-submit" name="pretrazi_broj" id="pretrazi_broj" />
+                                <input type="submit" value="Pretrazi" class="form-submit" name="pretrazi_broj" id="pretrazi_broj" />
                                 
                         </td>
                         <td></td>
@@ -449,9 +456,39 @@ $(document).pngFix( );
 </tr>
 </table>
 
-<div class="clear"></div>
-
-
+				<?php
+					if(isset($brojevi)){
+				?>
+				
+				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+				<tr>
+					<th class="table-header-check"><a id="toggle-all" ></a> </th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Broj</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Agencija</a></th>
+					<th class="table-header-options line-left"><a href="">Opcije</a></th>
+				</tr>	
+				<?php
+						foreach($brojevi as $broj){
+                         
+                        
+				?>
+				<tr>
+					<td><input  type="checkbox"/></td>
+					<td><?php echo $broj['agencija'];?></td>
+					<td><?php echo $broj['broj'];?></td>
+					<td class="options-width">
+					<a href="izbrisi_broj.php?id=<?php echo $broj[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
+					</td>-->
+				</tr>
+								
+				<?php
+						}
+					}
+				?>
+				</table>
 </div>
 <!--  end content-table-inner  -->
 </td>
@@ -511,9 +548,10 @@ if (isset ($_POST['dodaj_broj'])){
 	
 	$agencija = isset($_POST['agencija']) ? $_POST['agencija'] : null;
     $broj = isset($_POST['broj']) ? $_POST['broj'] : null;
-    echo "Broj dodat";
+    //echo "Broj dodat";
 
     dodajBroj($agencija, $broj);
     
 }
+
 
