@@ -22,10 +22,10 @@ function pretraziImenik($broj){
     global $conn;
 
     $sql = "SELECT * FROM imenik
-            WHERE broj LIKE '%:broj%'";
+            WHERE broj LIKE :broj";
     $query = $conn->prepare($sql);
     $query->execute(array(
-		':broj' => $broj
+		':broj' => '%'.$broj.'%'
 		));
     return $query->fetchAll(PDO::FETCH_BOTH);
     
