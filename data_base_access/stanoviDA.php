@@ -34,15 +34,16 @@ function prikaziSveOpstine(){
     
 }
 
-function prikaziSveStanove(){
+function prikaziSveStanove($start, $limit){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s 
 			INNER JOIN lokacija as l 
-			ON s.lokacija_id = l.id";
-    $query = $conn->prepare($sql);
-    $query->execute();
-    return $query->fetchAll(PDO::FETCH_BOTH);
+			ON s.lokacija_id = l.id 
+			LIMIT $start, $limit";
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetchAll(PDO::FETCH_BOTH);
     
 }
 
