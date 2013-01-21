@@ -31,4 +31,14 @@ function pretraziImenik($broj){
     
 }
 
+function izbrisiBroj($id){
+    global $conn;
 
+    $sql = "DELETE FROM imenik
+			WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id
+		));
+    
+}

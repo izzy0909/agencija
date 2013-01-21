@@ -6,8 +6,22 @@ if($_SESSION['uloga'] != 1)
     header('Location: login.php');
 	
 }
-
-     $stanovi = prikaziSveStanove();                   
+		$broj = ukupanBrojStanova();
+		$num_rows = $broj['broj'];
+		$items = 20;
+		
+		$nrpage_amount = $num_rows/$items;
+		$page_amount = ceil($num_rows/$items);
+		
+		//$page_amount = $page_amount-1;
+		//die($page_amount);
+		$page = $_GET['stranica'];
+		if($page < "1"){
+			$page = "1";
+		}
+		$p_num = $items*($page - 1);
+		
+		$stanovi = prikaziSveStanove($p_num, $items);                   
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -425,19 +439,37 @@ $(document).pngFix( );
 			<table border="0" cellpadding="0" cellspacing="0" id="paging-table">
 			<tr>
 			<td>
-				<a href="" class="page-far-left"></a>
-				<a href="" class="page-left"></a>
+			<?php
+			if($page_amount != "0"){
+				if($page != "0"){
+					$prev = $page-1;
+					//echo "<a href=\"spisak_stanova.php?q=$section&p=$prev\">Prev</a>";
+					echo '<a href="spisak_stanova.php?stranica='.$prev.'" class="page-left"></a>';
+				}
+				 	 
+					  
+					  echo '<div id="page-info">Page <strong>'.$page.'</strong> / '.$page_amount.'</div>';
+					 
+				 
+				?>
+				
+				<?php
+				
+				if($page < $page_amount){
+					$next = $page+1;
+					//echo "<a href=\"spisak_stanova.php?q=$section&p=$next\">Next</a>";
+					echo '<a href="spisak_stanova.php?stranica='.$next.'" class="page-right"></a>';
+				}
+				
+				
+			}
+			?>
+			<!--<td>
+				<a href="spisak_stanova.php?stranica=" class="page-left"></a>
 				<div id="page-info">Page <strong>1</strong> / 15</div>
-				<a href="" class="page-right"></a>
-				<a href="" class="page-far-right"></a>
+				<a href="spisak_stanova.php?stranica=" class="page-right"></a>
 			</td>
-			<td>
-			<select  class="styledselect_pages">
-				<option value="">Number of rows</option>
-				<option value="">1</option>
-				<option value="">2</option>
-				<option value="">3</option>
-			</select>
+			-->
 			</td>
 			</tr>
 			</table>
