@@ -247,7 +247,7 @@ $(document).pngFix( );
 				<a href="" id="acc-details">Personal details </a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
-				<a href="" id="acc-project">Project details</a>
+				<a href="" id="acc-project">Project detail</a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
 				<a href="" id="acc-inbox">Inbox</a>
