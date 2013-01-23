@@ -27,6 +27,19 @@ include_once '../data_base_access/dodatniTagoviDA.php';
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>    
+    <script type="text/javascript">
+$(document).ready(function(){
+ 
+        $(".skriveni").hide();
+        $(".showhide").show();
+ 
+    $('.showhide').click(function(){
+    $(".skriveni").slideToggle();
+    });
+ 
+});
+    </script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -47,9 +60,11 @@ include_once '../data_base_access/dodatniTagoviDA.php';
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
-            	<span>1-800-555-1234</span>
                 <div class="clear"></div>
-                <a class="link1" href="#">realestate@demolink.org</a>
+                <a href="#" class="link1"><img src="images/soc-fb.png" width="39" alt="Lajkujte nas na Fejsbuku!"></a>
+                <a href="#" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
             <div class="clear"></div>
             </div>            
@@ -78,9 +93,9 @@ include_once '../data_base_access/dodatniTagoviDA.php';
                     </li>
                     <li><a href="izdavanje.php">Izdavanje</a></li>
                     <li><a href="prodaja.php">Prodaja</a></li>
-                    <li><a class="active" href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a class="active" href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php">Kontakt</a></li>
+                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            
@@ -94,12 +109,12 @@ include_once '../data_base_access/dodatniTagoviDA.php';
         <div class="container_12">
         	<div class="wrapper">
                     
-            	<article class="grid_8">
+            	<article class="grid_12">
                 	
         <!--<form id="form_send" class="jqtransform p5"> -->
                 
                 <div id="sforma">
-                    <h3 class="title">Pošaljite vašu nekretninu</h3>
+                    <h3 class="title">Ponudite vašu nekretninu</h3>
                 <form id="form_send" action="posalji_stan.php" method="post">
                 <table>
                 <tr>
@@ -154,12 +169,8 @@ include_once '../data_base_access/dodatniTagoviDA.php';
                 </td>
                 </tr>
                 <tr>
-                <th>Opis:</th>
-                <td><textarea style="resize: none;" rows="4" cols="42" name="opis"></textarea></td>
-                </tr>
-                <tr>
                 <th>Slika 1:</th>
-                <td><input type="file" id="file" name="slika1" /></td>
+                <td><input type="file" name="slika1" /></td>
                 </tr>
                 <tr>
                 <th>Slika 2:</th>
@@ -172,73 +183,119 @@ include_once '../data_base_access/dodatniTagoviDA.php';
                 <tr>
 		<th>&nbsp;</th>
 		<td>
-                <input type="submit" value="Pošalji" class="button" name="posalji_stan"  />
-		<input type="reset" value="Obriši" class="button" />
+                <a class="showhide" href="#">Još slika</a>
 		</td>
                 </tr>                
                 </table>
                 </td>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td>
+                    <div id="tagovi">
             <table>
+                <tr style="background-color:#f3f3f3;">
+                <td style="width: 144px;"><input type="checkbox" name="grejanje" >Grejanje</td>
+                <td style="width: 144px;"><input type="checkbox" name="kablovska" >Kablovska</td>
+                <td style="width: 144px;"><input type="checkbox" name="tv" >TV</td>
+                <td style="width: 144px;">"<input type="checkbox" name="klima" >Klima</td>
+                </tr>    
                 <tr>
-                    <td><input type="checkbox" name="grejanje" >Grejanje</td>
-                    </tr>
+                <td><input type="checkbox" name="internet" >Internet</td>
+                <td><input type="checkbox" name="telefon" >Telefon</td>
+                <td><input type="checkbox" name="frizider" >Frižider</td>
+                <td><input type="checkbox" name="sporet" >Šporet</td>                
+                </tr>
+                <tr style="background-color:#f3f3f3;">
+                <td><input type="checkbox" name="vesmasina" >Veš mašina</td>
+                <td ><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</td>
+                <td><input type="checkbox" name="terasa" >Terasa</td>
+                <td><input type="checkbox" name="lift" >Lift</td>                
+                </tr>
                 <tr>
-                    <td><input type="checkbox" name="kablovska" >Kablovska</td>
-                    </tr>   
+                <td><input type="checkbox" name="bazen" >Bazen</td>
+                <td><input type="checkbox" name="garaza" >Garaža</td>
+                <td><input type="checkbox" name="parking" >Parking</td>
+                <td><input type="checkbox" name="dvoriste" >Dvorište</td>                
+                </tr>
+                <tr style="background-color:#f3f3f3;">
+                <td><input type="checkbox" name="potkrovlje" >Potkrovlje</td>
+                <td><input type="checkbox" name="penthaus" >Penthaus</td>   
+                <td><input type="checkbox" name="novogradnja" >Novogradnja</td>
+                <td><input type="checkbox" name="renovirano" >Renovirano</td>                
+                </tr>
                 <tr>
-                    <td><input type="checkbox" name="tv" >TV</td>
-                </tr>     
-                <tr>
-                    <td><input type="checkbox" name="klima" >Klima</td>
-                </tr>                
-                <tr>
-                    <td><input type="checkbox" name="internet" >Internet</td>
-                </tr>                
-                <tr>
-                <td><input type="checkbox" name="telefon" id="check" class="check" >Telefon</td>
-                </tr>                
+                <td><input type="checkbox" name="lux" >Lux</td>                      
+                </tr>
+                <tr style="background-color:#f3f3f3;">
+
+              
+                </tr>
             </table>
+                    </div>
+                    <table>
+                        <tr><th>Dodatne informacije (napomene)</th><tr>
+                    <tr><td><textarea style="resize: none;" rows="4" cols="42" name="opis"></textarea>
+                    </td></tr>
+                    </table>
+                    <div class="skriveni">
+                        
+                        <table>
+                            <tr>
+                                <td>
+                            <table>
+                            <tr>
+                            <th>Slika 4:</th>
+                            <td><input type="file" name="slika4" /></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <th>Slika 7:</th>
+                            <td><input type="file" name="slika7" /></td>                            
+                            </tr>
+                            <tr>
+                            <th>Slika 5:</th>
+                            <td><input type="file" name="slika5" /></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <th>Slika 8:</th>
+                            <td><input type="file" name="slika8" /></td>                            
+                            </tr>                
+                            <tr>
+                            <th>Slika 6:</th>
+                            <td><input type="file" name="slika6" /></td>
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <th>Slika 9:</th>
+                            <td><input type="file" name="slika9" /></td>                            
+                            </tr>
+                            </table>
+                                </td>
+                            </tr>
+                        </table>
+                 </div>
                 </td>
                 </tr>
+                           <tr>
+                                <td></td>
+                                 <td></td>   
+                                  <td><div class="dugmad">
+                                        <input type="submit" value="Pošalji" class="button" name="posalji_stan"  />
+                                        <input type="reset" value="Obriši" class="button" /></div>
+                                </td>
+                            </tr>
                 </table>
                 
     </form>
+                                       
+                    
+                    
                 </div>
      </article>    
-                    <article class="grid_4">
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>
-                        Dodatne informacije nekeDodatne informacije neke<br/>                        
-                    </article>
+
             </div>
         </div>
     </section>
     
 	<!--==============================footer=================================-->
 <?php include 'includes/footer.php'; ?>
-        
+      
 </body>
 </html>

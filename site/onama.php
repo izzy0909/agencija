@@ -31,9 +31,11 @@
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
-            	<span>1-800-555-1234</span>
                 <div class="clear"></div>
-                <a class="link1" href="#">realestate@demolink.org</a>
+                <a href="#" class="link1"><img src="images/soc-fb.png" width="39" alt="Lajkujte nas na Fejsbuku!"></a>
+                <a href="#" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
             <div class="clear"></div>
             </div>            
@@ -62,9 +64,9 @@
                     </li>
                     <li><a href="izdavanje.php">Izdavanje</a></li>
                     <li><a href="prodaja.php">Prodaja</a></li>
-                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a class="active" href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php">Kontakt</a></li>
+                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            

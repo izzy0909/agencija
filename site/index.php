@@ -32,9 +32,11 @@
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
-            	<span>1-800-555-1234</span>
                 <div class="clear"></div>
-                <a class="link1" href="#">realestate@demolink.org</a>
+                <a href="#" class="link1"><img src="images/soc-fb.png" width="39" alt="Lajkujte nas na Fejsbuku!"></a>
+                <a href="#" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
             <div class="clear"></div>
             </div>            
@@ -61,11 +63,18 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="izdavanje.php">Izdavanje</a></li>
+                    <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
+                            <ul>
+                            <li><a href="izdavanje.php?kat=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kat=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kat=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kat=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kat=lokali">Lokali</a></li>
+                            </ul></li>
                     <li><a href="prodaja.php">Prodaja</a></li>
-                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php">Kontakt</a></li>
+                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            
@@ -165,47 +174,15 @@
                     </div>  
                 <div class="wrapper">
                 	<article class="grid_4">
-                    	<h3 class="p7">News</h3>
-                        <div class="page1-box1">
-                        	<figure class="page1-img2"><img src="images/page1-img5.jpg" alt=""></figure>
-                            <div class="extra-wrap">
-                            	<time class="time1" datetime="2012-09-05T15:31">September 09.09.12</time>
-                                <a class="link2" href="more.html">Lorem ipsum dolor sitsectetu elit</a>
-                            </div>
+                    	<h3 class="p7">Katalog ponude</h3>
+                            <ul class="list8">
+                            <li><a href="izdavanje.php?kat=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kat=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kat=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kat=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kat=lokali">Lokali</a></li>
+                            </ul>
                             <div class="clear"></div>
-                        </div>
-                        <div class="page1-box1">
-                        	<figure class="page1-img2"><img src="images/page1-img6.jpg" alt=""></figure>
-                            <div class="extra-wrap">
-                            	<time class="time1" datetime="2012-09-05T15:31">May 15.05.12</time>
-                                <a class="link2" href="more.html">Lorem ipsum dolor sitsectetu elit</a>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="page1-box1">
-                        	<figure class="page1-img2"><img src="images/page1-img7.jpg" alt=""></figure>
-                            <div class="extra-wrap">
-                            	<time class="time1" datetime="2012-09-05T15:31">July 27.07.12</time>
-                                <a class="link2" href="more.html">Lorem ipsum dolor sitsectetu elit</a>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="page1-box1">
-                        	<figure class="page1-img2"><img src="images/page1-img8.jpg" alt=""></figure>
-                            <div class="extra-wrap">
-                            	<time class="time1" datetime="2012-09-05T15:31">February 22.02.12</time>
-                                <a class="link2" href="more.html">Lorem ipsum dolor sitsectetu elit</a>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="page1-box1 p8">
-                        	<figure class="page1-img2"><img src="images/page1-img9.jpg" alt=""></figure>
-                            <div class="extra-wrap">
-                            	<time class="time1" datetime="2012-09-05T15:31">January 15.01.12</time>
-                                <a class="link2" href="more.html">Lorem ipsum dolor sitsectetu elit</a>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
                         <a class="button1" href="more.html">Read more</a>
                     </article>
                     <article class="grid_4">

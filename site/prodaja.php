@@ -31,9 +31,11 @@
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div class="head-box2">
-            	<span>1-800-555-1234</span>
                 <div class="clear"></div>
-                <a class="link1" href="#">realestate@demolink.org</a>
+                <a href="#" class="link1"><img src="images/soc-fb.png" width="39" alt="Lajkujte nas na Fejsbuku!"></a>
+                <a href="#" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
+                <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
             <div class="clear"></div>
             </div>            
@@ -62,9 +64,9 @@
                     </li>
                     <li><a href="izdavanje.php">Izdavanje</a></li>
                     <li><a class="active" href="prodaja.php">Prodaja</a></li>
-                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php">Kontakt</a></li>
+                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
                 <div class="clear"></div>
             </nav>            
@@ -77,54 +79,11 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-            	<article class="grid_8">
-                <a href="more.html"><figure class="page4-img1"><img src="images/page4-img1.jpg" alt=""></figure></a>
-                	<h3 class="p2">Selling tips</h3>
-                    <div class="page4-box1">
-                    	<p class="p24">Integer dapibus est porttitor lorem pretium nons it tempus ligula feugiat. Sed libero ligula, cursus isollicitudin sit amet, auctor in sem.habitant morbi tristique senectus et netus et malesuada fames ac turpis egestaseui
-smod felis nec dui accumsan iaculis. Nunc aliquet sagittis risus, at porta lacus mollis vitae. Praesent tellus dui, pulvinar quis mattis vitae, feugiat ut erat. Morbi sollicitudin nulla a urna.</p>	
-                        <ul class="list3 p23">
-                            <li><a href="#">Donec porta diam eu massa</a></li>
-                            <li><a href="#">Quisque diam lorem</a></li>
-                            <li><a href="#">Interdum vitae,dapibus nnsequat ante</a></li>
-                            <li><a href="#">Scelerisque vitae, pede</a></li>
-                            <li><a href="#">Donec eget tellus non erat</a></li>
-                        </ul>
-                        <ul class="list3 p23">
-                            <li><a href="#">Donec in velit vel ipsum auctor pulvinar</a></li>
-                            <li><a href="#">Vestibulum iaculis lacinia est</a></li>
-                            <li><a href="#">Proin dictum elementum velit</a></li>
-                            <li><a href="#">Fusce euismod consequat ante</a></li>
-                            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                    <h3 class="p14">Market analysis</h3>
-                    <div class="page4-box2">
-                    	<figure class="page4-img2"><img src="images/page4-img2.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6 p21" href="more.html">Loremest donec sagittis euismod.</a>
-                            <p>Integer dapibus est porttitor lorem pretium nons it tempus ligula feugiat. Sed libero ligula, cursus isollicitudin sit amet, auctor in sem.habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus euismod felis nec dui accumsan iaculis. Nunc aliquet sagittis risus, at porta lacus mollis vitae. Praesent tellus dui, pulvinarю</p>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </article>
-                <article class="grid_4">
-                	<h3 class="title">Our features</h3>
-                    <div class="page4-box3">
-                    	<span class="text1 p15">Aenean nonummy hendrerit</span>
-                        <span>San Francisco</span>
-                        <figure class="page4-img3"><img src="images/page4-img3.jpg" alt=""></figure>
-                        <p>Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.  Mauris accumsan nulla vel diam. </p>
-                        <a class="button1 fleft" href="more.html">read more</a><span class="fleft text5">Cost:  $220 000 </span><div class="clear"></div>
-                    </div>
-                    <div class="page4-box3 last1">
-                    	<span class="text1 p15">Donec porta diam eu massa</span>
-                        <span>Caribbean</span>
-                        <figure class="page4-img3"><img src="images/page4-img4.jpg" alt=""></figure>
-                        <p>Fusce euismod consequat ante. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sed dolor. Aliquam congue fermentum nisl.  Mauris accumsan nulla vel diam. </p>
-                        <a class="button1 fleft" href="more.html">read more</a><span class="fleft text5">Cost:  $220 000 </span><div class="clear"></div>
-                    </div>
+            	<article class="grid_12">
+                    <center>
+                    <a href="prodaja.php?kat=stanovi"><img src="images/ban-stanovi.jpg" alt="Prodaja stanova"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=kuce"><img src="images/ban-kuce.jpg" alt="Prodaja kuća"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=stanovi"><img src="images/ban-posprost.jpg" alt="Prodaja poslovnih prostora"></a><br/><br/>
+                    <a href="prodaja.php?kat=magacini"><img src="images/ban-magacini.jpg" alt="Prodaja magacina"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=lokali"><img src="images/ban-lokali.jpg" alt="Prodaja lokala"></a>
+                    </center>
                 </article>
             </div>
         </div>

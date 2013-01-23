@@ -1142,7 +1142,7 @@ margin-bottom:18px;
 }
 
 
-/* stilovi za formu */
+/* stilovi za formu ------------------------------------------------------------*/ 
 #sforma{
     
 }
@@ -1156,12 +1156,12 @@ float:left;
 font-size:12px;
 padding:4px 2px;
 border:solid 1px #c0c0c0;
-width:304px;
+width:200px;
 margin:2px 0 20px 10px;
 }
 
 #sforma input.button{
-width:150px;
+width:100px;
 height:31px;
 background:#555555;
 text-align:center;
@@ -1172,8 +1172,7 @@ font-weight:bold;
 }
 
 #sforma input.button:hover{
-    background: #c0c0c0;
-    color:#000000;
+    background: #e2a616;
     cursor:default;
 }
 
@@ -1182,15 +1181,16 @@ font-weight:bold;
     font-size:12px;
     padding:4px 2px;
     border: solid 1px #c0c0c0;
-    width: 310px;
+    width: 206px;
     margin: 2px 0 20px 10px;
 }
 
 #sforma textarea{
     float:left;
-    font-size:12px;
+    font-size:14px;
     border: solid 1px #c0c0c0;
-    width: 308px;
+    width: 560px;
+    height: 120px;
     margin: 2px 0 20px 10px;
 }
 
@@ -1201,11 +1201,53 @@ font-weight:bold;
     margin: 2px 0 20px 10px;
     alignment:left;
 }
-
-#sforma file {
-        float:left;
-        font-size:12px;
-	border: 1px solid #c0c0c0;
-        width:310px;
-	padding: 2px 0 20px 10px;
+.skriveni{
+    
 }
+.showhide {
+    display:none;
+    float:right;
+    color: #555555;
+}
+
+.showhide:hover{
+    text-decoration: none;
+    color:#e2a616;
+}
+
+#opis{
+    width:100%;
+    border:solid 1px black;
+}
+
+.dugmad{
+    float:right;
+}
+
+/* lista za katalog na pocetnoj ------------------------------------------------------------*/ 
+
+.list8 a {
+	color:#000;
+	font-weight:bold;
+	line-height:18px;
+	font-size:12px;
+}
+
+.list8 a:hover {
+	color:#e2a616;
+	text-decoration:none;
+}
+
+.list8 li {
+    background: url("../images/marker5.png") no-repeat scroll 1px 6px transparent;
+    display: block;
+    padding-bottom: 18px;
+    padding-left: 13px;
+}
+
+.list8 {
+	margin-bottom:15px;
+}
+
+
+

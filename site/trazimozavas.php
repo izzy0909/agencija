@@ -45,7 +45,7 @@
         	<div class="main">
             	<nav>
                 <ul class="sf-menu">
-                    <li><a href="index.php">Home</a>
+                    <li><a href="index.php">Početnae</a>
                     	<ul>
                             <li><a href="more.html">Homes for Sale</a></li>
                             <li><a href="more.html">New Homes for Sale</a></li>

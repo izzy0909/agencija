@@ -19,10 +19,12 @@
                     </ul>
                 </article>
                 <article class="grid_2">
-                	<h5>Advice</h5>
+                	<h5>Posao kod nas</h5>
                     <ul class="list2">
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#">&nbsp</a></li>
+                        <li><a href="#">&nbsp</a></li>
+                        <li><a href="#">&nbsp</a></li>
+                        <li><a href="#">&nbsp</a></li>
                     </ul>
                 </article>
                 <article class="grid_2">
@@ -31,6 +33,7 @@
                         <li><a href="#"><img src="images/soc-fb.png" width="22" alt="Lajkujte nas na Fejsbuku!"> Facebook</a></li>
                         <li><a href="#"><img src="images/soc-tw.png" width="22" alt="Pratite nas na Tviteru!"> Twitter</a></li>
                         <li><a href="#"><img src="images/soc-ms.png" width="22" alt="Budimo prijatelji na Majspejsu!"> Myspace</a></li>
+                        <li><a href="#"><img src="images/soc-ms.png" width="22" alt="Pratite nas na Tviteru!"> Myspace</a></li>
                         <li><a href="#"><img src="images/soc-li.png" width="22" alt="Nađite nas na Linkedin-u!"> Linkedin</a></li>
                     </ul>
                 </article>
