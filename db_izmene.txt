@@ -1,0 +1,13 @@
+﻿######################
+####  V. 1.0.1
+######################
+
+CREATE TABLE IF NOT EXISTS `slike` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `naziv` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `stan_id` int(11) NOT NULL,
+  `putanja` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `glavna` enum('1','0') COLLATE utf8_unicode_ci NOT NULL,
+  `vrsta` enum('mala','velika') COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
