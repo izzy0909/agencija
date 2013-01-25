@@ -21,3 +21,15 @@ function dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $inter
      
 }
 
+function ispisiDodatneTagove($stan_id){
+    global $conn;
+
+    $sql = "SELECT * FROM dodatni_tagovi
+            WHERE stan_id = :stan_id LIMIT 1";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+		));
+    return $query->fetch();
+    
+}

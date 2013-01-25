@@ -1,6 +1,7 @@
 <?php
 
 include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/dodatniTagoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -10,6 +11,7 @@ if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
 	$stan = prikaziStan($id);
+	$tagovi = ispisiDodatneTagove($id);
 	
 } 
                      
@@ -554,20 +556,35 @@ $(document).pngFix( );
 				<div class="left"><a href=""></a></div>
 				<div class="right">
                                     <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+									
                                         <tr>
                                                 
-                                                <td><input  type="checkbox"/>Grejanje</td>
+                                                <td><input  type="checkbox" <?php if($tagovi['grejanje']){ echo ' checked';}?>/>Grejanje</td>
                                                 <td></td>
                                         </tr>
-                                    
-					<tr>
-
-                                                <td><input  type="checkbox"/>Blah</td>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
                                                 <td></td>
                                         </tr>
                                         <tr>
-
-                                                <td><input  type="checkbox"/>Nesto</td>
+                                                
+                                                <td><input  type="checkbox" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
                                                 <td></td>
                                         </tr>
                                     </table>
