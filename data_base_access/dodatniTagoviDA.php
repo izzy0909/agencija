@@ -19,5 +19,5 @@ function dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $inter
         ':telefon' => $ima_telefon
         ));
      
-
 }
+
