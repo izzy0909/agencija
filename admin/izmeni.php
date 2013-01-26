@@ -1,6 +1,7 @@
 <?php
 
 include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/dodatniTagoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -10,7 +11,7 @@ if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
 	$stan = prikaziStan($id);
-	
+	$tagovi = ispisiDodatneTagove($id);
 } 
                      
 ?>
@@ -285,9 +286,9 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
                 <div class="select_sub show">
 			<ul class="sub">
-				<li class="sub_show"><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
 				<li><a href="spisak_stanova.php">Spisak stanova</a></li>
-				<li><a href="#nogo">Nesto</a></li>
+				
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -345,7 +346,7 @@ $(document).pngFix( );
 		<h1>Izmeni Podatke</h1>
 	</div>
 	<!-- end page-heading -->
-        <form id="dodaj_stan" action="dodaj_stan.php" method="post">
+        <form id="izmeni_stan" action="izmeni_stan.php" method="post">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -393,18 +394,24 @@ $(document).pngFix( );
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
+			<th valign="top">Id:</th>
+			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo $stan[0];?></td>
+			<td>
+			
+			</td>
+		</tr>
+		<tr>
 			<th valign="top">Vlasnik:</th>
-			<td><input type="text" class="inp-form-error" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
+			<td><input type="text" class="inp-form" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
 			<td>
 			
 			</td>
 		</tr>
 		<tr>
 			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-form-error" name="adresa" value="<?php echo $stan['ulica_i_broj'];?>"/></td>
+			<td><input type="text" class="inp-form" name="adresa" value="<?php echo $stan['ulica_i_broj'];?>"/></td>
 			<td>
-			<div class="error-left"></div>
-			<div class="error-inner">This field is required.</div>
+			
 			</td>
 		</tr>
         <tr>
@@ -548,7 +555,7 @@ $(document).pngFix( );
 		<th>&nbsp;</th>
 		<td valign="top">
                         <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
-                        <input type="submit" value="Dodaj" class="form-submit" name="dodaj_stan" id="dodaj_stan" />
+                        <input type="submit" value="Izmeni" class="form-submit" name="izmeni_stan" id="izmeni_stan" />
 			<input type="reset" value="reset" class="form-reset" />
 		</td>
 		<td></td>
@@ -576,20 +583,35 @@ $(document).pngFix( );
 				<div class="left"><a href=""></a></div>
 				<div class="right">
                                     <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+									
                                         <tr>
                                                 
-                                                <td><input  type="checkbox"/>Grejanje</td>
+                                                <td><input  type="checkbox" name="grejanje" <?php if($tagovi['grejanje']){ echo ' checked';}?>/>Grejanje</td>
                                                 <td></td>
                                         </tr>
-                                    
-					<tr>
-
-                                                <td><input  type="checkbox"/>Blah</td>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
                                                 <td></td>
                                         </tr>
                                         <tr>
-
-                                                <td><input  type="checkbox"/>Nesto</td>
+                                                
+                                                <td><input  type="checkbox" name="tv" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" name="klima" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" name="internet" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
+                                                <td></td>
+                                        </tr>
+										<tr>
+                                                
+                                                <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
                                                 <td></td>
                                         </tr>
                                     </table>

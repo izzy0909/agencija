@@ -658,7 +658,7 @@ $(document).pngFix( );
                                         </tr>
                                         <tr>
 
-                                                <td><input  type="checkbox"name="tv" />TV</td>
+                                                <td><input  type="checkbox" name="tv" />TV</td>
                                                 <td></td>
                                         </tr>
 										<tr>

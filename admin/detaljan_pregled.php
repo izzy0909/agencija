@@ -287,9 +287,9 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
                 <div class="select_sub show">
 			<ul class="sub">
-				<li class="sub_show"><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
 				<li><a href="spisak_stanova.php">Spisak stanova</a></li>
-				<li><a href="#nogo">Nesto</a></li>
+				
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -559,32 +559,32 @@ $(document).pngFix( );
 									
                                         <tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['grejanje']){ echo ' checked';}?>/>Grejanje</td>
+                                                <td><input  type="checkbox" name="grejanje" <?php if($tagovi['grejanje']){ echo ' checked';}?>/>Grejanje</td>
                                                 <td></td>
                                         </tr>
 										<tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
+                                                <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
                                                 <td></td>
                                         </tr>
                                         <tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
+                                                <td><input  type="checkbox" name="tv" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
                                                 <td></td>
                                         </tr>
 										<tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
+                                                <td><input  type="checkbox" name="klima" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
                                                 <td></td>
                                         </tr>
 										<tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
+                                                <td><input  type="checkbox" name="internet" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
                                                 <td></td>
                                         </tr>
 										<tr>
                                                 
-                                                <td><input  type="checkbox" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
+                                                <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
                                                 <td></td>
                                         </tr>
                                     </table>
