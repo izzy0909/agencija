@@ -390,6 +390,8 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
+					<th class="table-header-repeat line-left"><a href="">Kategorija</a></th>
+					<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
 				<?php
@@ -407,13 +409,14 @@ $(document).pngFix( );
 					<td><?php echo $stan['ulica_i_broj'];?></td>
 					<td><?php echo $stan['telefon'];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
+					<td><?php echo $stan['kategorija'];?></td>
+					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
 					<td class="options-width">
 					<a href="izmeni.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
 					<a href="detaljan_pregled.php?id=<?php echo $stan[0];?>" title="Detaljnije" class="icon-3 info-tooltip"></a>
+					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="icon-5 info-tooltip"></a>
 					<a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
-					<!--
-					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>-->
+					<!--<a href="" title="Edit" class="icon-4 info-tooltip"></a>-->
 					</td>
 				</tr>
 								

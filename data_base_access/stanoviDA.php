@@ -104,3 +104,17 @@ function izmeniStan($id, $vlasnik, $ulica_i_broj, $telefon, $cena, $sprat, $kvad
 		));
 	    
 }
+
+function promeniVidljivostStana($id, $vidljiv){
+    global $conn;
+
+    $sql = "UPDATE stanovi
+			SET vidljiv = :vidljiv
+			WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id,
+		':vidljiv' => $vidljiv
+		));
+	    
+}
