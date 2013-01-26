@@ -3,7 +3,7 @@
 include_once 'connection.php';
 
 
-function dodajStan( $vlasnik, $lokacija_id, $ulica_i_broj, $telefon, $cena, $sprat, $kvadratura, $opis)
+function dodajStan($vlasnik, $lokacija_id, $ulica_i_broj, $telefon, $cena, $sprat, $kvadratura, $opis)
 {
     global $conn;
 
@@ -77,9 +77,30 @@ function izbrisiStan($id){
 function ukupanBrojStanova(){
     global $conn;
 
-    $sql = "SELECT COUNT(*) as broj FROM stanovi";
+    $sql = "SELECT COUNT(*) as broj 
+			FROM stanovi";
     $query = $conn->prepare($sql);
     $query->execute();
 	return $query->fetch();
     
+}
+
+function izmeniStan($id, $vlasnik, $ulica_i_broj, $telefon, $cena, $sprat, $kvadratura, $opis){
+    global $conn;
+
+    $sql = "UPDATE stanovi
+			SET vlasnik = :vlasnik, ulica_i_broj = :ulica_i_broj, telefon = :telefon, cena = :cena, sprat = :sprat, kvadratura = :kvadratura, opis = :opis
+			WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':vlasnik' => $vlasnik,
+		':ulica_i_broj' => $ulica_i_broj,
+		':telefon' => $telefon,
+		':cena' => $cena,
+		':sprat' => $sprat,
+		':kvadratura' => $kvadratura,
+		':opis' => $opis,
+		':id' => $id
+		));
+	    
 }
