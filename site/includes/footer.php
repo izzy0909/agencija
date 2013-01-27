@@ -33,7 +33,6 @@
                         <li><a href="#"><img src="images/soc-fb.png" width="22" alt="Lajkujte nas na Fejsbuku!"> Facebook</a></li>
                         <li><a href="#"><img src="images/soc-tw.png" width="22" alt="Pratite nas na Tviteru!"> Twitter</a></li>
                         <li><a href="#"><img src="images/soc-ms.png" width="22" alt="Budimo prijatelji na Majspejsu!"> Myspace</a></li>
-                        <li><a href="#"><img src="images/soc-ms.png" width="22" alt="Pratite nas na Tviteru!"> Myspace</a></li>
                         <li><a href="#"><img src="images/soc-li.png" width="22" alt="Nađite nas na Linkedin-u!"> Linkedin</a></li>
                     </ul>
                 </article>

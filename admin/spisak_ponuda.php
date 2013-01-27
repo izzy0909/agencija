@@ -1,13 +1,27 @@
 <?php
 
-include_once '../data_base_access/podsetnikDA.php';
+include_once '../data_base_access/ponudeDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 	
 }
-		$user = $_SESSION['username'];
-        $poruke = prikaziPorukeZaOdredjenogKorisnika($user);               
+		$broj = ukupanBrojPonuda();
+		$num_rows = $broj['broj'];
+		$items = 20;
+		
+		$nrpage_amount = $num_rows/$items;
+		$page_amount = ceil($num_rows/$items);
+		
+		//$page_amount = $page_amount-1;
+		//die($page_amount);
+		$page = @$_GET['stranica'];
+		if($page < "1"){
+			$page = "1";
+		}
+		$p_num = $items*($page - 1);
+		
+		$stanovi = prikaziSvePonude($p_num, $items);                   
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -279,35 +293,34 @@ $(document).pngFix( );
 
 		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-         <div class="select_sub show">
+		<div class="select_sub show">
 			<ul class="sub">
 				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
 				<li class="sub_show"><a href="spisak_stanova.php">Spisak stanova</a></li>
 				<!--<li><a href="#nogo">Nesto</a></li>-->
 			</ul>
-		</div>       
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="spisak_ponuda.php"><b>Ponude</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="current"><li><a href="spisak_ponuda.php"><b>Ponude</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>                  
+		</ul>                   
                 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
 				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>	
 				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 			
 			</ul>
 		</div>
@@ -354,7 +367,7 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Spisak poruka</h1>
+		<h1>Spisak stanova</h1>
 	</div>
 	<!-- end page-heading -->
         
@@ -380,39 +393,30 @@ $(document).pngFix( );
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-check"><a id="toggle-all" ></a> </th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Korisnik</a>	</th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Poruka</a></th>
-					<th class="table-header-repeat line-left"><a href="">Zavrseno</a></th>
-					<th class="table-header-repeat line-left"><a href="">Datum dodavanja</a></th>
-					<th class="table-header-repeat line-left"><a href="">Datum podsecanja</a></th>
-					<th class="table-header-repeat line-left"><a href="">Opcije</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
+					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
+					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
+					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
+					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
 				<?php
-					if(isset($poruke)){
+					if(isset($stanovi)){
 					
-					foreach($poruke as $poruka){
+					foreach($stanovi as $stan){
                           
                         
 				?>
 				<tr>
-					<td><input type="checkbox"/></td>
-					<td><?php echo $poruka['username']; ?></td>
-					<td><?php echo $poruka['poruka']; ?></td>
-					<td><?php 
-					
-						if($poruka['zavrsen'] == 1)
-						{
-							echo 'Da'; 
-						}else{
-							echo 'Ne';
-						}
-						?>
-					</td>
-					<td><?php echo $poruka['datum_dodavanja']; ?></td>
-					<td><?php echo $poruka['datum_podsecanja']; ?></td>
+					<td><input  type="checkbox"/></td>
+					<td><?php echo $stan['vlasnik'];?></td>
+					<td><?php echo $stan['opstina'];?></td>
+					<td><?php echo $stan['ulica_i_broj'];?></td>
+					<td><?php echo $stan['telefon'];?></td>
+					<td><?php echo $stan['kvadratura'];?></td>
 					<td class="options-width">
-					<a href="" title="Izmeni" class="icon-1 info-tooltip"></a>
-					<a href="izbrisi_podsetnik.php?id=<?php echo $poruka[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+					<a href="izmeni_ponudu.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
+					<a href="izbrisi_ponudu.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
@@ -444,19 +448,37 @@ $(document).pngFix( );
 			<table border="0" cellpadding="0" cellspacing="0" id="paging-table">
 			<tr>
 			<td>
-				<a href="" class="page-far-left"></a>
-				<a href="" class="page-left"></a>
+			<?php
+			if($page_amount != "0"){
+				if($page != "0"){
+					$prev = $page-1;
+					//echo "<a href=\"spisak_stanova.php?q=$section&p=$prev\">Prev</a>";
+					echo '<a href="spisak_stanova.php?stranica='.$prev.'" class="page-left"></a>';
+				}
+				 	 
+					  
+					  echo '<div id="page-info">Page <strong>'.$page.'</strong> / '.$page_amount.'</div>';
+					 
+				 
+				?>
+				
+				<?php
+				
+				if($page < $page_amount){
+					$next = $page+1;
+					//echo "<a href=\"spisak_stanova.php?q=$section&p=$next\">Next</a>";
+					echo '<a href="spisak_stanova.php?stranica='.$next.'" class="page-right"></a>';
+				}
+				
+				
+			}
+			?>
+			<!--<td>
+				<a href="spisak_stanova.php?stranica=" class="page-left"></a>
 				<div id="page-info">Page <strong>1</strong> / 15</div>
-				<a href="" class="page-right"></a>
-				<a href="" class="page-far-right"></a>
+				<a href="spisak_stanova.php?stranica=" class="page-right"></a>
 			</td>
-			<td>
-			<select  class="styledselect_pages">
-				<option value="">Number of rows</option>
-				<option value="">1</option>
-				<option value="">2</option>
-				<option value="">3</option>
-			</select>
+			-->
 			</td>
 			</tr>
 			</table>

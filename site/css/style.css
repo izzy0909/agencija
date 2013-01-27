@@ -1151,7 +1151,7 @@ margin-bottom:18px;
     padding:4px 2px;
 }
 
-#sforma input{
+.sforma_input{
 float:left;
 font-size:12px;
 padding:4px 2px;
@@ -1160,18 +1160,29 @@ width:200px;
 margin:2px 0 20px 10px;
 }
 
-#sforma input.button{
-width:100px;
-height:31px;
-background:#555555;
-text-align:center;
-line-height:31px;
-color:#FFFFFF;
-font-size:11px;
-font-weight:bold;
+.sforma_input_ck{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #c0c0c0;
+    width:100px;
+    margin:2px 0 20px 10px;
 }
 
-#sforma input.button:hover{
+.sforma_button{
+    border: solid 1px;
+    display:inline-block;
+    width:100px;
+    height:30px;
+    background:#000;
+    line-height:13px;
+    color:#FFFFFF;
+    font-size:11px;
+    
+    text-transform:uppercase;
+}
+
+.sforma_button:hover{
     background: #e2a616;
     cursor:default;
 }
@@ -1190,7 +1201,7 @@ font-weight:bold;
     font-size:14px;
     border: solid 1px #c0c0c0;
     width: 560px;
-    height: 120px;
+    height: 116px;
     margin: 2px 0 20px 10px;
 }
 
@@ -1201,8 +1212,26 @@ font-weight:bold;
     margin: 2px 0 20px 10px;
     alignment:left;
 }
+#pos1{
+    position:relative;
+    float:left;
+}
+
+#tagovi{
+    float:left;
+    margin-left:50px;
+
+}
+
+#pos2{
+    float:left;
+    margin-left:40px;
+}
+
 .skriveni{
-    
+    float:left;
+    margin-left:40px;
+    margin-top:3px;
 }
 .showhide {
     display:none;
@@ -1221,7 +1250,9 @@ font-weight:bold;
 }
 
 .dugmad{
+    clear:both;
     float:right;
+    margin-right:25px;
 }
 
 /* lista za katalog na pocetnoj ------------------------------------------------------------*/ 

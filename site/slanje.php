@@ -1,7 +1,7 @@
 ﻿<?php
 
+include_once '../data_base_access/ponudeDA.php';
 include_once '../data_base_access/stanoviDA.php';
-include_once '../data_base_access/dodatniTagoviDA.php';
 
     
     
@@ -27,7 +27,7 @@ include_once '../data_base_access/dodatniTagoviDA.php';
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>  
     <script type="text/javascript">
 $(document).ready(function(){
  
@@ -114,24 +114,21 @@ $(document).ready(function(){
         <!--<form id="form_send" class="jqtransform p5"> -->
                 
                 <div id="sforma">
-                    <h3 class="title">Ponudite vašu nekretninu</h3>
-                <form id="form_send" action="posalji_stan.php" method="post">
-                <table>
-                <tr>
-                <td>    
-                    
+                <h3 class="title">Ponudite vašu nekretninu</h3>
+                <form id="ponudi_stan" action="slanje.php" method="post">
+                <div id="pos1">
 		<table>
 		<tr>
 			<th>Vlasnik:</th>
-			<td><input type="text" name="vlasnik" /></td>
+			<td><input type="text" name="vlasnik" class="sforma_input"></td>
 		</tr>
 		<tr>
 			<th>Ulica i broj:</th>
-			<td><input type="text" name="adresa" size="57" /></td>
+			<td><input type="text" name="adresa" class="sforma_input"></td>
 		</tr>
         <tr>
 			<th>Sprat:</th>
-			<td><input type="text" name="sprat" /></td>
+			<td><input type="text" name="sprat" class="sforma_input"></td>
 		</tr>
 		<tr>
                     <th>Lokacija:</th>
@@ -149,15 +146,15 @@ $(document).ready(function(){
 
                 <tr>
                 <th>Telefon:</th>
-                <td><input type="text" name="telefon" /></td>
+                <td><input type="text" name="telefon" class="sforma_input"/></td>
                 </tr>    
                 <tr>
                 <th>Cena:</th>
-                <td><input type="text" name="cena" /></td>
+                <td><input type="text" name="cena" class="sforma_input_ck"/><span style="padding:15px; font-size: 18px;">€</span></td>
                 </tr>     
                 <tr>
                 <th>Kvadratura:</th>
-                <td><input type="text" name="kvadratura" /></td>
+                <td><input type="text" name="kvadratura" class="sforma_input_ck"/><span style="padding:15px; font-size: 18px;">m²</span></td>
                 </tr>
                 <tr>
                 <th>Nameštenost</th>
@@ -170,15 +167,17 @@ $(document).ready(function(){
                 </tr>
                 <tr>
                 <th>Slika 1:</th>
-                <td><input type="file" name="slika1" /></td>
+                <td>
+                <input type="file" name="slika1" class="sforma_input"/>
+                </td>
                 </tr>
                 <tr>
                 <th>Slika 2:</th>
-                <td><input type="file" name="slika2" /></td>
+                <td><input type="file" name="slika2" class="sforma_input"/></td>
                 </tr>                
                 <tr>
                 <th>Slika 3:</th>
-                <td><input type="file" name="slika3" /></td>
+                <td><input type="file" name="slika3" class="sforma_input"/></td>
                 </tr>                
                 <tr>
 		<th>&nbsp;</th>
@@ -187,27 +186,27 @@ $(document).ready(function(){
 		</td>
                 </tr>                
                 </table>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td>
+                </div>
+
+
                     <div id="tagovi">
             <table>
                 <tr style="background-color:#f3f3f3;">
                 <td style="width: 144px;"><input type="checkbox" name="grejanje" >Grejanje</td>
                 <td style="width: 144px;"><input type="checkbox" name="kablovska" >Kablovska</td>
-                <td style="width: 144px;"><input type="checkbox" name="tv" >TV</td>
-                <td style="width: 144px;">"<input type="checkbox" name="klima" >Klima</td>
+                <td style="width: 144px;"><input type="checkbox" name="tv">TV</td>
+                <td style="width: 144px;"><input type="checkbox" name="klima">Klima</td>
                 </tr>    
                 <tr>
                 <td><input type="checkbox" name="internet" >Internet</td>
-                <td><input type="checkbox" name="telefon" >Telefon</td>
+                <td><input type="checkbox" name="ima_telefon" >Telefon</td>
                 <td><input type="checkbox" name="frizider" >Frižider</td>
                 <td><input type="checkbox" name="sporet" >Šporet</td>                
                 </tr>
                 <tr style="background-color:#f3f3f3;">
                 <td><input type="checkbox" name="vesmasina" >Veš mašina</td>
-                <td ><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</td>
-                <td><input type="checkbox" name="terasa" >Terasa</td>
+                <td><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</td>
+                <td><input type="checkbox" name="plakari" >Plakari</td>
                 <td><input type="checkbox" name="lift" >Lift</td>                
                 </tr>
                 <tr>
@@ -218,75 +217,62 @@ $(document).ready(function(){
                 </tr>
                 <tr style="background-color:#f3f3f3;">
                 <td><input type="checkbox" name="potkrovlje" >Potkrovlje</td>
-                <td><input type="checkbox" name="penthaus" >Penthaus</td>   
+                <td><input type="checkbox" name="terasa" >Terasa</td> 
                 <td><input type="checkbox" name="novogradnja" >Novogradnja</td>
                 <td><input type="checkbox" name="renovirano" >Renovirano</td>                
                 </tr>
                 <tr>
-                <td><input type="checkbox" name="lux" >Lux</td>                      
-                </tr>
-                <tr style="background-color:#f3f3f3;">
-
-              
+                <td><input type="checkbox" name="lux" >Lux</td>   
+                <td><input type="checkbox" name="penthaus" >Penthaus</td>
+                <td><input type="checkbox" name="salonski" >Salonski</td>
+                <td><input type="checkbox" name="lodja" >Lođa</td>
                 </tr>
             </table>
                     </div>
-                    <table>
+                    <div id="pos2"><table>
                         <tr><th>Dodatne informacije (napomene)</th><tr>
-                    <tr><td><textarea style="resize: none;" rows="4" cols="42" name="opis"></textarea>
+                    <tr><td><textarea style="resize: none;" name="opis"></textarea>
                     </td></tr>
                     </table>
+                    </div>
                     <div class="skriveni">
-                        
                         <table>
                             <tr>
                                 <td>
                             <table>
                             <tr>
                             <th>Slika 4:</th>
-                            <td><input type="file" name="slika4" /></td>
+                            <td><input type="file" name="slika4" class="sforma_input"/></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </td>
                             <th>Slika 7:</th>
-                            <td><input type="file" name="slika7" /></td>                            
+                            <td><input type="file" name="slika7" class="sforma_input"/></td>                            
                             </tr>
                             <tr>
                             <th>Slika 5:</th>
-                            <td><input type="file" name="slika5" /></td>
+                            <td><input type="file" name="slika5" class="sforma_input"/></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </td>
                             <th>Slika 8:</th>
-                            <td><input type="file" name="slika8" /></td>                            
+                            <td><input type="file" name="slika8" class="sforma_input"/></td>                            
                             </tr>                
                             <tr>
                             <th>Slika 6:</th>
-                            <td><input type="file" name="slika6" /></td>
+                            <td><input type="file" name="slika6" class="sforma_input"/></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </td>
                             <th>Slika 9:</th>
-                            <td><input type="file" name="slika9" /></td>                            
+                            <td><input type="file" name="slika9" class="sforma_input"/></td>                            
                             </tr>
                             </table>
                                 </td>
                             </tr>
                         </table>
-                 </div>
-                </td>
-                </tr>
-                           <tr>
-                                <td></td>
-                                 <td></td>   
-                                  <td><div class="dugmad">
-                                        <input type="submit" value="Pošalji" class="button" name="posalji_stan"  />
-                                        <input type="reset" value="Obriši" class="button" /></div>
-                                </td>
-                            </tr>
-                </table>
-                
-    </form>
-                                       
-                    
-                    
+                 </div> 
+                                <div class="dugmad">
+                                        <input type="submit" value="Pošalji" class="sforma_button" name="ponudi_stan" id="ponudi_stan" />
+                                        <input type="reset" value="Obriši" class="sforma_button" /></div>
+                </form>    
                 </div>
      </article>    
 
@@ -299,3 +285,47 @@ $(document).ready(function(){
       
 </body>
 </html>
+<?php
+
+if (isset ($_POST['ponudi_stan'])){
+	
+    $vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
+    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
+    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
+    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
+    $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
+    $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+    
+    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
+    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
+    $tv = isset($_POST['tv']) ? '1' : '0';
+    $klima = isset($_POST['klima']) ? '1' : '0';
+    $internet = isset($_POST['internet']) ? '1' : '0';
+    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
+    $frizider = isset($_POST['frizider']) ? '1' : '0';
+    $sporet = isset($_POST['sporet']) ? '1' : '0';
+    $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
+    $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
+    $plakari = isset($_POST['plakari']) ? '1' : '0';
+    $lift = isset($_POST['lift']) ? '1' : '0';
+    $bazen = isset($_POST['bazen']) ? '1' : '0';
+    $garaza = isset($_POST['garaza']) ? '1' : '0';
+    $parking = isset($_POST['parking']) ? '1' : '0';
+    $dvoriste = isset($_POST['dvoriste']) ? '1' : '0';
+    $potkrovlje = isset($_POST['potkrovlje']) ? '1' : '0';
+    $terasa = isset($_POST['terasa']) ? '1' : '0';
+    $novogradnja = isset($_POST['novogradnja']) ? '1' : '0';
+    $renovirano = isset($_POST['renovirano']) ? '1' : '0';
+    $lux = isset($_POST['lux']) ? '1' : '0';
+    $penthaus = isset($_POST['penthaus']) ? '1' : '0';
+    $salonski = isset($_POST['salonski']) ? '1' : '0';
+    $lodja = isset($_POST['lodja']) ? '1' : '0';
+    
+    dodajPonudu($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis, $grejanje, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+    
+    //var_dump($grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
+    //echo $vlasnik . '///' . $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
+}
+?>

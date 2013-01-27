@@ -1,7 +1,6 @@
 <?php
 
-include_once '../data_base_access/stanoviDA.php';
-include_once '../data_base_access/dodatniTagoviDA.php';
+include_once '../data_base_access/ponudeDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -10,9 +9,7 @@ if($_SESSION['uloga'] != 1)
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
-	$stan = prikaziStan($id);
-	$tagovi = ispisiDodatneTagove($id);
-	
+	$stan = prikaziPonudu($id);
 } 
                      
 ?>
@@ -283,7 +280,7 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
                 <div class="select_sub show">
 			<ul class="sub">
@@ -298,12 +295,12 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="spisak_ponuda.php"><b>Ponude</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="current"><li><a href="spisak_ponuda.php"><b>Ponude</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>                  
+		</ul>                
                 
 		<div class="nav-divider">&nbsp;</div>
 
@@ -311,9 +308,10 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li><a href="podsetnik.php">Spisak poruka</a></li>
-				<li class="sub_show"><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
 				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
+				
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -322,7 +320,7 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -362,7 +360,7 @@ $(document).pngFix( );
 		<h1>Izmeni Podatke</h1>
 	</div>
 	<!-- end page-heading -->
-        
+        <form id="izmeni_ponudu" action="ponuda_update.php" method="post">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -410,22 +408,29 @@ $(document).pngFix( );
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
+			<th valign="top">Id:</th>
+			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo $stan[0];?></td>
+			<td>
+			
+			</td>
+		</tr>
+		<tr>
 			<th valign="top">Vlasnik:</th>
-			<td><?php echo $stan['vlasnik'];?></td>
+			<td><input type="text" class="inp-form" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
 			<td>
 			
 			</td>
 		</tr>
 		<tr>
 			<th valign="top">Ulica i broj:</th>
-			<td><?php echo $stan['ulica_i_broj'];?></td>
+			<td><input type="text" class="inp-form" name="adresa" value="<?php echo $stan['ulica_i_broj'];?>"/></td>
 			<td>
 			
 			</td>
 		</tr>
         <tr>
 			<th valign="top">Sprat:</th>
-			<td><?php echo $stan['sprat'];?></td>
+			<td><input type="text" class="inp-form" name="sprat" value="<?php echo $stan['sprat'];?>"/></td>
 			<td></td>
 		</tr>
 		<tr>
@@ -438,23 +443,17 @@ $(document).pngFix( );
 		</tr>
 		<tr>
 			<th valign="top">Telefon:</th>
-			<td><?php echo $stan['telefon'];?></td>
+			<td><input type="text" class="inp-form" name="telefon" value="<?php echo $stan['telefon'];?>"/></td>
 			<td></td>
 		</tr>
 		<tr>
 			<th valign="top">Cena:</th>
-			<td><?php echo $stan['cena'];?></td>
+			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
 			<td></td>
 		</tr>
                 <tr>
 			<th valign="top">Kvadratura:</th>
-			<td><?php echo $stan['kvadratura'];?></td>
-			<td></td>
-		</tr>
-		</tr>
-                <tr>
-			<th valign="top">Broj soba:</th>
-			<td><?php echo $stan['broj_soba'];?></td>
+			<td><input type="text" class="inp-form" name="kvadratura" value="<?php echo $stan['kvadratura'];?>"/></td>
 			<td></td>
 		</tr>
 		<!--<tr>
@@ -539,14 +538,39 @@ $(document).pngFix( );
 	</tr>-->
 	<tr>
 		<th valign="top">Opis:</th>
-		<td><?php echo $stan['opis'];?></td>
+		<td><textarea rows="" cols="" class="form-textarea" name="opis"><?php echo $stan['opis'];?></textarea></td>
 		<td></td>
 	</tr>
         
-	
+	<tr>
+	<th>Image 1:</th>
+	<td><input type="file" class="file_1" name="slika1" /></td>
+	<td>
+	<div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div>
+	</td>
+	</tr>
+	<tr>
+	<th>Image 2:</th>
+	<td>  <input type="file" class="file_1" name="slika2" /></td>
+	<td><div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div></td>
+	</tr>
+	<tr>
+	<th>Image 3:</th>
+	<td><input type="file" class="file_1" name="slika3" /></td>
+	<td><div class="bubble-left"></div>
+	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
+	<div class="bubble-right"></div></td>
+	</tr>
+	<tr>
 		<th>&nbsp;</th>
 		<td valign="top">
-          
+                        <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
+                        <input type="submit" value="Izmeni" class="form-submit" name="izmeni_ponudu" id="izmeni_ponudu" />
+			<input type="reset" value="reset" class="form-reset" />
 		</td>
 		<td></td>
 	</tr>
@@ -559,13 +583,9 @@ $(document).pngFix( );
 	<div id="related-activities">
 
 		<!--  start related-act-top -->
-		
-		<div id="step-holder">
-			<div class="step-no"></div>
-			<div class="step-dark-left"><a href="">Dodatni tagovi</a></div>
-
+		<div id="related-act-top">
+		<img src="images/forms/header_related_act.gif" width="271" height="43" alt="" />
 		</div>
-		
 		<!-- end related-act-top -->
 
 		<!--  start related-act-bottom -->
@@ -579,34 +599,172 @@ $(document).pngFix( );
                                     <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 									
                                         <tr>
-                                                
-                                                <td><input  type="checkbox" name="grejanje" <?php if($tagovi['grejanje']){ echo ' checked';}?>/>Grejanje</td>
-                                                <td></td>
-                                        </tr>
-										<tr>
-                                                
-                                                <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
-                                                <td></td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_grejanje']) { echo "<input type='checkbox' name='grejanje' checked>Grejanje"; }
+                                            else { echo "<input type='checkbox' name='grejanje'>Grejanje"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_kablovska']) { echo "<input type='checkbox' name='kablovska' checked>Kablovska"; }
+                                            else { echo "<input type='checkbox' name='kablovska'>Kablovska"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_tv']) { echo "<input type='checkbox' name='tv' checked>TV"; }
+                                            else { echo "<input type='checkbox' name='tv'>TV"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_klima']) { echo "<input type='checkbox' name='klima' checked>Klima"; }
+                                            else { echo "<input type='checkbox' name='klima'>Klima"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_internet']) { echo "<input type='checkbox' name='internet' checked>Internet"; }
+                                            else { echo "<input type='checkbox' name='internet'>Internet"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_telefon']) { echo "<input type='checkbox' name='ima_telefon' checked>Telefon"; }
+                                            else { echo "<input type='checkbox' name='ima_telefon'>Telefon"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                         <td>
+                                            <?php
+                                            if ($stan['t_frizider']) { echo "<input type='checkbox' name='frizider' checked>Frižider"; }
+                                            else { echo "<input type='checkbox' name='frizider'>Frižider"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_sporet']) { echo "<input type='checkbox' name='sporet' checked>Šporet"; }
+                                            else { echo "<input type='checkbox' name='sporet'>Šporet"; }
+                                            ?>
+                                        </td>            
                                         </tr>
                                         <tr>
-                                                
-                                                <td><input  type="checkbox" name="tv" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
-                                                <td></td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_vesmasina']) { echo "<input type='checkbox' name='vesmasina' checked>Veš mašina"; }
+                                            else { echo "<input type='checkbox' name='vesmasina'>Veš mašina"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_kuhinjskielementi']) { echo "<input type='checkbox' name='kuhinjskielementi' checked>Kuhinjski elementi"; }
+                                            else { echo "<input type='checkbox' name='kuhinjskielementi'>Kuhinjski elementi"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_plakari']) { echo "<input type='checkbox' name='plakari' checked>Plakari"; }
+                                            else { echo "<input type='checkbox' name='plakari'>Plakari"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_lift']) { echo "<input type='checkbox' name='lift' checked>Lift"; }
+                                            else { echo "<input type='checkbox' name='lift'>Lift"; }
+                                            ?>
+                                        </td>
                                         </tr>
-										<tr>
-                                                
-                                                <td><input  type="checkbox" name="klima" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
-                                                <td></td>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_bazen']) { echo "<input type='checkbox' name='bazen' checked>Bazen"; }
+                                            else { echo "<input type='checkbox' name='bazen'>Bazen"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_garaza']) { echo "<input type='checkbox' name='garaza' checked>Garaža"; }
+                                            else { echo "<input type='checkbox' name='garaza'>Garaža"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_parking']) { echo "<input type='checkbox' name='parking' checked>Parking"; }
+                                            else { echo "<input type='checkbox' name='parking'>Parking"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_dvoriste']) { echo "<input type='checkbox' name='dvoriste' checked>Dvorište"; }
+                                            else { echo "<input type='checkbox' name='dvoriste'>Dvoritšte"; }
+                                            ?>
+                                        </td>               
                                         </tr>
-										<tr>
-                                                
-                                                <td><input  type="checkbox" name="internet" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
-                                                <td></td>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_potkrovlje']) { echo "<input type='checkbox' name='potkrovlje' checked>Potkrovlje"; }
+                                            else { echo "<input type='checkbox' name='potkrovlje'>Potkrovlje"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_terasa']) { echo "<input type='checkbox' name='terasa' checked>Terasa"; }
+                                            else { echo "<input type='checkbox' name='terasa'>Terasa"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_novogradnja']) { echo "<input type='checkbox' name='novogradnja' checked>Novogradnja"; }
+                                            else { echo "<input type='checkbox' name='novogradnja'>Novgradnja"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_renovirano']) { echo "<input type='checkbox' name='renovirano' checked>Renovirano"; }
+                                            else { echo "<input type='checkbox' name='renovirano'>Renovirano"; }
+                                            ?>
+                                        </td>               
                                         </tr>
-										<tr>
-                                                
-                                                <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
-                                                <td></td>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_lux']) { echo "<input type='checkbox' name='lux' checked>Lux"; }
+                                            else { echo "<input type='checkbox' name='lux'>Lux"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_penthaus']) { echo "<input type='checkbox' name='penthaus' checked>Penthaus"; }
+                                            else { echo "<input type='checkbox' name='penthaus'>Pentahus"; }
+                                            ?>
+                                        </td>
+                                        </tr>    
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_salonski']) { echo "<input type='checkbox' name='salonski' checked>Salonski"; }
+                                            else { echo "<input type='checkbox' name='salonski'>Salonski"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_lodja']) { echo "<input type='checkbox' name='lodja' checked>Lođa"; }
+                                            else { echo "<input type='checkbox' name='lodja'>Lođa"; }
+                                            ?>
+                                        </td>
                                         </tr>
                                     </table>
 				</div>
@@ -677,7 +835,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
-        
+        </form>
 	<div class="clear">&nbsp;</div>
 
 </div>
