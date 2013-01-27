@@ -1,5 +1,6 @@
 ﻿######################
 ####  V. 1.0.1
+####  U. Izzy
 ######################
 
 CREATE TABLE IF NOT EXISTS `slike` (
@@ -14,6 +15,7 @@ CREATE TABLE IF NOT EXISTS `slike` (
 
 ######################
 ####  V. 1.0.2
+####  U. Izzy
 ######################
 
 ALTER TABLE podsetnik ADD datum_podsecanja DATE;
