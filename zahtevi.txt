@@ -13,16 +13,16 @@ Front
 
 - konverter valute (verovatno vec ima gotov negde, unese se kurs, kolicina, i on sam sracuna sve, moze da ide u header)
 - header google translate (nakon sto sajt ode live)
-- umesto kontakt ide "Trazimo nekretninu za Vas", Kontakt ide u header (onaj koji je sklonjen)
-- Tagovi da se uzmu kao sto su na alfasistemnekretnine
+/delimicno odradjeno- umesto kontakt ide "Trazimo nekretninu za Vas", Kontakt ide u header (onaj koji je sklonjen)
+//odradjeno - Tagovi da se uzmu kao sto su na alfasistemnekretnine
 - Vise slika da moze da se doda (opet isti princip kao i u Admin panelu)
-- "Posaljite nekretninu" rename na "Ponudite nekretninu"
-- Na naslovnoj sa leve strane da bude Katalog ponude kao na alfasistemnekretnine (umesto News)
+//odradjeno- "Posaljite nekretninu" rename na "Ponudite nekretninu"
+//odradjeno - Na naslovnoj sa leve strane da bude Katalog ponude kao na alfasistemnekretnine (umesto News)
 - Pretraga po id-ju stana
 - Muzika kada se udje na sajt i prilikom prelaska preko menija (ako moze, nesto poput -> http://www.templatehelp.com/preset/pr_preview.php?i=23421&pr_code=xmkGYk3825jSH8wPA8uYZ75uS5xRRl)
 - Na naslovnoj umesto Welcome -> Hot offer, da oni mogu da promene
-- Broj i mail iz gornjeg desnog ugla da se skloni
+//odradjeno - Broj i mail iz gornjeg desnog ugla da se skloni
 - Datum i vreme negde u header
-- Posao kod nas u footer (tu bi oni postavljali ponude za poslove)
+//odradjeno  - Posao kod nas u footer (tu bi oni postavljali ponude za poslove)
 - Naslovna (ispod glavne slike) da bude 10-ak najnovijih stanova  
-- eurorent-belgrade.rs -> Prodaja (hoce da moze da se odabere preko slike kategorija)
+//odradjeno - eurorent-belgrade.rs -> Prodaja (hoce da moze da se odabere preko slike kategorija)
