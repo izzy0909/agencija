@@ -1,11 +1,14 @@
 ﻿<?php
-session_start();
+include_once '../data_base_access/podsetnikDA.php';
 
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
+}else{
+	$user = $_SESSION['username'];
+    $broj_poruka = prebrojDanasnjePorukeZaKorisnika($user);
+	
 }
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -296,6 +299,7 @@ $(document).pngFix( );
 			<ul class="sub">
 				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
 				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
+				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 				
 			</ul>
 		</div>
@@ -362,8 +366,18 @@ $(document).pngFix( );
 		
 			<!--  start table-content  -->
 			<div id="table-content">
-			<h2>Sub Heading</h2>
-			<h3>Local Heading</h3>
+			
+			<h2>
+			<?php 
+				if($broj_poruka['ukupno'] >= 1)
+				{
+					echo '<a href="danasnji_podsetnici.php">Danasnji podsetnici: <span style="color:red;">' . $broj_poruka['ukupno'] . ' </span>!!!!!!</a>';
+				}else{
+					echo 'Nemate novih poruka za danas';
+				}
+
+			?></h2>
+			<h3><!--Local Heading--></h3>
 			
 			
 			</div>

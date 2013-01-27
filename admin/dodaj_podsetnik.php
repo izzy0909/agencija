@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 include_once '../data_base_access/userDA.php';
 include_once '../data_base_access/podsetnikDA.php';
@@ -300,6 +300,7 @@ $(document).pngFix( );
 			<ul class="sub">
 				<li><a href="podsetnik.php">Spisak poruka</a></li>
 				<li class="sub_show"><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -418,9 +419,70 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="poruka"></textarea></td>
 		<td></td>
 	</tr>
-        
-	
 	<tr>
+		<th valign="top">Datum podsećanja:</th>
+			<td>
+				<select name="dan" id="d" class="styledselect-day">
+					<option value="">dd</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select name="mesec" id="m" class="styledselect-month">
+						<option value="">mmm</option>
+						<option value="1">Jan</option>
+						<option value="2">Feb</option>
+						<option value="3">Mar</option>
+						<option value="4">Apr</option>
+						<option value="5">May</option>
+						<option value="6">Jun</option>
+						<option value="7">Jul</option>
+						<option value="8">Aug</option>
+						<option value="9">Sep</option>
+						<option value="10">Oct</option>
+						<option value="11">Nov</option>
+						<option value="12">Dec</option>
+				</select>
+				<select name="godina" id="y"  class="styledselect-year">
+						<option value="">yyyy</option>
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+				</select>
+				<a href=""  id="date-pick"><img src="images/forms/icon_calendar.jpg"   alt="" /></a></td>
+	</tr>
+    
 		<th>&nbsp;</th>
 		<td valign="top">
                         <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
@@ -506,8 +568,12 @@ if (isset ($_POST['dodaj_podsetnik'])){
 	
 	$korisnik_id = isset($_POST['korisnik']) ? $_POST['korisnik'] : null;
     $poruka = isset($_POST['poruka']) ? $_POST['poruka'] : null;
+	$dan = isset($_POST['dan']) ? $_POST['dan'] : null;
+	$mesec = isset($_POST['mesec']) ? $_POST['mesec'] : null;
+	$godina = isset($_POST['godina']) ? $_POST['godina'] : null;
     
-
-    dodajPodsetnik($korisnik_id, $poruka);
+	$datum_podsecanja = $godina . '-' . $mesec . '-' . $dan;
+	
+    dodajPodsetnik($korisnik_id, $poruka, $datum_podsecanja);
     
 }

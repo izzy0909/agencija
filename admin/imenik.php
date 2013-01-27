@@ -288,6 +288,7 @@ $(document).pngFix( );
 			<ul class="sub">
 				<li><a href="podsetnik.php">Spisak poruka</a></li>
 				<li class="sub_show"><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->

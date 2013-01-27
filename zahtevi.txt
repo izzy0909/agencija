@@ -6,7 +6,7 @@ Admin
 //- na spisku stanova da se vidi cena, id
 - watermark za slike
 //odradjeno - editovanje stanova
-- da se vide nove poruke
+//odradjeno- da se vide nove poruke
 - ispis slika i izbor naslovne slike
 
 Front

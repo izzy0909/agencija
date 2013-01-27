@@ -7,7 +7,7 @@ if($_SESSION['uloga'] != 1)
 	
 }
 		$user = $_SESSION['username'];
-        $poruke = prikaziPorukeZaOdredjenogKorisnika($user);               
+        $poruke = prikaziPorukeZaDanasnjiDatum($user);               
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -296,9 +296,9 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>	
+				<li><a href="podsetnik.php">Spisak poruka</a></li>	
 				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
+				<li class="sub_show"><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 			
 			</ul>
 		</div>
@@ -376,7 +376,7 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="">Zavrseno</a></th>
 					<th class="table-header-repeat line-left"><a href="">Datum dodavanja</a></th>
 					<th class="table-header-repeat line-left"><a href="">Datum podsecanja</a></th>
-					<th class="table-header-repeat line-left"><a href="">Opcije</a></th>
+					
 				</tr>
 				<?php
 					if(isset($poruke)){
@@ -401,13 +401,7 @@ $(document).pngFix( );
 					</td>
 					<td><?php echo $poruka['datum_dodavanja']; ?></td>
 					<td><?php echo $poruka['datum_podsecanja']; ?></td>
-					<td class="options-width">
-					<a href="" title="Izmeni" class="icon-1 info-tooltip"></a>
-					<a href="izbrisi_podsetnik.php?id=<?php echo $poruka[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
-					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
-					</td>-->
+					
 				</tr>
 								
 				<?php

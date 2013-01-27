@@ -297,16 +297,23 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="send_mail.php"><b>Send Mails</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+		<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
+				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
+				
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="send_mail_using_elasticemail.php"><b>Elastic</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->

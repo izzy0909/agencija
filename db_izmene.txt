@@ -11,3 +11,10 @@ CREATE TABLE IF NOT EXISTS `slike` (
   `vrsta` enum('mala','velika') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+
+######################
+####  V. 1.0.2
+######################
+
+ALTER TABLE podsetnik ADD datum_podsecanja DATE;
+ALTER TABLE `podsetnik` CHANGE `datum` `datum_dodavanja` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
