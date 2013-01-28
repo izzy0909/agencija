@@ -1200,7 +1200,7 @@ margin:2px 0 20px 10px;
     float:left;
     font-size:14px;
     border: solid 1px #c0c0c0;
-    width: 560px;
+    width: 570px;
     height: 116px;
     margin: 2px 0 20px 10px;
 }
@@ -1226,22 +1226,6 @@ margin:2px 0 20px 10px;
 #pos2{
     float:left;
     margin-left:40px;
-}
-
-.skriveni{
-    float:left;
-    margin-left:40px;
-    margin-top:3px;
-}
-.showhide {
-    display:none;
-    float:right;
-    color: #555555;
-}
-
-.showhide:hover{
-    text-decoration: none;
-    color:#e2a616;
 }
 
 #opis{

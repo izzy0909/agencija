@@ -28,18 +28,72 @@ include_once '../data_base_access/stanoviDA.php';
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>  
-    <script type="text/javascript">
-$(document).ready(function(){
- 
-        $(".skriveni").hide();
-        $(".showhide").show();
- 
-    $('.showhide').click(function(){
-    $(".skriveni").slideToggle();
-    });
- 
+<script type="text/javascript"> 
+$(document).ready(function() { 
+//elements
+var progressbox 		= $('#progressbox'); //progress bar wrapper
+var progressbar 		= $('#progressbar'); //progress bar element
+var statustxt 			= $('#statustxt'); //status text element
+var submitbutton 		= $("#SubmitButton"); //submit button
+var myform 				= $("#UploadForm"); //upload form
+var output 				= $("#output"); //ajax result output element
+var completed 			= '0%'; //initial progressbar value
+var FileInputsHolder 	= $('#AddFileInputBox'); //Element where additional file inputs are appended
+var MaxFileInputs		= 10; //Maximum number of file input boxs
+
+// adding and removing file input box
+var i = $('#AddFileInputBox div').size() + 1;
+$('#AddMoreFileBox').live('click', function() {
+		if(i < MaxFileInputs)
+		{
+			$('<span><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder);
+			i++;
+		}
+		return false;
 });
-    </script>
+$('#removeFileBox').live('click', function() { 
+		if( i > 1 ) {
+				$(this).parents('span').remove();i--;
+		}
+		return false;
+});
+
+$("#ShowForm").click(function () {
+  $("#uploaderform").slideToggle(); //Slide Toggle upload form on click
+});
+	
+$(myform).ajaxForm({
+	beforeSend: function() { //brfore sending form
+		submitbutton.attr('disabled', ''); // disable upload button
+		statustxt.empty();
+		progressbox.show(); //show progressbar
+		progressbar.width(completed); //initial value 0% of progressbar
+		statustxt.html(completed); //set status text
+		statustxt.css('color','#000'); //initial color of status text
+		
+	},
+	uploadProgress: function(event, position, total, percentComplete) { //on progress
+		progressbar.width(percentComplete + '%') //update progressbar percent complete
+		statustxt.html(percentComplete + '%'); //update status text
+		if(percentComplete>50)
+			{
+				statustxt.css('color','#fff'); //change status text to white after 50%
+			}else{
+				statustxt.css('color','#000');
+			}
+			
+		},
+	complete: function(response) { // on complete
+		output.html(response.responseText); //update element with received data
+		myform.resetForm();  // reset form
+		submitbutton.removeAttr('disabled'); //enable submit button
+		progressbox.hide(); // hide progressbar
+		$("#uploaderform").slideUp(); // hide form after upload
+	}
+});
+
+}); 
+</script>    
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -118,6 +172,23 @@ $(document).ready(function(){
                 <form id="ponudi_stan" action="slanje.php" method="post">
                 <div id="pos1">
 		<table>
+                    <tr>
+                        <th>Usluga:</th>
+                        <td style="width:155px; padding: 2px;">
+                            <label><input type="radio" style="margin:2px 3px 20px 10px;" name="kategorija" value="izdavanje" checked>Izdavanje</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" style="margin:2px 3px 20px 10px;" name="kategorija" value="prodaja">Prodaja</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Tip:</th>
+                        <td><select name="tip">
+                                <option value="stan">Stan</option>
+                                <option value="kuca">Kuća</option>
+                                <option value="poslovniprostor">Poslovni prostor</option>
+                                <option value="magacin">Magacin</option>
+                                <option value="lokal">Lokal</option>
+                            </select></td>
+                    </tr>
 		<tr>
 			<th>Vlasnik:</th>
 			<td><input type="text" name="vlasnik" class="sforma_input"></td>
@@ -160,29 +231,24 @@ $(document).ready(function(){
                 <th>Nameštenost</th>
                 <td>
                     <select name="namestenost">
-                        <option value="Namešten">Namešten</option>
-                        <option value="Nenamešten">Nenamešten</option>
+                        <option value="namesten">Namešten</option>
+                        <option value="nenamesten">Nenamešten</option>
                     </select>
                 </td>
                 </tr>
                 <tr>
-                <th>Slika 1:</th>
+                    
+                <th>Slike1:</th>
                 <td>
-                <input type="file" name="slika1" class="sforma_input"/>
+                <div id="AddFileInputBox" style="margin:2px 0 10px 10px; width:100px;"><input type="file"  name="file[]"/></div>
+                <div class="sep_s"></div>
                 </td>
                 </tr>
-                <tr>
-                <th>Slika 2:</th>
-                <td><input type="file" name="slika2" class="sforma_input"/></td>
-                </tr>                
-                <tr>
-                <th>Slika 3:</th>
-                <td><input type="file" name="slika3" class="sforma_input"/></td>
-                </tr>                
+                
                 <tr>
 		<th>&nbsp;</th>
-		<td>
-                <a class="showhide" href="#">Još slika</a>
+		<td><div style="float:right;">
+                <span class="small"><a href="#" id="AddMoreFileBox">Dodaj još</a></span></div>
 		</td>
                 </tr>                
                 </table>
@@ -235,40 +301,7 @@ $(document).ready(function(){
                     </td></tr>
                     </table>
                     </div>
-                    <div class="skriveni">
-                        <table>
-                            <tr>
-                                <td>
-                            <table>
-                            <tr>
-                            <th>Slika 4:</th>
-                            <td><input type="file" name="slika4" class="sforma_input"/></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </td>
-                            <th>Slika 7:</th>
-                            <td><input type="file" name="slika7" class="sforma_input"/></td>                            
-                            </tr>
-                            <tr>
-                            <th>Slika 5:</th>
-                            <td><input type="file" name="slika5" class="sforma_input"/></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </td>
-                            <th>Slika 8:</th>
-                            <td><input type="file" name="slika8" class="sforma_input"/></td>                            
-                            </tr>                
-                            <tr>
-                            <th>Slika 6:</th>
-                            <td><input type="file" name="slika6" class="sforma_input"/></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            </td>
-                            <th>Slika 9:</th>
-                            <td><input type="file" name="slika9" class="sforma_input"/></td>                            
-                            </tr>
-                            </table>
-                                </td>
-                            </tr>
-                        </table>
-                 </div> 
+
                                 <div class="dugmad">
                                         <input type="submit" value="Pošalji" class="sforma_button" name="ponudi_stan" id="ponudi_stan" />
                                         <input type="reset" value="Obriši" class="sforma_button" /></div>

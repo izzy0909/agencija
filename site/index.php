@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/demo.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>    
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -26,6 +27,14 @@
 </head>
 <body>
 <!--==============================header=================================-->
+<div style="display:none">
+    
+            <audio id="intro" autoplay>
+            <source src="audio/intro.mp3">
+            <source src="audio/intro.ogg">
+            </audio>    
+    
+</div>
     <header>
     	<div class="head-bg">
         <div class="main">
@@ -45,23 +54,12 @@
         <div class="head-box3">
         	<div class="main">
             	<nav>
-                <ul class="sf-menu">
+                <ul id="sndmenu" class="sf-menu">
                     <li><a class="active" href="index.php">Početna</a>
-                    	<ul>
-                            <li><a href="more.html">Homes for Sale</a></li>
-                            <li><a href="more.html">New Homes for Sale</a></li>
-                            <li><a href="more.html">Foreclosures</a></li>
-                            <li><a href="more.html">Rentals</a></li>
-                            <li><a class="last3" href="more.html">Properties</a>
-                            	<ul>
-                                    <li><a href="more.html">Bedrooms</a></li>
-                                    <li><a href="more.html">New Homes </a></li>
-                                    <li><a href="more.html">House Description</a></li>
-                                    <li><a href="more.html">Latest News</a></li>
-                                    <li><a class="last3" href="more.html">Our Contacts</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <audio style="display:none;" id="beep-two" preload="auto">
+                            <source src="audio/klik1.mp3">
+                            <source src="audio/klik1.ogg">
+                        </audio>
                     </li>
                     <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
                             <ul>
@@ -76,6 +74,23 @@
                     <li><a href="onama.php">O nama</a></li>
                     <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
+                    
+		<script>$("#sndmenu a")
+                        .each(function(i) {
+                          if (i != 0) { 
+                            $("#beep-two")
+                              .clone()
+                              .attr("id", "beep-two" + i)
+                              .appendTo($(this).parent()); 
+                          }
+                          $(this).data("beeper", i);
+                        })
+                        .mouseenter(function() {
+                          $("#beep-two" + $(this).data("beeper"))[0].play();
+                        });
+                      $("#beep-two").attr("id", "beep-two0");
+                  </script> 
+                
                 <div class="clear"></div>
             </nav>            
             </div>
@@ -183,7 +198,13 @@
                             <li><a href="izdavanje.php?kat=lokali">Lokali</a></li>
                             </ul>
                             <div class="clear"></div>
-                        <a class="button1" href="more.html">Read more</a>
+                            <br/>
+                            <div id="idpretraga">
+                            <input type="text" class="sforma_input" onfocus="if(this.value =='PRETRAGA PO ID-u') this.value=''" onblur="if(this.value=='') this.value='PRETRAGA PO ID-u'" value="PRETRAGA PO ID-u" name="idpretraga" />
+                            <a class="button1" href="#">Traži</a>
+                            </div>
+                            
+                            <div class="clear"></div>
                     </article>
                     <article class="grid_4">
                     	<h3>Welcome</h3>
