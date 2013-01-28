@@ -15,11 +15,11 @@ Front
 - header google translate (nakon sto sajt ode live)
 /delimicno odradjeno- umesto kontakt ide "Trazimo nekretninu za Vas", Kontakt ide u header (onaj koji je sklonjen)
 //odradjeno - Tagovi da se uzmu kao sto su na alfasistemnekretnine
-- Vise slika da moze da se doda (opet isti princip kao i u Admin panelu)
+//- Vise slika da moze da se doda (opet isti princip kao i u Admin panelu)
 //odradjeno- "Posaljite nekretninu" rename na "Ponudite nekretninu"
 //odradjeno - Na naslovnoj sa leve strane da bude Katalog ponude kao na alfasistemnekretnine (umesto News)
-- Pretraga po id-ju stana
-- Muzika kada se udje na sajt i prilikom prelaska preko menija (ako moze, nesto poput -> http://www.templatehelp.com/preset/pr_preview.php?i=23421&pr_code=xmkGYk3825jSH8wPA8uYZ75uS5xRRl)
+//- Pretraga po id-ju stana
+//- Muzika kada se udje na sajt i prilikom prelaska preko menija (ako moze, nesto poput -> http://www.templatehelp.com/preset/pr_preview.php?i=23421&pr_code=xmkGYk3825jSH8wPA8uYZ75uS5xRRl)
 - Na naslovnoj umesto Welcome -> Hot offer, da oni mogu da promene
 //odradjeno - Broj i mail iz gornjeg desnog ugla da se skloni
 - Datum i vreme negde u header
