@@ -102,8 +102,8 @@
         	<div class="wrapper">
             	<article class="grid_12">
                     <center>
-                    <a href="prodaja.php?kat=stanovi"><img src="images/ban-stanovi.jpg" alt="Prodaja stanova"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=kuce"><img src="images/ban-kuce.jpg" alt="Prodaja kuća"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=stanovi"><img src="images/ban-posprost.jpg" alt="Prodaja poslovnih prostora"></a><br/><br/>
-                    <a href="prodaja.php?kat=magacini"><img src="images/ban-magacini.jpg" alt="Prodaja magacina"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kat=lokali"><img src="images/ban-lokali.jpg" alt="Prodaja lokala"></a>
+                    <a href="prodaja.php?kategorija=stanovi"><img src="images/pro-stanovi.jpg" alt="Prodaja stanova"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorije=kuce"><img src="images/pro-kuce.jpg" alt="Prodaja kuća"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorija=stanovi"><img src="images/pro-posprost.jpg" alt="Prodaja poslovnih prostora"></a><br/><br/>
+                    <a href="prodaja.php?kategorija=magacini"><img src="images/pro-magacini.jpg" alt="Prodaja magacina"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorije=lokali"><img src="images/pro-lokali.jpg" alt="Prodaja lokala"></a>
                     </center>
                 </article>
             </div>
