@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Buying</title>
+  	<title>Izdavanje</title>
   	<meta charset="utf-8">
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
@@ -44,30 +44,51 @@
         <div class="head-box3">
         	<div class="main">
             	<nav>
-                <ul class="sf-menu">
+                <ul id="sndmenu" class="sf-menu">
                     <li><a href="index.php">Početna</a>
-                    	<ul>
-                            <li><a href="more.html">Homes for Sale</a></li>
-                            <li><a href="more.html">New Homes for Sale</a></li>
-                            <li><a href="more.html">Foreclosures</a></li>
-                            <li><a href="more.html">Rentals</a></li>
-                            <li><a class="last3" href="more.html">Properties</a>
-                            	<ul>
-                                    <li><a href="more.html">Bedrooms</a></li>
-                                    <li><a href="more.html">New Homes </a></li>
-                                    <li><a href="more.html">House Description</a></li>
-                                    <li><a href="more.html">Latest News</a></li>
-                                    <li><a class="last3" href="more.html">Our Contacts</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <audio style="display:none;" id="beep-two" preload="auto">
+                            <source src="audio/klik1.mp3">
+                            <source src="audio/klik1.ogg">
+                        </audio>
                     </li>
-                    <li><a class="active" href="izdavanje.php">Izdavanje</a></li>
-                    <li><a href="prodaja.php">Prodaja</a></li>
+                    <li><a class="active" href="izdavanje.php">Izdavanje</a>
+                         <ul>
+                             <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>                                
+
+                            </ul></li>
+                    <li><a href="prodaja.php">Prodaja</a>
+                            <ul>
+                            <li><a href="prodaja.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="prodaja.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="prodaja.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
+                            </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
                     <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
+                    
+		<script>$("#sndmenu a")
+                        .each(function(i) {
+                          if (i != 0) { 
+                            $("#beep-two")
+                              .clone()
+                              .attr("id", "beep-two" + i)
+                              .appendTo($(this).parent()); 
+                          }
+                          $(this).data("beeper", i);
+                        })
+                        .mouseenter(function() {
+                          $("#beep-two" + $(this).data("beeper"))[0].play();
+                        });
+                      $("#beep-two").attr("id", "beep-two0");
+                  </script>                     
+                    
                 <div class="clear"></div>
             </nav>            
             </div>
@@ -79,36 +100,15 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-                   <article class="grid_4">
-                	<h3 class="p19">Pretraga nekretnina</h3>
-                    <div class="page3-box1">
-                    <form id="form3" class="jqtransform" method="get">
-                              	<div class="inner7 p20">
-                                <span class="text2">Enter a city</span>
-                                	 <select name="adult1"><option></option></select>
-                                 <span class="text2">Min. price</span>
-                                	 <select name="adult2"><option></option></select>
-                                 <span class="text2">Beds</span>
-                                	 <select name="adult3"><option></option></select>  
-                                </div>
-                                <div class="inner7">
-                                <span class="text2">State / prov.</span>
-                                	 <select name="adult4"><option></option></select>
-                                 <span class="text2">Max. price</span>
-                                	 <select name="adult5"><option></option></select>
-                                 <span class="text2">Baths</span>
-                                	 <select name="adult6"><option></option></select>  
-                                </div>
-                                  <div class="clear"></div>  
-                                  <a class="link8" href="more.html">More search options</a>            				
-                                <a onClick="document.getElementById('form3').submit()" class="button1 fright p12">Search</a>
-                                <div class="clear"></div>
-                            </form>
-                            </div>
-                </article>
-            	<article class="grid_8">
+                   <article class="grid_12">
+                      <?php 
+                        if (!isset($_GET['kategorija'])){
+                            echo '<center><a href="izdavanje.php?kategorija=stanovi"><img src="images/izd-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?kategorija=kuce"><img src="images/izd-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?kategorija=poslovni_prostori"><img src="images/izd-poslovniprostori.jpg" alt="Poslovni prostori" /></a>';
+                            echo '<br /><br /><a href="izdavanje.php?kategorija=magacini"><img src="images/izd-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?kategorija=lokali"><img src="images/izd-lokali.jpg" alt="Lokali" /></a></center>';
+                        }
+                        else { echo '<h3 class="p19">Pretraga nekretnina</h3>';}
+                      ?>
                 	
-                            <h3 class="p14">Prostor za ispis</h3>
 
                 </article>
             </div>

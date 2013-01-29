@@ -44,30 +44,51 @@
         <div class="head-box3">
         	<div class="main">
             	<nav>
-                <ul class="sf-menu">
-                    <li><a href="index.php">Početnae</a>
-                    	<ul>
-                            <li><a href="more.html">Homes for Sale</a></li>
-                            <li><a href="more.html">New Homes for Sale</a></li>
-                            <li><a href="more.html">Foreclosures</a></li>
-                            <li><a href="more.html">Rentals</a></li>
-                            <li><a class="last3" href="more.html">Properties</a>
-                            	<ul>
-                                    <li><a href="more.html">Bedrooms</a></li>
-                                    <li><a href="more.html">New Homes </a></li>
-                                    <li><a href="more.html">House Description</a></li>
-                                    <li><a href="more.html">Latest News</a></li>
-                                    <li><a class="last3" href="more.html">Our Contacts</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                <ul id="sndmenu" class="sf-menu">
+                    <li><a href="index.php">Početna</a>
+                      <audio style="display:none;" id="beep-two" preload="auto">
+                            <source src="audio/klik1.mp3">
+                            <source src="audio/klik1.ogg">
+                        </audio>
                     </li>
-                    <li><a href="izdavanje.php">Izdavanje</a></li>
-                    <li><a href="prodaja.php">Prodaja</a></li>
-                    <li><a href="slanje.php">Pošaljite Nekretninu</a></li>
+                    <li><a href="izdavanje.php">Izdavanje</a>
+                         <ul>
+                             <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>                                
+
+                            </ul></li>
+                    <li><a href="prodaja.php">Prodaja</a>
+                            <ul>
+                            <li><a href="prodaja.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="prodaja.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="prodaja.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
+                            </ul></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
                     <li><a class="active" href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
                 </ul>
+                    
+		<script>$("#sndmenu a")
+                        .each(function(i) {
+                          if (i != 0) { 
+                            $("#beep-two")
+                              .clone()
+                              .attr("id", "beep-two" + i)
+                              .appendTo($(this).parent()); 
+                          }
+                          $(this).data("beeper", i);
+                        })
+                        .mouseenter(function() {
+                          $("#beep-two" + $(this).data("beeper"))[0].play();
+                        });
+                      $("#beep-two").attr("id", "beep-two0");
+                  </script>                       
+                    
                 <div class="clear"></div>
             </nav>            
             </div>

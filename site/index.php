@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/demo.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>    
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -63,13 +62,21 @@
                     </li>
                     <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
                             <ul>
-                            <li><a href="izdavanje.php?kat=stanovi">Stanovi</a></li>
-                            <li><a href="izdavanje.php?kat=kuce">Kuće</a></li>
-                            <li><a href="izdavanje.php?kat=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?kat=magacini">Magacini</a></li>
-                            <li><a href="izdavanje.php?kat=lokali">Lokali</a></li>
+                             <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>                                
+
                             </ul></li>
-                    <li><a href="prodaja.php">Prodaja</a></li>
+                    <li><a href="prodaja.php">Prodaja</a>
+                            <ul>
+                            <li><a href="prodaja.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="prodaja.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="prodaja.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
+                            </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
                     <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
@@ -99,11 +106,11 @@
             <div class="slider">
             <div class="banner-bg"></div>
                 <ul class="items">
-                    <li><img src="images/slide-1.jpg" alt="" /><div class="banner"><span>We can satisfy any taste</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-2.jpg" alt="" /><div class="banner"><span>Your perfect partner for your life’s bloom</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-3.jpg" alt="" /><div class="banner"><span>You are almost at home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-4.jpg" alt="" /><div class="banner"><span>Attractive home purchase offers</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-5.jpg" alt="" /><div class="banner"><span>Every day we help people buy a home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-1.jpg" alt="NE RADI SLIKA" /><div class="banner"><span>We can satisfy any taste</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-2.jpg" alt="NE RADI" /><div class="banner"><span>Your perfect partner for your life’s bloom</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-3.jpg" alt="NE RADI" /><div class="banner"><span>You are almost at home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-4.jpg" alt="NE RADI" /><div class="banner"><span>Attractive home purchase offers</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-5.jpg" alt="NE RADI" /><div class="banner"><span>Every day we help people buy a home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
                 </ul>
             </div>
             </div>
@@ -191,11 +198,11 @@
                 	<article class="grid_4">
                     	<h3 class="p7">Katalog ponude</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?kat=stanovi">Stanovi</a></li>
-                            <li><a href="izdavanje.php?kat=kuce">Kuće</a></li>
-                            <li><a href="izdavanje.php?kat=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?kat=magacini">Magacini</a></li>
-                            <li><a href="izdavanje.php?kat=lokali">Lokali</a></li>
+                            <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
+                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
+                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
+                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>

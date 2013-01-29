@@ -38,12 +38,12 @@
                 </article>
                 <article class="grid_4">
                 	<div class="foot-page2">
-                    <iframe src="http://www.kursna-lista.info/resources/kursna-lista.php?format=3&datum=1css=http://localhost/agencija/site/css/kl.css" width="260px" height="130px" frameborder="0" scrolling="no"></iframe>
+                    <iframe src="http://www.kursna-lista.info/resources/kursna-lista.php?format=3&datum=1css=http://localhost/agencija/site/css/kl.css" width="260" height="130" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </article>
             </div>
             <div class="foot-page1">
-            	<span>Real<strong>Estate</strong></span> &copy; 2012&nbsp; |&nbsp;  <a class="link4" href="index-6.html">Privacy Policy</a>
+            	<span>Jovanović<strong>Nekretnine</strong></span> &copy; 2013&nbsp; |&nbsp;  Coding by <a class="link4" href="#">Web Refresh</a>
                 <div class="clear"></div>
                  <!-- {%FOOTER_LINK} -->
             </div>       
