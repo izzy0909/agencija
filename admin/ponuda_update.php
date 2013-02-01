@@ -11,14 +11,14 @@ if (isset ($_POST['izmeni_ponudu'])){
 	
         $id = isset($_POST['id']) ? $_POST['id'] : null;
         $vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
-        $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
-        $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+        $ulica = isset($_POST['ulica']) ? $_POST['ulica'] : null;
+        $br = isset($_POST['br']) ? $_POST['br'] : null;
         $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+        $email = isset($_POST['email']) ? $_POST['email'] : null;
         $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
         $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
         $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
 
-        $grejanje = isset($_POST['grejanje']) ? '1' : '0';
         $kablovska = isset($_POST['kablovska']) ? '1' : '0';
         $tv = isset($_POST['tv']) ? '1' : '0';
         $klima = isset($_POST['klima']) ? '1' : '0';
@@ -29,6 +29,7 @@ if (isset ($_POST['izmeni_ponudu'])){
         $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
         $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
         $plakari = isset($_POST['plakari']) ? '1' : '0';
+        $interfon = isset($_POST['interfon']) ? '1' : '0';
         $lift = isset($_POST['lift']) ? '1' : '0';
         $bazen = isset($_POST['bazen']) ? '1' : '0';
         $garaza = isset($_POST['garaza']) ? '1' : '0';
@@ -44,7 +45,7 @@ if (isset ($_POST['izmeni_ponudu'])){
         $lodja = isset($_POST['lodja']) ? '1' : '0';
 
         
-	izmeniPonudu($id, $vlasnik, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+	izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvadratura, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
 	}
 	header("Location: izmeni_ponudu.php?id=$id.php");
 	 

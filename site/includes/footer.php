@@ -43,7 +43,7 @@
                 </article>
             </div>
             <div class="foot-page1">
-            	<span>Jović<strong>Nekretnine</strong></span> &copy; 2013&nbsp; |&nbsp;  Coding by <a class="link4" href="#">Web Refresh</a>
+            	<span>Jevtić<strong>Nekretnine</strong></span> &copy; 2013&nbsp; |&nbsp;  Coding by <a class="link4" href="#">Web Refresh</a>
                 <div class="clear"></div>
                  <!-- {%FOOTER_LINK} -->
             </div>       

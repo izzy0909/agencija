@@ -367,7 +367,7 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Spisak stanova</h1>
+		<h1>Spisak ponuda</h1>
 	</div>
 	<!-- end page-heading -->
         
@@ -393,9 +393,12 @@ $(document).pngFix( );
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-check"><a id="toggle-all" ></a> </th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a>	</th>
+                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Kategorija</a></th>
+                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Tip</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Br.</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
@@ -409,9 +412,12 @@ $(document).pngFix( );
 				?>
 				<tr>
 					<td><input  type="checkbox"/></td>
+                                        <td><?php echo $stan['kategorija'];?></td>
+                                        <td><?php echo $stan['tip'];?></td>
 					<td><?php echo $stan['vlasnik'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
-					<td><?php echo $stan['ulica_i_broj'];?></td>
+					<td><?php echo $stan['ulica'];?></td>
+                                        <td><?php echo $stan['br'];?></td>
 					<td><?php echo $stan['telefon'];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
 					<td class="options-width">

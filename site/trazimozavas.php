@@ -1,7 +1,23 @@
+﻿<?php
+
+include_once '../data_base_access/stanoviDA.php';
+
+    
+    
+   $row = prikaziSveOpstine();
+
+
+//var_dump($row);
+                        
+                        
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Contacts</title>
+  	<title>Tražimo nekretninu za vas!</title>
   	<meta charset="utf-8">
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
@@ -100,56 +116,202 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-            	<article class="grid_8">
-                	<h3>Kako do nas</h3>
-                    <figure class="page6-img1">
-                            <iframe width="600" height="307" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed">
-                            </iframe>
-                        </figure>
-                        <div class="clear"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem.</p>
-                         <dl class="dl1 p30">
-                            <dt>8901 Marmora Road, Glasgow, D04 89GR.</dt>   
-                            <dd><span>Freephone:</span>  +1 800 559 6580</dd>                                  
-                            <dd><span>Telephone:</span>  +1 800 603 6035</dd> 
-                            <dd><span>FAX:</span>   +1 800 889 9898</dd>                                
-                            <dd>E-mail: <a href="#">mail@demolink.org</a></dd>
-                        </dl>
-                        <dl class="dl1 p30">
-                            <dt>9863 - 9867 Mill Road, Cambridge, MG09 99HT.</dt>   
-                            <dd><span>Freephone:</span>  +1 800 559 6580</dd>                                  
-                            <dd><span>Telephone:</span>  +1 800 603 6035</dd> 
-                            <dd><span>FAX:</span>   +1 800 889 9898</dd>                                
-                            <dd>E-mail: <a href="#">mail@demolink.org</a></dd>
-                        </dl>
-                </article>
-                <article class="grid_4">
-                	<h3>Kontakt forma</h3>
-                     <form id="form1">
-                        <div class="success">Uspešno ste poslali poruku!<strong> Ubrzo ćemo Vam odgovoriti.</strong></div>
-                          <fieldset>
-                              <label class="name">
-                                    <input type="text" value="Name:">
-                                    <span class="error">*Pogrešan unos.</span> <span class="empty">*Ovo polje je obavezno.</span> 
-                                </label>                                        
-                                <label class="email">
-                                    <input type="text" value="E-mail:">
-                                    <span class="error">*Ova e-mail adresa nije validna.</span> <span class="empty">*Ovo polje je obavezno.</span> 
-                                </label> 
-                                 <label class="phone">
-                                    <input type="tel" value="Phone:">
-                                    <span class="error">*Broj telefona nije validan.</span> <span class="empty">*Ovo polje je obavezno.</span> 
-                                </label>                                                                    
-                               <label class="message">
-                              <textarea>Message</textarea>
-                              <span class="error">*Poruka je prekratka.</span> <span class="empty">*Ovo polje je obavezno.</span> </label>
-                              <div class="clear"></div>
-                              <div class="link-form"> 
-                              <a class="button1" href="#" data-type="reset">Obriši</a>                              
-                              <a class="button1 p33" href="#" data-type="submit">Pošalji</a>                              
-                              </div>											
-                          </fieldset>           
-                      </form>
+            	<article class="grid_12">
+                	<h3>Mi tražimo nekretninu za vas!</h3>
+                 <div id="sforma">
+                <form id="ponudi_stan" action="trazimo.php" method="post">
+                <div id="pos1">
+		<table>
+                    <tr>
+                        
+                        <th>Usluga:</th>
+                        <td style="width:155px; padding: 2px;">
+                            <label><input type="radio" style="margin:2px 3px 20px 10px;" name="kategorija" value="izdavanje" checked>Izdavanje</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label><input type="radio" style="margin:2px 3px 20px 10px;" name="kategorija" value="prodaja">Prodaja</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Tip:</th>
+                        <td><select name="tip" class="sforma_select">
+                                <option value="Stan">Stan</option>
+                                <option value="Kuća">Kuća</option>
+                                <option value="Poslovni prostor">Poslovni prostor</option>
+                                <option value="Magacin">Magacin</option>
+                                <option value="Lokal">Lokal</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <select name="stan_tip" class="sforma_select">
+                                <option value="Garsonjera">Garsonjera</option>
+                                <option value="Jednosoban">Jednosoban</option>
+                                <option value="Jednoiposoban">Jednoiposoban</option>
+                                <option value="Dvosoban">Dvosoban</option>
+                                <option value="Dvoiposoban">Dvoiposoban</option>
+                                <option value="Trosoban">Trosoban</option>
+                                <option value="Troiposoban">Troiposoban</option>
+                                <option value="Četvorosoban">Četvorosoban</option>
+                                <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                <option value="Petosoban i veći">Petosoban i veći</option>
+                            </select>
+                        </td>
+                    </tr>                                     
+                </table>                  
+                </div>
+                    <div id="drugired" style="float:left; margin-left:40px;">
+                        <table>
+                                    <tr>
+			<th>Sprat:</th>
+			<td><select name="sprat" class="sforma_select">
+                                <option value="Suteren">Suteren</option>
+                                <option value="Prizemlje">Prizemlje</option>
+                                <option value="Visoko prizemlje">Visoko prizemlje</option>
+                                <option value="1. sprat">1. sprat</option>
+                                <option value="2. sprat">2. sprat</option>
+                                <option value="3. sprat">3. sprat</option>
+                                <option value="4. sprat">4. sprat</option>
+                                <option value="5. sprat">5. sprat</option>
+                                <option value="6. sprat">6. sprat</option>
+                                <option value="7. sprat">7. sprat</option>
+                                <option value="8. sprat">8. sprat</option>
+                                <option value="9. sprat">9. sprat</option>
+                                <option value="10. sprat">10. sprat</option>
+                                <option value="11. sprat">11. sprat</option>
+                                <option value="12. sprat">12. sprat</option>
+                                <option value="13. sprat">13. sprat</option>
+                                <option value="14. sprat">14. sprat</option>
+                                <option value="15. sprat">15. sprat</option>
+                                <option value="16. sprat">16. sprat</option>
+                                <option value="17. sprat">17. sprat</option>
+                                <option value="18. sprat">18. sprat</option>
+                                <option value="19. sprat">19. sprat</option>
+                                <option value="20. sprat i više">20. sprat i više</option>
+                            </select></td>
+		</tr>
+		<tr>
+                    <th>Lokacija:</th>
+                    <td>
+                    <select name="opstina" class="sforma_select">
+                                     <?php
+
+                        foreach($row as $opstina){
+                          echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                          
+                        }
+                 ?>
+                </select>
+                    </td>
+               
+                <tr>
+                <th>Grejanje:</th>
+                <td>        <select name="grejanje" class="sforma_select">
+                                <option value="CG">CG</option>
+                                <option value="EG">EG</option>
+                                <option value="TA">TA</option>
+                                <option value="PG">PG</option>
+                                <option value="Klima uređaj">Klima uređaj</option>
+                            </select></td>
+                </tr>
+                        </table>
+                        </div>
+                            
+                    <div id="trecired" style="float:left; margin-left:40px;">
+                        <table>
+                        <tr>
+                        <th>Nameštenost:</th>
+                        <td>
+                            <select name="namestenost" class="sforma_select">
+                                <option value="Namešten">Namešten</option>
+                                <option value="Nenamešten">Nenamešten</option>
+                            </select>
+                        </td>
+                        </tr>                             
+                        <tr>
+                        <th>Površina:</th>
+                        <td><select id="povOD" class="select_m" style="margin-left:10px;">
+                        <option value="20">od 20 m²</option>
+                        <option value="40">od 40 m²</option>
+                        <option value="60">od 60 m²</option>
+                        <option value="80">od 80 m²</option>
+                        <option value="100">od 100 m²</option>
+                        <option value="150">od 150 m²</option>
+                        <option value="200">od 200 m²</option>
+                        <option value="300">od 300 m²</option>
+                    </select>&nbsp;&nbsp;-&nbsp;
+                    <select id="povDO" class="select_m">
+                        <option value="40">do 40 m²</option>
+                        <option value="60">do 60 m²</option>
+                        <option value="80">do 80 m²</option>
+                        <option value="100">do 100 m²</option>
+                        <option value="150">do 150 m²</option>
+                        <option value="200">do 200 m²</option>
+                        <option value="300">do 300 m²</option>
+                        <option value="300v">više od 300 m²</option>                        
+                    </select></td>
+                    </tr>  
+                    <tr>
+                    <th>Cena:</th>
+                    <td><select id="cenaOD" class="select_m" style="margin-left:10px;">
+                        <option value="200">od 200 €</option>
+                        <option value="300">od 300 €</option>
+                        <option value="400">od 400 €</option>
+                        <option value="500">od 500 €</option>
+                        <option value="600">od 600 €</option>
+                        <option value="700">od 700 €</option>
+                        <option value="800">od 800 €</option>
+                        <option value="900">od 900 €</option>
+                        <option value="1000">od 1000 €</option>
+                        <option value="1500">od 1500 €</option>
+                        <option value="2000">od 2000 €</option>
+                        <option value="3000">od 3000 €</option>
+                    </select>&nbsp;&nbsp;-&nbsp;
+                    <select id="cenaDO" class="select_m">
+                        <option value="300">do 300 €</option>
+                        <option value="400">do 400 €</option>
+                        <option value="500">do 500 €</option>
+                        <option value="600">do 600 €</option>
+                        <option value="700">do 700 €</option>
+                        <option value="800">do 800 €</option>
+                        <option value="900">do 900 €</option>
+                        <option value="1000">do 1000 €</option>
+                        <option value="1500">do 1500 €</option>
+                        <option value="2000">do 2000 €</option>
+                        <option value="3000">do 3000 €</option>
+                        <option value="3000v">više od 3000 €</option>
+                    </select></td>
+                </tr>  
+                        </table>
+                    </div>                      
+                    <div id="informacije" style="float:left; margin-top:25px;">
+                    <table>
+                    <tr>
+                        <th>Ime i prezime:</th>
+                            <td><input type="text" name="vlasnik" class="sforma_input"></td>
+                    </tr>
+                    <tr>
+                         <th>Telefon:</th>
+                         <td><input type="text" name="telefon" class="sforma_input"/></td>
+                    </tr>
+                    <tr>
+                         <th>E-mail:</th>
+                         <td><input type="text" name="email" class="sforma_input"/></td>
+                    </tr>  
+                    </table>
+                    </div>
+                    
+                    <div id="pos2"><table>
+                        <tr><th>Dodatne informacije (napomene)</th></tr>
+                    <tr><td><textarea style="resize: none;" name="opis"></textarea>
+                    </td></tr>
+                    </table>
+                    </div>
+
+                                <div class="dugmad">
+                                        <input type="submit" value="Pošalji" class="sforma_button" name="trazimo" id="trazimo" />
+                                        <input type="reset" value="Obriši" class="sforma_button" /></div>
+                </form>    
+                </div>
                 </article>
             </div>
         </div>

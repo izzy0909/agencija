@@ -17,7 +17,7 @@ include_once '../data_base_access/stanoviDA.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Moving</title>
+  	<title>Ponudite nekretninu</title>
   	<meta charset="utf-8">
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your keywords">
@@ -194,6 +194,19 @@ $(myform).ajaxForm({
                 <div id="pos1">
 		<table>
                     <tr>
+                        <th>Ime i prezime:</th>
+                            <td><input type="text" name="vlasnik" class="sforma_input"></td>
+                    </tr>
+                    <tr>
+                         <th>Telefon:</th>
+                         <td><input type="text" name="telefon" class="sforma_input"/></td>
+                    </tr>
+                    <tr>
+                         <th>E-mail:</th>
+                         <td><input type="text" name="email" class="sforma_input"/></td>
+                    </tr> 
+                    <tr>
+                        
                         <th>Usluga:</th>
                         <td style="width:155px; padding: 2px;">
                             <label><input type="radio" style="margin:2px 3px 20px 10px;" name="kategorija" value="izdavanje" checked>Izdavanje</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -202,30 +215,67 @@ $(myform).ajaxForm({
                     </tr>
                     <tr>
                         <th>Tip:</th>
-                        <td><select name="tip">
-                                <option value="stan">Stan</option>
-                                <option value="kuca">Kuća</option>
-                                <option value="poslovniprostor">Poslovni prostor</option>
-                                <option value="magacin">Magacin</option>
-                                <option value="lokal">Lokal</option>
+                        <td><select name="tip" class="sforma_select">
+                                <option value="Stan">Stan</option>
+                                <option value="Kuća">Kuća</option>
+                                <option value="Poslovni prostor">Poslovni prostor</option>
+                                <option value="Magacin">Magacin</option>
+                                <option value="Lokal">Lokal</option>
                             </select></td>
                     </tr>
-		<tr>
-			<th>Vlasnik:</th>
-			<td><input type="text" name="vlasnik" class="sforma_input"></td>
-		</tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <select name="stan_tip" class="sforma_select">
+                                <option value="Garsonjera">Garsonjera</option>
+                                <option value="Jednosoban">Jednosoban</option>
+                                <option value="Jednoiposoban">Jednoiposoban</option>
+                                <option value="Dvosoban">Dvosoban</option>
+                                <option value="Dvoiposoban">Dvoiposoban</option>
+                                <option value="Trosoban">Trosoban</option>
+                                <option value="Troiposoban">Troiposoban</option>
+                                <option value="Četvorosoban">Četvorosoban</option>
+                                <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                <option value="Petosoban i veći">Petosoban i veći</option>
+                            </select>
+                        </td>
+                    </tr>
 		<tr>
 			<th>Ulica i broj:</th>
-			<td><input type="text" name="adresa" class="sforma_input"></td>
+			<td><input type="text" name="ulica" class="sforma_input_ul"><input type="text" name="br" class="sforma_input_br"></td>
 		</tr>
         <tr>
 			<th>Sprat:</th>
-			<td><input type="text" name="sprat" class="sforma_input"></td>
+			<td><select name="sprat" class="sforma_select">
+                                <option value="Suteren">Suteren</option>
+                                <option value="Prizemlje">Prizemlje</option>
+                                <option value="Visoko prizemlje">Visoko prizemlje</option>
+                                <option value="1. sprat">1. sprat</option>
+                                <option value="2. sprat">2. sprat</option>
+                                <option value="3. sprat">3. sprat</option>
+                                <option value="4. sprat">4. sprat</option>
+                                <option value="5. sprat">5. sprat</option>
+                                <option value="6. sprat">6. sprat</option>
+                                <option value="7. sprat">7. sprat</option>
+                                <option value="8. sprat">8. sprat</option>
+                                <option value="9. sprat">9. sprat</option>
+                                <option value="10. sprat">10. sprat</option>
+                                <option value="11. sprat">11. sprat</option>
+                                <option value="12. sprat">12. sprat</option>
+                                <option value="13. sprat">13. sprat</option>
+                                <option value="14. sprat">14. sprat</option>
+                                <option value="15. sprat">15. sprat</option>
+                                <option value="16. sprat">16. sprat</option>
+                                <option value="17. sprat">17. sprat</option>
+                                <option value="18. sprat">18. sprat</option>
+                                <option value="19. sprat">19. sprat</option>
+                                <option value="20. sprat i više">20. sprat i više</option>
+                            </select></td>
 		</tr>
 		<tr>
                     <th>Lokacija:</th>
                     <td>
-                    <select name="opstina">
+                    <select name="opstina" class="sforma_select">
                                      <?php
 
                         foreach($row as $opstina){
@@ -235,28 +285,34 @@ $(myform).ajaxForm({
                  ?>
                 </select>
                     </td>
-
+               
                 <tr>
-                <th>Telefon:</th>
-                <td><input type="text" name="telefon" class="sforma_input"/></td>
-                </tr>    
+                <th>Grejanje:</th>
+                <td>        <select name="grejanje" class="sforma_select">
+                                <option value="CG">CG</option>
+                                <option value="EG">EG</option>
+                                <option value="TA">TA</option>
+                                <option value="PG">PG</option>
+                                <option value="Klima uređaj">Klima&nbsp;uređaj</option>
+                            </select></td>
+                </tr>
                 <tr>
-                <th>Cena:</th>
-                <td><input type="text" name="cena" class="sforma_input_ck"/><span style="padding:15px; font-size: 18px;">€</span></td>
+                <th>Nameštenost:</th>
+                <td>
+                    <select name="namestenost" class="sforma_select">
+                        <option value="Namešten">Namešten</option>
+                        <option value="Nenamešten">Nenamešten</option>
+                    </select>
+                </td>
                 </tr>     
                 <tr>
                 <th>Kvadratura:</th>
-                <td><input type="text" name="kvadratura" class="sforma_input_ck"/><span style="padding:15px; font-size: 18px;">m²</span></td>
-                </tr>
+                <td><input type="text" name="kvadratura" class="sforma_input_ck"/><span class="infospan">m²</span></td>
+                </tr>                
                 <tr>
-                <th>Nameštenost</th>
-                <td>
-                    <select name="namestenost">
-                        <option value="namesten">Namešten</option>
-                        <option value="nenamesten">Nenamešten</option>
-                    </select>
-                </td>
-                </tr>
+                <th>Cena:</th>
+                <td><input type="text" name="cena" class="sforma_input_ck"/><span class="infospan">€</span></td>
+                </tr>     
                 <tr>
                     
                 <th>Slike1:</th>
@@ -275,49 +331,53 @@ $(myform).ajaxForm({
                 </table>
                 </div>
 
-
+                    <div id="krov">
+                        <center><img style="margin-left:15px; margin-bottom:20px;" src="images/krov.jpg"></center>
+                    </div>
+                    
                     <div id="tagovi">
             <table>
                 <tr style="background-color:#f3f3f3;">
-                <td style="width: 144px;"><input type="checkbox" name="grejanje" >Grejanje</td>
-                <td style="width: 144px;"><input type="checkbox" name="kablovska" >Kablovska</td>
-                <td style="width: 144px;"><input type="checkbox" name="tv">TV</td>
-                <td style="width: 144px;"><input type="checkbox" name="klima">Klima</td>
+                <td style="width: 144px;"><label><input type="checkbox" name="kablovska" >Kablovska/Sat</label></td>
+                <td style="width: 144px;"><label><input type="checkbox" name="tv">TV</label></td>
+                <td style="width: 144px;"><label><input type="checkbox" name="klima">Klima</label></td>
+                <td style="width: 144px;"><label><input type="checkbox" name="internet" >Internet</label></td>
                 </tr>    
                 <tr>
-                <td><input type="checkbox" name="internet" >Internet</td>
-                <td><input type="checkbox" name="ima_telefon" >Telefon</td>
-                <td><input type="checkbox" name="frizider" >Frižider</td>
-                <td><input type="checkbox" name="sporet" >Šporet</td>                
+
+                <td><label><input type="checkbox" name="ima_telefon" >Telefon</label></td>
+                <td><label><input type="checkbox" name="frizider" >Frižider</label></td>
+                <td><label><input type="checkbox" name="sporet" >Šporet</label></td>
+                <td><label><input type="checkbox" name="vesmasina" >Veš mašina</label></td>
                 </tr>
                 <tr style="background-color:#f3f3f3;">
-                <td><input type="checkbox" name="vesmasina" >Veš mašina</td>
-                <td><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</td>
-                <td><input type="checkbox" name="plakari" >Plakari</td>
-                <td><input type="checkbox" name="lift" >Lift</td>                
+                <td><label><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</label></td>
+                <td><label><input type="checkbox" name="plakari" >Plakari</label></td>
+                <td><label><input type="checkbox" name="interfon" >Interfon</label></td>
+                <td><label><input type="checkbox" name="lift" >Lift</label></td>           
                 </tr>
                 <tr>
-                <td><input type="checkbox" name="bazen" >Bazen</td>
-                <td><input type="checkbox" name="garaza" >Garaža</td>
-                <td><input type="checkbox" name="parking" >Parking</td>
-                <td><input type="checkbox" name="dvoriste" >Dvorište</td>                
+                <td><label><input type="checkbox" name="bazen" >Bazen</label></td>
+                <td><label><input type="checkbox" name="garaza" >Garaža</label></td>
+                <td><label><input type="checkbox" name="parking" >Parking</label></td>
+                <td><label><input type="checkbox" name="dvoriste" >Dvorište</label></td>
                 </tr>
                 <tr style="background-color:#f3f3f3;">
-                <td><input type="checkbox" name="potkrovlje" >Potkrovlje</td>
-                <td><input type="checkbox" name="terasa" >Terasa</td> 
-                <td><input type="checkbox" name="novogradnja" >Novogradnja</td>
-                <td><input type="checkbox" name="renovirano" >Renovirano</td>                
+                <td><label><input type="checkbox" name="potkrovlje" >Potkrovlje</label></td>
+                <td><label><input type="checkbox" name="terasa" >Terasa</label></td> 
+                <td><label><input type="checkbox" name="novogradnja" >Novogradnja</label></td>
+                <td><label><input type="checkbox" name="renovirano" >Renovirano</label></td>
                 </tr>
                 <tr>
-                <td><input type="checkbox" name="lux" >Lux</td>   
-                <td><input type="checkbox" name="penthaus" >Penthaus</td>
-                <td><input type="checkbox" name="salonski" >Salonski</td>
-                <td><input type="checkbox" name="lodja" >Lođa</td>
+                <td><label><input type="checkbox" name="lux" >Lux</label></td>   
+                <td><label><input type="checkbox" name="penthaus" >Penthaus</label></td>
+                <td><label><input type="checkbox" name="salonski" >Salonski</label></td>
+                <td><label><input type="checkbox" name="lodja" >Lođa</label></td>
                 </tr>
             </table>
                     </div>
                     <div id="pos2"><table>
-                        <tr><th>Dodatne informacije (napomene)</th><tr>
+                        <tr><th>Dodatne informacije (napomene)</th></tr>
                     <tr><td><textarea style="resize: none;" name="opis"></textarea>
                     </td></tr>
                     </table>
@@ -343,16 +403,22 @@ $(myform).ajaxForm({
 
 if (isset ($_POST['ponudi_stan'])){
 	
+    $kategorija = isset($_POST['kategorija']) ? $_POST['kategorija'] : null;
+    $tip = isset($_POST['tip']) ? $_POST['tip'] : null;
+    $stan_tip = isset($_POST['stan_tip']) ? $_POST['stan_tip'] : null;
     $vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
-    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
+    $ulica = isset($_POST['ulica']) ? $_POST['ulica'] : null;
+    $br = isset($_POST['br']) ? $_POST['br'] : null;
     $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
     $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
     $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
     $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
+    $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
     
-    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
     $kablovska = isset($_POST['kablovska']) ? '1' : '0';
     $tv = isset($_POST['tv']) ? '1' : '0';
     $klima = isset($_POST['klima']) ? '1' : '0';
@@ -363,6 +429,7 @@ if (isset ($_POST['ponudi_stan'])){
     $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
     $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
     $plakari = isset($_POST['plakari']) ? '1' : '0';
+    $interfon = isset($_POST['interfom']) ? '1' : '0';
     $lift = isset($_POST['lift']) ? '1' : '0';
     $bazen = isset($_POST['bazen']) ? '1' : '0';
     $garaza = isset($_POST['garaza']) ? '1' : '0';
@@ -377,8 +444,8 @@ if (isset ($_POST['ponudi_stan'])){
     $salonski = isset($_POST['salonski']) ? '1' : '0';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
     
-    dodajPonudu($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis, $grejanje, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
-    
+    dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+
     //var_dump($grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $vlasnik . '///' . $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
 }

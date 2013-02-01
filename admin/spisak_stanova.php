@@ -394,13 +394,15 @@ $(document).pngFix( );
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-repeat line-left"><a href="" >Id</a> </th>
+					<th class="table-header-repeat line-left"><a href="">Kategorija</a></th>
+					<th class="table-header-repeat line-left"><a href="">Tip</a></th>                                        
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Cena</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Br</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
-					<th class="table-header-repeat line-left"><a href="">Kategorija</a></th>
+					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
 					<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
@@ -413,13 +415,15 @@ $(document).pngFix( );
 				?>
 				<tr>
 					<td><?php echo $stan[0];?></td>
+					<td><?php echo $stan['kategorija'];?></td>
+                                        <td><?php echo $stan['tip'];?></td>
 					<td><?php echo $stan['vlasnik'];?></td>
-					<td><?php echo $stan['cena'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
-					<td><?php echo $stan['ulica_i_broj'];?></td>
+					<td><?php echo $stan['ulica'];?></td>
+                                        <td><?php echo $stan['br'];?></td>
 					<td><?php echo $stan['telefon'];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
-					<td><?php echo $stan['kategorija'];?></td>
+                                        <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
 					<td class="options-width">
 					<a href="izmeni.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>

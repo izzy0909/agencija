@@ -400,7 +400,7 @@ $(document).pngFix( );
 		<!--  start step-holder -->
 		<div id="step-holder">
 			<div class="step-no">1</div>
-			<div class="step-dark-left"><a href="">Podaci o stanu</a></div>
+			<div class="step-dark-left"><a href="#">Podaci o ponudi</a></div>
 			
 		</div>
 		<!--  end step-holder -->
@@ -422,15 +422,38 @@ $(document).pngFix( );
 			</td>
 		</tr>
 		<tr>
+			<th valign="top">Telefon:</th>
+			<td><input type="text" class="inp-form" name="telefon" value="<?php echo $stan['telefon'];?>"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">E-mail:</th>
+			<td><input type="text" class="inp-form" name="email" value="<?php echo $stan['email'];?>"/></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Kategorija:</th>
+			<td><?php echo $stan['kategorija'];?></td>
+			<td></td>
+		</tr>   
+			<th valign="top">Tip:</th>
+			<td><?php echo $stan['tip'];?></td>
+			<td></td>
+		</tr>    
+			<th valign="top"></th>
+			<td><?php echo $stan['stan_tip'];?></td>
+			<td></td>
+		</tr>              
+		<tr>
 			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-form" name="adresa" value="<?php echo $stan['ulica_i_broj'];?>"/></td>
+			<td><input type="text" class="inp-formV" name="ulica" value="<?php echo $stan['ulica'];?>"/><input type="text" class="inp-formM" name="br" value="<?php echo $stan['br'];?>"/></td>
 			<td>
 			
 			</td>
 		</tr>
         <tr>
 			<th valign="top">Sprat:</th>
-			<td><input type="text" class="inp-form" name="sprat" value="<?php echo $stan['sprat'];?>"/></td>
+			<td><?php echo $stan['sprat'];?>"</td>
 			<td></td>
 		</tr>
 		<tr>
@@ -441,19 +464,24 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
-		<tr>
-			<th valign="top">Telefon:</th>
-			<td><input type="text" class="inp-form" name="telefon" value="<?php echo $stan['telefon'];?>"/></td>
+                <tr>
+			<th valign="top">Grejanje:</th>
+			<td><?php echo $stan['grejanje'];?></td>
 			<td></td>
-		</tr>
-		<tr>
-			<th valign="top">Cena:</th>
-			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
+		</tr>   
+                <tr>
+			<th valign="top">Nameštenost:</th>
+			<td><?php echo $stan['namestenost'];?></td>
 			<td></td>
-		</tr>
+		</tr>                            
                 <tr>
 			<th valign="top">Kvadratura:</th>
 			<td><input type="text" class="inp-form" name="kvadratura" value="<?php echo $stan['kvadratura'];?>"/></td>
+			<td></td>
+		</tr>
+                <tr>
+			<th valign="top">Cena:</th>
+			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
 			<td></td>
 		</tr>
 		<!--<tr>
@@ -601,8 +629,8 @@ $(document).pngFix( );
                                         <tr>
                                         <td>
                                             <?php
-                                            if ($stan['t_grejanje']) { echo "<input type='checkbox' name='grejanje' checked>Grejanje"; }
-                                            else { echo "<input type='checkbox' name='grejanje'>Grejanje"; }
+                                            if ($stan['t_interfon']) { echo "<input type='checkbox' name='interfon' checked>Interfon"; }
+                                            else { echo "<input type='checkbox' name='interfon'>Interfon"; }
                                             ?>
                                         </td>
                                         <td>

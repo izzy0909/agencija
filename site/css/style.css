@@ -95,7 +95,7 @@ h6{font-size:16px;}
 	width:176px; 
 	height:58px; 
 	text-indent:-5000px; 
-	background:url(../images/logo.png) 0 0 no-repeat;
+	background:url(../images/logo01.png) 0 0 no-repeat;
 }
 
 /*********************************header*************************************/
@@ -1169,6 +1169,24 @@ margin:2px 0 20px 10px;
     margin:2px 0 20px 10px;
 }
 
+.sforma_input_ul{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #c0c0c0;
+    width:140px;
+    margin:2px 0 20px 10px;
+}
+
+.sforma_input_br{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #c0c0c0;
+    width:40px;
+    margin:2px 0 20px 14px;
+}
+
 .sforma_button{
     border: solid 1px;
     display:inline-block;
@@ -1187,13 +1205,21 @@ margin:2px 0 20px 10px;
     cursor:default;
 }
 
-#sforma select{
+.sforma_select{
     float:left;
     font-size:12px;
     padding:4px 2px;
     border: solid 1px #c0c0c0;
     width: 206px;
     margin: 2px 0 20px 10px;
+}
+
+.select_m{
+    font-size:12px;
+    padding:4px 2px;
+    border: solid 1px #c0c0c0;
+    width: 95px;
+    margin: 2px 0 20px 0px;
 }
 
 #sforma textarea{
@@ -1237,6 +1263,13 @@ margin:2px 0 20px 10px;
     clear:both;
     float:right;
     margin-right:25px;
+}
+
+.infospan{
+    position: relative;
+    top:5px;
+    padding:7px;
+    font-size: 18px;
 }
 
 /* lista za katalog na pocetnoj ------------------------------------------------------------*/ 
