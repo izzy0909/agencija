@@ -7,7 +7,9 @@ Admin
 - watermark za slike
 //odradjeno - editovanje stanova
 //odradjeno- da se vide nove poruke
-- ispis slika i izbor naslovne slike
+- ispis slika i izbor naslovne slike, klikom na sliku da se otvori veca
+- dodati JavaScript(jQuery) potvrde za sve sto je bitno
+- Dodavanje potvrde (o dodavanju stana, o brisanju stana...)
 
 Front
 

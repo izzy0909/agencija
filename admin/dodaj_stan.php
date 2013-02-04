@@ -1,8 +1,8 @@
 ﻿<?php
-
+include 'upload.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/dodatniTagoviDA.php';
-include_once 'upload.php';
+
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');

@@ -1,7 +1,4 @@
-<noscript>
-<div align="center"><a href="index.php">Go Back To Upload Form</a></div><!-- If javascript is disabled -->
-</noscript>
-<?php
+﻿<?php
 include_once '../data_base_access/slikeDA.php';
 
 function upload($files, $stan_id){
@@ -23,13 +20,13 @@ $ImageName 		= $file['name'];
 $ImageSize 		= $file['size'];
 $TempSrc	 	= $file['tmp_name'];
 $ImageType	 	= $file['type'];
-
+$WaterMarkText = 'Copyright www.jevticnekretnine.rs';
 
 if (is_array($ImageName)) 
 {
 	$c = count($ImageName);
 	
-	echo  '<ul>';
+	
 	
 	for ($i=0; $i < $c; $i++)
 	{
@@ -64,14 +61,16 @@ if (is_array($ImageName))
 			//Get file extension from Image name, this will be re-added after random name
 			$ImageExt = substr($ImageName[$i], strrpos($ImageName[$i], '.'));
 			$ImageExt = str_replace('.','',$ImageExt);
-	
+			
+					
 			//Construct a new image name (with random number added) for our new image.
 			$NewImageName = $RandomNumber.'.'.$ImageExt;
 			$thumb_NewImageName = 'thumb_' . $NewImageName;
 			//Set the Destination Image path with Random Name
 			$thumb_DestRandImageName 	= $DestinationDirectory.$ThumbPrefix.$NewImageName; //Thumb name
 			$DestRandImageName 			= $DestinationDirectory.$NewImageName; //Name for Big Image
-
+			
+			
 			//Resize image to our Specified Size by calling resizeImage function.
 			if($processImage && resizeImage($CurWidth,$CurHeight,$BigImageMaxSize,$DestRandImageName,$CreatedImage,$Quality,$ImageType[$i]))
 			{
@@ -95,7 +94,7 @@ if (is_array($ImageName))
 					// mysql_query("INSERT INTO slike (ImageName, ThumbName, ImgPath)
 					// VALUES ($DestRandImageName, $thumb_DestRandImageName, 'uploads/')");
 					dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName);
-
+					watermarkImage ($DestRandImageName, $WaterMarkText, $DestRandImageName);
 			}else{
 				echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>! Please check if file is supported</div>'; //output error
 			}
@@ -103,7 +102,7 @@ if (is_array($ImageName))
 		}
 		
 	}
-	echo '</ul>';
+	
 	}
 }
 }	
@@ -201,3 +200,23 @@ function cropImage($CurWidth,$CurHeight,$iSize,$DestFolder,$SrcImage,$Quality,$I
 	}
 	  
 }
+
+function watermarkImage ($SourceFile, $WaterMarkText, $DestinationFile) { 
+   list($width, $height) = getimagesize($SourceFile);
+   $image_p = imagecreatetruecolor($width, $height);
+   $image = imagecreatefromjpeg($SourceFile);
+   imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width, $height); 
+   $black = imagecolorallocate($image_p, 0, 0, 0);
+   $font = 'arial.ttf';
+   $font_size = 20; 
+   imagettftext($image_p, $font_size, 0, 10, 30, $black, $font, $WaterMarkText);
+   if ($DestinationFile<>'') {
+      imagejpeg ($image_p, $DestinationFile, 100); 
+   } else {
+      header('Content-Type: image/jpeg');
+      imagejpeg($image_p, null, 100);
+   };
+   imagedestroy($image); 
+   imagedestroy($image_p); 
+};
+
