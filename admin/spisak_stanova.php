@@ -21,7 +21,8 @@ if($_SESSION['uloga'] != 1)
 		}
 		$p_num = $items*($page - 1);
 		
-		$stanovi = prikaziSveStanove($p_num, $items);                   
+		$stanovi = prikaziSveStanove($p_num, $items);
+                $row = prikaziSveOpstine();
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -365,11 +366,92 @@ $(document).pngFix( );
 <div id="content-outer">
 <!-- start content -->
 <div id="content">
-
+    <form id="pretrazi" action="spisak_stanova.php" method="get">
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Spisak stanova</h1>
+            <div style="float:left;">
+                ID:
+                <input type="text" name="id" />
+            </div>
+            <div style="float:left; margin-left:10px;">
+                Opstina:
+                <select name="opstina">
+                 <?php
+
+                        foreach($row as $opstina){
+                          echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+
+                        }
+                 ?>
+
+		</select>
+                </div>
+                <div style="float:left; margin-left:10px;">
+                    Kvadratura:
+                <select id="povOD">
+                        <option value="20">od 20 m²</option>
+                        <option value="40">od 40 m²</option>
+                        <option value="60">od 60 m²</option>
+                        <option value="80">od 80 m²</option>
+                        <option value="100">od 100 m²</option>
+                        <option value="150">od 150 m²</option>
+                        <option value="200">od 200 m²</option>
+                        <option value="300">od 300 m²</option>
+                </select> - 
+                <select id="povDO">
+                        <option value="40">do 40 m²</option>
+                        <option value="60">do 60 m²</option>
+                        <option value="80">do 80 m²</option>
+                        <option value="100">do 100 m²</option>
+                        <option value="150">do 150 m²</option>
+                        <option value="200">do 200 m²</option>
+                        <option value="300">do 300 m²</option>
+                        <option value="300v">više od 300 m²</option>
+                </select>
+            </div>
+            
+            <div style="float:left;  margin-left:10px;">
+                Cena:
+                <select id="cenaOD">
+                        <option value="200">od 200 €</option>
+                        <option value="300">od 300 €</option>
+                        <option value="400">od 400 €</option>
+                        <option value="500">od 500 €</option>
+                        <option value="600">od 600 €</option>
+                        <option value="700">od 700 €</option>
+                        <option value="800">od 800 €</option>
+                        <option value="900">od 900 €</option>
+                        <option value="1000">od 1000 €</option>
+                        <option value="1500">od 1500 €</option>
+                        <option value="2000">od 2000 €</option>
+                        <option value="3000">od 3000 €</option>
+                    </select> -
+                    <select id="cenaDO">
+                        <option value="300">do 300 €</option>
+                        <option value="400">do 400 €</option>
+                        <option value="500">do 500 €</option>
+                        <option value="600">do 600 €</option>
+                        <option value="700">do 700 €</option>
+                        <option value="800">do 800 €</option>
+                        <option value="900">do 900 €</option>
+                        <option value="1000">do 1000 €</option>
+                        <option value="1500">do 1500 €</option>
+                        <option value="2000">do 2000 €</option>
+                        <option value="3000">do 3000 €</option>
+                        <option value="3000v">više od 3000 €</option>
+                    </select>
+
+            </div>
+            <div style="float:left;  margin-left:10px;">
+                Vlasnik:
+                <input type="text" name="vlasnik" />
+            </div>
+            <div style="float:left;  margin-left:10px;">
+                <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
+		<input type="reset" value="Reset" style="width:55px; height:25px;" />
+            </div>
 	</div>
+</form>
 	<!-- end page-heading -->
         
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
@@ -532,3 +614,35 @@ $(document).pngFix( );
 
 </body>
 </html>
+<?php
+
+if (isset ($_GET['pretrazi'])){
+
+	$vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
+    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
+    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
+    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
+    $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
+    $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+
+    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
+    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
+    $tv = isset($_POST['tv']) ? '1' : '0';
+    $klima = isset($_POST['klima']) ? '1' : '0';
+    $internet = isset($_POST['internet']) ? '1' : '0';
+    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
+
+    $stan_id = dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
+
+    dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
+
+    //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
+    //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
+
+
+	upload($_FILES, $stan_id);
+
+
+}
