@@ -481,18 +481,93 @@ $(document).pngFix( );
 			<th valign="top">Vlasnik:</th>
 			<td><input type="text" class="inp-form" name="vlasnik" /></td>
 			<td>
-			
 			</td>
 		</tr>
 		<tr>
-			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-form" name="adresa" /></td>
+			<th valign="top">Telefon:</th>
+			<td><input type="text" class="inp-form" name="telefon" /></td>
 			<td>
+			</td>
+		</tr>
+		<tr>
+			<th valign="top">E-mail:</th>
+			<td><input type="text" class="inp-form" name="email" /></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<th valign="top" >Kategorija:</th>
+                        <td><select name="kategorija" class="styledselect_form_1">
+                                <option value="izdavanje">Izdavanje</option>
+                                <option value="prodaja">Prodaja</option>
+                            </select></td>
+			<td></td>
+                </tr>
+		<tr>
+			<th valign="top">Tip:</th>
+			<td><select name="tip" class="styledselect_form_1">
+                                <option value="Stan">Stan</option>
+                                <option value="Kuća">Kuća</option>
+                                <option value="Poslovni prostor">Poslovni prostor</option>
+                                <option value="Magacin">Magacin</option>
+                                <option value="Lokal">Lokal</option>
+                            </select></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><select name="stan_tip" class="styledselect_form_1">
+                                <option value="Garsonjera">Garsonjera</option>
+                                <option value="Jednosoban">Jednosoban</option>
+                                <option value="Jednoiposoban">Jednoiposoban</option>
+                                <option value="Dvosoban">Dvosoban</option>
+                                <option value="Dvoiposoban">Dvoiposoban</option>
+                                <option value="Trosoban">Trosoban</option>
+                                <option value="Troiposoban">Troiposoban</option>
+                                <option value="Četvorosoban">Četvorosoban</option>
+                                <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                <option value="Petosoban i veći">Petosoban i veći</option>
+                            </select></td>
+			<td>
+			</td>
+		</tr>
+
+		</tr>                    
+		<tr>
+			<th valign="top">Ulica i broj:</th>
+			<td><input type="text" class="inp-formV" name="ulica" /><input type="text" class="inp-formM" name="br" /></td>
+			<td>
+			
 			</td>
 		</tr>
         <tr>
 			<th valign="top">Sprat:</th>
-			<td><input type="text" class="inp-form" name="sprat" /></td>
+                        <td><select name="sprat" class="styledselect_form_1">
+                                <option value="Suteren">Suteren</option>
+                                <option value="Prizemlje">Prizemlje</option>
+                                <option value="Visoko prizemlje">Visoko prizemlje</option>
+                                <option value="1. sprat">1. sprat</option>
+                                <option value="2. sprat">2. sprat</option>
+                                <option value="3. sprat">3. sprat</option>
+                                <option value="4. sprat">4. sprat</option>
+                                <option value="5. sprat">5. sprat</option>
+                                <option value="6. sprat">6. sprat</option>
+                                <option value="7. sprat">7. sprat</option>
+                                <option value="8. sprat">8. sprat</option>
+                                <option value="9. sprat">9. sprat</option>
+                                <option value="10. sprat">10. sprat</option>
+                                <option value="11. sprat">11. sprat</option>
+                                <option value="12. sprat">12. sprat</option>
+                                <option value="13. sprat">13. sprat</option>
+                                <option value="14. sprat">14. sprat</option>
+                                <option value="15. sprat">15. sprat</option>
+                                <option value="16. sprat">16. sprat</option>
+                                <option value="17. sprat">17. sprat</option>
+                                <option value="18. sprat">18. sprat</option>
+                                <option value="19. sprat">19. sprat</option>
+                                <option value="20. sprat i više">20. sprat i više</option>
+                            </select></td>
 			<td></td>
 		</tr>
 		<tr>
@@ -512,19 +587,30 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
-		<tr>
-			<th valign="top">Telefon:</th>
-			<td><input type="text" class="inp-form" name="telefon"/></td>
-			<td></td>
-		</tr>
-		<tr>
-			<th valign="top">Cena:</th>
-			<td><input type="text" class="inp-form" name="cena" /></td>
-			<td></td>
-		</tr>
+                <tr>
+                <th>Grejanje:</th>
+                <td>        <select name="grejanje" class="styledselect_form_1">
+                                <option value="CG">CG</option>
+                                <option value="EG">EG</option>
+                                <option value="TA">TA</option>
+                                <option value="PG">PG</option>
+                                <option value="Klima uređaj">Klima&nbsp;uređaj</option>
+                            </select></td>
+                </tr>
+               <th>Nameštenost:</th>
+                <td>        <select name="namestenost" class="styledselect_form_1">
+                                <option value="Namešten">Namešten</option>
+                                <option value="Nenamešten">Nenamešten</option>
+                            </select></td>
+                </tr>
                 <tr>
 			<th valign="top">Kvadratura:</th>
 			<td><input type="text" class="inp-form" name="kvadratura" /></td>
+			<td></td>
+		</tr>                    
+		<tr>
+			<th valign="top">Cena:</th>
+			<td><input type="text" class="inp-form" name="cena" /></td>
 			<td></td>
 		</tr>
 		<!--<tr>
@@ -612,6 +698,14 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="opis"></textarea></td>
 		<td></td>
 	</tr>
+		<tr>
+			<th valign="top" >Vidljivost:</th>
+                        <td><select name="vidljivost" class="styledselect_form_1">
+                                <option value="nevidljiv">Nevidljiv</option>
+                                <option value="vidljiv">Vidljiv</option>
+                            </select></td>
+			<td></td>
+                </tr>                            
 
 <tr>  
 	<td>
@@ -654,38 +748,55 @@ $(document).pngFix( );
 
 				<div class="left"><a href=""></a></div>
 				<div class="right">
-                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;">
                                         <tr>
-                                                
-                                                <td><input  type="checkbox" name="grejanje" />Grejanje</td>
-                                                <td></td>
-                                        </tr>
-                                    
-					<tr>
-
+                                                <td style="width:100px;"><input  type="checkbox" name="interfon" />Interfon</td>
                                                 <td><input  type="checkbox" name="kablovska" />Kablovska</td>
-                                                <td></td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="tv" />TV</td>
+                                                <td><input  type="checkbox" name="klima" />Klima</td>
                                         </tr>
                                         <tr>
-
-                                                <td><input  type="checkbox" name="tv" />TV</td>
-                                                <td></td>
-                                        </tr>
-										<tr>
-
-                                                <td><input  type="checkbox" name="klima" />Klima</td>
-                                                <td></td>
-                                        </tr>
-										<tr>
-
                                                 <td><input  type="checkbox" name="internet" />Internet</td>
-                                                <td></td>
-                                        </tr>
-										<tr>
                                                 <td><input  type="checkbox" name="ima_telefon" />Telefon</td>
-
-                                                <td></td>
                                         </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="frizider" />Frižider</td>
+                                                <td><input  type="checkbox" name="sporet" />Šporet</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="vesmasina" />Veš mašina</td>
+                                                <td><input  type="checkbox" name="kuhinjskielementi" />Kuh. elementi</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="plakari" />Plakari</td>
+                                                <td><input  type="checkbox" name="lift" />Lift</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="bazen" />Bazen</td>
+                                                <td><input  type="checkbox" name="garaza" />Garaža</td>
+                                        </tr>               
+					<tr>
+                                                <td><input  type="checkbox" name="parking" />Parking</td>
+                                                <td><input  type="checkbox" name="dvoriste" />Dvorište</td>
+                                        </tr>              
+					<tr>
+                                                <td><input  type="checkbox" name="potkrovlje" />Potkrovlje</td>
+                                                <td><input  type="checkbox" name="terasa" />Terasa</td>
+                                        </tr>                     
+					<tr>
+                                                <td><input  type="checkbox" name="novogradnja" />Novogradnja</td>
+                                                <td><input  type="checkbox" name="renovirano" />Renovirano</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="lux" />Lux</td>
+                                                <td><input  type="checkbox" name="penthaus" />Penthaus</td>
+                                        </tr>                                        
+					<tr>
+                                                <td><input  type="checkbox" name="salonski" />Salonski</td>
+                                                <td><input  type="checkbox" name="lodja" />Lođa</td>
+                                        </tr>                                        
                                     </table>
 				</div>
 
@@ -783,28 +894,57 @@ $(document).pngFix( );
 
 if (isset ($_POST['dodaj_stan'])){
 	
-	$vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
-    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
+    $vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
+    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $kategorija = isset($_POST['kategorija']) ? $_POST['kategorija'] : null;
+    $tip = isset($_POST['tip']) ? $_POST['tip'] : null;
+    $stan_tip = isset($_POST['stan_tip']) ? $_POST['stan_tip'] : null;
+    $ulica = isset($_POST['ulica']) ? $_POST['ulica'] : null;
+    $br = isset($_POST['br']) ? $_POST['br'] : null;
     $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
     $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
-    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
+    $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
+    
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
     $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+    $vidljivost = isset($_POST['vidljivost']) ? $_POST['vidljivost'] : null;
     
-    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
+    
     $kablovska = isset($_POST['kablovska']) ? '1' : '0';
     $tv = isset($_POST['tv']) ? '1' : '0';
     $klima = isset($_POST['klima']) ? '1' : '0';
     $internet = isset($_POST['internet']) ? '1' : '0';
     $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
+    $frizider = isset($_POST['frizider']) ? '1' : '0';
+    $sporet = isset($_POST['sporet']) ? '1' : '0';
+    $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
+    $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
+    $plakari = isset($_POST['plakari']) ? '1' : '0';
+    $interfon = isset($_POST['interfon']) ? '1' : '0';
+    $lift = isset($_POST['lift']) ? '1' : '0';
+    $bazen = isset($_POST['bazen']) ? '1' : '0';
+    $garaza = isset($_POST['garaza']) ? '1' : '0';
+    $parking = isset($_POST['parking']) ? '1' : '0';
+    $dvoriste = isset($_POST['dvoriste']) ? '1' : '0';
+    $potkrovlje = isset($_POST['potkrovlje']) ? '1' : '0';
+    $terasa = isset($_POST['terasa']) ? '1' : '0';
+    $novogradnja = isset($_POST['novogradnja']) ? '1' : '0';
+    $renovirano = isset($_POST['renovirano']) ? '1' : '0';
+    $lux = isset($_POST['lux']) ? '1' : '0';
+    $penthaus = isset($_POST['penthaus']) ? '1' : '0';
+    $salonski = isset($_POST['salonski']) ? '1' : '0';
+    $lodja = isset($_POST['lodja']) ? '1' : '0';
 
-    $stan_id = dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost);
     
-    dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
-    
+    dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+
     //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
-    //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
+    //echo $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis . '<br /><br />';
+    //echo $stan_id . '///' . $klima . '///' . $tv . '///' . $lodja;
 
 	
 	upload($_FILES, $stan_id);

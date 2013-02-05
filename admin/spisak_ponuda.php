@@ -422,6 +422,7 @@ $(document).pngFix( );
 					<td><?php echo $stan['kvadratura'];?></td>
 					<td class="options-width">
 					<a href="izmeni_ponudu.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
+                                        <a href="odobravanje.php?id=<?php echo $stan[0];?>" title="Odobri" class="icon-4 info-tooltip"></a>
 					<a href="izbrisi_ponudu.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>

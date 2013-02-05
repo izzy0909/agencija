@@ -37,7 +37,7 @@ function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulic
         ':vesmasina' => $vesmasina,
         ':kuhinjskielementi' => $kuhinjskielementi,
         ':plakari' => $plakari,
-        ':interfon' => $intefon,
+        ':interfon' => $interfon,
         ':lift' => $lift,
         ':bazen' => $bazen,
         ':garaza' => $garaza,

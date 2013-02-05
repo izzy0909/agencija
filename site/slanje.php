@@ -429,7 +429,7 @@ if (isset ($_POST['ponudi_stan'])){
     $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
     $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
     $plakari = isset($_POST['plakari']) ? '1' : '0';
-    $interfon = isset($_POST['interfom']) ? '1' : '0';
+    $interfon = isset($_POST['interfon']) ? '1' : '0';
     $lift = isset($_POST['lift']) ? '1' : '0';
     $bazen = isset($_POST['bazen']) ? '1' : '0';
     $garaza = isset($_POST['garaza']) ? '1' : '0';

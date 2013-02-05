@@ -3,22 +3,30 @@
 include_once 'connection.php';
 
 
-function dodajStan($vlasnik, $lokacija_id, $ulica_i_broj, $telefon, $cena, $sprat, $kvadratura, $opis)
+function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv)
 {
     global $conn;
 
-    $sql = "INSERT INTO stanovi (id, vlasnik, lokacija_id, ulica_i_broj, telefon, cena, sprat, kvadratura, opis)
-            VALUES              ('', :vlasnik, :lokacija_id, :ulica_i_broj, :telefon, :cena, :sprat, :kvadratura, :opis)";
+    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv)";
     $query = $conn->prepare($sql);
     $query->execute(array(
-		':vlasnik' => $vlasnik,
+        ':kategorija' => $kategorija,
+        ':tip' => $tip,
+        ':stan_tip' => $stan_tip,
+	':vlasnik' => $vlasnik,
         ':lokacija_id' => $lokacija_id,
-        ':ulica_i_broj' => $ulica_i_broj,
-        ':telefon' => $telefon,
-        ':cena' => $cena,
+        ':ulica' => $ulica,
+        ':br' => $br,
         ':sprat' => $sprat,
+        ':telefon' => $telefon,
+        ':email' => $email,
+        ':cena' => $cena,
         ':kvadratura' => $kvadratura,
-        ':opis' => $opis
+        ':grejanje' => $grejanje,
+        ':namestenost' => $namestenost,
+        ':opis' => $opis,
+        ':vidljiv' => $vidljiv
         ));
 
     return $conn->lastInsertID();
@@ -85,19 +93,20 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $ulica_i_broj, $telefon, $cena, $sprat, $kvadratura, $opis){
+function izmeniStan($id, $vlasnik, $telefon, $email, $ulica, $br, $cena, $kvadratura, $opis){
     global $conn;
 
     $sql = "UPDATE stanovi
-			SET vlasnik = :vlasnik, ulica_i_broj = :ulica_i_broj, telefon = :telefon, cena = :cena, sprat = :sprat, kvadratura = :kvadratura, opis = :opis
+			SET vlasnik = :vlasnik, telefon = :telefon, email = :email, ulica = :ulica, br = :br, cena = :cena, kvadratura = :kvadratura, opis = :opis
 			WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':vlasnik' => $vlasnik,
-		':ulica_i_broj' => $ulica_i_broj,
 		':telefon' => $telefon,
+		':email' => $email,        
+		':ulica' => $ulica,
+                ':br' => $br,
 		':cena' => $cena,
-		':sprat' => $sprat,
 		':kvadratura' => $kvadratura,
 		':opis' => $opis,
 		':id' => $id
