@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once '../data_base_access/slikeDA.php';
 
 function upload($files, $stan_id){
