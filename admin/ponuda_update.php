@@ -47,7 +47,7 @@ if (isset ($_POST['izmeni_ponudu'])){
         
 	izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvadratura, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
 	}
-	header("Location: izmeni_ponudu.php?id=$id.php");
+	header("Location: izmeni_ponudu.php?id=$id");
 	 
 	
 }    

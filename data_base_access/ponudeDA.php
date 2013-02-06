@@ -54,7 +54,7 @@ function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulic
         )); 
 }
 
-function prikaziSveponude($start, $limit){
+function prikaziSvePonude($start, $limit){
     global $conn;
 
     $sql = "SELECT * FROM ponude as ds 

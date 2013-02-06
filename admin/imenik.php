@@ -488,6 +488,7 @@ $(document).pngFix( );
 					<td><?php echo $broj['broj'];?></td>
 					<td class="options-width">
 					<a href="izbrisi_broj.php?id=<?php echo $broj[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+                                        </td>
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-5 info-tooltip"></a>

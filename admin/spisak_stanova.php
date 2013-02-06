@@ -5,14 +5,14 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 	
-}
-		$broj = ukupanBrojStanova();
+}else{
+                $broj = ukupanBrojStanova();
 		$num_rows = $broj['broj'];
 		$items = 20;
-		
+
 		$nrpage_amount = $num_rows/$items;
 		$page_amount = ceil($num_rows/$items);
-		
+
 		//$page_amount = $page_amount-1;
 		//die($page_amount);
 		$page = @$_GET['stranica'];
@@ -20,9 +20,25 @@ if($_SESSION['uloga'] != 1)
 			$page = "1";
 		}
 		$p_num = $items*($page - 1);
+
+                if (isset ($_GET['pretrazi'])){
+                    $id = isset($_GET['id']) ? $_GET['id'] : null;
+                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
+                    $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
+                    $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
+                    $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+                    $vlasnik = isset($_GET['vlasnik']) ? $_GET['vlasnik'] : null;
+                    //die($p_num.' '. $items);
+                    $stanovi = pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik, $p_num, $items);
+                }else{
+                    $stanovi = prikaziSveStanove($p_num, $items);
+                }
 		
-		$stanovi = prikaziSveStanove($p_num, $items);
+		
+		
                 $row = prikaziSveOpstine();
+}
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -376,6 +392,7 @@ $(document).pngFix( );
             <div style="float:left; margin-left:10px;">
                 Opstina:
                 <select name="opstina">
+                    <option value="">Izaberi...</option>
                  <?php
 
                         foreach($row as $opstina){
@@ -388,7 +405,8 @@ $(document).pngFix( );
                 </div>
                 <div style="float:left; margin-left:10px;">
                     Kvadratura:
-                <select id="povOD">
+                <select name="povOD">
+                        <option value="">Izaberi...</option>
                         <option value="20">od 20 m²</option>
                         <option value="40">od 40 m²</option>
                         <option value="60">od 60 m²</option>
@@ -398,7 +416,8 @@ $(document).pngFix( );
                         <option value="200">od 200 m²</option>
                         <option value="300">od 300 m²</option>
                 </select> - 
-                <select id="povDO">
+                <select name="povDO">
+                        <option value="">Izaberi...</option>
                         <option value="40">do 40 m²</option>
                         <option value="60">do 60 m²</option>
                         <option value="80">do 80 m²</option>
@@ -406,13 +425,14 @@ $(document).pngFix( );
                         <option value="150">do 150 m²</option>
                         <option value="200">do 200 m²</option>
                         <option value="300">do 300 m²</option>
-                        <option value="300v">više od 300 m²</option>
                 </select>
             </div>
             
             <div style="float:left;  margin-left:10px;">
                 Cena:
-                <select id="cenaOD">
+                <select name="cenaOD">
+                        <option value="">Izaberi...</option>
+                        <option value="50">od 50 €</option>
                         <option value="200">od 200 €</option>
                         <option value="300">od 300 €</option>
                         <option value="400">od 400 €</option>
@@ -426,7 +446,8 @@ $(document).pngFix( );
                         <option value="2000">od 2000 €</option>
                         <option value="3000">od 3000 €</option>
                     </select> -
-                    <select id="cenaDO">
+                    <select name="cenaDO">
+                        <option value="">Izaberi...</option>
                         <option value="300">do 300 €</option>
                         <option value="400">do 400 €</option>
                         <option value="500">do 500 €</option>
@@ -438,7 +459,6 @@ $(document).pngFix( );
                         <option value="1500">do 1500 €</option>
                         <option value="2000">do 2000 €</option>
                         <option value="3000">do 3000 €</option>
-                        <option value="3000v">više od 3000 €</option>
                     </select>
 
             </div>
@@ -472,7 +492,7 @@ $(document).pngFix( );
 			<div id="table-content">
 			
 				<!--  start product-table ..................................................................................... -->
-				<form id="mainform" action="">
+				
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-repeat line-left"><a href="" >Id</a> </th>
@@ -522,7 +542,7 @@ $(document).pngFix( );
 				?>
 				</table>
 				<!--  end product-table................................... --> 
-				</form>
+				
 			</div>
 			<!--  end content-table  -->
 		
@@ -616,33 +636,3 @@ $(document).pngFix( );
 </html>
 <?php
 
-if (isset ($_GET['pretrazi'])){
-
-	$vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
-    $adresa = isset($_POST['adresa']) ? $_POST['adresa'] : null;
-    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
-    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
-    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
-    $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
-    $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
-    $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
-
-    $grejanje = isset($_POST['grejanje']) ? '1' : '0';
-    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
-    $tv = isset($_POST['tv']) ? '1' : '0';
-    $klima = isset($_POST['klima']) ? '1' : '0';
-    $internet = isset($_POST['internet']) ? '1' : '0';
-    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
-
-    $stan_id = dodajStan($vlasnik, $opstina, $adresa, $telefon, $cena, $sprat, $kvadratura, $opis);
-
-    dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
-
-    //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
-    //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
-
-
-	upload($_FILES, $stan_id);
-
-
-}
