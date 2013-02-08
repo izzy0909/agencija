@@ -92,10 +92,10 @@ h6{font-size:16px;}
 
 .logo {
 	display:block; 
-	width:176px; 
-	height:58px; 
+	width:200px; 
+	height:50px; 
 	text-indent:-5000px; 
-	background:url(../images/logo01.png) 0 0 no-repeat;
+	background:url(../images/logo2.png) 0 0 no-repeat;
 }
 
 /*********************************header*************************************/
@@ -1299,3 +1299,67 @@ margin:2px 0 20px 10px;
 
 
 
+/* detalji ----------------------------------------------------------------------------------*/
+
+#detalji1{
+    font-family: Arial,Helvetica,sans-serif;    
+    float:left;
+    width:250px;
+    padding-left:10px;
+    padding-top:20px;
+    margin-bottom:20px;
+    margin-right:20px;
+}
+
+#detalji1 tr{
+    border-bottom: solid 1px #c9c9c9;
+    height:30px;
+}
+
+#detalji1 th,td{
+    vertical-align: middle;
+    font-size:12px;
+}
+
+#kbr{   
+    margin-bottom:10px;
+    font-weight: bold;
+    font-size:22px;
+    color:black;
+}
+
+#tip{
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+#detalji2{
+    
+    clear:left;
+    padding-left:10px;
+}
+
+#detalji2 span{
+    float:left;
+    width:125px;
+    height:30px;
+    
+}
+
+#detalji2 td{
+    vertical-align: middle;
+    height:30px;
+}
+
+#detalji3{
+    float:right;
+    width:650px;
+    margin-top:20px;
+    
+}
+
+#googlemapa{
+    float:right;
+    margin-top:30px;
+    margin-right:30px;
+}
