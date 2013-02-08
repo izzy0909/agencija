@@ -1,9 +1,9 @@
 <?php
 include_once '../data_base_access/slikeDA.php';
+include("watermark/watermark_image.class.php");
 
 function upload($files, $stan_id){
 //If you face any errors, increase values of "post_max_size", "upload_max_filesize" and "memory_limit" as required in php.ini
-
  //Some Settings
 $ThumbSquareSize 		= 200; //Thumbnail will be 200x200
 $BigImageMaxSize 		= 500; //Image Maximum height or width
@@ -20,7 +20,7 @@ $ImageName 		= $file['name'];
 $ImageSize 		= $file['size'];
 $TempSrc	 	= $file['tmp_name'];
 $ImageType	 	= $file['type'];
-$WaterMarkText = 'Copyright www.jevticnekretnine.rs';
+
 
 if (is_array($ImageName)) 
 {
@@ -93,8 +93,19 @@ if (is_array($ImageName))
 					// Insert info into database table!
 					// mysql_query("INSERT INTO slike (ImageName, ThumbName, ImgPath)
 					// VALUES ($DestRandImageName, $thumb_DestRandImageName, 'uploads/')");
-					dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName);
-					watermarkImage ($DestRandImageName, $WaterMarkText, $DestRandImageName);
+                                        dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName);
+                        ####Watermark Images
+                        $image_path = $DestRandImageName;
+
+                        // Where to save watermarked image
+                        $imgdestpath = $DestRandImageName;
+                        $watermark_path = 'watermark.png';
+                        // Watermark image
+                        $img = new Zubrag_watermark($image_path);
+                        $img->ApplyWatermark($watermark_path);
+                        $img->SaveAsFile($imgdestpath);
+                        $img->Free();
+
 			}else{
 				echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>! Please check if file is supported</div>'; //output error
 			}
@@ -201,22 +212,5 @@ function cropImage($CurWidth,$CurHeight,$iSize,$DestFolder,$SrcImage,$Quality,$I
 	  
 }
 
-function watermarkImage ($SourceFile, $WaterMarkText, $DestinationFile) { 
-   list($width, $height) = getimagesize($SourceFile);
-   $image_p = imagecreatetruecolor($width, $height);
-   $image = imagecreatefromjpeg($SourceFile);
-   imagecopyresampled($image_p, $image, 0, 0, 0, 0, $width, $height, $width, $height); 
-   $black = imagecolorallocate($image_p, 0, 0, 0);
-   $font = 'arial.ttf';
-   $font_size = 20; 
-   imagettftext($image_p, $font_size, 0, 10, 30, $black, $font, $WaterMarkText);
-   if ($DestinationFile<>'') {
-      imagejpeg ($image_p, $DestinationFile, 100); 
-   } else {
-      header('Content-Type: image/jpeg');
-      imagejpeg($image_p, null, 100);
-   };
-   imagedestroy($image); 
-   imagedestroy($image_p); 
-};
+
 
