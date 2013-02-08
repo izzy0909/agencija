@@ -5,21 +5,9 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 	
-}else{
-                $broj = ukupanBrojStanova();
-		$num_rows = $broj['broj'];
-		$items = 20;
-
-		$nrpage_amount = $num_rows/$items;
-		$page_amount = ceil($num_rows/$items);
-
-		//$page_amount = $page_amount-1;
-		//die($page_amount);
-		$page = @$_GET['stranica'];
-		if($page < "1"){
-			$page = "1";
-		}
-		$p_num = $items*($page - 1);
+}else{         
+               
+                
 
                 if (isset ($_GET['pretrazi'])){
                     $id = isset($_GET['id']) ? $_GET['id'] : null;
@@ -30,8 +18,21 @@ if($_SESSION['uloga'] != 1)
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     $vlasnik = isset($_GET['vlasnik']) ? $_GET['vlasnik'] : null;
                     //die($p_num.' '. $items);
-                    $stanovi = pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik, $p_num, $items);
+                    
+                    $stanovi = pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik);
                 }else{
+                    $broj = ukupanBrojStanova();
+
+                    $num_rows = $broj['broj'];
+                    $items = 20;
+
+                    $nrpage_amount = $num_rows/$items;
+                    $page_amount = ceil($num_rows/$items);
+                    $page = @$_GET['stranica'];
+                    if($page < "1"){
+                            $page = "1";
+                    }
+                    $p_num = $items*($page - 1);
                     $stanovi = prikaziSveStanove($p_num, $items);
                 }
 		
@@ -562,6 +563,7 @@ $(document).pngFix( );
 			<tr>
 			<td>
 			<?php
+                        if (!isset ($_GET['pretrazi'])){
 			if($page_amount != "0"){
 				if($page != "0"){
 					$prev = $page-1;
@@ -585,6 +587,7 @@ $(document).pngFix( );
 				
 				
 			}
+                        }
 			?>
 			<!--<td>
 				<a href="spisak_stanova.php?stranica=" class="page-left"></a>

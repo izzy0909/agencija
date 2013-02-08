@@ -128,7 +128,7 @@ function promeniVidljivostStana($id, $vidljiv){
 	    
 }
 
-function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik, $start, $limit){
+function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s
@@ -136,7 +136,7 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
             ON s.lokacija_id = l.id
             WHERE s.id != '' ";
     if(!empty ($id)){
-    $sql .= "AND stanovi.id = $id ";
+    $sql .= "AND s.id = $id ";
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = $opstina ";
@@ -156,10 +156,11 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     if(!empty ($vlasnik)){
     $sql .= "AND vlasnik = $vlasnik ";
     }
-    $sql .=  "LIMIT $start, $limit";
+    
     
     $query = $conn->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
 
 }
+
