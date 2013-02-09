@@ -68,9 +68,10 @@
                             <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
                             <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
                             </ul></li>
-                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
-                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
+                    <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
+                    <li><a href="kontakt.php" >Kontakt</a>
                 </ul>
                     
 		<script>$("#sndmenu a")

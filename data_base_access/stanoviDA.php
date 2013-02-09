@@ -55,6 +55,20 @@ function prikaziSveStanove($start, $limit){
     
 }
 
+function prikaziPoslednjeStanove(){
+    global $conn;
+
+    $sql = "SELECT * FROM stanovi as s 
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            ORDER BY datum_dodavanja
+            LIMIT 0, 8";
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetchAll(PDO::FETCH_BOTH);
+    
+}
+
 function prikaziStan($id){
     global $conn;
 

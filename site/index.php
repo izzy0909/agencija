@@ -1,3 +1,10 @@
+<?php
+
+    include_once '../data_base_access/stanoviDA.php';
+    $stanovi = prikaziPoslednjeStanove();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,9 +84,10 @@
                             <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
                             <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
                             </ul></li>
-                    <li><a href="slanje.php"><SPAN STYLE="font-size: 10pt;">Ponudite Nekretninu</SPAN></a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
-                    <li><a href="trazimozavas.php"><SPAN STYLE="font-size: 8pt;">Tražimo nekretninu za Vas</SPAN></a></li>
+                    <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
+                    <li><a href="kontakt.php" >Kontakt</a>
                 </ul>
                     
 		<script>$("#sndmenu a")
@@ -120,17 +128,27 @@
 	<!--==============================content================================-->
     <section id="content" class="p13">
             <div class="container_12">
-                	<h4 class="p6">Featured <span>Listings</span></h4>
+                	<h4 class="p6">Najnovije <span>Nekretnine</span></h4>
                     <div class="border1">
                     <div class="car-wrapper">
                         <div class="carousel">
                               <ul>
-                                  <li>
+                                  <?php 
+                                  foreach ($stanovi as $stan){
+                                      echo '<li>';
+                                      echo '<a href="detalji.php?id=' . $stan[0] . '><figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' </strong>';
+                                      echo '<ul class="list1">';
+                                      echo '<li>Tip:<span>' . $stan['tip'] . '</span></li>';
+                                      echo '<li>Lokacija:<span>' . $stan['opstina'] . '</span></li>';
+                                      echo '</ul></li>';
+                                  }
+                                  ?>
+                            <!--      <li>
                                   	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $370 000 </strong>
+                                    <strong> Cena:&nbsp; $370 000 </strong>
                                     <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
+                                        <li>Tip:<span>Stan</span></li>
+                                        <li>Lokacija:<span>0.19 Acres</span></li>
                                     </ul>
                                   </li>
                                    <li>
@@ -186,7 +204,7 @@
                                         <li>House size:<span>2,700 Sq Ft</span></li>
                                         <li>Lot size:<span>0.19 Acres</span></li>
                                     </ul>
-                                  </li>
+                                  </li> -->
                               </ul>
                         </div>
                         <a class="prev1 car-button" data-type="prevPage"></a>
@@ -207,8 +225,16 @@
                             <div class="clear"></div>
                             <br/>
                             <div id="idpretraga">
-                            <input type="text" class="sforma_input" onfocus="if(this.value =='PRETRAGA PO ID-u') this.value=''" onblur="if(this.value=='') this.value='PRETRAGA PO ID-u'" value="PRETRAGA PO ID-u" name="idpretraga" />
-                            <a class="button1" href="#">Traži</a>
+                                <form id="traziID" action="#" method="post">
+                            <input id="idinput" type="text" class="sforma_input_ul" onfocus="if(this.value =='PRETRAGA PO ID-u') this.value=''" onblur="if(this.value=='') this.value='PRETRAGA PO ID-u'" value="PRETRAGA PO ID-u" name="idpretraga" />
+                            <input type="submit" value="Traži" class="sforma_button_T" name="trazi_id" id="trazi_id" />
+                                </form>
+                                <script>
+                                    $('#traziID').submit(function(){
+                                      var iid = $('#idinput').val();
+                                      $(this).attr('action', "detalji.php?id=" + iid);
+                                    }); 
+                                </script>
                             </div>
                             
                             <div class="clear"></div>
