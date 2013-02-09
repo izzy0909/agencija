@@ -88,23 +88,24 @@ if (is_array($ImageName))
 					//Get New Image Size
 					list($ResizedWidth,$ResizedHeight)=getimagesize($DestRandImageName);
 					
-					
-					
-					// Insert info into database table!
-					// mysql_query("INSERT INTO slike (ImageName, ThumbName, ImgPath)
-					// VALUES ($DestRandImageName, $thumb_DestRandImageName, 'uploads/')");
-                                        dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName);
-                        ####Watermark Images
+					####Watermark Images
                         $image_path = $DestRandImageName;
-
+						$image_name = 'watermark_' . $NewImageName;
                         // Where to save watermarked image
-                        $imgdestpath = $DestRandImageName;
+                        $imgdestpath = 'slike/watermark_' . $NewImageName;
                         $watermark_path = 'watermark.png';
                         // Watermark image
                         $img = new Zubrag_watermark($image_path);
                         $img->ApplyWatermark($watermark_path);
                         $img->SaveAsFile($imgdestpath);
                         $img->Free();
+					
+					
+					// Insert info into database table!
+					// mysql_query("INSERT INTO slike (ImageName, ThumbName, ImgPath)
+					// VALUES ($DestRandImageName, $thumb_DestRandImageName, 'uploads/')");
+                    dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName, $image_name, $imgdestpath);
+                        
 
 			}else{
 				echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>! Please check if file is supported</div>'; //output error

@@ -88,3 +88,9 @@ INSERT INTO `ponude` (`id`, `vlasnik`, `lokacija_id`, `ulica_i_broj`, `telefon`,
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+######################
+####  V. 1.0.5
+####  U. Izzy
+######################
+ALTER TABLE  `slike` CHANGE  `vrsta`  `vrsta` ENUM(  'mala',  'velika',  'watermark' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
