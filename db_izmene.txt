@@ -100,3 +100,9 @@ ALTER TABLE  `slike` CHANGE  `vrsta`  `vrsta` ENUM(  'mala',  'velika',  'waterm
 ####  U. Izzy
 ######################
 ALTER TABLE  `korisnici` CHANGE  `uloga`  `uloga` ENUM(  '0',  '1',  '2' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT  '0'
+
+######################
+####  V. 1.0.7
+####  U. Izzy
+######################
+ALTER TABLE  `slike` CHANGE  `glavna`  `glavna` ENUM(  '1',  '0' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT  '0'
