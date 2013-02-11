@@ -1,9 +1,13 @@
 <?php
 
 require_once '../data_base_access/userDA.php';
+
+
 if(isset($_SESSION['uloga']) == 1)
 {
     header('Location: admin.php');
+}elseif(isset($_SESSION['uloga']) == 2){
+    header('Location: administrator.php');
 }else{
 
 	if(isset($_POST['submit']))
@@ -16,13 +20,16 @@ if(isset($_SESSION['uloga']) == 1)
 
 	   if(isset($row))
 	   {
-	   $_SESSION['uloga'] = $row['uloga'];
-	   $_SESSION['username'] = $row['username'];
+               $_SESSION['uloga'] = $row['uloga'];
+               $_SESSION['username'] = $row['username'];
 	   }
 
 	   if($_SESSION['uloga'] == 1)
 	   {
-			header('Location: admin.php');
+		header('Location: admin.php');
+	   }
+           if($_SESSION['uloga'] == 2){
+		header('Location: administrator.php');
 	   }
 	}
  }

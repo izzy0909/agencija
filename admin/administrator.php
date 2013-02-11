@@ -1,13 +1,13 @@
 ﻿<?php
 include_once '../data_base_access/podsetnikDA.php';
 
-if($_SESSION['uloga'] != 1)
+if($_SESSION['uloga'] != 2)
 {
     header('Location: login.php');
 }else{
     $user = $_SESSION['username'];
     $broj_poruka = prebrojDanasnjePorukeZaKorisnika($user);
-	
+
 }
 ?>
 
@@ -15,7 +15,7 @@ if($_SESSION['uloga'] != 1)
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Internet Dreams</title>
+<title>Jevtic Nekretnine</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
@@ -37,7 +37,7 @@ $(function(){
 	return false;
 	});
 });
-</script>  
+</script>
 
 <![if !IE 7]>
 
@@ -48,11 +48,11 @@ $(document).ready(function() {
 	$('.styledselect').selectbox({ inputClass: "selectbox_styled" });
 });
 </script>
- 
+
 
 <![endif]>
 
-<!--  styled select box script version 2 --> 
+<!--  styled select box script version 2 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -61,7 +61,7 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled select box script version 3 --> 
+<!--  styled select box script version 3 -->
 <script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -69,11 +69,11 @@ $(document).ready(function() {
 });
 </script>
 
-<!--  styled file upload script --> 
+<!--  styled file upload script -->
 <script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8">
   $(function() {
-      $("input.file_1").filestyle({ 
+      $("input.file_1").filestyle({
           image: "images/forms/choose-file.gif",
           imageheight : 21,
           imagewidth : 78,
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
 <!-- Custom jquery scripts -->
 <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
- 
+
 <!-- Tooltips -->
 <script src="js/jquery/jquery.tooltip.js" type="text/javascript"></script>
 <script src="js/jquery/jquery.dimensions.js" type="text/javascript"></script>
@@ -93,14 +93,14 @@ $(function() {
 	$('a.info-tooltip ').tooltip({
 		track: true,
 		delay: 0,
-		fixPNG: true, 
+		fixPNG: true,
 		showURL: false,
 		showBody: " - ",
 		top: -35,
 		left: 5
 	});
 });
-</script> 
+</script>
 
 
 <!--  date picker script -->
@@ -143,7 +143,7 @@ $('#date-pick')
 			updateSelects(selected[0]);
 		}
 	);
-	
+
 var updateSelects = function (selectedDate)
 {
 	var selectedDate = new Date(selectedDate);
@@ -183,9 +183,9 @@ $(document).pngFix( );
 });
 </script>
 </head>
-<body> 
+<body>
 <!-- Start: page-top-outer -->
-<div id="page-top-outer">    
+<div id="page-top-outer">
 
 <!-- Start: page-top -->
 <div id="page-top">
@@ -195,7 +195,7 @@ $(document).pngFix( );
 	<a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>
 	</div>
 	<!-- end logo -->
-	
+
 	<!--  start top-search -->
 	<div id="top-search">
 		<table border="0" cellpadding="0" cellspacing="0">
@@ -208,7 +208,7 @@ $(document).pngFix( );
 			<option value=""> Categories</option>
 			<option value="">Clients</option>
 			<option value="">News</option>
-		</select> 
+		</select>
 		</td>
 		<td>
 		<input type="image" src="images/shared/top_search_btn.gif"  />
@@ -224,24 +224,24 @@ $(document).pngFix( );
 
 </div>
 <!-- End: page-top-outer -->
-	
+
 <div class="clear">&nbsp;</div>
- 
+
 <!--  start nav-outer-repeat................................................................................................. START -->
-<div class="nav-outer-repeat"> 
+<div class="nav-outer-repeat">
 <!--  start nav-outer -->
-<div class="nav-outer"> 
+<div class="nav-outer">
 
 		<!-- start nav-right -->
 		<div id="nav-right">
-		
+
 			<div class="nav-divider">&nbsp;</div>
 			<div class="showhide-account"><img src="images/shared/nav/nav_myaccount.gif" width="93" height="14" alt="" /></div>
 			<div class="nav-divider">&nbsp;</div>
 			<a href="logout.php" id="logout"><img src="images/shared/nav/nav_logout.gif" width="64" height="14" alt="" /></a>
 			<div class="clear">&nbsp;</div>
-		
-			<!--  start account-content -->	
+
+			<!--  start account-content -->
 			<div class="account-content">
 			<div class="account-drop-inner">
 				<a href="" id="acc-settings">Settings</a>
@@ -256,11 +256,11 @@ $(document).pngFix( );
 				<a href="" id="acc-inbox">Inbox</a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
-				<a href="" id="acc-stats">Statistics</a> 
+				<a href="" id="acc-stats">Statistics</a>
 			</div>
 			</div>
 			<!--  end account-content -->
-		
+
 		</div>
 		<!-- end nav-right -->
 
@@ -268,16 +268,22 @@ $(document).pngFix( );
 		<!--  start nav -->
 		<div class="nav">
 		<div class="table">
-		
-		<ul class="current"><li><a href="admin.php"><b>Home</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+		<ul class="current"><li><a href="admin.php"><b>Korisnici</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+		<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="dodaj_stan.php">Spisak Korisnika</a></li>
+				<li class="sub_show"><a href="spisak_stanova.php">Dodaj korisnika</a></li>
+				<!--<li><a href="#nogo">Nesto</a></li>-->
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		                    
+
 		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
@@ -298,10 +304,10 @@ $(document).pngFix( );
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>                  
-                
+		</ul>
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
@@ -309,31 +315,31 @@ $(document).pngFix( );
 				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
 				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
 				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
-				
+
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="nav-divider">&nbsp;</div>
-		
+
 		<ul class="select"><li><a href="#nogo"><b>News</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-		
+
 		<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -347,7 +353,7 @@ $(document).pngFix( );
 <!--  start nav-outer-repeat................................................... END -->
 
   <div class="clear"></div>
- 
+
 <!-- start content-outer ........................................................................................................................START -->
 <div id="content-outer">
 <!-- start content -->
@@ -372,12 +378,12 @@ $(document).pngFix( );
 		<td>
 		<!--  start content-table-inner ...................................................................... START -->
 		<div id="content-table-inner">
-		
+
 			<!--  start table-content  -->
 			<div id="table-content">
-			
+
 			<h2>
-			<?php 
+			<?php
 				if($broj_poruka['ukupno'] >= 1)
 				{
 					echo '<a href="danasnji_podsetnici.php">Danasnji podsetnici: <span style="color:red;">' . $broj_poruka['ukupno'] . ' </span>!!!!!!</a>';
@@ -387,13 +393,13 @@ $(document).pngFix( );
 
 			?></h2>
 			<h3><!--Local Heading--></h3>
-			
-			
+
+
 			</div>
 			<!--  end table-content  -->
-	
+
 			<div class="clear"></div>
-		 
+
 		</div>
 		<!--  end content-table-inner ............................................END  -->
 		</td>
@@ -414,8 +420,8 @@ $(document).pngFix( );
 <!--  end content-outer........................................................END -->
 
 <div class="clear">&nbsp;</div>
-    
-<!-- start footer -->         
+
+<!-- start footer -->
 <div id="footer">
 <!-- <div id="footer-pad">&nbsp;</div> -->
 	<!--  start footer-left -->
@@ -425,6 +431,6 @@ $(document).pngFix( );
 	<div class="clear">&nbsp;</div>
 </div>
 <!-- end footer -->
- 
+
 </body>
 </html>

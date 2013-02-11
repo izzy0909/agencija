@@ -93,7 +93,7 @@ if (is_array($ImageName))
 						$image_name = 'watermark_' . $NewImageName;
                         // Where to save watermarked image
                         $imgdestpath = 'slike/watermark_' . $NewImageName;
-                        $watermark_path = 'watermark.png';
+                        $watermark_path = 'watermark/watermark.png';
                         // Watermark image
                         $img = new Zubrag_watermark($image_path);
                         $img->ApplyWatermark($watermark_path);

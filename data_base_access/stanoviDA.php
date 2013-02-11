@@ -150,7 +150,7 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
             ON s.lokacija_id = l.id
             WHERE s.id != '' ";
     if(!empty ($id)){
-    $sql .= "AND s.id = $id ";
+    $sql .= "AND s.id LIKE '%$id%' ";
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = $opstina ";
@@ -168,7 +168,7 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     $sql .= "AND cena <= $cena_do ";
     }
     if(!empty ($vlasnik)){
-    $sql .= "AND vlasnik = $vlasnik ";
+    $sql .= "AND vlasnik LIKE '%$vlasnik%' ";
     }
     
     

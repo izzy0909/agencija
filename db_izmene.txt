@@ -94,3 +94,9 @@ INSERT INTO `ponude` (`id`, `vlasnik`, `lokacija_id`, `ulica_i_broj`, `telefon`,
 ####  U. Izzy
 ######################
 ALTER TABLE  `slike` CHANGE  `vrsta`  `vrsta` ENUM(  'mala',  'velika',  'watermark' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
+
+######################
+####  V. 1.0.6
+####  U. Izzy
+######################
+ALTER TABLE  `korisnici` CHANGE  `uloga`  `uloga` ENUM(  '0',  '1',  '2' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT  '0'
