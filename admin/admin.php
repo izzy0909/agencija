@@ -192,7 +192,7 @@ $(document).pngFix( );
 
 	<!-- start logo -->
 	<div id="logo">
-	<a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>
+	<a href=""><img src="images/shared/logo2.png" width="156" height="40" alt="" /></a>
 	</div>
 	<!-- end logo -->
 	
