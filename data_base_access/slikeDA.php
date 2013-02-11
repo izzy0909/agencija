@@ -47,3 +47,34 @@ function prikaziSlike($stan_id, $vrsta)
 		));
     return $query->fetchAll(PDO::FETCH_BOTH);
 }
+
+function izbrisiSliku($id){
+    global $conn;
+
+    $sql = "DELETE FROM slike
+			WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id
+		));
+
+}
+
+function postaviGlavnu($stan_id, $slika_id){
+    global $conn;
+
+    $sql = "UPDATE slike SET glavna = '0' WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+		));
+
+    $sql = "UPDATE slike SET glavna = '1' WHERE stan_id = :stan_id AND id = :slika_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id,
+                ':slika_id' => $slika_id
+		));
+
+
+}
