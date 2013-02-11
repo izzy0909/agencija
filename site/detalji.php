@@ -2,6 +2,7 @@
 
 include_once '../data_base_access/dodatniTagoviDA.php';
 include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/slikeDA.php';
 
    	if (isset ($_GET['id'])){
 	$id = $_GET['id'];
@@ -13,6 +14,7 @@ include_once '../data_base_access/stanoviDA.php';
    $row = prikaziSveOpstine();
    $stan = prikaziStan($id);
    $tagovi = ispisiDodatneTagove($id);
+   $slike = prikaziSlike($id, 'velika');
    
 
 
@@ -190,7 +192,15 @@ include_once '../data_base_access/stanoviDA.php';
                     </div>
                     <div id="detalji3">
                         <div id="galleria">
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/800px-Athabasca_Rail_at_Brule_Lake.jpg">
+                           <?php echo $slike['naziv']; ?>
+                        <?php 
+                            foreach ($slike as $slike_stana){
+                            echo '<a href="../admin/slike/watermark_' . $slike_stana['naziv'] . '">';
+                            echo '<img src="../admin/slike/thumb_' . $slike_stana['naziv'] . '">';
+                            echo '</a>';
+                            }
+                        ?>    
+                       <!-- <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/800px-Athabasca_Rail_at_Brule_Lake.jpg">
                             <img 
                                 src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/100px-Athabasca_Rail_at_Brule_Lake.jpg"
                             >
@@ -244,7 +254,7 @@ include_once '../data_base_access/stanoviDA.php';
                             <img 
                                 src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Back-scattering_crepuscular_rays_panorama_1.jpg/100px-Back-scattering_crepuscular_rays_panorama_1.jpg"
                             >
-                        </a>                         
+                        </a>  -->                       
                     </div>
                 <script>
 

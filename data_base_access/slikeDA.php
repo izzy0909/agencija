@@ -34,3 +34,16 @@ function dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImage
 		':putanja' => $watermark_destination
         ));
 }
+
+function prikaziSlike($stan_id, $vrsta)
+{
+    global $conn;
+    
+    $sql = "SELECT * FROM slike WHERE stan_id = :stan_id AND vrsta = :vrsta";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+                ':stan_id' => $stan_id,
+		':vrsta' => $vrsta
+		));
+    return $query->fetchAll(PDO::FETCH_BOTH);
+}

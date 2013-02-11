@@ -2,6 +2,7 @@
 
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/dodatniTagoviDA.php';
+include_once '../data_base_access/slikeDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -12,6 +13,8 @@ if (isset ($_GET['id'])){
 	$id = $_GET['id'];
 	$stan = prikaziStan($id);
 	$tagovi = ispisiDodatneTagove($id);
+
+        $slike = prikaziSlike($id, 'velika');
 } 
                      
 ?>
@@ -21,12 +24,23 @@ if (isset ($_GET['id'])){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<!-- <link rel="stylesheet" href="css/lightbox-screen.css" type="text/css" media="screen" /> -->
+<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
 
 <!--  jquery core -->
 <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+=======
+<!-- za slike -->
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.smooth-scroll.min.js" type="text/javascript"></script>
+<script src="js/lightbox.js" type="text/javascript"></script>
+
+<!--  jquery core 
+<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
 
 <!--  checkbox styling script -->
 <script src="js/jquery/ui.core.js" type="text/javascript"></script>
@@ -572,29 +586,30 @@ $(document).pngFix( );
 		<td></td>
 	</tr>
         
-	<tr>
-	<th>Image 1:</th>
-	<td><input type="file" class="file_1" name="slika1" /></td>
-	<td>
-	<div class="bubble-left"></div>
-	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
-	<div class="bubble-right"></div>
-	</td>
-	</tr>
-	<tr>
-	<th>Image 2:</th>
-	<td>  <input type="file" class="file_1" name="slika2" /></td>
-	<td><div class="bubble-left"></div>
-	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
-	<div class="bubble-right"></div></td>
-	</tr>
-	<tr>
-	<th>Image 3:</th>
-	<td><input type="file" class="file_1" name="slika3" /></td>
-	<td><div class="bubble-left"></div>
-	<div class="bubble-inner">JPEG, GIF 5MB max per image</div>
-	<div class="bubble-right"></div></td>
-	</tr>
+                            <tr>
+                                <div class="imageRow">
+                                <?php 
+                                
+                                    foreach ($slike as $slike_stanova)
+                                    {
+                                        echo '<div class="single"><a class="single_a" href="slike/watermark_' . $slike_stanova['naziv'] . '" rel="lightbox"><img src="slike/thumb_' . $slike_stanova['naziv'] . '" alt="" width="100px" /></a>';
+                                        echo '<div style="padding-left:20px;"><a href="glavna_slika.php?id=' . $slike_stanova['id'] . '">Glavna</a> | <a href="obrisi_sliku.php?id=' . $slike_stanova['id'] . '">Obriši</a></div>';
+                                        echo '</div>';
+                                        
+
+                                    }
+                                ?>
+                                    </div>
+<!--                                <div class="imageRow">
+                                      <div class="single">
+                                              <a href="images/examples/image-1.jpg" rel="lightbox"><img src="images/examples/thumb-1.jpg" alt="" /></a>
+                                      </div>
+                                      <div class="single">
+                                              <a href="images/examples/image-2.jpg" rel="lightbox" title="Optional caption."><img src="images/examples/thumb-2.jpg" alt="" /></a>
+                                      </div>
+                                </div>        -->
+                             
+                        </tr>
 	<tr>
 		<th>&nbsp;</th>
 		<td valign="top">
@@ -767,6 +782,20 @@ $(document).pngFix( );
 	<div class="clear">&nbsp;</div>
 </div>
 <!-- end footer -->
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
 
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+  </script>
+>>>>>>> Ispisivanje slika
 </body>
 </html>
