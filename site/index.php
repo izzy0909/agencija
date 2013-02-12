@@ -250,41 +250,109 @@
                         <a class="button1" href="more.html">read more</a>
                     </article>
                     <article class="grid_4">
-                    	<h3 class="title">Quick search</h3>
-                        <form id="form2" class="jqtransform" method="get">
-                              	<div class="inner2">
-                                    <span class="text2">Price per month</span>
-                                    <input type="text" onfocus="if(this.value =='Price in dollars') this.value=''" onblur="if(this.value=='') this.value='Price in dollars'" value="Price in dollars" name="name" />
-                                    <span class="text3">to</span>
-                                    <input type="text" name="name1" />
-                                </div>                               
-                                  <div class="clear"></div>
-                                  <div class="inner3">
-                                    <span class="text2">Location</span>
-                                    <input type="text" onfocus="if(this.value =='Address, City, Zip') this.value=''" onblur="if(this.value=='') this.value='Address, City, Zip'" value="Address, City, Zip" name="name2" />                                   
-                                </div>                               
-                                  <div class="clear"></div>  
-                                  <div class="inner4 p11">
-                                  	 <span class="text2">Min bedrooms</span>
-                                  	 <select name="adult1"><option>Any number</option></select>
-                                     <span class="text2">Availability</span>
-                                  	 <select name="adult2"><option>Any type</option></select>
-                                  </div>  
-                                  <div class="inner4">
-                                  	 <span class="text2">Property type</span>
-                                  	 <select name="adult3"><option>Any type</option></select>
-                                     <span class="text2">Furnished</span>
-                                  	 <select name="adult4"><option>Any type</option></select>
-                                  </div>   
-                                  <div class="clear"></div>              				
-                                <a onClick="document.getElementById('form2').submit()" class="button1 fright p12">Search</a>
-                                <div class="clear"></div>
-                                <div class="inner5">
-                                <span class="text4">Need more criteria?</span>
-                                <a class="link3" href="more.html">Advanced search</a>
-                                </div>
-                                <div class="clear"></div>
+                        <div id="sforma">
+                    	<h3 class="title">Brza pretraga</h3>
+                        <form id="brzapretraga" action="izdavanje.php" method="get">
+                           <div id="pozicija1" style="position:relative; float:left;">
+                           <table>
+                               <tr>
+                                   <th>Tip:</th>
+                                   <td>
+                                <select name="tip" class="sforma_select">
+                                    <option value="">Izaberite...</option>
+                                    <option value="Stan">Stan</option>
+                                    <option value="Kuća">Kuća</option>
+                                    <option value="Poslovni prostor">Poslovni prostor</option>
+                                    <option value="Magacin">Magacin</option>
+                                    <option value="Lokal">Lokal</option>
+                                </select>
+                                   </td>
+                           </tr>
+                           <tr>
+                               <th>Lokacija</th>
+                                <td>
+                                <select name="opstina" class="sforma_select">
+                                    <option value="">Izaberite...</option>
+                                    <?php
+                                    foreach($row as $opstina){
+                                      echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                                    }
+                             ?>
+                            </select>
+                                </td>
+                           </tr>
+                                <tr>
+                                 <th>Površina:</th>
+                                 <td><select id="povOD" class="select_m" style="margin-left:10px;">
+                                 <option value="">Izaberite...</option>        
+                                 <option value="20">od 20 m²</option>
+                                 <option value="40">od 40 m²</option>
+                                 <option value="60">od 60 m²</option>
+                                 <option value="80">od 80 m²</option>
+                                 <option value="100">od 100 m²</option>
+                                 <option value="150">od 150 m²</option>
+                                 <option value="200">od 200 m²</option>
+                                 <option value="300">od 300 m²</option>
+                             </select>&nbsp;&nbsp;-&nbsp;
+                             <select id="povDO" class="select_m">
+                                 <option value="">Izaberite...</option>
+                                 <option value="40">do 40 m²</option>
+                                 <option value="60">do 60 m²</option>
+                                 <option value="80">do 80 m²</option>
+                                 <option value="100">do 100 m²</option>
+                                 <option value="150">do 150 m²</option>
+                                 <option value="200">do 200 m²</option>
+                                 <option value="300">do 300 m²</option>
+                                 <option value="999999999">više od 300 m²</option>                        
+                             </select></td>
+                             </tr> 
+                             <tr>
+                             <th>Cena:</th>
+                             <td><select id="cenaOD" class="select_m" style="margin-left:10px;">
+                                 <option value="">Izaberite...</option>
+                                 <option value="200">od 200 €</option>
+                                 <option value="300">od 300 €</option>
+                                 <option value="400">od 400 €</option>
+                                 <option value="500">od 500 €</option>
+                                 <option value="600">od 600 €</option>
+                                 <option value="700">od 700 €</option>
+                                 <option value="800">od 800 €</option>
+                                 <option value="900">od 900 €</option>
+                                 <option value="1000">od 1000 €</option>
+                                 <option value="1500">od 1500 €</option>
+                                 <option value="2000">od 2000 €</option>
+                                 <option value="3000">od 3000 €</option>
+                             </select>&nbsp;&nbsp;-&nbsp;
+                             <select id="cenaDO" class="select_m">
+                                 <option value="">Izaberite...</option>
+                                 <option value="300">do 300 €</option>
+                                 <option value="400">do 400 €</option>
+                                 <option value="500">do 500 €</option>
+                                 <option value="600">do 600 €</option>
+                                 <option value="700">do 700 €</option>
+                                 <option value="800">do 800 €</option>
+                                 <option value="900">do 900 €</option>
+                                 <option value="1000">do 1000 €</option>
+                                 <option value="1500">do 1500 €</option>
+                                 <option value="2000">do 2000 €</option>
+                                 <option value="3000">do 3000 €</option>
+                                 <option value="999999999">više od 3000 €</option>
+                             </select></td>
+                         </tr>
+                         <tr>
+                             <th></th>
+                             <td>
+                                        
+                                        <input class="sforma_button" type="submit" value="Pretraži" name="pretrazi" id="pretrazi" />
+                                        <input class="sforma_button" type="reset" value="Resetuj"  />
+                                        
+                             </td>
+                         </tr>
+                               </table>
+                       
+                       </div>
                             </form>
+                        </div>
                     </article>
                 </div>
             </div>

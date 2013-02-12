@@ -60,7 +60,7 @@
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
 
                             </ul></li>
-                    <li><a href="prodaja.php">Prodaja</a>
+                    <li><a class="active" href="prodaja.php">Prodaja</a>
                             <ul>
                             <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
