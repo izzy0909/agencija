@@ -689,6 +689,7 @@ $(document).pngFix( );
 
 <tr>  
 	<td>
+            
 	<label>Files
     <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
     </label>

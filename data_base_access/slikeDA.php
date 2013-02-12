@@ -33,6 +33,10 @@ function dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImage
 		':stan_id' => $stan_id,
 		':putanja' => $watermark_destination
         ));
+//    $sql = "UPDATE slike SET glavna = '1' WHERE naziv = LOWER('$glavna_slika')";
+//    $query = $conn->prepare($sql);
+//    $query->execute();
+
 }
 
 function prikaziSlike($stan_id, $vrsta)
