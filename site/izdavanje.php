@@ -8,21 +8,38 @@ include_once '../data_base_access/slikeDA.php';
    $row = prikaziSveOpstine();
 
    
-                   if (isset ($_GET['pretrazi'])){
+              if (isset ($_GET['pretrazi'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
                     $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
-                    $tip = isset($_GET['sprat']) ? $_GET['sprat'] : null;
+                    $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;                    
                     $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
                     $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
-                    $vlasnik = isset($_GET['vlasnik']) ? $_GET['vlasnik'] : null;
                     //die($p_num.' '. $items);
                     
-                   // $stanovi = pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik);
-                }
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    
+              }
+              else {
+                  if(isset ($_GET['tip'])){
+                    $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
+                    $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
+                    $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;                    
+                    $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
+                    $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
+                    $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
+                    $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+                    //die($p_num.' '. $items);
+                    
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                  }
+              }
+
 
 
 
@@ -299,6 +316,21 @@ include_once '../data_base_access/slikeDA.php';
                            </form>
                        </div>
                        <div class="clear"></div>
+                       <div id="rezultati">
+                           <?php 
+                           if(isset($_GET['tip'])){
+                            foreach($stanovi as $stan){
+                                echo '<div class="stan_polje">';
+                                $slika_thumb = prikaziSlikuThumb($stan[0]);
+                                echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></div>';
+                                echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
+                                echo '<div class="stan_info_text"><br />Površina: ' . $stan['kvadratura'] . ' m²';
+                                echo '<br />Cena: ' . $stan['cena'] . ' €';
+                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
+                            }
+                           }
+                           ?>
+                       </div>
                 </article>
             </div>
         </div>
