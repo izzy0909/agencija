@@ -48,6 +48,7 @@ if($_SESSION['uloga'] != 1)
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!--[if IE]>
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->

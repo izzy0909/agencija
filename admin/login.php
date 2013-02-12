@@ -41,6 +41,7 @@ if(isset($_SESSION['uloga']) == 1)
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!--  jquery core -->
 <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
 

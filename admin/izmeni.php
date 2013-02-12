@@ -24,6 +24,7 @@ if (isset ($_GET['id'])){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Internet Dreams</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
+<link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!-- <link rel="stylesheet" href="css/lightbox-screen.css" type="text/css" media="screen" /> -->
 <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
 <!--[if IE]>
