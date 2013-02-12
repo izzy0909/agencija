@@ -586,8 +586,11 @@ $(document).pngFix( );
 		<td></td>
 	</tr>
         
-                            <tr><div id="slike"
-                                <div class="imageRow">
+                            <tr>
+                                <th valign="top">Slike:</th>
+                                <td>
+                                    <div id="slike">
+                                    <div class="imageRow">
                                 <?php 
                                 
                                     foreach ($slike as $slike_stanova)
@@ -600,7 +603,9 @@ $(document).pngFix( );
                                     }
                                 ?>
                                     
-                                    </div></div>
+                                    </div>
+                                    </div>
+                                </td>
 <!--                                <div class="imageRow">
                                       <div class="single">
                                               <a href="images/examples/image-1.jpg" rel="lightbox"><img src="images/examples/thumb-1.jpg" alt="" /></a>
@@ -629,8 +634,10 @@ $(document).pngFix( );
 	<div id="related-activities">
 
 		<!--  start related-act-top -->
-		<div id="related-act-top">
-		<img src="images/forms/header_related_act.gif" width="271" height="43" alt="" />
+		<div id="step-holder">
+			<div class="step-no"></div>
+			<div class="step-dark-left"><a href="">Dodatni tagovi</a></div>
+
 		</div>
 		<!-- end related-act-top -->
 

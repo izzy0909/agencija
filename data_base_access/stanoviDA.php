@@ -61,6 +61,7 @@ function prikaziPoslednjeStanove(){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            WHERE vidljiv = 1
             ORDER BY datum_dodavanja DESC
             LIMIT 0, 8";
 	$query = $conn->prepare($sql);
