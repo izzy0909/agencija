@@ -1,21 +1,31 @@
-﻿<?php
-include_once '../data_base_access/podsetnikDA.php';
+<?php
 
+include_once '../data_base_access/userDA.php';
 if($_SESSION['uloga'] != 2)
 {
     header('Location: login.php');
-}else{
-    $user = $_SESSION['username'];
-    $broj_poruka = prebrojDanasnjePorukeZaKorisnika($user);
 
 }
-?>
+else{
 
+        if(isset($_POST['dodaj_korisnika']) && $_SESSION['uloga'] == 2){
+            $username = isset($_POST['username']) ? $_POST['username'] : null;
+            $password = isset($_POST['password']) ? $_POST['password'] : null;
+            dodajKorisnika($username, $password);
+        }
+        if(isset($_POST['izbrisi_korisnika']) && $_SESSION['uloga'] == 2){
+            $korisnik_id = isset($_POST['korisnik_id']) ? $_POST['korisnik_id'] : null;
+            izbrisiKorisnika($korisnik_id);
+        }
+        $user = $_SESSION['username'];
+        $korisnici = prikaziSveKorisnike();
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Jevtic Nekretnine</title>
+<title>Internet Dreams</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!--[if IE]>
@@ -197,8 +207,7 @@ $(document).pngFix( );
 	</div>
 	<!-- end logo -->
 
-	
- 	
+
  	<div class="clear"></div>
 
 </div>
@@ -232,7 +241,7 @@ $(document).pngFix( );
 				<a href="" id="acc-details">Personal details </a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
-				<a href="" id="acc-project">Project detail</a>
+				<a href="" id="acc-project">Project details</a>
 				<div class="clear">&nbsp;</div>
 				<div class="acc-line">&nbsp;</div>
 				<a href="" id="acc-inbox">Inbox</a>
@@ -251,73 +260,11 @@ $(document).pngFix( );
 		<div class="nav">
 		<div class="table">
 
-		<ul class="current"><li><a href="admin.php"><b>Korisnici</b><!--[if IE 7]><!--></a><!--<![endif]-->
+
+
+		<ul class="current"><li><a href="administrator.php"><b>Korisnici</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
-			<ul class="sub">
-				<li><a href="dodaj_stan.php">Spisak Korisnika</a></li>
-				<li class="sub_show"><a href="spisak_stanova.php">Dodaj korisnika</a></li>
-				<!--<li><a href="#nogo">Nesto</a></li>-->
-			</ul>
-		</div>
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
-			<ul class="sub">
-				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
-				<li class="sub_show"><a href="spisak_stanova.php">Spisak stanova</a></li>
-				<!--<li><a href="#nogo">Nesto</a></li>-->
-			</ul>
-		</div>
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="spisak_ponuda.php"><b>Ponude</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
-			<ul class="sub">
-				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
-				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
-
-			</ul>
-		</div>
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="#nogo"><b>News</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+		
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
@@ -343,7 +290,7 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Add product</h1>
+		<h1>Dodaj Korisnika</h1>
 	</div>
 	<!-- end page-heading -->
 
@@ -363,22 +310,78 @@ $(document).pngFix( );
 
 			<!--  start table-content  -->
 			<div id="table-content">
+                            <form id="dodaj_korisnika" action="administrator.php" method="post">
+				<!--  start product-table ..................................................................................... -->
+                                <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+                                    <tr>
+                                    <th valign="top">Username:</th>
+                                    <td><input type="text" class="inp-form" name="username" /></td>
+                                    <td>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <th valign="top">Password:</th>
+                                    <td><input type="text" class="inp-form" name="password" /></td>
+                                    <td>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <th>&nbsp;</th>
+                                    <td valign="top">
+                                            <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
+                                            <input type="submit" value="Dodaj" class="form-submit" name="dodaj_korisnika" id="dodaj_korisnika" />
+                                            <input type="reset" value="reset" class="form-reset" />
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                            </form>
+                            
+                            <form id="mainform" action="">
+				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+				<tr>
+					<th class="table-header-check"><a id="toggle-all" ></a> </th>
+                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Username</a></th>
+                                        <th class="table-header-options line-left"><a href="">Opcije</a></th>
+				</tr>
+				<?php
+					if(isset($korisnici)){
 
-			<h2>
-			<?php
-				if($broj_poruka['ukupno'] >= 1)
-				{
-					echo '<a href="danasnji_podsetnici.php">Danasnji podsetnici: <span style="color:red;">' . $broj_poruka['ukupno'] . ' </span>!!!!!!</a>';
-				}else{
-					echo 'Nemate novih poruka za danas';
-				}
-
-			?></h2>
-			<h3><!--Local Heading--></h3>
+					foreach($korisnici as $korisnik){
 
 
+				?>
+				<tr>
+					<td><input  type="checkbox"/></td>
+                                        <td><?php echo $korisnik['username']; ?></td>
+                                        <td class="options-width">
+					<!--<a href="izbrisi_korisnika.php?id=<?php //echo $korisnik['id'];?>" title="Obrisi" class="icon-2 info-tooltip"></a>-->
+                                        <form id="izbrisi_korisnika" action="administrator.php" method="post">
+                                            <input type="hidden" class="inp-form" name="korisnik_id" value="<?php echo $korisnik['id'];?>" />
+                                            <input type="submit" value="Izbrisi"  name="izbrisi_korisnika" id="izbrisi_korisnika" />
+                                        </form>
+					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
+					<a href="" title="Edit" class="icon-5 info-tooltip"></a>-->
+					</td>
+				</tr>
+
+				<?php
+						}
+					}
+				?>
+				</table>
+				<!--  end product-table................................... -->
+				</form>
 			</div>
-			<!--  end table-content  -->
+			<!--  end content-table  -->
+
+			<!--  start actions-box ............................................... -->
+
+			<!-- end actions-box........... -->
+
+			<!--  start paging..................................................... -->
+
+			<!--  end paging................ -->
 
 			<div class="clear"></div>
 
@@ -393,6 +396,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
+
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -416,3 +420,7 @@ $(document).pngFix( );
 
 </body>
 </html>
+
+
+
+

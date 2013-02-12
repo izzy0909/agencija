@@ -11,7 +11,7 @@ function loginUser($username, $password)
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':username' => $username,
-        ':password' => $password
+        ':password' => md5($password)
         ));
    return $query->fetch();
 
@@ -20,9 +20,35 @@ function loginUser($username, $password)
 function prikaziSveKorisnike(){
     global $conn;
 
-    $sql = "SELECT * FROM korisnici";
+    $sql = "SELECT id, username FROM korisnici";
     $query = $conn->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
     
+}
+
+function dodajKorisnika($username, $password)
+{
+    global $conn;
+
+    $sql = "INSERT INTO korisnici (id, username, password, uloga)
+            VALUES              ('', :username, :password, '1')";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':username' => $username,
+                ':password' => md5($password)
+        ));
+
+}
+
+function izbrisiKorisnika($id){
+    global $conn;
+
+    $sql = "DELETE FROM korisnici
+            WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id
+		));
+
 }
