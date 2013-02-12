@@ -32,7 +32,6 @@ if (isset ($_GET['id'])){
 
 <!--  jquery core -->
 <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
-=======
 <!-- za slike -->
 <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
@@ -785,7 +784,7 @@ $(document).pngFix( );
 <!-- <div id="footer-pad">&nbsp;</div> -->
 	<!--  start footer-left -->
 	<div id="footer-left">
-	Admin Skin &copy; Copyright Internet Dreams Ltd. <a href="">www.netdreams.co.uk</a>. All rights reserved.</div>
+	Admin Skin &copy; Copyright Jevtic Nekretnine <a href="">www.jevticnekretnine.rs</a>. All rights reserved.</div>
 	<!--  end footer-left -->
 	<div class="clear">&nbsp;</div>
 </div>
@@ -804,6 +803,5 @@ $(document).pngFix( );
       })
   });
   </script>
->>>>>>> Ispisivanje slika
 </body>
 </html>
