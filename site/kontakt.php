@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
+        <script type="text/javascript">
+            $(window).load(function(){
+                $('#form1').forms({
+                    ownerEmail:'info@jevticnekretnine.rs',
+                    successShow:2000
+                })
+            })
+        </script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -44,8 +52,8 @@
         <div class="head-box3">
         	<div class="main">
             	<nav>
-                <ul class="sf-menu">
-                    <li><a href="index.php">Home</a>
+                <ul id="sndmenu" class="sf-menu">
+                    <li><a href="index.php">Početna</a>
                       <audio style="display:none;" id="beep-two" preload="auto">
                             <source src="audio/klik1.mp3">
                             <source src="audio/klik1.ogg">
@@ -69,7 +77,7 @@
                             <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                    <li><a href="onama.php">O nama</a></li>
+                <!--    <li><a href="onama.php">O nama</a></li> -->
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a class="active" href="kontakt.php" >Kontakt</a>
                 </ul>
@@ -88,7 +96,7 @@
                           $("#beep-two" + $(this).data("beeper"))[0].play();
                         });
                       $("#beep-two").attr("id", "beep-two0");
-                  </script>                      
+                  </script>                   
                     
                 <div class="clear"></div>
             </nav>            
@@ -101,6 +109,19 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
+                    <article class="grid_12">
+                        <?php 
+                            if(isset($_GET['slanje'])){
+                                if ($_GET['slanje'] == 'Uspesno'){
+                                    echo 'Poruka uspešno poslata!';
+                                }
+                                if ($_GET['slanje'] == 'Neuspesno'){
+                                    echo 'Greška! Poruka nije poslata.';
+                                }
+                            }
+                            
+                        ?>
+                    </article>
             	<article class="grid_8">
                 	<h3>Kako do nas</h3>
                     <figure class="page6-img1">
@@ -127,10 +148,10 @@
                 <article class="grid_4">
                 	<h3>Kontakt forma</h3>
                      <form id="form1">
-                        <div class="success">Uspešno ste poslali poruku!<strong> Ubrzo ćemo Vam odgovoriti.</strong></div>
+                        <div class="success">Uspešno ste poslali poruku!<strong> Ubrzo ćemo odgovoriti.</strong></div>
                           <fieldset>
                               <label class="name">
-                                    <input type="text" value="Name:">
+                                    <input type="text" value="Ime:">
                                     <span class="error">*Pogrešan unos.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label>                                        
                                 <label class="email">
@@ -138,17 +159,17 @@
                                     <span class="error">*Ova e-mail adresa nije validna.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label> 
                                  <label class="phone">
-                                    <input type="tel" value="Phone:">
+                                    <input type="tel" value="Telefon:">
                                     <span class="error">*Broj telefona nije validan.</span> <span class="empty">*Ovo polje je obavezno.</span> 
                                 </label>                                                                    
                                <label class="message">
-                              <textarea>Message</textarea>
+                              <textarea>Poruka</textarea>
                               <span class="error">*Poruka je prekratka.</span> <span class="empty">*Ovo polje je obavezno.</span> </label>
                               <div class="clear"></div>
                               <div class="link-form"> 
-                              <a class="button1" href="#" data-type="reset">Obriši</a>                              
-                              <a class="button1 p33" href="#" data-type="submit">Pošalji</a>                              
-                              </div>											
+                                <a class="button1" href="#" data-type="reset">Obriši</a>                              
+                                <a class="button1 p33" href="#" data-type="submit">Pošalji</a>                              
+                              </div>
                           </fieldset>           
                       </form>
                 </article>

@@ -681,8 +681,8 @@ $(document).pngFix( );
 		<tr>
 			<th valign="top" >Vidljivost:</th>
                         <td><select name="vidljivost" class="styledselect_form_1">
-                                <option value="nevidljiv">Nevidljiv</option>
-                                <option value="vidljiv">Vidljiv</option>
+                                <option value="0">Nevidljiv</option>
+                                <option value="1">Vidljiv</option>
                             </select></td>
 			<td></td>
                 </tr>                            

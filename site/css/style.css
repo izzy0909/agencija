@@ -164,7 +164,7 @@ header h1 {
 	float:			left;
 	position:		relative;
 	text-align:center;
-	width:133px; /* 155px */
+	width:155px; /* default za 6 polja 155px */
 	border-right:1px solid #292929;
 }
 nav {
@@ -1410,20 +1410,20 @@ margin:2px 0 20px 10px;
 
 .stan_info_naslov{
     float:left;
-    width:120px;
+    width:130px;
     padding-left:10px;
     padding-top:5px;
 }
 
 .stan_info_naslov a{
-    font-size:16px;
+    font-size:15px;
     color:black;
     font-weight:bold;
 }
 
 .stan_info_text{
     float:left;
-    width:120px;
+    width:130px;
     padding-left:10px;
     padding-top:5px;    
 }

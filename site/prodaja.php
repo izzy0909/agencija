@@ -1,3 +1,51 @@
+<?php
+
+include_once '../data_base_access/dodatniTagoviDA.php';
+include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/slikeDA.php';
+    
+
+   $row = prikaziSveOpstine();
+
+   
+              if (isset ($_GET['pretrazi'])){
+                    $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
+                    $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
+                    $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;                    
+                    $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
+                    $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
+                    $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
+                    $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+                    //die($p_num.' '. $items);
+                    
+                    $stanovi = pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    
+              }
+              else {
+                  if(isset ($_GET['tip'])){
+                    $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
+                    $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
+                    $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;                    
+                    $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
+                    $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
+                    $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
+                    $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+                    //die($p_num.' '. $items);
+                    
+                    $stanovi = pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                  }
+              }
+
+
+
+
+                        
+                        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +117,7 @@
                             <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                    <li><a href="onama.php">O nama</a></li>
+                <!--    <li><a href="onama.php">O nama</a></li> -->
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="kontakt.php" >Kontakt</a>
                 </ul>
@@ -102,10 +150,186 @@
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_12">
-                    <center>
-                    <a href="prodaja.php?kategorija=stanovi"><img src="images/pro-stanovi.jpg" alt="Prodaja stanova"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorije=kuce"><img src="images/pro-kuce.jpg" alt="Prodaja kuća"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorija=stanovi"><img src="images/pro-posprost.jpg" alt="Prodaja poslovnih prostora"></a><br/><br/>
-                    <a href="prodaja.php?kategorija=magacini"><img src="images/pro-magacini.jpg" alt="Prodaja magacina"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?kategorije=lokali"><img src="images/pro-lokali.jpg" alt="Prodaja lokala"></a>
-                    </center>
+                      <?php 
+                        if (!isset($_GET['tip'])){
+                            echo '<center><a href="prodaja.php?tip=Stan"><img src="images/pro-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Kuća"><img src="images/pro-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Poslovni+prostor"><img src="images/pro-posprost.jpg" alt="Poslovni prostori" /></a>';
+                            echo '<br /><br /><a href="prodaja.php?tip=Magacin"><img src="images/pro-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Lokal"><img src="images/pro-lokali.jpg" alt="Lokali" /></a></center>';
+                        }
+// OTVORIO PHP    ============================================================================================          
+                        else { ?>
+                       <div id="sforma">
+                           <form id="pretraga" action="prodaja.php" method="get">
+                       <h3 class="title" >Pretraga nekretnina: Prodaja</h3>
+                       <div id="pozicija1" style="position:relative; float:left;">
+                           <table>
+                               <tr>
+                                   <th>Tip:</th>
+                                   <td>
+                                <select name="tip" class="sforma_select">
+                                    <option value="">Izaberite...</option>
+                                    <option value="Stan">Stan</option>
+                                    <option value="Kuća">Kuća</option>
+                                    <option value="Poslovni prostor">Poslovni prostor</option>
+                                    <option value="Magacin">Magacin</option>
+                                    <option value="Lokal">Lokal</option>
+                                </select>
+                                   </td>
+                           </tr>
+                           <tr>
+                               <th>Lokacija</th>
+                                <td>
+                                <select name="opstina" class="sforma_select">
+                                    <option value="">Izaberite...</option>
+                                    <?php
+                                    foreach($row as $opstina){
+                                      echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                                    }
+                             ?>
+                            </select>
+                                </td>
+                           </tr>
+                               </table>
+                       </div>
+                       <div id="pozicija2" style="float:left; margin-left:40px;">
+                           <table>
+                                <tr>
+                                <th>Grejanje:</th>
+                                <td>        <select name="grejanje" class="sforma_select">
+                                                <option value="">Izaberite...</option>
+                                                <option value="CG">CG</option>
+                                                <option value="EG">EG</option>
+                                                <option value="TA">TA</option>
+                                                <option value="PG">PG</option>
+                                                <option value="Klima uređaj">Klima uređaj</option>
+                                            </select></td>
+                                </tr>
+                                <tr>
+                                <th>Nameštenost:</th>
+                                <td>
+                                    <select name="namestenost" class="sforma_select">
+                                        <option value="">Izaberite...</option>
+                                        <option value="Namešten">Namešten</option>
+                                        <option value="Nenamešten">Nenamešten</option>
+                                    </select>
+                                </td>
+                                </tr>
+                                    <tr>
+                                        <th>Sprat:</th>
+                                        <td><select name="sprat" class="sforma_select">
+                                                <option value="">Izaberite...</option>
+                                                <option value="Suteren">Suteren</option>
+                                                <option value="Prizemlje">Prizemlje</option>
+                                                <option value="Visoko prizemlje">Visoko prizemlje</option>
+                                                <option value="1. sprat">1. sprat</option>
+                                                <option value="2. sprat">2. sprat</option>
+                                                <option value="3. sprat">3. sprat</option>
+                                                <option value="4. sprat">4. sprat</option>
+                                                <option value="5. sprat">5. sprat</option>
+                                                <option value="6. sprat">6. sprat</option>
+                                                <option value="7. sprat">7. sprat</option>
+                                                <option value="8. sprat">8. sprat</option>
+                                                <option value="9. sprat">9. sprat</option>
+                                                <option value="10. sprat">10. sprat</option>
+                                                <option value="11. sprat">11. sprat</option>
+                                                <option value="12. sprat">12. sprat</option>
+                                                <option value="13. sprat">13. sprat</option>
+                                                <option value="14. sprat">14. sprat</option>
+                                                <option value="15. sprat">15. sprat</option>
+                                                <option value="16. sprat">16. sprat</option>
+                                                <option value="17. sprat">17. sprat</option>
+                                                <option value="18. sprat">18. sprat</option>
+                                                <option value="19. sprat">19. sprat</option>
+                                                <option value="20. sprat i više">20. sprat i više</option>
+                                            </select></td>
+                                </tr>                                
+                           </table>
+                       </div>
+                       <div id="pozicija3" style="float:left; margin-left:40px;">
+                           <table>
+                       <tr>
+                        <th>Površina:</th>
+                        <td><select id="povOD" class="select_m" style="margin-left:10px;">
+                        <option value="">Izaberite...</option>        
+                        <option value="20">od 20 m²</option>
+                        <option value="40">od 40 m²</option>
+                        <option value="60">od 60 m²</option>
+                        <option value="80">od 80 m²</option>
+                        <option value="100">od 100 m²</option>
+                        <option value="150">od 150 m²</option>
+                        <option value="200">od 200 m²</option>
+                        <option value="300">od 300 m²</option>
+                    </select>&nbsp;&nbsp;-&nbsp;
+                    <select id="povDO" class="select_m">
+                        <option value="">Izaberite...</option>
+                        <option value="40">do 40 m²</option>
+                        <option value="60">do 60 m²</option>
+                        <option value="80">do 80 m²</option>
+                        <option value="100">do 100 m²</option>
+                        <option value="150">do 150 m²</option>
+                        <option value="200">do 200 m²</option>
+                        <option value="300">do 300 m²</option>
+                        <option value="999999999">više od 300 m²</option>                        
+                    </select></td>
+                    </tr> 
+                    <tr>
+                    <th>Cena:</th>
+                    <td><select id="cenaOD" class="select_m" style="margin-left:10px;">
+                        <option value="">Izaberite...</option>
+                        <option value="200">od 200 €</option>
+                        <option value="300">od 300 €</option>
+                        <option value="400">od 400 €</option>
+                        <option value="500">od 500 €</option>
+                        <option value="600">od 600 €</option>
+                        <option value="700">od 700 €</option>
+                        <option value="800">od 800 €</option>
+                        <option value="900">od 900 €</option>
+                        <option value="1000">od 1000 €</option>
+                        <option value="1500">od 1500 €</option>
+                        <option value="2000">od 2000 €</option>
+                        <option value="3000">od 3000 €</option>
+                    </select>&nbsp;&nbsp;-&nbsp;
+                    <select id="cenaDO" class="select_m">
+                        <option value="">Izaberite...</option>
+                        <option value="300">do 300 €</option>
+                        <option value="400">do 400 €</option>
+                        <option value="500">do 500 €</option>
+                        <option value="600">do 600 €</option>
+                        <option value="700">do 700 €</option>
+                        <option value="800">do 800 €</option>
+                        <option value="900">do 900 €</option>
+                        <option value="1000">do 1000 €</option>
+                        <option value="1500">do 1500 €</option>
+                        <option value="2000">do 2000 €</option>
+                        <option value="3000">do 3000 €</option>
+                        <option value="999999999">više od 3000 €</option>
+                    </select></td>
+                </tr>
+                           </table>
+                       </div>
+                                <div class="dugmad">
+                                        <input type="submit" value="Pretraži" class="sforma_button" name="pretrazi" id="pretrazi" />
+                                        <input type="reset" value="Resetuj" class="sforma_button" /></div>
+                       <?php
+// ZATVORIO PHP   ============================================================================================                    
+                       } ?>
+                           </form>
+                       </div>
+                       <div class="clear"></div>
+                       <div id="rezultati">
+                           <?php 
+                           if(isset($_GET['tip'])){
+                            foreach($stanovi as $stan){
+                                echo '<div class="stan_polje">';
+                                $slika_thumb = prikaziSlikuThumb($stan[0]);
+                                echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></div>';
+                                echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
+                                echo '<div class="stan_info_text"><br />Površina: ' . $stan['kvadratura'] . ' m²';
+                                echo '<br />Cena: ' . $stan['cena'] . ' €';
+                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
+                            }
+                           }
+                           ?>
+                       </div>
                 </article>
             </div>
         </div>

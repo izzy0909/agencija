@@ -117,7 +117,7 @@ include_once '../data_base_access/slikeDA.php';
                             <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                    <li><a href="onama.php">O nama</a></li>
+                <!--    <li><a href="onama.php">O nama</a></li> -->
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="kontakt.php" >Kontakt</a>
                 </ul>

@@ -3,6 +3,7 @@
     include_once '../data_base_access/stanoviDA.php';
     include_once '../data_base_access/slikeDA.php';
     $stanovi = prikaziPoslednjeStanove();
+    $row = prikaziSveOpstine();
 
 ?>
 
@@ -86,7 +87,7 @@
                             <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                    <li><a href="onama.php">O nama</a></li>
+                <!--    <li><a href="onama.php">O nama</a></li> -->
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="kontakt.php" >Kontakt</a>
                 </ul>
@@ -138,7 +139,7 @@
                                   foreach ($stanovi as $stan){
                                       echo '<li>';
                                       $slika_thumb = prikaziSlikuThumb($stan[0]);
-                                      echo '<a href="detalji.php?id=' . $stan[0] . '"><figure class="page1-img1"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' </strong>';
+                                      echo '<a href="detalji.php?id=' . $stan[0] . '"><figure class="page1-img1"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' €</strong>';
                                       echo '<ul class="list1">';
                                       echo '<li>Tip:<span>' . $stan['tip'] . '</span></li>';
                                       echo '<li>Lokacija:<span>' . $stan['opstina'] . '</span></li>';
@@ -218,17 +219,18 @@
                 	<article class="grid_4">
                     	<h3 class="p7">Katalog ponude</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
-                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
-                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
-                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>
                             <div id="idpretraga">
                                 <form id="traziID" action="#" method="post">
-                            <input id="idinput" type="text" class="sforma_input_ul" onfocus="if(this.value =='PRETRAGA PO ID-u') this.value=''" onblur="if(this.value=='') this.value='PRETRAGA PO ID-u'" value="PRETRAGA PO ID-u" name="idpretraga" />
+                                    <h6 class="title">Pretraga po kataloškom broju:</h6>
+                            <input id="idinput" type="text" class="sforma_input_ul" onfocus="if(this.value =='UNESITE BROJ') this.value=''" onblur="if(this.value=='') this.value='UNESITE BROJ'" value="UNESITE BROJ" name="idpretraga" />
                             <input type="submit" value="Traži" class="sforma_button_T" name="trazi_id" id="trazi_id" />
                                 </form>
                                 <script>
@@ -342,10 +344,10 @@
                          <tr>
                              <th></th>
                              <td>
-                                        
+                                 <div style="padding-left:12px">
                                         <input class="sforma_button" type="submit" value="Pretraži" name="pretrazi" id="pretrazi" />
                                         <input class="sforma_button" type="reset" value="Resetuj"  />
-                                        
+                                 </div>  
                              </td>
                          </tr>
                                </table>
