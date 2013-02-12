@@ -33,9 +33,23 @@ function dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImage
 		':stan_id' => $stan_id,
 		':putanja' => $watermark_destination
         ));
-//    $sql = "UPDATE slike SET glavna = '1' WHERE naziv = LOWER('$glavna_slika')";
-//    $query = $conn->prepare($sql);
-//    $query->execute();
+    $sql = "SELECT * FROM slike
+            WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+        ));
+    $slike = $query->fetchAll(PDO::FETCH_BOTH);
+
+    $sql = "UPDATE slike
+            SET glavna = '1'
+            WHERE stan_id = :stan_id
+            AND vrsta = 'velika'
+            ORDER BY id ASC LIMIT 1";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+        ));
 
 }
 
