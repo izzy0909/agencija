@@ -446,7 +446,7 @@ $(document).pngFix( );
 			
 			</td>
 		</tr>
-        <tr>
+                <tr>
 			<th valign="top">Sprat:</th>
 			<td><?php echo $stan['sprat'];?>"</td>
 			<td></td>
