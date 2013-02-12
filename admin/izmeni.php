@@ -586,7 +586,7 @@ $(document).pngFix( );
 		<td></td>
 	</tr>
         
-                            <tr>
+                            <tr><div id="slike"
                                 <div class="imageRow">
                                 <?php 
                                 
@@ -599,7 +599,8 @@ $(document).pngFix( );
 
                                     }
                                 ?>
-                                    </div>
+                                    
+                                    </div></div>
 <!--                                <div class="imageRow">
                                       <div class="single">
                                               <a href="images/examples/image-1.jpg" rel="lightbox"><img src="images/examples/thumb-1.jpg" alt="" /></a>

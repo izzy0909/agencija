@@ -191,7 +191,7 @@
 .imageRow:after {
   content: "";
   display: table;
-  /* clear: both; */
+  clear: both;
 }
 /* line 320, ../sass/screen.sass */
 .imageRow .single {
@@ -302,6 +302,5 @@
 }
 
 #slike{
-    position:relative;
-    clear:both;
+    float:bottom;
 }

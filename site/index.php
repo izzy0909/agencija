@@ -1,6 +1,7 @@
 <?php
 
     include_once '../data_base_access/stanoviDA.php';
+    include_once '../data_base_access/slikeDA.php';
     $stanovi = prikaziPoslednjeStanove();
 
 ?>
@@ -68,21 +69,21 @@
                         </audio>
                     </li>
                     <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
-                            <ul>
-                             <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
-                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
-                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
-                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>                                
+                         <ul>
+                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
 
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
-                            <li><a href="prodaja.php?kategorija=stanovi">Stanovi</a></li>
-                            <li><a href="prodaja.php?kategorija=kuce">Kuće</a></li>
-                            <li><a href="prodaja.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
-                            <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
+                            <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
@@ -136,7 +137,8 @@
                                   <?php 
                                   foreach ($stanovi as $stan){
                                       echo '<li>';
-                                      echo '<a href="detalji.php?id=' . $stan[0] . '><figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' </strong>';
+                                      $slika_thumb = prikaziSlikuThumb($stan[0]);
+                                      echo '<a href="detalji.php?id=' . $stan[0] . '"><figure class="page1-img1"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' </strong>';
                                       echo '<ul class="list1">';
                                       echo '<li>Tip:<span>' . $stan['tip'] . '</span></li>';
                                       echo '<li>Lokacija:<span>' . $stan['opstina'] . '</span></li>';

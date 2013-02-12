@@ -78,3 +78,16 @@ function postaviGlavnu($stan_id, $slika_id){
 
 
 }
+
+function prikaziSlikuThumb($id){
+    global $conn;
+
+    $sql = "SELECT * FROM slike
+            WHERE stan_id = :id and glavna = '1'";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id
+		));
+    return $query->fetch();
+    
+}

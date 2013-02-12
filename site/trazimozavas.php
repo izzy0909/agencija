@@ -69,20 +69,20 @@ include_once '../data_base_access/stanoviDA.php';
                     </li>
                     <li><a href="izdavanje.php">Izdavanje</a>
                          <ul>
-                             <li><a href="izdavanje.php?kategorija=stanovi">Stanovi</a></li>
-                            <li><a href="izdavanje.php?kategorija=kuce">Kuće</a></li>
-                            <li><a href="izdavanje.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?kategorija=magacini">Magacini</a></li>
-                            <li><a href="izdavanje.php?kategorija=lokali">Lokali</a></li>                                
+                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
 
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
-                            <li><a href="prodaja.php?kategorija=stanovi">Stanovi</a></li>
-                            <li><a href="prodaja.php?kategorija=kuce">Kuće</a></li>
-                            <li><a href="prodaja.php?kategorija=poslovni_prostori">Poslovni prostori</a></li>
-                            <li><a href="prodaja.php?kategorija=magacini">Magacini</a></li>
-                            <li><a href="prodaja.php?kategorija=lokali">Lokali</a></li>     
+                            <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="onama.php">O nama</a></li>
