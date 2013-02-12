@@ -150,28 +150,70 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
             ON s.lokacija_id = l.id
             WHERE s.id != '' ";
     if(!empty ($id)){
-    $sql .= "AND s.id LIKE '%$id%' ";
+    $sql .= "AND s.id LIKE '%" . mysql_real_escape_string($id) . "%' ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = $opstina ";
+    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= $povrsina_od ";
+    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= $povrsina_do ";
+    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= $cena_od ";
+    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= $cena_do ";
+    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
     }
     if(!empty ($vlasnik)){
-    $sql .= "AND vlasnik LIKE '%$vlasnik%' ";
+    $sql .= "AND vlasnik LIKE '%" . mysql_real_escape_string($vlasnik) . "%'";
     }
     
     
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
+
+}
+
+function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+    global $conn;
+
+    $sql = "SELECT * FROM stanovi as s
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE vidljiv = 1 ";
+    if(!empty ($tip)){
+    $sql .= "AND tip = '" . mysql_real_escape_string($tip). "' ";
+    }
+    if(!empty ($opstina)){
+    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    }
+    if(!empty ($sprat)){
+    $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
+    }
+    if(!empty ($povrsina_od)){
+    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    }
+    if(!empty ($povrsina_do)){
+    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    }
+    if(!empty ($cena_od)){
+    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    }
+    if(!empty ($cena_do)){
+    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    }
+    if(!empty ($grejanje)){
+    $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
+    }
+    if(!empty ($namestenost)){
+    $sql .= "AND namestenost = '" . mysql_real_escape_string($namestenost). "' ";
+    }
+    $sql .= "AND kategorija = 'izdavanje' ";
+
     $query = $conn->prepare($sql);
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
