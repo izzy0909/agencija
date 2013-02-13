@@ -2,31 +2,34 @@
 <div class="container_12">
         	<div class="wrapper border2">
             	<article class="grid_2">
-                	<h5>Company</h5>
+                	<h5>Izdavanje</h5>
                     <ul class="list2">
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Presentation</a></li>
-                        <li><a href="#">Clients</a></li>
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                     </ul>
                 </article>
                 <article class="grid_2">
-                	<h5>Properties</h5>
+                	<h5>Prodaja</h5>
                     <ul class="list2">
-                        <li><a href="#">Commercial</a></li>
-                        <li><a href="#">Residential</a></li>
-                        <li><a href="#">Luxury</a></li>
+                            <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>   
                     </ul>
                 </article>
                 <article class="grid_2">
-                	<h5>Posao kod nas</h5>
-                    <ul class="list2">
-                        <li><a href="#">&nbsp</a></li>
-                        <li><a href="#">&nbsp</a></li>
-                        <li><a href="#">&nbsp</a></li>
-                        <li><a href="#">&nbsp</a></li>
-                    </ul>
-                </article>
+               	<h5></h5>
+            <!--         <ul class="list2">
+                        <li><a href="#">&nbsp;</a></li>
+                        <li><a href="#">&nbsp;</a></li>
+                        <li><a href="#">&nbsp;</a></li>
+                        <li><a href="#">&nbsp;</a></li>
+                    </ul>     -->
+                </article> 
                 <article class="grid_2">
                 	<h5>Nađite nas</h5>
                     <ul class="list9">

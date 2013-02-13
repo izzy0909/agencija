@@ -4,6 +4,9 @@
     include_once '../data_base_access/slikeDA.php';
     $stanovi = prikaziPoslednjeStanove();
     $row = prikaziSveOpstine();
+    
+    $hot = prikaziHotOfferStanove();
+
 
 ?>
 
@@ -243,14 +246,26 @@
                             
                             <div class="clear"></div>
                     </article>
+                    
                     <article class="grid_4">
-                    	<h3>Welcome</h3>
-                        <figure class="page1-img3"><img src="images/page1-img10.jpg" alt=""></figure>
+                    	<h3>Hot offer!</h3>
+                        <?php   echo $hot[0] . ' ' . $hot[1] . ' ' . $hot[2];
+                                echo '<div class="hot_polje">';
+                                $slika_thumb = prikaziSlikuThumb($hot[0]);
+                                echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="200" /></a></div>';
+                                echo '<div class="hot_info_naslov"><span>#' . $hot[0] . ' ' . $hot['opstina'] . ' | ' . $hot['tip'] .  '</span></div>';
+                                echo '<div class="hot_info_text"><br />Površina: ' . $hot['kvadratura'] . ' m²';
+                                echo '<br />Cena: ' . $hot['cena'] . ' €';
+                                echo '<br />' . $hot['opis'];
+                                echo '</div><br /><a class="button1" href="detalji.php?id=' . $hot[0] . '">Detaljnije</a></div>';
+                        ?>
+<!--                        <figure class="page1-img3"><img src="images/page1-img10.jpg" alt=""></figure>
                         <span class="text1">Lorem ipsum doloa ettuing esent</span>
                         <p class="p9">Integer dapibus est porttitor lorem pretium nons it tempus ligula feugiat. Sed libero ligula, cursus id sollicitudin sit amet, auctor in sem. </p>
                         <p class="p10">Praesent tellus dui, pulvinar quis mattis vitae, is at  feugiat ut erat. Morbi sollicitudin nulla a urna all ten vehicula sit amet porta metus luctus.     </p>
-                        <a class="button1" href="more.html">read more</a>
+                        <a class="button1" href="more.html">Detaljnije</a>   -->
                     </article>
+                    
                     <article class="grid_4">
                         <div id="sforma">
                     	<h3 class="title">Brza pretraga</h3>

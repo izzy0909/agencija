@@ -66,8 +66,22 @@ function prikaziPoslednjeStanove(){
             LIMIT 0, 8";
 	$query = $conn->prepare($sql);
 	$query->execute();
-	return $query->fetchAll(PDO::FETCH_BOTH);
-    
+	return $query->fetchAll(PDO::FETCH_BOTH);  
+}
+
+function prikaziHotOfferStanove(){
+    global $conn;
+
+    $sql = "SELECT * FROM stanovi as s 
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE hot_offer = 1
+            ORDER BY RAND()
+            LIMIT 0,1";
+
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetch();
 }
 
 function prikaziStan($id){

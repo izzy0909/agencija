@@ -420,8 +420,7 @@ border-bottom:1px solid #d2d2d2;
 	line-height:13px;
 	padding:9px 11px;
 }
-
-.button1:hover {
+.button1:hover{
 	background:#e2a616;
 	text-decoration:none;
 }
@@ -1408,17 +1407,21 @@ margin:2px 0 20px 10px;
     border:1px solid #c9c9c9;
 }
 
-.stan_info_naslov{
+#stan_info_naslov{
     float:left;
     width:130px;
     padding-left:10px;
     padding-top:5px;
 }
 
-.stan_info_naslov a{
+#stan_info_naslov a{
     font-size:15px;
     color:black;
     font-weight:bold;
+}
+
+#stan_info_naslov a:hover{
+    text-decoration: none;
 }
 
 .stan_info_text{

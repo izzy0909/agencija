@@ -320,9 +320,9 @@ include_once '../data_base_access/slikeDA.php';
                            <?php 
                            if(isset($_GET['tip'])){
                             foreach($stanovi as $stan){
-                                echo '<div class="stan_polje">';
+                                echo '<div class="stan_polje" onclick="location.href=\'detalji.php?id=' . $stan[0] . '\';" style="cursor:pointer;">';
                                 $slika_thumb = prikaziSlikuThumb($stan[0]);
-                                echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></div>';
+                                echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></a></div>';
                                 echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
                                 echo '<div class="stan_info_text"><br />Površina: ' . $stan['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
