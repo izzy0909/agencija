@@ -125,7 +125,7 @@
             	<article class="grid_8">
                 	<h3>Kako do nas</h3>
                     <figure class="page6-img1">
-                            <iframe width="600" height="307" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed">
+                            <iframe width="600" height="307" src="https://maps.google.com/maps?&amp;q=Bokeljska 7,Beograd,Srbija&amp;output=embed">
                             </iframe>
                         </figure>
                         <div class="clear"></div>

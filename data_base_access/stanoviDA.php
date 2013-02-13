@@ -171,16 +171,16 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
     }
     if(!empty ($vlasnik)){
     $sql .= "AND vlasnik LIKE '%" . mysql_real_escape_string($vlasnik) . "%'";
@@ -210,16 +210,16 @@ function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, 
     $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
     }
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
@@ -252,16 +252,16 @@ function pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $s
     $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
     }
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
