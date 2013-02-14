@@ -25,7 +25,7 @@ else{
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Internet Dreams</title>
+<title>Jevtić Nekretnine</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!--[if IE]>
