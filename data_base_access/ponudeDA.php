@@ -3,7 +3,7 @@
 include_once 'connection.php';
 
 
-function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $intefon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja)
+function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja)
 {
     global $conn;
     
@@ -51,7 +51,9 @@ function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulic
         ':penthaus' => $penthaus,
         ':salonski' => $salonski,
         ':lodja' => $lodja
-        )); 
+        ));
+
+    return $conn->lastInsertID();
 }
 
 function prikaziSvePonude($start, $limit){

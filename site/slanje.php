@@ -1,5 +1,5 @@
 <?php
-
+include '../admin/upload.php';
 include_once '../data_base_access/ponudeDA.php';
 include_once '../data_base_access/stanoviDA.php';
 
@@ -191,7 +191,7 @@ $(myform).ajaxForm({
                 
                 <div id="sforma">
                 <h3 class="title">Ponudite vašu nekretninu</h3>
-                <form id="ponudi_stan" action="slanje.php" method="post">
+                <form id="ponudi_stan" action="slanje.php" method="post" enctype="multipart/form-data">
                 <div id="pos1">
 		<table>
                     <tr>
@@ -316,7 +316,7 @@ $(myform).ajaxForm({
                 </tr>     
                 <tr>
                     
-                <th>Slike1:</th>
+                <th>Slike:</th>
                 <td>
                 <div id="AddFileInputBox" style="margin:2px 0 10px 10px; width:100px;"><input type="file"  name="file[]"/></div>
                 <div class="sep_s"></div>
@@ -445,8 +445,9 @@ if (isset ($_POST['ponudi_stan'])){
     $salonski = isset($_POST['salonski']) ? '1' : '0';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
     
-    dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
-
+    $stan_id = dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+    
+    uploadPonude($_FILES, $stan_id);
     //var_dump($grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $vlasnik . '///' . $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
 }

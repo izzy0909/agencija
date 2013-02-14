@@ -928,8 +928,8 @@ if (isset ($_POST['dodaj_stan'])){
     //echo $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis . '<br /><br />';
     //echo $stan_id . '///' . $klima . '///' . $tv . '///' . $lodja;
 
-	
-	upload($_FILES, $stan_id);
+    
+    upload($_FILES, $stan_id);
 
 
 }
