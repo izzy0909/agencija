@@ -258,7 +258,6 @@
                                 $slika_thumb = prikaziSlikuThumb($hot[0]);
                                 echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="280" height="154" /></a></div>';
                                 echo '<div class="hot_info_naslov"><span>' . $hot['tip'] . ' | ' . $hot['opstina'] . ' | ' . $hot['kategorija'] .  '</span></div>';
-                                echo '<div class="hot_info_text">Lokacija: '  . $hot['opstina'] . '</div>';
                                 echo '<div class="hot_info_text">Površina: ' . $hot['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $hot['cena'] . ' €';
                                 echo '<br />' . $hot['opis'];
@@ -379,7 +378,19 @@
                 </div>
             </div>
     </section>
-    
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38500514-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 	<!--==============================footer=================================-->
 <?php include 'includes/footer.php'; ?>
 </body>
