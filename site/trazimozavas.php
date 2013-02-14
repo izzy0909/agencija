@@ -17,11 +17,11 @@ include_once '../data_base_access/stanoviDA.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Tražimo nekretninu za vas!</title>
+  	<title>Jevtić Nekretnine :: Izdavanje i prodaja nekretnina Beograd</title>
   	<meta charset="utf-8">
-    <meta name="description" content="Your description">
-    <meta name="keywords" content="Your keywords">
-    <meta name="author" content="Your name">
+    <meta name="description" content="Izdavanje i prodaja stanova, kuća, poslovnih prostora, magacina, lokala i garaža u Beogradu">
+    <meta name="keywords" content="nekretnine, stanovi, kuce, izdavanje, prodaja, beograd, srbija, belgrade, serbia, real estate, apartment, house, rent, sale, kuće, lokal, magacin, garaza, garaža, poslovni prostor">
+    <meta name="author" content="Web Refresh">
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
@@ -85,7 +85,7 @@ include_once '../data_base_access/stanoviDA.php';
                             <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                <!--    <li><a href="onama.php">O nama</a></li> -->
+                    <li><a href="onama.php">O nama</a></li>
                     <li><a class="active" href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="kontakt.php" >Kontakt</a>
                 </ul>

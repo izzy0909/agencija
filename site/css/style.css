@@ -164,7 +164,7 @@ header h1 {
 	float:			left;
 	position:		relative;
 	text-align:center;
-	width:155px; /* default za 6 polja 155px */
+	width:133px; /* default za 6 polja 155px, za 7 polja je 133 */
 	border-right:1px solid #292929;
 }
 nav {

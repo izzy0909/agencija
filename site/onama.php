@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>About Us</title>
+  	<title>Jevtić Nekretnine :: Izdavanje i prodaja nekretnina Beograd</title>
   	<meta charset="utf-8">
-    <meta name="description" content="Your description">
-    <meta name="keywords" content="Your keywords">
-    <meta name="author" content="Your name">
+    <meta name="description" content="Izdavanje i prodaja stanova, kuća, poslovnih prostora, magacina, lokala i garaža u Beogradu">
+    <meta name="keywords" content="nekretnine, stanovi, kuce, izdavanje, prodaja, beograd, srbija, belgrade, serbia, real estate, apartment, house, rent, sale, kuće, lokal, magacin, garaza, garaža, poslovni prostor">
+    <meta name="author" content="Web Refresh">
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
