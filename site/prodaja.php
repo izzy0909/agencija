@@ -21,6 +21,7 @@ include_once '../data_base_access/slikeDA.php';
                     //die($p_num.' '. $items);
                     
                     $stanovi = pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $broj_stanova = brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                    
                     
               }
               else {
@@ -37,6 +38,7 @@ include_once '../data_base_access/slikeDA.php';
                     //die($p_num.' '. $items);
                     
                     $stanovi = pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $broj_stanova = brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                    
                   }
               }
 
@@ -57,7 +59,7 @@ include_once '../data_base_access/slikeDA.php';
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-1.7.2.js"></script>
     <script src="js/script.js"></script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
@@ -70,6 +72,20 @@ include_once '../data_base_access/slikeDA.php';
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
+<script type='text/javascript'>//<![CDATA[ 
+$(document).ready(function(){
+    $('#tipsel').val('<?php echo $tip; ?>');
+    $('#loksel').val('<?php echo $opstina; ?>');
+    $('#gresel').val('<?php echo $grejanje; ?>');
+    $('#namsel').val('<?php echo $namestenost; ?>');
+    $('#sprsel').val('<?php echo $sprat; ?>');
+    $('#povodsel').val('<?php echo $povrsina_od; ?>');
+    $('#povdosel').val('<?php echo $povrsina_do; ?>');
+    $('#cenaodsel').val('<?php echo $cena_od; ?>');
+    $('#cenadosel').val('<?php echo $cena_do; ?>');
+});//]]>  
+
+</script>
 </head>
 <body>
 <!--==============================header=================================-->
@@ -165,7 +181,7 @@ include_once '../data_base_access/slikeDA.php';
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select name="tip" class="sforma_select">
+                                <select id="tipsel" name="tip" class="sforma_select">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -178,7 +194,7 @@ include_once '../data_base_access/slikeDA.php';
                            <tr>
                                <th>Lokacija</th>
                                 <td>
-                                <select name="opstina" class="sforma_select">
+                                <select id="loksel" name="opstina" class="sforma_select">
                                     <option value="">Izaberite...</option>
                                     <?php
                                     foreach($row as $opstina){
@@ -194,7 +210,7 @@ include_once '../data_base_access/slikeDA.php';
                            <table>
                                 <tr>
                                 <th>Grejanje:</th>
-                                <td>        <select name="grejanje" class="sforma_select">
+                                <td>        <select id="gresel" name="grejanje" class="sforma_select">
                                                 <option value="">Izaberite...</option>
                                                 <option value="CG">CG</option>
                                                 <option value="EG">EG</option>
@@ -206,7 +222,7 @@ include_once '../data_base_access/slikeDA.php';
                                 <tr>
                                 <th>Nameštenost:</th>
                                 <td>
-                                    <select name="namestenost" class="sforma_select">
+                                    <select id="namsel" name="namestenost" class="sforma_select">
                                         <option value="">Izaberite...</option>
                                         <option value="Namešten">Namešten</option>
                                         <option value="Nenamešten">Nenamešten</option>
@@ -215,7 +231,7 @@ include_once '../data_base_access/slikeDA.php';
                                 </tr>
                                     <tr>
                                         <th>Sprat:</th>
-                                        <td><select name="sprat" class="sforma_select">
+                                        <td><select id="sprsel" name="sprat" class="sforma_select">
                                                 <option value="">Izaberite...</option>
                                                 <option value="Suteren">Suteren</option>
                                                 <option value="Prizemlje">Prizemlje</option>
@@ -248,7 +264,7 @@ include_once '../data_base_access/slikeDA.php';
                            <table>
                        <tr>
                         <th>Površina:</th>
-                        <td><select id="povOD" class="select_m" style="margin-left:10px;">
+                        <td><select id="povodsel" name="povOD" class="select_m" style="margin-left:10px;">
                         <option value="">Izaberite...</option>        
                         <option value="20">od 20 m²</option>
                         <option value="40">od 40 m²</option>
@@ -259,7 +275,7 @@ include_once '../data_base_access/slikeDA.php';
                         <option value="200">od 200 m²</option>
                         <option value="300">od 300 m²</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="povDO" class="select_m">
+                    <select id="povdosel" name="povDO" class="select_m">
                         <option value="">Izaberite...</option>
                         <option value="40">do 40 m²</option>
                         <option value="60">do 60 m²</option>
@@ -273,7 +289,7 @@ include_once '../data_base_access/slikeDA.php';
                     </tr> 
                     <tr>
                     <th>Cena:</th>
-                    <td><select id="cenaOD" class="select_m" style="margin-left:10px;">
+                    <td><select id="cenaodsel" name="cenaOD" class="select_m" style="margin-left:10px;">
                         <option value="">Izaberite...</option>
                         <option value="200">od 200 €</option>
                         <option value="300">od 300 €</option>
@@ -288,7 +304,7 @@ include_once '../data_base_access/slikeDA.php';
                         <option value="2000">od 2000 €</option>
                         <option value="3000">od 3000 €</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="cenaDO" class="select_m">
+                    <select id="cenadosel" name="cenaDO" class="select_m">
                         <option value="">Izaberite...</option>
                         <option value="300">do 300 €</option>
                         <option value="400">do 400 €</option>
@@ -316,17 +332,29 @@ include_once '../data_base_access/slikeDA.php';
                        </div>
                        <div class="clear"></div>
                        <div id="rezultati">
+                      <div id="brojrez" style="padding-left:10px;">
+                               <?php 
+                               if(isset($_GET['tip'])){
+                                   if($broj_stanova[0] > 0){
+                                    echo '<span>Broj rezultata: ' . $broj_stanova[0] . '</span>';
+                               }
+                               else echo '<span>Nema rezultata.</span>';
+                               }
+                               ?>
+                       </div>                           
                            <?php 
-                           if(isset($_GET['tip'])){
+                           if(isset($stanovi)){
                             foreach($stanovi as $stan){
                                 echo '<div class="stan_polje" onclick="location.href=\'detalji.php?id=' . $stan[0] . '\';" style="cursor:pointer;">';
+                                if($stan['hot_offer']) { echo '<div class="stan_hot"><img src="images/hot.png" width="43" /></div>'; }
                                 $slika_thumb = prikaziSlikuThumb($stan[0]);
                                 echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></a></div>';
-                                echo '<div id="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
+                                echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
                                 echo '<div class="stan_info_text"><br />Površina: ' . $stan['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
                                 echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
                             }
+                            echo '<div class="clear"></div><div class="stan_polje"></div><div class="stan_polje"></div><div class="stan_polje"></div>';
                            }
                            ?>
                        </div>

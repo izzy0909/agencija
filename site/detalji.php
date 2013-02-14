@@ -150,6 +150,30 @@ include_once '../data_base_access/slikeDA.php';
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_12">
+                    <?php 
+// OTVORIO PHP                    
+                       if(!$stan){
+                           echo 'Uneti kataloški broj ne postoji. Pokušajte ponovo.';
+                           echo '';
+                          ?>
+                            <div id="idpretraga">
+                                <form id="traziID" action="#" method="post">
+                                    <h6 class="title">Pretraga po kataloškom broju:</h6>
+                            <input id="idinput" type="text" class="sforma_input_ul" onfocus="if(this.value =='UNESITE BROJ') this.value=''" onblur="if(this.value=='') this.value='UNESITE BROJ'" value="UNESITE BROJ" name="idpretraga" />
+                            <input type="submit" value="Traži" class="sforma_button_T" name="trazi_id" id="trazi_id" />
+                                </form>
+                                <script>
+                                    $('#traziID').submit(function(){
+                                      var iid = $('#idinput').val();
+                                      $(this).attr('action', "detalji.php?id=" + iid);
+                                    }); 
+                                </script>
+                            </div>
+                       <?php
+                       }
+// ZATVORIO PRVI IF    
+                       else {
+                        ?>
                     <div id="detalji1">
                         <div id="kbr">
                         <span>KATALOŠKI BROJ: <?php echo $id; ?></span>
@@ -305,6 +329,9 @@ include_once '../data_base_access/slikeDA.php';
                             
                         ?>
                     </div>
+                    <?php
+// ZATVORIO PHP                    
+                    } ?>
                 </article>
             </div>
         </div>

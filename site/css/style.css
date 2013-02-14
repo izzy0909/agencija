@@ -1393,9 +1393,10 @@ margin:2px 0 20px 10px;
 .stan_polje{
     float:left;
     width:280px;
-    margin-bottom:10px;
+    margin-bottom:0px;
     border-top:1px solid #c9c9c9;
     padding:10px;
+    position:relative;    
 }
 
 .stan_polje:hover{
@@ -1407,20 +1408,26 @@ margin:2px 0 20px 10px;
     border:1px solid #c9c9c9;
 }
 
-#stan_info_naslov{
+.stan_hot{
+    position:absolute;
+    right:10px;
+    top:50px;
+}
+
+.stan_info_naslov{
     float:left;
     width:130px;
     padding-left:10px;
     padding-top:5px;
 }
 
-#stan_info_naslov a{
+.stan_info_naslov a{
     font-size:15px;
     color:black;
     font-weight:bold;
 }
 
-#stan_info_naslov a:hover{
+.stan_info_naslov a:hover{
     text-decoration: none;
 }
 
@@ -1436,4 +1443,23 @@ margin:2px 0 20px 10px;
     margin-top:20px;
     padding-bottom:5px;
     padding-right:10px;
+}
+
+.hot_info_text{
+    font-size:12px;
+    padding-top:10px
+}
+
+.hot_polje{
+    float:left;
+}
+
+.hot_slika{
+    border:1px solid #c9c9c9;
+}
+
+.hot_info_naslov{
+    padding-top:10px;
+    font-size:16px;
+    font-weight:bold;
 }

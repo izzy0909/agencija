@@ -7,7 +7,12 @@
     
     $hot = prikaziHotOfferStanove();
 
-
+    $br_stan = prikaziBrojZaTip('Stan');
+    $br_kuca = prikaziBrojZaTip('Kuća');
+    $br_poslpro = prikaziBrojZaTip('Poslovni prostor');
+    $br_magacin = prikaziBrojZaTip('Magacin');
+    $br_lokal = prikaziBrojZaTip('Lokal');
+    
 ?>
 
 <!DOCTYPE html>
@@ -222,11 +227,11 @@
                 	<article class="grid_4">
                     	<h3 class="p7">Katalog ponude</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi (<?php echo $br_stan[0]; ?>)</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće (<?php echo $br_kuca[0]; ?>)</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori (<?php echo $br_poslpro[0]; ?>)</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini (<?php echo $br_magacin[0]; ?>)</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali (<?php echo $br_lokal[0]; ?>)</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>
@@ -249,12 +254,12 @@
                     
                     <article class="grid_4">
                     	<h3>Hot offer!</h3>
-                        <?php   echo $hot[0] . ' ' . $hot[1] . ' ' . $hot[2];
-                                echo '<div class="hot_polje">';
+                        <?php   echo '<div class="hot_polje">';
                                 $slika_thumb = prikaziSlikuThumb($hot[0]);
-                                echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="200" /></a></div>';
-                                echo '<div class="hot_info_naslov"><span>#' . $hot[0] . ' ' . $hot['opstina'] . ' | ' . $hot['tip'] .  '</span></div>';
-                                echo '<div class="hot_info_text"><br />Površina: ' . $hot['kvadratura'] . ' m²';
+                                echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="280" height="154" /></a></div>';
+                                echo '<div class="hot_info_naslov"><span>' . $hot['tip'] . ' | ' . $hot['opstina'] . ' | ' . $hot['kategorija'] .  '</span></div>';
+                                echo '<div class="hot_info_text">Lokacija: '  . $hot['opstina'] . '</div>';
+                                echo '<div class="hot_info_text">Površina: ' . $hot['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $hot['cena'] . ' €';
                                 echo '<br />' . $hot['opis'];
                                 echo '</div><br /><a class="button1" href="detalji.php?id=' . $hot[0] . '">Detaljnije</a></div>';
