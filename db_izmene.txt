@@ -120,3 +120,9 @@ CREATE TABLE IF NOT EXISTS `ponuda_slike` (
   `vrsta` enum('mala','velika','watermark') COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=261 ;
+
+######################
+####  V. 1.0.9
+####  U. Strike
+######################
+ALTER TABLE  `stanovi` add  `hot_offer`  ENUM(  '0',  '1' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT  '0'
