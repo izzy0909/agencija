@@ -1,30 +1,32 @@
-Admin
-//ne moze da se odradi - mogu sami da dodaju tagove
-//odradjeno - dodavanje bar 10 slika (najbolje da bude text "Dodaj jos" i da se javascriptom stvara novo polje za upload)
-- pretraga stanova - cena, ulica, id, opstina, kvadratura
-//odradjeno - detaljan pregled stana
-//- na spisku stanova da se vidi cena, id
-//- watermark za slike
-//odradjeno - editovanje stanova
-//odradjeno- da se vide nove poruke
-- ispis slika i izbor naslovne slike, klikom na sliku da se otvori veca
-- dodati JavaScript(jQuery) potvrde za sve sto je bitno
+Novi ljaljanski zahtevi
 
 
-Front
+- sajt treba da se zove jevticnekretnine.rs bez /site
 
-- konverter valute (verovatno vec ima gotov negde, unese se kurs, kolicina, i on sam sracuna sve, moze da ide u header)
-- header google translate (nakon sto sajt ode live)
-/delimicno odradjeno- umesto kontakt ide "Trazimo nekretninu za Vas", Kontakt ide u header (onaj koji je sklonjen)
-//odradjeno - Tagovi da se uzmu kao sto su na alfasistemnekretnine
-//- Vise slika da moze da se doda (opet isti princip kao i u Admin panelu)
-//odradjeno- "Posaljite nekretninu" rename na "Ponudite nekretninu"
-//odradjeno - Na naslovnoj sa leve strane da bude Katalog ponude kao na alfasistemnekretnine (umesto News)
-//- Pretraga po id-ju stana
-//- Muzika kada se udje na sajt i prilikom prelaska preko menija (ako moze, nesto poput -> http://www.templatehelp.com/preset/pr_preview.php?i=23421&pr_code=xmkGYk3825jSH8wPA8uYZ75uS5xRRl)
-- Na naslovnoj umesto Welcome -> Hot offer, da oni mogu da promene
-//odradjeno - Broj i mail iz gornjeg desnog ugla da se skloni
-- Datum i vreme negde u header
-//odradjeno  - Posao kod nas u footer (tu bi oni postavljali ponude za poslove)
-- Naslovna (ispod glavne slike) da bude 10-ak najnovijih stanova  
-//odradjeno - eurorent-belgrade.rs -> Prodaja (hoce da moze da se odabere preko slike kategorija)
+- kada ukucas u web browser-u jevtic nekretnine treba search results da nam bude ovako  https://www.google.com/search?client=ubuntu&channel=fs&q=alfasistem+nekretnine&ie=utf-8&oe=utf-8                            a ne kao sto je sada rasparcano
+
+
+- treba da ubacis u pretragu za nekretnine i prodaja i izdavanje da ima opcije -poslovni prostor u poslovnoj zgradi i poslovni prostor u stambenoj zgradi jer se to razlikuje dosta
+
+- poslacu ti takodje i prevode za sve ono sto je na engleskom kao i ostale tekstove kako bi izmenio to i ubacio
+
+- Treba da uskladis velicinu i izgled fontova
+
+- U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
+
+- Ivana kaze da ti je rekla da stavis tacno vreme na sajt kao i google translate pa vidi da i to uradis
+
+// ODRADJENO - hot offer izmeni u NAJBOLJE U PONUDI
+
+// ODRADJENO - na dnu stranice Jevtic (belom bojom) i.m.j (crvenom bojom) Nekretnine d.o.o (zutom bojom) (Kao logo)© 2013   sva prava zadrzana tel:011/4054325, 060/4480659, info@jevticnekretnine.rs|  Coding by Web Refresh
+
+// ODRADJENO (ne znam sta je struktura) - Ovde dodaj i struktura ispod lokacije i opremljenost stana (namesten, prazan...)
+Brza pretraga
+Tip: 	
+Lokacija 	
+Površina: 	  - 
+Cena:
+
+- u ponedeljak ili subotu (nama vise odgovara subota) bi zaista bilo dobro da dodjes kako bismo u hodu ispravili jos neke stvarcice ukoliko se pojave kada sve to zavrsis.
+
+- u ponedeljak je zaista krajnji rok kada moramo da pocnemo da oglasavamo sajt i sve u vezi sa njim i da ljudi mogu da ga pretrazuju jer moramo da pocnemo da zaradjujemo...
