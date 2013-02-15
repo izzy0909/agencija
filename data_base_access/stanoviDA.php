@@ -262,16 +262,16 @@ function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $spr
     $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
     }
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
@@ -304,16 +304,16 @@ function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat
     $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= '" . mysql_real_escape_string($povrsina_od). "' ";
+    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= '" . mysql_real_escape_string($povrsina_do). "' ";
+    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= '" . mysql_real_escape_string($cena_od). "' ";
+    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= '" . mysql_real_escape_string($cena_do). "' ";
+    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
     }
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
