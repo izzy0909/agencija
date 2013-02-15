@@ -85,7 +85,7 @@
                     </li>
                     <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
                          <ul>
-                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
@@ -156,6 +156,7 @@
                                       echo '<a href="detalji.php?id=' . $stan[0] . '"><figure class="page1-img1"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' €</strong>';
                                       echo '<ul class="list1">';
                                       echo '<li>Tip:<span>' . $stan['tip'] . '</span></li>';
+                                      if($stan['tip']=='Stan') {echo '<li><span>' . $stan['stan_tip'] . '</span></li>'; };
                                       echo '<li>Lokacija:<span>' . $stan['opstina'] . '</span></li>';
                                       echo '</ul></li>';
                                   }
@@ -262,7 +263,7 @@
                     	<h3>Najbolje u ponudi!</h3>
                         <?php   echo '<div class="hot_polje">';
                                 $slika_thumb = prikaziSlikuThumb($hot[0]);
-                                echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="280" height="154" /></a></div>';
+                                echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="230" height="154" /></a></div>';
                                 echo '<div class="hot_info_naslov"><span>' . $hot['tip'] . ' | ' . $hot['opstina'] . ' | ' . $hot['kategorija'] .  '</span></div>';
                                 echo '<div class="hot_info_text">Površina: ' . $hot['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $hot['cena'] . ' €';
@@ -295,6 +296,23 @@
                                 </select>
                                    </td>
                            </tr>
+                            <tr>
+                                <th>Struktura</th>
+                                <td>
+                                    <select name="stan_tip" class="sforma_select">
+                                        <option value="Garsonjera">Garsonjera</option>
+                                        <option value="Jednosoban">Jednosoban</option>
+                                        <option value="Jednoiposoban">Jednoiposoban</option>
+                                        <option value="Dvosoban">Dvosoban</option>
+                                        <option value="Dvoiposoban">Dvoiposoban</option>
+                                        <option value="Trosoban">Trosoban</option>
+                                        <option value="Troiposoban">Troiposoban</option>
+                                        <option value="Četvorosoban">Četvorosoban</option>
+                                        <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                        <option value="Petosoban i veći">Petosoban i veći</option>
+                                    </select>
+                                </td>
+                            </tr>                           
                            <tr>
                                <th>Lokacija</th>
                                 <td>

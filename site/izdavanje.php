@@ -10,6 +10,7 @@ include_once '../data_base_access/slikeDA.php';
    
               if (isset ($_GET['pretrazi'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
                     $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
@@ -27,6 +28,7 @@ include_once '../data_base_access/slikeDA.php';
               else {
                   if(isset ($_GET['tip'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
                     $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
@@ -76,6 +78,7 @@ include_once '../data_base_access/slikeDA.php';
 <script type='text/javascript'>//<![CDATA[ 
 $(document).ready(function(){
     $('#tip').val('<?php echo $tip; ?>');
+    $('#stan_tip').val('<?php echo $stan_tip; ?>');
     $('#opstina').val('<?php echo $opstina; ?>');
     $('#grejanje').val('<?php echo $grejanje; ?>');
     $('#namestenost').val('<?php echo $namestenost; ?>');
@@ -198,6 +201,23 @@ $(document).ready(function(){
                                 </select>    
                                    </td>
                            </tr>
+                            <tr>
+                                <th>Struktura</th>
+                                <td>
+                                    <select id="stan_tip" name="stan_tip" class="sforma_select">
+                                        <option value="Garsonjera">Garsonjera</option>
+                                        <option value="Jednosoban">Jednosoban</option>
+                                        <option value="Jednoiposoban">Jednoiposoban</option>
+                                        <option value="Dvosoban">Dvosoban</option>
+                                        <option value="Dvoiposoban">Dvoiposoban</option>
+                                        <option value="Trosoban">Trosoban</option>
+                                        <option value="Troiposoban">Troiposoban</option>
+                                        <option value="Četvorosoban">Četvorosoban</option>
+                                        <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                        <option value="Petosoban i veći">Petosoban i veći</option>
+                                    </select>
+                                </td>
+                            </tr>  
                            <tr>
                                <th>Lokacija</th>
                                 <td>
@@ -357,7 +377,9 @@ $(document).ready(function(){
                                 $slika_thumb = prikaziSlikuThumb($stan[0]);
                                 echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="../admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></a></div>';
                                 echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
-                                echo '<div class="stan_info_text"><br />Površina: ' . $stan['kvadratura'] . ' m²';
+                                echo '<div class="stan_info_text">'; 
+                                if($stan['tip']=='Stan') {echo $stan['stan_tip']; }
+                                echo '<br /><br />Površina: ' . $stan['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
                                 echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
                             }

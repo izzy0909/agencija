@@ -300,10 +300,10 @@ h4 span {
 
 .carousel li {
     float: left;
-    margin-right: 20px;
+    margin-right: 20px; /* 20px def */
     overflow: visible !important;
-    width: 220px;
-	height:204px;
+    width: 170px; /* 220 def */
+	height:250px; /* def: 204px */
 }
 
 .carousel li strong {
@@ -321,7 +321,7 @@ h4 span {
     padding-bottom: 2px;
 	height:18px;
 	line-height:18px;	
-    width: 185px;
+    width: 155px; /* 165 */
 }
 .list1 {
 	width:200px;
@@ -355,8 +355,8 @@ h4 span {
 
 
 .page1-img1 img {
-	width:220px;
-	height:120px;
+	width:180px;
+	height:150px;
 }
 
 .next1 {
@@ -1446,9 +1446,8 @@ margin:2px 0 20px 10px;
 
 .stan_info_detaljnije{
     float: right;
-    margin-top:20px;
-    padding-bottom:5px;
-    padding-right:10px;
+    margin-top:5px;
+    padding-right:5px;
 }
 
 .hot_info_text{
