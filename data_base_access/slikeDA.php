@@ -103,6 +103,39 @@ function dodajSlikuUponude($NewImageName, $thumb_NewImageName, $stan_id, $DestRa
 
 }
 
+function prenesiSlikeZaPonude($id, $stan_id)
+{
+    global $conn;
+    
+
+    $sql = "SELECT * FROM ponuda_slike WHERE stan_id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+        ':id' => $id,
+        )); 
+    $slike_ponuda = $query->fetchAll(PDO::FETCH_BOTH);
+    
+    foreach($slike_ponuda as $slike){
+            $sql = "INSERT INTO slike (id, naziv, stan_id, putanja, glavna, vrsta)
+            VALUES              ('', :naziv, :stan_id, :putanja, ':glavna', ':vrsta')";
+            $query = $conn->prepare($sql);
+            $query->execute(array(
+		':naziv' => $slike['naziv'],
+		':stan_id' => $stan_id,
+		':putanja' => $slike['putanja'],
+                ':glavna' => $slike['glavna'],
+                ':vrsta' => $slike['vrsta']
+        ));
+    }
+    
+    $sql = "DELETE FROM ponuda_slike WHERE stan_id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+        ':id' => $id,
+        )); 
+    
+}
+
 function prikaziSlike($stan_id, $vrsta)
 {
     global $conn;

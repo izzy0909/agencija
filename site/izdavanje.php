@@ -75,15 +75,15 @@ include_once '../data_base_access/slikeDA.php';
 <![endif]-->
 <script type='text/javascript'>//<![CDATA[ 
 $(document).ready(function(){
-    $('#tipsel').val('<?php echo $tip; ?>');
-    $('#loksel').val('<?php echo $opstina; ?>');
-    $('#gresel').val('<?php echo $grejanje; ?>');
-    $('#namsel').val('<?php echo $namestenost; ?>');
-    $('#sprsel').val('<?php echo $sprat; ?>');
-    $('#povodsel').val('<?php echo $povrsina_od; ?>');
-    $('#povdosel').val('<?php echo $povrsina_do; ?>');
-    $('#cenaodsel').val('<?php echo $cena_od; ?>');
-    $('#cenadosel').val('<?php echo $cena_do; ?>');
+    $('#tip').val('<?php echo $tip; ?>');
+    $('#opstina').val('<?php echo $opstina; ?>');
+    $('#grejanje').val('<?php echo $grejanje; ?>');
+    $('#namestenost').val('<?php echo $namestenost; ?>');
+    $('#sprat').val('<?php echo $sprat; ?>');
+    $('#povOD').val('<?php echo $povrsina_od; ?>');
+    $('#povDO').val('<?php echo $povrsina_do; ?>');
+    $('#cenaOD').val('<?php echo $cena_od; ?>');
+    $('#cenaDO').val('<?php echo $cena_do; ?>');
 });//]]>  
 
 </script>
@@ -102,10 +102,10 @@ $(document).ready(function(){
                 <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
                 <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
-            <div id="sat_over" style="width:128px; height:50px; position: absolute; top:28px; right:310px; z-index: 1005;"></div>
-            <div id="sat" style="position: absolute; top:28px; right:310px; z-index: 1000;">
+            <div id="sat_over"></div>
+            <div id="sat">
 <!-- Begin of localTimes.info script --> 
-<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=0&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1000"></script>
+<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=E2A616&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=0&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
 </div> <!-- End of localTimes.info script --> 
             </div>
             <div class="clear"></div>
@@ -188,7 +188,7 @@ $(document).ready(function(){
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select id="tipsel" name="tip" class="sforma_select">
+                                <select id="tip" name="tip" class="sforma_select">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -201,7 +201,7 @@ $(document).ready(function(){
                            <tr>
                                <th>Lokacija</th>
                                 <td>
-                                <select id="loksel" name="opstina" class="sforma_select">
+                                <select id="opstina" name="opstina" class="sforma_select">
                                     <option value="">Izaberite...</option>
                                     <?php
                                     foreach($row as $opstina){
@@ -217,7 +217,7 @@ $(document).ready(function(){
                            <table>
                                 <tr>
                                 <th>Grejanje:</th>
-                                <td>        <select id="gresel" name="grejanje" class="sforma_select">
+                                <td>        <select id="grejanje" name="grejanje" class="sforma_select">
                                                 <option value="">Izaberite...</option>
                                                 <option value="CG">CG</option>
                                                 <option value="EG">EG</option>
@@ -229,7 +229,7 @@ $(document).ready(function(){
                                 <tr>
                                 <th>Nameštenost:</th>
                                 <td>
-                                    <select id="namsel" name="namestenost" class="sforma_select">
+                                    <select id="namestenost" name="namestenost" class="sforma_select">
                                         <option value="">Izaberite...</option>
                                         <option value="Namešten">Namešten</option>
                                         <option value="Nenamešten">Nenamešten</option>
@@ -238,7 +238,7 @@ $(document).ready(function(){
                                 </tr>
                                     <tr>
                                         <th>Sprat:</th>
-                                        <td><select id="sprsel" name="sprat" class="sforma_select">
+                                        <td><select id="sprat" name="sprat" class="sforma_select">
                                                 <option value="">Izaberite...</option>
                                                 <option value="Suteren">Suteren</option>
                                                 <option value="Prizemlje">Prizemlje</option>
@@ -271,7 +271,7 @@ $(document).ready(function(){
                            <table>
                        <tr>
                         <th>Površina:</th>
-                        <td><select id="povodsel" name="povOD" class="select_m" style="margin-left:10px;">
+                        <td><select id="povOD" name="povOD" class="select_m" style="margin-left:10px;">
                         <option value="">Izaberite...</option>        
                         <option value="20">od 20 m²</option>
                         <option value="40">od 40 m²</option>
@@ -282,7 +282,7 @@ $(document).ready(function(){
                         <option value="200">od 200 m²</option>
                         <option value="300">od 300 m²</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="povdosel" name="povDO" class="select_m">
+                    <select id="povDO" name="povDO" class="select_m">
                         <option value="">Izaberite...</option>
                         <option value="40">do 40 m²</option>
                         <option value="60">do 60 m²</option>
@@ -296,7 +296,7 @@ $(document).ready(function(){
                     </tr> 
                     <tr>
                     <th>Cena:</th>
-                    <td><select id="cenaodsel" name="cenaOD" class="select_m" style="margin-left:10px;">
+                    <td><select id="cenaOD" name="cenaOD" class="select_m" style="margin-left:10px;">
                         <option value="">Izaberite...</option>
                         <option value="200">od 200 €</option>
                         <option value="300">od 300 €</option>
@@ -311,7 +311,7 @@ $(document).ready(function(){
                         <option value="2000">od 2000 €</option>
                         <option value="3000">od 3000 €</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="cenadosel" name="cenaDO" class="select_m">
+                    <select id="cenaDO" name="cenaDO" class="select_m">
                         <option value="">Izaberite...</option>
                         <option value="300">do 300 €</option>
                         <option value="400">do 400 €</option>
@@ -361,7 +361,7 @@ $(document).ready(function(){
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
                                 echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
                             }
-                            echo '<div class="clear"></div><div class="stan_polje"></div><div class="stan_polje"></div><div class="stan_polje"></div>';
+                            echo '<div class="clear"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div>';
                            }
                            ?>
                        </div>

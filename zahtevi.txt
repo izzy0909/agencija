@@ -14,7 +14,7 @@ Novi ljaljanski zahtevi
 
 - U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
 
-- Ivana kaze da ti je rekla da stavis tacno vreme na sajt kao i google translate pa vidi da i to uradis
+// ODRADJEN SAT - Ivana kaze da ti je rekla da stavis tacno vreme na sajt kao i google translate pa vidi da i to uradis
 
 // ODRADJENO - hot offer izmeni u NAJBOLJE U PONUDI
 
@@ -30,3 +30,15 @@ Cena:
 - u ponedeljak ili subotu (nama vise odgovara subota) bi zaista bilo dobro da dodjes kako bismo u hodu ispravili jos neke stvarcice ukoliko se pojave kada sve to zavrsis.
 
 - u ponedeljak je zaista krajnji rok kada moramo da pocnemo da oglasavamo sajt i sve u vezi sa njim i da ljudi mogu da ga pretrazuju jer moramo da pocnemo da zaradjujemo...
+
+------------------------------------
+
+- da se odradi premestanje slika iz ponude_slike u slike
+
+- da se srede razvucene slike, neko kropovanje da se izmisli
+
+// ODRADJENO - da se napravi tabela za Trazimo za Vas i upis u nju
+
+- da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
+
+- da se doda na admin.php broj ponududa i trazimo za vas unosa

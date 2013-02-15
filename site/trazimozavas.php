@@ -1,6 +1,7 @@
 <?php
 
 include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/trazimoDA.php';
 
     
     
@@ -8,8 +9,8 @@ include_once '../data_base_access/stanoviDA.php';
 
 
 //var_dump($row);
-                        
-                        
+
+   
 ?>
 
 
@@ -53,10 +54,10 @@ include_once '../data_base_access/stanoviDA.php';
                 <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
                 <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
-            <div id="sat_over" style="width:128px; height:50px; position: absolute; top:28px; right:310px; z-index: 1005;"></div>
-            <div id="sat" style="position: absolute; top:28px; right:310px; z-index: 1000;">
+            <div id="sat_over"></div>
+            <div id="sat">
 <!-- Begin of localTimes.info script --> 
-<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=0&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1000"></script>
+<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=E2A616&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=0&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
 </div> <!-- End of localTimes.info script --> 
             </div>
             <div class="clear"></div>
@@ -126,7 +127,7 @@ include_once '../data_base_access/stanoviDA.php';
             	<article class="grid_12">
                 	<h3>Mi tražimo nekretninu za vas!</h3>
                  <div id="sforma">
-                <form id="ponudi_stan" action="trazimo.php" method="post">
+                <form id="dodaj_trazimo" action="trazimozavas.php" method="post">
                 <div id="pos1">
 		<table>
                     <tr>
@@ -236,7 +237,7 @@ include_once '../data_base_access/stanoviDA.php';
                         </tr>                             
                         <tr>
                         <th>Površina:</th>
-                        <td><select id="povOD" class="select_m" style="margin-left:10px;">
+                        <td><select name="povOD" class="select_m" style="margin-left:10px;">
                         <option value="20">od 20 m²</option>
                         <option value="40">od 40 m²</option>
                         <option value="60">od 60 m²</option>
@@ -246,7 +247,7 @@ include_once '../data_base_access/stanoviDA.php';
                         <option value="200">od 200 m²</option>
                         <option value="300">od 300 m²</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="povDO" class="select_m">
+                    <select name="povDO" class="select_m">
                         <option value="40">do 40 m²</option>
                         <option value="60">do 60 m²</option>
                         <option value="80">do 80 m²</option>
@@ -259,7 +260,7 @@ include_once '../data_base_access/stanoviDA.php';
                     </tr>  
                     <tr>
                     <th>Cena:</th>
-                    <td><select id="cenaOD" class="select_m" style="margin-left:10px;">
+                    <td><select name="cenaOD" class="select_m" style="margin-left:10px;">
                         <option value="200">od 200 €</option>
                         <option value="300">od 300 €</option>
                         <option value="400">od 400 €</option>
@@ -273,7 +274,7 @@ include_once '../data_base_access/stanoviDA.php';
                         <option value="2000">od 2000 €</option>
                         <option value="3000">od 3000 €</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select id="cenaDO" class="select_m">
+                    <select name="cenaDO" class="select_m">
                         <option value="300">do 300 €</option>
                         <option value="400">do 400 €</option>
                         <option value="500">do 500 €</option>
@@ -315,7 +316,7 @@ include_once '../data_base_access/stanoviDA.php';
                     </div>
 
                                 <div class="dugmad">
-                                        <input type="submit" value="Pošalji" class="sforma_button" name="trazimo" id="trazimo" />
+                                        <input type="submit" value="Pošalji" class="sforma_button" name="dodaj_trazimo" id="dodaj_trazimo" />
                                         <input type="reset" value="Obriši" class="sforma_button" /></div>
                 </form>    
                 </div>
@@ -341,3 +342,30 @@ include_once '../data_base_access/stanoviDA.php';
         
 </body>
 </html>
+
+<?php
+
+    if (isset ($_POST['kategorija'])){
+	
+    $kategorija = isset($_POST['kategorija']) ? $_POST['kategorija'] : null;
+    $tip = isset($_POST['tip']) ? $_POST['tip'] : null;
+    $stan_tip = isset($_POST['stan_tip']) ? $_POST['stan_tip'] : null;
+    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
+    $ime = isset($_POST['ime']) ? $_POST['ime'] : null;
+    $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
+    $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+    $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
+    $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
+    $povrsina_od = isset($_POST['pov_od']) ? $_POST['pov_od'] : null;
+    $povrsina_do = isset($_POST['pov_do']) ? $_POST['pov_do'] : null;
+    $cena_od = isset($_POST['cena_od']) ? $_POST['cena_od'] : null;
+    $cena_do = isset($_POST['cena_do']) ? $_POST['cena_do'] : null;
+    $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+    
+
+    dodajTrazimo($kategorija, $tip, $stan_tip, $opstina, $ime, $telefon, $email, $sprat, $grejanje, $namestenost, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $opis);
+
+
+}
+?>

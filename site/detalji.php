@@ -85,10 +85,10 @@ include_once '../data_base_access/slikeDA.php';
                 <a href="#" class="link1"><img src="images/soc-ms.png" width="39" alt="Pratite nas na Tviteru!"></a>
                 <a href="#" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
-            <div id="sat_over" style="width:128px; height:50px; position: absolute; top:28px; right:310px; z-index: 1005;"></div>
-            <div id="sat" style="position: absolute; top:28px; right:310px; z-index: 1000;">
+            <div id="sat_over"></div>
+            <div id="sat">
 <!-- Begin of localTimes.info script --> 
-<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=0&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1000"></script>
+<div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=E2A616&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=0&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
 </div> <!-- End of localTimes.info script --> 
             </div>
             <div class="clear"></div>
@@ -184,7 +184,7 @@ include_once '../data_base_access/slikeDA.php';
                         <div id="kbr">
                         <span>KATALOŠKI BROJ: <?php echo $id; ?></span>
                         </div>
-                        <div id="tip"><span><?php echo $stan['kategorija'] . ' | ' . $stan['tip'] . ' | ' . $stan['stan_tip']; ?></span>
+                        <div id="tip_detalji"><span><?php echo $stan['kategorija'] . ' | ' . $stan['tip'] . ' | ' . $stan['stan_tip']; ?></span>
                         </div>
                         <table style="text-align: left; width:100%;">
                             <tr>

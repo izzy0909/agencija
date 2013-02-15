@@ -126,3 +126,27 @@ CREATE TABLE IF NOT EXISTS `ponuda_slike` (
 ####  U. Strike
 ######################
 ALTER TABLE  `stanovi` add  `hot_offer`  ENUM(  '0',  '1' ) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT  '0'
+
+######################
+#### v. 1.0.10
+#### U. Strike
+######################
+CREATE TABLE IF NOT EXISTS `trazimo_za_vas` (
+  `id` int(10) NOT NULL,
+  `kategorija` enum('Stan','KuÄ‡a','Poslovni prostor','Magacin','Lokal') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `tip` enum('Stan','KuÄ‡a','Poslovni prostor','Magacin','Lokal') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `stan_tip` enum('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','ÄŒetvorosoban','ÄŒetvoroiposoban','Petosoban i viÅ¡e') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lokacija_id` int(225) NOT NULL,
+  `ime` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `telefon` varchar(300) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `sprat` enum('Suteren','Prizemlje','Visoko prizemlje','1. sprat','2. sprat','3. sprat','4. sprat','5. sprat','6. sprat','7. sprat','8. sprat','9. sprat','9. sprat','10. sprat','11. sprat','12. sprat','13. sprat','14. sprat','15. sprat','16. sprat','17. sprat','18. sprat','19. sprat','20. sprat i viÅ¡e') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `grejanje` enum('CG','EG','TA','PG','Klima ureÄ‘aj') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `namestenost` enum('NameÅ¡ten','NenameÅ¡ten') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `povrsina_od` int(50) NOT NULL,
+  `povrsina_do` int(50) NOT NULL,
+  `cena_od` int(50) NOT NULL,
+  `cena_do` int(50) NOT NULL,
+  `opis` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
