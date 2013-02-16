@@ -236,7 +236,7 @@ include_once '../data_base_access/trazimoDA.php';
                         </tr>                             
                         <tr>
                         <th>Površina:</th>
-                        <td><select name="povOD" class="select_m" style="margin-left:10px;">
+                        <td><select name="pov_od" class="select_m" style="margin-left:10px;">
                         <option value="20">od 20 m²</option>
                         <option value="40">od 40 m²</option>
                         <option value="60">od 60 m²</option>
@@ -246,7 +246,7 @@ include_once '../data_base_access/trazimoDA.php';
                         <option value="200">od 200 m²</option>
                         <option value="300">od 300 m²</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select name="povDO" class="select_m">
+                    <select name="pov_do" class="select_m">
                         <option value="40">do 40 m²</option>
                         <option value="60">do 60 m²</option>
                         <option value="80">do 80 m²</option>
@@ -259,7 +259,7 @@ include_once '../data_base_access/trazimoDA.php';
                     </tr>  
                     <tr>
                     <th>Cena:</th>
-                    <td><select name="cenaOD" class="select_m" style="margin-left:10px;">
+                    <td><select name="cena_od" class="select_m" style="margin-left:10px;">
                         <option value="200">od 200 €</option>
                         <option value="300">od 300 €</option>
                         <option value="400">od 400 €</option>
@@ -273,7 +273,7 @@ include_once '../data_base_access/trazimoDA.php';
                         <option value="2000">od 2000 €</option>
                         <option value="3000">od 3000 €</option>
                     </select>&nbsp;&nbsp;-&nbsp;
-                    <select name="cenaDO" class="select_m">
+                    <select name="cena_do" class="select_m">
                         <option value="300">do 300 €</option>
                         <option value="400">do 400 €</option>
                         <option value="500">do 500 €</option>
@@ -294,7 +294,7 @@ include_once '../data_base_access/trazimoDA.php';
                     <table>
                     <tr>
                         <th>Ime i prezime:</th>
-                            <td><input type="text" name="vlasnik" class="sforma_input"></td>
+                            <td><input type="text" name="ime" class="sforma_input"></td>
                     </tr>
                     <tr>
                          <th>Telefon:</th>
