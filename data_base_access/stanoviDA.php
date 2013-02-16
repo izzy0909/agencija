@@ -169,35 +169,60 @@ function promeniVidljivostStana($id, $vidljiv){
 
 function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik){
     global $conn;
-
+	
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE s.id != '' ";
     if(!empty ($id)){
-    $sql .= "AND s.id LIKE '%" . mysql_real_escape_string($id) . "%' ";
+    $sql .= "AND s.id LIKE :id ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
+    $sql .= "AND kvadratura >= :povrsina_od ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
+    $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
+    $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
+    $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($vlasnik)){
-    $sql .= "AND vlasnik LIKE '%" . mysql_real_escape_string($vlasnik) . "%'";
+    $sql .= "AND vlasnik LIKE :vlasnik";
     }
     
-    
     $query = $conn->prepare($sql);
+	
+	if(!empty ($id)){
+	$id = "%" . $id . "%";
+    $query->bindParam(':id', $id);
+    }
+    if(!empty ($opstina)){
+    $query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($povrsina_od)){
+    $query->bindValue(':povrsina_od', $povrsina_od);
+    }
+    if(!empty ($povrsina_do)){
+    $query->bindValue(':povrsina_do', $povrsina_do);
+    }
+    if(!empty ($cena_od)){
+    $query->bindValue(':cena_od', $cena_od);
+    }
+    if(!empty ($cena_do)){
+    $query->bindValue(':cena_do', $cena_do);
+    }
+    if(!empty ($vlasnik)){
+	$vlasnik = "%" . $vlasnik . "%";
+    $query->bindParam(':vlasnik', $vlasnik);
+    }
+	
+	
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
 
