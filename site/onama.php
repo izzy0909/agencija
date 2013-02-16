@@ -107,110 +107,25 @@
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-            <article class="grid_8">
-            	<h3 class="p14">About company</h3>
+            <article class="grid_12">
+            	<h3 class="p14">O nama</h3>
                 <div class="page2-box1">
-                	<a href="more.html"><figure class="page2-img1"><img src="images/page2-img1.jpg" alt=""></figure></a>
+                	<figure class="page2-img1"><img src="images/page2-img1.jpg" alt=""></figure>
                     <div class="extra-wrap">
-                    	<span class="text1 p2">Praesent justo dolor, lobortis quis, 
-lobortis dignissim, pulvinar ac, loremest
-donec sagittis euismod purus.</span>
-<p>Integer dapibus est porttitor lorem pretium nons it tempus ligula feugiat. Sed libero ligula, cursus isollicitudin sit amet, auctor tellus dui in sem.habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus euismod felis nec dui accumsan iaculis. Nunc aliquet sagittis risus, at porta lacus mollis aliquet sagittis vitae. Praesent tellus dui, pulvinar quis mattis vitae, feugiat ut erat. Morbi sollicitudin nulla a urna.</p>
+                    	<span class="text1 p2">Stručan i tehnički osposobljen tim Jevtić I.M.J nekretnine d.o.o se bavi posredovanjem u iznajmljivanju i kupoprodaji nekretnina kao i procenama vrednosti nekretnina u Beogradu. </span>
+                        <span class="text1 p2">Agenti sa dugogodišnjim iskustvom i tehničko osoblje naše kuće će Vam pružiti brzu, efikasnu i pouzdanu uslugu ukoliko tražite novi dom, poslovni prostor, magacin ili garažno mesto za zakup ili kupovinu. Naše usluge naplaćujemo po realizaciji i to je jedini način da ništa ne izgubite dok Vam ne pronađemo nekretninu koju tražite. Pozovite nas zato što mi zaista razumemo kakvu nekretninu tražite i pružite nam poverenje jer ste sa nama na pragu željene nekretnine.</span>
                     </div>
                     <div class="clear"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem. </p>
+                    <br /><br /><h3 class="p14">Zašto je dobra ideja da nas pozovete?</h3>
+                    <p style="font-size:16px; color:black;">Ukoliko prodajete, kupujete ili iznajmljujete nekretninu mi Vam pružamo pomoć jer:</p>
+                    <p style="font-size:16px; color:black;">• Smo uvek dobro obavešteni o promenama u zakonodavstvu</p>
+                    <p style="font-size:16px; color:black;"> • Imamo uvid u promene cena i atraktivnosti određenih lokacija na tržištu nekretnina</p>
+                    <p style="font-size:16px; color:black;">• Možemo da Vam omogućimo da u najkraćem vremenskom periodu postignete adekvatnu cenu, dogovor i realizaciju posla za nekretninu koju nudite ili tražite</p>
+                    <p style="font-size:16px; color:black;">• Vam omogućavamo sastavljanje kupoprodajnih i ugovora o zakupu nepokretnosti</p>
                 </div>
-                <h3 class="p14">Executive team</h3>
-                <article class="grid_4 alpha">
-                	<div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img2.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">John Franklin </a>
-                            <span>Co-founder and Chairman <br />of the Board</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img3.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">Inga North</a>
-                            <span>Chief Products Officer</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img4.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">Alise Puse</a>
-                            <span>Senior Property Manager</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </article>
-                <article class="grid_4 omega">
-                	<div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img5.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">Camala Haddon</a>
-                            <span>Vice Chairman</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img6.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">Sam Kromstain</a>
-                            <span>President and COO</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div class="page2-box2">
-                    	<figure class="page2-img2"><img src="images/page2-img7.jpg" alt=""></figure>
-                        <div class="extra-wrap">
-                        	<a class="link6" href="more.html">Alan Smith</a>
-                            <span>Client Service Manager</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </article>
                 <div class="clear"></div>
             </article>
-            <article class="grid_4">
-            	<h3 class="p14">Our awards</h3>
-                <div class="page2-box3">
-                	<figure class="page2-img3"><img src="images/page2-img8.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                    	<a class="link6 p15" href="more.html">Lobortis quisobortis dignis.</a>
-                        <p class="p16">Suspendisse Sollicitudin Velit Sed Leo</p>
-                        <p>Tellus dolor, dibus eget, elementum vel cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam rat volutpat utrum ante lacus quisue nulla porta vel ...</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="page2-box3">
-                	<figure class="page2-img3"><img src="images/page2-img9.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                    	<a class="link6 p15" href="more.html">Ut pharetra augue nec.</a>
-                        <p class="p16">Suspendisse Sollicitudin Velit Sed Leo</p>
-                        <p>Tellus dolor, dibus eget, elementum vel cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam rat volutpat utrum ante lacus quisue nulla porta vel ...</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="page2-box3 p17">
-                	<figure class="page2-img3"><img src="images/page2-img10.jpg" alt=""></figure>
-                    <div class="extra-wrap">
-                    	<a class="link6 p15" href="more.html">Aenean nonummy hendrerit.</a>
-                        <p class="p16">Suspendisse Sollicitudin Velit Sed Leo</p>
-                        <p>Tellus dolor, dibus eget, elementum vel cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam rat volutpat utrum ante lacus quisue nulla porta vel ...</p>
-                    </div>
-                    <div class="clear"></div>
-                </div>
-                <h3 class="p14">Careers</h3>
-                <div class="page2-box3">
-                	<a class="link6 p18" href="more.html">Vestibulum sed ante. Donec sagittis euismod purusobortis quisobor.</a>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem.</p>
-                    <a class="link7" href="more.html">Please visit the careers section to view our <br />opportunities or to make an enquiry.</a>
-                </div>
-            </article>
+
             </div>
         </div>
     </section>

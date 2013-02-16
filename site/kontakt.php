@@ -131,25 +131,36 @@
             	<article class="grid_8">
                 	<h3>Kako do nas</h3>
                     <figure class="page6-img1">
-                            <iframe width="600" height="307" src="https://maps.google.com/maps?&amp;q=Bokeljska 7,Beograd,Srbija&amp;output=embed">
+                            <iframe width="600" height="307" src="https://maps.google.com/maps?&amp;q=Bokeljska 7,Beograd,Srbija&amp;output=embed&amp;iwloc=near">
                             </iframe>
                         </figure>
                         <div class="clear"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio, gravida at, cursus nec, luctus a, lorem. Maecenas tristique orci ac sem.</p>
-                         <dl class="dl1 p30">
-                            <dt>8901 Marmora Road, Glasgow, D04 89GR.</dt>   
-                            <dd><span>Freephone:</span>  +1 800 559 6580</dd>                                  
-                            <dd><span>Telephone:</span>  +1 800 603 6035</dd> 
-                            <dd><span>FAX:</span>   +1 800 889 9898</dd>                                
-                            <dd>E-mail: <a href="#">mail@demolink.org</a></dd>
-                        </dl>
-                        <dl class="dl1 p30">
-                            <dt>9863 - 9867 Mill Road, Cambridge, MG09 99HT.</dt>   
-                            <dd><span>Freephone:</span>  +1 800 559 6580</dd>                                  
-                            <dd><span>Telephone:</span>  +1 800 603 6035</dd> 
-                            <dd><span>FAX:</span>   +1 800 889 9898</dd>                                
-                            <dd>E-mail: <a href="#">mail@demolink.org</a></dd>
-                        </dl>
+                        <div id="info">
+                            <p>Mi se nalazimo u Beogradu, na Autokomandi, samoj raskrsnici Bulevara Oslobođenja i Južnog Bulevara u stambeno-poslovnoj zgradi u Bokeljskoj ulici broj 7.</p>
+                            <table style="text-align: left;">
+                                <tr>
+                                    <th style="width:120px;" >Adresa:</th>
+                                    <td>Beograd, Vračar, Bokeljska 7</td>
+                                </tr>
+                                <tr>
+                                    <th>Telefon / faks:</th>
+                                    <td>011/4054325</td>
+                                </tr>
+                                <tr>
+                                    <th>Mobilni telefon:</th>
+                                    <td>060/4480659</td>
+                                </tr>
+                                <tr>
+                                    <th>E-mail:</th>
+                                    <td><a class="link2" href="mailto:info@jevticnekretnine.rs">info@jevticnekretnine.rs</a></td>
+                                </tr>
+                                <tr>
+                                    <th>Website:</th>
+                                    <td><a class="link2" href="www.jevticnekretnine.rs">www.jevticnekretnine.rs</a></td>
+                                </tr>
+                            </table>
+
+                        </div>
                 </article>
                 <article class="grid_4">
                 	<h3>Kontakt forma</h3>

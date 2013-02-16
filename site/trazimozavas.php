@@ -345,7 +345,7 @@ include_once '../data_base_access/trazimoDA.php';
 
 <?php
 
-    if (isset ($_POST['kategorija'])){
+    if (isset ($_POST['dodaj_trazimo'])){
 	
     $kategorija = isset($_POST['kategorija']) ? $_POST['kategorija'] : null;
     $tip = isset($_POST['tip']) ? $_POST['tip'] : null;

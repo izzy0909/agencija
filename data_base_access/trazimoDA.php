@@ -7,9 +7,8 @@ function dodajTrazimo($kategorija, $tip, $stan_tip, $lokacija_id, $ime, $telefon
 {
     global $conn;
     
-
     $sql = "INSERT INTO trazimo_za_vas (id, kategorija, tip, stan_tip, lokacija_id, ime, telefon, email, sprat, grejanje, namestenost, povrsina_od, povrsina_do, cena_od, cena_do, opis)
-            VALUES              ('', :kategorija, :tip, :stan_tip, :lokacija_id, :telefon, :email, :sprat, :grejanje, :namestenost, :povrsina_od, :povrsina_do, :cena_od, :cena_do, :opis";
+            VALUES              ('', :kategorija, :tip, :stan_tip, :lokacija_id, :telefon, :email, :sprat, :grejanje, :namestenost, :povrsina_od, :povrsina_do, :cena_od, :cena_do, :opis)";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':kategorija' => $kategorija,

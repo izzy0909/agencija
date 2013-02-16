@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include_once '../data_base_access/podsetnikDA.php';
 
 if($_SESSION['uloga'] != 1)
