@@ -236,35 +236,64 @@ function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, 
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
-    $sql .= "AND tip = '" . mysql_real_escape_string($tip). "' ";
+    $sql .= "AND tip = :tip ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($sprat)){
-    $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
+    $sql .= "AND sprat = :sprat ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
+    $sql .= "AND kvadratura >= :povrsina_od ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
+    $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
+    $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
+    $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($grejanje)){
-    $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
+    $sql .= "AND grejanje = :grejanje ";
     }
     if(!empty ($namestenost)){
-    $sql .= "AND namestenost = '" . mysql_real_escape_string($namestenost). "' ";
+    $sql .= "AND namestenost = :namestenost ";
     }
     $sql .= "AND kategorija = 'izdavanje' ";
 
-    $query = $conn->prepare($sql);
+	$query = $conn->prepare($sql);
+	
+	if(!empty ($tip)){
+	$query->bindParam(':tip', $tip);
+    }
+    if(!empty ($opstina)){
+	$query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($sprat)){
+	$query->bindParam(':sprat', $sprat);
+    }
+    if(!empty ($povrsina_od)){
+	$query->bindParam(':povrsina_od', $povrsina_od);
+    }
+    if(!empty ($povrsina_do)){
+	$query->bindParam(':povrsina_do', $povrsina_do);
+    }
+    if(!empty ($cena_od)){
+	$query->bindParam(':cena_od', $cena_od);
+    }
+    if(!empty ($cena_do)){
+	$query->bindParam(':cena_do', $cena_do);
+    }
+    if(!empty ($grejanje)){
+	$query->bindParam(':grejanje', $grejanje);
+    }
+    if(!empty ($namestenost)){
+	$query->bindParam(':namestenost', $namestenost);
+    }
+	
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
 
@@ -278,35 +307,64 @@ function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $spr
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
-    $sql .= "AND tip = '" . mysql_real_escape_string($tip). "' ";
+    $sql .= "AND tip = :tip ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($sprat)){
-    $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
+    $sql .= "AND sprat = :sprat ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
+    $sql .= "AND kvadratura >= :povrsina_od ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
+    $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
+    $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
+    $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($grejanje)){
-    $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
+    $sql .= "AND grejanje = :grejanje ";
     }
     if(!empty ($namestenost)){
-    $sql .= "AND namestenost = '" . mysql_real_escape_string($namestenost). "' ";
+    $sql .= "AND namestenost = :namestenost ";
     }
     $sql .= "AND kategorija = 'izdavanje' ";
 
-    $query = $conn->prepare($sql);
+	$query = $conn->prepare($sql);
+	
+	if(!empty ($tip)){
+	$query->bindParam(':tip', $tip);
+    }
+    if(!empty ($opstina)){
+	$query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($sprat)){
+	$query->bindParam(':sprat', $sprat);
+    }
+    if(!empty ($povrsina_od)){
+	$query->bindParam(':povrsina_od', $povrsina_od);
+    }
+    if(!empty ($povrsina_do)){
+	$query->bindParam(':povrsina_do', $povrsina_do);
+    }
+    if(!empty ($cena_od)){
+	$query->bindParam(':cena_od', $cena_od);
+    }
+    if(!empty ($cena_do)){
+	$query->bindParam(':cena_do', $cena_do);
+    }
+    if(!empty ($grejanje)){
+	$query->bindParam(':grejanje', $grejanje);
+    }
+    if(!empty ($namestenost)){
+	$query->bindParam(':namestenost', $namestenost);
+    }
+	
     $query->execute();
     return $query->fetch();
 
@@ -320,35 +378,64 @@ function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
-    $sql .= "AND tip = '" . mysql_real_escape_string($tip). "' ";
+    $sql .= "AND tip = :tip ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($sprat)){
-    $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
+    $sql .= "AND sprat = :sprat ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
+    $sql .= "AND kvadratura >= :povrsina_od ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
+    $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
+    $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
+    $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($grejanje)){
-    $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
+    $sql .= "AND grejanje = :grejanje ";
     }
     if(!empty ($namestenost)){
-    $sql .= "AND namestenost = '" . mysql_real_escape_string($namestenost). "' ";
+    $sql .= "AND namestenost = :namestenost ";
     }
     $sql .= "AND kategorija = 'prodaja' ";
 
-    $query = $conn->prepare($sql);
+	$query = $conn->prepare($sql);
+	
+	if(!empty ($tip)){
+	$query->bindParam(':tip', $tip);
+    }
+    if(!empty ($opstina)){
+	$query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($sprat)){
+	$query->bindParam(':sprat', $sprat);
+    }
+    if(!empty ($povrsina_od)){
+	$query->bindParam(':povrsina_od', $povrsina_od);
+    }
+    if(!empty ($povrsina_do)){
+	$query->bindParam(':povrsina_do', $povrsina_do);
+    }
+    if(!empty ($cena_od)){
+	$query->bindParam(':cena_od', $cena_od);
+    }
+    if(!empty ($cena_do)){
+	$query->bindParam(':cena_do', $cena_do);
+    }
+    if(!empty ($grejanje)){
+	$query->bindParam(':grejanje', $grejanje);
+    }
+    if(!empty ($namestenost)){
+	$query->bindParam(':namestenost', $namestenost);
+    }
+	
     $query->execute();
     return $query->fetch();
 
@@ -362,35 +449,64 @@ function pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $s
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
-    $sql .= "AND tip = '" . mysql_real_escape_string($tip). "' ";
+    $sql .= "AND tip = :tip ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = '" . mysql_real_escape_string($opstina). "' ";
+    $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($sprat)){
-    $sql .= "AND sprat = '" . mysql_real_escape_string($sprat). "' ";
+    $sql .= "AND sprat = :sprat ";
     }
     if(!empty ($povrsina_od)){
-    $sql .= "AND kvadratura >= " . mysql_real_escape_string($povrsina_od). " ";
+    $sql .= "AND kvadratura >= :povrsina_od ";
     }
     if(!empty ($povrsina_do)){
-    $sql .= "AND kvadratura <= " . mysql_real_escape_string($povrsina_do). " ";
+    $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($cena_od)){
-    $sql .= "AND cena >= " . mysql_real_escape_string($cena_od). " ";
+    $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
-    $sql .= "AND cena <= " . mysql_real_escape_string($cena_do). " ";
+    $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($grejanje)){
-    $sql .= "AND grejanje = '" . mysql_real_escape_string($grejanje). "' ";
+    $sql .= "AND grejanje = :grejanje ";
     }
     if(!empty ($namestenost)){
-    $sql .= "AND namestenost = '" . mysql_real_escape_string($namestenost). "' ";
+    $sql .= "AND namestenost = :namestenost ";
     }
     $sql .= "AND kategorija = 'prodaja' ";
 
-    $query = $conn->prepare($sql);
+	$query = $conn->prepare($sql);
+	
+	if(!empty ($tip)){
+	$query->bindParam(':tip', $tip);
+    }
+    if(!empty ($opstina)){
+	$query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($sprat)){
+	$query->bindParam(':sprat', $sprat);
+    }
+    if(!empty ($povrsina_od)){
+	$query->bindParam(':povrsina_od', $povrsina_od);
+    }
+    if(!empty ($povrsina_do)){
+	$query->bindParam(':povrsina_do', $povrsina_do);
+    }
+    if(!empty ($cena_od)){
+	$query->bindParam(':cena_od', $cena_od);
+    }
+    if(!empty ($cena_do)){
+	$query->bindParam(':cena_do', $cena_do);
+    }
+    if(!empty ($grejanje)){
+	$query->bindParam(':grejanje', $grejanje);
+    }
+    if(!empty ($namestenost)){
+	$query->bindParam(':namestenost', $namestenost);
+    }
+	
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
 

@@ -22,7 +22,7 @@ class Zubrag_watermark {
   var $force_image_type = -1; // Change image type? (-1 = same as original, 1 = GIF, 2 = JPG, 3 = PNG)
   var $save_to_file = true;
 
-  function Zubrag_watermark($image_path='', $offset_x=0, $offset_y=0) {
+  function Zubrag_watermark($image_path='', $offset_x=150, $offset_y=190) {
     $this->setImagePath($image_path);
     $this->setOffset($offset_x, $offset_y);
   }
