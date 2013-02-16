@@ -20,7 +20,7 @@ Novi ljaljanski zahtevi
 
 // ODRADJENO - na dnu stranice Jevtic (belom bojom) i.m.j (crvenom bojom) Nekretnine d.o.o (zutom bojom) (Kao logo)© 2013   sva prava zadrzana tel:011/4054325, 060/4480659, info@jevticnekretnine.rs|  Coding by Web Refresh
 
-// ODRADJENO (ne znam sta je struktura) - Ovde dodaj i struktura ispod lokacije i opremljenost stana (namesten, prazan...)
+// ODRADJENO - Ovde dodaj i struktura ispod lokacije i opremljenost stana (namesten, prazan...)
 Brza pretraga
 Tip: 	
 Lokacija 	

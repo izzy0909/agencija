@@ -21,5 +21,5 @@ else{
 
 	header('Location: spisak_ponuda.php');
 	} 
-	
+	else header('Location: spisak_ponuda.php');
 }   

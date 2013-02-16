@@ -54,3 +54,26 @@ function izbrisiTrazimo($id){
 		));
     
 }
+
+function ukupanBrojTrazimo(){
+    global $conn;
+
+    $sql = "SELECT COUNT(*) as broj FROM trazimo_za_vas";
+    $query = $conn->prepare($sql);
+    $query->execute();
+	return $query->fetch();
+    
+}
+
+function prikaziSveTrazimo($start, $limit){
+    global $conn;
+
+    $sql = "SELECT * FROM trazimo_za_vas as t 
+			INNER JOIN lokacija as l 
+			ON t.lokacija_id = l.id 
+			LIMIT $start, $limit";
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetchAll(PDO::FETCH_BOTH);
+    
+}

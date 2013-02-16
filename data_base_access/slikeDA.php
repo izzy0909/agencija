@@ -117,7 +117,7 @@ function prenesiSlikeZaPonude($id, $stan_id)
     
     foreach($slike_ponuda as $slike){
             $sql = "INSERT INTO slike (id, naziv, stan_id, putanja, glavna, vrsta)
-            VALUES              ('', :naziv, :stan_id, :putanja, ':glavna', ':vrsta')";
+            VALUES              ('', :naziv, :stan_id, :putanja, :glavna, :vrsta)";
             $query = $conn->prepare($sql);
             $query->execute(array(
 		':naziv' => $slike['naziv'],

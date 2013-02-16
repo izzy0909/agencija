@@ -1,8 +1,6 @@
 <?php
 
-include_once '../data_base_access/stanoviDA.php';
-include_once '../data_base_access/dodatniTagoviDA.php';
-include_once '../data_base_access/slikeDA.php';
+include_once '../data_base_access/trazimoDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
@@ -11,10 +9,8 @@ if($_SESSION['uloga'] != 1)
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
-	$stan = prikaziStan($id);
-	$tagovi = ispisiDodatneTagove($id);
-
-        $slike = prikaziSlike($id, 'velika');
+	$stan = prikaziTrazimo($id);
+	
 } 
                      
 ?>
@@ -22,7 +18,7 @@ if (isset ($_GET['id'])){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Jevtić Nekretnine</title>
+<title>Jevtic Nekretnine</title>
 <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" title="default" />
 <link rel="icon" href="images/kuca.png" type="image/x-icon" />
 <!-- <link rel="stylesheet" href="css/lightbox-screen.css" type="text/css" media="screen" /> -->
@@ -38,10 +34,6 @@ if (isset ($_GET['id'])){
 <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.smooth-scroll.min.js" type="text/javascript"></script>
 <script src="js/lightbox.js" type="text/javascript"></script>
-
-<!--  jquery core 
-<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
-
 <!--  checkbox styling script -->
 <script src="js/jquery/ui.core.js" type="text/javascript"></script>
 <script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
@@ -276,7 +268,7 @@ $(document).pngFix( );
 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
                 <div class="select_sub show">
 			<ul class="sub">
@@ -296,11 +288,11 @@ $(document).pngFix( );
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>              
+		</ul>
                 
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="spisak_trazimo.php"><b>Tražimo za vas</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="current"><li><a href="spisak_trazimo.php"><b>Tražimo za vas</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -313,10 +305,9 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
+				<li><a href="podsetnik.php">Spisak poruka</a></li>
+				<li class="sub_show"><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
 				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
-				
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -365,7 +356,7 @@ $(document).pngFix( );
 		<h1>Izmeni Podatke</h1>
 	</div>
 	<!-- end page-heading -->
-        <form id="izmeni_stan" action="izmeni_stan.php" method="post">
+        
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -405,60 +396,53 @@ $(document).pngFix( );
 		<!--  start step-holder -->
 		<div id="step-holder">
 			<div class="step-no">1</div>
-			<div class="step-dark-left"><a href="">Podaci o stanu</a></div>
+			<div class="step-dark-left"><a href="">Podaci o zahtevu</a></div>
 			
 		</div>
 		<!--  end step-holder -->
 
 		<!-- start id-form -->
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
-		<tr>
+                <tr>
 			<th valign="top">Id:</th>
 			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo $stan[0];?></td>
 			<td>
-			
+
 			</td>
 		</tr>
 		<tr>
-			<th valign="top">Vlasnik:</th>
-			<td><input type="text" class="inp-form" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
-			<td>
-			
-			</td>
-		</tr>
-		<tr>
-			<th valign="top">Telefon:</th>
-			<td><input type="text" class="inp-form" name="telefon" value="<?php echo $stan['telefon'];?>"/></td>
-			<td></td>
-		</tr>                    
-		<tr>
-			<th valign="top">E-mail:</th>
-			<td><input type="text" class="inp-form" name="email" value="<?php echo $stan['email'];?>"/></td>
-			<td></td>
-		</tr>             
-		<tr>
-			<th valign="top">Kategorija:</th>
-			<td><?php echo $stan['kategorija'];?></td>
-			<td></td>
-		</tr>   
-			<th valign="top">Tip:</th>
-			<td><?php echo $stan['tip'];?></td>
-			<td></td>
-		</tr>    
-			<th valign="top"></th>
-			<td><?php echo $stan['stan_tip'];?></td>
-			<td></td>
-		</tr>                     
-		<tr>
-			<th valign="top">Ulica i broj:</th>
-			<td><input type="text" class="inp-formV" name="ulica" value="<?php echo $stan['ulica'];?>"/><input type="text" class="inp-formM" name="br" value="<?php echo $stan['br'];?>"/></td>
+			<th valign="top">Ime:</th>
+			<td><?php echo $stan['ime'];?></td>
 			<td>
 			
 			</td>
 		</tr>
                 <tr>
+			<th valign="top">Telefon:</th>
+			<td><?php echo $stan['telefon'];?></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">E-mail:</th>
+			<td><?php echo $stan['email'];?></td>
+			<td></td>
+		</tr>
+                <tr>
+			<th valign="top">Kategorija:</th>
+			<td><?php echo $stan['kategorija'];?></td>
+			<td></td>
+		</tr>
+			<th valign="top">Tip:</th>
+			<td><?php echo $stan['tip'];?></td>
+			<td></td>
+		</tr>
+			<th valign="top"></th>
+			<td><?php echo $stan['stan_tip'];?></td>
+			<td></td>
+		</tr> 
+                <tr>
 			<th valign="top">Sprat:</th>
-			<td><?php echo $stan['sprat'];?>"</td>
+			<td><?php echo $stan['sprat'];?></td>
 			<td></td>
 		</tr>
 		<tr>
@@ -469,26 +453,27 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
-                <tr>
+		<tr>
 			<th valign="top">Grejanje:</th>
 			<td><?php echo $stan['grejanje'];?></td>
 			<td></td>
-		</tr>   
-                <tr>
+		</tr>
+		<tr>
 			<th valign="top">Nameštenost:</th>
 			<td><?php echo $stan['namestenost'];?></td>
 			<td></td>
-		</tr>                                
+		</tr>
                 <tr>
 			<th valign="top">Kvadratura:</th>
-			<td><input type="text" class="inp-form" name="kvadratura" value="<?php echo $stan['kvadratura'];?>"/></td>
+			<td><?php echo 'od ' . $stan['povrsina_od'] . 'm² do ' . $stan['povrsina_od'] . 'm²';?></td>
 			<td></td>
 		</tr>
 		<tr>
 			<th valign="top">Cena:</th>
-			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
+			<td><?php echo 'od ' . $stan['cena_od'] . '€ do ' . $stan['cena_od'] . '€';?></td>
 			<td></td>
-		</tr>                            
+		</tr> 
+		
 		<!--<tr>
 		<th valign="top">Select a date:</th>
 		<td class="noheight">
@@ -569,48 +554,21 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 	</tr>-->
-	<tr>
-		<th valign="top">Opis:</th>
-		<td><textarea rows="" cols="" class="form-textarea" name="opis"><?php echo $stan['opis'];?></textarea></td>
-		<td></td>
-	</tr>
-        
-                            <tr>
-                                <th valign="top">Slike:</th>
-                                <td>
-                                    <div id="slike">
-                                    <div class="imageRow">
-                                <?php 
-                                
-                                    foreach ($slike as $slike_stanova)
-                                    {
-                                        echo '<div class="single"><a class="single_a" href="slike/watermark_' . $slike_stanova['naziv'] . '" rel="lightbox"><img src="slike/thumb_' . $slike_stanova['naziv'] . '" alt="" width="100px" /></a>';
-                                        echo '<div style="padding-left:20px;"><a href="glavna_slika.php?slika_id=' . $slike_stanova['id'] . '&stan_id='.  $stan[0] .'">Glavna</a> | <a href="obrisi_sliku.php?slika_id=' . $slike_stanova['id'] . '">Obriši</a></div>';
-                                        echo '</div>';
-                                        
-
-                                    }
-                                ?>
-                                    
-                                    </div>
-                                    </div>
-                                </td>
-<!--                                <div class="imageRow">
-                                      <div class="single">
-                                              <a href="images/examples/image-1.jpg" rel="lightbox"><img src="images/examples/thumb-1.jpg" alt="" /></a>
-                                      </div>
-                                      <div class="single">
-                                              <a href="images/examples/image-2.jpg" rel="lightbox" title="Optional caption."><img src="images/examples/thumb-2.jpg" alt="" /></a>
-                                      </div>
-                                </div>        -->
-                             
+                        <tr>
+                                <th valign="top">Opis:</th>
+                                <td><?php echo $stan['opis'];?></td>
+                                <td></td>
                         </tr>
-	<tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <a href="obrisi_trazimo.php?id=<?php echo $stan[0]; ?>">Obriši ovaj zahtev!</a>
+                                </td>
+                            </tr>
+	
 		<th>&nbsp;</th>
 		<td valign="top">
-                        <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
-                        <input type="submit" value="Izmeni" class="form-submit" name="izmeni_stan" id="izmeni_stan" />
-			<input type="reset" value="reset" class="form-reset" />
+          
 		</td>
 		<td></td>
 	</tr>
@@ -619,99 +577,7 @@ $(document).pngFix( );
 
 	</td>
 	<td>
-        <!--  start related-activities -->
-	<div id="related-activities">
 
-		<!--  start related-act-top -->
-		<div id="step-holder">
-			<div class="step-no"></div>
-			<div class="step-dark-left"><a href="">Dodatni tagovi</a></div>
-
-		</div>
-		<!-- end related-act-top -->
-
-		<!--  start related-act-bottom -->
-		<div id="related-act-bottom">
-
-			<!--  start related-act-inner -->
-			<div id="related-act-inner">
-
-				<div class="left"><a href=""></a></div>
-				<div class="right">
-                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
-									
-                                        <tr>
-                                                
-                                                <td style="width:110px; "><input  type="checkbox" name="interfon" <?php if($tagovi['interfon']){ echo ' checked';}?>/>Interfon</td>
-                                                <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="tv" <?php if($tagovi['tv']){ echo ' checked';}?>/>TV</td>
-                                                <td><input  type="checkbox" name="klima" <?php if($tagovi['klima']){ echo ' checked';}?>/>Klima</td>
-                                        </tr>
-					<tr>
-                                                <td><input  type="checkbox" name="internet" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
-                                                <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="frizider" <?php if($tagovi['frizider']){ echo ' checked';}?>/>Frižider</td>
-                                                <td><input  type="checkbox" name="sporet" <?php if($tagovi['sporet']){ echo ' checked';}?>/>Šporet</td>
-                                        </tr>                                                                               
-                                        <tr>
-                                                <td><input  type="checkbox" name="ves_masina" <?php if($tagovi['ves_masina']){ echo ' checked';}?>/>Veš mašina</td>
-                                                <td><input  type="checkbox" name="kuhinjski_elementi" <?php if($tagovi['kuhinjski_elementi']){ echo ' checked';}?>/>Kuh. elementi</td>
-                                        </tr>                                              
-                                        <tr>
-                                                <td><input  type="checkbox" name="plakari" <?php if($tagovi['plakari']){ echo ' checked';}?>/>Plakari</td>
-                                                <td><input  type="checkbox" name="lift" <?php if($tagovi['lift']){ echo ' checked';}?>/>Lift</td>
-                                        </tr>       
-                                        <tr>
-                                                <td><input  type="checkbox" name="bazen" <?php if($tagovi['bazen']){ echo ' checked';}?>/>Bazen</td>
-                                                <td><input  type="checkbox" name="garaza" <?php if($tagovi['garaza']){ echo ' checked';}?>/>Garaža</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="parking" <?php if($tagovi['parking']){ echo ' checked';}?>/>Parking</td>
-                                                <td><input  type="checkbox" name="dvoriste" <?php if($tagovi['dvoriste']){ echo ' checked';}?>/>Dvorište</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="potkrovlje" <?php if($tagovi['potkrovlje']){ echo ' checked';}?>/>Potkrovlje</td>
-                                                <td><input  type="checkbox" name="terasa" <?php if($tagovi['terasa']){ echo ' checked';}?>/>Terasa</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="novogradnja" <?php if($tagovi['novogradnja']){ echo ' checked';}?>/>Novogradnja</td>
-                                                <td><input  type="checkbox" name="renovirano" <?php if($tagovi['renovirano']){ echo ' checked';}?>/>Renovirano</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="lux" <?php if($tagovi['lux']){ echo ' checked';}?>/>Lux</td>
-                                                <td><input  type="checkbox" name="penthaus" <?php if($tagovi['penthaus']){ echo ' checked';}?>/>Penthaus</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="salonski" <?php if($tagovi['salonski']){ echo ' checked';}?>/>Salonski</td>
-                                                <td><input  type="checkbox" name="lodja" <?php if($tagovi['lodja']){ echo ' checked';}?>/>Lođa</td>
-                                        </tr>
-                                    </table>
-				</div>
-
-				<div class="clear"></div>
-				
-
-				
-
-				<div class="clear"></div>
-				
-
-				
-				
-
-			</div>
-			<!-- end related-act-inner -->
-			<div class="clear"></div>
-
-		</div>
-		<!-- end related-act-bottom -->
-
-	</div>
-	<!-- end related-activities -->
 	
 
 		
@@ -758,7 +624,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
-        </form>
+        
 	<div class="clear">&nbsp;</div>
 
 </div>
