@@ -228,7 +228,7 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
 
 }
 
-function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s
@@ -237,6 +237,9 @@ function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, 
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
+    }
+    if(!empty ($stan_tip)){
+    $sql .= "AND stan_tip = :stan_tip ";
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = :lokacija_id ";
@@ -268,6 +271,9 @@ function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, 
 	
 	if(!empty ($tip)){
 	$query->bindParam(':tip', $tip);
+    }
+	if(!empty ($stan_tip)){
+	$query->bindParam(':stan_tip', $stan_tip);
     }
     if(!empty ($opstina)){
 	$query->bindParam(':lokacija_id', $opstina);
@@ -299,7 +305,7 @@ function pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, 
 
 }
 
-function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
 
     $sql = "SELECT COUNT(*) FROM stanovi as s
@@ -308,6 +314,9 @@ function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $spr
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
+    }
+    if(!empty ($stan_tip)){
+    $sql .= "AND stan_tip = :stan_tip ";
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = :lokacija_id ";
@@ -340,6 +349,9 @@ function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $spr
 	if(!empty ($tip)){
 	$query->bindParam(':tip', $tip);
     }
+	if(!empty ($stan_tip)){
+	$query->bindParam(':stan_tip', $stan_tip);
+    }
     if(!empty ($opstina)){
 	$query->bindParam(':lokacija_id', $opstina);
     }
@@ -370,7 +382,7 @@ function brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $spr
 
 }
 
-function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
 
     $sql = "SELECT COUNT(*) FROM stanovi as s
@@ -380,6 +392,9 @@ function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
     }
+    if(!empty ($stan_tip)){
+    $sql .= "AND stan_tip = :stan_tip ";
+    }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = :lokacija_id ";
     }
@@ -410,6 +425,9 @@ function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat
 	
 	if(!empty ($tip)){
 	$query->bindParam(':tip', $tip);
+    }
+	if(!empty ($stan_tip)){
+	$query->bindParam(':stan_tip', $stan_tip);
     }
     if(!empty ($opstina)){
 	$query->bindParam(':lokacija_id', $opstina);
@@ -441,7 +459,7 @@ function brojRezultataProdaja($tip, $opstina, $povrsina_od, $povrsina_do, $sprat
 
 }
 
-function pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s
@@ -450,6 +468,9 @@ function pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $s
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
+    }
+    if(!empty ($stan_tip)){
+    $sql .= "AND stan_tip = :stan_tip ";
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = :lokacija_id ";
@@ -481,6 +502,9 @@ function pretragaStanovaZaProdaju($tip, $opstina, $povrsina_od, $povrsina_do, $s
 	
 	if(!empty ($tip)){
 	$query->bindParam(':tip', $tip);
+    }
+	if(!empty ($stan_tip)){
+	$query->bindParam(':stan_tip', $stan_tip);
     }
     if(!empty ($opstina)){
 	$query->bindParam(':lokacija_id', $opstina);

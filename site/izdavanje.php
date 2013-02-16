@@ -21,8 +21,8 @@ include_once '../data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
-                    $broj_stanova = brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
                     
               }
               else {
@@ -39,8 +39,8 @@ include_once '../data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
-                    $broj_stanova = brojRezultataIzdavanje($tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
                   }
               }
 
@@ -204,6 +204,7 @@ $(document).ready(function(){
                                 <th>Struktura</th>
                                 <td>
                                     <select id="stan_tip" name="stan_tip" class="sforma_select">
+                                        <option value="">Izaberite...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
                                         <option value="Jednoiposoban">Jednoiposoban</option>
