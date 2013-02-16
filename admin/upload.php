@@ -104,11 +104,9 @@ if (is_array($ImageName))
 					// Insert info into database table!
 					// mysql_query("INSERT INTO slike (ImageName, ThumbName, ImgPath)
 					// VALUES ($DestRandImageName, $thumb_DestRandImageName, 'uploads/')");
-                    if($vrsta == 'dodavanje'){
+                    
                         dodajSliku($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName, $image_name, $imgdestpath);
-                    }else{
-                        dodajSlikuUponude($NewImageName, $thumb_NewImageName, $stan_id, $DestRandImageName, $thumb_DestRandImageName, $image_name, $imgdestpath);
-                    }
+                    
 
 			}else{
 				echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>! Please check if file is supported</div>'; //output error
