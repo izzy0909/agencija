@@ -87,7 +87,7 @@ function prikaziBrojZaTip($tip){
     global $conn;
 
     $sql = "SELECT COUNT(*) FROM stanovi 
-            WHERE tip = :tip";
+            WHERE tip = :tip AND vidljiv = 1";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':tip' => $tip
