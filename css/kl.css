@@ -1,0 +1,74 @@
+﻿/* reset */
+html, body, div, span, p, a, img, b, u, i, center, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	background: transparent;
+}
+
+/* div koji sadrzi tabelu */
+#kl-container {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	text-align:center;
+	margin:10px;
+}
+
+/* tabela kursne liste */
+#kl-table {
+	margin:10px auto;
+}
+
+a {
+	text-decoration:none;
+	color:#039BC2;
+}
+a:hover {
+	border-bottom: 1px dashed #039BC2;
+}
+
+#kl-table td {
+	padding:3px;
+}
+
+/* klasa linka oznake valute */
+.code_link {
+
+}
+
+/* celija koja sadrzi kurs */
+.td_rate {
+	text-align:right;
+	width:60px;
+}
+
+/* boja neparnog reda */
+.rowcolor1 {
+	background-color:#717171;
+}
+
+/* boja parnog reda */
+.rowcolor2 {
+	background-color:#545454;
+}
+
+/* boje za promenu kurseva */
+.green, .red, .yellow {
+	text-align:right;
+}
+.green {
+	color:#41A317;
+}
+.red {
+	color:#FF0000;
+	
+}
+.yellow {
+	color:#F6CF2B;
+}
+
+.imenaKurseva {
+	font-size:10px;
+}
