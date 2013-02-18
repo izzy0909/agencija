@@ -7,11 +7,13 @@ if($_SESSION['uloga'] != 1)
     header('Location: login.php');
 }
 else{
-	if (isset ($_GET['slika_id'])){
+	if (isset ($_GET['slika_naziv'])){
 
-	$id = $_GET['slika_id'];
-	izbrisiSliku($id);
-
+	$naziv = $_GET['slika_naziv'];
+	izbrisiSliku($naziv);
+        unlink("slike/" . $naziv);
+        unlink("slike/thumb_" . $naziv);
+        unlink("slike/watermark_" . $naziv);
 	header("Location:".$_SERVER['HTTP_REFERER']);
 	}
 

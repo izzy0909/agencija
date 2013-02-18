@@ -149,14 +149,16 @@ function prikaziSlike($stan_id, $vrsta)
     return $query->fetchAll(PDO::FETCH_BOTH);
 }
 
-function izbrisiSliku($id){
+function izbrisiSliku($naziv){
     global $conn;
 
     $sql = "DELETE FROM slike
-			WHERE id = :id";
+	    WHERE naziv
+            LIKE :naziv";
     $query = $conn->prepare($sql);
+    $naziv = '%'.$naziv;
     $query->execute(array(
-		':id' => $id
+		':naziv' => $naziv
 		));
 
 }
