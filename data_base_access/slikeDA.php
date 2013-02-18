@@ -149,6 +149,19 @@ function prikaziSlike($stan_id, $vrsta)
     return $query->fetchAll(PDO::FETCH_BOTH);
 }
 
+function prikaziSlikeZaPonudu($stan_id, $vrsta)
+{
+    global $conn;
+    
+    $sql = "SELECT * FROM ponuda_slike WHERE stan_id = :stan_id AND vrsta = :vrsta";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+                ':stan_id' => $stan_id,
+		':vrsta' => $vrsta
+		));
+    return $query->fetchAll(PDO::FETCH_BOTH);
+}
+
 function izbrisiSliku($naziv){
     global $conn;
 

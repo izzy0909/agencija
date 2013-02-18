@@ -323,15 +323,6 @@ $(document).pngFix( );
 		</li>
 		</ul>
 
-		<div class="nav-divider">&nbsp;</div>
-
-		<ul class="select"><li><a href="#nogo"><b>News</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-
 		<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
@@ -562,7 +553,7 @@ $(document).pngFix( );
                             <tr>
                                 <th></th>
                                 <td>
-                                    <a href="obrisi_trazimo.php?id=<?php echo $stan[0]; ?>">Obriši ovaj zahtev!</a>
+                                    <a href="izbrisi_trazimo.php?id=<?php echo $stan[0]; ?>">Obriši ovaj zahtev!</a>
                                 </td>
                             </tr>
 	
