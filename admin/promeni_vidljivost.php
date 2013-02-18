@@ -7,13 +7,13 @@ include_once '../data_base_access/stanoviDA.php';
 	$vidljiv = isset($_GET['vidljiv']) ? $_GET['vidljiv'] : null;
     
     
-    var_dump($id, $vidljiv);
+    
 	
 	if($vidljiv == '1'){
-    promeniVidljivostStana($id, '0');
+            promeniVidljivostStana($id, '0');
 	}
 	else{
-	promeniVidljivostStana($id, '1');
+            promeniVidljivostStana($id, '1');
 	}
 
-	header("Location:".$_SERVER['HTTP_REFERER']);
+	header("Location:spisak_stanova.php");
