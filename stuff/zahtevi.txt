@@ -1,44 +1,14 @@
-Novi ljaljanski zahtevi
-
-
-- sajt treba da se zove jevticnekretnine.rs bez /site
-
-- kada ukucas u web browser-u jevtic nekretnine treba search results da nam bude ovako  https://www.google.com/search?client=ubuntu&channel=fs&q=alfasistem+nekretnine&ie=utf-8&oe=utf-8                            a ne kao sto je sada rasparcano
-
-
 - treba da ubacis u pretragu za nekretnine i prodaja i izdavanje da ima opcije -poslovni prostor u poslovnoj zgradi i poslovni prostor u stambenoj zgradi jer se to razlikuje dosta
 
 - poslacu ti takodje i prevode za sve ono sto je na engleskom kao i ostale tekstove kako bi izmenio to i ubacio
 
-- Treba da uskladis velicinu i izgled fontova
-
 - U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
 
-// ODRADJEN SAT - Ivana kaze da ti je rekla da stavis tacno vreme na sajt kao i google translate pa vidi da i to uradis
-
-// ODRADJENO - hot offer izmeni u NAJBOLJE U PONUDI
-
-// ODRADJENO - na dnu stranice Jevtic (belom bojom) i.m.j (crvenom bojom) Nekretnine d.o.o (zutom bojom) (Kao logo)© 2013   sva prava zadrzana tel:011/4054325, 060/4480659, info@jevticnekretnine.rs|  Coding by Web Refresh
-
-// ODRADJENO - Ovde dodaj i struktura ispod lokacije i opremljenost stana (namesten, prazan...)
-Brza pretraga
-Tip: 	
-Lokacija 	
-Površina: 	  - 
-Cena:
-
-- u ponedeljak ili subotu (nama vise odgovara subota) bi zaista bilo dobro da dodjes kako bismo u hodu ispravili jos neke stvarcice ukoliko se pojave kada sve to zavrsis.
-
-- u ponedeljak je zaista krajnji rok kada moramo da pocnemo da oglasavamo sajt i sve u vezi sa njim i da ljudi mogu da ga pretrazuju jer moramo da pocnemo da zaradjujemo...
-
 ------------------------------------
-
-// ODRADJENO - da se odradi premestanje slika iz ponude_slike u slike
-
-// ODRADJENO - da se srede razvucene slike, neko kropovanje da se izmisli
-
-// ODRADJENO - da se napravi tabela za Trazimo za Vas i upis u nju
-
 - da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
 
 - da se doda na admin.php broj ponududa i trazimo za vas unosa
+
+- ako obrises glavnu sliku da druga automatski postane glavna ili da glavna ne moze da se obrise i nesto da obelezi glavnu
+
+- stanicenje na pretrazi
