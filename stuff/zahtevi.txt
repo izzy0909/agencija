@@ -18,3 +18,5 @@
 - samo oni brisu stanove
 
 - cuvanje stanova
+
+// - spisak svih brojeva iz imenika

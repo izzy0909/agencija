@@ -12,7 +12,7 @@ else{
 	$id = $_GET['id'];
 	izbrisiBroj($id);
 	
-	header('Location: imenik.php');
+	header("Location:" .$_SERVER['HTTP_REFERER']);
 	} 
 	
 } 

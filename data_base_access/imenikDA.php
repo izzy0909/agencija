@@ -9,7 +9,7 @@ function dodajBroj($agencija, $broj)
 
     $sql = "INSERT INTO imenik (id, agencija, broj)
             VALUES              ('', :agencija, :broj)
-			ON DUPLICATE KEY UPDATE broj=:broj";
+            ON DUPLICATE KEY UPDATE broj=:broj";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':agencija' => $agencija,
@@ -41,4 +41,26 @@ function izbrisiBroj($id){
 		':id' => $id
 		));
     
+}
+
+function prikaziSveBrojeve($start, $limit){
+    global $conn;
+
+    $sql = "SELECT * FROM imenik
+            LIMIT $start, $limit";
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetchAll(PDO::FETCH_BOTH);
+
+}
+
+function ukupnoBrojeva(){
+    global $conn;
+
+        $sql = "SELECT COUNT(*) as broj
+                FROM imenik";
+	$query = $conn->prepare($sql);
+	$query->execute();
+	return $query->fetch();
+
 }

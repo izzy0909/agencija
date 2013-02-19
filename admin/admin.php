@@ -282,23 +282,6 @@ $(document).pngFix( );
 		</ul>                  
                 
 		<div class="nav-divider">&nbsp;</div>
-		
-		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
-		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		<div class="select_sub show">
-			<ul class="sub">
-				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
-				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
-				
-			</ul>
-		</div>
-		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
-		</li>
-		</ul>
-                
-		<div class="nav-divider">&nbsp;</div>
-
 		<ul class="select"><li><a href="spisak_trazimo.php"><b>Tražimo za vas</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 
@@ -306,11 +289,33 @@ $(document).pngFix( );
 		</li>
 		</ul>
 		
+                
+		<div class="nav-divider">&nbsp;</div>
+
+                <ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+		<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
+				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
+
+			</ul>
+		</div>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		</ul>
+		
+		
 		<div class="nav-divider">&nbsp;</div>
 		
 		<ul class="select"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-		
+		<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="spisak_agencija.php">Spisak agencija</a></li>
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>

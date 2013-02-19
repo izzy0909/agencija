@@ -318,7 +318,12 @@ $(document).pngFix( );
 
 		<ul class="current"><li><a href="imenik.php"><b>Imenik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+		<div class="select_sub show">
+			<ul class="sub">
+                            <li class="sub_show"><a href="imenik.php">Imenik</a></li>
+                            <li><a href="spisak_agencija.php">Spisak agencija</a></li>
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
