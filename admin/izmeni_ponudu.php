@@ -568,7 +568,7 @@ $(document).pngFix( );
                                     foreach ($slike as $slike_stanova)
                                     {
                                         echo '<div class="single"><a class="single_a" href="slike/watermark_' . $slike_stanova['naziv'] . '" rel="lightbox"><img src="slike/thumb_' . $slike_stanova['naziv'] . '" alt="" width="100px" /></a>';
-                                        echo '<div style="padding-left:35px;"><a href="obrisi_sliku.php?slika_naziv=' . $slike_stanova['naziv'] . '">Obriši</a></div>';
+                                        echo '<div style="padding-left:35px;"><a href="obrisi_sliku_ponuda.php?slika_naziv=' . $slike_stanova['naziv'] . '">Obriši</a></div>';
                                         echo '</div>';
                                         
 

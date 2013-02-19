@@ -176,6 +176,20 @@ function izbrisiSliku($naziv){
 
 }
 
+function izbrisiSlikuZaPonudu($naziv){
+    global $conn;
+
+    $sql = "DELETE FROM ponuda_slike
+	    WHERE naziv
+            LIKE :naziv";
+    $query = $conn->prepare($sql);
+    $naziv = '%'.$naziv;
+    $query->execute(array(
+		':naziv' => $naziv
+		));
+
+}
+
 function postaviGlavnu($stan_id, $slika_id){
     global $conn;
 
