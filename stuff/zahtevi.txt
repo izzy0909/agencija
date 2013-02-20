@@ -7,7 +7,7 @@
 ------------------------------------
 - da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
 
-- da se doda na admin.php broj ponududa i trazimo za vas unosa
+//- da se doda na admin.php broj ponududa i trazimo za vas unosa
 
 - ako obrises glavnu sliku da druga automatski postane glavna ili da glavna ne moze da se obrise i nesto da obelezi glavnu
 

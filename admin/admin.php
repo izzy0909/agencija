@@ -1,5 +1,7 @@
 <?php
 include_once '../data_base_access/podsetnikDA.php';
+include_once '../data_base_access/trazimoDA.php';
+include_once '../data_base_access/ponudeDA.php';
 
 if($_SESSION['uloga'] != 1)
 {
@@ -7,7 +9,9 @@ if($_SESSION['uloga'] != 1)
 }else{
     $user = $_SESSION['username'];
     $broj_poruka = prebrojDanasnjePorukeZaKorisnika($user);
-	
+    $broj_ponuda = ukupanBrojPonuda();
+    $broj_trazimo_za_vas = ukupanBrojTrazimo();
+
 }
 ?>
 
@@ -368,12 +372,29 @@ $(document).pngFix( );
 				{
 					echo '<a href="danasnji_podsetnici.php">Danasnji podsetnici: <span style="color:red;">' . $broj_poruka['ukupno'] . ' </span>!!!!!!</a>';
 				}else{
-					echo 'Nemate novih poruka za danas';
+					echo 'Nemate podsetnike za danas';
 				}
 
-			?></h2>
-			<h3><!--Local Heading--></h3>
-			
+			?>
+                        </h2>
+			<h2><?php
+                                if($broj_ponuda['broj'] >= 1)
+				{
+					echo '<a href="spisak_ponuda.php">Ukupan broj ponuda: <span style="color:red;">' . $broj_ponuda['broj'] . ' </span></a>';
+				}else{
+					echo 'Nema novih ponuda';
+				}
+                                ?>
+                        </h2>
+			<h2><?php
+                                if($broj_trazimo_za_vas['broj'] >= 1)
+				{
+					echo '<a href="spisak_ponuda.php">Trazimo za Vas: <span style="color:red;">' . $broj_trazimo_za_vas['broj'] . ' </span></a>';
+				}else{
+					echo 'Nema novih poruka u "Trazimo za Vas"';
+				}
+                                ?>
+                        </h2>
 			
 			</div>
 			<!--  end table-content  -->
