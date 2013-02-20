@@ -1,4 +1,4 @@
-######################
+﻿######################
 ####  V. 1.0.1
 ####  U. Izzy
 ######################
@@ -150,3 +150,9 @@ CREATE TABLE IF NOT EXISTS `trazimo_za_vas` (
   `opis` varchar(5000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+######################
+#### v. 1.0.11
+#### U. Izzy
+######################
+ALTER TABLE  `stanovi` ADD  `dodao` VARCHAR( 100 ) NOT NULL AFTER  `hot_offer`

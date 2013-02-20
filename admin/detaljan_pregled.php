@@ -484,7 +484,12 @@ $(document).pngFix( );
 			<th valign="top">Cena:</th>
 			<td><?php echo $stan['cena'];?></td>
 			<td></td>
-		</tr> 
+		</tr>
+                <tr>
+			<th valign="top">Stan dodao:</th>
+			<td><?php echo $stan['dodao'];?></td>
+			<td></td>
+		</tr>
 		
 		<!--<tr>
 		<th valign="top">Select a date:</th>

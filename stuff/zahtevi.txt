@@ -13,7 +13,7 @@
 
 - stanicenje na pretrazi
 
-- ko je dodao stan
+//- ko je dodao stan
 
 - samo oni brisu stanove
 
