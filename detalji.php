@@ -302,7 +302,7 @@ include_once 'data_base_access/slikeDA.php';
                         $gmap=$stan['ulica'] . ", " . $stan['opstina'] . ", Beograd, Serbia";
                         //echo $gmap;
                         ?>
-                        <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q=<?php echo $gmap; ?>&hl=en&output=embed&iwloc=near"></iframe>
+                        <iframe width="580" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.rs/maps?q=<?php echo $gmap; ?>&hl=en&output=embed&iwloc=near"></iframe>
                     </div>
                     <div id="detalji2">
                         <?php
