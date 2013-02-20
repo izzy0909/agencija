@@ -167,6 +167,20 @@ function promeniVidljivostStana($id, $vidljiv){
 	    
 }
 
+function promeniHotStana($id, $hot){
+    global $conn;
+
+    $sql = "UPDATE stanovi
+            SET hot_offer = :hot
+            WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id,
+		':hot' => $hot
+		));
+	    
+}
+
 function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik){
     global $conn;
 	

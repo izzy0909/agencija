@@ -502,6 +502,7 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
 					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
 					<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Hot</a></th>
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
 				<?php
@@ -523,10 +524,12 @@ $(document).pngFix( );
 					<td><?php echo $stan['kvadratura'];?></td>
                                         <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
+                                        <td><?php if($stan['hot_offer'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
 					<td class="options-width">
 					<a href="izmeni.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
 					<a href="detaljan_pregled.php?id=<?php echo $stan[0];?>" title="Detaljnije" class="icon-3 info-tooltip"></a>
 					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="icon-5 info-tooltip"></a>
+                                        <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="icon-6 info-tooltip"></a>
 					<a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<!--<a href="" title="Edit" class="icon-4 info-tooltip"></a>-->
 					</td>
