@@ -389,7 +389,7 @@ $(document).pngFix( );
 			<h2><?php
                                 if($broj_trazimo_za_vas['broj'] >= 1)
 				{
-					echo '<a href="spisak_ponuda.php">Trazimo za Vas: <span style="color:red;">' . $broj_trazimo_za_vas['broj'] . ' </span></a>';
+					echo '<a href="spisak_trazimo.php">Trazimo za Vas: <span style="color:red;">' . $broj_trazimo_za_vas['broj'] . ' </span></a>';
 				}else{
 					echo 'Nema novih poruka u "Trazimo za Vas"';
 				}
