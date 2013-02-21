@@ -7,6 +7,31 @@ include_once 'data_base_access/slikeDA.php';
 
    $row = prikaziSveOpstine();
 
+              if(isset($_GET['str'])) {
+                    $str = (int)htmlspecialchars($_GET['str']);
+                    if(isset($_GET['pretrazi'])){
+                        $url_temp = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                        $url_arr = explode("&pretrazi", $url_temp);
+                        $url = $url_arr[0];
+                    }
+                    else{
+                        $url_temp = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                        $url_arr = explode("&str", $url_temp);
+                        $url = $url_arr[0];
+                    }
+                    }
+              else { 
+                    $str=1;
+                    if(isset($_GET['pretrazi'])){
+                        $url_temp = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                        $url_arr = explode("&pretrazi", $url_temp);
+                        $url = $url_arr[0];
+                    }
+                    else{
+                        $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+                    }
+                    };
+              $start = ($str-1) * 30;   
    
               if (isset ($_GET['pretrazi'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
@@ -21,7 +46,7 @@ include_once 'data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
                     $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                    
                     
               }
@@ -39,7 +64,7 @@ include_once 'data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
                     $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                                       
                   }
               }
@@ -380,6 +405,24 @@ $(document).ready(function(){
                                 echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
                             }
                             echo '<div class="clear"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div>';
+                            echo '<div class="clear"></div>';
+                            echo '<div id="stranice">';
+                            $strmax = ceil($broj_stanova[0] / 30);
+                            if ($strmax==0){ $strmax = 1; }
+                                    if($str==1){
+                                        echo '<img src="images/p_prev_d.png" alt="Prethodna strana">';
+                                        }
+                                    else {
+                                        echo '<a href="' . $url . '&str=' . ($str-1) . '"><img src="images/p_prev.png" alt="Prethodna strana"></a>';
+                                    }
+                                    echo '<span>&nbsp;&nbsp;&nbsp;' . $str . '&nbsp;/&nbsp;' . $strmax . '&nbsp;&nbsp;&nbsp;</span>';
+                                    if($str==$strmax){
+                                        echo '<img src="images/p_next_d.png" alt="Sledeća strana">';
+                                    }
+                                    else {
+                                        echo '<a href="' . $url . '&str=' . ($str+1) . '"><img src="images/p_next.png" alt="Sledeća strana"></a>';
+                                    }
+                            echo '</div>';
                            }
                            ?>
                        </div>

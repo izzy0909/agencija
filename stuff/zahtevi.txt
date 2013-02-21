@@ -11,7 +11,7 @@
 
 - ako obrises glavnu sliku da druga automatski postane glavna ili da glavna ne moze da se obrise i nesto da obelezi glavnu
 
-- stanicenje na pretrazi
+// - stanicenje na pretrazi
 
 //- ko je dodao stan
 

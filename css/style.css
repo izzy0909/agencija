@@ -1451,6 +1451,22 @@ margin:2px 0 20px 10px;
     padding-right:5px;
 }
 
+#stranice{
+    width:100%;
+    text-align: center;
+    margin-top:20px;
+    vertical-align: middle;
+}
+
+#stranice span{
+    display:inline-block;
+    font-size:14px;
+    font-weight: bold;
+    padding-top:3px;
+}
+
+/* HOT OFFER  ========================================================================================= */
+
 .hot_info_text{
     font-size:12px;
     padding-top:10px

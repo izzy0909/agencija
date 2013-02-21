@@ -243,7 +243,7 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
 
 }
 
-function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s
@@ -280,7 +280,7 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     if(!empty ($namestenost)){
     $sql .= "AND namestenost = :namestenost ";
     }
-    $sql .= "AND kategorija = 'izdavanje' ";
+    $sql .= "AND kategorija = 'izdavanje' LIMIT $start , 30 ";
 
 	$query = $conn->prepare($sql);
 	
@@ -314,6 +314,7 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     if(!empty ($namestenost)){
 	$query->bindParam(':namestenost', $namestenost);
     }
+//    $query->bindParam(':start', $start);
 	
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
@@ -474,13 +475,13 @@ function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina
 
 }
 
-function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
+function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 LIMIT $start, 30 ";
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
     }
