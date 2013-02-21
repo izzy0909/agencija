@@ -20,3 +20,5 @@
 - cuvanje stanova
 
 // - spisak svih brojeva iz imenika
+
+- ako se obrise stan da se obrisu sve slike za taj stan 

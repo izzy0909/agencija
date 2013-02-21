@@ -1,5 +1,6 @@
 <?php
 include 'upload.php';
+include_once '../data_base_access/slikeDA.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/dodatniTagoviDA.php';
 

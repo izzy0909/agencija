@@ -156,3 +156,38 @@ CREATE TABLE IF NOT EXISTS `trazimo_za_vas` (
 #### U. Izzy
 ######################
 ALTER TABLE  `stanovi` ADD  `dodao` VARCHAR( 100 ) NOT NULL AFTER  `hot_offer`
+
+######################
+#### v. 1.0.12
+#### U. Izzy
+######################
+CREATE TABLE IF NOT EXISTS `izbrisani_stanovi` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `kategorija` enum('izdavanje','prodaja') COLLATE utf8_unicode_ci NOT NULL,
+  `tip` enum('Stan','KuÄ‡a','Poslovni prostor','Magacin','Lokal') COLLATE utf8_unicode_ci NOT NULL,
+  `stan_tip` enum('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','ÄŒetvorosoban','ÄŒetvoroiposoban','Petosoban i viÅ¡e') COLLATE utf8_unicode_ci NOT NULL,
+  `vlasnik` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `lokacija_id` int(255) NOT NULL,
+  `ulica` varchar(400) COLLATE utf8_unicode_ci NOT NULL,
+  `br` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `sprat` enum('Suteren','Prizemlje','Visoko prizemlje','1. sprat','2. sprat','3. sprat','4. sprat','5. sprat','6. sprat','7. sprat','8. sprat','9. sprat','9. sprat','10. sprat','11. sprat','12. sprat','13. sprat','14. sprat','15. sprat','16. sprat','17. sprat','18. sprat','19. sprat','20. sprat i viÅ¡e') COLLATE utf8_unicode_ci NOT NULL,
+  `telefon` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `cena` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `kvadratura` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `grejanje` enum('CG','EG','TA','PG','Klima ureÄ‘aj') COLLATE utf8_unicode_ci NOT NULL,
+  `namestenost` enum('NameÅ¡ten','NenameÅ¡ten') COLLATE utf8_unicode_ci NOT NULL,
+  `opis` varchar(5000) COLLATE utf8_unicode_ci NOT NULL,
+  `status` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `vidljiv` int(11) NOT NULL,
+  `datum_dodavanja` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `hot_offer` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `dodao` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=68 ;
+
+######################
+#### v. 1.0.13
+#### U. Izzy
+######################
+ALTER TABLE  `izbrisani_stanovi` ADD  `stan_izbrisao` VARCHAR( 100 ) NOT NULL AFTER  `dodao`

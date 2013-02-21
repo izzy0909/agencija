@@ -1,5 +1,5 @@
 <?php
-include_once '../data_base_access/slikeDA.php';
+
 include("watermark/watermark_image.class.php");
 
 function upload($files, $stan_id){
@@ -126,7 +126,7 @@ function uploadPonude($files, $stan_id){
 $ThumbSquareSize 		= 200; //Thumbnail will be 200x200
 $BigImageMaxSize 		= 500; //Image Maximum height or width
 $ThumbPrefix			= "thumb_"; //Normal thumb Prefix
-$DestinationDirectory	= '../admin/slike/'; //Upload Directory ends with / (slash)
+$DestinationDirectory	= 'admin/slike/'; //Upload Directory ends with / (slash)
 $Quality 				= 90;
 
 //ini_set('memory_limit', '-1'); // maximum memory!
@@ -210,8 +210,8 @@ if (is_array($ImageName))
                         $image_path = $DestRandImageName;
 						$image_name = 'watermark_' . $NewImageName;
                         // Where to save watermarked image
-                        $imgdestpath = '../admin/slike/watermark_' . $NewImageName;
-                        $watermark_path = '../admin/watermark/watermark.png';
+                        $imgdestpath = 'admin/slike/watermark_' . $NewImageName;
+                        $watermark_path = 'admin/watermark/watermark.png';
                         // Watermark image
                         $img = new Zubrag_watermark($image_path);
                         $img->ApplyWatermark($watermark_path);
