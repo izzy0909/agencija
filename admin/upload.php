@@ -6,7 +6,7 @@ function upload($files, $stan_id){
 //If you face any errors, increase values of "post_max_size", "upload_max_filesize" and "memory_limit" as required in php.ini
  //Some Settings
 $ThumbSquareSize 		= 200; //Thumbnail will be 200x200
-$BigImageMaxSize 		= 500; //Image Maximum height or width
+$BigImageMaxSize 		= 800; //Image Maximum height or width
 $ThumbPrefix			= "thumb_"; //Normal thumb Prefix
 $DestinationDirectory	= 'slike/'; //Upload Directory ends with / (slash)
 $Quality 				= 90;
@@ -94,8 +94,14 @@ if (is_array($ImageName))
                         // Where to save watermarked image
                         $imgdestpath = 'slike/watermark_' . $NewImageName;
                         $watermark_path = 'watermark/watermark.png';
+
+                        $watermark_size = imagecreatefrompng($watermark_path);
+                        $watermark_width = imagesx($watermark_size);
+                        $watermark_height = imagesy($watermark_size);
+                        $dest_x = ($ResizedWidth - $watermark_width)/2;
+                        $dest_y = ($ResizedHeight - $watermark_height)/2;
                         // Watermark image
-                        $img = new Zubrag_watermark($image_path);
+                        $img = new Zubrag_watermark($image_path, $dest_x, $dest_y);
                         $img->ApplyWatermark($watermark_path);
                         $img->SaveAsFile($imgdestpath);
                         $img->Free();
@@ -124,7 +130,7 @@ function uploadPonude($files, $stan_id){
 //If you face any errors, increase values of "post_max_size", "upload_max_filesize" and "memory_limit" as required in php.ini
  //Some Settings
 $ThumbSquareSize 		= 200; //Thumbnail will be 200x200
-$BigImageMaxSize 		= 500; //Image Maximum height or width
+$BigImageMaxSize 		= 800; //Image Maximum height or width
 $ThumbPrefix			= "thumb_"; //Normal thumb Prefix
 $DestinationDirectory	= 'admin/slike/'; //Upload Directory ends with / (slash)
 $Quality 				= 90;

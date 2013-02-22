@@ -22,7 +22,7 @@ class Zubrag_watermark {
   var $force_image_type = -1; // Change image type? (-1 = same as original, 1 = GIF, 2 = JPG, 3 = PNG)
   var $save_to_file = true;
 
-  function Zubrag_watermark($image_path='', $offset_x=150, $offset_y=190) {
+  function Zubrag_watermark($image_path='', $offset_x, $offset_y) {
     $this->setImagePath($image_path);
     $this->setOffset($offset_x, $offset_y);
   }
@@ -78,7 +78,7 @@ class Zubrag_watermark {
     $dest_x = $size_x - $watermark_x - $this->offset_x;
     $dest_y = $size_y - $watermark_y - $this->offset_y;
 
-    imagecopymerge($image, $watermark, $dest_x, $dest_y, 0, 0, $watermark_x, $watermark_y, 25);
+    imagecopymerge($image, $watermark, $dest_x, $dest_y, 0, 0, $watermark_x, $watermark_y, 35);
 
     $this->image = &$image;
     $this->watermark = &$watermark;

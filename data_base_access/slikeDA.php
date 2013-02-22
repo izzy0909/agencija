@@ -233,3 +233,17 @@ function izbrisiSveSlikeZaStan($stan_id){
 		));
 
 }
+
+function pokupiSlikeZaBrisanje($stan_id){
+    global $conn;
+
+    $sql = "SELECT * FROM slike
+            WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+		));
+    return $query->fetchAll(PDO::FETCH_BOTH);
+    
+
+}
