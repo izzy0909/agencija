@@ -165,19 +165,26 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $telefon, $email, $ulica, $br, $cena, $kvadratura, $opis){
+function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $grejanje, $namestenost, $cena, $kvadratura, $opis){
     global $conn;
 
     $sql = "UPDATE stanovi
-            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, ulica = :ulica, br = :br, cena = :cena, kvadratura = :kvadratura, opis = :opis
+            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':vlasnik' => $vlasnik,
 		':telefon' => $telefon,
-		':email' => $email,        
+		':email' => $email,
+                ':kategorija' => $kategorija,
+                ':tip' => $tip,
+                ':stan_tip' => $stan_tip,
 		':ulica' => $ulica,
                 ':br' => $br,
+                ':sprat' => $sprat,
+                ':opstina' => $opstina,
+                ':grejanje' => $grejanje,
+                ':namestenost' => $namestenost,
 		':cena' => $cena,
 		':kvadratura' => $kvadratura,
 		':opis' => $opis,
@@ -513,7 +520,7 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 LIMIT $start, 30 ";
+            WHERE vidljiv = 1 ";
     if(!empty ($tip)){
     $sql .= "AND tip = :tip ";
     }
@@ -544,7 +551,7 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     if(!empty ($namestenost)){
     $sql .= "AND namestenost = :namestenost ";
     }
-    $sql .= "AND kategorija = 'prodaja' ";
+    $sql .= "AND kategorija = 'prodaja' LIMIT $start, 30";
 
 	$query = $conn->prepare($sql);
 	

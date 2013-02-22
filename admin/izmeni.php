@@ -7,7 +7,8 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 }
- 
+
+    $row = prikaziSveOpstine();
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
@@ -15,8 +16,7 @@ if (isset ($_GET['id'])){
 	$tagovi = ispisiDodatneTagove($id);
 
         $slike = prikaziSlike($id, 'velika');
-} 
-                     
+}                
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -191,6 +191,19 @@ updateSelects(today.getTime());
 // and update the datePicker to reflect it...
 $('#d').trigger('change');
 });
+</script>
+
+<script type='text/javascript'>//<![CDATA[ 
+$(document).ready(function(){
+    $('#kategorija').val('<?php echo $stan['kategorija']; ?>');
+    $('#tip').val('<?php echo $stan['tip']; ?>');
+    $('#stan_tip').val('<?php echo $stan['stan_tip']; ?>');
+    $('#opstina').val('<?php echo $stan['opstina']; ?>');
+    $('#grejanje').val('<?php echo $stan['grejanje']; ?>');
+    $('#namestenost').val('<?php echo $stan['namestenost']; ?>');
+    $('#sprat').val('<?php echo $stan['sprat']; ?>');
+});//]]>  
+
 </script>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
@@ -442,15 +455,35 @@ $(document).pngFix( );
 		</tr>             
 		<tr>
 			<th valign="top">Kategorija:</th>
-			<td><?php echo $stan['kategorija'];?></td>
+			<td><select id="kategorija" name="kategorija" class="styledselect_form_1">
+                                <option value="izdavanje" <?php if($stan['kategorija']=='izdavanje'){echo 'selected';} ?>>Izdavanje</option>
+                                <option value="prodaja" <?php if($stan['kategorija']=='prodaja'){echo 'selected';} ?>>Prodaja</option>
+                            </select></td>
 			<td></td>
 		</tr>   
 			<th valign="top">Tip:</th>
-			<td><?php echo $stan['tip'];?></td>
+			<td><select id="tip" name="tip" class="styledselect_form_1">
+                                <option value="Stan" <?php if($stan['tip']=='Stan'){echo 'selected';} ?>>Stan</option>
+                                <option value="Kuća" <?php if($stan['tip']=='Kuća'){echo 'selected';} ?>>Kuća</option>
+                                <option value="Poslovni prostor" <?php if($stan['tip']=='Poslovni prostor'){echo 'selected';} ?>>Poslovni prostor</option>
+                                <option value="Magacin" <?php if($stan['tip']=='Magacin'){echo 'selected';} ?>>Magacin</option>
+                                <option value="Lokal" <?php if($stan['tip']=='Lokal'){echo 'selected';} ?>>Lokal</option>
+                            </select></td>
 			<td></td>
 		</tr>    
 			<th valign="top"></th>
-			<td><?php echo $stan['stan_tip'];?></td>
+			<td><select id="stan_tip" name="stan_tip" class="styledselect_form_1">
+                                <option value="Garsonjera" <?php if($stan['stan_tip']=='Garsonjera'){echo 'selected';} ?>>Garsonjera</option>
+                                <option value="Jednosoban" <?php if($stan['stan_tip']=='Jednosoban'){echo 'selected';} ?>>Jednosoban</option>
+                                <option value="Jednoiposoban" <?php if($stan['stan_tip']=='Jednoiposoban'){echo 'selected';} ?>>Jednoiposoban</option>
+                                <option value="Dvosoban" <?php if($stan['stan_tip']=='Dvosoban'){echo 'selected';} ?>>Dvosoban</option>
+                                <option value="Dvoiposoban" <?php if($stan['stan_tip']=='Dvoiposoban'){echo 'selected';} ?>>Dvoiposoban</option>
+                                <option value="Trosoban" <?php if($stan['stan_tip']=='Trosoban'){echo 'selected';} ?>>Trosoban</option>
+                                <option value="Troiposoban" <?php if($stan['stan_tip']=='Troiposoban'){echo 'selected';} ?>>Troiposoban</option>
+                                <option value="Četvorosoban" <?php if($stan['stan_tip']=='Četvorosoban'){echo 'selected';} ?>>Četvorosoban</option>
+                                <option value="Četvoroiposoban" <?php if($stan['stan_tip']=='Četvoroiposoban'){echo 'selected';} ?>>Četvoroiposoban</option>
+                                <option value="Petosoban i veći" <?php if($stan['stan_tip']=='Petosoban i veći'){echo 'selected';} ?>>Petosoban i veći</option>
+                            </select></td>
 			<td></td>
 		</tr>                     
 		<tr>
@@ -462,25 +495,67 @@ $(document).pngFix( );
 		</tr>
                 <tr>
 			<th valign="top">Sprat:</th>
-			<td><?php echo $stan['sprat'];?></td>
+                        <td><select id="sprat" name="sprat" class="styledselect_form_1">
+                                <option value="Suteren" <?php if($stan['sprat']=='Suteren'){echo 'selected';} ?>>Suteren</option>
+                                <option value="Prizemlje" <?php if($stan['sprat']=='Prizemlje'){echo 'selected';} ?>>Prizemlje</option>
+                                <option value="Visoko prizemlje" <?php if($stan['sprat']=='Visoko prizemlje'){echo 'selected';} ?>>Visoko prizemlje</option>
+                                <option value="1. sprat" <?php if($stan['sprat']=='1. sprat'){echo 'selected';} ?>>1. sprat</option>
+                                <option value="2. sprat" <?php if($stan['sprat']=='2. sprat'){echo 'selected';} ?>>2. sprat</option>
+                                <option value="3. sprat" <?php if($stan['sprat']=='3. sprat'){echo 'selected';} ?>>3. sprat</option>
+                                <option value="4. sprat" <?php if($stan['sprat']=='4. sprat'){echo 'selected';} ?>>4. sprat</option>
+                                <option value="5. sprat" <?php if($stan['sprat']=='5. sprat'){echo 'selected';} ?>>5. sprat</option>
+                                <option value="6. sprat" <?php if($stan['sprat']=='6. sprat'){echo 'selected';} ?>>6. sprat</option>
+                                <option value="7. sprat" <?php if($stan['sprat']=='7. sprat'){echo 'selected';} ?>>7. sprat</option>
+                                <option value="8. sprat" <?php if($stan['sprat']=='8. sprat'){echo 'selected';} ?>>8. sprat</option>
+                                <option value="9. sprat" <?php if($stan['sprat']=='9. sprat'){echo 'selected';} ?>>9. sprat</option>
+                                <option value="10. sprat" <?php if($stan['sprat']=='10. sprat'){echo 'selected';} ?>>10. sprat</option>
+                                <option value="11. sprat" <?php if($stan['sprat']=='11. sprat'){echo 'selected';} ?>>11. sprat</option>
+                                <option value="12. sprat" <?php if($stan['sprat']=='12. sprat'){echo 'selected';} ?>>12. sprat</option>
+                                <option value="13. sprat" <?php if($stan['sprat']=='13. sprat'){echo 'selected';} ?>>13. sprat</option>
+                                <option value="14. sprat" <?php if($stan['sprat']=='14. sprat'){echo 'selected';} ?>>14. sprat</option>
+                                <option value="15. sprat" <?php if($stan['sprat']=='15. sprat'){echo 'selected';} ?>>15. sprat</option>
+                                <option value="16. sprat" <?php if($stan['sprat']=='16. sprat'){echo 'selected';} ?>>16. sprat</option>
+                                <option value="17. sprat" <?php if($stan['sprat']=='17. sprat'){echo 'selected';} ?>>17. sprat</option>
+                                <option value="18. sprat" <?php if($stan['sprat']=='18. sprat'){echo 'selected';} ?>>18. sprat</option>
+                                <option value="19. sprat" <?php if($stan['sprat']=='19. sprat'){echo 'selected';} ?>>19. sprat</option>
+                                <option value="20. sprat i više" <?php if($stan['sprat']=='20. sprat i više'){echo 'selected';} ?>>20. sprat i više</option>
+                            </select></td>
 			<td></td>
 		</tr>
 		<tr>
 		<th valign="top">Lokacija:</th>
 		<td>
-          <?php echo $stan['opstina'];?>     
-		
+                  
+		<select id="opstina" class="styledselect_form_1" name="opstina">
+                 <?php
+
+                        foreach($row as $opstina){
+                          echo '<option value="'.$opstina['id'].'"'; if($stan['opstina']==$opstina['opstina']){echo ' selected';} echo '>'.$opstina['opstina'].'</option>';
+                          
+                        }
+                 ?>
+			
+		</select>
 		</td>
 		<td></td>
 		</tr>
                 <tr>
 			<th valign="top">Grejanje:</th>
-			<td><?php echo $stan['grejanje'];?></td>
+                <td>        <select id="grejanje" name="grejanje" class="styledselect_form_1">
+                                <option value="CG" <?php if($stan['grejanje']=='CG'){echo 'selected';} ?>>CG</option>
+                                <option value="EG" <?php if($stan['grejanje']=='EG'){echo 'selected';} ?>>EG</option>
+                                <option value="TA" <?php if($stan['grejanje']=='TA'){echo 'selected';} ?>>TA</option>
+                                <option value="PG" <?php if($stan['grejanje']=='PG'){echo 'selected';} ?>>PG</option>
+                                <option value="Klima uređaj" <?php if($stan['grejanje']=='Klima uređaj'){echo 'selected';} ?>>Klima uređaj</option>
+                            </select></td>
 			<td></td>
 		</tr>   
                 <tr>
 			<th valign="top">Nameštenost:</th>
-			<td><?php echo $stan['namestenost'];?></td>
+                <td>        <select id="namestenost" name="namestenost" class="styledselect_form_1">
+                                <option value="Namešten" <?php if($stan['namestenost']=='Namešten'){echo 'selected';} ?>>Namešten</option>
+                                <option value="Nenamešten" <?php if($stan['namestenost']=='Nenamešten'){echo 'selected';} ?>>Nenamešten</option>
+                            </select></td>
 			<td></td>
 		</tr>                                
                 <tr>

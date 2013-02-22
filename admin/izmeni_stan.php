@@ -8,8 +8,15 @@ include_once '../data_base_access/dodatniTagoviDA.php';
     $vlasnik = isset($_POST['vlasnik']) ? $_POST['vlasnik'] : null;
     $telefon = isset($_POST['telefon']) ? $_POST['telefon'] : null;
     $email = isset($_POST['email']) ? $_POST['email'] : null;
+    $kategorija = isset($_POST['kategorija']) ? $_POST['kategorija'] : null;
+    $tip = isset($_POST['tip']) ? $_POST['tip'] : null;
+    $stan_tip = isset($_POST['stan_tip']) ? $_POST['stan_tip'] : null;
     $ulica = isset($_POST['ulica']) ? $_POST['ulica'] : null;
     $br = isset($_POST['br']) ? $_POST['br'] : null;
+    $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
+    $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
+    $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
+    $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
     $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
@@ -40,7 +47,7 @@ include_once '../data_base_access/dodatniTagoviDA.php';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
     
 	//echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
-    izmeniStan($id, $vlasnik, $telefon, $email, $ulica, $br, $cena, $kvadratura, $opis);
+    izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $grejanje, $namestenost, $cena, $kvadratura, $opis);
     izmeniDodatneTagove($id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
     
 	

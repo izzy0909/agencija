@@ -11,7 +11,7 @@ else{
 	if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
-        $ponuda = prikaziStan($id);
+        $ponuda = prikaziStanZaAdmina($id);
         dodajIzbrisaniStan($ponuda['kategorija'], $ponuda['tip'], $ponuda['stan_tip'], $ponuda['vlasnik'], $ponuda['lokacija_id'], $ponuda['ulica'],$ponuda['br'], $ponuda['sprat'], $ponuda['telefon'], $ponuda['email'], $ponuda['cena'], $ponuda['kvadratura'], $ponuda['grejanje'], $ponuda['namestenost'], $ponuda['opis'], $ponuda['dodao'], $_SESSION['username']);
         $slike = pokupiSlikeZaBrisanje($id);
         foreach($slike as $slika){
