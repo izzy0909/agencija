@@ -77,6 +77,7 @@ function prikaziHotOfferStanove(){
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE hot_offer = '1'
+            AND vidljiv = '1'
             ORDER BY RAND() limit 0,1";
 
 	$query = $conn->prepare($sql);
@@ -96,18 +97,35 @@ function prikaziBrojZaTip($tip){
     return $query->fetch();    
 }
 
-function prikaziStan($id){
+function prikaziStanZaAdmina($id){
     global $conn;
 
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE s.id = :id LIMIT 1";
+            WHERE s.id = :id
+            LIMIT 1";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':id' => $id
 		));
     return $query->fetch();    
+}
+
+function prikaziStanZaFront($id){
+    global $conn;
+
+    $sql = "SELECT * FROM stanovi as s
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE s.id = :id
+            AND vidljiv = 1
+            LIMIT 1";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id
+		));
+    return $query->fetch();
 }
 
 function izbrisiStan($id){
@@ -118,6 +136,20 @@ function izbrisiStan($id){
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':id' => $id
+		));
+
+    $sql = "DELETE FROM slike
+	    WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $id
+		));
+
+    $sql = "DELETE FROM dodatni_tagovi
+	    WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $id
 		));
     
 }

@@ -12,7 +12,7 @@ include_once 'data_base_access/slikeDA.php';
     
 
    $row = prikaziSveOpstine();
-   $stan = prikaziStan($id);
+   $stan = prikaziStanZaFront($id);
    $tagovi = ispisiDodatneTagove($id);
    $slike = prikaziSlike($id, 'velika');
    

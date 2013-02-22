@@ -11,7 +11,9 @@ else{
 	
 	$id = $_GET['id'];
 	$stan = izbrisiStan($id);
-	
+	unlink("slike/" . $naziv);
+        unlink("slike/thumb_" . $naziv);
+        unlink("slike/watermark_" . $naziv);
 	header('Location: spisak_stanova.php');
 	} 
 	

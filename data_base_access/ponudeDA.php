@@ -88,12 +88,19 @@ function izbrisiPonudu($id){
     global $conn;
 
     $sql = "DELETE FROM ponude
-			WHERE id = :id";
+            WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':id' => $id
 		));
-    
+
+    $sql = "DELETE FROM ponuda_slike
+	    WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $id
+		));
+
 }
 
 function ukupanBrojPonuda(){

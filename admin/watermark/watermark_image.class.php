@@ -78,7 +78,7 @@ class Zubrag_watermark {
     $dest_x = $size_x - $watermark_x - $this->offset_x;
     $dest_y = $size_y - $watermark_y - $this->offset_y;
 
-    imagecopymerge($image, $watermark, $dest_x, $dest_y, 0, 0, $watermark_x, $watermark_y, 70);  
+    imagecopymerge($image, $watermark, $dest_x, $dest_y, 0, 0, $watermark_x, $watermark_y, 25);
 
     $this->image = &$image;
     $this->watermark = &$watermark;

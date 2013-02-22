@@ -11,7 +11,7 @@ if($_SESSION['uloga'] != 1)
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
-	$stan = prikaziStan($id);
+	$stan = prikaziStanZaAdmina($id);
 	$tagovi = ispisiDodatneTagove($id);
 
         $slike = prikaziSlike($id, 'velika');

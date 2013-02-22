@@ -221,3 +221,15 @@ function prikaziSlikuThumb($id){
     return $query->fetch();
     
 }
+
+function izbrisiSveSlikeZaStan($stan_id){
+    global $conn;
+
+    $sql = "DELETE FROM slike
+	    WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+		));
+
+}
