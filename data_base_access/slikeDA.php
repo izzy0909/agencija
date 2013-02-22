@@ -245,5 +245,17 @@ function pokupiSlikeZaBrisanje($stan_id){
 		));
     return $query->fetchAll(PDO::FETCH_BOTH);
     
+}
+
+function pokupiSlikePonudaZaBrisanje($stan_id){
+    global $conn;
+
+    $sql = "SELECT * FROM ponuda_slike
+            WHERE stan_id = :stan_id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':stan_id' => $stan_id
+		));
+    return $query->fetchAll(PDO::FETCH_BOTH);
 
 }
