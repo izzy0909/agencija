@@ -583,3 +583,33 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     return $query->fetchAll(PDO::FETCH_BOTH);
 
 }
+
+function dodajIzbrisaniStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $dodao, $obrisao)
+{
+    global $conn;
+
+    $sql = "INSERT INTO izbrisani_stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, dodao, stan_izbrisao)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :dodao, :stan_izbrisao)";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+        ':kategorija' => $kategorija,
+        ':tip' => $tip,
+        ':stan_tip' => $stan_tip,
+	':vlasnik' => $vlasnik,
+        ':lokacija_id' => $lokacija_id,
+        ':ulica' => $ulica,
+        ':br' => $br,
+        ':sprat' => $sprat,
+        ':telefon' => $telefon,
+        ':email' => $email,
+        ':cena' => $cena,
+        ':kvadratura' => $kvadratura,
+        ':grejanje' => $grejanje,
+        ':namestenost' => $namestenost,
+        ':opis' => $opis,
+        ':dodao' => $dodao,
+        ':stan_izbrisao' => $obrisao
+        ));
+
+    return $conn->lastInsertID();
+}

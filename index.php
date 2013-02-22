@@ -258,7 +258,7 @@
                     </article>
                     
                     <article class="grid_4">
-                    	<h3>Najbolje u ponudi!</h3>
+                    	<h3><span style="color:#e2a616">NAJBOLJE</span><span style="color:red"> U PONUDI!</span></h3>
                         <?php   echo '<div class="hot_polje">';
                                 $slika_thumb = prikaziSlikuThumb($hot[0]);
                                 echo '<div class="hot_slika"><a href="detalji.php?id=' . $hot[0] . '"><img src="admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="230" height="154" /></a></div>';

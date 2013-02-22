@@ -46,7 +46,7 @@
                 </article>
             </div>
             <div class="foot-page1">
-            	<span>JEVTIĆ<label style="color:red;"> i.m.j </label><strong>NEKRETNINE d.o.o.</strong></span> &copy; 2013&nbsp; Sva prava zadržana. tel: 011/4054325, 060/4480659 | <a class="link4" href="mailto:info@jevticnekretnine.rs">info@jevticnekretnine.rs</a> |&nbsp;  Coding by <a class="link4" href="#">Web Refresh</a>
+            	<span>JEVTIĆ<label style="color:red;"> I.M.J </label><strong>NEKRETNINE d.o.o.</strong></span> &copy; 2013&nbsp; Sva prava zadržana. tel: 011/4054325, 060/4480659 | <a class="link4" href="mailto:info@jevticnekretnine.rs">info@jevticnekretnine.rs</a> |&nbsp;  Coding by <a class="link4" href="#">Web Refresh</a>
                 <br />
                 <div class="clear"></div>
                  <!-- {%FOOTER_LINK} -->
