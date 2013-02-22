@@ -218,8 +218,14 @@ if (is_array($ImageName))
                         // Where to save watermarked image
                         $imgdestpath = 'admin/slike/watermark_' . $NewImageName;
                         $watermark_path = 'admin/watermark/watermark.png';
+
+                        $watermark_size = imagecreatefrompng($watermark_path);
+                        $watermark_width = imagesx($watermark_size);
+                        $watermark_height = imagesy($watermark_size);
+                        $dest_x = ($ResizedWidth - $watermark_width)/2;
+                        $dest_y = ($ResizedHeight - $watermark_height)/2;
                         // Watermark image
-                        $img = new Zubrag_watermark($image_path);
+                        $img = new Zubrag_watermark($image_path, $dest_x, $dest_y);
                         $img->ApplyWatermark($watermark_path);
                         $img->SaveAsFile($imgdestpath);
                         $img->Free();
