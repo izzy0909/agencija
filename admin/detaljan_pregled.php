@@ -310,8 +310,8 @@ $(document).pngFix( );
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
-				<li><a href="podsetnik.php">Spisak poruka</a></li>
-				<li class="sub_show"><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
+				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>
 				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
 			</ul>
 		</div>

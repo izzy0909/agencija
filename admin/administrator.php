@@ -336,7 +336,7 @@ $(document).pngFix( );
                                     </tr>
                             </form>
                             
-                            <form id="mainform" action="">
+                            
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-check"><a id="toggle-all" ></a> </th>
@@ -371,7 +371,7 @@ $(document).pngFix( );
 				?>
 				</table>
 				<!--  end product-table................................... -->
-				</form>
+				
 			</div>
 			<!--  end content-table  -->
 
