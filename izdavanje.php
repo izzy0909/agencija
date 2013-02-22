@@ -32,7 +32,7 @@ include_once 'data_base_access/slikeDA.php';
                         $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                     }
                     };
-              $start = ($str-1) * 30;   
+              $start = ($str-1) * 18;   
               
               if (isset ($_GET['pretrazi'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
@@ -398,16 +398,17 @@ $(document).ready(function(){
                                 $slika_thumb = prikaziSlikuThumb($stan[0]);
                                 echo '<div class="stan_slika"><a href="detalji.php?id=' . $stan[0] . '"><img src="admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" width="120" /></a></div>';
                                 echo '<div class="stan_info_naslov"><a href="detalji.php?id=' . $stan[0] . '">#' . $stan[0] . ' ' . $stan['opstina'] .  '</a></div>';
-                                echo '<div class="stan_info_text">'; 
-                                if($stan['tip']=='Stan') {echo $stan['stan_tip']; }
+                                echo '<div class="stan_info_text">';
+                                echo $stan['tip'];
+                                if($stan['tip']=='Stan') {echo ': ' . $stan['stan_tip']; }
                                 echo '<br /><br />Površina: ' . $stan['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
-                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJNIJE...</a></div></div>';
+                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJI</a></div></div>';
                             }
                             echo '<div class="clear"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div>';
                             echo '<div class="clear"></div>';
                             echo '<div id="stranice">';
-                            $strmax = ceil($broj_stanova[0] / 30);
+                            $strmax = ceil($broj_stanova[0] / 18);
                             if ($strmax==0){ $strmax = 1; }
                                     if($str==1){
                                         echo '<img src="images/p_prev_d.png" alt="Prethodna strana">';
