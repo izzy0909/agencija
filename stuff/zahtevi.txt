@@ -17,15 +17,15 @@
 
 - samo oni brisu stanove
 
-- cuvanje stanova
+// - cuvanje stanova
 
 // - spisak svih brojeva iz imenika
 
-- ako se obrise stan da se obrisu sve slike za taj stan 
+// ODRADJENO VALJDA - ako se obrise stan da se obrisu sve slike za taj stan 
 
 - dodavanje slika na izmeni
 
 
--napravi da mogu da se potpuno edituju ubaceni stanovi
+// -napravi da mogu da se potpuno edituju ubaceni stanovi
 
 -u pretrazi na admin delu povecaj polja i dodaj telefon/struktura/ulica i opremljenost(nenamesten/namesten)
