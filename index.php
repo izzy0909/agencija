@@ -128,11 +128,11 @@
             <div class="slider">
             <div class="banner-bg"></div>
                 <ul class="items">
-                    <li><img src="images/slide-1.jpg" /><div class="banner"><span>We can satisfy any taste</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-2.jpg" /><div class="banner"><span>Your perfect partner for your life’s bloom</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-3.jpg" /><div class="banner"><span>You are almost at home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-4.jpg" /><div class="banner"><span>Attractive home purchase offers</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
-                    <li><img src="images/slide-5.jpg" /><div class="banner"><span>Every day we help people buy a home</span><p>Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull.</p></div></li>
+                    <li><img src="images/slide-1.jpg" /><div class="banner"><span>Pozovite nas jer mi razumemo kakvu nekretninu tražite.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-2.jpg" /><div class="banner"><span>Pružite nam poverenje! Sa nama na pragu željene nekretnine.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-3.jpg" /><div class="banner"><span>Jevtić nekretnine- Kraći put do Vašeg doma</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-4.jpg" /><div class="banner"><span>Pronašli ste pravog partnera u svetu nekretnina</span><p>Izdavanje luksuznih stanova, kuća i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-5.jpg" /><div class="banner"><span>Tražite stan, kuću ili poslovni prostor? Pozovite nas.</span><p>Izdavanje luksuznih stanova, poslovnih prostora i kuća u Beogradu.</p></div></li>
                 </ul>
             </div>
             </div>
