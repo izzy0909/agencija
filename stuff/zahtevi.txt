@@ -1,6 +1,6 @@
 - treba da ubacis u pretragu za nekretnine i prodaja i izdavanje da ima opcije -poslovni prostor u poslovnoj zgradi i poslovni prostor u stambenoj zgradi jer se to razlikuje dosta
 
-- poslacu ti takodje i prevode za sve ono sto je na engleskom kao i ostale tekstove kako bi izmenio to i ubacio
+//- poslacu ti takodje i prevode za sve ono sto je na engleskom kao i ostale tekstove kako bi izmenio to i ubacio
 
 - U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
 
@@ -23,15 +23,25 @@
 
 // ODRADJENO VALJDA - ako se obrise stan da se obrisu sve slike za taj stan 
 
-- dodavanje slika na izmeni
+//- dodavanje slika na izmeni
 
+- PODLOKACIJE
+
+- izbaciti rakovicu, sopot, surcin, mladenovac, obrenovac, barajevo
+
+-Ako postoji mogucnost vidi da stavis lokacije sledecim redosledom: Vracar, Stari grad, Dorcol, Savski Venac, Vozdovac, pa sve ovo ostalo
 
 // -napravi da mogu da se potpuno edituju ubaceni stanovi
 
 -u pretrazi na admin delu povecaj polja i dodaj telefon/struktura/ulica i opremljenost(nenamesten/namesten)
 
-- napredna pretraga
+- napredna pretraga za stanove
 
 - google translate
 
 - stavljanje da je stan izdat
+
+-stavi nas kontakt telefon zutim slovima iznad fejsbuka i tvitera kao sto je sat ispod
+
+- svi naslovi na index strani velikim slovima
+
