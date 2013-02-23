@@ -2,6 +2,8 @@
 
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/dodatniTagoviDA.php';
+include_once '../data_base_access/slikeDA.php';
+include_once 'upload.php';
 	
 	
     $id = isset($_POST['id']) ? $_POST['id'] : null;
@@ -55,8 +57,8 @@ include_once '../data_base_access/dodatniTagoviDA.php';
     
     //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
-
 	
-	//upload($_FILES, $stan_id);
+	
+	uploadIzmene($_FILES, $id);
 
 	header("Location: izmeni.php?id=$id");

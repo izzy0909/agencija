@@ -29,3 +29,9 @@
 // -napravi da mogu da se potpuno edituju ubaceni stanovi
 
 -u pretrazi na admin delu povecaj polja i dodaj telefon/struktura/ulica i opremljenost(nenamesten/namesten)
+
+- napredna pretraga
+
+- google translate
+
+- stavljanje da je stan izdat

@@ -38,7 +38,72 @@ if (isset ($_GET['id'])){
 <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.smooth-scroll.min.js" type="text/javascript"></script>
 <script src="js/lightbox.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+$(document).ready(function() { 
+//elements
+var progressbox 		= $('#progressbox'); //progress bar wrapper
+var progressbar 		= $('#progressbar'); //progress bar element
+var statustxt 			= $('#statustxt'); //status text element
+var submitbutton 		= $("#SubmitButton"); //submit button
+var myform 				= $("#UploadForm"); //upload form
+var output 				= $("#output"); //ajax result output element
+var completed 			= '0%'; //initial progressbar value
+var FileInputsHolder 	= $('#AddFileInputBox'); //Element where additional file inputs are appended
+var MaxFileInputs		= 10; //Maximum number of file input boxs
 
+// adding and removing file input box
+var i = $('#AddFileInputBox div').size() + 1;
+$('#AddMoreFileBox').live('click', function() {
+		if(i < MaxFileInputs)
+		{
+			$('<span><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder);
+			i++;
+		}
+		return false;
+});
+$('#removeFileBox').live('click', function() { 
+		if( i > 1 ) {
+				$(this).parents('span').remove();i--;
+		}
+		return false;
+});
+
+$("#ShowForm").click(function () {
+  $("#uploaderform").slideToggle(); //Slide Toggle upload form on click
+});
+	
+$(myform).ajaxForm({
+	beforeSend: function() { //brfore sending form
+		submitbutton.attr('disabled', ''); // disable upload button
+		statustxt.empty();
+		progressbox.show(); //show progressbar
+		progressbar.width(completed); //initial value 0% of progressbar
+		statustxt.html(completed); //set status text
+		statustxt.css('color','#000'); //initial color of status text
+		
+	},
+	uploadProgress: function(event, position, total, percentComplete) { //on progress
+		progressbar.width(percentComplete + '%') //update progressbar percent complete
+		statustxt.html(percentComplete + '%'); //update status text
+		if(percentComplete>50)
+			{
+				statustxt.css('color','#fff'); //change status text to white after 50%
+			}else{
+				statustxt.css('color','#000');
+			}
+			
+		},
+	complete: function(response) { // on complete
+		output.html(response.responseText); //update element with received data
+		myform.resetForm();  // reset form
+		submitbutton.removeAttr('disabled'); //enable submit button
+		progressbox.hide(); // hide progressbar
+		$("#uploaderform").slideUp(); // hide form after upload
+	}
+});
+
+}); 
+</script>
 <!--  jquery core 
 <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
 
@@ -382,7 +447,7 @@ $(document).pngFix( );
 		<h1>Izmeni Podatke</h1>
 	</div>
 	<!-- end page-heading -->
-        <form id="izmeni_stan" action="izmeni_stan.php" method="post">
+        <form id="izmeni_stan" action="izmeni_stan.php" method="post" enctype="multipart/form-data">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -684,6 +749,16 @@ $(document).pngFix( );
                                 </div>        -->
                              
                         </tr>
+						<tr>  
+							<td>
+									
+							<label>Files
+							<span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
+							</label>
+							<div id="AddFileInputBox"><input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file[]"/></div>
+							<div class="sep_s"></div>
+							</td>
+						</tr>
 	<tr>
 		<th>&nbsp;</th>
 		<td valign="top">
