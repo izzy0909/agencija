@@ -1503,3 +1503,12 @@ margin:2px 0 20px 10px;
     right:510px; 
     z-index: 1005;
 }
+
+/* PREVOD ====================================================================================== */
+
+#prevod{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    z-index: 1100;
+}

@@ -7,11 +7,11 @@
     
     $hot = prikaziHotOfferStanove();
 
-    $br_stan = prikaziBrojZaTip('Stan');
+ /*   $br_stan = prikaziBrojZaTip('Stan');
     $br_kuca = prikaziBrojZaTip('Kuća');
     $br_poslpro = prikaziBrojZaTip('Poslovni prostor');
     $br_magacin = prikaziBrojZaTip('Magacin');
-    $br_lokal = prikaziBrojZaTip('Lokal');
+    $br_lokal = prikaziBrojZaTip('Lokal'); */
     
 ?>
 
@@ -40,9 +40,17 @@
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
+<meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
 </head>
 <body>
 <!--==============================header=================================-->
+<div id="prevod">
+    <div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'de,en,es,fr,it,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
 <div style="display:none">
     
             <audio id="intro" autoplay>
@@ -128,11 +136,11 @@
             <div class="slider">
             <div class="banner-bg"></div>
                 <ul class="items">
-                    <li><img src="images/slide-1.jpg" /><div class="banner"><span>Pozovite nas jer mi razumemo kakvu nekretninu tražite.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
-                    <li><img src="images/slide-2.jpg" /><div class="banner"><span>Pružite nam poverenje! Sa nama na pragu željene nekretnine.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
-                    <li><img src="images/slide-3.jpg" /><div class="banner"><span>Jevtić nekretnine- Kraći put do Vašeg doma</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
-                    <li><img src="images/slide-4.jpg" /><div class="banner"><span>Pronašli ste pravog partnera u svetu nekretnina</span><p>Izdavanje luksuznih stanova, kuća i poslovnih prostora u Beogradu.</p></div></li>
-                    <li><img src="images/slide-5.jpg" /><div class="banner"><span>Tražite stan, kuću ili poslovni prostor? Pozovite nas.</span><p>Izdavanje luksuznih stanova, poslovnih prostora i kuća u Beogradu.</p></div></li>
+                    <li><img src="images/slide-1.jpg" /><div class="banner"><span>Pozovite nas zato što mi zaista razumemo kakvu nekretninu tražite.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-2.jpg" /><div class="banner"><span>Pružite nam poverenje jer ste sa nama na pragu željene nekretnine.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-3.jpg" /><div class="banner"><span>Jevtić nekretnine- Kraći put do Vašeg doma.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-4.jpg" /><div class="banner"><span>Pronašli ste pravog partnera u svetu nekretnina.</span><p>Izdavanje luksuznih stanova, kuća i poslovnih prostora u Beogradu.</p></div></li>
+                    <li><img src="images/slide-5.jpg" /><div class="banner"><span>Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.</span><p>Izdavanje luksuznih stanova, poslovnih prostora i kuća u Beogradu.</p></div></li>
                 </ul>
             </div>
             </div>
@@ -230,19 +238,19 @@
                     </div>  
                 <div class="wrapper">
                 	<article class="grid_4">
-                    	<h3 class="p7">Katalog ponude</h3>
+                    	<h3 class="p7">KATALOG PONUDE</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi (<?php echo $br_stan[0]; ?>)</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće (<?php echo $br_kuca[0]; ?>)</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori (<?php echo $br_poslpro[0]; ?>)</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini (<?php echo $br_magacin[0]; ?>)</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali (<?php echo $br_lokal[0]; ?>)</a></li>
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li> <!--  (<?php echo $br_stan[0]; ?>) -->
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>
                             <div id="idpretraga">
                                 <form id="traziID" action="#" method="post">
-                                    <h6 class="title">Pretraga po kataloškom broju:</h6>
+                                    <h6 class="title">PRETRAGA PO KATALOŠKOM BROJU:</h6>
                             <input id="idinput" type="text" class="sforma_input_ul" onfocus="if(this.value =='UNESITE BROJ') this.value=''" onblur="if(this.value=='') this.value='UNESITE BROJ'" value="UNESITE BROJ" name="idpretraga" />
                             <input type="submit" value="Traži" class="sforma_button_T" name="trazi_id" id="trazi_id" />
                                 </form>
@@ -277,7 +285,7 @@
                     
                     <article class="grid_4">
                         <div id="sforma">
-                    	<h3 class="title">Brza pretraga</h3>
+                    	<h3 class="title">BRZA PRETRAGA</h3>
                         <form id="brzapretraga" action="izdavanje.php" method="get">
                            <div id="pozicija1" style="position:relative; float:left;">
                            <table>
