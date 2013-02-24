@@ -106,9 +106,18 @@ $(myform).ajaxForm({
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
+<meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
 </head>
 <body>
 <!--==============================header=================================-->
+<div id="prevod">
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'de,en,es,fr,it,ru', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+
     <header>
     	<div class="head-bg">
         <div class="main">
@@ -145,8 +154,9 @@ $(myform).ajaxForm({
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
-
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
@@ -154,7 +164,8 @@ $(myform).ajaxForm({
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
                             <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
                             </ul></li>
                     <li><a class="active" href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
@@ -227,6 +238,8 @@ $(myform).ajaxForm({
                                 <option value="Poslovni prostor">Poslovni prostor</option>
                                 <option value="Magacin">Magacin</option>
                                 <option value="Lokal">Lokal</option>
+                                <option value="Garaža">Garaža</option>
+                                <option value="Apartman na dan">Apartman na dan</option>
                             </select></td>
                     </tr>
                     <tr>

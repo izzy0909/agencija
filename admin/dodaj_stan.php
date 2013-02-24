@@ -506,6 +506,8 @@ $(document).pngFix( );
                                 <option value="Poslovni prostor">Poslovni prostor</option>
                                 <option value="Magacin">Magacin</option>
                                 <option value="Lokal">Lokal</option>
+                                <option value="Garaža">Garaža</option>
+                                <option value="Apartman na dan">Apartman na dan</option>
                             </select></td>
 			<td>
 			</td>

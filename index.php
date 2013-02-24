@@ -89,14 +89,15 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <source src="audio/klik1.ogg">
                         </audio>
                     </li>
-                    <li><a href="izdavanje.php" class="last3" >Izdavanje</a>
-                         <ul>
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                     <li><a href="izdavanje.php">Izdavanje</a>
+                          <ul>
+                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
-
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
@@ -104,7 +105,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
                             <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>

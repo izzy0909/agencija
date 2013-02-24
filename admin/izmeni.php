@@ -258,19 +258,6 @@ $('#d').trigger('change');
 });
 </script>
 
-<script type='text/javascript'>//<![CDATA[ 
-$(document).ready(function(){
-    $('#kategorija').val('<?php echo $stan['kategorija']; ?>');
-    $('#tip').val('<?php echo $stan['tip']; ?>');
-    $('#stan_tip').val('<?php echo $stan['stan_tip']; ?>');
-    $('#opstina').val('<?php echo $stan['opstina']; ?>');
-    $('#grejanje').val('<?php echo $stan['grejanje']; ?>');
-    $('#namestenost').val('<?php echo $stan['namestenost']; ?>');
-    $('#sprat').val('<?php echo $stan['sprat']; ?>');
-});//]]>  
-
-</script>
-
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -533,6 +520,8 @@ $(document).pngFix( );
                                 <option value="Poslovni prostor" <?php if($stan['tip']=='Poslovni prostor'){echo 'selected';} ?>>Poslovni prostor</option>
                                 <option value="Magacin" <?php if($stan['tip']=='Magacin'){echo 'selected';} ?>>Magacin</option>
                                 <option value="Lokal" <?php if($stan['tip']=='Lokal'){echo 'selected';} ?>>Lokal</option>
+                                <option value="Garaža" <?php if($stan['tip']=='Garaža'){echo 'selected';} ?>>Garaža</option>
+                                <option value="Apartman na dan" <?php if($stan['tip']=='Apartman na dan'){echo 'selected';} ?>>Apartman na dan</option>
                             </select></td>
 			<td></td>
 		</tr>    

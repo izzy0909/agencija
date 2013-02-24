@@ -157,13 +157,14 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         </audio>
                     </li>
                     <li><a href="izdavanje.php">Izdavanje</a>
-                         <ul>
+                          <ul>
                              <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>                                
-
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a class="active" href="prodaja.php">Prodaja</a>
                             <ul>
@@ -171,7 +172,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
                             <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>     
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
@@ -210,7 +212,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                       <?php 
                         if (!isset($_GET['tip'])){
                             echo '<center><a href="prodaja.php?tip=Stan"><img src="images/pro-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Kuća"><img src="images/pro-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Poslovni+prostor"><img src="images/pro-posprost.jpg" alt="Poslovni prostori" /></a>';
-                            echo '<br /><br /><a href="prodaja.php?tip=Magacin"><img src="images/pro-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Lokal"><img src="images/pro-lokali.jpg" alt="Lokali" /></a></center>';
+                            echo '<br /><br /><a href="prodaja.php?tip=Magacin"><img src="images/pro-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Lokal"><img src="images/pro-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Garaža"><img src="images/pro-garaze.jpg" alt="Garaže" /></a></center>';
                         }
 // OTVORIO PHP    ============================================================================================          
                         else { ?>
@@ -229,6 +231,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                     <option value="Poslovni prostor">Poslovni prostor</option>
                                     <option value="Magacin">Magacin</option>
                                     <option value="Lokal">Lokal</option>
+                                    <option value="Garaža">Garaža</option>
                                 </select>
                                    </td>
                            </tr>
