@@ -9,6 +9,8 @@
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
                     </ul>
                 </article>
                 <article class="grid_2">
@@ -18,7 +20,8 @@
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
                             <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>   
+                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
                     </ul>
                 </article>
                 <article class="grid_2">

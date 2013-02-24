@@ -303,8 +303,8 @@ h4 span {
     float: left;
     margin-right: 20px; /* 20px def */
     overflow: visible !important;
-    width: 170px; /* 220 def */
-	height:250px; /* def: 204px */
+    width: 233px; /* 220 def, 180 fix */
+    height:250px; /* def: 204px */
 }
 
 .carousel li strong {
@@ -322,7 +322,7 @@ h4 span {
     padding-bottom: 2px;
 	height:18px;
 	line-height:18px;	
-    width: 155px; /* 165 */
+    width: 180px; /* 165 def, 155 fix */
 }
 .list1 {
 	width:200px;

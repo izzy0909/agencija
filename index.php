@@ -169,68 +169,6 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                       echo '</ul></li>';
                                   }
                                   ?>
-                            <!--      <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure></a>
-                                    <strong> Cena:&nbsp; $370 000 </strong>
-                                    <ul class="list1">
-                                        <li>Tip:<span>Stan</span></li>
-                                        <li>Lokacija:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li>
-                                   <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img2.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $500 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li>
-                                   <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img3.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $904 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li> <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img4.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $220 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li>
-                                  <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $370 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li>
-                                   <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img2.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $500 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li>
-                                   <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img3.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $904 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li> <li>
-                                  	<a href="more.html"><figure class="page1-img1"><img src="images/page1-img4.jpg" alt=""></figure></a>
-                                    <strong> Cost:&nbsp; $220 000 </strong>
-                                    <ul class="list1">
-                                        <li>House size:<span>2,700 Sq Ft</span></li>
-                                        <li>Lot size:<span>0.19 Acres</span></li>
-                                    </ul>
-                                  </li> -->
                               </ul>
                         </div>
                         <a class="prev1 car-button" data-type="prevPage"></a>
@@ -242,11 +180,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 	<article class="grid_4">
                     	<h3 class="p7">KATALOG PONUDE</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li> <!--  (<?php echo $br_stan[0]; ?>) -->
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
                             <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>

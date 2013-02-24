@@ -64,7 +64,7 @@ function prikaziPoslednjeStanove(){
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1
             ORDER BY datum_dodavanja DESC
-            LIMIT 0, 9";
+            LIMIT 0, 8";
 	$query = $conn->prepare($sql);
 	$query->execute();
 	return $query->fetchAll(PDO::FETCH_BOTH);  
