@@ -37,13 +37,13 @@
 
 - napredna pretraga za stanove
 
-- google translate
+// - google translate
 
 - stavljanje da je stan izdat
 
 -stavi nas kontakt telefon zutim slovima iznad fejsbuka i tvitera kao sto je sat ispod
 
-- svi naslovi na index strani velikim slovima
+// - svi naslovi na index strani velikim slovima
 
 - dodati garaze i apartmani na dan
 
