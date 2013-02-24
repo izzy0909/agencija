@@ -283,7 +283,7 @@ if (is_array($ImageName))
 		
 		if(!isset($ImageName[$i]) || !is_uploaded_file($TempSrc[$i]))
 		{
-			echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>, may be file too big!</div>'; //output error
+			//echo '<div class="error">Error occurred while trying to process <strong>'.$ImageName[$i].'</strong>, may be file too big!</div>'; //output error
 		}
 		else
 		{

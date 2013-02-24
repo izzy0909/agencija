@@ -45,3 +45,5 @@
 
 - svi naslovi na index strani velikim slovima
 
+- dodati garaze i apartmani na dan
+
