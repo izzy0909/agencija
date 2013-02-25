@@ -1486,12 +1486,12 @@ margin:2px 0 20px 10px;
     font-weight:bold;
 }
 
-/* SAT i div preko njega ========================================================================= */
+/* SAT i div preko njega  i telefon ================================================================ */
 
 #sat{
     position: absolute;
     top:65px; 
-    right:40px; 
+    right:16px; 
     z-index: 1000;
 }
 
@@ -1504,6 +1504,19 @@ margin:2px 0 20px 10px;
     z-index: 1005;
 }
 
+#tel-header{
+    position:absolute;
+    right:30px;
+    top:14px;
+    z-index:1005;
+}
+
+#tel-header span{
+    color:#e2a616;
+    font-size:14px;
+    font-weight:bold;
+}
+
 /* PREVOD ====================================================================================== */
 
 #prevod{
@@ -1512,3 +1525,9 @@ margin:2px 0 20px 10px;
     right:0px;
     z-index: 1100;
 }
+
+
+
+
+
+/* #e2a616 */
