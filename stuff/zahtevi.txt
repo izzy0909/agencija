@@ -21,3 +21,7 @@
 
 - stavljanje da je stan izdat
 
+
+- stanovi da se ispisuju u pretragama od najnovijeg ka najstarijem
+
+- da se stavi default slika
