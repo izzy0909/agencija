@@ -97,7 +97,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
+                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
@@ -186,7 +186,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
+                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul>
                             <div class="clear"></div>
                             <br/>

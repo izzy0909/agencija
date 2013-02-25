@@ -10,7 +10,7 @@
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
+                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
                     </ul>
                 </article>
                 <article class="grid_2">

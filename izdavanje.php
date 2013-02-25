@@ -162,7 +162,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
                             <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
                             <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartmani+na+dan">Apartmani na dan</a></li>
+                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
@@ -211,7 +211,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         if (!isset($_GET['tip'])){
                             echo '<center><a href="izdavanje.php?tip=Stan"><img src="images/izd-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Kuća"><img src="images/izd-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Poslovni+prostor"><img src="images/izd-poslovniprostori.jpg" alt="Poslovni prostori" /></a>';
                             echo '<br /><br /><a href="izdavanje.php?tip=Magacin"><img src="images/izd-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Lokal"><img src="images/izd-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Garaža"><img src="images/izd-garaze.jpg" alt="Garaže" /></a>';
-                            echo '<br /><br /><a href="izdavanje.php?tip=Apartmani na dan"><img src="images/izd-apartmani.jpg" alt="Apartmani na dan" /></a></center>';
+                            echo '<br /><br /><a href="izdavanje.php?tip=Apartman+na+dan"><img src="images/izd-apartmani.jpg" alt="Apartmani na dan" /></a></center>';
                         }
 // OTVORIO PHP    ============================================================================================          
                         else { ?>
