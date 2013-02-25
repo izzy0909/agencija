@@ -129,9 +129,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <div class="clear"></div>
                     <br /><br /><h3 class="p14">Zašto je dobra ideja da nas pozovete?</h3>
                     <p style="font-size:16px; color:black;">Ukoliko prodajete, kupujete ili iznajmljujete nekretninu mi Vam pružamo pomoć jer:</p>
-                    <p style="font-size:16px; color:black;">• Smo uvek dobro obavešteni o promenama u zakonodavstvu</p>
-                    <p style="font-size:16px; color:black;"> • Imamo uvid u promene cena i atraktivnosti određenih lokacija na tržištu nekretnina</p>
-                    <p style="font-size:16px; color:black;">• Možemo da Vam omogućimo da u najkraćem vremenskom periodu postignete adekvatnu cenu, dogovor i realizaciju posla za nekretninu koju nudite ili tražite</p>
+                    <p style="font-size:16px; color:black;">• smo uvek dobro obavešteni o promenama u zakonodavstvu</p>
+                    <p style="font-size:16px; color:black;"> • imamo uvid u promene cena i atraktivnosti određenih lokacija na tržištu nekretnina</p>
+                    <p style="font-size:16px; color:black;">• možemo da Vam omogućimo da u najkraćem vremenskom periodu postignete adekvatnu cenu, dogovor i realizaciju posla za nekretninu koju nudite ili tražite</p>
                     <p style="font-size:16px; color:black;">• Vam omogućavamo sastavljanje kupoprodajnih i ugovora o zakupu nepokretnosti</p>
                 </div>
                 <div class="clear"></div>

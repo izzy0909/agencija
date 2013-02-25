@@ -378,96 +378,158 @@ $(document).pngFix( );
 <div id="content-outer">
 <!-- start content -->
 <div id="content">
+    <div id="admin-pretraga">
     <form id="pretrazi" action="spisak_stanova.php" method="get">
 	<!--  start page-heading -->
 	<div id="page-heading">
-            <div style="float:left;">
-                ID:
-                <input type="text" name="id" />
+            <div id="pozicija1">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td><input type="text" name="id" /></td>
+                </tr>
+                <tr>
+                    <th>Telefon:</th>
+                    <td><input type="text" name="telefon" /></td>
+                </tr>
+            </table>
             </div>
-            <div style="float:left; margin-left:10px;">
-                Opstina:
-                <select name="opstina">
-                    <option value="">Izaberi...</option>
-                 <?php
-
-                        foreach($row as $opstina){
-                          echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
-
-                        }
-                 ?>
-
-		</select>
-                </div>
-                <div style="float:left; margin-left:10px;">
-                    Kvadratura:
-                <select name="povOD">
-                        <option value="">Izaberi...</option>
-                        <option value="20">od 20 m²</option>
-                        <option value="40">od 40 m²</option>
-                        <option value="60">od 60 m²</option>
-                        <option value="80">od 80 m²</option>
-                        <option value="100">od 100 m²</option>
-                        <option value="150">od 150 m²</option>
-                        <option value="200">od 200 m²</option>
-                        <option value="300">od 300 m²</option>
-                </select> - 
-                <select name="povDO">
-                        <option value="">Izaberi...</option>
-                        <option value="40">do 40 m²</option>
-                        <option value="60">do 60 m²</option>
-                        <option value="80">do 80 m²</option>
-                        <option value="100">do 100 m²</option>
-                        <option value="150">do 150 m²</option>
-                        <option value="200">do 200 m²</option>
-                        <option value="300">do 300 m²</option>
-                </select>
+            <div id="pozicija2">
+                <table>
+                    <tr>
+                        <th>Tip</th>
+                        <td>
+                                <select id="tip" name="tip" class="sforma_select">
+                                    <option value="">Izaberi...</option>
+                                    <option value="Stan">Stan</option>
+                                    <option value="Kuća">Kuća</option>
+                                    <option value="Poslovni prostor">Poslovni prostor</option>
+                                    <option value="Magacin">Magacin</option>
+                                    <option value="Lokal">Lokal</option>
+                                    <option value="Garaža">Garaža</option>
+                                    <option value="Apartman na dan">Apartman na dan</option>
+                                </select>   
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Struktura:</th>
+                        <td>
+                                    <select name="stan_tip" class="sforma_select">
+                                        <option value="">Izaberi...</option>
+                                        <option value="Garsonjera">Garsonjera</option>
+                                        <option value="Jednosoban">Jednosoban</option>
+                                        <option value="Jednoiposoban">Jednoiposoban</option>
+                                        <option value="Dvosoban">Dvosoban</option>
+                                        <option value="Dvoiposoban">Dvoiposoban</option>
+                                        <option value="Trosoban">Trosoban</option>
+                                        <option value="Troiposoban">Troiposoban</option>
+                                        <option value="Četvorosoban">Četvorosoban</option>
+                                        <option value="Četvoroiposoban">Četvoroiposoban</option>
+                                        <option value="Petosoban i veći">Petosoban i veći</option>
+                                    </select>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            
-            <div style="float:left;  margin-left:10px;">
-                Cena:
-                <select name="cenaOD">
-                        <option value="">Izaberi...</option>
-                        <option value="50">od 50 €</option>
-                        <option value="200">od 200 €</option>
-                        <option value="300">od 300 €</option>
-                        <option value="400">od 400 €</option>
-                        <option value="500">od 500 €</option>
-                        <option value="600">od 600 €</option>
-                        <option value="700">od 700 €</option>
-                        <option value="800">od 800 €</option>
-                        <option value="900">od 900 €</option>
-                        <option value="1000">od 1000 €</option>
-                        <option value="1500">od 1500 €</option>
-                        <option value="2000">od 2000 €</option>
-                        <option value="3000">od 3000 €</option>
-                    </select> -
-                    <select name="cenaDO">
-                        <option value="">Izaberi...</option>
-                        <option value="300">do 300 €</option>
-                        <option value="400">do 400 €</option>
-                        <option value="500">do 500 €</option>
-                        <option value="600">do 600 €</option>
-                        <option value="700">do 700 €</option>
-                        <option value="800">do 800 €</option>
-                        <option value="900">do 900 €</option>
-                        <option value="1000">do 1000 €</option>
-                        <option value="1500">do 1500 €</option>
-                        <option value="2000">do 2000 €</option>
-                        <option value="3000">do 3000 €</option>
-                    </select>
-
+            <div id="pozicija3">
+                <table>
+                    <tr>
+                        <th>Nameštenost:</th>
+                        <td>
+                                    <select name="namestenost">
+                                        <option value="">Izaberi...</option>
+                                        <option value="Namešten">Namešten</option>
+                                        <option value="Nenamešten">Nenamešten</option>
+                                    </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Opština:</th>
+                        <td>
+                            <select name="opstina">
+                            <option value="">Izaberi...</option>
+                            <?php
+                                foreach($row as $opstina){
+                                echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                                }
+                            ?>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div style="float:left;  margin-left:10px;">
-                Vlasnik:
-                <input type="text" name="vlasnik" />
+            <div id="pozicija4">
+                <table>
+                    <tr>
+                        <th>Kvadratura:</th>
+                        <td>
+                            <select name="povOD">
+                                    <option value="">Izaberi...</option>
+                                    <option value="20">od 20 m²</option>
+                                    <option value="40">od 40 m²</option>
+                                    <option value="60">od 60 m²</option>
+                                    <option value="80">od 80 m²</option>
+                                    <option value="100">od 100 m²</option>
+                                    <option value="150">od 150 m²</option>
+                                    <option value="200">od 200 m²</option>
+                                    <option value="300">od 300 m²</option>
+                            </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
+                            <select name="povDO">
+                                    <option value="">Izaberi...</option>
+                                    <option value="40">do 40 m²</option>
+                                    <option value="60">do 60 m²</option>
+                                    <option value="80">do 80 m²</option>
+                                    <option value="100">do 100 m²</option>
+                                    <option value="150">do 150 m²</option>
+                                    <option value="200">do 200 m²</option>
+                                    <option value="300">do 300 m²</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Cena:</th>
+                        <td>
+                            <select name="cenaOD">
+                                    <option value="">Izaberi...</option>
+                                    <option value="50">od 50 €</option>
+                                    <option value="200">od 200 €</option>
+                                    <option value="300">od 300 €</option>
+                                    <option value="400">od 400 €</option>
+                                    <option value="500">od 500 €</option>
+                                    <option value="600">od 600 €</option>
+                                    <option value="700">od 700 €</option>
+                                    <option value="800">od 800 €</option>
+                                    <option value="900">od 900 €</option>
+                                    <option value="1000">od 1000 €</option>
+                                    <option value="1500">od 1500 €</option>
+                                    <option value="2000">od 2000 €</option>
+                                    <option value="3000">od 3000 €</option>
+                                </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
+                                <select name="cenaDO">
+                                    <option value="">Izaberi...</option>
+                                    <option value="300">do 300 €</option>
+                                    <option value="400">do 400 €</option>
+                                    <option value="500">do 500 €</option>
+                                    <option value="600">do 600 €</option>
+                                    <option value="700">do 700 €</option>
+                                    <option value="800">do 800 €</option>
+                                    <option value="900">do 900 €</option>
+                                    <option value="1000">do 1000 €</option>
+                                    <option value="1500">do 1500 €</option>
+                                    <option value="2000">do 2000 €</option>
+                                    <option value="3000">do 3000 €</option>
+                                </select>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <div style="float:left;  margin-left:10px;">
+            <div style="clear:both; float:right;  margin-left:10px;">
                 <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
 		<input type="reset" value="Reset" style="width:55px; height:25px;" />
             </div>
 	</div>
 </form>
+    </div>
 	<!-- end page-heading -->
         
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
