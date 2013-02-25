@@ -161,7 +161,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                   foreach ($stanovi as $stan){
                                       echo '<li>';
                                       $slika_thumb = prikaziSlikuThumb($stan[0]);
-                                      echo '<a href="detalji.php?id=' . $stan[0] . '"><figure class="page1-img1"><img src="admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></figure></a><strong> Cena:&nbsp; ' . $stan['cena'] . ' €</strong>';
+                                      echo '<figure class="page1-img1"><a href="detalji.php?id=' . $stan[0] . '"><img src="admin/slike/thumb_' . $slika_thumb['naziv'] . '" alt="" ></a></figure><strong> Cena:&nbsp; ' . $stan['cena'] . ' €</strong>';
                                       echo '<ul class="list1">';
                                       echo '<li>Tip:<span>' . $stan['tip'] . '</span></li>';
                                       if($stan['tip']=='Stan') {echo '<li><span>' . $stan['stan_tip'] . '</span></li>'; };
