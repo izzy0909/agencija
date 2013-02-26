@@ -121,12 +121,12 @@ function ukupanBrojPonuda(){
     
 }
 
-function izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvadratura, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja)
+function izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvadratura, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci)
 {
     global $conn;
     
 
-    $sql = "UPDATE ponude SET vlasnik = :vlasnik, ulica = :ulica, br = :br, telefon = :telefon, email = :email, cena = :cena, kvadratura = :kvadratura, opis = :opis, t_kablovska = :kablovska, t_tv = :tv, t_klima = :klima, t_internet = :internet, t_telefon = :ima_telefon, t_frizider = :frizider, t_sporet = :sporet, t_vesmasina = :vesmasina, t_kuhinjskielementi = :kuhinjskielementi, t_plakari = :plakari, t_interfon = :interfon, t_lift = :lift, t_bazen = :bazen, t_garaza = :garaza, t_parking = :parking, t_dvoriste = :dvoriste, t_potkrovlje = :potkrovlje, t_terasa = :terasa, t_novogradnja = :novogradnja, t_renovirano = :renovirano, t_lux = :lux, t_penthaus = :penthaus, t_salonski = :salonski, t_lodja = :lodja WHERE id = :id";
+    $sql = "UPDATE ponude SET vlasnik = :vlasnik, ulica = :ulica, br = :br, telefon = :telefon, email = :email, cena = :cena, kvadratura = :kvadratura, opis = :opis, t_kablovska = :kablovska, t_tv = :tv, t_klima = :klima, t_internet = :internet, t_telefon = :ima_telefon, t_frizider = :frizider, t_sporet = :sporet, t_vesmasina = :vesmasina, t_kuhinjskielementi = :kuhinjskielementi, t_plakari = :plakari, t_interfon = :interfon, t_lift = :lift, t_bazen = :bazen, t_garaza = :garaza, t_parking = :parking, t_dvoriste = :dvoriste, t_potkrovlje = :potkrovlje, t_terasa = :terasa, t_novogradnja = :novogradnja, t_renovirano = :renovirano, t_lux = :lux, t_penthaus = :penthaus, t_salonski = :salonski, t_lodja = :lodja, t_duplex = :duplex, t_nov_namestaj = :nov_namestaj, t_kompjuterska_mreza = :kompjuterska_mreza, t_dva_kupatila = :dva_kupatila, t_vise_telefonskih_linija = :vise_telefonskih_linija, t_vertikala = :vertikala, t_horizontala = :horizontala, t_stan_u_kuci = :stan_u_kuci WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':id' => $id,
@@ -138,7 +138,6 @@ function izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvad
         ':cena' => $cena,
         ':kvadratura' => $kvadratura,
         ':opis' => $opis,
-        
         ':kablovska' => $kablovska,
         ':tv' => $tv,
         ':klima' => $klima,
@@ -162,6 +161,14 @@ function izmeniPonudu($id, $vlasnik, $ulica, $br, $telefon, $email, $cena, $kvad
         ':lux' => $lux,
         ':penthaus' => $penthaus,
         ':salonski' => $salonski,
-        ':lodja' => $lodja
+        ':lodja' => $lodja,
+        ':duplex' => $duplex,
+        ':nov_namestaj' => $nov_namestaj,
+        ':kompjuterska_mreza' => $kompjuterska_mreza,
+        ':dva_kupatila' => $dva_kupatila,
+        ':vise_telefonskih_linija' => $vise_telefonskih_linija,
+        ':vertikala' => $vertikala,
+        ':horizontala' => $horizontala,
+        ':stan_u_kuci' => $stan_u_kuci
         )); 
 }
