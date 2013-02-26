@@ -49,6 +49,7 @@ function prikaziSveStanove($start, $limit){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            WHERE status != 'izdat'
             LIMIT $start, $limit";
 	$query = $conn->prepare($sql);
 	$query->execute();
@@ -227,7 +228,8 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE s.id != '' ";
+            WHERE s.id != ''
+            AND status != 'izdat' ";
     if(!empty ($id)){
     $sql .= "AND s.id LIKE :id ";
     }
@@ -626,7 +628,8 @@ function postaviIzdat($id, $doKadaJeIzdat){
 
     $sql = "UPDATE stanovi
             SET status = 'izdat',
-            izdat_do = :izdat_do
+            izdat_do = :izdat_do,
+            vidljiv = 0
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
