@@ -793,6 +793,62 @@ $(document).pngFix( );
                                             ?>
                                         </td>
                                         </tr>
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_duplex']) { echo "<input type='checkbox' name='duplex' checked>Duplex"; }
+                                            else { echo "<input type='checkbox' name='duplex'>Duplex"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_nov_namestaj']) { echo "<input type='checkbox' name='nov_namestaj' checked>Nov nameštaj"; }
+                                            else { echo "<input type='checkbox' name='nov_namestaj'>Nov nameštaj"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_kompjuterska_mreza']) { echo "<input type='checkbox' name='kompjuterska_mreza' checked>Komp. mreža"; }
+                                            else { echo "<input type='checkbox' name='kompjuterska_mreza'>Komp. mreža"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_dva_kupatila']) { echo "<input type='checkbox' name='dva_kupatila' checked>Dva kupatila"; }
+                                            else { echo "<input type='checkbox' name='dva_kupatila'>Dva kupatila"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr> 
+                                        <td>
+                                            <?php
+                                            if ($stan['t_vise_telefonskih_linija']) { echo "<input type='checkbox' name='vise_telefonskih_linija' checked>Više tel. linija"; }
+                                            else { echo "<input type='checkbox' name='vise_telefonskih_linija'>Više tel. linija"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_vertikala']) { echo "<input type='checkbox' name='vertikala' checked>Vertikala"; }
+                                            else { echo "<input type='checkbox' name='vertikala'>Vertikala"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>                                        
+                                        <td>
+                                            <?php
+                                            if ($stan['t_horizontala']) { echo "<input type='checkbox' name='horizontala' checked>Horizontala"; }
+                                            else { echo "<input type='checkbox' name='horizontala'>Horizontala"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_stan_u_kuci']) { echo "<input type='checkbox' name='stan_u_kuci' checked>Stan u kući"; }
+                                            else { echo "<input type='checkbox' name='stan_u_kuci'>Stan u kući"; }
+                                            ?>
+                                        </td>
+                                        </tr>
                                     </table>
 				</div>
 

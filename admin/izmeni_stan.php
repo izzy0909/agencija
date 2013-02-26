@@ -47,10 +47,18 @@ include_once 'upload.php';
     $penthaus = isset($_POST['penthaus']) ? '1' : '0';
     $salonski = isset($_POST['salonski']) ? '1' : '0';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
+    $duplex = isset($_POST['duplex']) ? '1' : '0';
+    $nov_namestaj = isset($_POST['nov_namestaj']) ? '1' : '0';
+    $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
+    $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
+    $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
+    $vertikala = isset($_POST['vertikala']) ? '1' : '0';
+    $horizontala = isset($_POST['horizontala']) ? '1' : '0';
+    $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
     
 	//echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
     izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $grejanje, $namestenost, $cena, $kvadratura, $opis);
-    izmeniDodatneTagove($id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+    izmeniDodatneTagove($id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
     
 	
     //dodajDodatneTagove($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);

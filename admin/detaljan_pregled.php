@@ -689,6 +689,22 @@ $(document).pngFix( );
                                                 <td><input  type="checkbox" name="salonski" <?php if($tagovi['salonski']){ echo ' checked';}?>/>Salonski</td>
                                                 <td><input  type="checkbox" name="lodja" <?php if($tagovi['lodja']){ echo ' checked';}?>/>Lođa</td>
                                         </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="duplex" <?php if($tagovi['duplex']){ echo ' checked';}?>/>Duplex</td>
+                                                <td><input  type="checkbox" name="nov_namestaj" <?php if($tagovi['nov_namestaj']){ echo ' checked';}?>/>Nov nameštaj</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kompjuterska_mreza" <?php if($tagovi['kompjuterska_mreza']){ echo ' checked';}?>/>Komp. mreža</td>
+                                                <td><input  type="checkbox" name="dva_kupatila" <?php if($tagovi['dva_kupatila']){ echo ' checked';}?>/>Dva kupatila</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="vise_telefonskih_linija" <?php if($tagovi['vise_telefonskih_linija']){ echo ' checked';}?>/>Više tel. linija</td>
+                                                <td><input  type="checkbox" name="vertikala" <?php if($tagovi['vertikala']){ echo ' checked';}?>/>Vertikala</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="horizontala" <?php if($tagovi['horizontala']){ echo ' checked';}?>/>Horizontala</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
+                                        </tr>
                                     </table>
 				</div>
 

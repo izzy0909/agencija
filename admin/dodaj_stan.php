@@ -748,53 +748,69 @@ $(document).pngFix( );
 				<div class="right">
                                     <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;">
                                         <tr>
-                                                <td style="width:100px;"><input  type="checkbox" name="interfon" />Interfon</td>
-                                                <td><input  type="checkbox" name="kablovska" />Kablovska</td>
+                                                <td style="width:100px;"><input  type="checkbox" name="interfon" /> Interfon</td>
+                                                <td style="width:100px;"><input  type="checkbox" name="kablovska" /> Kablovska</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="tv" />TV</td>
-                                                <td><input  type="checkbox" name="klima" />Klima</td>
+                                                <td><input  type="checkbox" name="tv" /> TV</td>
+                                                <td><input  type="checkbox" name="klima" /> Klima</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="internet" />Internet</td>
-                                                <td><input  type="checkbox" name="ima_telefon" />Telefon</td>
+                                                <td><input  type="checkbox" name="internet" /> Internet</td>
+                                                <td><input  type="checkbox" name="ima_telefon" /> Telefon</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="frizider" />Frižider</td>
-                                                <td><input  type="checkbox" name="sporet" />Šporet</td>
+                                                <td><input  type="checkbox" name="frizider" /> Frižider</td>
+                                                <td><input  type="checkbox" name="sporet" /> Šporet</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="vesmasina" />Veš mašina</td>
-                                                <td><input  type="checkbox" name="kuhinjskielementi" />Kuh. elementi</td>
+                                                <td><input  type="checkbox" name="vesmasina" /> Veš mašina</td>
+                                                <td><input  type="checkbox" name="kuhinjskielementi" /> Kuh. elementi</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="plakari" />Plakari</td>
-                                                <td><input  type="checkbox" name="lift" />Lift</td>
+                                                <td><input  type="checkbox" name="plakari" /> Plakari</td>
+                                                <td><input  type="checkbox" name="lift" /> Lift</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="bazen" />Bazen</td>
-                                                <td><input  type="checkbox" name="garaza" />Garaža</td>
+                                                <td><input  type="checkbox" name="bazen" /> Bazen</td>
+                                                <td><input  type="checkbox" name="garaza" /> Garaža</td>
                                         </tr>               
 					<tr>
-                                                <td><input  type="checkbox" name="parking" />Parking</td>
-                                                <td><input  type="checkbox" name="dvoriste" />Dvorište</td>
+                                                <td><input  type="checkbox" name="parking" /> Parking</td>
+                                                <td><input  type="checkbox" name="dvoriste" /> Dvorište</td>
                                         </tr>              
 					<tr>
-                                                <td><input  type="checkbox" name="potkrovlje" />Potkrovlje</td>
-                                                <td><input  type="checkbox" name="terasa" />Terasa</td>
+                                                <td><input  type="checkbox" name="potkrovlje" /> Potkrovlje</td>
+                                                <td><input  type="checkbox" name="terasa" /> Terasa</td>
                                         </tr>                     
 					<tr>
-                                                <td><input  type="checkbox" name="novogradnja" />Novogradnja</td>
-                                                <td><input  type="checkbox" name="renovirano" />Renovirano</td>
+                                                <td><input  type="checkbox" name="novogradnja" /> Novogradnja</td>
+                                                <td><input  type="checkbox" name="renovirano" /> Renovirano</td>
                                         </tr>
 					<tr>
-                                                <td><input  type="checkbox" name="lux" />Lux</td>
-                                                <td><input  type="checkbox" name="penthaus" />Penthaus</td>
+                                                <td><input  type="checkbox" name="lux" /> Lux</td>
+                                                <td><input  type="checkbox" name="penthaus" /> Penthaus</td>
                                         </tr>                                        
 					<tr>
-                                                <td><input  type="checkbox" name="salonski" />Salonski</td>
-                                                <td><input  type="checkbox" name="lodja" />Lođa</td>
-                                        </tr>                                        
+                                                <td><input  type="checkbox" name="salonski" /> Salonski</td>
+                                                <td><input  type="checkbox" name="lodja" /> Lođa</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="duplex" /> Duplex</td>
+                                                <td><input  type="checkbox" name="nov_namestaj" /> Nov nameštaj</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="kompjuterska_mreza" /> Komp. mreža</td>
+                                                <td><input  type="checkbox" name="dva_kupatila" /> Dva kupatila</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="vise_telefonskih_linija" /> Više tel. linija</td>
+                                                <td><input  type="checkbox" name="vertikala" /> Vertikala</td>
+                                        </tr>
+					<tr>
+                                                <td><input  type="checkbox" name="horizontala" /> Horizontala</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" /> Stan u kući</td>
+                                        </tr>
                                     </table>
 				</div>
 
@@ -935,10 +951,18 @@ if (isset ($_POST['dodaj_stan'])){
     $penthaus = isset($_POST['penthaus']) ? '1' : '0';
     $salonski = isset($_POST['salonski']) ? '1' : '0';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
-
+    $duplex = isset($_POST['duplex']) ? '1' : '0';
+    $nov_namestaj = isset($_POST['nov_namestaj']) ? '1' : '0';
+    $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
+    $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
+    $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
+    $vertikala = isset($_POST['vertikala']) ? '1' : '0';
+    $horizontala = isset($_POST['horizontala']) ? '1' : '0';
+    $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
+    
     $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username);
     
-    dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+    dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
 
     //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis . '<br /><br />';

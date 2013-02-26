@@ -718,7 +718,7 @@ $(document).pngFix( );
                                     foreach ($slike as $slike_stanova)
                                     {
                                         echo '<div class="single"><a class="single_a" href="slike/watermark_' . $slike_stanova['naziv'] . '" rel="lightbox"><img src="slike/thumb_' . $slike_stanova['naziv'] . '" alt="" width="100px" /></a>';
-                                        echo '<div style="padding-left:20px;"><a href="glavna_slika.php?slika_id=' . $slike_stanova['id'] . '&stan_id='.  $stan[0] .'">Glavna</a> | <a href="obrisi_sliku.php?slika_naziv=' . $slike_stanova['naziv'] . '">Obriši</a></div>';
+                                        if($slike_stanova['glavna']!=1) {echo '<div style="padding-left:20px;"><a href="glavna_slika.php?slika_id=' . $slike_stanova['id'] . '&stan_id='.  $stan[0] .'">Glavna</a> | <a href="obrisi_sliku.php?slika_naziv=' . $slike_stanova['naziv'] . '">Obriši</a></div>'; }
                                         echo '</div>';
                                         
 
@@ -759,7 +759,7 @@ $(document).pngFix( );
 	</tr>
 	</table>
 	<!-- end id-form  -->
-        <a href="postavi_izdat.php?id=<?php echo $stan[0]; ?>" style="font-size: 20px;">Postavi na izdate</a>
+
 	</td>
 	<td>
         <!--  start related-activities -->
@@ -832,8 +832,23 @@ $(document).pngFix( );
                                                 <td><input  type="checkbox" name="salonski" <?php if($tagovi['salonski']){ echo ' checked';}?>/>Salonski</td>
                                                 <td><input  type="checkbox" name="lodja" <?php if($tagovi['lodja']){ echo ' checked';}?>/>Lođa</td>
                                         </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="duplex" <?php if($tagovi['duplex']){ echo ' checked';}?>/>Duplex</td>
+                                                <td><input  type="checkbox" name="nov_namestaj" <?php if($tagovi['nov_namestaj']){ echo ' checked';}?>/>Nov nameštaj</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kompjuterska_mreza" <?php if($tagovi['kompjuterska_mreza']){ echo ' checked';}?>/>Komp. mreža</td>
+                                                <td><input  type="checkbox" name="dva_kupatila" <?php if($tagovi['dva_kupatila']){ echo ' checked';}?>/>Dva kupatila</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="vise_telefonskih_linija" <?php if($tagovi['vise_telefonskih_linija']){ echo ' checked';}?>/>Više tel. linija</td>
+                                                <td><input  type="checkbox" name="vertikala" <?php if($tagovi['vertikala']){ echo ' checked';}?>/>Vertikala</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="horizontala" <?php if($tagovi['horizontala']){ echo ' checked';}?>/>Horizontala</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
+                                        </tr>
                                     </table>
-                                    
 				</div>
 
 				<div class="clear"></div>

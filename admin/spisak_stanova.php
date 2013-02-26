@@ -386,11 +386,11 @@ $(document).pngFix( );
             <table>
                 <tr>
                     <th>ID</th>
-                    <td><input type="text" name="id" /></td>
+                    <td><input class="admin-input-select" type="text" name="id" /></td>
                 </tr>
                 <tr>
                     <th>Telefon:</th>
-                    <td><input type="text" name="telefon" /></td>
+                    <td><input class="admin-input-select" type="text" name="telefon" /></td>
                 </tr>
             </table>
             </div>
@@ -399,7 +399,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Tip</th>
                         <td>
-                                <select id="tip" name="tip" class="sforma_select">
+                                <select class="admin-input-select" id="tip" name="tip" class="sforma_select">
                                     <option value="">Izaberi...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -414,7 +414,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Struktura:</th>
                         <td>
-                                    <select name="stan_tip" class="sforma_select">
+                                    <select class="admin-input-select"  name="stan_tip" class="sforma_select">
                                         <option value="">Izaberi...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
@@ -436,7 +436,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Nameštenost:</th>
                         <td>
-                                    <select name="namestenost">
+                                    <select class="admin-input-select"  name="namestenost">
                                         <option value="">Izaberi...</option>
                                         <option value="Namešten">Namešten</option>
                                         <option value="Nenamešten">Nenamešten</option>
@@ -446,7 +446,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Opština:</th>
                         <td>
-                            <select name="opstina">
+                            <select class="admin-input-select"  name="opstina">
                             <option value="">Izaberi...</option>
                             <?php
                                 foreach($row as $opstina){
@@ -463,7 +463,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Kvadratura:</th>
                         <td>
-                            <select name="povOD">
+                            <select class="admin-input-select"  name="povOD">
                                     <option value="">Izaberi...</option>
                                     <option value="20">od 20 m²</option>
                                     <option value="40">od 40 m²</option>
@@ -474,7 +474,7 @@ $(document).pngFix( );
                                     <option value="200">od 200 m²</option>
                                     <option value="300">od 300 m²</option>
                             </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
-                            <select name="povDO">
+                            <select class="admin-input-select"  name="povDO">
                                     <option value="">Izaberi...</option>
                                     <option value="40">do 40 m²</option>
                                     <option value="60">do 60 m²</option>
@@ -489,7 +489,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Cena:</th>
                         <td>
-                            <select name="cenaOD">
+                            <select class="admin-input-select"  name="cenaOD">
                                     <option value="">Izaberi...</option>
                                     <option value="50">od 50 €</option>
                                     <option value="200">od 200 €</option>
@@ -505,7 +505,7 @@ $(document).pngFix( );
                                     <option value="2000">od 2000 €</option>
                                     <option value="3000">od 3000 €</option>
                                 </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
-                                <select name="cenaDO">
+                                <select class="admin-input-select" name="cenaDO">
                                     <option value="">Izaberi...</option>
                                     <option value="300">do 300 €</option>
                                     <option value="400">do 400 €</option>
@@ -523,7 +523,7 @@ $(document).pngFix( );
                     </tr>
                 </table>
             </div>
-            <div style="clear:both; float:right;  margin-left:10px;">
+            <div style="clear:both; float:right;  margin:10px 10px 10px 0;">
                 <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
 		<input type="reset" value="Reset" style="width:55px; height:25px;" />
             </div>

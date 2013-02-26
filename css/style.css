@@ -1465,6 +1465,13 @@ margin:2px 0 20px 10px;
     padding-top:3px;
 }
 
+#napredna{
+    clear:both; 
+    float:left; 
+    margin: 10px 0 10px 0;
+    display:none;
+}
+
 /* HOT OFFER  ========================================================================================= */
 
 .hot_info_text{
@@ -1476,7 +1483,7 @@ margin:2px 0 20px 10px;
     float:left;
 }
 
-.hot_slika{
+.hot_slika img{
     border:1px solid #c9c9c9;
 }
 

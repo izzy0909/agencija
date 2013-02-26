@@ -395,6 +395,18 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 <td><label><input type="checkbox" name="salonski" >Salonski</label></td>
                 <td><label><input type="checkbox" name="lodja" >Lođa</label></td>
                 </tr>
+                <tr style="background-color:#f3f3f3;">
+                <td><label><input type="checkbox" name="duplex" >Duplex</label></td>
+                <td><label><input type="checkbox" name="nov_namestaj" >Nov nameštaj</label></td> 
+                <td><label><input type="checkbox" name="kompjuterska_mreza" >Kompjuterska mreža</label></td>
+                <td><label><input type="checkbox" name="dva_kupatila" >Dva kupatila</label></td>
+                </tr>
+                <tr>
+                <td><label><input type="checkbox" name="vise_telefonskih_linija" >Više telefon. linija</label></td>
+                <td><label><input type="checkbox" name="vertikala" >Vertikala</label></td> 
+                <td><label><input type="checkbox" name="horizontala" >Horizontala</label></td>
+                <td><label><input type="checkbox" name="stan_u_kuci" >Stan u kući</label></td>
+                </tr>
             </table>
                     </div>
                     <div id="pos2"><table>
@@ -476,8 +488,16 @@ if (isset ($_POST['ponudi_stan'])){
     $penthaus = isset($_POST['penthaus']) ? '1' : '0';
     $salonski = isset($_POST['salonski']) ? '1' : '0';
     $lodja = isset($_POST['lodja']) ? '1' : '0';
+    $duplex = isset($_POST['duplex']) ? '1' : '0';
+    $nov_namestaj = isset($_POST['nov_namestaj']) ? '1' : '0';
+    $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
+    $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
+    $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
+    $vertikala = isset($_POST['vertikala']) ? '1' : '0';
+    $horizontala = isset($_POST['horizontala']) ? '1' : '0';
+    $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
     
-    $stan_id = dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja);
+    $stan_id = dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska , $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
     
     uploadPonude($_FILES, $stan_id);
     //var_dump($grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);

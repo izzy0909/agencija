@@ -400,8 +400,8 @@ $(document).pngFix( );
 					<a href="izbrisi_podsetnik.php?id=<?php echo $poruka[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>-->
-					</td>
+					<a href="" title="Edit" class="icon-5 info-tooltip"></a>
+					</td>-->
 				</tr>
 								
 				<?php
