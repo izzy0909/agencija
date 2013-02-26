@@ -3,13 +3,13 @@
 include_once 'connection.php';
 
 
-function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja)
+function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci)
 {
     global $conn;
     
 
-    $sql = "INSERT INTO ponude (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, ulica, br, telefon, email, grejanje, cena, sprat, kvadratura, namestenost, opis, t_kablovska, t_tv, t_klima, t_internet, t_telefon, t_frizider, t_sporet, t_vesmasina, t_kuhinjskielementi, t_plakari, t_interfon, t_lift, t_bazen, t_garaza, t_parking, t_dvoriste, t_potkrovlje, t_terasa, t_novogradnja, t_renovirano, t_lux, t_penthaus, t_salonski, t_lodja)
-            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :ulica, :br, :telefon, :email, :grejanje, :cena, :sprat, :kvadratura, :namestenost, :opis, :kablovska, :tv, :klima, :internet, :ima_telefon, :frizider, :sporet, :vesmasina, :kuhinjskielementi, :plakari, :interfon, :lift, :bazen, :garaza, :parking, :dvoriste, :potkrovlje, :terasa, :novogradnja, :renovirano, :lux, :penthaus, :salonski, :lodja)";
+    $sql = "INSERT INTO ponude (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, ulica, br, telefon, email, grejanje, cena, sprat, kvadratura, namestenost, opis, t_kablovska, t_tv, t_klima, t_internet, t_telefon, t_frizider, t_sporet, t_vesmasina, t_kuhinjskielementi, t_plakari, t_interfon, t_lift, t_bazen, t_garaza, t_parking, t_dvoriste, t_potkrovlje, t_terasa, t_novogradnja, t_renovirano, t_lux, t_penthaus, t_salonski, t_lodja, t_duplex, t_nov_namestaj, t_kompjuterska_mreza, t_dva_kupatila, t_vise_telefonskih_linija, t_vertikala, t_horizontala, t_stan_u_kuci)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :ulica, :br, :telefon, :email, :grejanje, :cena, :sprat, :kvadratura, :namestenost, :opis, :kablovska, :tv, :klima, :internet, :ima_telefon, :frizider, :sporet, :vesmasina, :kuhinjskielementi, :plakari, :interfon, :lift, :bazen, :garaza, :parking, :dvoriste, :potkrovlje, :terasa, :novogradnja, :renovirano, :lux, :penthaus, :salonski, :lodja, :duplex, :nov_namestaj, :kompjuterska_mreza, :dva_kupatila, :vise_telefonskih_linija, :vertikala, :horizontala, :stan_u_kuci)";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':kategorija' => $kategorija,
@@ -50,7 +50,15 @@ function dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulic
         ':lux' => $lux,
         ':penthaus' => $penthaus,
         ':salonski' => $salonski,
-        ':lodja' => $lodja
+        ':lodja' => $lodja,
+        ':duplex' => $duplex,
+        ':nov_namestaj' => $nov_namestaj,
+        ':kompjuterska_mreza' => $kompjuterska_mreza,
+        ':dva_kupatila' => $dva_kupatila,
+        ':vise_telefonskih_linija' => $vise_telefonskih_linija,
+        ':vertikala' => $vertikala,
+        ':horizontala' => $horizontala,
+        ':stan_u_kuci' => $stan_u_kuci
         ));
 
     return $conn->lastInsertID();
