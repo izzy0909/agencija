@@ -620,3 +620,18 @@ function dodajIzbrisaniStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id
 
     return $conn->lastInsertID();
 }
+
+function postaviIzdat($id, $doKadaJeIzdat){
+    global $conn;
+
+    $sql = "UPDATE stanovi
+            SET status = 'izdat',
+            izdat_do = :izdat_do
+            WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id,
+                ':izdat_do' => $doKadaJeIzdat
+		));
+
+}

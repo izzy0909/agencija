@@ -1,4 +1,4 @@
-######################
+﻿######################
 ####  V. 1.0.1
 ####  U. Izzy
 ######################
@@ -199,3 +199,10 @@ ALTER TABLE  `izbrisani_stanovi` ADD  `stan_izbrisao` VARCHAR( 100 ) NOT NULL AF
 ALTER TABLE stanovi CHANGE tip tip ENUM('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Apartman na dan') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
 ALTER TABLE ponude CHANGE tip tip ENUM('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Apartman na dan') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
 ALTER TABLE izbrisani_stanovi CHANGE tip tip ENUM('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Apartman na dan') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
+
+
+######################
+#### v. 1.0.15
+#### U. Izzy
+######################
+ALTER TABLE  `stanovi` ADD  `izdat_do` DATE NOT NULL

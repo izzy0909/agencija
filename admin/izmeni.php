@@ -759,7 +759,7 @@ $(document).pngFix( );
 	</tr>
 	</table>
 	<!-- end id-form  -->
-
+        <a href="postavi_izdat.php?id=<?php echo $stan[0]; ?>" style="font-size: 20px;">Postavi na izdate</a>
 	</td>
 	<td>
         <!--  start related-activities -->
@@ -833,6 +833,7 @@ $(document).pngFix( );
                                                 <td><input  type="checkbox" name="lodja" <?php if($tagovi['lodja']){ echo ' checked';}?>/>Lođa</td>
                                         </tr>
                                     </table>
+                                    
 				</div>
 
 				<div class="clear"></div>

@@ -1,14 +1,21 @@
 <?php
+include_once '../data_base_access/stanoviDA.php';
+include_once '../data_base_access/userDA.php';
 
-include_once '../data_base_access/podsetnikDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
-	
 }
-		$user = $_SESSION['username'];
-        $poruke = prikaziPorukeZaOdredjenogKorisnika($user);               
-                        
+if (isset ($_GET['id'])){
+
+	$id = $_GET['id'];
+	$stan = prikaziStanZaAdmina($id);
+
+}
+
+   
+
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -196,7 +203,7 @@ $(document).pngFix( );
 	</div>
 	<!-- end logo -->
 
-	
+
  	<div class="clear"></div>
 
 </div>
@@ -260,13 +267,13 @@ $(document).pngFix( );
 
 		<ul class="select"><li><a href="dodaj_stan.php"><b>Stanovi</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-         <div class="select_sub show">
+                <div class="select_sub show">
 			<ul class="sub">
-				<li><a href="dodaj_stan.php">Dodaj stan</a></li>
-				<li class="sub_show"><a href="spisak_stanova.php">Spisak stanova</a></li>
+				<li class="sub_show"><a href="dodaj_stan.php">Dodaj stan</a></li>
+				<li><a href="spisak_stanova.php">Spisak stanova</a></li>
 				<!--<li><a href="#nogo">Nesto</a></li>-->
 			</ul>
-		</div>       
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
@@ -278,8 +285,8 @@ $(document).pngFix( );
 
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>       
-                
+		</ul>
+
 		<div class="nav-divider">&nbsp;</div>
 
 		<ul class="select"><li><a href="spisak_trazimo.php"><b>Tražimo za vas</b><!--[if IE 7]><!--></a><!--<![endif]-->
@@ -288,17 +295,16 @@ $(document).pngFix( );
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>
-                
+
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="current"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
 		<div class="select_sub show">
 			<ul class="sub">
                                 <li><a href="dodaj_podsetnik.php">Dodaj podsetnik</a></li>
-				<li class="sub_show"><a href="podsetnik.php">Spisak poruka</a></li>	
+				<li><a href="podsetnik.php">Spisak poruka</a></li>
 				<li><a href="danasnji_podsetnici.php">Danasnji Podsetnici</a></li>
-			
 			</ul>
 		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
@@ -339,10 +345,10 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Spisak poruka</h1>
+		<h1>Postavi stan na izdat</h1>
 	</div>
 	<!-- end page-heading -->
-        
+    <form id="postavi_izdat" action="postavi_izdat.php" method="post">
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
@@ -356,99 +362,158 @@ $(document).pngFix( );
 		<td>
 		<!--  start content-table-inner ...................................................................... START -->
 		<div id="content-table-inner">
-		
+
 			<!--  start table-content  -->
 			<div id="table-content">
-			
-				<!--  start product-table ..................................................................................... -->
-				<form id="mainform" action="">
-				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
-				<tr>
-					<th class="table-header-check"><a id="toggle-all" ></a> </th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Korisnik</a>	</th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Poruka</a></th>
-					<th class="table-header-repeat line-left"><a href="">Zavrseno</a></th>
-					<th class="table-header-repeat line-left"><a href="">Datum dodavanja</a></th>
-					<th class="table-header-repeat line-left"><a href="">Datum podsecanja</a></th>
-					<th class="table-header-repeat line-left"><a href="">Opcije</a></th>
-				</tr>
-				<?php
-					if(isset($poruke)){
-					
-					foreach($poruke as $poruka){
-                          
-                        
-				?>
-				<tr>
-					<td><input type="checkbox"/></td>
-					<td><?php echo $poruka['username']; ?></td>
-					<td><?php echo $poruka['poruka']; ?></td>
-					<td><?php 
-					
-						if($poruka['zavrsen'] == 1)
-						{
-							echo 'Da'; 
-						}else{
-							echo 'Ne';
-						}
-						?>
-					</td>
-					<td><?php echo $poruka['datum_dodavanja']; ?></td>
-					<td><?php echo $poruka['datum_podsecanja']; ?></td>
-					<td class="options-width">
-					<a href="" title="Izmeni" class="icon-1 info-tooltip"></a>
-					<a href="izbrisi_podsetnik.php?id=<?php echo $poruka[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
-					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
-					<a href="" title="Edit" class="icon-5 info-tooltip"></a>-->
-					</td>
-				</tr>
-								
-				<?php
-						}
-					}
-				?>
-				</table>
-				<!--  end product-table................................... --> 
-				</form>
-			</div>
-			<!--  end content-table  -->
-		
-			<!--  start actions-box ............................................... -->
-			<div id="actions-box">
-				<a href="" class="action-slider"></a>
-				<div id="actions-box-slider">
-					<a href="" class="action-edit">Edit</a>
-					<a href="" class="action-delete">Delete</a>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<!-- end actions-box........... -->
-			
-			<!--  start paging..................................................... -->
-			<table border="0" cellpadding="0" cellspacing="0" id="paging-table">
-			<tr>
+			<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
+<tr>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowleft.jpg" width="20" height="300" alt="" /></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th rowspan="3" class="sized"><img src="images/shared/side_shadowright.jpg" width="20" height="300" alt="" /></th>
+</tr>
+
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+
+	<table border="0" width="100%" cellpadding="0" cellspacing="0">
+	<tr valign="top">
+	<td>
+
+
+		<!--  start step-holder -->
+		<div id="step-holder">
+			<div class="step-no">1</div>
+			<div class="step-dark-left"><a href="">Postavi izdat</a></div>
+
+		</div>
+		<!--  end step-holder -->
+
+		<!-- start id-form -->
+		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+		<tr>
+		<th valign="top">Ulica:</th>
+		<td><?php echo $stan['ulica'];?></td>
+		<td></td>
+		</tr>
+
+	<tr>
+		<th valign="top">Id:</th>
+		<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo $stan[0];?></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Do kada je izdat:</th>
 			<td>
-				<a href="" class="page-far-left"></a>
-				<a href="" class="page-left"></a>
-				<div id="page-info">Page <strong>1</strong> / 15</div>
-				<a href="" class="page-right"></a>
-				<a href="" class="page-far-right"></a>
-			</td>
-			<td>
-			<select  class="styledselect_pages">
-				<option value="">Number of rows</option>
-				<option value="">1</option>
-				<option value="">2</option>
-				<option value="">3</option>
-			</select>
-			</td>
-			</tr>
-			</table>
-			<!--  end paging................ -->
-			
+				<select name="dan" id="d" class="styledselect-day">
+					<option value="">dd</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="19">19</option>
+					<option value="20">20</option>
+					<option value="21">21</option>
+					<option value="22">22</option>
+					<option value="23">23</option>
+					<option value="24">24</option>
+					<option value="25">25</option>
+					<option value="26">26</option>
+					<option value="27">27</option>
+					<option value="28">28</option>
+					<option value="29">29</option>
+					<option value="30">30</option>
+					<option value="31">31</option>
+				</select>
+				<select name="mesec" id="m" class="styledselect-month">
+						<option value="">mmm</option>
+						<option value="1">Jan</option>
+						<option value="2">Feb</option>
+						<option value="3">Mar</option>
+						<option value="4">Apr</option>
+						<option value="5">May</option>
+						<option value="6">Jun</option>
+						<option value="7">Jul</option>
+						<option value="8">Aug</option>
+						<option value="9">Sep</option>
+						<option value="10">Oct</option>
+						<option value="11">Nov</option>
+						<option value="12">Dec</option>
+				</select>
+				<select name="godina" id="y"  class="styledselect-year">
+						<option value="">yyyy</option>
+						<option value="2013">2013</option>
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+				</select>
+				<a href=""  id="date-pick"><img src="images/forms/icon_calendar.jpg"   alt="" /></a></td>
+	</tr>
+
+		<th>&nbsp;</th>
+		<td valign="top">
+                        <!--<input type="submit" value="Dodaj" name="dodaj_stan" id="dodaj_stan" />-->
+                        <input type="submit" value="Dodaj" class="form-submit" name="postavi_izdat" id="postavi_izdat" />
+			<input type="reset" value="reset" class="form-reset" />
+		</td>
+		<td></td>
+	</tr>
+	</table>
+	<!-- end id-form  -->
+
+	</td>
+	<td>
+
+
+	</td>
+</tr>
+<tr>
+<td><img src="images/shared/blank.gif" width="695" height="1" alt="blank" /></td>
+<td></td>
+</tr>
+</table>
+
+<div class="clear"></div>
+
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</table>
+
+
+			</div>
+			<!--  end table-content  -->
+
 			<div class="clear"></div>
-		 
+
 		</div>
 		<!--  end content-table-inner ............................................END  -->
 		</td>
@@ -460,7 +525,7 @@ $(document).pngFix( );
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
-		
+    </form>
 	<div class="clear">&nbsp;</div>
 
 </div>
@@ -484,3 +549,18 @@ $(document).pngFix( );
 
 </body>
 </html>
+<?php
+
+if (isset ($_POST['postavi_izdat'])){
+
+	$id = isset($_POST['id']) ? $_POST['id'] : null;
+        $dan = isset($_POST['dan']) ? $_POST['dan'] : null;
+	$mesec = isset($_POST['mesec']) ? $_POST['mesec'] : null;
+	$godina = isset($_POST['godina']) ? $_POST['godina'] : null;
+
+	$doKadaJeIzdat = $godina . '-' . $mesec . '-' . $dan;
+        postaviIzdat($id, $doKadaJeIzdat);
+
+        header('Location:izmeni.php?id=' . $id);
+
+}
