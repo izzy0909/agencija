@@ -2,9 +2,10 @@
 
 include_once 'data_base_access/dodatniTagoviDA.php';
 include_once 'data_base_access/stanoviDA.php';
-include_once 'data_base_access/slikeDA.php';    
+include_once 'data_base_access/slikeDA.php';
 
    $row = prikaziSveOpstine();
+
 
               if(isset($_GET['str'])) {
                     $str = (int)htmlspecialchars($_GET['str']);
@@ -31,7 +32,7 @@ include_once 'data_base_access/slikeDA.php';
                     }
                     };
               $start = ($str-1) * 18;   
-   
+              
               if (isset ($_GET['pretrazi'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
                     $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
@@ -45,8 +46,8 @@ include_once 'data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
-                    $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                    
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
+                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
                     
               }
               else {
@@ -63,17 +64,14 @@ include_once 'data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
-                    $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
-                    $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                                       
+                    $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
+                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
                   }
               }
-
-
-
-
                         
                         
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,6 +85,25 @@ include_once 'data_base_access/slikeDA.php';
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-1.7.2.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/showHide.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+       $('.show_hide').showHide({			 
+                    speed: 1000,  // speed you want the toggle to happen	
+                    easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
+                    changeText: 1, // if you dont want the button text to change, set this to 0
+                    showText: 'Napredna pretraga',// the button text to show when a div is closed
+                    hideText: 'Sakrij naprednu pretragu' // the button text to show when a div is open
+
+            }); 
+
+
+    });
+
+    </script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -152,12 +169,12 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             	<nav>
                 <ul id="sndmenu" class="sf-menu">
                     <li><a href="index.php">Početna</a>
-                      <audio style="display:none;" id="beep-two" preload="auto">
+                        <audio style="display:none;" id="beep-two" preload="auto">
                             <source src="audio/klik1.mp3">
                             <source src="audio/klik1.ogg">
                         </audio>
                     </li>
-                    <li><a href="izdavanje.php">Izdavanje</a>
+                    <li><a class="active" href="izdavanje.php">Izdavanje</a>
                           <ul>
                              <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
                             <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
@@ -167,7 +184,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
                             <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul></li>
-                    <li><a class="active" href="prodaja.php">Prodaja</a>
+                    <li><a href="prodaja.php">Prodaja</a>
                             <ul>
                             <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
                             <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
@@ -209,17 +226,18 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
-            	<article class="grid_12">
+                   <article class="grid_12">
                       <?php 
                         if (!isset($_GET['tip'])){
-                            echo '<center><a href="prodaja.php?tip=Stan"><img src="images/pro-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Kuća"><img src="images/pro-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Poslovni+prostor"><img src="images/pro-posprost.jpg" alt="Poslovni prostori" /></a>';
-                            echo '<br /><br /><a href="prodaja.php?tip=Magacin"><img src="images/pro-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Lokal"><img src="images/pro-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="prodaja.php?tip=Garaža"><img src="images/pro-garaze.jpg" alt="Garaže" /></a></center>';
+                            echo '<center><a href="izdavanje.php?tip=Stan"><img src="images/izd-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Kuća"><img src="images/izd-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Poslovni+prostor"><img src="images/izd-poslovniprostori.jpg" alt="Poslovni prostori" /></a>';
+                            echo '<br /><br /><a href="izdavanje.php?tip=Magacin"><img src="images/izd-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Lokal"><img src="images/izd-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Garaža"><img src="images/izd-garaze.jpg" alt="Garaže" /></a>';
+                            echo '<br /><br /><a href="izdavanje.php?tip=Apartman+na+dan"><img src="images/izd-apartmani.jpg" alt="Apartmani na dan" /></a></center>';
                         }
 // OTVORIO PHP    ============================================================================================          
                         else { ?>
                        <div id="sforma">
-                           <form id="pretraga" action="prodaja.php" method="get">
-                       <h3 class="title" >Pretraga nekretnina: Prodaja</h3>
+                           <form id="pretraga" action="izdavanje.php" method="get">
+                       <h3 class="title" >Pretraga nekretnina: Izdavanje</h3>
                        <div id="pozicija1" style="position:relative; float:left;">
                            <table>
                                <tr>
@@ -233,7 +251,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                     <option value="Magacin">Magacin</option>
                                     <option value="Lokal">Lokal</option>
                                     <option value="Garaža">Garaža</option>
-                                </select>
+                                    <option value="Apartman na dan">Apartman na dan</option>
+                                </select>    
                                    </td>
                            </tr>
                             <tr>
@@ -385,6 +404,57 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 </tr>
                            </table>
                        </div>
+                       <div id="napredna">
+                            <table>
+                                <tr style="background-color:#f3f3f3;">
+                                <td style="width: 153px;"><label><input type="checkbox" name="kablovska" >Kablovska/Sat</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="tv">TV</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="klima">Klima</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="internet" >Internet</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="ima_telefon" >Telefon</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="frizider" >Frižider</label></td>
+                                </tr>    
+                                <tr>
+                                <td><label><input type="checkbox" name="sporet" >Šporet</label></td>
+                                <td><label><input type="checkbox" name="vesmasina" >Veš mašina</label></td>
+                                <td><label><input type="checkbox" name="kuhinjskielementi" >Kuhinjski elementi</label></td>
+                                <td><label><input type="checkbox" name="plakari" >Plakari</label></td>
+                                <td><label><input type="checkbox" name="interfon" >Interfon</label></td>
+                                <td><label><input type="checkbox" name="lift" >Lift</label></td>   
+                                </tr>
+                                <tr style="background-color:#f3f3f3;">
+                                <td><label><input type="checkbox" name="bazen" >Bazen</label></td>
+                                <td><label><input type="checkbox" name="garaza" >Garaža</label></td>
+                                <td><label><input type="checkbox" name="parking" >Parking</label></td>
+                                <td><label><input type="checkbox" name="dvoriste" >Dvorište</label></td>
+                                <td><label><input type="checkbox" name="potkrovlje" >Potkrovlje</label></td>
+                                <td><label><input type="checkbox" name="terasa" >Terasa</label></td> 
+                                </tr>
+                                <tr>
+                                <td><label><input type="checkbox" name="novogradnja" >Novogradnja</label></td>
+                                <td><label><input type="checkbox" name="renovirano" >Renovirano</label></td>
+                                <td><label><input type="checkbox" name="lux" >Lux</label></td>   
+                                <td><label><input type="checkbox" name="penthaus" >Penthaus</label></td>
+                                <td><label><input type="checkbox" name="salonski" >Salonski</label></td>
+                                <td><label><input type="checkbox" name="lodja" >Lođa</label></td>
+                                </tr>
+                                <tr style="background-color:#f3f3f3;">
+                                <td><label><input type="checkbox" name="duplex" >Duplex</label></td>
+                                <td><label><input type="checkbox" name="nov_namestaj" >Nov nameštaj</label></td>
+                                <td><label><input type="checkbox" name="kompjuterska_mreza" >Kmpjuterska mreža</label></td>
+                                <td><label><input type="checkbox" name="dva_kupatila" >Dva kupatila</label></td>
+                                <td><label><input type="checkbox" name="vise_telefonskih_linija" >Više telefonskih linija</label></td>
+                                <td><label><input type="checkbox" name="vertikala" >Vertikala</label></td>
+                                </tr>
+                                <tr>
+                                <td><label><input type="checkbox" name="horizontala" >Horizontala</label></td>
+                                <td><label><input type="checkbox" name="stan_u_kuci" >Stan u kući</label></td>
+                                </tr>
+                            </table>
+                       </div>
+                       <div id="hideshowctrl" style="padding-left:5px; clear:both; width:100%; text-align: center;">
+                           <a href="#" class="show_hide" rel="#napredna">Napredna pretraga</a>
+                       </div>
                                 <div class="dugmad">
                                         <input type="submit" value="Pretraži" class="sforma_button" name="pretrazi" id="pretrazi" />
                                         <input type="reset" value="Resetuj" class="sforma_button" /></div>
@@ -400,8 +470,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                if(isset($_GET['tip'])){
                                    if($broj_stanova[0] > 0){
                                     echo '<span>Broj rezultata: ' . $broj_stanova[0] . '</span>';
-                               }
-                               else echo '<span>Nema rezultata.</span>';
+                                        }
+                                    else { echo '<span>Nema rezultata.</span>'; }
                                }
                                ?>
                        </div>                           
@@ -418,7 +488,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 if($stan['tip']=='Stan') {echo ': ' . $stan['stan_tip']; }
                                 echo '<br /><br />Površina: ' . $stan['kvadratura'] . ' m²';
                                 echo '<br />Cena: ' . $stan['cena'] . ' €';
-                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJJ</a></div></div>';
+                                echo '</div><div class="stan_info_detaljnije"><a href="detalji.php?id=' . $stan[0] . '">DETALJI</a></div></div>';
                             }
                             echo '<div class="clear"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div><div class="stan_polje_border"></div>';
                             echo '<div class="clear"></div>';
@@ -446,7 +516,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             </div>
         </div>
     </section>
- <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-38500514-1']);
@@ -458,7 +528,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
-</script>   
+</script>
 	<!--==============================footer=================================-->
 <?php include 'includes/footer.php'; ?>
         

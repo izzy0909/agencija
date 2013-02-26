@@ -138,6 +138,26 @@ $(function() {
 });
 </script>
 
+<!-- slajder za naprednu pretragu -->
+    <script src="js/showHide.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+       $('.show_hide').showHide({			 
+                    speed: 1000,  // speed you want the toggle to happen	
+                    easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
+                    changeText: 1, // if you dont want the button text to change, set this to 0
+                    showText: 'Napredna pretraga',// the button text to show when a div is closed
+                    hideText: 'Sakrij naprednu pretragu' // the button text to show when a div is open
+
+            }); 
+
+
+    });
+
+    </script>
 
 <!--  date picker script -->
 <link rel="stylesheet" href="css/datePicker.css" type="text/css" />
@@ -527,6 +547,53 @@ $(document).pngFix( );
                     </tr>
                 </table>
             </div>
+                       <div id="napredna">
+                            <table id="id-form" >
+                                <tr style="background-color:#f3f3f3;">
+                                <td style="width: 153px;"><label><input type="checkbox" name="kablovska" class="napredna_input"> Kablovska/Sat</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="tv"> TV</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="klima"> Klima</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="internet" > Internet</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="ima_telefon" > Telefon</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="frizider" > Frižider</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="sporet" > Šporet</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="vesmasina" > Veš mašina</label></td>
+                                </tr>    
+                                <tr>
+                                <td><label><input type="checkbox" name="kuhinjskielementi" > Kuhinjski elementi</label></td>
+                                <td><label><input type="checkbox" name="plakari" > Plakari</label></td>
+                                <td><label><input type="checkbox" name="interfon" > Interfon</label></td>
+                                <td><label><input type="checkbox" name="lift" > Lift</label></td>   
+                                <td><label><input type="checkbox" name="bazen" > Bazen</label></td>
+                                <td><label><input type="checkbox" name="garaza" > Garaža</label></td>
+                                <td><label><input type="checkbox" name="parking" > Parking</label></td>
+                                <td><label><input type="checkbox" name="dvoriste" > Dvorište</label></td>
+                                </tr>
+                                <tr style="background-color:#f3f3f3;">
+                                <td><label><input type="checkbox" name="potkrovlje" > Potkrovlje</label></td>
+                                <td><label><input type="checkbox" name="terasa" > Terasa</label></td> 
+                                <td><label><input type="checkbox" name="novogradnja" > Novogradnja</label></td>
+                                <td><label><input type="checkbox" name="renovirano" > Renovirano</label></td>
+                                <td><label><input type="checkbox" name="lux" > Lux</label></td>   
+                                <td><label><input type="checkbox" name="penthaus" > Penthaus</label></td>
+                                <td><label><input type="checkbox" name="salonski" > Salonski</label></td>
+                                <td><label><input type="checkbox" name="lodja" > Lođa</label></td>
+                                </tr>
+                                <tr>
+                                <td><label><input type="checkbox" name="duplex" > Duplex</label></td>
+                                <td><label><input type="checkbox" name="nov_namestaj" > Nov nameštaj</label></td>
+                                <td><label><input type="checkbox" name="kompjuterska_mreza" > Kmpjuterska mreža</label></td>
+                                <td><label><input type="checkbox" name="dva_kupatila" > Dva kupatila</label></td>
+                                <td><label><input type="checkbox" name="vise_telefonskih_linija" > Više telefonskih linija</label></td>
+                                <td><label><input type="checkbox" name="vertikala" > Vertikala</label></td>
+                                <td><label><input type="checkbox" name="horizontala" > Horizontala</label></td>
+                                <td><label><input type="checkbox" name="stan_u_kuci" > Stan u kući</label></td>
+                                </tr>
+                            </table>
+                       </div>
+                       <div id="hideshowctrl" style="padding-left:5px; clear:both; width:100%; text-align: center;">
+                           <a href="#" class="show_hide" rel="#napredna">Napredna pretraga</a>
+                       </div>
             <div style="clear:both; float:right;  margin:10px 10px 10px 0;">
                 <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
 		<input type="reset" value="Reset" style="width:55px; height:25px;" />
