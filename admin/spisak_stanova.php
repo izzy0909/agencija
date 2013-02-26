@@ -11,15 +11,19 @@ if($_SESSION['uloga'] != 1)
 
                 if (isset ($_GET['pretrazi'])){
                     $id = isset($_GET['id']) ? $_GET['id'] : null;
-                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
+                    $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
                     $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
                     $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
+                    $telefon = isset($_GET['telefon']) ? $_GET['telefon'] : null;
+                    $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
+                    $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
-                    $vlasnik = isset($_GET['vlasnik']) ? $_GET['vlasnik'] : null;
-                    //die($p_num.' '. $items);
                     
-                    $stanovi = pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik);
+                    
+                    
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do);
                 }else{
                     $broj = ukupanBrojStanova();
 

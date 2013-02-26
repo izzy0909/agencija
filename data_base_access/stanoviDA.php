@@ -221,9 +221,9 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $cena_do, $vlasnik){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do){
     global $conn;
-	
+    
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
@@ -231,8 +231,11 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     if(!empty ($id)){
     $sql .= "AND s.id LIKE :id ";
     }
-    if(!empty ($opstina)){
-    $sql .= "AND lokacija_id = :lokacija_id ";
+    if(!empty ($tip)){
+    $sql .= "AND tip = :tip ";
+    }
+    if(!empty ($namestenost)){
+    $sql .= "AND namestenost = :namestenost ";
     }
     if(!empty ($povrsina_od)){
     $sql .= "AND kvadratura >= :povrsina_od ";
@@ -240,24 +243,33 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     if(!empty ($povrsina_do)){
     $sql .= "AND kvadratura <= :povrsina_do ";
     }
+    if(!empty ($telefon)){
+    $sql .= "AND telefon LIKE :telefon ";
+    }
+    if(!empty ($stan_tip)){
+    $sql .= "AND stan_tip = :stan_tip ";
+    }
+    if(!empty ($opstina)){
+    $sql .= "AND lokacija_id = :lokacija_id ";
+    }
     if(!empty ($cena_od)){
     $sql .= "AND cena >= :cena_od ";
     }
     if(!empty ($cena_do)){
     $sql .= "AND cena <= :cena_do ";
     }
-    if(!empty ($vlasnik)){
-    $sql .= "AND vlasnik LIKE :vlasnik";
-    }
-    
+        
     $query = $conn->prepare($sql);
 	
-	if(!empty ($id)){
-	$id = "%" . $id . "%";
+    if(!empty ($id)){
+    $id = "%" . $id . "%";
     $query->bindParam(':id', $id);
     }
-    if(!empty ($opstina)){
-    $query->bindParam(':lokacija_id', $opstina);
+    if(!empty ($tip)){
+    $query->bindParam(':tip', $tip);
+    }
+    if(!empty ($namestenost)){
+    $query->bindParam(':namestenost', $namestenost);
     }
     if(!empty ($povrsina_od)){
     $query->bindValue(':povrsina_od', $povrsina_od);
@@ -265,18 +277,23 @@ function pretraziStanove($id, $opstina, $povrsina_od, $povrsina_do, $cena_od, $c
     if(!empty ($povrsina_do)){
     $query->bindValue(':povrsina_do', $povrsina_do);
     }
+    if(!empty ($telefon)){
+    $telefon = "%" . $telefon . "%";
+    $query->bindParam(':telefon', $telefon);
+    }
+    if(!empty ($stan_tip)){
+    $query->bindParam(':stan_tip', $stan_tip);
+    }
+    if(!empty ($opstina)){
+    $query->bindParam(':lokacija_id', $opstina);
+    }
     if(!empty ($cena_od)){
     $query->bindValue(':cena_od', $cena_od);
     }
     if(!empty ($cena_do)){
     $query->bindValue(':cena_do', $cena_do);
     }
-    if(!empty ($vlasnik)){
-	$vlasnik = "%" . $vlasnik . "%";
-    $query->bindParam(':vlasnik', $vlasnik);
-    }
-	
-	
+    
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
 
