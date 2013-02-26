@@ -1,4 +1,4 @@
-﻿######################
+######################
 ####  V. 1.0.1
 ####  U. Izzy
 ######################
@@ -206,3 +206,16 @@ ALTER TABLE izbrisani_stanovi CHANGE tip tip ENUM('Stan','Kuća','Poslovni prost
 #### U. Izzy
 ######################
 ALTER TABLE  `stanovi` ADD  `izdat_do` DATE NOT NULL
+
+######################
+#### v. 1.0.15
+#### U. Izzy
+######################
+######################
+#### v. 1.0.15
+#### U. Strike
+######################
+ALTER TABLE dodatni_tagovi ADD duplex INT(11) NOT NULL;
+ALTER TABLE ponude ADD t_duplex INT(11) NOT NULL;
+ALTER TABLE dodatni_tagovi ADD(nov_namestaj INT(11) NOT NULL, kompjuterska_mreza INT(11) NOT NULL, dva_kupatila INT(11) NOT NULL, vise_telefonskih_linija INT(11) NOT NULL, vertikala INT(11) NOT NULL, horizontala INT(11) NOT NULL, stan_u_kuci INT(11) NOT NULL);
+ALTER TABLE ponude ADD(t_nov_namestaj INT(11) NOT NULL, t_kompjuterska_mreza INT(11) NOT NULL, t_dva_kupatila INT(11) NOT NULL, t_vise_telefonskih_linija INT(11) NOT NULL, t_vertikala INT(11) NOT NULL, t_horizontala INT(11) NOT NULL, t_stan_u_kuci INT(11) NOT NULL);
