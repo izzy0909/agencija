@@ -6,6 +6,8 @@
 
 - da pretraga pamti unos
 
+- napuniti imenik vec unetim telefonima iz stanova
+
 =========================================================== NEBITNE IZMENE =================
 
 - captcha
