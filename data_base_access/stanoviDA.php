@@ -445,8 +445,7 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     if(!empty ($namestenost)){
     $sql .= "AND namestenost = :namestenost ";
     }
-    $sql .= "AND kategorija = 'izdavanje' LIMIT $start , 18 ";
-    $sql .= "ORDER BY s.id DESC";
+    $sql .= "AND kategorija = 'izdavanje' ORDER BY s.id DESC LIMIT $start , 18 ";
     
 	$query = $conn->prepare($sql);
 	
@@ -678,10 +677,9 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     if(!empty ($namestenost)){
     $sql .= "AND namestenost = :namestenost ";
     }
-    $sql .= "AND kategorija = 'prodaja' LIMIT $start, 18";
-    $sql .= "ORDER BY s.id DESC";
+    $sql .= "AND kategorija = 'prodaja' ORDER BY s.id DESC LIMIT $start, 18";
     
-	$query = $conn->prepare($sql);
+        $query = $conn->prepare($sql);
 	
 	if(!empty ($tip)){
 	$query->bindParam(':tip', $tip);
