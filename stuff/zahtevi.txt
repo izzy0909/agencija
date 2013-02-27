@@ -1,16 +1,15 @@
-- U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
-
-------------------------------------
-- da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
-
 - samo oni brisu stanove
-
-- PODLOKACIJE
 
 - izbaciti rakovicu, sopot, surcin, mladenovac, obrenovac, barajevo
 
--Ako postoji mogucnost vidi da stavis lokacije sledecim redosledom: Vracar, Stari grad, Dorcol, Savski Venac, Vozdovac, pa sve ovo ostalo
+- spisak izdatih stanova
 
-- stanovi da se ispisuju u pretragama od najnovijeg ka najstarijem
+- da pretraga pamti unos
 
-- da se stavi default slika
+=========================================================== NEBITNE IZMENE =================
+
+- captcha
+
+- default slika
+
+- da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
