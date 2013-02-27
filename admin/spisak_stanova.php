@@ -16,6 +16,7 @@ if($_SESSION['uloga'] != 1)
                     $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
                     $povrsina_do = isset($_GET['povDO']) ? $_GET['povDO'] : null;
                     $telefon = isset($_GET['telefon']) ? $_GET['telefon'] : null;
+                    $ulica = isset($_GET['ulica']) ? $_GET['ulica'] : null;
                     $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
@@ -55,7 +56,7 @@ if($_SESSION['uloga'] != 1)
                     $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
                     
                     
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
                 }else{
                     $broj = ukupanBrojStanova();
 
@@ -450,7 +451,7 @@ $(document).pngFix( );
                 </tr>
                 <tr>
                     <th>Ulica:</th>
-                    <td><input class="admin-input-select" tyle="text" name="telefon" /></td>
+                    <td><input class="admin-input-select" tyle="text" name="ulica" /></td>
                 </tr>
             </table>
             </div>
@@ -689,7 +690,7 @@ $(document).pngFix( );
 					<td><?php echo $stan['opstina'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
                                         <td><?php echo $stan['br'];?></td>
-					<td><?php echo $stan['telefon'];?></td>
+					<td><?php echo $stan[9];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
                                         <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>

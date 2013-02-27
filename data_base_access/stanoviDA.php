@@ -221,7 +221,7 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
@@ -246,7 +246,10 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $sql .= "AND kvadratura <= :povrsina_do ";
     }
     if(!empty ($telefon)){
-    $sql .= "AND telefon LIKE :telefon ";
+    $sql .= "AND s.telefon LIKE :telefon ";
+    }
+    if(!empty ($ulica)){
+    $sql .= "AND ulica LIKE :ulica ";
     }
     if(!empty ($stan_tip)){
     $sql .= "AND stan_tip = :stan_tip ";
@@ -359,7 +362,7 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if($stan_u_kuci != 0){
     $sql .= "AND stan_u_kuci = 1 ";
     }
-
+    
     $query = $conn->prepare($sql);
 	
     if(!empty ($id)){
@@ -381,6 +384,10 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($telefon)){
     $telefon = "%" . $telefon . "%";
     $query->bindParam(':telefon', $telefon);
+    }
+    if(!empty ($ulica)){
+    $ulica = "%" . $ulica . "%";
+    $query->bindParam(':ulica', $ulica);
     }
     if(!empty ($stan_tip)){
     $query->bindParam(':stan_tip', $stan_tip);
