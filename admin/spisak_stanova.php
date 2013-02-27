@@ -448,6 +448,10 @@ $(document).pngFix( );
                     <th>Telefon:</th>
                     <td><input class="admin-input-select" type="text" name="telefon" /></td>
                 </tr>
+                <tr>
+                    <th>Ulica:</th>
+                    <td><input class="admin-input-select" tyle="text" name="telefon" /></td>
+                </tr>
             </table>
             </div>
             <div id="pozicija2">
