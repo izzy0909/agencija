@@ -20,10 +20,42 @@ if($_SESSION['uloga'] != 1)
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+
+                    $kablovska = isset($_REQUEST['kablovska']) ? '1' : '0';
+                    $tv = isset($_REQUEST['tv']) ? '1' : '0';
+                    $klima = isset($_REQUEST['klima']) ? '1' : '0';
+                    $internet = isset($_REQUEST['internet']) ? '1' : '0';
+                    $ima_telefon = isset($_REQUEST['ima_telefon']) ? '1' : '0';
+                    $frizider = isset($_REQUEST['frizider']) ? '1' : '0';
+                    $sporet = isset($_REQUEST['sporet']) ? '1' : '0';
+                    $vesmasina = isset($_REQUEST['vesmasina']) ? '1' : '0';
+                    $kuhinjskielementi = isset($_REQUEST['kuhinjskielementi']) ? '1' : '0';
+                    $plakari = isset($_REQUEST['plakari']) ? '1' : '0';
+                    $interfon = isset($_REQUEST['interfon']) ? '1' : '0';
+                    $lift = isset($_REQUEST['lift']) ? '1' : '0';
+                    $bazen = isset($_REQUEST['bazen']) ? '1' : '0';
+                    $garaza = isset($_REQUEST['garaza']) ? '1' : '0';
+                    $parking = isset($_REQUEST['parking']) ? '1' : '0';
+                    $dvoriste = isset($_REQUEST['dvoriste']) ? '1' : '0';
+                    $potkrovlje = isset($_REQUEST['potkrovlje']) ? '1' : '0';
+                    $terasa = isset($_REQUEST['terasa']) ? '1' : '0';
+                    $novogradnja = isset($_REQUEST['novogradnja']) ? '1' : '0';
+                    $renovirano = isset($_REQUEST['renovirano']) ? '1' : '0';
+                    $lux = isset($_REQUEST['lux']) ? '1' : '0';
+                    $penthaus = isset($_REQUEST['penthaus']) ? '1' : '0';
+                    $salonski = isset($_REQUEST['salonski']) ? '1' : '0';
+                    $lodja = isset($_REQUEST['lodja']) ? '1' : '0';
+                    $duplex = isset($_REQUEST['duplex']) ? '1' : '0';
+                    $nov_namestaj = isset($_REQUEST['nov_namestaj']) ? '1' : '0';
+                    $kompjuterska_mreza = isset($_REQUEST['kompjuterska_mreza']) ? '1' : '0';
+                    $dva_kupatila = isset($_REQUEST['dva_kupatila']) ? '1' : '0';
+                    $vise_telefonskih_linija = isset($_REQUEST['vise_telefonskih_linija']) ? '1' : '0';
+                    $vertikala = isset($_REQUEST['vertikala']) ? '1' : '0';
+                    $horizontala = isset($_REQUEST['horizontala']) ? '1' : '0';
+                    $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
                     
                     
-                    
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do);
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
                 }else{
                     $broj = ukupanBrojStanova();
 

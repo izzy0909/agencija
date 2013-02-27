@@ -221,12 +221,14 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            INNER JOIN dodatni_tagovi as d_t
+            ON s.id = d_t.stan_id
             WHERE s.id != '' ";
     if(!empty ($id)){
     $sql .= "AND s.id LIKE :id ";
@@ -258,7 +260,106 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($cena_do)){
     $sql .= "AND cena <= :cena_do ";
     }
-        
+    if(!empty ($cena_do)){
+    $sql .= "AND cena <= :cena_do ";
+    }
+    if($kablovska != 0){
+    $sql .= "AND kablovska = 1 ";
+    }
+    if($tv != 0){
+    $sql .= "AND tv = 1 ";
+    }
+    if($klima != 0){
+    $sql .= "AND klima = 1 ";
+    }
+    if($internet != 0){
+    $sql .= "AND internet = 1 ";
+    }
+    if($ima_telefon != 0){
+    $sql .= "AND d_t.telefon = 1 ";
+    }
+    if($frizider != 0){
+    $sql .= "AND frizider = 1 ";
+    }
+    if($sporet != 0){
+    $sql .= "AND sporet = 1 ";
+    }
+    if($vesmasina != 0){
+    $sql .= "AND ves_masina = 1 ";
+    }
+    if($kuhinjskielementi != 0){
+    $sql .= "AND kuhinjski_elementi = 1 ";
+    }
+    if($plakari != 0){
+    $sql .= "AND plakari = 1 ";
+    }
+    if($interfon != 0){
+    $sql .= "AND interfon = 1 ";
+    }
+    if($lift != 0){
+    $sql .= "AND lift = 1 ";
+    }
+    if($bazen != 0){
+    $sql .= "AND bazen = 1 ";
+    }
+    if($garaza != 0){
+    $sql .= "AND garaza = 1 ";
+    }
+    if($parking != 0){
+    $sql .= "AND parking = 1 ";
+    }
+    if($dvoriste != 0){
+    $sql .= "AND dvoriste = 1 ";
+    }
+    if($potkrovlje != 0){
+    $sql .= "AND potkrovlje = 1 ";
+    }
+    if($terasa != 0){
+    $sql .= "AND terasa = 1 ";
+    }
+    if($novogradnja != 0){
+    $sql .= "AND novogradnja = 1 ";
+    }
+    if($renovirano != 0){
+    $sql .= "AND renovirano = 1 ";
+    }
+    if($lux != 0){
+    $sql .= "AND lux = 1 ";
+    }
+    if($penthaus != 0){
+    $sql .= "AND penthaus = 1 ";
+    }
+    if($salonski != 0){
+    $sql .= "AND salonski = 1 ";
+    }
+    if($lodja != 0){
+    $sql .= "AND lodja = 1 ";
+    }
+    if($duplex != 0){
+    $sql .= "AND duplex = 1 ";
+    }
+    if($nov_namestaj != 0){
+    $sql .= "AND nov_namestaj = 1 ";
+    }
+    if($kompjuterska_mreza != 0){
+    $sql .= "AND kompjuterska_mreza = 1 ";
+    }
+    if($dva_kupatila != 0){
+    $sql .= "AND dva_kupatila = 1 ";
+    }
+    if($vise_telefonskih_linija != 0){
+    $sql .= "AND vise_telefonskih_linija = 1 ";
+    }
+    if($vertikala != 0){
+    $sql .= "AND vertikala = 1 ";
+    }
+    if($horizontala != 0){
+    $sql .= "AND horizontala = 1 ";
+    }
+    if($stan_u_kuci != 0){
+    $sql .= "AND stan_u_kuci = 1 ";
+    }
+
     $query = $conn->prepare($sql);
 	
     if(!empty ($id)){
@@ -293,6 +394,7 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($cena_do)){
     $query->bindValue(':cena_do', $cena_do);
     }
+    
     
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
