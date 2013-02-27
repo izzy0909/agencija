@@ -1,11 +1,7 @@
-- treba da ubacis u pretragu za nekretnine i prodaja i izdavanje da ima opcije -poslovni prostor u poslovnoj zgradi i poslovni prostor u stambenoj zgradi jer se to razlikuje dosta
-
 - U rubrici ponudite nekretninu treba staviti i onaj kod za verifikaciju ispod podataka (na kraju) da nam botovi ne bi slali stanove
 
 ------------------------------------
 - da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
-
-- ako obrises glavnu sliku da druga automatski postane glavna ili da glavna ne moze da se obrise i nesto da obelezi glavnu
 
 - samo oni brisu stanove
 
@@ -14,13 +10,6 @@
 - izbaciti rakovicu, sopot, surcin, mladenovac, obrenovac, barajevo
 
 -Ako postoji mogucnost vidi da stavis lokacije sledecim redosledom: Vracar, Stari grad, Dorcol, Savski Venac, Vozdovac, pa sve ovo ostalo
-
--u pretrazi na admin delu povecaj polja i dodaj telefon/struktura/ulica i opremljenost(nenamesten/namesten)
-
-- napredna pretraga za stanove
-
-- stavljanje da je stan izdat
-
 
 - stanovi da se ispisuju u pretragama od najnovijeg ka najstarijem
 

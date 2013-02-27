@@ -3,6 +3,7 @@ include 'upload.php';
 include_once '../data_base_access/slikeDA.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/dodatniTagoviDA.php';
+include_once '../data_base_access/imenikDA.php';
 
 if($_SESSION['uloga'] != 1)
 {
@@ -963,7 +964,9 @@ if (isset ($_POST['dodaj_stan'])){
     $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username);
     
     dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
-
+    
+    dodajBroj('vlasnik', $telefon);
+    
     //var_dump($stan_id, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon);
     //echo $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis . '<br /><br />';
     //echo $stan_id . '///' . $klima . '///' . $tv . '///' . $lodja;
