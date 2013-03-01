@@ -3,12 +3,12 @@
 include_once 'connection.php';
 
 
-function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $dodao)
+function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlokacija_id, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $dodao)
 {
     global $conn;
 
-    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, dodao)
-            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :dodao)";
+    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, dodao)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :dodao)";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':kategorija' => $kategorija,
@@ -16,6 +16,7 @@ function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica,
         ':stan_tip' => $stan_tip,
 	':vlasnik' => $vlasnik,
         ':lokacija_id' => $lokacija_id,
+        ':podlokacija_id' => $podlokacija_id,
         ':ulica' => $ulica,
         ':br' => $br,
         ':sprat' => $sprat,
@@ -41,6 +42,15 @@ function prikaziSveOpstine(){
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
     
+}
+
+function prikaziSvePodlokacije(){
+    global $conn;
+
+    $sql = "SELECT * FROM podlokacije";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
 }
 
 function prikaziSveStanove($start, $limit){
@@ -118,6 +128,8 @@ function prikaziStanZaFront($id){
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            INNER JOIN podlokacije as p
+            ON s.podlokacija_id = p.id
             WHERE s.id = :id
             AND vidljiv = 1
             LIMIT 1";
@@ -165,11 +177,11 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $grejanje, $namestenost, $cena, $kvadratura, $opis){
+function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $grejanje, $namestenost, $cena, $kvadratura, $opis){
     global $conn;
 
     $sql = "UPDATE stanovi
-            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis
+            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -183,6 +195,7 @@ function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_ti
                 ':br' => $br,
                 ':sprat' => $sprat,
                 ':opstina' => $opstina,
+                ':podlokacija' => $podlokacija,
                 ':grejanje' => $grejanje,
                 ':namestenost' => $namestenost,
 		':cena' => $cena,

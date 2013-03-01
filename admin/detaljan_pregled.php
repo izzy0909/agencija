@@ -466,6 +466,14 @@ $(document).pngFix( );
 		<td></td>
 		</tr>
 		<tr>
+		<th valign="top">Podlokacija:</th>
+		<td>
+          <?php echo $stan['podlokacija'];?>     
+		
+		</td>
+		<td></td>
+		</tr>
+		<tr>
 			<th valign="top">Grejanje:</th>
 			<td><?php echo $stan['grejanje'];?></td>
 			<td></td>

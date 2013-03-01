@@ -9,6 +9,7 @@ if($_SESSION['uloga'] != 1)
 }
 
     $row = prikaziSveOpstine();
+    $red = prikaziSvePodlokacije;
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
@@ -585,6 +586,23 @@ $(document).pngFix( );
 
                         foreach($row as $opstina){
                           echo '<option value="'.$opstina['id'].'"'; if($stan['opstina']==$opstina['opstina']){echo ' selected';} echo '>'.$opstina['opstina'].'</option>';
+                          
+                        }
+                 ?>
+			
+		</select>
+		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<th valign="top">Podlokacija:</th>
+		<td>
+                  
+		<select id="opstina" class="styledselect_form_1" name="lokacija">
+                 <?php
+
+                        foreach($red as $podlokacija){
+                          echo '<option value="'.$podlokacija['id'].'"'; if($stan['podlokacija']==$podlokacija['podlokacija']){echo ' selected';} echo '>'.$podlokacija['podlokacija'].'</option>';
                           
                         }
                  ?>

@@ -229,3 +229,63 @@ ALTER TABLE ponude CHANGE stan_tip stan_tip ENUM('Garsonjera','Jednosoban','Jedn
 ALTER TABLE stanovi CHANGE stan_tip stan_tip ENUM('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći') COLLATE utf8_unicode_ci NOT NULL;
 ALTER TABLE trazimo_za_vas CHANGE stan_tip stan_tip ENUM('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći') COLLATE utf8_unicode_ci NOT NULL;
 ALTER TABLE izbrisani_stanovi CHANGE stan_tip stan_tip ENUM('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći') COLLATE utf8_unicode_ci NOT NULL;
+
+######################
+##### v. 1.0.17
+##### U. Strike
+######################
+CREATE TABLE IF NOT EXISTS `podlokacije` (
+  `id` int(225) NOT NULL AUTO_INCREMENT,
+  `podlokacija` varchar(300) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lokacija_id` int(225) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=38 ;
+
+--
+-- Dumping data for table `podlokacije`
+--
+
+INSERT INTO `podlokacije` (`id`, `podlokacija`, `lokacija_id`) VALUES
+(1, 'Banovo Brdo', 1),
+(2, 'Žarkovo', 1),
+(3, 'Cerak', 1),
+(4, 'Golf', 1),
+(5, 'Košutnjak', 1),
+(6, 'Skojevsko', 1),
+(7, 'Čukarička Padina', 1),
+(8, 'Arena', 2),
+(9, 'Ušće', 2),
+(10, 'Hotal Jugoslavija', 2),
+(11, 'Tašmajdan', 3),
+(12, 'Vukov Spomenik - Palilula', 3),
+(13, 'Zira', 3),
+(14, 'Hala Pionir', 3),
+(15, 'Profesorska Kolonija', 3),
+(16, 'Centar - Savski venac', 5),
+(17, 'Slavija - Savski Venac', 5),
+(18, 'Železnička stanica', 5),
+(19, 'Mostar', 5),
+(20, 'Senjak', 5),
+(21, 'Dedinje', 5),
+(22, 'Gornji Dorćol - Centar', 6),
+(23, 'Donji Dorćol', 6),
+(24, 'Stari Grad - centar', 6),
+(25, 'Autokomanda', 7),
+(26, 'Lekino Brdo', 7),
+(27, 'Vojvode Stepe', 7),
+(28, 'Slavija - Vračar', 8),
+(29, 'Vračar - centar', 8),
+(30, 'Vukov Spomenik - Vračar', 8),
+(31, 'Crveni Krst', 8),
+(32, 'Neimar', 8),
+(33, 'Hram Sv. Save', 8),
+(34, 'Vukov Spomenik - Zvezdara', 10),
+(35, 'Novo groblje', 10),
+(36, 'Lion', 10),
+(37, 'Cvetkova pijaca', 10);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE stanovi ADD podlokacija_id INT(255) NOT NULL AFTER lokacija_id;
