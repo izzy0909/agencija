@@ -4,11 +4,8 @@ include_once '../data_base_access/stanoviDA.php';
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
-	
 }else{         
-               
-                
-
+                $username = $_SESSION['username'];
                 if (isset ($_GET['pretrazi'])){
                     $id = isset($_GET['id']) ? $_GET['id'] : null;
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
@@ -700,8 +697,15 @@ $(document).pngFix( );
 					<a href="detaljan_pregled.php?id=<?php echo $stan[0];?>" title="Detaljnije" class="icon-3 info-tooltip"></a>
 					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="icon-5 info-tooltip"></a>
                                         <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="icon-6 info-tooltip"></a>
-					<a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
-					<!--<a href="" title="Edit" class="icon-4 info-tooltip"></a>-->
+					<?php
+                                        if($username == 'ivana' || $username == 'Nikola'){
+                                        ?>
+                                        <a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+					<?php
+                                        }
+                                        ?>
+
+                                        <!--<a href="" title="Edit" class="icon-4 info-tooltip"></a>-->
 					</td>
 				</tr>
 								

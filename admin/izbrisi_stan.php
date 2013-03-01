@@ -7,7 +7,7 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 }
-else{
+elseif($username == 'ivana' || $username == 'Nikola'){
 	if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
@@ -23,4 +23,7 @@ else{
 	header('Location: spisak_stanova.php');
 	} 
 	
-}    
+}
+else{
+    header('Location: spisak_stanova.php');
+}
