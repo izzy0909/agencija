@@ -598,7 +598,7 @@ $(document).pngFix( );
 		<th valign="top">Podlokacija:</th>
 		<td>
                   
-		<select id="opstina" class="styledselect_form_1" name="lokacija">
+		<select id="podlokacija" class="styledselect_form_1" name="podlokacija">
                  <?php
 
                         foreach($red as $podlokacija){

@@ -16,6 +16,7 @@ if($_SESSION['uloga'] != 1)
                     $ulica = isset($_GET['ulica']) ? $_GET['ulica'] : null;
                     $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
+                    $podlokacija = isset($_GET['podlokacija']) ? $_GET['podlokacija'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
 
@@ -53,7 +54,7 @@ if($_SESSION['uloga'] != 1)
                     $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
                     
                     
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
                 }else{
                     $broj = ukupanBrojStanova();
 
@@ -518,7 +519,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Podlokacija:</th>
                         <td>
-                            <select class="admin-input-select"  name="opstina">
+                            <select class="admin-input-select"  name="podlokacija">
                             <option value="">Izaberi...</option>
                             <?php
                                 foreach($red as $podlokacija){

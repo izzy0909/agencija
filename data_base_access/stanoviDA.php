@@ -7,7 +7,7 @@ function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlok
 {
     global $conn;
 
-    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, dodao)
+    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, dodao)
             VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :dodao)";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -59,7 +59,7 @@ function prikaziSveStanove($start, $limit){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            INNER JOIN podlokacije as p
+            LEFT JOIN podlokacije as p
             ON s.podlokacija_id = p.id
             LIMIT $start, $limit";
 	$query = $conn->prepare($sql);
@@ -115,7 +115,7 @@ function prikaziStanZaAdmina($id){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            INNER JOIN podlokacije as p
+            LEFT JOIN podlokacije as p
             ON s.podlokacija_id = p.id
             WHERE s.id = :id
             LIMIT 1";
@@ -236,7 +236,7 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
@@ -244,6 +244,8 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
             ON s.lokacija_id = l.id
             INNER JOIN dodatni_tagovi as d_t
             ON s.id = d_t.stan_id
+            LEFT JOIN podlokacije as p
+            ON s.podlokacija_id = p.id
             WHERE s.id != '' ";
     if(!empty ($id)){
     $sql .= "AND s.id LIKE :id ";
@@ -271,6 +273,9 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     }
     if(!empty ($opstina)){
     $sql .= "AND lokacija_id = :lokacija_id ";
+    }
+    if(!empty ($podlokacija)){
+    $sql .= "AND podlokacija_id = :podlokacija_id ";
     }
     if(!empty ($cena_od)){
     $sql .= "AND cena >= :cena_od ";
@@ -409,6 +414,9 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     }
     if(!empty ($opstina)){
     $query->bindParam(':lokacija_id', $opstina);
+    }
+    if(!empty ($podlokacija)){
+    $query->bindParam(':podlokacija_id', $podlokacija);
     }
     if(!empty ($cena_od)){
     $query->bindValue(':cena_od', $cena_od);
