@@ -59,6 +59,8 @@ function prikaziSveStanove($start, $limit){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            INNER JOIN podlokacije as p
+            ON s.podlokacija_id = p.id
             LIMIT $start, $limit";
 	$query = $conn->prepare($sql);
 	$query->execute();

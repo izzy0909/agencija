@@ -9,7 +9,7 @@ if($_SESSION['uloga'] != 1)
 }
 
     $row = prikaziSveOpstine();
-    $red = prikaziSvePodlokacije;
+    $red = prikaziSvePodlokacije();
 if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
