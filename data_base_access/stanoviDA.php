@@ -113,6 +113,8 @@ function prikaziStanZaAdmina($id){
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
+            INNER JOIN podlokacije as p
+            ON s.podlokacija_id = p.id
             WHERE s.id = :id
             LIMIT 1";
     $query = $conn->prepare($sql);
@@ -128,8 +130,6 @@ function prikaziStanZaFront($id){
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            INNER JOIN podlokacije as p
-            ON s.podlokacija_id = p.id
             WHERE s.id = :id
             AND vidljiv = 1
             LIMIT 1";
