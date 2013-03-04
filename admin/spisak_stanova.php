@@ -680,7 +680,6 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
                                         <th class="table-header-repeat line-left minwidth-1"><a href="">Podlokacija</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
-                                        <th class="table-header-repeat line-left"><a href="">Br</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
 					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
@@ -703,8 +702,7 @@ $(document).pngFix( );
 					<td><?php echo $stan['opstina'];?></td>
                                         <td><?php echo $stan['podlokacija'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
-                                        <td><?php echo $stan['br'];?></td>
-					<td><?php echo $stan[9];?></td>
+					<td><?php echo $stan['telefon'];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
                                         <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
