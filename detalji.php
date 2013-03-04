@@ -56,7 +56,7 @@ include_once 'data_base_access/slikeDA.php';
         <!-- load jQuery 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script> -->
         <!-- load Galleria -->
-        <script src="js/galleria-1.2.9.min.js"></script>
+        <script src="js/galleria-1.2.9.js"></script>
 
     
 <!--[if lt IE 8]>
