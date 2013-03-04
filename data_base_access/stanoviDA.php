@@ -275,7 +275,7 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $sql .= "AND lokacija_id = :lokacija_id ";
     }
     if(!empty ($podlokacija)){
-    $sql .= "AND podlokacija_id = :podlokacija_id ";
+    $sql .= "AND s.podlokacija_id = :podlokacija_id ";
     }
     if(!empty ($cena_od)){
     $sql .= "AND cena >= :cena_od ";

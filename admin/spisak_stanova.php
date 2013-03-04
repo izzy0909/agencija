@@ -702,7 +702,7 @@ $(document).pngFix( );
 					<td><?php echo $stan['opstina'];?></td>
                                         <td><?php echo $stan['podlokacija'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
-					<td><?php echo $stan['telefon'];?></td>
+					<td><?php echo $stan[10];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
                                         <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>

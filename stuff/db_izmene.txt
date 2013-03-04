@@ -236,10 +236,10 @@ ALTER TABLE izbrisani_stanovi CHANGE stan_tip stan_tip ENUM('Garsonjera','Jednos
 ######################
 CREATE TABLE IF NOT EXISTS `podlokacije` (
   `id` int(225) NOT NULL AUTO_INCREMENT,
-  `podlokacija` varchar(300) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `podlokacija` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `lokacija_id` int(225) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=38 ;
 
 --
 -- Dumping data for table `podlokacije`
@@ -283,9 +283,5 @@ INSERT INTO `podlokacije` (`id`, `podlokacija`, `lokacija_id`) VALUES
 (35, 'Novo groblje', 10),
 (36, 'Lion', 10),
 (37, 'Cvetkova pijaca', 10);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 ALTER TABLE stanovi ADD podlokacija_id INT(255) NOT NULL AFTER lokacija_id;
