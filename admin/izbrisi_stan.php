@@ -3,6 +3,8 @@
 
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/slikeDA.php';
+
+$username = $_SESSION['username'];
 if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
