@@ -69,7 +69,6 @@ include_once 'data_base_access/slikeDA.php';
                   }
               }
                         
-                        
 ?>
 
 <!DOCTYPE html>
@@ -331,17 +330,17 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                        <tr>
                         <th>Površina od:</th>
                         <td>
-                        <input type="text" name="povOD" class="sforma_input_ck" style="width:40px;">
+                        <input type="text" id="povOD" name="povOD" class="sforma_input_ck" style="width:40px;">
                         <span style="margin: 5px 0px 0px 10px; font-weight: bold; display:inline-block">do</span>
-                        <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">
+                        <input type="text" id="povDO" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">
                         </td>
                     </tr> 
                     <tr>
                     <th>Cena od:</th>
                     <td>
-                        <input type="text" name="cenaOD" class="sforma_input_ck" style="width:40px;">
-                        <span style="margin: 5px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
-                        <input type="text" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
+                        <input type="text" id="cenaOD" name="cenaOD" class="sforma_input_ck" style="width:40px;">
+                        <span style="margin: 5px 0px 0px 10px; font-weight: bold; display:inline-block;">do</span>
+                        <input type="text" id="cenaDO" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
                     </td>
                 </tr>
                            </table>
