@@ -4,7 +4,7 @@
 //- Promena slika na Home stranici
 //- Fixni broj pored mobilnog na vrhu stranice
 //- Trazimo za Vas – da po defaultu bude opcija “Izaberite”
-- Svuda na povrsini I ceni da moze da se ukuca odredjen broj, da ne bude lista
+/?ostalo da se odradi samo na trazimo za vas//- Svuda na povrsini I ceni da moze da se ukuca odredjen broj, da ne bude lista
 - Pretraga izdavanje I prodaja da mogu da se cekiraju opcije
 /? U detaljima stana na frontu da kada se klikne na galeriju da se slika uveca malo // VEROVATNO NECE MOCI
 //- Zabraniti brisanje stanova svima osim ivani

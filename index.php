@@ -283,62 +283,20 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 </td>
                                 </tr>
                                 <tr>
-                                 <th>Površina:</th>
-                                 <td><select name="povOD" class="select_m" style="margin-left:10px;">
-                                 <option value="">Izaberite...</option>        
-                                 <option value="20">od 20 m²</option>
-                                 <option value="40">od 40 m²</option>
-                                 <option value="60">od 60 m²</option>
-                                 <option value="80">od 80 m²</option>
-                                 <option value="100">od 100 m²</option>
-                                 <option value="150">od 150 m²</option>
-                                 <option value="200">od 200 m²</option>
-                                 <option value="300">od 300 m²</option>
-                             </select>&nbsp;&nbsp;-&nbsp;
-                             <select name="povDO" class="select_m">
-                                 <option value="">Izaberite...</option>
-                                 <option value="40">do 40 m²</option>
-                                 <option value="60">do 60 m²</option>
-                                 <option value="80">do 80 m²</option>
-                                 <option value="100">do 100 m²</option>
-                                 <option value="150">do 150 m²</option>
-                                 <option value="200">do 200 m²</option>
-                                 <option value="300">do 300 m²</option>
-                                 <option value="999999999">više od 300 m²</option>                        
-                             </select></td>
+                                 <th>Površina od:</th>
+                             <td>
+                             <input type="text" name="povOD" class="sforma_input_ck" style="width:40px;">
+                             <span style="margin: 0px 6px 0px 10px; ">do</span>
+                             <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">                        
+                             </td>
                              </tr> 
                              <tr>
-                             <th>Cena:</th>
-                             <td><select name="cenaOD" class="select_m" style="margin-left:10px;">
-                                 <option value="">Izaberite...</option>
-                                 <option value="200">od 200 €</option>
-                                 <option value="300">od 300 €</option>
-                                 <option value="400">od 400 €</option>
-                                 <option value="500">od 500 €</option>
-                                 <option value="600">od 600 €</option>
-                                 <option value="700">od 700 €</option>
-                                 <option value="800">od 800 €</option>
-                                 <option value="900">od 900 €</option>
-                                 <option value="1000">od 1000 €</option>
-                                 <option value="1500">od 1500 €</option>
-                                 <option value="2000">od 2000 €</option>
-                                 <option value="3000">od 3000 €</option>
-                             </select>&nbsp;&nbsp;-&nbsp;
-                             <select name="cenaDO" class="select_m">
-                                 <option value="">Izaberite...</option>
-                                 <option value="300">do 300 €</option>
-                                 <option value="400">do 400 €</option>
-                                 <option value="500">do 500 €</option>
-                                 <option value="600">do 600 €</option>
-                                 <option value="700">do 700 €</option>
-                                 <option value="800">do 800 €</option>
-                                 <option value="900">do 900 €</option>
-                                 <option value="1000">do 1000 €</option>
-                                 <option value="1500">do 1500 €</option>
-                                 <option value="2000">do 2000 €</option>
-                                 <option value="3000">do 3000 €</option>
-                                 <option value="999999999">više od 3000 €</option>
-                             </select></td>
+                             <th>Cena od:</th>
+                             <td>
+                             <input type="text" name="cenaOD" class="sforma_input_ck" style="width:40px;">
+                             <span style="margin: 0px 6px 0px 10px; ">do</span>
+                             <input type="text" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
+                             </td>
                          </tr>
                          <tr>
                              <th></th>
