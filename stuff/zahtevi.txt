@@ -3,11 +3,11 @@
 - Brza pretraga – kod stavki dodati default opciju “Izaberite...” , da moze vise opcija da se cekira
 //- Promena slika na Home stranici
 //- Fixni broj pored mobilnog na vrhu stranice
-- Trazimo za Vas – da po defaultu bude opcija “Izaberite”
+//- Trazimo za Vas – da po defaultu bude opcija “Izaberite”
 - Svuda na povrsini I ceni da moze da se ukuca odredjen broj, da ne bude lista
 - Pretraga izdavanje I prodaja da mogu da se cekiraju opcije
 /? U detaljima stana na frontu da kada se klikne na galeriju da se slika uveca malo // VEROVATNO NECE MOCI
-- Zabraniti brisanje stanova svima osim ivani
+//- Zabraniti brisanje stanova svima osim ivani
 - Samo sa njihove staticke ip adrese da moze da se pristupi admin delu (kada dobiju ip)
 /?- Povecati logo u headeru // SLIKA JE TOLIKA AKO SE POVECA PIKSELIZOVACE SE
 //- Kada se predje preko linka “O nama”  u meniju ispod izadje podlink “Uslovi poslovanja” koji ce voditi na novu stranicu // OSTALO DA SE NAPRAVI STRANICA
