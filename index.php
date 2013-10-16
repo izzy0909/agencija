@@ -52,21 +52,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
 }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
-<div style="display:none">
-    
-            <audio id="intro" autoplay>
-            <source src="audio/intro.mp3">
-            <source src="audio/intro.ogg">
-            </audio>    
-    
-</div>
     <header>
     	<div class="head-bg">
         <div class="main">
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div id="tel-header">
-                <span>060/4480659</span>
+                <span>060/4480659 * 011/4054325</span>
             </div>
             <div class="head-box2">
                 <div class="clear"></div>
@@ -113,8 +105,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
-                    <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php" >Kontakt</a>
+                    <li><a href="onama.php">O nama</a>
+                            <ul>
+                                <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
+                            </ul></li>
+                    <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
 		<script>$("#sndmenu a")
@@ -181,18 +176,6 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </div>  
                 <div class="wrapper">
                 	<article class="grid_4">
-                    	<h3 class="p7">KATALOG PONUDE</h3>
-                            <ul class="list8">
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
-                            </ul>
-                            <div class="clear"></div>
-                            <br/>
                             <div id="idpretraga">
                                 <form id="traziID" action="#" method="post">
                                     <h6 class="title">PRETRAGA PO KATALOŠKOM BROJU:</h6>
@@ -206,7 +189,19 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                     }); 
                                 </script>
                             </div>
-                            
+                            <div class="clear"></div>
+                            <br/>
+                    	<h3 class="p7">KATALOG PONUDE</h3>
+                            <ul class="list8">
+                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
+                            </ul>
+
                             <div class="clear"></div>
                     </article>
                     

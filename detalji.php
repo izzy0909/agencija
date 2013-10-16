@@ -22,12 +22,10 @@ include_once 'data_base_access/slikeDA.php';
                         
                         
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Jevtić Nekretnine :: Izdavanje i prodaja nekretnina Beograd</title>
+  	<title><?php echo ucfirst($stan['kategorija']) . ' ' . $stan['tip'] . ' ' . $stan['opstina'] . ' - Jevtić Nekretnine';?></title>
   	<meta charset="utf-8">
     <meta name="description" content="Izdavanje i prodaja svih vrsta nekretnina, stanova, kuća, poslovnih prostora, magacina, lokala i garaža u Beogradu">
     <meta name="keywords" content="nekretnine, stanovi, kuce, izdavanje, prodaja, beograd, srbija, belgrade, serbia, real estate, apartment, house, rent, sale, kuće, lokal, magacin, garaza, garaža, poslovni prostor">
@@ -81,14 +79,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
 }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
-
     <header>
     	<div class="head-bg">
         <div class="main">
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div id="tel-header">
-                <span>060/4480659</span>
+                <span>060/4480659 * 011/4054325</span>
             </div>
             <div class="head-box2">
                 <div class="clear"></div>
@@ -135,8 +132,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
-                    <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php" >Kontakt</a>
+                    <li><a href="onama.php">O nama</a>
+                            <ul>
+                                <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
+                            </ul></li>
+                    <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
 		<script>$("#sndmenu a")
@@ -229,6 +229,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <tr>
                                 <td colspan="2"><strong>Dodatne informacije:</strong><br /><?php echo $stan['opis']; ?></td>
                             </tr>
+                            <?php if($stan['kategorija']=="izdavanje"){ ?>
+                            <tr>
+                                <td colspan="2">Naše usluge iznose 50% od iznosa prve mesečne zakupnine.</td>
+                            </tr>
+                            <?php } ?>
                         </table>
                     </div>
                     <div id="detalji3">
@@ -240,62 +245,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             echo '<img src="admin/slike/thumb_' . $slike_stana['naziv'] . '">';
                             echo '</a>';
                             }
-                        ?>    
-                       <!-- <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/800px-Athabasca_Rail_at_Brule_Lake.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/100px-Athabasca_Rail_at_Brule_Lake.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Back-scattering_crepuscular_rays_panorama_1.jpg/1280px-Back-scattering_crepuscular_rays_panorama_1.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Back-scattering_crepuscular_rays_panorama_1.jpg/100px-Back-scattering_crepuscular_rays_panorama_1.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Interior_convento_3.jpg/800px-Interior_convento_3.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Interior_convento_3.jpg/120px-Interior_convento_3.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg/800px-Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg/100px-Oxbow_Bend_outlook_in_the_Grand_Teton_National_Park.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Hazy_blue_hour_in_Grand_Canyon.JPG/800px-Hazy_blue_hour_in_Grand_Canyon.JPG">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Hazy_blue_hour_in_Grand_Canyon.JPG/100px-Hazy_blue_hour_in_Grand_Canyon.JPG"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/2909_vallon_moy_res.jpg/800px-2909_vallon_moy_res.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/2909_vallon_moy_res.jpg/100px-2909_vallon_moy_res.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bohinjsko_jezero_2.jpg/800px-Bohinjsko_jezero_2.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bohinjsko_jezero_2.jpg/100px-Bohinjsko_jezero_2.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bowling_Balls_Beach_2_edit.jpg/800px-Bowling_Balls_Beach_2_edit.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Bowling_Balls_Beach_2_edit.jpg/100px-Bowling_Balls_Beach_2_edit.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/800px-Biandintz_eta_zaldiak_-_modified2.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/100px-Biandintz_eta_zaldiak_-_modified2.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/800px-Athabasca_Rail_at_Brule_Lake.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/100px-Athabasca_Rail_at_Brule_Lake.jpg"
-                            >
-                        </a>
-                        <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Back-scattering_crepuscular_rays_panorama_1.jpg/1280px-Back-scattering_crepuscular_rays_panorama_1.jpg">
-                            <img 
-                                src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Back-scattering_crepuscular_rays_panorama_1.jpg/100px-Back-scattering_crepuscular_rays_panorama_1.jpg"
-                            >
-                        </a>  -->                       
+                        ?>                       
                     </div>
                 <script>
 

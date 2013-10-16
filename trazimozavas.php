@@ -40,6 +40,20 @@ include_once 'data_base_access/trazimoDA.php';
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
+
+<script>
+ function checkTerms() {
+     if(document.trazimo.tos.checked)
+     {
+         document.trazimo.dodaj_trazimo.disabled=false;
+     }
+     else
+     {
+         document.trazimo.dodaj_trazimo.disabled=true;
+     }
+ }
+</script>
+
 </head>
 <body>
 <!--==============================header=================================-->
@@ -57,7 +71,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div id="tel-header">
-                <span>060/4480659</span>
+                <span>060/4480659 * 011/4054325</span>
             </div>
             <div class="head-box2">
                 <div class="clear"></div>
@@ -104,8 +118,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a class="active" href="trazimozavas.php">Tražimo za Vas</a></li>
-                    <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php" >Kontakt</a>
+                    <li><a href="onama.php">O nama</a>
+                            <ul>
+                                <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
+                            </ul></li>
+                    <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
 		<script>$("#sndmenu a")
@@ -138,7 +155,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             	<article class="grid_12">
                 	<h3>Mi tražimo nekretninu za vas!</h3>
                  <div id="sforma">
-                <form id="dodaj_trazimo" action="trazimozavas.php" method="post">
+                <form id="dodaj_trazimo" name="trazimo" action="trazimozavas.php" method="post">
                 <div id="pos1">
 		<table>
                     <tr>
@@ -327,9 +344,12 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </td></tr>
                     </table>
                     </div>
+                    <div id="tos" style="padding-left:330px">
+                        <label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa <a href="uslovi_poslovanja.php" target="_blank">uslovima</a> korišćenja sajta.</label>
+                    </div>
 
                                 <div class="dugmad">
-                                        <input type="submit" value="Pošalji" class="sforma_button" name="dodaj_trazimo" id="dodaj_trazimo" />
+                                        <input type="submit" value="Pošalji" class="sforma_button" name="dodaj_trazimo" id="dodaj_trazimo" disabled />
                                         <input type="reset" value="Obriši" class="sforma_button" /></div>
                 </form>    
                 </div>

@@ -1,17 +1,24 @@
-- samo oni brisu stanove
-
-- izbaciti rakovicu, sopot, surcin, mladenovac, obrenovac, barajevo
-
-- spisak izdatih stanova
-
-- da pretraga pamti unos
-
-- napuniti imenik vec unetim telefonima iz stanova
-
-=========================================================== NEBITNE IZMENE =================
-
-- captcha
-
-- default slika
-
-- da se odrade svuda obavezna polja i poruke tipa 'uspesno ste poslali ponudu'
+//- Admin deo – napredna pretraga da pise velikim slovima
+//- Pretraga po kataloskom broju da bude iznad Kataloga ponude
+- Brza pretraga – kod stavki dodati default opciju “Izaberite...” , da moze vise opcija da se cekira
+//- Promena slika na Home stranici
+//- Fixni broj pored mobilnog na vrhu stranice
+- Trazimo za Vas – da po defaultu bude opcija “Izaberite”
+- Svuda na povrsini I ceni da moze da se ukuca odredjen broj, da ne bude lista
+- Pretraga izdavanje I prodaja da mogu da se cekiraju opcije
+/? U detaljima stana na frontu da kada se klikne na galeriju da se slika uveca malo // VEROVATNO NECE MOCI
+- Zabraniti brisanje stanova svima osim ivani
+- Samo sa njihove staticke ip adrese da moze da se pristupi admin delu (kada dobiju ip)
+/?- Povecati logo u headeru // SLIKA JE TOLIKA AKO SE POVECA PIKSELIZOVACE SE
+//- Kada se predje preko linka “O nama”  u meniju ispod izadje podlink “Uslovi poslovanja” koji ce voditi na novu stranicu // OSTALO DA SE NAPRAVI STRANICA
+//- Na “Ponudite nekretninu” I “Trazimo za vas” da mora da se cekira “slazem se sa uslovima koriscenja sajta” I to da bude pod linkom koji vodi na novi stranicu
+//- Admin ? Spisak stanova ? detaljnije – da pise datum dodavanja
+//- Admin -> Spisak stanova – da moze da se unese broj stranice
+- Pri dodavanju stanova da se doda “dodatna informacija”, text box vidljiv samo za admine
+//- id stana da se boldira na spisku stanova, detaljnije I izmeni
+//- U tabeli na spisku stanova da se doda namestenost I spratnost a da se skloni podlokacija
+//- Na admin pretrazi dodati grejanje I spratnost
+- Na admin delu da bude vidljivo da li je stan izdat, dodati dugme Izdat-Neizdat kao za vidljivost // OBOJITI VIDLJIV I HOT DUGME I IZBACITI POLJA
+- Kada je stan izdat da bude crvenim slovima prikazan u listi stanova posle pretrage
+- U pretrazi da se izabere Izdat – Nije izdat(default opcija)
+- U glavnom meniju sa linkovima do strana da se promeni font (treba samo da se izbrise nesto u css-u)

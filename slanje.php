@@ -107,6 +107,20 @@ $(myform).ajaxForm({
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
+
+<script>
+ function checkTerms() {
+     if(document.ponudiforma.tos.checked)
+     {
+         document.ponudiforma.ponudi_stan.disabled=false;
+     }
+     else
+     {
+         document.ponudiforma.ponudi_stan.disabled=true;
+     }
+ }
+</script>
+
 </head>
 <body>
 <!--==============================header=================================-->
@@ -124,7 +138,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
         	<div class="head-box1">
             <h1><a class="logo" href="index.php">logo</a></h1>
             <div id="tel-header">
-                <span>060/4480659</span>
+                <span>060/4480659 * 011/4054325</span>
             </div>
             <div class="head-box2">
                 <div class="clear"></div>
@@ -171,8 +185,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </ul></li>
                     <li><a class="active" href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
-                    <li><a href="onama.php">O nama</a></li>
-                    <li><a href="kontakt.php" >Kontakt</a>
+                    <li><a href="onama.php">O nama</a>
+                            <ul>
+                                <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
+                            </ul></li>
+                    <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
 		<script>$("#sndmenu a")
@@ -209,7 +226,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 
                 <div id="sforma">
                 <h3 class="title">Ponudite vašu nekretninu</h3>
-                <form id="ponudi_stan" action="slanje.php" method="post" enctype="multipart/form-data">
+                <form id="ponudi_stan" name="ponudiforma" action="slanje.php" method="post" enctype="multipart/form-data">
                 <div id="pos1">
 		<table>
                     <tr>
@@ -411,13 +428,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </div>
                     <div id="pos2"><table>
                         <tr><th>Dodatne informacije (napomene)</th></tr>
-                    <tr><td><textarea style="resize: none;" name="opis"></textarea>
-                    </td></tr>
+                    <tr><td><textarea style="resize: none;" name="opis"></textarea></td></tr>
+                    <tr><td style="padding-left: 150px;"><label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa <a href="uslovi_poslovanja.php" target="_blank">uslovima</a> korišćenja sajta.</label></td></tr>
+
                     </table>
                     </div>
-
                                 <div class="dugmad">
-                                        <input type="submit" value="Pošalji" class="sforma_button" name="ponudi_stan" id="ponudi_stan" />
+                                        <input type="submit" value="Pošalji" class="sforma_button" name="ponudi_stan" id="ponudi_stan" disabled />
                                         <input type="reset" value="Obriši" class="sforma_button" /></div>
                 </form>    
                 </div>

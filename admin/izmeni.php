@@ -484,7 +484,7 @@ $(document).pngFix( );
 		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
 		<tr>
 			<th valign="top">Id:</th>
-			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo $stan[0];?></td>
+			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo '<strong>' . $stan[0] . '</strong>' ;?></td>
 			<td>
 			
 			</td>

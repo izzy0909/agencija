@@ -19,6 +19,8 @@ if($_SESSION['uloga'] != 1)
                     $podlokacija = isset($_GET['podlokacija']) ? $_GET['podlokacija'] : null;
                     $cena_od = isset($_GET['cenaOD']) ? $_GET['cenaOD'] : null;
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
+                    $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
+                    $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;
 
                     $kablovska = isset($_REQUEST['kablovska']) ? '1' : '0';
                     $tv = isset($_REQUEST['tv']) ? '1' : '0';
@@ -54,7 +56,7 @@ if($_SESSION['uloga'] != 1)
                     $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
                     
                     
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
                 }else{
                     $broj = ukupanBrojStanova();
 
@@ -459,7 +461,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Tip</th>
                         <td>
-                                <select class="admin-input-select" id="tip" name="tip" class="sforma_select">
+                                <select class="admin-input-select" id="tip" name="tip">
                                     <option value="">Izaberi...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -474,7 +476,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Struktura:</th>
                         <td>
-                                    <select class="admin-input-select"  name="stan_tip" class="sforma_select">
+                                    <select class="admin-input-select"  name="stan_tip">
                                         <option value="">Izaberi...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
@@ -487,6 +489,37 @@ $(document).pngFix( );
                                         <option value="Četvoroiposoban">Četvoroiposoban</option>
                                         <option value="Petosoban i veći">Petosoban i veći</option>
                                     </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Spratnost:</th>
+                        <td>
+			<select class="admin-input-select" name="sprat">
+                                <option value="">Izaberi...</option>
+                                <option value="Suteren">Suteren</option>
+                                <option value="Prizemlje">Prizemlje</option>
+                                <option value="Visoko prizemlje">Visoko prizemlje</option>
+                                <option value="1. sprat">1. sprat</option>
+                                <option value="2. sprat">2. sprat</option>
+                                <option value="3. sprat">3. sprat</option>
+                                <option value="4. sprat">4. sprat</option>
+                                <option value="5. sprat">5. sprat</option>
+                                <option value="6. sprat">6. sprat</option>
+                                <option value="7. sprat">7. sprat</option>
+                                <option value="8. sprat">8. sprat</option>
+                                <option value="9. sprat">9. sprat</option>
+                                <option value="10. sprat">10. sprat</option>
+                                <option value="11. sprat">11. sprat</option>
+                                <option value="12. sprat">12. sprat</option>
+                                <option value="13. sprat">13. sprat</option>
+                                <option value="14. sprat">14. sprat</option>
+                                <option value="15. sprat">15. sprat</option>
+                                <option value="16. sprat">16. sprat</option>
+                                <option value="17. sprat">17. sprat</option>
+                                <option value="18. sprat">18. sprat</option>
+                                <option value="19. sprat">19. sprat</option>
+                                <option value="20. sprat i više">20. sprat i više</option>
+                            </select>
                         </td>
                     </tr>
                 </table>
@@ -533,6 +566,19 @@ $(document).pngFix( );
             </div>
             <div id="pozicija4">
                 <table>
+                    <tr>
+                        <th>Grejanje:</th>
+                        <td>
+                            <select name="grejanje" class="admin-input-select">
+                                <option value="">Izaberi...</option>
+                                <option value="CG">CG</option>
+                                <option value="EG">EG</option>
+                                <option value="TA">TA</option>
+                                <option value="PG">PG</option>
+                                <option value="Klima uređaj">Klima uređaj</option>
+                            </select>
+                        </td>
+                    </tr>
                     <tr>
                         <th>Kvadratura:</th>
                         <td>
@@ -641,7 +687,7 @@ $(document).pngFix( );
                             </table>
                        </div>
                        <div id="hideshowctrl" style="padding-left:5px; clear:both; width:100%; text-align: center;">
-                           <a href="#" class="show_hide" rel="#napredna">Napredna pretraga</a>
+                           <a href="#" class="show_hide" rel="#napredna">NAPREDNA PRETRAGA</a>
                        </div>
             <div style="clear:both; float:right;  margin:10px 10px 10px 0;">
                 <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
@@ -678,10 +724,11 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="">Tip</a></th>                                        
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
-                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Podlokacija</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Nameštenost</a></th>
+					<th class="table-header-repeat line-left"><a href="">Spratnost</a></th>
 					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
 					<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>
                                         <th class="table-header-repeat line-left"><a href="">Hot</a></th>
@@ -695,15 +742,16 @@ $(document).pngFix( );
                         
 				?>
 				<tr>
-					<td><?php echo $stan[0];?></td>
+					<td><?php echo '<strong>' . $stan[0] . '</strong>';?></td>
 					<td><?php echo $stan['kategorija'];?></td>
                                         <td><?php echo $stan['tip'];?></td>
 					<td><?php echo $stan['vlasnik'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
-                                        <td><?php echo $stan['podlokacija'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
 					<td><?php echo $stan[10];?></td>
 					<td><?php echo $stan['kvadratura'];?></td>
+					<td><?php echo $stan['namestenost'];?></td>
+					<td><?php echo $stan['sprat'];?></td>
                                         <td><?php echo $stan['cena'];?></td>
 					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
                                         <td><?php if($stan['hot_offer'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
@@ -783,6 +831,17 @@ $(document).pngFix( );
 			</td>
 			-->
 			</td>
+                            <td style="padding-left:15px">
+                            <form id="frmidinastr" action="#" method="post">
+                                Skok na stranu: <input type="text" id="idinastr" style="width:20px;"/><input type="submit" value="Go" id="idinastrgo"/>
+                            </form>
+                                <script>
+                                    $('#frmidinastr').submit(function(){
+                                      var sstr = $('#idinastr').val();
+                                      $(this).attr('action', "spisak_stanova.php?stranica=" + sstr);
+                                    }); 
+                                </script>
+                            </td>
 			</tr>
 			</table>
 			<!--  end paging................ -->

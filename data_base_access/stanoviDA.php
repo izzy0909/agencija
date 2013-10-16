@@ -236,7 +236,7 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
@@ -283,8 +283,11 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($cena_do)){
     $sql .= "AND cena <= :cena_do ";
     }
-    if(!empty ($cena_do)){
-    $sql .= "AND cena <= :cena_do ";
+    if(!empty ($sprat)){
+    $sql .= "AND sprat = :sprat ";
+    }
+    if(!empty ($grejanje)){
+    $sql .= "AND grejanje = :grejanje ";
     }
     if($kablovska != 0){
     $sql .= "AND kablovska = 1 ";
@@ -423,6 +426,12 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     }
     if(!empty ($cena_do)){
     $query->bindValue(':cena_do', $cena_do);
+    }
+    if(!empty ($sprat)){
+    $query->bindValue(':sprat', $sprat);
+    }
+    if(!empty ($grejanje)){
+    $query->bindValue(':grejanje', $grejanje);
     }
     
     

@@ -1,0 +1,8 @@
+<div style="display:none">
+    
+            <audio id="intro" autoplay>
+            <source src="audio/intro.mp3">
+            <source src="audio/intro.ogg">
+            </audio>    
+    
+</div>

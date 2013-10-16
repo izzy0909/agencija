@@ -1429,7 +1429,7 @@ margin:2px 0 20px 10px;
 }
 
 .stan_info_naslov a{
-    font-size:15px;
+    font-size:14px;
     color:black;
     font-weight:bold;
 }
@@ -1513,7 +1513,7 @@ margin:2px 0 20px 10px;
 
 #tel-header{
     position:absolute;
-    right:30px;
+    right:-18px;
     top:14px;
     z-index:1005;
 }
