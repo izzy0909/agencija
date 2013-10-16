@@ -761,7 +761,7 @@ $(document).pngFix( );
 					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="icon-5 info-tooltip"></a>
                                         <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="icon-6 info-tooltip"></a>
 					<?php
-                                        if($username == 'ivana' || $username == 'Nikola'){
+                                        if($username == 'ivana'){
                                         ?>
                                         <a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<?php
