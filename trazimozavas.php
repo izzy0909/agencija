@@ -169,6 +169,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <tr>
                         <th>Tip:</th>
                         <td><select name="tip" class="sforma_select">
+                                <option value="">Izaberite...</option>
                                 <option value="Stan">Stan</option>
                                 <option value="Kuća">Kuća</option>
                                 <option value="Poslovni prostor">Poslovni prostor</option>
@@ -182,6 +183,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <th></th>
                         <td>
                             <select name="stan_tip" class="sforma_select">
+                                <option value="">Izaberite...</option>
                                 <option value="Garsonjera">Garsonjera</option>
                                 <option value="Jednosoban">Jednosoban</option>
                                 <option value="Jednoiposoban">Jednoiposoban</option>
@@ -202,6 +204,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                     <tr>
 			<th>Sprat:</th>
 			<td><select name="sprat" class="sforma_select">
+                                <option value="">Izaberite...</option>
                                 <option value="Suteren">Suteren</option>
                                 <option value="Prizemlje">Prizemlje</option>
                                 <option value="Visoko prizemlje">Visoko prizemlje</option>
@@ -231,6 +234,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <th>Lokacija:</th>
                     <td>
                     <select name="opstina" class="sforma_select">
+                        <option value="">Izaberite...</option>
                                      <?php
 
                         foreach($row as $opstina){
@@ -244,6 +248,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 <tr>
                 <th>Grejanje:</th>
                 <td>        <select name="grejanje" class="sforma_select">
+                                <option value="">Izaberite...</option>
                                 <option value="CG">CG</option>
                                 <option value="EG">EG</option>
                                 <option value="TA">TA</option>
@@ -260,6 +265,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <th>Nameštenost:</th>
                         <td>
                             <select name="namestenost" class="sforma_select">
+                                <option value="">Izaberite...</option>
                                 <option value="Namešten">Namešten</option>
                                 <option value="Nenamešten">Nenamešten</option>
                             </select>
