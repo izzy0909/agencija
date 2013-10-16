@@ -713,6 +713,11 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="opis"></textarea></td>
 		<td></td>
 	</tr>
+	<tr>
+		<th valign="top">Dodatna informacija:</th>
+		<td><textarea rows="" cols="" class="form-textarea" name="dodatna_informacija"></textarea></td>
+		<td></td>
+	</tr>
 		<tr>
 			<th valign="top" >Vidljivost:</th>
                         <td><select name="vidljivost" class="styledselect_form_1">
@@ -943,6 +948,7 @@ if (isset ($_POST['dodaj_stan'])){
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
     $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
+    $dodatna_informacija = isset($_POST['dodatna_informacija']) ? $_POST['dodatna_informacija'] : null;
     $vidljivost = isset($_POST['vidljivost']) ? $_POST['vidljivost'] : null;
     
     
@@ -979,7 +985,7 @@ if (isset ($_POST['dodaj_stan'])){
     $horizontala = isset($_POST['horizontala']) ? '1' : '0';
     $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
     
-    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username, $dodatna_informacija);
     
     dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
     

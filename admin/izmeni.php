@@ -725,6 +725,11 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="opis"><?php echo $stan['opis'];?></textarea></td>
 		<td></td>
 	</tr>
+	<tr>
+		<th valign="top">Dodatna informacija:</th>
+		<td><textarea rows="" cols="" class="form-textarea" name="dodatna_informacija"><?php echo $stan['dodatna_informacija'];?></textarea></td>
+		<td></td>
+	</tr>
         
                             <tr>
                                 <th valign="top">Slike:</th>

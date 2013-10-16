@@ -592,6 +592,11 @@ $(document).pngFix( );
                                 <td></td>
                         </tr>
                         <tr>
+                                <th valign="top">Dodatna informacija:</th>
+                                <td><?php echo $stan['dodatna_informacija'];?></td>
+                                <td></td>
+                        </tr>
+                        <tr>
                                 <th valign="top">Slike:</th>
                                 <td>
                                     <div id="slike">
