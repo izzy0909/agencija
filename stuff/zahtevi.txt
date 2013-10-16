@@ -14,7 +14,7 @@
 //- Na “Ponudite nekretninu” I “Trazimo za vas” da mora da se cekira “slazem se sa uslovima koriscenja sajta” I to da bude pod linkom koji vodi na novi stranicu
 //- Admin ? Spisak stanova ? detaljnije – da pise datum dodavanja
 //- Admin -> Spisak stanova – da moze da se unese broj stranice
-- Pri dodavanju stanova da se doda “dodatna informacija”, text box vidljiv samo za admine
+//- Pri dodavanju stanova da se doda “dodatna informacija”, text box vidljiv samo za admine // OSTALO DA SE PREBACI I NA OBRISANE STANOVE - NIJE OBAVEZNO
 //- id stana da se boldira na spisku stanova, detaljnije I izmeni
 //- U tabeli na spisku stanova da se doda namestenost I spratnost a da se skloni podlokacija
 //- Na admin pretrazi dodati grejanje I spratnost
@@ -22,3 +22,4 @@
 - Kada je stan izdat da bude crvenim slovima prikazan u listi stanova posle pretrage
 - U pretrazi da se izabere Izdat – Nije izdat(default opcija)
 - U glavnom meniju sa linkovima do strana da se promeni font (treba samo da se izbrise nesto u css-u)
+//Alert za brisanje ponuda

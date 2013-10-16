@@ -1,4 +1,4 @@
-######################
+﻿######################
 ####  V. 1.0.1
 ####  U. Izzy
 ######################
@@ -285,3 +285,10 @@ INSERT INTO `podlokacije` (`id`, `podlokacija`, `lokacija_id`) VALUES
 (37, 'Cvetkova pijaca', 10);
 
 ALTER TABLE stanovi ADD podlokacija_id INT(255) NOT NULL AFTER lokacija_id;
+
+
+######################
+##### v. 1.0.17
+##### U. Strike
+######################
+ALTER TABLE stanovi ADD dodatna_informacija VARCHAR(5000);
