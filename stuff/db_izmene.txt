@@ -288,7 +288,13 @@ ALTER TABLE stanovi ADD podlokacija_id INT(255) NOT NULL AFTER lokacija_id;
 
 
 ######################
-##### v. 1.0.17
+##### v. 1.0.18
 ##### U. Strike
 ######################
 ALTER TABLE stanovi ADD dodatna_informacija VARCHAR(5000);
+
+######################
+##### v. 1.0.19
+##### U. Strike
+######################
+ALTER TABLE stanovi ADD izdat boolean not null default 0;

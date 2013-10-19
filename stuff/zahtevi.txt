@@ -18,8 +18,9 @@
 //- id stana da se boldira na spisku stanova, detaljnije I izmeni
 //- U tabeli na spisku stanova da se doda namestenost I spratnost a da se skloni podlokacija
 //- Na admin pretrazi dodati grejanje I spratnost
-- Na admin delu da bude vidljivo da li je stan izdat, dodati dugme Izdat-Neizdat kao za vidljivost // OBOJITI VIDLJIV I HOT DUGME I IZBACITI POLJA
-- Kada je stan izdat da bude crvenim slovima prikazan u listi stanova posle pretrage
-- U pretrazi da se izabere Izdat – Nije izdat(default opcija)
-- U glavnom meniju sa linkovima do strana da se promeni font (treba samo da se izbrise nesto u css-u)
-//Alert za brisanje ponuda
+//- Na admin delu da bude vidljivo da li je stan izdat, dodati dugme Izdat-Neizdat kao za vidljivost
+//- Kada je stan izdat da bude crvenim slovima prikazan u listi stanova posle pretrage
+//- U pretrazi da se izabere Izdat – Nije izdat(default opcija)
+//- U glavnom meniju sa linkovima do strana da se promeni font (treba samo da se izbrise nesto u css-u)
+//- Alert za brisanje ponuda
+//- alert za brisanje stana
