@@ -21,6 +21,7 @@ if($_SESSION['uloga'] != 1)
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     $grejanje = isset($_GET['grejanje']) ? $_GET['grejanje'] : null;
                     $sprat = isset($_GET['sprat']) ? $_GET['sprat'] : null;
+                    $izdat = isset($_GET['izdat']) ? $_GET['izdat'] : null;
 
                     $kablovska = isset($_REQUEST['kablovska']) ? '1' : '0';
                     $tv = isset($_REQUEST['tv']) ? '1' : '0';
@@ -56,7 +57,7 @@ if($_SESSION['uloga'] != 1)
                     $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
                     
                     
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
                 }else{
                     $broj = ukupanBrojStanova();
 
@@ -263,6 +264,19 @@ updateSelects(today.getTime());
 // and update the datePicker to reflect it...
 $('#d').trigger('change');
 });
+</script>
+
+<script language="javascript">
+function brisanje(id) {
+
+   var answer = confirm("Da li ste sigurni da želite da obrišete nekretninu redni broj " + id + "?");
+
+   if (answer){
+
+      window.location = "izbrisi_stan.php?id=" + id;
+
+   }
+}
 </script>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
@@ -580,66 +594,28 @@ $(document).pngFix( );
                         </td>
                     </tr>
                     <tr>
-                        <th>Kvadratura:</th>
+                        <th>Dostupnost:</th>
                         <td>
-                            <select class="admin-input-select"  name="povOD">
-                                    <option value="">Izaberi...</option>
-                                    <option value="20">od 20 m²</option>
-                                    <option value="40">od 40 m²</option>
-                                    <option value="60">od 60 m²</option>
-                                    <option value="80">od 80 m²</option>
-                                    <option value="100">od 100 m²</option>
-                                    <option value="150">od 150 m²</option>
-                                    <option value="200">od 200 m²</option>
-                                    <option value="300">od 300 m²</option>
-                            </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
-                            <select class="admin-input-select"  name="povDO">
-                                    <option value="">Izaberi...</option>
-                                    <option value="40">do 40 m²</option>
-                                    <option value="60">do 60 m²</option>
-                                    <option value="80">do 80 m²</option>
-                                    <option value="100">do 100 m²</option>
-                                    <option value="150">do 150 m²</option>
-                                    <option value="200">do 200 m²</option>
-                                    <option value="300">do 300 m²</option>
+                            <select name="izdat" class="admin-input-select">
+                                <option value="0">Nije izdat</option>
+                                <option value="1">Izdat</option>
                             </select>
                         </td>
                     </tr>
-                    <tr>
-                        <th>Cena:</th>
-                        <td>
-                            <select class="admin-input-select"  name="cenaOD">
-                                    <option value="">Izaberi...</option>
-                                    <option value="50">od 50 €</option>
-                                    <option value="200">od 200 €</option>
-                                    <option value="300">od 300 €</option>
-                                    <option value="400">od 400 €</option>
-                                    <option value="500">od 500 €</option>
-                                    <option value="600">od 600 €</option>
-                                    <option value="700">od 700 €</option>
-                                    <option value="800">od 800 €</option>
-                                    <option value="900">od 900 €</option>
-                                    <option value="1000">od 1000 €</option>
-                                    <option value="1500">od 1500 €</option>
-                                    <option value="2000">od 2000 €</option>
-                                    <option value="3000">od 3000 €</option>
-                                </select>&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;
-                                <select class="admin-input-select" name="cenaDO">
-                                    <option value="">Izaberi...</option>
-                                    <option value="300">do 300 €</option>
-                                    <option value="400">do 400 €</option>
-                                    <option value="500">do 500 €</option>
-                                    <option value="600">do 600 €</option>
-                                    <option value="700">do 700 €</option>
-                                    <option value="800">do 800 €</option>
-                                    <option value="900">do 900 €</option>
-                                    <option value="1000">do 1000 €</option>
-                                    <option value="1500">do 1500 €</option>
-                                    <option value="2000">do 2000 €</option>
-                                    <option value="3000">do 3000 €</option>
-                                </select>
+                       <tr>
+                        <th>Kvadratura:</th>
+                        <td style="width:100px;">
+                        <input type="text" name="povOD" class="admin-input-select" style="width:54px;">
+                        <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
+                        <input type="text" name="povDO" class="admin-input-select" style="width:54px;">
                         </td>
-                    </tr>
+                        <td style="padding-left:20px;">
+                            <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">Cena od:</span>
+                            <input type="text" name="cenaOD" class="admin-input-select" style="width:54px;">
+                            <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
+                            <input type="text" name="cenaDO" class="admin-input-select" style="width:54px;">
+                        </td>
+                    </tr> 
                 </table>
             </div>
                        <div id="napredna">
@@ -730,8 +706,8 @@ $(document).pngFix( );
                                         <th class="table-header-repeat line-left"><a href="">Nameštenost</a></th>
 					<th class="table-header-repeat line-left"><a href="">Spratnost</a></th>
 					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
-					<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>
-                                        <th class="table-header-repeat line-left"><a href="">Hot</a></th>
+		<!--			<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>   -->
+                <!--                        <th class="table-header-repeat line-left"><a href="">Hot</a></th>    -->
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
 				<?php
@@ -749,21 +725,22 @@ $(document).pngFix( );
 					<td><?php echo $stan['opstina'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
 					<td><?php echo $stan[10];?></td>
-					<td><?php echo $stan['kvadratura'];?></td>
+					<td><?php echo $stan['kvadratura'] . ' m&#178';?></td>
 					<td><?php echo $stan['namestenost'];?></td>
 					<td><?php echo $stan['sprat'];?></td>
-                                        <td><?php echo $stan['cena'];?></td>
-					<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
-                                        <td><?php if($stan['hot_offer'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>
+                                        <td><?php echo $stan['cena'] . ' €';?></td>
+		<!--			<td><?php if($stan['vidljiv'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>      -->
+                <!--                    <td><?php if($stan['hot_offer'] == '1'){echo 'Da';}else{echo 'Ne';}?></td>    -->
 					<td class="options-width">
 					<a href="izmeni.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
 					<a href="detaljan_pregled.php?id=<?php echo $stan[0];?>" title="Detaljnije" class="icon-3 info-tooltip"></a>
-					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="icon-5 info-tooltip"></a>
-                                        <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="icon-6 info-tooltip"></a>
+					<a href="promeni_vidljivost.php?id=<?php echo $stan[0] . '&vidljiv=' . $stan['vidljiv'];?>" title="Promeni Vidljivost" class="<?php if($stan['vidljiv']) echo 'icon-5a'; else echo 'icon-5';?> info-tooltip"></a>
+                                        <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="<?php if($stan['hot_offer']) echo 'icon-6a'; else echo 'icon-6';?> info-tooltip"></a>
+                                        <a href="promeni_izdat.php?id=<?php echo $stan[0] . '&izdat=' . $stan['izdat'];?>" title="Promeni dostupnost stana" class="<?php if($stan['izdat']) echo 'icon-7a'; else echo 'icon-7';?> info-tooltip"></a>
 					<?php
                                         if($username == 'ivana'){
                                         ?>
-                                        <a href="izbrisi_stan.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+                                        <a href="#" onclick="brisanje(<?php echo $stan[0]; ?>);" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<?php
                                         }
                                         ?>
@@ -831,6 +808,7 @@ $(document).pngFix( );
 			</td>
 			-->
 			</td>
+                            <?php if(isset($page_amount) != 0){ ?>
                             <td style="padding-left:15px">
                             <form id="frmidinastr" action="#" method="post">
                                 Skok na stranu: <input type="text" id="idinastr" style="width:20px;"/><input type="submit" value="Go" id="idinastrgo"/>
@@ -842,6 +820,7 @@ $(document).pngFix( );
                                     }); 
                                 </script>
                             </td>
+                            <?php } ?>
 			</tr>
 			</table>
 			<!--  end paging................ -->

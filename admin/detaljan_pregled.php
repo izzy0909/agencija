@@ -412,7 +412,7 @@ $(document).pngFix( );
 			<th valign="top">Id:</th>
 			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo '<strong>' . $stan[0] . '</strong>';?></td>
 			<td>
-
+                            <span style="color: red; font-weight: bold;"><?php if($stan['izdat']) echo 'IZDATO!'; ?></span>
 			</td>
 		</tr>
 		<tr>

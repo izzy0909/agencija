@@ -180,11 +180,11 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija){
+function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat){
     global $conn;
 
     $sql = "UPDATE stanovi
-            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija
+            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija, izdat = :izdat
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -205,6 +205,7 @@ function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_ti
 		':kvadratura' => $kvadratura,
 		':opis' => $opis,
                 ':dodatna_informacija' => $dodatna_informacija,
+                'izdat' => $izdat,
 		':id' => $id
 		));
 	    
@@ -224,6 +225,20 @@ function promeniVidljivostStana($id, $vidljiv){
 	    
 }
 
+function promeniDostupnostStana($id, $izdat){
+    global $conn;
+
+    $sql = "UPDATE stanovi
+            SET izdat = :izdat
+            WHERE id = :id";
+    $query = $conn->prepare($sql);
+    $query->execute(array(
+		':id' => $id,
+		':izdat' => $izdat
+		));
+	    
+}
+
 function promeniHotStana($id, $hot){
     global $conn;
 
@@ -238,7 +253,7 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
+function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
@@ -290,6 +305,9 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     }
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = :grejanje ";
+    }
+    if(!empty ($izdat)){
+    $sql .="AND izdat = :izdat ";
     }
     if($kablovska != 0){
     $sql .= "AND kablovska = 1 ";
@@ -434,6 +452,9 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     }
     if(!empty ($grejanje)){
     $query->bindValue(':grejanje', $grejanje);
+    }
+    if(!empty ($izdat)){
+    $query->bindValue(':izdat', $izdat);
     }
     
     

@@ -490,6 +490,14 @@ $(document).pngFix( );
 			</td>
 		</tr>
 		<tr>
+			<th valign="top">Dostupnost:</th>
+			<td><select id="izdat" name="izdat" class="styledselect_form_1">
+                                <option value="0" <?php if(!$stan['izdat']){echo 'selected';} ?>>Nije izdat</option>
+                                <option value="1" <?php if($stan['izdat']){echo 'selected';} ?>>Izdat</option>
+                            </select></td>
+			<td></td>
+		</tr>  
+		<tr>
 			<th valign="top">Vlasnik:</th>
 			<td><input type="text" class="inp-form" name="vlasnik" value="<?php echo $stan['vlasnik'];?>"/></td>
 			<td>
