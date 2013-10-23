@@ -42,6 +42,13 @@
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
+<!-- SelectBox -->
+<link href="js/select/select2.css" rel="stylesheet"/>
+    <script src="js/select/select2.js"></script>
+    <script>
+        
+        $(document).ready(function() { $("#tip").select2(); });
+    </script>
 </head>
 <body>
 <!--==============================header=================================-->
@@ -232,7 +239,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select name="tip" class="sforma_select">
+                                <select name="tip" id="tip" class="sforma_select">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
