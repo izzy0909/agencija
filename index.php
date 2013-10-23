@@ -293,7 +293,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                  <th>Površina od:</th>
                              <td>
                              <input type="text" name="povOD" class="sforma_input_ck" style="width:40px;">
-                             <span style="margin: 0px 6px 0px 10px; ">do</span>
+                             <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
                              <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">                        
                              </td>
                              </tr> 
@@ -301,7 +301,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                              <th>Cena od:</th>
                              <td>
                              <input type="text" name="cenaOD" class="sforma_input_ck" style="width:40px;">
-                             <span style="margin: 0px 6px 0px 10px; ">do</span>
+                             <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
                              <input type="text" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
                              </td>
                          </tr>

@@ -33,7 +33,9 @@ include_once 'data_base_access/slikeDA.php';
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.7.1.min.js"></script>
+    <link href="css/lightbox.css" rel="stylesheet" />
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/lightbox-2.6.min.js"></script>
     <script src="js/script.js"></script>
             <style>
 
@@ -238,7 +240,6 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </div>
                     <div id="detalji3">
                         <div id="galleria">
-                           <?php echo $slike['naziv']; ?>
                         <?php 
                             foreach ($slike as $slike_stana){
                             echo '<a href="admin/slike/watermark_' . $slike_stana['naziv'] . '">';
@@ -247,15 +248,34 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             }
                         ?>                       
                     </div>
-                <script>
-
-                // Load the classic theme
-                Galleria.loadTheme('js/galleria.classic.min.js');
-
-                // Initialize Galleria
-                Galleria.run('#galleria');
-
-                </script>
+<script>
+// Load the classic theme
+Galleria.loadTheme('js/galleria.classic.js');
+ 
+ 
+// Initialize Galleria
+Galleria.run('#galleria', {
+ 
+extend: function(options) {
+ 
+Galleria.log(this) // the gallery instance
+Galleria.log(options) // the gallery options
+ 
+// listen to when an image is shown
+this.bind('image', function(e) {
+ 
+Galleria.log(e) // the event object may contain custom objects, in this case the main image
+Galleria.log(e.imageTarget) // the current image
+ 
+// lets make galleria open a lightbox when clicking the main image:
+jQuery(e.imageTarget).click(this.proxy(function() {
+this.openLightbox();
+}));
+});
+}
+});
+ 
+</script>
 
 
                     </div>
@@ -295,9 +315,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             if($tagovi['lodja']) echo '<span><img src="images/t.png"> Lođa</span>';
                             if($tagovi['duplex']) echo '<span><img src="images/t.png"> Duplex</span>';
                             if($tagovi['nov_namestaj']) echo '<span><img src="images/t.png"> Nov nameštaj</span>';
-                            if($tagovi['kompjuterska_mreza']) echo '<span><img src="images/t.png"> Kompjuterska mreža</span>';
+                            if($tagovi['kompjuterska_mreza']) echo '<span><img src="images/t.png"> Komp. mreža</span>';
                             if($tagovi['dva_kupatila']) echo '<span><img src="images/t.png"> Dva kupatila</span>';
-                            if($tagovi['vise_telefonskih_linija']) echo '<span><img src="images/t.png"> Više telefonskih linija</span>';
+                            if($tagovi['vise_telefonskih_linija']) echo '<span><img src="images/t.png"> Više tele. linija</span>';
                             if($tagovi['vertikala']) echo '<span><img src="images/t.png"> Vertikala</span>';
                             if($tagovi['horizontala']) echo '<span><img src="images/t.png"> Horizontala</span>';
                             if($tagovi['stan_u_kuci']) echo '<span><img src="images/t.png"> Stan u kući</span>';
