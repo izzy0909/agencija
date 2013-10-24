@@ -1232,6 +1232,15 @@ margin:2px 0 20px 10px;
     margin: 2px 0 20px 10px;
 }
 
+.sforma_select2{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border: solid 1px #c0c0c0;
+    width: 206px;
+    margin: 2px 0 0px 10px;
+}
+
 .select_m{
     font-size:12px;
     padding:4px 2px;
@@ -1254,7 +1263,6 @@ margin:2px 0 20px 10px;
     width:20px;
     border:solid 1px #c0c0c0;
     margin: 2px 0 20px 10px;
-    alignment:left;
 }
 #sforma1 input[type='checkbox']{
     float:left;
