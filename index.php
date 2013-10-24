@@ -254,6 +254,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 <th>Struktura</th>
                                 <td>
                                     <select name="stan_tip" class="sforma_select">
+                                        <option value="">Izaberite...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
                                         <option value="Jednoiposoban">Jednoiposoban</option>
