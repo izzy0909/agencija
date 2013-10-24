@@ -240,7 +240,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select name="tip" id="tip" multiple="multiple" class="sforma_select">
+                                <select name="tip" id="tip" multiple="multiple" class="sforma_select2" style="">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
