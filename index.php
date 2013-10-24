@@ -232,7 +232,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </article>
                     
                     <article class="grid_4">
-                        <div id="sforma">
+                        <div id="sforma1">
                     	<h3 class="title">BRZA PRETRAGA</h3>
                         <form id="brzapretraga" action="izdavanje.php" method="get">
                            <div id="pozicija1" style="position:relative; float:left;">
