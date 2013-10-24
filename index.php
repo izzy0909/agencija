@@ -28,9 +28,8 @@
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/demo.css">
-    <link href="../jquery.multiSelect.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" />
     <script src="js/jquery-1.7.1.min.js"></script>
-    <script type="text/javascript" src="jquery-ui-1.8.13.custom.min.js"></script>
     <script src="js/script.js"></script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
@@ -44,7 +43,6 @@
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
-    <script src="js/select/select2.js"></script>
 		<script src="js/jquery.bgiframe.min.js" type="text/javascript"></script>
 		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
     <script type="text/javascript">
