@@ -1,8 +1,11 @@
 a.multiSelect {
-	background: #FFF url(../images/dropdown.blue.png) right center no-repeat;
-	border: solid 1px #BBB;
-	padding-right: 20px;
+	background: #FFF url(../images/dropdown.gif) right center no-repeat;
+	border:solid 1px #c0c0c0;
+	padding:2px 2px;
 	position: relative;
+        float:left;
+        width:200px;
+        margin:2px 0 20px 10px;
 	cursor: default;
 	text-decoration: none;
 	color: black;
@@ -26,16 +29,11 @@ a.multiSelect span
 }
 
 a.multiSelect.hover {
-	background-image: url(../images/dropdown.blue.hover.png);
-}
-
-a.multiSelect.active, 
-a.multiSelect.focus {
-	border: inset 1px #000;
+	background-image: url(../images/dropdown_hover.gif);
 }
 
 a.multiSelect.active {
-	background-image: url(../images/dropdown.blue.active.png);
+	background-image: url(../images/dropdown_active.gif);
 }
 
 .multiSelectOptions {
@@ -44,6 +42,7 @@ a.multiSelect.active {
 	overflow-x: hidden;
 	border: solid 1px #B2B2B2;
 	background: #FFF;
+        margin:2px 0 20px 10px;
 }
 
 .multiSelectOptions LABEL {
@@ -73,7 +72,7 @@ a.multiSelect.active {
 }
 
 .multiSelectOptions LABEL.checked {
-	background-color: #dce5f8;
+	background-color: #f2f0f0;
 }
 
 .multiSelectOptions LABEL.selectAll {

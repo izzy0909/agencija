@@ -47,7 +47,7 @@
 		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-             $("#tip").multiSelect();
+             $("#tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
         });
     </script>
 </head>
@@ -244,7 +244,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
-                                    <option value="Poslovni prostor">Poslovni prostor</option>
+                                    <option value="Poslovni+prostor">Poslovni prostor</option>
                                     <option value="Magacin">Magacin</option>
                                     <option value="Lokal">Lokal</option>
                                 </select>

@@ -1268,9 +1268,13 @@ margin:2px 0 20px 10px;
     float:left;
     width:20px;
     border:solid 1px #c0c0c0;
-    margin: 2px 0 0px 10px;
-    alignment:left;
+    margin: 2px 0 0px 5px;
 }
+
+#sforma1 th{
+    padding:4px 2px;
+}
+
 #pos1{
     position:relative;
     float:left;

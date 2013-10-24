@@ -46,8 +46,9 @@ include_once 'data_base_access/slikeDA.php';
                     $cena_do = isset($_GET['cenaDO']) ? $_GET['cenaDO'] : null;
                     //die($p_num.' '. $items);
                     
+             //       echo $tip[0] . ' ' . $tip[1];
                     $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
-                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+             //       $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
                     
               }
               else {
@@ -75,7 +76,7 @@ include_once 'data_base_access/slikeDA.php';
 <html lang="en">
 <head>
   	<title>Jevtić Nekretnine :: Izdavanje i prodaja nekretnina Beograd</title>
-  	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Izdavanje i prodaja svih vrsta nekretnina, stanova, kuća, poslovnih prostora, magacina, lokala i garaža u Beogradu">
     <meta name="keywords" content="nekretnine, stanovi, kuce, izdavanje, prodaja, beograd, srbija, belgrade, serbia, real estate, apartment, house, rent, sale, kuće, lokal, magacin, garaza, garaža, poslovni prostor">
     <meta name="author" content="Web Refresh">

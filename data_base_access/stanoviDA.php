@@ -471,7 +471,18 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
-    $sql .= "AND tip = :tip ";
+        if(is_array($tip)){
+            $sql .= "AND tip = $tip[0]; ";
+            $i=0;
+  //          echo $sql;
+            foreach ($tip as $tipovi) {
+                if($i > 0) {
+                    $sql .= "OR tip = $tipovi ";
+                    }
+                    $i++;
+            }
+        }
+        else $sql .= "AND tip = :tip ";
     }
     if(!empty ($stan_tip)){
     $sql .= "AND stan_tip = :stan_tip ";
@@ -502,13 +513,13 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     }
     $sql .= "AND kategorija = 'izdavanje' ORDER BY s.id DESC LIMIT $start , 18 ";
     
-	$query = $conn->prepare($sql);
-	
-	if(!empty ($tip)){
-	$query->bindParam(':tip', $tip);
+    $query = $conn->prepare($sql);
+
+    if(!empty ($tip) && !is_array($tip)){
+        $query->bindParam(':tip', $tip);
     }
-	if(!empty ($stan_tip)){
-	$query->bindParam(':stan_tip', $stan_tip);
+    if(!empty ($stan_tip)){
+        $query->bindParam(':stan_tip', $stan_tip);
     }
     if(!empty ($opstina)){
 	$query->bindParam(':lokacija_id', $opstina);

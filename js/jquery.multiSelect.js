@@ -122,9 +122,9 @@ if(jQuery) (function($){
 		var html = "";
 
 		// if we should have a select all option then add it
-		if( o.selectAll ) {
-			html += '<label class="selectAll"><input type="checkbox" class="selectAll" />' + o.selectAllText + '</label>';
-		}
+//		if( o.selectAll ) {
+//			html += '<label class="selectAll"><input type="checkbox" class="selectAll" />' + o.selectAllText + '</label>';
+//		}
 
 		// generate the html for the new options
 		html += renderOptions(multiSelect.attr('id'), options, o);
