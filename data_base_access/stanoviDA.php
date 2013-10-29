@@ -472,12 +472,12 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
             WHERE vidljiv = 1 ";
     if(!empty ($tip)){
         if(is_array($tip)){
-            $sql .= "AND tip = $tip[0]; ";
+            $sql .= "AND tip = '$tip[0]' ";
             $i=0;
   //          echo $sql;
             foreach ($tip as $tipovi) {
                 if($i > 0) {
-                    $sql .= "OR tip = $tipovi ";
+                    $sql .= "OR tip = '$tipovi' ";
                     }
                     $i++;
             }
