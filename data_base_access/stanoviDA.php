@@ -455,9 +455,6 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($grejanje)){
     $query->bindValue(':grejanje', $grejanje);
     }
-    $query->bindValue(':izdat', $izdat);
-    
-    
     
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
