@@ -306,7 +306,7 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = :grejanje ";
     }
-    if($izdat = 1){
+    if($izdat == 1){
     $sql .="AND izdat = 1 ";
     } else {
       $sql .="AND izdat = 0 ";  
