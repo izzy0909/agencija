@@ -103,12 +103,12 @@ include_once 'data_base_access/slikeDA.php';
 		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-             $("#tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
-             $("#stan_tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
-             $("#opstina").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
-             $("#namestenost").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
-             $("#grejanje").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
-             $("#sprat").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#stan_tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#opstina").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#namestenost").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#grejanje").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#sprat").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
         });
     </script>
 <script type='text/javascript'>//<![CDATA[ 
