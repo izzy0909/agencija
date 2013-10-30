@@ -738,11 +738,11 @@ $(document).pngFix( );
                                         <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="<?php if($stan['hot_offer']) echo 'icon-6a'; else echo 'icon-6';?> info-tooltip"></a>
                                         <a href="promeni_izdat.php?id=<?php echo $stan[0] . '&izdat=' . $stan['izdat'];?>" title="Promeni dostupnost stana" class="<?php if($stan['izdat']) echo 'icon-7a'; else echo 'icon-7';?> info-tooltip"></a>
 					<?php
-                             //           if($username == 'ivana'){
+                                        if($username == 'ivana'){
                                         ?>
                                         <a href="#" onclick="brisanje(<?php echo $stan[0]; ?>);" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<?php
-                          //              }
+                                        }
                                         ?>
 
                                         <!--<a href="" title="Edit" class="icon-4 info-tooltip"></a>-->
