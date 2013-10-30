@@ -698,7 +698,7 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="" >Id</a> </th>
 					<th class="table-header-repeat line-left"><a href="">Kategorija</a></th>
 					<th class="table-header-repeat line-left"><a href="">Tip</a></th>                                        
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Dodatno</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
@@ -721,7 +721,7 @@ $(document).pngFix( );
 					<td><?php echo '<strong>' . $stan[0] . '</strong>';?></td>
 					<td><?php echo $stan['kategorija'];?></td>
                                         <td><?php echo $stan['tip'];?></td>
-					<td><?php echo $stan['vlasnik'];?></td>
+					<td style="word-wrap: break-word;"><?php echo $stan['dodatna_informacija'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
 					<td><?php echo $stan[10];?></td>
