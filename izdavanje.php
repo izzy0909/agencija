@@ -241,13 +241,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                    <td>
                                 <select id="tip" name="tip" multiple="multiple" class="sforma_select2">
                                     <option value="">Izaberite...</option>
-                                    <option value="Stan">Stan</option>
-                                    <option value="Kuća">Kuća</option>
-                                    <option value="Poslovni prostor">Poslovni prostor</option>
-                                    <option value="Magacin">Magacin</option>
-                                    <option value="Lokal">Lokal</option>
-                                    <option value="Garaža">Garaža</option>
-                                    <option value="Apartman na dan">Apartman na dan</option>
+                                    <option value="Stan" <?php if(isset($_GET['tip']) && in_array('Stan', $_GET['tip'])) echo 'selected="selected"'; ?>>Stan</option>
+                                    <option value="Kuća" <?php if(isset($_GET['tip']) && in_array('Kuća', $_GET['tip'])) echo 'selected="selected"'; ?>>Kuća</option>
+                                    <option value="Poslovni prostor" <?php if(isset($_GET['tip']) && in_array('Poslovni prostor', $_GET['tip'])) echo 'selected="selected"'; ?>>Poslovni prostor</option>
+                                    <option value="Magacin" <?php if(isset($_GET['tip']) && in_array('Magacin', $_GET['tip'])) echo 'selected="selected"'; ?>>Magacin</option>
+                                    <option value="Lokal" <?php if(isset($_GET['tip']) && in_array('Lokal', $_GET['tip'])) echo 'selected="selected"'; ?>>Lokal</option>
+                                    <option value="Garaža" <?php if(isset($_GET['tip']) && in_array('Garaža', $_GET['tip'])) echo 'selected="selected"'; ?>>Garaža</option>
+                                    <option value="Apartman na dan" <?php if(isset($_GET['tip']) && in_array('Apartman na dan', $_GET['tip'])) echo 'selected="selected"'; ?>>Apartman na dan</option>
                                 </select>    
                                    </td>
                            </tr>
