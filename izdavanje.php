@@ -48,8 +48,8 @@ include_once 'data_base_access/slikeDA.php';
                     
              //       echo $tip[0] . ' ' . $tip[1];
                     $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
-             //       $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
-                    
+                    $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
+                    var_dump($broj_stanova);
               }
               else {
                   if(isset ($_GET['tip'])){

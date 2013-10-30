@@ -188,7 +188,18 @@ updateSelects(today.getTime());
 $('#d').trigger('change');
 });
 </script>
+<script language="javascript">
+function brisanje(id) {
 
+   var answer = confirm("Da li ste sigurni da želite da obrišete nekretninu redni broj " + id + "?");
+
+   if (answer){
+
+      window.location = "izbrisi_trazimo.php?id=" + id;
+
+   }
+}
+</script>
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -407,7 +418,8 @@ $(document).pngFix( );
                                         <td><?php echo 'od ' . $stan['cena_od'] . '€ do ' . $stan['cena_od'] . '€';?></td>
                                         <td class="options-width">
 					<a href="detalji_trazimo.php?id=<?php echo $stan[0];?>" title="Detaljnije" class="icon-3 info-tooltip"></a>
-					<a href="izbrisi_trazimo.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>
+                                        <a href="#" onclick="brisanje(<?php echo $stan[0]; ?>);" title="Obrisi" class="icon-2 info-tooltip"></a>
+					<!--<a href="izbrisi_trazimo.php?id=<?php echo $stan[0];?>" title="Obrisi" class="icon-2 info-tooltip"></a>-->
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-5 info-tooltip"></a>-->
