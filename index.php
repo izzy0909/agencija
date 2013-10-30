@@ -48,6 +48,9 @@
     <script type="text/javascript">
         $(document).ready(function() {
              $("#tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#stan_tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#opstina").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#namestenost").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
         });
     </script>
 </head>
@@ -94,22 +97,22 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </li>
                      <li><a href="izdavanje.php">Izdavanje</a>
                           <ul>
-                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
+                             <li><a href="izdavanje.php?tip[]=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip[]=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip[]=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip[]=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip[]=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip[]=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
-                            <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
-                            <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="prodaja.php?tip[]=Stan">Stanovi</a></li>
+                            <li><a href="prodaja.php?tip[]=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?tip[]=Magacin">Magacini</a></li>
+                            <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip[]=Garaža">Garaže</a></li>
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
@@ -201,13 +204,13 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <br/>
                     	<h3 class="p7">KATALOG PONUDE</h3>
                             <ul class="list8">
-                            <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
+                            <li><a href="izdavanje.php?tip[]=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip[]=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip[]=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip[]=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip[]=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip[]=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul>
 
                             <div class="clear"></div>
@@ -240,7 +243,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select name="tip" id="tip" multiple="multiple" class="sforma_select2" style="">
+                                <select name="tip" id="tip" multiple="multiple" class="sforma_select2">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -253,7 +256,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <tr>
                                 <th>Struktura</th>
                                 <td>
-                                    <select name="stan_tip" class="sforma_select">
+                                    <select name="stan_tip" id="stan_tip" multiple="multiple" class="sforma_select2">
                                         <option value="">Izaberite...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
@@ -270,33 +273,34 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </tr>                           
                            <tr>
                                <th>Lokacija</th>
-                                <td>
-                                <select name="opstina" class="sforma_select">
-                                    <option value="">Izaberite...</option>
-                                    <?php
-                                    foreach($row as $opstina){
-                                      echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
-                                    }
-                             ?>
+                                    <td>
+                                    <select name="opstina" id="opstina" multiple="multiple "class="sforma_select2">
+                                        <option value="">Izaberite...</option>
+                                        <?php
+                                        foreach($row as $opstina){
+                                          echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                                        }
+                                 ?>
                             </select>
                                 </td>
                            </tr>
                                 <tr>
-                                <th>Nameštenost:</th>
-                                <td>
-                                    <select name="namestenost" class="sforma_select">
-                                        <option value="">Izaberite...</option>
-                                        <option value="Namešten">Namešten</option>
-                                        <option value="Nenamešten">Nenamešten</option>
-                                    </select>
-                                </td>
+                                    <th>Nameštenost:</th>
+                                    <td>
+                                        <select name="namestenost" id="namestenost" multiple="multiple" class="sforma_select2">
+                                            <option value="">Izaberite...</option>
+                                            <option value="Namešten">Namešten</option>
+                                            <option value="Nenamešten">Nenamešten</option>
+                                        </select>
+                                    </td>
                                 </tr>
                                 <tr>
                                  <th>Površina od:</th>
                              <td>
                              <input type="text" name="povOD" class="sforma_input_ck" style="width:40px;">
                              <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
-                             <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">                        
+                             <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">      
+                             <span style="margin: 5px 6px 0px 5px; display: inline-block;">m²</span>
                              </td>
                              </tr> 
                              <tr>
@@ -305,6 +309,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                              <input type="text" name="cenaOD" class="sforma_input_ck" style="width:40px;">
                              <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
                              <input type="text" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
+                             <span style="margin: 5px 6px 0px 5px; display: inline-block;">€</span>
                              </td>
                          </tr>
                          <tr>

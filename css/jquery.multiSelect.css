@@ -46,7 +46,7 @@ a.multiSelect.active {
 }
 
 .multiSelectOptions LABEL {
-	padding: 0px 2px;
+	padding: 2px 2px;
 	display: block;
 	white-space: nowrap;
         clear: both;

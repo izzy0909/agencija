@@ -49,8 +49,7 @@ include_once 'data_base_access/slikeDA.php';
              //       echo $tip[0] . ' ' . $tip[1];
                     $stanovi = pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
                     $broj_stanova = brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);
-                    var_dump($broj_stanova);
-              }
+}
               else {
                   if(isset ($_GET['tip'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
@@ -83,7 +82,8 @@ include_once 'data_base_access/slikeDA.php';
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.7.2.js"></script>
+    <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
@@ -96,6 +96,18 @@ include_once 'data_base_access/slikeDA.php';
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
+		<script src="js/jquery.bgiframe.min.js" type="text/javascript"></script>
+		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+             $("#tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#stan_tip").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#opstina").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#namestenost").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#grejanje").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+             $("#sprat").multiSelect({ oneOrMoreSelected: 'Broj uslova: %', noneSelected: 'Izaberite...' });
+        });
+    </script>
 <script type='text/javascript'>//<![CDATA[ 
 $(document).ready(function(){
     $('#tip').val('<?php echo $tip; ?>');
@@ -157,22 +169,22 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </li>
                     <li><a class="active" href="izdavanje.php">Izdavanje</a>
                           <ul>
-                             <li><a href="izdavanje.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="izdavanje.php?tip=Kuća">Kuće</a></li>
-                            <li><a href="izdavanje.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="izdavanje.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="izdavanje.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="izdavanje.php?tip=Garaža">Garaže</a></li>
-                            <li><a href="izdavanje.php?tip=Apartman+na+dan">Apartmani na dan</a></li>
+                             <li><a href="izdavanje.php?tip[]=Stan">Stanovi</a></li>
+                            <li><a href="izdavanje.php?tip[]=Kuća">Kuće</a></li>
+                            <li><a href="izdavanje.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="izdavanje.php?tip[]=Magacin">Magacini</a></li>
+                            <li><a href="izdavanje.php?tip[]=Lokal">Lokali</a></li>
+                            <li><a href="izdavanje.php?tip[]=Garaža">Garaže</a></li>
+                            <li><a href="izdavanje.php?tip[]=Apartman+na+dan">Apartmani na dan</a></li>
                             </ul></li>
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
-                            <li><a href="prodaja.php?tip=Stan">Stanovi</a></li>
-                            <li><a href="prodaja.php?tip=Kuće">Kuće</a></li>
-                            <li><a href="prodaja.php?tip=Poslovni+prostor">Poslovni prostori</a></li>
-                            <li><a href="prodaja.php?tip=Magacin">Magacini</a></li>
-                            <li><a href="prodaja.php?tip=Lokal">Lokali</a></li>
-                            <li><a href="prodaja.php?tip=Garaža">Garaže</a></li>
+                            <li><a href="prodaja.php?tip[]=Stan">Stanovi</a></li>
+                            <li><a href="prodaja.php?tip[]=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
+                            <li><a href="prodaja.php?tip[]=Magacin">Magacini</a></li>
+                            <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>
+                            <li><a href="prodaja.php?tip[]=Garaža">Garaže</a></li>
                             </ul></li>
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
@@ -212,10 +224,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
         	<div class="wrapper">
                    <article class="grid_12">
                       <?php 
-                        if (!isset($_GET['tip'])){
-                            echo '<center><a href="izdavanje.php?tip=Stan"><img src="images/izd-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Kuća"><img src="images/izd-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Poslovni+prostor"><img src="images/izd-poslovniprostori.jpg" alt="Poslovni prostori" /></a>';
-                            echo '<br /><br /><a href="izdavanje.php?tip=Magacin"><img src="images/izd-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Lokal"><img src="images/izd-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip=Garaža"><img src="images/izd-garaze.jpg" alt="Garaže" /></a>';
-                            echo '<br /><br /><a href="izdavanje.php?tip=Apartman+na+dan"><img src="images/izd-apartmani.jpg" alt="Apartmani na dan" /></a></center>';
+                        if (!isset($_GET['tip']) && !isset($_GET['pretrazi']) ){
+                            echo '<center><a href="izdavanje.php?tip[]=Stan"><img src="images/izd-stanovi.jpg" alt="Stanovi" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip[]=Kuća"><img src="images/izd-kuce.jpg" alt="Kuće" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip[]=Poslovni+prostor"><img src="images/izd-poslovniprostori.jpg" alt="Poslovni prostori" /></a>';
+                            echo '<br /><br /><a href="izdavanje.php?tip[]=Magacin"><img src="images/izd-magacini.jpg" alt="Magacini" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip[]=Lokal"><img src="images/izd-lokali.jpg" alt="Lokali" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="izdavanje.php?tip[]=Garaža"><img src="images/izd-garaze.jpg" alt="Garaže" /></a>';
+                            echo '<br /><br /><a href="izdavanje.php?tip[]=Apartman+na+dan"><img src="images/izd-apartmani.jpg" alt="Apartmani na dan" /></a></center>';
                         }
 // OTVORIO PHP    ============================================================================================          
                         else { ?>
@@ -227,7 +239,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                <tr>
                                    <th>Tip:</th>
                                    <td>
-                                <select id="tip" name="tip" class="sforma_select">
+                                <select id="tip" name="tip" multiple="multiple" class="sforma_select2">
                                     <option value="">Izaberite...</option>
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
@@ -242,7 +254,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <tr>
                                 <th>Struktura</th>
                                 <td>
-                                    <select id="stan_tip" name="stan_tip" class="sforma_select">
+                                    <select id="stan_tip" name="stan_tip" multiple="multiple" class="sforma_select2">
                                         <option value="">Izaberite...</option>
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
@@ -260,7 +272,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            <tr>
                                <th>Lokacija</th>
                                 <td>
-                                <select id="opstina" name="opstina" class="sforma_select">
+                                <select id="opstina" name="opstina" multiple="multiple" class="sforma_select2">
                                     <option value="">Izaberite...</option>
                                     <?php
                                     foreach($row as $opstina){
@@ -276,7 +288,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            <table>
                                 <tr>
                                 <th>Grejanje:</th>
-                                <td>        <select id="grejanje" name="grejanje" class="sforma_select">
+                                <td>        <select id="grejanje" name="grejanje" multiple="multiple" class="sforma_select2">
                                                 <option value="">Izaberite...</option>
                                                 <option value="CG">CG</option>
                                                 <option value="EG">EG</option>
@@ -288,7 +300,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 <tr>
                                 <th>Nameštenost:</th>
                                 <td>
-                                    <select id="namestenost" name="namestenost" class="sforma_select">
+                                    <select id="namestenost" name="namestenost" multiple="multiple" class="sforma_select2">
                                         <option value="">Izaberite...</option>
                                         <option value="Namešten">Namešten</option>
                                         <option value="Nenamešten">Nenamešten</option>
@@ -297,7 +309,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 </tr>
                                     <tr>
                                         <th>Sprat:</th>
-                                        <td><select id="sprat" name="sprat" class="sforma_select">
+                                        <td><select id="sprat" name="sprat" multiple="multiple" class="sforma_select2">
                                                 <option value="">Izaberite...</option>
                                                 <option value="Suteren">Suteren</option>
                                                 <option value="Prizemlje">Prizemlje</option>
@@ -334,6 +346,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <input type="text" id="povOD" name="povOD" class="sforma_input_ck" style="width:40px;">
                         <span style="margin: 5px 0px 0px 10px; font-weight: bold; display:inline-block">do</span>
                         <input type="text" id="povDO" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">
+                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">m²</span>
                         </td>
                     </tr> 
                     <tr>
@@ -342,6 +355,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <input type="text" id="cenaOD" name="cenaOD" class="sforma_input_ck" style="width:40px;">
                         <span style="margin: 5px 0px 0px 10px; font-weight: bold; display:inline-block;">do</span>
                         <input type="text" id="cenaDO" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
+                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">€</span>
                     </td>
                 </tr>
                            </table>
