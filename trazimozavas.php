@@ -277,6 +277,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <input type="text" name="pov_od" class="sforma_input_ck" style="width:40px;">
                         <span style="margin: 5px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
                         <input type="text" name="pov_do" class="sforma_input_ck" style="width:40px; float: none;">
+                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">m²</span>
                         </td>
                     </tr> 
                     <tr>
@@ -285,6 +286,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <input type="text" name="cena_od" class="sforma_input_ck" style="width:40px;">
                         <span style="margin: 5px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
                         <input type="text" name="cena_do" class="sforma_input_ck" style="width:40px; float: none;">
+                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">€</span>
                     </td>
                 </tr>
                         </table>
@@ -312,7 +314,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </td></tr>
                     </table>
                     </div>
-                    <div id="tos" style="padding-left:330px">
+                    <div id="tos" style="clear:both; padding-left:330px;">
                         <label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa <a href="uslovi_poslovanja.php" target="_blank">uslovima</a> korišćenja sajta.</label>
                     </div>
 

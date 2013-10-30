@@ -76,6 +76,7 @@ function prikaziPoslednjeStanove(){
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1
+            AND izdat = 0
             ORDER BY datum_dodavanja DESC
             LIMIT 0, 8";
 	$query = $conn->prepare($sql);
@@ -91,6 +92,7 @@ function prikaziHotOfferStanove(){
             ON s.lokacija_id = l.id
             WHERE hot_offer = '1'
             AND vidljiv = '1'
+            AND izdat = 0
             ORDER BY RAND() limit 0,1";
 
 	$query = $conn->prepare($sql);
@@ -135,6 +137,7 @@ function prikaziStanZaFront($id){
             ON s.lokacija_id = l.id
             WHERE s.id = :id
             AND vidljiv = 1
+            AND izdat = 0
             LIMIT 1";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -467,7 +470,7 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 AND izdat = 0 ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -593,7 +596,7 @@ function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsi
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 AND izdat = 0 ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -700,7 +703,7 @@ function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 AND izdat = 0 ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -807,7 +810,7 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 AND izdat = 0 ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
