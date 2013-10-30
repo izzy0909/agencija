@@ -306,8 +306,10 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($grejanje)){
     $sql .= "AND grejanje = :grejanje ";
     }
-    if(!empty ($izdat)){
-    $sql .="AND izdat = :izdat ";
+    if($izdat = 1){
+    $sql .="AND izdat = 1 ";
+    } else {
+      $sql .="AND izdat = 0 ";  
     }
     if($kablovska != 0){
     $sql .= "AND kablovska = 1 ";
@@ -453,9 +455,8 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if(!empty ($grejanje)){
     $query->bindValue(':grejanje', $grejanje);
     }
-    if(!empty ($izdat)){
     $query->bindValue(':izdat', $izdat);
-    }
+    
     
     
     $query->execute();
