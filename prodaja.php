@@ -32,7 +32,7 @@ include_once 'data_base_access/slikeDA.php';
                     };
               $start = ($str-1) * 18;   
    
-              if (isset ($_GET['pretrazi'])){
+              if (!empty($_GET)){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
                     $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
                     $opstina = isset($_GET['opstina']) ? $_GET['opstina'] : null;
@@ -49,7 +49,7 @@ include_once 'data_base_access/slikeDA.php';
                     $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                    
                     
               }
-              else {
+     /*         else {
                   if(isset ($_GET['tip'])){
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
                     $stan_tip = isset($_GET['stan_tip']) ? $_GET['stan_tip'] : null;
@@ -66,7 +66,7 @@ include_once 'data_base_access/slikeDA.php';
                     $stanovi = pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start);
                     $broj_stanova = brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost);                                       
                   }
-              }
+              }               */
 
 
 

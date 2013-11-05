@@ -694,7 +694,6 @@ function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsi
 	
     $query->execute();
     return $query->fetch();
-
 }
 
 function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
