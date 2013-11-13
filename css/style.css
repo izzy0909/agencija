@@ -1564,8 +1564,48 @@ margin:2px 0 2px 10px;
     z-index: 1100;
 }
 
+/* USLOVI ====================================================================================== */
+#uslovi{
+    text-align: justify;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#uslovi:hover{
+    cursor:default;
+}
+#uslovi .naslov{
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
 
+#uslovi span{
+    font-weight: bold;
+    font-size:14px;
+    margin-bottom:5px;
+    display:inline-block;
+}
 
+#uslovi p{
+    font-size:12px;
+    margin-bottom:5px;
+    padding-left:10px;
+}
 
+#uslovi ul{
+    list-style-type:disc;
+     list-style-position:inside;
+     margin:0px;
+     margin-bottom:20px;
+}
+
+#uslovi li{
+    text-indent: -1.1em;
+    margin-left: 1.7em;
+}
 
 /* #e2a616 */
