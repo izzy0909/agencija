@@ -41,8 +41,6 @@ document.onmousedown=disableselect
 document.onclick=reEnable
 }
 </script>
-
-
     
 <script>
  function checkTerms() {
@@ -58,7 +56,7 @@ document.onclick=reEnable
 </script>
 
 </head>
-<body>
+<body oncopy="return false;">
 <!--==============================header=================================-->
 <div id="prevod">
 <div id="google_translate_element"></div><script type="text/javascript">
@@ -122,9 +120,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="onama.php">O nama</a>
-                            <ul>
+                     <!--       <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
-                            </ul></li>
+                            </ul>   -->
+                    </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
@@ -156,9 +155,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_12">
-               <!--     <div style='position:absolute; width:100%; height:2625px; z-index: 10; background-image:url("images/nema_kopiranja.png");'>
-                    </div> -->
-                    <div id='uslovi'>
+                   <div style='position:absolute; width:100%; height:2625px; z-index: 10; background-image:url("images/nema_kopiranja.png");'>
+                    </div> 
+                    <div id='uslovi' ondragstart='return false' onselectstart='return false'>
                         <div id='infouslovi' style='float:left;'>
                             <p style='font-weight:bold; font-size: 13px;'>JEVTIĆ I.M.J NEKRETNINE d.o.o<br />
                                 Bokeljska 7, Beograd<br />

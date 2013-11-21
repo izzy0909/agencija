@@ -96,9 +96,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="onama.php">O nama</a>
-                            <ul>
+                    <!--        <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
-                            </ul></li>
+                            </ul>  -->
+                    </li>
                     <li><a class="active" href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     

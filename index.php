@@ -28,9 +28,39 @@
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/demo.css">
-    <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.7.1.min.js"></script>
+ <!--   <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" /> -->
+    <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/script.js"></script>
+
+<!-- multiselect -->    
+<link rel="stylesheet" type="text/css" href="multi/jquery.multiselect.css" />
+<link rel="stylesheet" type="text/css" href="multi/prettify.css" />
+<link rel="stylesheet" type="text/css" href="multi/jquery-ui-1.9.2.custom.css" />
+<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="multi/prettify.js"></script>
+<script type="text/javascript" src="multi/jquery.multiselect.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("select").multiselect({
+   selectedList: 2, 
+   noneSelectedText: "Izaberite...",
+   selectedText: "selektovano: #",
+   height: 137,
+   checkAllText: "Odaberi sve",
+   uncheckAllText: "Isključi sve"
+});
+});
+
+$(function(){
+    $("#namestenost").multiselect({
+        height: 55
+    });
+});
+
+</script>
+    
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
      <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -43,16 +73,13 @@
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
-		<script src="js/jquery.bgiframe.min.js" type="text/javascript"></script>
+	<!--	<script src="js/jquery.bgiframe.min.js" type="text/javascript"></script>
 		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-             $("#tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#stan_tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#opstina").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#namestenost").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
+             $("#tip, #stan_tip, #opstina").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
         });
-    </script>
+    </script>     -->
 </head>
 <body>
 <!--==============================header=================================-->
@@ -117,9 +144,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="onama.php">O nama</a>
-                            <ul>
+                       <!--     <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
-                            </ul></li>
+                            </ul> -->
+                    </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
@@ -240,11 +268,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         <form id="brzapretraga" action="izdavanje.php" method="get">
                            <div id="pozicija1" style="position:relative; float:left;">
                            <table>
-                               <tr>
+                           <tr>
                                    <th>Tip:</th>
-                                   <td>
-                                <select name="tip" id="tip" multiple="multiple" class="sforma_select2">
-                                    <option value="">Izaberite...</option>
+                                   <td style="padding-left:7px;">
+                                <select name="tip[]" id="tip" multiple="multiple" class="sforma_select2" size="5">
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
                                     <option value="Poslovni+prostor">Poslovni prostor</option>
@@ -255,9 +282,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            </tr>
                             <tr>
                                 <th>Struktura</th>
-                                <td>
-                                    <select name="stan_tip" id="stan_tip" multiple="multiple" class="sforma_select2">
-                                        <option value="">Izaberite...</option>
+                                <td style="padding-left:7px;">
+                                    <select name="stan_tip[]" id="stan_tip" multiple="multiple" class="sforma_select2">
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
                                         <option value="Jednoiposoban">Jednoiposoban</option>
@@ -273,9 +299,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </tr>                           
                            <tr>
                                <th>Lokacija</th>
-                                    <td>
-                                    <select name="opstina" id="opstina" multiple="multiple "class="sforma_select2">
-                                        <option value="">Izaberite...</option>
+                                    <td style="padding-left:7px;">
+                                    <select name="opstina[]" id="opstina" multiple="multiple "class="sforma_select2">
                                         <?php
                                         foreach($row as $opstina){
                                           echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
@@ -286,30 +311,30 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            </tr>
                                 <tr>
                                     <th>Nameštenost:</th>
-                                    <td>
-                                        <select name="namestenost" id="namestenost" multiple="multiple" class="sforma_select2">
-                                            <option value="">Izaberite...</option>
+                                    <td style="padding-left:7px;">
+                                        <select name="namestenost[]" id="namestenost" multiple="multiple" class="sforma_select2">
+                                            <!--<option value="">Izaberite...</option>-->
                                             <option value="Namešten">Namešten</option>
                                             <option value="Nenamešten">Nenamešten</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
-                                 <th>Površina od:</th>
+                                 <th style="padding-top:5px;">Površina od:</th>
                              <td>
                              <input type="text" name="povOD" class="sforma_input_ck" style="width:40px;">
-                             <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
+                             <span style="margin: -2px 6px 0px 15px; display: inline-block; font-weight:bold;">do</span>
                              <input type="text" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">      
-                             <span style="margin: 5px 6px 0px 5px; display: inline-block;">m²</span>
+                             <span style="margin: -2px 6px 0px 5px; display: inline-block; font-weight:bold;">m²</span>
                              </td>
                              </tr> 
                              <tr>
-                             <th>Cena od:</th>
+                             <th style="padding-top:5px;">Cena od:</th>
                              <td>
                              <input type="text" name="cenaOD" class="sforma_input_ck" style="width:40px;">
-                             <span style="margin: 5px 6px 0px 15px; display: inline-block;">do</span>
+                             <span style="margin: -2px 6px 0px 15px; display: inline-block; font-weight:bold;">do</span>
                              <input type="text" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
-                             <span style="margin: 5px 6px 0px 5px; display: inline-block;">€</span>
+                             <span style="margin: -2px 6px 0px 5px; display: inline-block; font-weight:bold;">€</span>
                              </td>
                          </tr>
                          <tr>

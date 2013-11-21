@@ -26,3 +26,9 @@ Sta je bilo sa ovim?//- U glavnom meniju sa linkovima do strana da se promeni fo
 //- alert za brisanje stana
 
 //- da se isključe iz svih upita na frontu izdati stanovi (izdavanje, prodaja, broj stanova, hot offer, poslednji stanovi)
+
+
+//- pretraga po ulici - RADI VEC U SPISKU STANOVA
+/?- multiselect na admin delu - DA SE ODRADE UPITI SAMO
+- datum dodavanja na detaljima stana
+- izdati stanovi vidljivi na frontu

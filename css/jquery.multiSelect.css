@@ -12,6 +12,7 @@ a.multiSelect {
 	display: -moz-inline-stack;
 	display: inline-block;
 	vertical-align: top;
+        z-index: 1000;
 }
 
 a.multiSelect:link, a.multiSelect:visited, a.multiSelect:hover, a.multiSelect:active {
@@ -30,10 +31,12 @@ a.multiSelect span
 
 a.multiSelect.hover {
 	background-image: url(../images/dropdown_hover.gif);
+        z-index: 1002
 }
 
 a.multiSelect.active {
 	background-image: url(../images/dropdown_active.gif);
+        z-index: 1001;
 }
 
 .multiSelectOptions {

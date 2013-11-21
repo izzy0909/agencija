@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Bootstrap Multiselect Tests</title>
+		<link rel="stylesheet" href="css/bootstrap-3.0.0.min.css" type="text/css">
+		<link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-3.0.0.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
+    </head>
+    <body>
+        <select class="multiselect" multiple="multiple">
+<option value="cheese">Cheese</option>
+<option value="tomatoes">Tomatoes</option>
+<option value="mozarella">Mozzarella</option>
+<option value="mushrooms">Mushrooms</option>
+<option value="pepperoni">Pepperoni</option>
+<option value="onions">Onions</option>
+</select>
+        <script type="text/javascript">
+$(document).ready(function() {
+$('.multiselect').multiselect();
+});
+</script>
+    </body>
+</html>

@@ -85,7 +85,7 @@ include_once 'data_base_access/slikeDA.php';
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
-    <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" />
+ <!--   <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" /> -->
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/script.js"></script>
 <!--[if lt IE 8]>
@@ -99,25 +99,35 @@ include_once 'data_base_access/slikeDA.php';
 	<script src="js/html5.js"></script>
 	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
-		<script src="js/jquery.bgiframe.min.js" type="text/javascript"></script>
-		<script src="js/jquery.multiSelect.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-             $("#tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#stan_tip").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#opstina").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#namestenost").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#grejanje").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-             $("#sprat").multiSelect({ oneOrMoreSelected: '*', noneSelected: 'Izaberite...' });
-        });
-    </script>
-<script type='text/javascript'>//<![CDATA[ 
-$(document).ready(function(){
-    $('#povOD').val('<?php echo $povrsina_od; ?>');
-    $('#povDO').val('<?php echo $povrsina_do; ?>');
-    $('#cenaOD').val('<?php echo $cena_od; ?>');
-    $('#cenaDO').val('<?php echo $cena_do; ?>');
-});//]]>  
+
+<!-- multiselect -->    
+<link rel="stylesheet" type="text/css" href="multi/jquery.multiselect.css" />
+<link rel="stylesheet" type="text/css" href="multi/prettify.css" />
+<link rel="stylesheet" type="text/css" href="multi/jquery-ui-1.9.2.custom.css" />
+<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="multi/prettify.js"></script>
+<script type="text/javascript" src="multi/jquery.multiselect.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("select").multiselect({
+   selectedList: 2, 
+   noneSelectedText: "Izaberite...",
+   selectedText: "selektovano: #",
+   height: 137,
+   checkAllText: "Odaberi sve",
+   uncheckAllText: "Isključi sve"
+});
+});
+
+$(function(){
+    $("#namestenost").multiselect({
+        height: 55
+    });
+});
+
+</script>
 
 </script>
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
@@ -186,9 +196,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="onama.php">O nama</a>
-                            <ul>
+                    <!--        <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
-                            </ul></li>
+                            </ul>   -->
+                    </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
@@ -234,9 +245,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            <table>
                                <tr>
                                    <th>Tip:</th>
-                                   <td>
-                                <select id="tip" name="tip" multiple="multiple" class="sforma_select2">
-                                    <option value="">Izaberite...</option>
+                                   <td style="padding-left:7px;">
+                                <select id="tip" name="tip[]" multiple="multiple" class="sforma_select2">
                                     <option value="Stan" <?php if(isset($_GET['tip']) && in_array('Stan', $_GET['tip'])) echo 'selected="selected"'; ?>>Stan</option>
                                     <option value="Kuća" <?php if(isset($_GET['tip']) && in_array('Kuća', $_GET['tip'])) echo 'selected="selected"'; ?>>Kuća</option>
                                     <option value="Poslovni prostor" <?php if(isset($_GET['tip']) && in_array('Poslovni prostor', $_GET['tip'])) echo 'selected="selected"'; ?>>Poslovni prostor</option>
@@ -248,10 +258,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                    </td>
                            </tr>
                             <tr>
-                                <th>Struktura</th>
-                                <td>
-                                    <select id="stan_tip" name="stan_tip" multiple="multiple" class="sforma_select2">
-                                        <option value="">Izaberite...</option>
+                                <th>Struktura:</th>
+                                <td style="padding-left:7px;">
+                                    <select id="stan_tip" name="stan_tip[]" multiple="multiple" class="sforma_select2">
                                         <option value="Garsonjera" <?php if(isset($_GET['stan_tip']) && in_array('Garsonjera', $_GET['stan_tip'])) echo 'selected="selected"'; ?>>Garsonjera</option>
                                         <option value="Jednosoban" <?php if(isset($_GET['stan_tip']) && in_array('Jednosoban', $_GET['stan_tip'])) echo 'selected="selected"'; ?>>Jednosoban</option>
                                         <option value="Jednoiposoban" <?php if(isset($_GET['stan_tip']) && in_array('Jednoiposoban', $_GET['stan_tip'])) echo 'selected="selected"'; ?>>Jednoiposoban</option>
@@ -266,10 +275,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 </td>
                             </tr>  
                            <tr>
-                               <th>Lokacija</th>
-                                <td>
-                                <select id="opstina" name="opstina" multiple="multiple" class="sforma_select2">
-                                    <option value="">Izaberite...</option>
+                               <th>Lokacija:</th>
+                                <td style="padding-left:7px;">
+                                <select id="opstina" name="opstina[]" multiple="multiple" class="sforma_select2">
                                     <?php
                                     foreach($row as $opstina){
                                     echo '<option value="'.$opstina['id'].'"'; if(isset($_GET['opstina']) && in_array($opstina['id'], $_GET['opstina'])){ echo 'selected="selected"';} echo '>'.$opstina['opstina'].'</option>';
@@ -284,8 +292,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                            <table>
                                 <tr>
                                 <th>Grejanje:</th>
-                                <td>        <select id="grejanje" name="grejanje" multiple="multiple" class="sforma_select2">
-                                                <option value="">Izaberite...</option>
+                                <td style="padding-left:7px;">        <select id="grejanje" name="grejanje[]" multiple="multiple" class="sforma_select2">
                                                 <option value="CG" <?php if(isset($_GET['grejanje']) && in_array('CG', $_GET['grejanje'])) echo 'selected="selected"'; ?>>CG</option>
                                                 <option value="EG" <?php if(isset($_GET['grejanje']) && in_array('EG', $_GET['grejanje'])) echo 'selected="selected"'; ?>>EG</option>
                                                 <option value="TA" <?php if(isset($_GET['grejanje']) && in_array('TA', $_GET['grejanje'])) echo 'selected="selected"'; ?>>TA</option>
@@ -295,9 +302,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 </tr>
                                 <tr>
                                 <th>Nameštenost:</th>
-                                <td>
-                                    <select id="namestenost" name="namestenost" multiple="multiple" class="sforma_select2">
-                                        <option value="">Izaberite...</option>
+                                <td style="padding-left:7px;">
+                                    <select id="namestenost" name="namestenost[]" multiple="multiple" class="sforma_select2">
                                         <option value="Namešten" <?php if(isset($_GET['namestenost']) && in_array('Namešten', $_GET['namestenost'])) echo 'selected="selected"'; ?>>Namešten</option>
                                         <option value="Nenamešten" <?php if(isset($_GET['namestenost']) && in_array('Nenamešten', $_GET['namestenost'])) echo 'selected="selected"'; ?>>Nenamešten</option>
                                     </select>
@@ -305,8 +311,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 </tr>
                                     <tr>
                                         <th>Sprat:</th>
-                                        <td><select id="sprat" name="sprat" multiple="multiple" class="sforma_select2">
-                                                <option value="">Izaberite...</option>
+                                        <td style="padding-left:7px;"><select id="sprat" name="sprat[]" multiple="multiple" class="sforma_select2">
                                                 <option value="Suteren" <?php if(isset($_GET['sprat']) && in_array('Suteren', $_GET['sprat'])) echo 'selected="selected"'; ?>>Suteren</option>
                                                 <option value="Prizemlje" <?php if(isset($_GET['sprat']) && in_array('Prizemlje', $_GET['sprat'])) echo 'selected="selected"'; ?>>Prizemlje</option>
                                                 <option value="Visoko prizemlje" <?php if(isset($_GET['sprat']) && in_array('Visoko prizemlje', $_GET['sprat'])) echo 'selected="selected"'; ?>>Visoko prizemlje</option>
@@ -337,21 +342,21 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                        <div id="pozicija3" style="float:left; margin-left:40px;">
                            <table>
                        <tr>
-                        <th>Površina od:</th>
+                        <th style="padding-top:5px;">Površina od:</th>
                         <td>
                         <input type="text" id="povOD" name="povOD" class="sforma_input_ck" style="width:40px;">
-                        <span style="margin: 5px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
+                        <span style="margin: -2px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
                         <input type="text" id="povDO" name="povDO" class="sforma_input_ck" style="width:40px; float: none;">
-                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">m²</span>
+                        <span style="margin: -2px 6px 0px 5px; font-weight:bold; display: inline-block;">m²</span>
                         </td>
                     </tr> 
                     <tr>
-                    <th>Cena od:</th>
+                    <th style="padding-top:5px;">Cena od:</th>
                     <td>
                         <input type="text" id="cenaOD" name="cenaOD" class="sforma_input_ck" style="width:40px;">
-                        <span style="margin: 5px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
+                        <span style="margin: -2px 0px 0px 10px; font-weight: bold; display: inline-block;">do</span>
                         <input type="text" id="cenaDO" name="cenaDO" class="sforma_input_ck" style="width:40px; float: none;">
-                        <span style="margin: 5px 6px 0px 5px; font-weight:bold; display: inline-block;">€</span>
+                        <span style="margin: -2px 6px 0px 5px; font-weight:bold; display: inline-block;">€</span>
                     </td>
                 </tr>
                            </table>

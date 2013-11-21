@@ -93,7 +93,7 @@ if($_SESSION['uloga'] != 1)
 <![endif]-->
 
 <!--  jquery core -->
-<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="../js/jquery-1.6.1.min.js" type="text/javascript"></script>
 
 <!--  checkbox styling script -->
 <script src="js/jquery/ui.core.js" type="text/javascript"></script>
@@ -279,6 +279,37 @@ function brisanje(id) {
 }
 </script>
 
+<!-- multiselect -->    
+    <!--<script src="../js/jquery-1.7.2.min.js"></script>-->
+<link rel="stylesheet" type="text/css" href="../multi/jquery.multiselect.css" />
+<link rel="stylesheet" type="text/css" href="../multi/prettify.css" />
+<link rel="stylesheet" type="text/css" href="../multi/jquery-ui-1.9.2.custom.css" />
+<!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../multi/prettify.js"></script>
+<script type="text/javascript" src="../multi/jquery.multiselect.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("select").multiselect({
+   selectedList: 1, 
+   noneSelectedText: "Izaberite...",
+   selectedText: "selektovano: #",
+   height: 146,
+   checkAllText: "Traži sve",
+   uncheckAllText: "Isključi",
+   minWidth: 180
+});
+});
+
+$(function(){
+    $("#namestenost, #izdat").multiselect({
+        height: 48
+    });
+});
+
+</script>
+
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -457,7 +488,7 @@ $(document).pngFix( );
             <div id="pozicija1">
             <table>
                 <tr>
-                    <th>ID</th>
+                    <th>ID:</th>
                     <td><input class="admin-input-select" type="text" name="id" /></td>
                 </tr>
                 <tr>
@@ -473,10 +504,9 @@ $(document).pngFix( );
             <div id="pozicija2">
                 <table>
                     <tr>
-                        <th>Tip</th>
-                        <td>
-                                <select class="admin-input-select" id="tip" name="tip">
-                                    <option value="">Izaberi...</option>
+                        <th>Tip:</th>
+                        <td style="padding: 5px 0 5px 5px;">
+                                <select id="tip" name="tip[]" class="admin-input-select"  multiple="multiple">
                                     <option value="Stan">Stan</option>
                                     <option value="Kuća">Kuća</option>
                                     <option value="Poslovni prostor">Poslovni prostor</option>
@@ -489,9 +519,8 @@ $(document).pngFix( );
                     </tr>
                     <tr>
                         <th>Struktura:</th>
-                        <td>
-                                    <select class="admin-input-select"  name="stan_tip">
-                                        <option value="">Izaberi...</option>
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                                    <select class="admin-input-select"  name="stan_tip[]" id="stan_tip">
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
                                         <option value="Jednoiposoban">Jednoiposoban</option>
@@ -507,9 +536,8 @@ $(document).pngFix( );
                     </tr>
                     <tr>
                         <th>Spratnost:</th>
-                        <td>
-			<select class="admin-input-select" name="sprat">
-                                <option value="">Izaberi...</option>
+                        <td style="padding: 5px 0 5px 5px;">
+			<select class="admin-input-select" name="sprat[]" id="sprat">
                                 <option value="Suteren">Suteren</option>
                                 <option value="Prizemlje">Prizemlje</option>
                                 <option value="Visoko prizemlje">Visoko prizemlje</option>
@@ -542,9 +570,8 @@ $(document).pngFix( );
                 <table>
                     <tr>
                         <th>Nameštenost:</th>
-                        <td>
-                                    <select class="admin-input-select"  name="namestenost">
-                                        <option value="">Izaberi...</option>
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                                    <select class="admin-input-select"  name="namestenost[]" id="namestenost" multiple="multiple">
                                         <option value="Namešten">Namešten</option>
                                         <option value="Nenamešten">Nenamešten</option>
                                     </select>
@@ -552,9 +579,8 @@ $(document).pngFix( );
                     </tr>
                     <tr>
                         <th>Opština:</th>
-                        <td>
-                            <select class="admin-input-select"  name="opstina">
-                            <option value="">Izaberi...</option>
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                            <select class="admin-input-select"  name="opstina[]" id="opstina" multiple="multiple">
                             <?php
                                 foreach($row as $opstina){
                                 echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
@@ -565,8 +591,8 @@ $(document).pngFix( );
                     </tr>
                     <tr>
                         <th>Podlokacija:</th>
-                        <td>
-                            <select class="admin-input-select"  name="podlokacija">
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                            <select class="admin-input-select"  name="podlokacija[]" id="podlokacija" multiple="multiple">
                             <option value="">Izaberi...</option>
                             <?php
                                 foreach($red as $podlokacija){
@@ -582,8 +608,8 @@ $(document).pngFix( );
                 <table>
                     <tr>
                         <th>Grejanje:</th>
-                        <td>
-                            <select name="grejanje" class="admin-input-select">
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                            <select name="grejanje[]" id="grejanje" multiple="multiple" class="admin-input-select">
                                 <option value="">Izaberi...</option>
                                 <option value="CG">CG</option>
                                 <option value="EG">EG</option>
@@ -595,8 +621,8 @@ $(document).pngFix( );
                     </tr>
                     <tr>
                         <th>Dostupnost:</th>
-                        <td>
-                            <select name="izdat" class="admin-input-select">
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                            <select name="izdat[]" id="izdat" multiple="multiple" class="admin-input-select">
                                 <option value="0">Nije izdat</option>
                                 <option value="1">Izdat</option>
                             </select>
@@ -604,7 +630,7 @@ $(document).pngFix( );
                     </tr>
                        <tr>
                         <th>Kvadratura:</th>
-                        <td style="width:100px;">
+                        <td>
                         <input type="text" name="povOD" class="admin-input-select" style="width:54px;">
                         <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
                         <input type="text" name="povDO" class="admin-input-select" style="width:54px;">

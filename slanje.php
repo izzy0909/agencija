@@ -186,9 +186,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a class="active" href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
                     <li><a href="onama.php">O nama</a>
-                            <ul>
+                     <!--       <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
-                            </ul></li>
+                            </ul>  -->
+                    </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
                     
@@ -435,7 +436,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <div id="pos2"><table>
                         <tr><th>Dodatne informacije (napomene)</th></tr>
                     <tr><td><textarea style="resize: none;" name="opis"></textarea></td></tr>
-                    <tr><td style="padding-left: 150px;"><label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa <a href="uslovi_poslovanja.php" target="_blank">uslovima</a> korišćenja sajta.</label></td></tr>
+                    <tr><td style="padding-left: 150px;"><label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa uslovima korišćenja sajta.</label></td></tr>
 
                     </table>
                     </div>
