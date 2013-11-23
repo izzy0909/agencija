@@ -29,6 +29,6 @@ Sta je bilo sa ovim?//- U glavnom meniju sa linkovima do strana da se promeni fo
 
 
 //- pretraga po ulici - RADI VEC U SPISKU STANOVA
-/?- multiselect na admin delu - DA SE ODRADE UPITI SAMO
-- datum dodavanja na detaljima stana
-- izdati stanovi vidljivi na frontu
+//- multiselect na admin delu - DA SE ODRADE UPITI SAMO
+//- datum dodavanja na detaljima stana - IMA DATUM U DETALJIMA STANA
+//- izdati stanovi vidljivi na frontu

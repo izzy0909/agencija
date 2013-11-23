@@ -520,7 +520,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Struktura:</th>
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
-                                    <select class="admin-input-select"  name="stan_tip[]" id="stan_tip">
+                                    <select class="admin-input-select" multiple="multiple" name="stan_tip[]" id="stan_tip">
                                         <option value="Garsonjera">Garsonjera</option>
                                         <option value="Jednosoban">Jednosoban</option>
                                         <option value="Jednoiposoban">Jednoiposoban</option>
@@ -537,7 +537,7 @@ $(document).pngFix( );
                     <tr>
                         <th>Spratnost:</th>
                         <td style="padding: 5px 0 5px 5px;">
-			<select class="admin-input-select" name="sprat[]" id="sprat">
+			<select class="admin-input-select" multiple="multiple" name="sprat[]" id="sprat">
                                 <option value="Suteren">Suteren</option>
                                 <option value="Prizemlje">Prizemlje</option>
                                 <option value="Visoko prizemlje">Visoko prizemlje</option>

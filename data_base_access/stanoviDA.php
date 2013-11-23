@@ -271,10 +271,26 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $sql .= "AND s.id LIKE :id ";
     }
     if(!empty ($tip)){
-    $sql .= "AND tip = :tip ";
+            $sql .= "AND ( tip = '$tip[0]' ";
+            $i=0;
+            foreach ($tip as $tipovi) {
+                if($i > 0) {
+                    $sql .= "OR tip = '$tipovi' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($namestenost)){
-    $sql .= "AND namestenost = :namestenost ";
+            $sql .= "AND ( namestenost = '$namestenost[0]' ";
+            $i=0;
+            foreach ($namestenost as $namest) {
+                if($i > 0) {
+                    $sql .= "OR namestenost = '$namest' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($povrsina_od)){
     $sql .= "AND kvadratura >= :povrsina_od ";
@@ -289,13 +305,37 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $sql .= "AND ulica LIKE :ulica ";
     }
     if(!empty ($stan_tip)){
-    $sql .= "AND stan_tip = :stan_tip ";
+            $sql .= "AND ( stan_tip = '$stan_tip[0]' ";
+            $i=0;
+            foreach ($stan_tip as $s_tipovi) {
+                if($i > 0) {
+                    $sql .= "OR stan_tip = '$s_tipovi' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($opstina)){
-    $sql .= "AND s.lokacija_id = :lokacija_id ";
+            $sql .= "AND ( s.lokacija_id = '$opstina[0]' ";
+            $i=0;
+            foreach ($opstina as $lokacije) {
+                if($i > 0) {
+                    $sql .= "OR s.lokacija_id = '$lokacije' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($podlokacija)){
-    $sql .= "AND s.podlokacija_id = :podlokacija_id ";
+            $sql .= "AND ( s.podlokacija_id = '$podlokacija[0]' ";
+            $i=0;
+            foreach ($podlokacija as $podlok) {
+                if($i > 0) {
+                    $sql .= "OR s.podlokacija_id = '$podlok' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($cena_od)){
     $sql .= "AND cena >= :cena_od ";
@@ -304,15 +344,37 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $sql .= "AND cena <= :cena_do ";
     }
     if(!empty ($sprat)){
-    $sql .= "AND sprat = :sprat ";
+            $sql .= "AND ( sprat = '$sprat[0]' ";
+            $i=0;
+            foreach ($sprat as $spratovi) {
+                if($i > 0) {
+                    $sql .= "OR sprat = '$spratovi' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($grejanje)){
-    $sql .= "AND grejanje = :grejanje ";
+            $sql .= "AND ( grejanje = '$grejanje[0]' ";
+            $i=0;
+            foreach ($grejanje as $grej) {
+                if($i > 0) {
+                    $sql .= "OR grejanje = '$grej' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
-    if($izdat == 1){
-    $sql .="AND izdat = 1 ";
-    } else {
-      $sql .="AND izdat = 0 ";  
+    if(!empty ($izdat)){
+            $sql .= "AND ( izdat = '$izdat[0]' ";
+            $i=0;
+            foreach ($izdat as $izdavanje) {
+                if($i > 0) {
+                    $sql .= "OR izdat = '$izdavanje' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if($kablovska != 0){
     $sql .= "AND kablovska = 1 ";
@@ -417,12 +479,12 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $id = "%" . $id . "%";
     $query->bindParam(':id', $id);
     }
-    if(!empty ($tip)){
-    $query->bindParam(':tip', $tip);
-    }
-    if(!empty ($namestenost)){
-    $query->bindParam(':namestenost', $namestenost);
-    }
+//    if(!empty ($tip)){
+//    $query->bindParam(':tip', $tip);
+//    }
+//    if(!empty ($namestenost)){
+//    $query->bindParam(':namestenost', $namestenost);
+//    }
     if(!empty ($povrsina_od)){
     $query->bindValue(':povrsina_od', $povrsina_od);
     }
@@ -437,27 +499,27 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     $ulica = "%" . $ulica . "%";
     $query->bindParam(':ulica', $ulica);
     }
-    if(!empty ($stan_tip)){
-    $query->bindParam(':stan_tip', $stan_tip);
-    }
-    if(!empty ($opstina)){
-    $query->bindParam(':lokacija_id', $opstina);
-    }
-    if(!empty ($podlokacija)){
-    $query->bindParam(':podlokacija_id', $podlokacija);
-    }
+//    if(!empty ($stan_tip)){
+//    $query->bindParam(':stan_tip', $stan_tip);
+//    }
+//    if(!empty ($opstina)){
+//    $query->bindParam(':lokacija_id', $opstina);
+//    }
+//    if(!empty ($podlokacija)){
+//    $query->bindParam(':podlokacija_id', $podlokacija);
+//    }
     if(!empty ($cena_od)){
     $query->bindValue(':cena_od', $cena_od);
     }
     if(!empty ($cena_do)){
     $query->bindValue(':cena_do', $cena_do);
     }
-    if(!empty ($sprat)){
-    $query->bindValue(':sprat', $sprat);
-    }
-    if(!empty ($grejanje)){
-    $query->bindValue(':grejanje', $grejanje);
-    }
+//    if(!empty ($sprat)){
+//    $query->bindValue(':sprat', $sprat);
+//    }
+//    if(!empty ($grejanje)){
+//    $query->bindValue(':grejanje', $grejanje);
+//    }
     
     $query->execute();
     return $query->fetchAll(PDO::FETCH_BOTH);
@@ -470,7 +532,7 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 AND izdat = 0 ";
+            WHERE vidljiv = 1 ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -596,7 +658,7 @@ function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsi
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 AND izdat = 0 ";
+            WHERE vidljiv = 1 AND ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -702,7 +764,7 @@ function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 AND izdat = 0 ";
+            WHERE vidljiv = 1 AND ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -809,7 +871,7 @@ function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povr
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 AND izdat = 0 ";
+            WHERE vidljiv = 1 AND ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
