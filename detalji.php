@@ -34,7 +34,7 @@ include_once 'data_base_access/slikeDA.php';
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
     <link href="css/lightbox.css" rel="stylesheet" />
-    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/lightbox-2.6.min.js"></script>
     <script src="js/script.js"></script>
             <style>

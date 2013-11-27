@@ -26,9 +26,9 @@ include_once 'data_base_access/stanoviDA.php';
     <link rel="icon" href="images/kuca.png" type="image/x-icon">
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>  
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>-->  
 <script type="text/javascript"> 
 $(document).ready(function() { 
 //elements

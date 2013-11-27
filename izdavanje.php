@@ -85,7 +85,7 @@ include_once 'data_base_access/slikeDA.php';
 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css">
 <!--    <link href="css/jquery.multiSelect.css" rel="stylesheet" type="text/css" /> -->
-    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/script.js"></script>
 <!--[if lt IE 8]>
    <div style=' clear: both; text-align:center; position: relative;'>
