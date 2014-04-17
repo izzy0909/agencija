@@ -570,7 +570,7 @@ $(document).pngFix( );
 			<td></td>
 		</tr>
 		<tr>
-		<th valign="top">Lokacija:</th>
+		<th valign="top">Opština:</th>
 		<td>
                   
 		<select  class="styledselect_form_1" name="opstina">
@@ -586,6 +586,7 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
+                <tr>
 		<th valign="top">Podlokacija:</th>
 		<td>
                   
@@ -602,6 +603,11 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
+	<tr>
+		<th valign="top">Lokacija:</th>
+		<td><textarea rows="" cols="" class="form-textarea" name="opis_lokacije"></textarea></td>
+		<td></td>
+	</tr>
                 <tr>
                 <th>Grejanje:</th>
                 <td>        <select name="grejanje" class="styledselect_form_1">
@@ -942,6 +948,7 @@ if (isset ($_POST['dodaj_stan'])){
     $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
     $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
     $podlokacija = isset($_POST['podlokacija']) ? $_POST['podlokacija'] : null;
+    $opis_lokacije = isset($_POST['opis_lokacije']) ? $_POST['opis_lokacije'] : null;
     $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
     $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
     
@@ -985,7 +992,7 @@ if (isset ($_POST['dodaj_stan'])){
     $horizontala = isset($_POST['horizontala']) ? '1' : '0';
     $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
     
-    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username, $dodatna_informacija);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username, $dodatna_informacija);
     
     dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
     

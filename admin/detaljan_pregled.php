@@ -465,7 +465,7 @@ $(document).pngFix( );
 			<td></td>
 		</tr>
 		<tr>
-		<th valign="top">Lokacija:</th>
+		<th valign="top">Opstina:</th>
 		<td>
           <?php echo $stan['opstina'];?>     
 		

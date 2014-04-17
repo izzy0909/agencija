@@ -522,6 +522,7 @@ $(document).pngFix( );
                             </select></td>
 			<td></td>
 		</tr>   
+                    <tr>
 			<th valign="top">Tip:</th>
 			<td><select id="tip" name="tip" class="styledselect_form_1">
                                 <option value="Stan" <?php if($stan['tip']=='Stan'){echo 'selected';} ?>>Stan</option>
@@ -586,7 +587,7 @@ $(document).pngFix( );
 			<td></td>
 		</tr>
 		<tr>
-		<th valign="top">Lokacija:</th>
+		<th valign="top">Opština:</th>
 		<td>
                   
 		<select id="opstina" class="styledselect_form_1" name="opstina">
@@ -617,8 +618,13 @@ $(document).pngFix( );
 			
 		</select>
 		</td>
-		<td></td>
+                <tr></tr>
 		</tr>
+            <tr>
+                <th valign="top">Lokacija:</th>
+                <td><textarea rows="" cols="" class="form-textarea" name="opis_lokacije"><?php echo $stan['opis_lokacije'];?></textarea></td>
+                <td></td>
+            </tr>
                 <tr>
 			<th valign="top">Grejanje:</th>
                 <td>        <select id="grejanje" name="grejanje" class="styledselect_form_1">

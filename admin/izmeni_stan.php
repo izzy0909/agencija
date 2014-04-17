@@ -18,6 +18,7 @@ include_once 'upload.php';
     $sprat = isset($_POST['sprat']) ? $_POST['sprat'] : null;
     $opstina = isset($_POST['opstina']) ? $_POST['opstina'] : null;
     $podlokacija = isset($_POST['podlokacija']) ? $_POST['podlokacija'] : null;
+    $opis_lokacije = isset($_POST['opis_lokacije']) ? $_POST['opis_lokacije'] : null;
     $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
     $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
     $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
@@ -60,7 +61,7 @@ include_once 'upload.php';
     $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
     
 	//echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
-    izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat);
+    izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat);
     izmeniDodatneTagove($id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
     
 	
