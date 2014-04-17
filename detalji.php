@@ -205,10 +205,6 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                                 <th style="width:125px;">Opština:</th>
                                 <td style="width:125px;"><?php echo $stan['opstina']; ?></td>
                             </tr>
-                            <tr>
-                                <th>Ulica:</th>
-                                <td><?php echo $stan['ulica']; ?></td>
-                            </tr>
                             <?php if($stan['opis_lokacije']!= null){ ?>
                             <tr>
                                 <th>Lokacija:</th>
