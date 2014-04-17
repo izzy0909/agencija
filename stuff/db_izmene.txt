@@ -298,3 +298,10 @@ ALTER TABLE stanovi ADD dodatna_informacija VARCHAR(5000);
 ##### U. Strike
 ######################
 ALTER TABLE stanovi ADD izdat boolean not null default 0;
+
+######################
+##### v. 1.0.20
+##### U. Strike
+#####
+######################
+ALTER TABLE stanovi ADD opis_lokacije varchar(100) after podlokacija_id;
