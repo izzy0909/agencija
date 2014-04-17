@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  	<title>Jevtić nekretnine - Izdavanje i prodaja stanova, kuća i drugih nekretnina u Beogradu</title>
+  	<title>Jevtić nekretnine - Poslovni prostor Beograd, izdavanje stanova Beograd, izdavanje poslovnog prostora u Beogradu, izdavanje kancelarija</title>
   	<meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="description" content="Izdavanje i prodaja svih vrsta nekretnina, stanova, kuća, poslovnih prostora, magacina, lokala i garaža u Beogradu">
@@ -100,7 +100,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             </div>
             <div class="head-box2">
                 <div class="clear"></div>
-                <a href="http://sr-rs.facebook.com/jevtic.nekretnine" target="_blank" class="link1"><img src="images/soc-fb.png" width="39" alt="Dodajte nas na Fejsbuku!"></a>
+                <a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="link1"><img src="images/soc-fb.png" width="39" alt="Dodajte nas na Fejsbuku!"></a>
                 <a href="http://twitter.com/Jevticnekretine" target="_blank" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
                 <a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
@@ -351,7 +351,12 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                        </div>
                             </form>
                         </div>
+                        <div class="clear"></div>
+                    <div id="widget" style="margin-left:auto; margin-right: auto; padding-left:30px; margin-top:40px; text-align: center;">
+                    <div style="text-align:left; font-size: 12px; font-family: Arial, sans-serif !important; color:#333333 !important; line-height: 16px; background:#fff; width:228px; padding: 8px 10px; border:solid 1px #dbdbd9;"><a href="http://www.nadjidom.com/"><img src="http://www.nadjidom.com/images/template_2/nadjidom_logo_w70.png"  title="Nekretnine Srbija - NadjiDom.com" style="float:left; margin: 0 12px 0 0px; width: 70px;" /></a><span>Oglašavamo se na</span> <br/><span style="font-weight: bold;">NadjiDom <a href="http://www.nadjidom.com/" style="color:#A4B817; font-weight: bold;">nekretnine</a></span></div>
+                    </div>
                     </article>
+                    
                 </div>
             </div>
     </section>

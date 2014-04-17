@@ -93,10 +93,10 @@ if($_SESSION['uloga'] != 1)
 <![endif]-->
 
 <!--  jquery core -->
-<script src="../js/jquery-1.6.1.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.6.1.min.js" type="text/javascript"></script>
 
 <!--  checkbox styling script -->
-<script src="js/jquery/ui.core.js" type="text/javascript"></script>
+<!--<script src="js/jquery/ui.core.js" type="text/javascript"></script>
 <script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
 <script src="js/jquery/jquery.bind.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -108,7 +108,7 @@ $(function(){
 	return false;
 	});
 });
-</script>
+</script>-->
 
 <![if !IE 7]>
 
@@ -184,8 +184,8 @@ $(function() {
                     speed: 1000,  // speed you want the toggle to happen	
                     easing: '',  // the animation effect you want. Remove this line if you dont want an effect and if you haven't included jQuery UI
                     changeText: 1, // if you dont want the button text to change, set this to 0
-                    showText: 'Napredna pretraga',// the button text to show when a div is closed
-                    hideText: 'Sakrij naprednu pretragu' // the button text to show when a div is open
+                    showText: 'NAPREDNA PRETRAGA',// the button text to show when a div is closed
+                    hideText: 'SAKRIJ NAPREDNU PRETRAGU' // the button text to show when a div is open
 
             }); 
 
@@ -281,14 +281,14 @@ function brisanje(id) {
 
 <!-- multiselect -->    
     <!--<script src="../js/jquery-1.7.2.min.js"></script>-->
-<link rel="stylesheet" type="text/css" href="../multi/jquery.multiselect.css" />
-<link rel="stylesheet" type="text/css" href="../multi/prettify.css" />
-<link rel="stylesheet" type="text/css" href="../multi/jquery-ui-1.9.2.custom.css" />
+<link rel="stylesheet" type="text/css" href="multi/jquery.multiselect.css" />
+<link rel="stylesheet" type="text/css" href="multi/prettify.css" />
+<link rel="stylesheet" type="text/css" href="multi/jquery-ui-1.9.2.custom.css" />
 <!--<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css" />-->
 <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>-->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="../multi/prettify.js"></script>
-<script type="text/javascript" src="../multi/jquery.multiselect.js"></script>
+<script type="text/javascript" src="multi/prettify.js"></script>
+<script type="text/javascript" src="multi/jquery.multiselect.js"></script>
 <script type="text/javascript">
 $(function(){
 	$("select").multiselect({
@@ -726,10 +726,11 @@ $(document).pngFix( );
 					<th class="table-header-repeat line-left"><a href="">Tip</a></th>                                        
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Dodatno</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Lokacija</a></th>
 					<th class="table-header-repeat line-left"><a href="">Ulica</a></th>
 					<th class="table-header-repeat line-left"><a href="">Telefon</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
-                                        <th class="table-header-repeat line-left"><a href="">Nameštenost</a></th>
+                                        <th class="table-header-repeat line-left"><a href="">Namešt.</a></th>
 					<th class="table-header-repeat line-left"><a href="">Spratnost</a></th>
 					<th class="table-header-repeat line-left"><a href="">Cena</a></th>                                        
 		<!--			<th class="table-header-repeat line-left"><a href="">Vidljiv</a></th>   -->
@@ -743,12 +744,13 @@ $(document).pngFix( );
                           
                         
 				?>
-				<tr style="<?php if($stan['izdat']) echo 'background-color:#f4dbdb' ?>" >
+				<tr style="<?php if($stan['izdat']) { echo 'background-color:#f4dbdb';} ?>" >
 					<td><?php echo '<strong>' . $stan[0] . '</strong>';?></td>
 					<td><?php echo $stan['kategorija'];?></td>
                                         <td><?php echo $stan['tip'];?></td>
 					<td style="word-wrap: break-word;"><?php echo $stan['dodatna_informacija'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
+                                        <td><?php echo $stan['opis_lokacije'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
 					<td><?php echo $stan[10];?></td>
 					<td><?php echo $stan['kvadratura'] . ' m&#178';?></td>
@@ -764,7 +766,7 @@ $(document).pngFix( );
                                         <a href="promeni_hot.php?id=<?php echo $stan[0] . '&hot=' . $stan['hot_offer'];?>" title="Postavi kao najbolje u ponudi" class="<?php if($stan['hot_offer']) echo 'icon-6a'; else echo 'icon-6';?> info-tooltip"></a>
                                         <a href="promeni_izdat.php?id=<?php echo $stan[0] . '&izdat=' . $stan['izdat'];?>" title="Promeni dostupnost stana" class="<?php if($stan['izdat']) echo 'icon-7a'; else echo 'icon-7';?> info-tooltip"></a>
 					<?php
-                                        if($username == 'ivana'){
+                                        if($username == 'Ivana'){
                                         ?>
                                         <a href="#" onclick="brisanje(<?php echo $stan[0]; ?>);" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<?php

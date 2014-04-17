@@ -358,7 +358,7 @@ $(document).pngFix( );
 
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Izmeni Podatke</h1>
+		<h1>Detaljan pregled</h1>
 	</div>
 	<!-- end page-heading -->
         
@@ -478,6 +478,11 @@ $(document).pngFix( );
           <?php echo $stan['podlokacija'];?>     
 		
 		</td>
+		<td></td>
+		</tr>
+		<tr>
+		<th valign="top">Lokacija:</th>
+		<td><?php echo $stan['opis_lokacije'];?></td>
 		<td></td>
 		</tr>
 		<tr>

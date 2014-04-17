@@ -36,7 +36,7 @@
                 <article class="grid_2">
                 	<h5>Nađite nas</h5>
                     <ul class="list9">
-                        <li><a href="http://sr-rs.facebook.com/jevtic.nekretnine" target="_blank"><img src="images/soc-fb.png" width="22" alt="Dodajte nas na Fejsbuku!"> Facebook</a></li>
+                        <li><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank"><img src="images/soc-fb.png" width="22" alt="Dodajte nas na Fejsbuku!"> Facebook</a></li>
                         <li><a href="http://twitter.com/Jevticnekretine" target="_blank" ><img src="images/soc-tw.png" width="22" alt="Pratite nas na Tviteru!"> Twitter</a></li>
                         <li><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" ><img src="images/soc-li.png" width="22" alt="Nađite nas na Linkedin-u!"> Linkedin</a></li>
                     </ul>

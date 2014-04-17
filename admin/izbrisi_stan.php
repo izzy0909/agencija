@@ -9,7 +9,7 @@ if($_SESSION['uloga'] != 1)
 {
     header('Location: login.php');
 }
-elseif($username == 'ivana'){
+elseif($username == 'Ivana'){
 	if (isset ($_GET['id'])){
 	
 	$id = $_GET['id'];
