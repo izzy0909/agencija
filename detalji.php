@@ -202,13 +202,19 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         </div>
                         <table style="text-align: left; width:100%;">
                             <tr>
-                                <th style="width:125px;">Lokacija:</th>
+                                <th style="width:125px;">Opština:</th>
                                 <td style="width:125px;"><?php echo $stan['opstina']; ?></td>
                             </tr>
                             <tr>
                                 <th>Ulica:</th>
                                 <td><?php echo $stan['ulica']; ?></td>
                             </tr>
+                            <?php if($stan['opis_lokacije']!= null){ ?>
+                            <tr>
+                                <th>Lokacija:</th>
+                                <td><?php echo $stan['opis_lokacije']; ?></td>
+                            </tr>
+                            <?php } ?>
                             <tr>
                                 <th>Cena:</th>
                                 <td><?php echo $stan['cena'] . ' €'; ?></td>
