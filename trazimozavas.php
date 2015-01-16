@@ -235,7 +235,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <th>Lokacija:</th>
                     <td>
                     <select name="opstina" class="sforma_select">
-                        <option value="">Izaberite...</option>
+                        <option value="18">Izaberite...</option>
                                      <?php
 
                         foreach($row as $opstina){
@@ -316,7 +316,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </table>
                     </div>
                     <div id="tos" style="clear:both; padding-left:330px;">
-                        <label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa uslovima korišćenja sajta.</label>
+                        <label><input type="checkbox" name="tos" onclick="checkTerms();">Slažem se sa <a href="uslovi_koriscenja.php" target="_blank" style="vertical-align: middle; padding-bottom: 2px;">uslovima korišćenja sajta</a>.</label>
                     </div>
 
                                 <div class="dugmad">

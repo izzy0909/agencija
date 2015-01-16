@@ -752,7 +752,7 @@ $(document).pngFix( );
 					<td><?php echo $stan['opstina'];?></td>
                                         <td><?php echo $stan['opis_lokacije'];?></td>
 					<td><?php echo $stan['ulica'];?></td>
-					<td><?php echo $stan[10];?></td>
+					<td><?php echo $stan[11];?></td>
 					<td><?php echo $stan['kvadratura'] . ' m&#178';?></td>
 					<td><?php echo $stan['namestenost'];?></td>
 					<td><?php echo $stan['sprat'];?></td>

@@ -20,7 +20,7 @@
 <![endif]-->
 <!--[if lt IE 9]>
 	<script src="js/html5.js"></script>
-	<link rel="stylesheet" href="css/ie.css"> 
+	<link rel="stylesheet" href="css/ie.css">
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
 
@@ -41,7 +41,7 @@ document.onmousedown=disableselect
 document.onclick=reEnable
 }
 </script>
-    
+
 <script>
  function checkTerms() {
      if(document.trazimo.tos.checked)
@@ -82,10 +82,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             </div>
             <div id="sat">
 <!-- Begin of localTimes.info script --> <div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
-</div> <!-- End of localTimes.info script --> 
+</div> <!-- End of localTimes.info script -->
             </div>
             <div class="clear"></div>
-            </div>            
+            </div>
         </div>
         <div class="clear"></div>
         <div class="head-box3">
@@ -126,14 +126,14 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
-                    
+
 		<script>$("#sndmenu a")
                         .each(function(i) {
-                          if (i != 0) { 
+                          if (i != 0) {
                             $("#beep-two")
                               .clone()
                               .attr("id", "beep-two" + i)
-                              .appendTo($(this).parent()); 
+                              .appendTo($(this).parent());
                           }
                           $(this).data("beeper", i);
                         })
@@ -141,33 +141,23 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                           $("#beep-two" + $(this).data("beeper"))[0].play();
                         });
                       $("#beep-two").attr("id", "beep-two0");
-                  </script>                       
-                    
+                  </script>
+
                 <div class="clear"></div>
-            </nav>            
+            </nav>
             </div>
-        </div>        
+        </div>
         </div>
     </header>
-    
+
 	<!--==============================content================================-->
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_12">
                    <div style='position:absolute; width:100%; height:2625px; z-index: 10; background-image:url("images/nema_kopiranja.png");'>
-                    </div> 
+                    </div>
                     <div id='uslovi' ondragstart='return false' onselectstart='return false'>
-                        <div id='infouslovi' style='float:left;'>
-                            <p style='font-weight:bold; font-size: 13px;'>JEVTIĆ I.M.J NEKRETNINE d.o.o<br />
-                                Bokeljska 7, Beograd<br />
-                                011/405-43-25, 060/4480659<br />
-                                pib: 107897565,  matični broj: 20892773<br />
-                                tekući račun: 160-383166-28, Banca Intesa a.d<br />
-                                web: <a href='http://www.jevticnekretnine.rs' class='link2'>www.jevticnekretnine.rs</a></p>
-                        </div>
-                        <div class='clear'></div>
-
 <span class='naslov'>PRAVILA I USLOVI KORIŠĆENJA SAJTA</span>
 
 
@@ -207,11 +197,6 @@ Rokovi za dostavu Potvrde o sklopljenom ugovoru o osiguranju posredstvom kurirsk
 Ugovarači su dužni  da pisanim putem obaveste drugu stranu o jednostranom raskidu, odnosno elektronskim putem, ukoliko je ugovor o posredovanju zaključen u elektronskoj formi, a sve u skladu sa Zakonom  o elektronskom dokumentu.
 </p>
 
- <span style='float:left;'>U BEOGRADU 23.01.2013. godine</span>
-                   
-                                                               <span style='font-weight:normal; clear:both; float:right;'>PRIVREDNO DRUŠTVO</span>
-                                                               <span style='clear:both; float:right;'>JEVTIĆ I.M.J  NEKRETNINE DOO BEOGRAD</span>
-                                                                                                                                                          
 
                     </div>
                 </article>
@@ -233,6 +218,6 @@ Ugovarači su dužni  da pisanim putem obaveste drugu stranu o jednostranom rask
 </script>
 	<!--==============================footer=================================-->
 <?php include 'includes/footer.php'; ?>
-        
+
 </body>
 </html>

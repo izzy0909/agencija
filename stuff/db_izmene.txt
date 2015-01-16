@@ -305,3 +305,10 @@ ALTER TABLE stanovi ADD izdat boolean not null default 0;
 #####
 ######################
 ALTER TABLE stanovi ADD opis_lokacije varchar(100) after podlokacija_id;
+
+######################
+##### v. 1.0.21
+##### U. Strike
+#####
+######################
+INSERT INTO lokacija VALUES(18, "Nedefinisano");

@@ -352,9 +352,6 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             </form>
                         </div>
                         <div class="clear"></div>
-                    <div id="widget" style="margin-left:auto; margin-right: auto; padding-left:30px; margin-top:40px; text-align: center;">
-                    <div style="text-align:left; font-size: 12px; font-family: Arial, sans-serif !important; color:#333333 !important; line-height: 16px; background:#fff; width:228px; padding: 8px 10px; border:solid 1px #dbdbd9;"><a href="http://www.nadjidom.com/"><img src="http://www.nadjidom.com/images/template_2/nadjidom_logo_w70.png"  title="Nekretnine Srbija - NadjiDom.com" style="float:left; margin: 0 12px 0 0px; width: 70px;" /></a><span>Oglašavamo se na</span> <br/><span style="font-weight: bold;">NadjiDom <a href="http://www.nadjidom.com/" style="color:#A4B817; font-weight: bold;">nekretnine</a></span></div>
-                    </div>
                     </article>
                     
                 </div>
