@@ -104,12 +104,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                 <a href="http://twitter.com/Jevticnekretine" target="_blank" class="link1"><img src="images/soc-tw.png" width="39" alt="Pratite nas na Tviteru!"></a>
                 <a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="link1"><img src="images/soc-li.png" width="39" alt="Nađite nas na Linkedin-u!"></a>
             </div>
+            <div class="clear"></div>
+            </div>
            <div id="sat">
 <!-- Begin of localTimes.info script --> <div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
 </div> <!-- End of localTimes.info script --> 
-            </div>
-        <span style="clear:both; float:left; margin-left:25px">Broj posrednika u registru: 150</span>
-            <div class="clear"></div>
             </div>
         </div>
         <div class="clear"></div>
@@ -142,9 +141,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>
                             <li><a href="prodaja.php?tip[]=Garaža">Garaže</a></li>
                             </ul></li>
-     <!--                <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
+                    <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
-     -->                <li><a href="onama.php">O nama</a>
+                    <li><a href="onama.php">O nama</a>
                        <!--     <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
                             </ul> -->
@@ -176,10 +175,10 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             <div class="slider">
             <div class="banner-bg"></div>
                 <ul class="items">
-                    <!--<li><img src="images/slide-1.jpg" /><div class="banner"><span>Pozovite nas zato što mi zaista razumemo kakvu nekretninu tražite.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>-->
+                    <li><img src="images/slide-1.jpg" /><div class="banner"><span>Pozovite nas zato što mi zaista razumemo kakvu nekretninu tražite.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
                     <li><img src="images/slide-2.jpg" /><div class="banner"><span>Pružite nam poverenje jer ste sa nama na pragu željene nekretnine.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
                     <li><img src="images/slide-3.jpg" /><div class="banner"><span>Jevtić nekretnine- Kraći put do Vašeg doma.</span><p>Izdavanje stanova i poslovnih prostora u Beogradu.</p></div></li>
-                    <!-- <li><img src="images/slide-4.jpg" /><div class="banner"><span>Pronašli ste pravog partnera u svetu nekretnina.</span><p>Izdavanje luksuznih stanova, kuća i poslovnih prostora u Beogradu.</p></div></li> -->
+                    <li><img src="images/slide-4.jpg" /><div class="banner"><span>Pronašli ste pravog partnera u svetu nekretnina.</span><p>Izdavanje luksuznih stanova, kuća i poslovnih prostora u Beogradu.</p></div></li>
                     <li><img src="images/slide-5.jpg" /><div class="banner"><span>Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.</span><p>Izdavanje luksuznih stanova, poslovnih prostora i kuća u Beogradu.</p></div></li>
                 </ul>
             </div>
@@ -244,6 +243,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
 
                             <div class="clear"></div>
                     </article>
+                    
                     <article class="grid_4">
                     	<h3><span style="color:#e2a616">NAJBOLJE</span><span style="color:red"> U PONUDI!</span></h3>
                         <?php   echo '<div class="hot_polje">';
@@ -353,8 +353,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         </div>
                         <div class="clear"></div>
                         <br>
-                        <a href="http://www.pks.rs/" target="_blank"> <img src="images/pks.jpg" /></a>
-                        <a href="http://www.kombeg.org.rs/Komora/udruzenja/UdruzenjeTrgovine.aspx?veza=3598" target="_blank"> <img style="margin-top:5px;" src="images/pkb.jpg" /></a>
+                        <a href="http://www.pks.rs/" target="_blank"> <img src="http://www.agencijavila.rs/sites/default/files/page-files/privredna-komora-srbije.jpg" /></a>
+                        <a href="http://www.kombeg.org.rs/Komora/udruzenja/UdruzenjeTrgovine.aspx?veza=3598" target="_blank"> <img src="http://www.agencijavila.rs/sites/default/files/page-files/pkb.jpg" /></a>
                     </article>
                 </div>
             </div>

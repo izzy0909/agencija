@@ -70,6 +70,21 @@ function prikaziSveStanove($start, $limit){
     
 }
 
+function prikaziStanoveXML(){
+    global $conn;
+
+    $sql = "SELECT * FROM stanovi as s 
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            LEFT JOIN podlokacije as p
+            ON s.podlokacija_id = p.id
+            WHERE vidljiv = 1 AND izdat = 0";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
+    
+}
+
 function prikaziPoslednjeStanove(){
     global $conn;
 

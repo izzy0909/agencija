@@ -20,7 +20,7 @@
 <![endif]-->
 <!--[if lt IE 9]>
 	<script src="js/html5.js"></script>
-	<link rel="stylesheet" href="css/ie.css">
+	<link rel="stylesheet" href="css/ie.css"> 
 <![endif]-->
 <meta name="google-translate-customization" content="c67d062680181750-572105164184dfe9-gd53bc459627b01ea-17"></meta>
 
@@ -41,7 +41,7 @@ document.onmousedown=disableselect
 document.onclick=reEnable
 }
 </script>
-
+    
 <script>
  function checkTerms() {
      if(document.trazimo.tos.checked)
@@ -82,10 +82,11 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
             </div>
             <div id="sat">
 <!-- Begin of localTimes.info script --> <div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
-</div> <!-- End of localTimes.info script -->
+</div> <!-- End of localTimes.info script --> 
             </div>
+            <span style="clear:both; float:left; margin-left:25px">Broj posrednika u registru: 150</span>
             <div class="clear"></div>
-            </div>
+            </div>            
         </div>
         <div class="clear"></div>
         <div class="head-box3">
@@ -117,8 +118,8 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>
                             <li><a href="prodaja.php?tip[]=Garaža">Garaže</a></li>
                             </ul></li>
-                    <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
-                    <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
+<!--                     <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
+                    <li><a href="trazimozavas.php">Tražimo za Vas</a></li> -->
                     <li><a href="onama.php">O nama</a>
                      <!--       <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
@@ -126,14 +127,14 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     </li>
                     <li><a href="kontakt.php" >Kontakt</a></li>
                 </ul>
-
+                    
 		<script>$("#sndmenu a")
                         .each(function(i) {
-                          if (i != 0) {
+                          if (i != 0) { 
                             $("#beep-two")
                               .clone()
                               .attr("id", "beep-two" + i)
-                              .appendTo($(this).parent());
+                              .appendTo($(this).parent()); 
                           }
                           $(this).data("beeper", i);
                         })
@@ -141,25 +142,25 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                           $("#beep-two" + $(this).data("beeper"))[0].play();
                         });
                       $("#beep-two").attr("id", "beep-two0");
-                  </script>
-
+                  </script>                       
+                    
                 <div class="clear"></div>
-            </nav>
+            </nav>            
             </div>
-        </div>
+        </div>        
         </div>
     </header>
-
+    
 	<!--==============================content================================-->
     <section id="content">
         <div class="container_12">
         	<div class="wrapper">
             	<article class="grid_12">
                    <div style='position:absolute; width:100%; height:2625px; z-index: 10; background-image:url("images/nema_kopiranja.png");'>
-                    </div>
+                    </div> 
                     <div id='uslovi' ondragstart='return false' onselectstart='return false'>
 <span class='naslov'>PRAVILA I USLOVI KORIŠĆENJA SAJTA</span>
-
+<br/>
 
 <span>Vlasništvo nad sadržajem</span>
 <p>Internet sajt www.jevticnekretnine.rs, koji obuhvata celokupan sadržaj, sav tekst, slike, audio ili video materijal (u daljem tekstu: sadržaj) u vlasništvu su Privrednog društva JEVTIC I.M.J NEKRETNINE DOO, Beograd, Ul. Bokeljska br. 7, (u daljem tekstu: Privredno društvo), pri čemu su sva prava zadržana, ukoliko nije naznačeno drugačije. Korišćenjem informacija ili drugih servisa koji su dostupni na ovom sajtu, pristajete na uslove i pravila (u daljem tekstu: uslovi korišćenja). Privredno društvo zadržava pravo promene ovih pravila i uslova korišćenja, u bilo kom trenutku i bez prethodne najave, tako da isti stupaju na snagu danom njihove objave. Saznanje o promeni uslova korišćenja možete steći  isključivo i jedino povremenom posetom stranice Pravila i uslovi korišćenja.</p>
@@ -180,23 +181,23 @@ za pravilno ili nepravilno korišćenje sajtova, kao i za eventualnu štetu koja
 <span>Pristanak na pravila i uslove korišćenja sajta</span>
 <p>Samim korišćenjem sajta pristajete na ove uslove. Potreban je poseban pristanak od strane korisnika (klikom na određeno polje) da bi ga ovi uslovi obavezivali samo u slučaju korišćenja dela sajta odnosno stranica pod nazivom TRAŽIMO ZA VAS ili PONUDITE NEKRETNINU da bi se zaključio  ugovor na daljinu ,odnosno, Ugovor o posredovanju. Poznavanje ovih Pravila i uslova korišćenja sajtova u svakom trenutku predstavlja obavezu korisnika sajta.
 Pristankom odnosno klikom na polje se smatra  da korisnik pristaje da sa Privrednim društvom  automatski zaključi Ugovor o posredovanju posrednim putem odnosno Ugovor o posredovanju bilo da izdaje, prodaje ili iznajmljuje neku od oglašenih nekretnina.
-Za slučaj namerne dostave netačnih podataka ili ukoliko se namerno prećute okolnosti koje su mogle
+Za slučaj namerne dostave netačnih podataka ili ukoliko se namerno prećute okolnosti koje su mogle 
 dovesti do odbijanja zaključenja ugovora o posredovanju, može zahtevati poništenje ugovora. Privredno društvo  ne snosi bilo kakvu odgovornost za unos nepotpunih, neispravnih ili netačnih podataka od strane ugovarača -korisnika u toku procesa posredovanja.Korišćenjem sajta, korisnik pristaje da sve sporove nastale u procesu zaključenja Ugovora o posredovanju putem online registracije, rešava sporazumno sa Privrednim društvom.
 </p>
 <span>POTVRDA O ZAKLJUČENJU UGOVORUA O POSREDOVANJU POSREDNIM PUTEM</span>
-<p>Ugovoru o posredovanju  posrednim putem , uključujući i zaključenje  ugovora elektonskim putem predstavlja saglasna izjava volja dveju ili više strana, kojom se potvrđuje da je zaključen ugovor o posredovanju , bilo da je u pitanju izdavanje, prodaja ili iznajmljivanje nepokretnosti između Privrednog društva i korisnika, čime se regulišu međusobne obaveze. Ugovor o posredovanju sadrži sve bitne elemente  ugovora vezane za obaveze zakupca,zakupodaca,kupca ili prodavca nepokretnosti  i obaveze Privrednog društva prema istima  i punovažan je bez potpisa i pečata,  a na osnovu čl.4. Zakona o elektronskom dokumentu, a sve u skladu sa izričitom voljom ugovornih strana koja proističe iz načela dispozicije ugovornih strana i čl. 10. Zakona o obligacionim odnosima. U Ugovoru o posredovanju je naznačena i cena Usluge koja se naplaćuje po završenom poslu u visini od 50% od cene prvog mesečnog zakupa koje plaćaju i Zakupac i Zakupodavac, odnosno u visini od 3% od prodajne cene nepokretnosti  od  kupca. Dostava  zaključenog Ugovora  o posredovanju se izvršava na dva načina:
-1. Dostava  Ugovora o posredovanju  u PDF formatu, na e-mail korisnika
-2. Dostava Ugovora o posredovanju  putem kurirske službe na teritoriji Beograda ili cele Srbije (dostava se izvršava prema procedurama i pravilima kurirskih službi koje vrše dostavu)
-Rokovi za dostavu Potvrde o sklopljenom ugovoru o osiguranju posredstvom kurirske službe na teritoriji Grada Beograda - danas za sutra:
-- Potvrde o sklopljenom ugovoru o posredovanju ugovorene radnim danom do 15 časova biće isporučene
--sledećeg dana u periodu od 9-17 časova;
+<p>Ugovoru o posredovanju  posrednim putem , uključujući i zaključenje  ugovora elektonskim putem predstavlja saglasna izjava volja dveju ili više strana, kojom se potvrđuje da je zaključen ugovor o posredovanju , bilo da je u pitanju izdavanje, prodaja ili iznajmljivanje nepokretnosti između Privrednog društva i korisnika, čime se regulišu međusobne obaveze. Ugovor o posredovanju sadrži sve bitne elemente  ugovora vezane za obaveze zakupca,zakupodaca,kupca ili prodavca nepokretnosti  i obaveze Privrednog društva prema istima  i punovažan je bez potpisa i pečata,  a na osnovu čl.4. Zakona o elektronskom dokumentu, a sve u skladu sa izričitom voljom ugovornih strana koja proističe iz načela dispozicije ugovornih strana i čl. 10. Zakona o obligacionim odnosima. U Ugovoru o posredovanju je naznačena i cena Usluge koja se naplaćuje po završenom poslu u visini od 50% od cene prvog mesečnog zakupa koje plaćaju i Zakupac i Zakupodavac, odnosno u visini od 3% od prodajne cene nepokretnosti  od  kupca. Dostava  zaključenog Ugovora  o posredovanju se izvršava na dva načina: 
+1. Dostava  Ugovora o posredovanju  u PDF formatu, na e-mail korisnika  
+2. Dostava Ugovora o posredovanju  putem kurirske službe na teritoriji Beograda ili cele Srbije (dostava se izvršava prema procedurama i pravilima kurirskih službi koje vrše dostavu) 
+Rokovi za dostavu Potvrde o sklopljenom ugovoru o osiguranju posredstvom kurirske službe na teritoriji Grada Beograda - danas za sutra: 
+- Potvrde o sklopljenom ugovoru o posredovanju ugovorene radnim danom do 15 časova biće isporučene 
+-sledećeg dana u periodu od 9-17 časova; 
 - Potvrde o zaključenom  ugovoru o posredovanju ugovorene petkom posle  15 časova i vikendom biće  isporučene utorkom od 9-17 časova.
 </p>
 <span>RASKID UGOVORA O POSREDOVANJU ZAKLJUČENIH POSREDNIM PUTEM</span>
 <p>Ugovarači  imaju pravo na jednostrani  raskid ugovora o posredovanju zaključenih posrednim putem, uključujući i ugovore zaključenim u elektronskoj formi, a dejstva raskida nastupaju protekom roka od 8 dana od dana poslatog obaveštenja o raskidu ugovora.
 Ugovarači su dužni  da pisanim putem obaveste drugu stranu o jednostranom raskidu, odnosno elektronskim putem, ukoliko je ugovor o posredovanju zaključen u elektronskoj formi, a sve u skladu sa Zakonom  o elektronskom dokumentu.
 </p>
-
+                                                                                                                                                          
 
                     </div>
                 </article>
@@ -218,6 +219,6 @@ Ugovarači su dužni  da pisanim putem obaveste drugu stranu o jednostranom rask
 </script>
 	<!--==============================footer=================================-->
 <?php include 'includes/footer.php'; ?>
-
+        
 </body>
 </html>

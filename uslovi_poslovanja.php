@@ -84,6 +84,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
 <!-- Begin of localTimes.info script --> <div align="center" style="margin:15px 0px 0px 0px"> <noscript> <div align="center" style="width:140px; border:1px solid #ccc; background: #; color: #E2A616; font-weight:bold;"> <a style="font-size:13px; line-height:16px; padding:2px 0px; font-family:arial; text-decoration: none; color: #E2A616;" href="http://localtimes.info/Europe/Serbia/Belgrade/"><img src="http://localtimes.info/images/countries/rs.png" border=0 style="border:0;margin:0;padding:0">&nbsp;&nbsp;Belgrade Time</a></div> </noscript> <script type="text/javascript" src="http://localtimes.info/clock.php?cp3_Hex=FFB200&cp2_Hex=FFFFFF&cp1_Hex=E2A616&fwdt=128&ham=1&hbg=1&hfg=1&sid=0&mon=0&wek=0&wkf=0&sep=0&continent=Europe&country=Serbia&city=Belgrade&widget_number=1004"></script>
 </div> <!-- End of localTimes.info script --> 
             </div>
+            <span style="clear:both; float:left; margin-left:25px">Broj posrednika u registru: 150</span>
             <div class="clear"></div>
             </div>            
         </div>
@@ -117,9 +118,9 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                             <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>
                             <li><a href="prodaja.php?tip[]=Garaža">Garaže</a></li>
                             </ul></li>
-                    <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
+     <!--                <li><a href="slanje.php"><SPAN STYLE="font-size: 9pt;">Ponudite Nekretninu</SPAN></a></li>
                     <li><a href="trazimozavas.php">Tražimo za Vas</a></li>
-                    <li><a href="onama.php">O nama</a>
+     -->                <li><a href="onama.php">O nama</a>
                      <!--       <ul>
                                 <li><a href="uslovi_poslovanja.php">Uslovi poslovanja</a></li>
                             </ul>   -->
@@ -168,44 +169,84 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                         </div>
                         <div class='clear'></div>
 
-<span class='naslov'>PRAVILA I USLOVI KORIŠĆENJA SAJTA</span>
+<span class='naslov'>ОПШТИ УСЛОВИ ПОСЛОВАЊА PRIVREDNOG DRUŠTVA JEVTIĆ I.M.J NEKRETNINE DOO BEOGRAD, BOKELJSKA 7</span>
 
 
-<span>Vlasništvo nad sadržajem</span>
-<p>Internet sajt www.jevticnekretnine.rs, koji obuhvata celokupan sadržaj, sav tekst, slike, audio ili video materijal (u daljem tekstu: sadržaj) u vlasništvu su Privrednog društva JEVTIC I.M.J NEKRETNINE DOO, Beograd, Ul. Bokeljska br. 7, (u daljem tekstu: Privredno društvo), pri čemu su sva prava zadržana, ukoliko nije naznačeno drugačije. Korišćenjem informacija ili drugih servisa koji su dostupni na ovom sajtu, pristajete na uslove i pravila (u daljem tekstu: uslovi korišćenja). Privredno društvo zadržava pravo promene ovih pravila i uslova korišćenja, u bilo kom trenutku i bez prethodne najave, tako da isti stupaju na snagu danom njihove objave. Saznanje o promeni uslova korišćenja možete steći  isključivo i jedino povremenom posetom stranice Pravila i uslovi korišćenja.</p>
-<span>Upotreba i zaštita podataka</span>
-<p>Prilikom korišćenja sajta www.jevticnekretnine.rs  dužni ste da osigurate potpunost, istinitost i tačnost podataka koje dajete, a Privredno društvo čini sve kako bi  zaštitila privatnost ličnih podataka oglašivača u smislu pozitivnih zakonskih propisa i oni će biti korišćeni samo u svrhu posredovanja između korisnika. Privredno društvo zadržava pravo na korekturu sadržaja oglasa dostavljenih od strane korisnika, bez promene osnovnog smisla, a u skladu sa Zakonom o oglašavanju i usvojenim opštim uslovima poslovanja. Korišćenjem sajta, saglasni ste da podaci ili informacije koje ste predali, budu dostupni svima koji su zainteresovani, saglasno ovim uslovima korišćenja. Privredno društvo prikupljaja samo nužne i osnovne podatke o korisnicima, u skladu sa  Zakonom o oglašavanju, informišu korisnike o načinu njihovog korišćenja i redovno daju korisnicima mogućnost izbora o upotrebi njihovih podataka,  a svi dostavljeni  podaci o korisnicima strogo se čuvaju i dostupni su samo zaposlenim licima u  Privrednom društvu , kojima su ti podaci nužni za obavljanje posla, uz strogo poštovanje načela  i zakona o  zaštiti privatnosti.</p>
-<span>Dozvoljeno je samo lično korišćenje</span>
-<p>Ovaj sajt je namenjen isključivo u svrhu posredovanja između  korisnika Privrednog društva, a  shodno opštim uslovima poslovanja , a ne komercijalnom korišćenju  od strane treće strane. U tom smislu je zabranjeno preuzimanje sadržaja, njegovo kopiranje, prikazivanje, reprodukovanje, objavljivanje, licenciranje, prerada, prodaja, preoblikovanje i objavljivanje na drugim sajtovima ili "preslikavanje" početne strane sajtova, niti bilo koje druge strane odnosno bilo kog dela sadržaja na nekom drugom sajtu, što se smatra povredom Zakona o autorskim i srodnim  pravima. Takođe je zabranjena zloupotreba svih podataka naših korisnika od strane drugih pravnih ili fizičkih lica, a u cilju nuđenja svojih usluga i mogućnosti oglašavanja putem drugih medija. Zabranjen je svaki  vid zloupotrebe registracije. Privredno društvo zadržava pravo da obustavi oglašavanje ukoliko utvrdi da se fizičko lice oglašava preko više naloga pa samim tim multiplicira jedan oglas. Svi oglašeni podaci za koje   . Privredno društvo  utvrdi da su dupliranog sadržaja ili da sadrže bilo koji vid zloupotrebe koji naše korisnike dovodi u zabludu, biće stopirani, bez prethodnog obaveštenja.</p>
-<span>Zaštita autorskih prava</span>
-<p>Podaci na sajtu  su zaštićeni i  regulisani u skladu sa odgovarajućim odredbama  Zakonom o autorskim i srodnim pravima, a autorska prava se odnose na sadržaj sajta, tekstove, njihovo oblikovanje, slikovne sadržaje, grafičke i druge prikaze koji pripadaju Privrednom društvu koristi samo na način i pod uslovima predviđenim ovim uslovima korišćenja.</p>
-<span>Poricanje garancije</span>
-<p>Privredno društvo ne daje nikakve garancije, niti odgovara za:
-tačnost, sadržinu, kompletnost, zakonitost, pouzdanost ili dostupnost informacija i sadržaja prikazanih na sajtu, osim onih koje se odnose na usluge Privrednog društva u opštim uslovima poslovanja, za koje odgovara u skladu sa Opštim uslovima za dostupnost i pružanje tih usluga, u skladu sa zakonskom regulativom koja reguliše tu oblast.Za brisanje, pogrešno dostavljanje ili neblagovremeno dostavljanje bilo kakvih informacija ili sadržaja, za greške na stranicama ili za kontinuirano funkcionisanje sajta,za bilo kakvu štetu nastalu skidanjem fajlova ili pristupom bilo kakvom sadržaju na Internetu, do koga se došlo pomoću ovog sajta. Korišćenjem sajta prihvatate punu odgovornost za bilo kakvu štetu nastalu zbog informacija do kojih ste došli pomoću ovog sajta, za štetu nastalu učitavanjem fajlova i dokumenata na vaš računar i za bilo koji drugi vid štete nastao zbog bilo kakvih sadržaja do kojih ste došli pomoću ovog sajta.  Privredno društvo  zadržava pravo da iz dalje upotrebe stranica isključe onog korisnika koji zloupotrebljava ili na bilo koji način neovlašćeno koristi ovaj sajt.
-</p>
-<span>Ograničenje odgovornosti</span>
-<p>Privredno društvo ni pod kakvim okolnostima neće biti odgovorna nijednom korisniku:
-za pravilno ili nepravilno korišćenje sajtova, kao i za eventualnu štetu koja nastane po tom osnovu,za bilo kakvu štetu koju korisnik pretrpi pravilnim ili nepravilnim korišćenjem sajtova, kao i drugih informacija, servisa, usluga, saveta ili proizvoda do kojih se došlo pomoću linkova ili reklama na sajtovima, ili onih koje su na bilo koji način povezane sa sajtom.Za nepravilno funkcionisanje ili prekid rada servisa, koji je prouzrokovan direktno ili indirektno prirodnim silama ili drugim uzrocima van razumne moći kontrole, u šta spadaju: problemi u funkcionisanju Interneta, kvarovi na kompjuterskoj opremi, problemi u funkcionisanju telekomunikacione opreme i uređaja, nestanak struje, štrajkovi, obustave rada, nemiri, nestašice sadržaja ili manjak radne snage, naredbe državnih i drugih organa.Svi stavovi izneti u okviru sajta nisu stavovi Privrednog društva, već ih na sajtu samo prenosimo "onakve kakve jesu" i za njihovu sadržinu nismo odgovorni u bilo kom smislu. Ukoliko je korisnik prekršio autorsko pravo trećeg lica, svu odgovornost snosi sam, a Privredno društvo će nakon prijema obaveštenja o eventualnom kršenju autorskog prava, ukloniti naznačeni sadržaj do razrešenja spora, po osnovu povrede bilo kog autorskog ili drugog srodnog prava. Korisnik koji se odlučio da učini javnim bilo koje podatke koji omogućavaju ličnu identifikaciju, čini to na sopstvenu odgovornost protivno pravilima iz opštih uslova poslovanja Privrednog društva, pa samim tim Privredno društvo zadržava pravo da takav sadržaj ukloni sa sajta.
-</p>
-<span>Pristanak na pravila i uslove korišćenja sajta</span>
-<p>Samim korišćenjem sajta pristajete na ove uslove. Potreban je poseban pristanak od strane korisnika (klikom na određeno polje) da bi ga ovi uslovi obavezivali samo u slučaju korišćenja dela sajta odnosno stranica pod nazivom TRAŽIMO ZA VAS ili PONUDITE NEKRETNINU da bi se zaključio  ugovor na daljinu ,odnosno, Ugovor o posredovanju. Poznavanje ovih Pravila i uslova korišćenja sajtova u svakom trenutku predstavlja obavezu korisnika sajta.
-Pristankom odnosno klikom na polje se smatra  da korisnik pristaje da sa Privrednim društvom  automatski zaključi Ugovor o posredovanju posrednim putem odnosno Ugovor o posredovanju bilo da izdaje, prodaje ili iznajmljuje neku od oglašenih nekretnina.
-Za slučaj namerne dostave netačnih podataka ili ukoliko se namerno prećute okolnosti koje su mogle
-dovesti do odbijanja zaključenja ugovora o posredovanju, može zahtevati poništenje ugovora. Privredno društvo  ne snosi bilo kakvu odgovornost za unos nepotpunih, neispravnih ili netačnih podataka od strane ugovarača -korisnika u toku procesa posredovanja.Korišćenjem sajta, korisnik pristaje da sve sporove nastale u procesu zaključenja Ugovora o posredovanju putem online registracije, rešava sporazumno sa Privrednim društvom.
-</p>
-<span>POTVRDA O ZAKLJUČENJU UGOVORUA O POSREDOVANJU POSREDNIM PUTEM</span>
-<p>Ugovoru o posredovanju  posrednim putem , uključujući i zaključenje  ugovora elektonskim putem predstavlja saglasna izjava volja dveju ili više strana, kojom se potvrđuje da je zaključen ugovor o posredovanju , bilo da je u pitanju izdavanje, prodaja ili iznajmljivanje nepokretnosti između Privrednog društva i korisnika, čime se regulišu međusobne obaveze. Ugovor o posredovanju sadrži sve bitne elemente  ugovora vezane za obaveze zakupca,zakupodaca,kupca ili prodavca nepokretnosti  i obaveze Privrednog društva prema istima  i punovažan je bez potpisa i pečata,  a na osnovu čl.4. Zakona o elektronskom dokumentu, a sve u skladu sa izričitom voljom ugovornih strana koja proističe iz načela dispozicije ugovornih strana i čl. 10. Zakona o obligacionim odnosima. U Ugovoru o posredovanju je naznačena i cena Usluge koja se naplaćuje po završenom poslu u visini od 50% od cene prvog mesečnog zakupa koje plaćaju i Zakupac i Zakupodavac, odnosno u visini od 3% od prodajne cene nepokretnosti  od  kupca. Dostava  zaključenog Ugovora  o posredovanju se izvršava na dva načina:
-1. Dostava  Ugovora o posredovanju  u PDF formatu, na e-mail korisnika
-2. Dostava Ugovora o posredovanju  putem kurirske službe na teritoriji Beograda ili cele Srbije (dostava se izvršava prema procedurama i pravilima kurirskih službi koje vrše dostavu)
-Rokovi za dostavu Potvrde o sklopljenom ugovoru o osiguranju posredstvom kurirske službe na teritoriji Grada Beograda - danas za sutra:
-- Potvrde o sklopljenom ugovoru o posredovanju ugovorene radnim danom do 15 časova biće isporučene
--sledećeg dana u periodu od 9-17 časova;
-- Potvrde o zaključenom  ugovoru o posredovanju ugovorene petkom posle  15 časova i vikendom biće  isporučene utorkom od 9-17 časova.
-</p>
-<span>RASKID UGOVORA O POSREDOVANJU ZAKLJUČENIH POSREDNIM PUTEM</span>
-<p>Ugovarači  imaju pravo na jednostrani  raskid ugovora o posredovanju zaključenih posrednim putem, uključujući i ugovore zaključenim u elektronskoj formi, a dejstva raskida nastupaju protekom roka od 8 dana od dana poslatog obaveštenja o raskidu ugovora.
-Ugovarači su dužni  da pisanim putem obaveste drugu stranu o jednostranom raskidu, odnosno elektronskim putem, ukoliko je ugovor o posredovanju zaključen u elektronskoj formi, a sve u skladu sa Zakonom  o elektronskom dokumentu.
-</p>
+<span>1.ОПШТЕ ОДРЕДБЕ</span>
+<p>Општим условима пословања уређује се пословни однос између JEVTIĆ I.M.J NEKRETNINE DOO BEOGRAD ,   (у даљем тексту : Privredno društvo) као посредника са једне стране и налогодавца (физичког/физичких или правног/правних лица) са друге стране, а све у складу са важећим одредбама чл.10, чл.13, чл.17, чл.18, чл.20, чл.22. Закона о облигационим  односима, а у случају питања која нису регулисана Општим условима пословања  и у складу са посебним одредбама Закона о облигациони односима, и то почевши од чл. 813. Закона о облигационим односима, а закључно са чл. 826. Закона о облигационим односима и важећим одредбама Закона о промету непокретности.</p>
+<span>2. ПОНУДА У ПОГЛЕДУ НЕКРЕТНИНА</span>
+<ul>
+    <li>Понуда некретнина темељи се на подацима које је посредник примио писаним или усменим путем, па је у складу са тим обавезан потврдом о пријему понуда. Посредник задржава право могућности грешке у опису и цене некретнине, могућности да је некретнина већ продата или изнајмљена, или да је власник одустао од продаје или најма.</li>
+    <li>Понуде или обавештења посредника, налогодавац мора чувати као пословну тајну и само их уз писано одобрење посредника може пренети трећим лицима. У супротном, посредник, односно одговорно лице у правном лицу посредника може поднети кривичну пријаву против налогодавца за одговарајуће кривично дело, које из таквог понашања налогодавца проистекне, из важећег Кривичног законика Републике Србије.</li>
+    <li>Ако је налогодавац већ једном обавештен од стране  посредника или је упознат од стране посредника са некретнинама које је посредник понудио, налогодавац је дужан да без одлагања о томе обавести посредника.</li>
+</ul>
+<span>3. ОБАВЕЗЕ ПОСРЕДНИКА ПРИЛИКОМ  ПОСРЕДОВАЊА ПРИ КУПОВИНИ, ПРОДАЈИ, ЗАКУПУ ИЛИ НАЈМУ НЕКРЕТНИНА.</span>
+<ul>
+    <li>Закључити Уговор о посредовању са налогодавцем, у писаном облику, с тим да уговор може бити и у форми писаног захтева или налога , односно усменог захтева или усменог налога, који се констатује забелешком од стране посредника или посредника у погледу писаног налога, или захтева који је од стране налогодавца упућен посреднику електронским путем.</li>
+    <li>Настојати наћи и довести у везу са налогодавцем физичко/физичка лица или правно/правна лица ради закључења посредничког посла.
+    <li>Упозорити налогодавца о недостацицима које постоје на некретнини или који су у вези са некретнином.
+    <li>Извршити увид у исправе којима се доказује власништво или друго стварно право на предметној некретнини и упозорити налогодавца на : очигледне недостатке и могуће ризике у вези са неуређеним земљишно-књижним стањем некретнине, уписати стварна права или друга права трећих лица у вези са некретнином, правне последице неисуњења обавеза према трећим лицима, недостатке грађевинске или употребне дозволе у складу са Законом о планирању и изградњи, околности обавезе примене права првог стана и ограничења у правном промету у складу са позитивним прописима.
+    <li>Обавити потребне радње ради представљања презентације на тржишту, оглашавање некретнине, на начин који одреди посредник, односно Privredno društvo.
+    <li>Омогућити преглед некретнина налогодавцу, упутити га у недостатке у погледу предметне некретнине, те направити записнике у погледу новооткривених физичких недостатака предметне некретнине.
+    <li>Чувати личне податке налогодавца као пословну тајну
+    <li>Обавестити налогодавца о свим околностима које су значајне за закључење намераваног посла, а које су познати посреднику
+    <li>Посредовати у преговорима и настојати да дође до закљушења посла
+    <li>Присуствовати приликом закључења правног посла
+    <li>Присуствовати приликом примопредаје некретнине
+    <li>Ако је предмет закључења уговора земљишна непокретност, проверити намену предметног земљишта у складу са позитивним прописима о просторном уређењу, а које се тиче предметног земљишта.
+    <li>Сматра се да је посредник омогућио налогодавцу везу са другим лицем/лицима( физичким или правним) о преговарању за закључење правног посла, ако је омогућио налогодавцу ступање у везу са другим физичким или правним лицима, с којим је преговарао у вези са закључењем правног посла, а нарочито ако је:
+          <ol>
+              <li>Непосредно одвео или упутио налогодавца и друга овлашћњна лица ради преговарања за закључења правног посла.</li>
+              <li>Организовао сусрет између налогодавца и друге уговорне стране или уговорних страна, ради преговарања ради закључења посла.</li>
+              <li>Налогодавцу саопштио име, број телефона, телефакса, e-mail-a, другог овлашћеног лица за закључење правног посла или му је саопштио тачну локацију тражене некретнине.</li>
+          </ol>
+</ul>
+<span>4. ОБАВЕЗЕ НАЛОГОДАВЦА</span>
+<ul>
+    <li>Закључити Уговор о посредовању са посредником у писаном облику ( уговор може бити и у форми писаног захтева или налога, односно усменог захтева или налога који се констатује забелешком од стране посредника или посредством писаног налога или захтева упућеног електронском поштом.</li>
+    <li>Обавестити посредника о свим околностима које су важне за и предочити тачне податке о некретнини, та ако поседује локацијску, грађевинску или употребну дозволу за некретнину која је предмет уговора, дати на увид доказе посреднику доказе о испуњењу обавеза према трећој страни.</li>
+    <li>Дати посреднику на увид исправе које које доказују његово власништво на некретнини, односно друго стварно право  на непокретности која је предмет уговора, упозорити посредника на све укњижене и неукњижене терете који постоје на некретнини. </li>
+    <li>Осигурати посреднику и заинтересованим лицима за закључење посредничког посла разгледање некретнине.</li>
+    <li>Обавестити посредника о свим битним подацима о траженој некретнини, што посебно укључује опис некретнине и цену непокретности.</li>
+    <li>Након закључења посредничког правног посла, односно предуговора којим се налогодавац обавезао да закључи посреднички правни посао, ако су се налогодавац и посредник договорили да се право на плаћање посредничке провизије- накнаде  стиче већ при закључењу предуговора, налогодавац ће исплатити посредничку провизију- накнаду, осим ако није другачије уговорено.</li>
+    <li>Ако је изричито уговорено надокнадити посреднику трошкове учињене током посредовања који прелазе уобичајене трошкове посредовања, та накнада се посебно обрачунава према стварно насталим трошковима, а који се обрачунавају у висини  до 50 % од висине уговорене почетне накнаде- провизије.</li>
+    <li>Обавестити посредника писаним путем о свим променама који су у вези са послом за који је овластио посредника, а посебно о променама које су у вези са власништвом на некретнини.</li>
+    <li>Налогодавац ће одговарати за штету ако је приликом пословања са посредником није поступао у доброј вери, ако је поступао преварно, ако је пословао у намери да закључи симуловани прави посао, ако је прећутао или дао нетачне податке битнр за посао посредника, у циљу окончања правног посла, те је дужан накнадити све трошкове учињене током посредовања, који неће бити веће од посредничке накнаде за посреднички посао.</li>
+</ul>
+<span>5. ОСТВАРИВАЊЕ ПРАВА НА НАКНАДУ</span>
+<ul>
+    <li>Посредник стиче право на накнаду у целини, у тренутку закључења правног посла, односно потписаног протокола, предуговора или уговора, од стране уговорних страна, осим у случају када је другачије уговорено.</li>
+    <li>Висина посредничкких провизија, за обављање посредовања приликом продаје, куповине, замене, закупа и изнајмљивања некретнина наплаћује се у складу са Ценовником посредничких провизија који је саставни део Општих услова.</li>
+    <li>Посредник може уговорити право на накнаду трошкова нужних за извршење налога и затражити да му се унапред аконтирају средства за одређене издатке за трошкове.</li>
+    <li>Налогодавац је дужан да плати накнаду и када са одређеним физичким лицем/лицима или правним лицем/лицима, са који га је посредник довео у везу, закључио правни посао различит од онога за који је посредовао, који је исте вредности као и правни посао односно којим се постиже иста сврха као и посредничким правним послом.</li>
+    <li>Посредник има право на накнаду ако брачни, односно ванрачни друг, потомак или родитељ налогодавца закључи посреднички правни посао са физичким лицем/лицима и правним лицем/лицима, са којим је посредник довео налогодавца у везу.</li>
+</ul>
+<span>6. ПРЕСТАНАК УГОВОРА</span>
+    <ul>
+        <li>Уговор о посредовању између посредника и налогодавца закључује са на рок од 1. ( словима: једне) године, и престаје истеком рока на који је закључен, ако у том року није закључен уговор који за који је посредовано или отказом било које од уговорних страна.</li>
+        <li>Стране уговорнице могу одустати од уговора о посредовању у промету некретнина пре истека уговорног рокасамо из посебно оправданих разлога. Налогодавац је у том случају дужан накнадити посреднику настале трошкове по том основу.</li>
+        <li>Ако у року не дужем од трајања потписаног уговора, након престанка уговора, налогодавац закључи правни посао који је последица посредниковог деловања пре престанка уговора о посредовању, дужан је да плати посреднику настале трошкове, за које је иначе било изричито уговорено да их налогодавац посебно плаћа.</li>
+    </ul>
+<span>7. САРАДЊА СА ДРУГИМ ПРИВРЕДНИМ ДРУШТВИМА</span>
+<p>JEVTIĆ I.M.J NEKRETNINE DOO BEOGRAD је спремна за сарадњу са правним лицима који за своју основну делатност имају промет некретнинама, а која поштују темељна етичка начела, којима се искључује изношење неистинитих података о пословању ради прибављања послова и странака, омаловажавање других правних лица на било који начин, ради прибављања послова и странака, нереалне процене некретнина ради прибављања посредничких послова и искључење других правних лица са тржишта, наступање пред средствима јавног информисања, а у циљу личне промоције, а на штету других правних лица која за предметну делатност имају промет некретнинама.</p>
+<span>8. ОПШТЕ ОДРЕДБЕ И РЕШАВАЊЕ СПОРОВА</span>
+<p>На послове које се тичу посредовања и послова који проистекну из уговора о промету непокретностима и целокупног односа пословања посреднила и налогодавца, а који нису уређени Општим условима пословања, нити уговором о посредовању, примењују се одговарајуће одредбе чланова Закона о облигационим односима.
+У случају судског поступка- спора, надлежан је Привредни суд у Београду, у складу са чл.25.Закона о уређењу судова, чак и у случају да је налогодавац односно налогодавци  физичко односно физичка лица, уколико би се радило о односу који би представљао материјално супарничарство.</p>
+<span>9. УСЛОВИ ПОСЛОВАЊА У ПОГЛЕДУ ФОРМИРАЊА ЦЕНА УСЛУГА КОЈЕ ПРОИЗИЛАЗЕ ИЗ УГОВОРА О ПОСРЕДОВАЊУ</span>
+<ul>
+    <li>Посредничка провизија код закупа се одређује у висини вредности једне месечне закупнине, а плаћа се посреднику приликом закључења протокола, предуговора или уговора о закупу.</li>
+    <li>Провизију плаћају уговорне стране у односу 50% према 50 % приликом закључења протокола, предуговора или уговора о закупу непокретности.</li>
+<li>Посредничка провизија код уговора о продаји некретнина износи 3% од уговорене продајне цене и исплаћује се посреднику приликом закључења протокола, предуговора или предуговора о продаји непокретности. Посредничка провизија може бити уговорена и фиксном износу, али не може бити већа од 3% од уговорене продајне цене. Посредничку провизију плаћа купац по продајном курсу. </li>
+</ul>
+    <span>10.ПОСЕБНА ПРАВИЛА У ПОГЛЕДУ НАПЛАЋИВАЊА УСЛУГА КОЈА СЕ ОДНОСЕ НА ПОТЕНЦИЈАЛНЕ БУДУЋЕ КАРАКТЕРИСТИЧНЕ СИТУАЦИЈЕ У ПОСЛОВАЊУ</span>
+    <ul>
+        <li>Посредничка провизија код замене непокретности плаћа се у висини од 3% од уговорене вредности непокретности која се размењује. Провизију плаћају уговорне стране у односу 50% према 50 % приликом закључења протокола, предуговора или уговора о размени непокретности.</li>
+        <li>Трошкови посредника који превазилазе трошкове у вредности већој од  30% од посредничке провизије, посреднику накнађује налогодавац и ови трошкови не улазе у цену посредничке провизије. Ови трошкови наплаћују се у складу са стварно насталим трошковима приликом закључења сваког појединачног уговора  и прецизирају се само уколико до њих дође у току пословања између уговорних страна, а наплаћују се на основу  приложених веродостојних  исправа.</li>
+        <li>Излазак на терен, разговор,  разгледање предметне непокретности и стављање документације на увид наплаћују се по једном изласку у висини од 50 ( словима: педесет) евра ( до 3(словима: три)) сата, до 100( словима: сто) евра ( преко три сата на дан), у зависности од времена проведеног на терену.Уколико се посреднички посао реализује, ови трошкови улазе у цену посредничке провизије.Ове услуге биће контролисане, проверене  и наплаћене од стране адвоката којег ангажује Privredno društvo.</li>
+        <li>Ванредни трошкови који настану по захтеву заинтересоване стране, исплаћују се према стварним насталим трошковима, а процењују се према моменту настанка ванредних трошкова који су настали по захтеву заинтересоване стране, а плаћају се на основу приложених  веродостојних  исправа.</li>
+        </ul>
+<span>11. ЗАВРШНА ОДРЕДБА ОПШТИХ УСЛОВА ПОСЛОВАЊА</span>
+<p>Ангажовање посредника од стране налогодавца односно заинтересоване стране писаним или усменим путем, подразумева се да је заинтересована страна упозната са Ценовником и Општим условима пословања, који су јавно доступни, те самим тим заинтересована страна прихвата све обавезе које из предметне документације проистичу. Налогодавац односно заинтересована страна сагласна је са чињеницом да посредник може наплату својих потраживања наплатити и судским путем, у случају незаконитог пословања од стране налогодовца. Ценовник представља посебан документ који мора бити у складу са тачком 9. Општих услова пословања.</p>
 
  <span style='float:left;'>U BEOGRADU 23.01.2013. godine</span>
                    
