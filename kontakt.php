@@ -88,7 +88,7 @@ new google.translate.TranslateElement({pageLanguage: 'sr', includedLanguages: 'd
                     <li><a href="prodaja.php">Prodaja</a>
                             <ul>
                             <li><a href="prodaja.php?tip[]=Stan">Stanovi</a></li>
-                            <li><a href="prodaja.php?tip[]=Kuće">Kuće</a></li>
+                            <li><a href="prodaja.php?tip[]=Kuća">Kuće</a></li>
                             <li><a href="prodaja.php?tip[]=Poslovni+prostor">Poslovni prostori</a></li>
                             <li><a href="prodaja.php?tip[]=Magacin">Magacini</a></li>
                             <li><a href="prodaja.php?tip[]=Lokal">Lokali</a></li>

@@ -3,18 +3,18 @@
 include_once 'connection.php';
 
 
-function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlokacija_id, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $dodao, $dodatna_informacija)
+function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlokacija_id, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $vidljiv_do, $dodao, $dodatna_informacija, $provizija)
 {
     global $conn;
 
-    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id, opis_lokacije, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, dodao, dodatna_informacija)
-            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :opis_lokacije, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :dodao, :dodatna_informacija)";
+    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id, opis_lokacije, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, vidljiv_do, dodao, dodatna_informacija, provizija)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :opis_lokacije, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :vidljiv_do, :dodao, :dodatna_informacija, :provizija)";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':kategorija' => $kategorija,
         ':tip' => $tip,
         ':stan_tip' => $stan_tip,
-	':vlasnik' => $vlasnik,
+	    ':vlasnik' => $vlasnik,
         ':lokacija_id' => $lokacija_id,
         ':podlokacija_id' => $podlokacija_id,
         ':opis_lokacije' => $opis_lokacije,
@@ -29,8 +29,10 @@ function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlok
         ':namestenost' => $namestenost,
         ':opis' => $opis,
         ':vidljiv' => $vidljiv,
+        ':vidljiv_do' => $vidljiv_do,
         ':dodao' => $dodao,
-        ':dodatna_informacija' => $dodatna_informacija
+        ':dodatna_informacija' => $dodatna_informacija,
+        ':provizija' => $provizija
         ));
 
     return $conn->lastInsertID();
@@ -87,11 +89,13 @@ function prikaziStanoveXML(){
 
 function prikaziPoslednjeStanove(){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT * FROM stanovi as s 
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas')
             ORDER BY datum_dodavanja DESC
             LIMIT 0, 8";
 	$query = $conn->prepare($sql);
@@ -101,12 +105,14 @@ function prikaziPoslednjeStanove(){
 
 function prikaziHotOfferStanove(){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE hot_offer = '1'
             AND vidljiv = '1'
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas')
             ORDER BY RAND() limit 0,1";
 
 	$query = $conn->prepare($sql);
@@ -145,12 +151,14 @@ function prikaziStanZaAdmina($id){
 
 function prikaziStanZaFront($id){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE s.id = :id
             AND vidljiv = 1
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas')
             LIMIT 1";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -196,33 +204,35 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat){
+function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat, $provizija, $vidljiv_do){
     global $conn;
 
     $sql = "UPDATE stanovi
-            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, opis_lokacije = :opis_lokacije, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija, izdat = :izdat
+            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, opis_lokacije = :opis_lokacije, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija, izdat = :izdat, provizija = :provizija, vidljiv_do = :vidljiv_do 
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
 		':vlasnik' => $vlasnik,
 		':telefon' => $telefon,
 		':email' => $email,
-                ':kategorija' => $kategorija,
-                ':tip' => $tip,
-                ':stan_tip' => $stan_tip,
+        ':kategorija' => $kategorija,
+        ':tip' => $tip,
+        ':stan_tip' => $stan_tip,
 		':ulica' => $ulica,
-                ':br' => $br,
-                ':sprat' => $sprat,
-                ':opstina' => $opstina,
-                ':podlokacija' => $podlokacija,
-                ':opis_lokacije' => $opis_lokacije,
-                ':grejanje' => $grejanje,
-                ':namestenost' => $namestenost,
+        ':br' => $br,
+        ':sprat' => $sprat,
+        ':opstina' => $opstina,
+        ':podlokacija' => $podlokacija,
+        ':opis_lokacije' => $opis_lokacije,
+        ':grejanje' => $grejanje,
+        ':namestenost' => $namestenost,
 		':cena' => $cena,
 		':kvadratura' => $kvadratura,
 		':opis' => $opis,
-                ':dodatna_informacija' => $dodatna_informacija,
-                'izdat' => $izdat,
+        ':dodatna_informacija' => $dodatna_informacija,
+        ':izdat' => $izdat,
+        ':provizija' => $provizija,
+        ':vidljiv_do' => $vidljiv_do,
 		':id' => $id
 		));
 	    
@@ -270,7 +280,7 @@ function promeniHotStana($id, $hot){
 	    
 }
 
-function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci){
+function pretraziStanove($id, $kategorija, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice){
     global $conn;
     
     $sql = "SELECT * FROM stanovi as s
@@ -283,6 +293,17 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
             WHERE s.id != '' ";
     if(!empty ($id)){
     $sql .= "AND s.id LIKE :id ";
+    }
+    if(!empty ($kategorija)){
+            $sql .= "AND ( kategorija = '$kategorija[0]' ";
+            $i=0;
+            foreach ($kategorija as $kat) {
+                if($i > 0) {
+                    $sql .= "OR kategorija = '$kat' ";
+                    }
+                    $i++;
+            }
+            $sql .= " ) ";
     }
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
@@ -477,16 +498,55 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
     if($vise_telefonskih_linija != 0){
     $sql .= "AND vise_telefonskih_linija = 1 ";
     }
-    if($vertikala != 0){
-    $sql .= "AND vertikala = 1 ";
-    }
-    if($horizontala != 0){
-    $sql .= "AND horizontala = 1 ";
-    }
     if($stan_u_kuci != 0){
     $sql .= "AND stan_u_kuci = 1 ";
     }
-    
+    if($samostojeca_kuca != 0){
+    $sql .= "AND samostojeca_kuca = 1 ";
+    }
+    if($kuca_s_dvoristem != 0){
+    $sql .= "AND kuca_s_dvoristem = 1 ";
+    }
+    if($kucni_ljubimci != 0){
+    $sql .= "AND kucni_ljubimci = 1 ";
+    }
+    if($balkon != 0){
+    $sql .= "AND balkon = 1 ";
+    }
+    if($video_nadzor != 0){
+    $sql .= "AND video_nadzor = 1 ";
+    }
+    if($alarm != 0){
+    $sql .= "AND alarm = 1 ";
+    }
+    if($basta != 0){
+    $sql .= "AND basta = 1 ";
+    }
+    if($pomocni_objekti != 0){
+    $sql .= "AND pomocni_objekti = 1 ";
+    }
+    if($ostava != 0){
+    $sql .= "AND ostava = 1 ";
+    }
+    if($podrum != 0){
+    $sql .= "AND podrum = 1 ";
+    }
+    if($opticki_kabl != 0){
+    $sql .= "AND opticki_kabl = 1 ";
+    }
+    if($open_space != 0){
+    $sql .= "AND open_space = 1 ";
+    }
+    if($pristup_za_invalide != 0){
+    $sql .= "AND pristup_za_invalide = 1 ";
+    }
+    if($lokal_na_ulici != 0){
+    $sql .= "AND lokal_na_ulici = 1 ";
+    }
+    if($pravno_lice != 0){
+    $sql .= "AND pravno_lice = 1 ";
+    }
+
     $query = $conn->prepare($sql);
 	
     if(!empty ($id)){
@@ -542,11 +602,13 @@ function pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $t
 
 function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas') ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -668,11 +730,13 @@ function pretragaStanovaZaIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $po
 
 function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas') ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -774,11 +838,13 @@ function brojRezultataIzdavanje($tip, $stan_tip, $opstina, $povrsina_od, $povrsi
 
 function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT COUNT(*) FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas') ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -881,11 +947,13 @@ function brojRezultataProdaja($tip, $stan_tip, $opstina, $povrsina_od, $povrsina
 
 function pretragaStanovaZaProdaju($tip, $stan_tip, $opstina, $povrsina_od, $povrsina_do, $sprat, $cena_od, $cena_do, $grejanje, $namestenost, $start){
     global $conn;
+    $danas = date('Y-m-d');
 
     $sql = "SELECT * FROM stanovi as s
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
-            WHERE vidljiv = 1 ";
+            WHERE vidljiv = 1 
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas') ";
     if(!empty ($tip)){
             $sql .= "AND ( tip = '$tip[0]' ";
             $i=0;
@@ -1014,4 +1082,229 @@ function dodajIzbrisaniStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id
         ));
 
     return $conn->lastInsertID();
+}
+
+// new site functions
+
+function getRecent(){
+    global $conn;
+    $danas = date('Y-m-d');
+
+    $sql = "SELECT * FROM stanovi as s 
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE vidljiv = 1
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas')
+            ORDER BY datum_dodavanja DESC
+            LIMIT 0, 6";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);  
+}
+
+function getFeatured(){
+    global $conn;
+    $danas = date('Y-m-d');
+
+    $sql = "SELECT * FROM stanovi as s
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE hot_offer = '1'
+            AND vidljiv = '1'
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas')
+            ORDER BY RAND() limit 0,3";
+
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);  
+}
+
+    function fixit($name){
+        return "'" . str_replace(array(' ', 'ć', 'ž', 'Č'), array('_', 'c', 'z', 'C'), $name) . "'";
+        // return "'" . $name . "'";
+    }
+
+function getItemsCount($category, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to)
+{
+    global $conn;
+    $danas = date('Y-m-d');
+
+    $sql = "SELECT COUNT(*) FROM stanovi as s
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE vidljiv = 1 
+            AND ('vidljiv_do' = NULL OR 'vidljiv_do' >= '$danas') ";
+    if(!empty($type)){
+        $sql .= "AND tip IN (" . implode(", ", array_map('fixit', $type)) . ") "; // dobijes (:Stan,:Kuca,:Poslovni_prostor)
+    }
+
+    if(!empty($structure)){
+        $sql .= "AND stan_tip IN (" . implode(", ", array_map('fixit', $structure)) . ") ";
+    }
+    if(!empty($location)){
+        $sql .= "AND opstina IN (" . implode(", ", array_map('fixit', $location)) . ") ";
+    }
+    if(!empty($heat)){
+        $sql .= "AND grejanje IN (" . implode(", ", array_map('fixit', $heat)) . ") ";
+    }
+    if(!empty($setup)){
+        $sql .= "AND namestenost IN (" . implode(", ", array_map('fixit', $setup)) . ") ";
+    }
+    if(!empty($floor)){
+        $sql .= "AND sprat IN (" . implode(", ", array_map('fixit', $floor)) . ") ";
+    }
+    if(!empty($price_from)){
+        $sql .= "AND cena >= :price_from ";
+    }
+    if(!empty($price_to)){
+        $sql .= "AND cena <= :price_to ";
+    }
+    if(!empty($size_from)){
+        $sql .= "AND kvadratura >= :size_from ";
+    }
+    if(!empty($size_to)){
+        $sql .= "AND kvadratura <= :size_to ";
+    }
+    $sql .= "AND kategorija = :category";
+
+    $query = $conn->prepare($sql);
+
+
+    // if(!empty($type)){
+    //     foreach($type as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    // if(!empty($structure)){
+    //     foreach($structure as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    // if(!empty($location)){
+    //     foreach($location as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    // if(!empty($heat)){
+    //     foreach($heat as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    // if(!empty($setup)){
+    //     foreach($setup as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    // if(!empty($floor)){
+    //     foreach($floor as $value){
+    //         $query->bindParam(fixit($value), $value);
+    //     }
+    // }
+    if(!empty ($price_from)){
+    $query->bindParam(':price_from', $price_from);
+    }
+    if(!empty ($price_to)){
+    $query->bindParam(':price_to', $price_to);
+    }
+    if(!empty ($size_from)){
+    $query->bindParam(':size_from', $size_from);
+    }
+    if(!empty ($size_to)){
+    $query->bindParam(':size_to', $size_to);
+    }
+    $query->bindParam(':category', $category);
+    
+
+    $query->execute();
+    return $query->fetchColumn();
+
+
+}
+
+function getItems($category, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, $start)
+{
+    global $conn;
+    $danas = date('Y-m-d');
+    $start = $start * 9;
+
+    $sql = "SELECT * FROM stanovi as s
+            INNER JOIN lokacija as l
+            ON s.lokacija_id = l.id
+            WHERE vidljiv = 1 
+            AND ('vidljiv_do' = NULL OR 'vidljiv_do' >= '$danas') ";
+    if(!empty($type)){
+        $sql .= "AND tip IN (" . implode(", ", array_map('fixit', $type)) . ") "; // dobijes (:Stan,:Kuca,:Poslovni_prostor)
+    }
+    if(!empty($structure)){
+        $sql .= "AND stan_tip IN (" . implode(", ", array_map('fixit', $structure)) . ") ";
+    }
+    if(!empty($location)){
+        $sql .= "AND opstina IN (" . implode(", ", array_map('fixit', $location)) . ") ";
+    }
+    if(!empty($heat)){
+        $sql .= "AND grejanje IN (" . implode(", ", array_map('fixit', $heat)) . ") ";
+    }
+    if(!empty($setup)){
+        $sql .= "AND namestenost IN (" . implode(", ", array_map('fixit', $setup)) . ") ";
+    }
+    if(!empty($floor)){
+        $sql .= "AND sprat IN (" . implode(", ", array_map('fixit', $floor)) . ") ";
+    }
+    if(!empty($price_from)){
+        $sql .= "AND cena >= :price_from ";
+    }
+    if(!empty($price_to)){
+        $sql .= "AND cena <= :price_to ";
+    }
+    if(!empty($size_from)){
+        $sql .= "AND kvadratura >= :size_from ";
+    }
+    if(!empty($size_to)){
+        $sql .= "AND kvadratura <= :size_to ";
+    }
+    $sql .= "AND kategorija = :category ";
+
+    switch($order){
+        case 1: $sql .= "ORDER BY s.id DESC "; break;
+        case 2: $sql .= "ORDER BY s.id ASC "; break;
+        case 3: $sql .= "ORDER BY cena ASC "; break;
+        case 4: $sql .= "ORDER BY cena DESC "; break;
+        default: $sql .= "ORDER BY s.id DESC "; break;
+    }
+
+    $sql .= "LIMIT $start, 9";
+
+    $query = $conn->prepare($sql);
+
+
+    if(!empty ($price_from)){
+    $query->bindParam(':price_from', $price_from);
+    }
+    if(!empty ($price_to)){
+    $query->bindParam(':price_to', $price_to);
+    }
+    if(!empty ($size_from)){
+    $query->bindParam(':size_from', $size_from);
+    }
+    if(!empty ($size_to)){
+    $query->bindParam(':size_to', $size_to);
+    }
+        $query->bindParam(':category', $category);
+    
+        // echo $sql;
+
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
+}
+
+
+
+function checkLang(){
+    if(isset($_COOKIE['jevtic_lang'])){
+        return $_COOKIE['jevtic_lang'];
+    }
+    else{
+            setcookie('jevtic_lang', 'rs', time() + (86400 * 30));
+            return 'rs';
+    }
 }

@@ -312,3 +312,72 @@ ALTER TABLE stanovi ADD opis_lokacije varchar(100) after podlokacija_id;
 #####
 ######################
 INSERT INTO lokacija VALUES(18, "Nedefinisano");
+
+
+
+
+
+
+
+######################
+##### v. 2.0.1
+##### U. Strike
+#####
+######################
+ALTER TABLE dodatni_tagovi DROP COLUMN horizontala, DROP COLUMN vertikala;
+
+ALTER TABLE dodatni_tagovi
+ADD samostojeca_kuca INT(11),
+ADD kuca_s_dvoristem INT(11),
+ADD kucni_ljubimci INT(11),
+ADD balkon INT(11),
+ADD video_nadzor INT(11),
+ADD alarm INT(11),
+ADD basta INT(11),
+ADD pomocni_objekti INT(11),
+ADD ostava INT(11),
+ADD podrum INT(11),
+ADD opticki_kabl INT(11),
+ADD open_space INT(11),
+ADD pristup_za_invalide INT(11),
+ADD lokal_na_ulici INT(11),
+ADD pravno_lice INT(11);
+
+######################
+##### v. 2.0.2
+##### U. Strike
+#####
+######################
+
+ALTER TABLE stanovi MODIFY COLUMN grejanje enum('CG', 'EG', 'TA', 'PG', 'Klima uređaj', 'Na gas', 'Na struju', 'Norveški radijatori', 'Mermerni radijatori');
+ALTER TABLE stanovi MODIFY COLUMN tip enum('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Poslovna zgrada');
+ALTER TABLE stanovi ADD COLUMN provizija INT(3);
+ALTER TABLE stanovi MODIFY COLUMN namestenost enum('Namešten', 'Polunamešten', 'Nenamešten');
+ALTER TABLE stanovi ADD COLUMN vidljiv_do DATE AFTER vidljiv;
+
+
+######################
+##### v. 2.0.3
+##### U. Strike
+#####
+######################
+
+ALTER TABLE ponude MODIFY COLUMN grejanje enum('CG', 'EG', 'TA', 'PG', 'Klima uređaj', 'Na gas', 'Na struju', 'Norveški radijatori', 'Mermerni radijatori');
+ALTER TABLE ponude MODIFY COLUMN tip enum('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Poslovna zgrada');
+ALTER TABLE ponude MODIFY COLUMN namestenost enum('Namešten', 'Polunamešten', 'Nenamešten');
+ALTER TABLE ponude
+ADD t_samostojeca_kuca INT(11),
+ADD t_kuca_s_dvoristem INT(11),
+ADD t_kucni_ljubimci INT(11),
+ADD t_balkon INT(11),
+ADD t_video_nadzor INT(11),
+ADD t_alarm INT(11),
+ADD t_basta INT(11),
+ADD t_pomocni_objekti INT(11),
+ADD t_ostava INT(11),
+ADD t_podrum INT(11),
+ADD t_opticki_kabl INT(11),
+ADD t_open_space INT(11),
+ADD t_pristup_za_invalide INT(11),
+ADD t_lokal_na_ulici INT(11),
+ADD t_pravno_lice INT(11);

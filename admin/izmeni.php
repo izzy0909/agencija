@@ -33,10 +33,10 @@ if (isset ($_GET['id'])){
 <![endif]-->
 
 <!--  jquery core -->
-<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+<!-- <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
 <!-- za slike -->
 <script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
-<script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+<!-- <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script> -->
 <script src="js/jquery.smooth-scroll.min.js" type="text/javascript"></script>
 <script src="js/lightbox.js" type="text/javascript"></script>
 <script type="text/javascript"> 
@@ -72,36 +72,7 @@ $('#removeFileBox').live('click', function() {
 $("#ShowForm").click(function () {
   $("#uploaderform").slideToggle(); //Slide Toggle upload form on click
 });
-	
-$(myform).ajaxForm({
-	beforeSend: function() { //brfore sending form
-		submitbutton.attr('disabled', ''); // disable upload button
-		statustxt.empty();
-		progressbox.show(); //show progressbar
-		progressbar.width(completed); //initial value 0% of progressbar
-		statustxt.html(completed); //set status text
-		statustxt.css('color','#000'); //initial color of status text
-		
-	},
-	uploadProgress: function(event, position, total, percentComplete) { //on progress
-		progressbar.width(percentComplete + '%') //update progressbar percent complete
-		statustxt.html(percentComplete + '%'); //update status text
-		if(percentComplete>50)
-			{
-				statustxt.css('color','#fff'); //change status text to white after 50%
-			}else{
-				statustxt.css('color','#000');
-			}
-			
-		},
-	complete: function(response) { // on complete
-		output.html(response.responseText); //update element with received data
-		myform.resetForm();  // reset form
-		submitbutton.removeAttr('disabled'); //enable submit button
-		progressbox.hide(); // hide progressbar
-		$("#uploaderform").slideUp(); // hide form after upload
-	}
-});
+
 
 }); 
 </script>
@@ -187,77 +158,22 @@ $(function() {
 </script>
 
 
-<!--  date picker script -->
-<link rel="stylesheet" href="css/datePicker.css" type="text/css" />
-<script src="js/jquery/date.js" type="text/javascript"></script>
-<script src="js/jquery/jquery.datePicker.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-        $(function()
-{
+<!-- DATEPICKER -->
+  <link rel="stylesheet" href="js/date/jquery-ui.css">
+  <link rel="stylesheet" href="js/date/jquery-ui.theme.css">
+  
+  <script src="js/date/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'dd-mm-yy'});
+  } );
+  </script>
 
-// initialise the "Select date" link
-$('#date-pick')
-	.datePicker(
-		// associate the link with a date picker
-		{
-			createButton:false,
-			startDate:'01/01/2005',
-			endDate:'31/12/2020'
-		}
-	).bind(
-		// when the link is clicked display the date picker
-		'click',
-		function()
-		{
-			updateSelects($(this).dpGetSelected()[0]);
-			$(this).dpDisplay();
-			return false;
-		}
-	).bind(
-		// when a date is selected update the SELECTs
-		'dateSelected',
-		function(e, selectedDate, $td, state)
-		{
-			updateSelects(selectedDate);
-		}
-	).bind(
-		'dpClosed',
-		function(e, selected)
-		{
-			updateSelects(selected[0]);
-		}
-	);
-
-var updateSelects = function (selectedDate)
-{
-	var selectedDate = new Date(selectedDate);
-	$('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
-	$('#m option[value=' + (selectedDate.getMonth()+1) + ']').attr('selected', 'selected');
-	$('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
-}
-// listen for when the selects are changed and update the picker
-$('#d, #m, #y')
-	.bind(
-		'change',
-		function()
-		{
-			var d = new Date(
-						$('#y').val(),
-						$('#m').val()-1,
-						$('#d').val()
-					);
-			$('#date-pick').dpSetSelected(d.asString());
-		}
-	);
-
-// default the position of the selects to today
-var today = new Date();
-updateSelects(today.getTime());
-
-// and update the datePicker to reflect it...
-$('#d').trigger('change');
-});
-</script>
+  <style>
+  #ui-datepicker-div{
+  	line-height: 1em !important;
+  }
+  </style>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
@@ -531,7 +447,7 @@ $(document).pngFix( );
                                 <option value="Magacin" <?php if($stan['tip']=='Magacin'){echo 'selected';} ?>>Magacin</option>
                                 <option value="Lokal" <?php if($stan['tip']=='Lokal'){echo 'selected';} ?>>Lokal</option>
                                 <option value="Garaža" <?php if($stan['tip']=='Garaža'){echo 'selected';} ?>>Garaža</option>
-                                <option value="Apartman na dan" <?php if($stan['tip']=='Apartman na dan'){echo 'selected';} ?>>Apartman na dan</option>
+                                <option value="Poslovna zgrada" <?php if($stan['tip']=='Poslovna zgrada'){echo 'selected';} ?>>Poslovna zgrada</option>
                             </select></td>
 			<td></td>
 		</tr>    
@@ -633,6 +549,10 @@ $(document).pngFix( );
                                 <option value="TA" <?php if($stan['grejanje']=='TA'){echo 'selected';} ?>>TA</option>
                                 <option value="PG" <?php if($stan['grejanje']=='PG'){echo 'selected';} ?>>PG</option>
                                 <option value="Klima uređaj" <?php if($stan['grejanje']=='Klima uređaj'){echo 'selected';} ?>>Klima uređaj</option>
+                                <option value="Na gas" <?php if($stan['grejanje']=='Na gas'){echo 'selected';} ?>>Na gas</option>
+                                <option value="Na struju" <?php if($stan['grejanje']=='Na struju'){echo 'selected';} ?>>Na struju</option>
+                                <option value="Norveški radijatori" <?php if($stan['grejanje']=='Norveški radijatori'){echo 'selected';} ?>>Norveški radijatori</option>
+                                <option value="Mermerni radijatori" <?php if($stan['grejanje']=='Mermerni radijatori'){echo 'selected';} ?>>Mermerni radijatori</option>
                             </select></td>
 			<td></td>
 		</tr>   
@@ -640,6 +560,7 @@ $(document).pngFix( );
 			<th valign="top">Nameštenost:</th>
                 <td>        <select id="namestenost" name="namestenost" class="styledselect_form_1">
                                 <option value="Namešten" <?php if($stan['namestenost']=='Namešten'){echo 'selected';} ?>>Namešten</option>
+                                <option value="Polunamešten" <?php if($stan['namestenost']=='Polunamešten'){echo 'selected';} ?>>Polunamešten</option>
                                 <option value="Nenamešten" <?php if($stan['namestenost']=='Nenamešten'){echo 'selected';} ?>>Nenamešten</option>
                             </select></td>
 			<td></td>
@@ -653,7 +574,12 @@ $(document).pngFix( );
 			<th valign="top">Cena:</th>
 			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
 			<td></td>
-		</tr>                            
+		</tr>
+		<tr>
+			<th valign="top">Provizija:</th>
+			<td><input type="text" class="inp-form" style="width:25px;" name="provizija" value="<?php echo $stan['provizija'];?>"/><span style="margin-left:10px;">%</span></td>
+			<td></td>
+		</tr>  
 		<!--<tr>
 		<th valign="top">Select a date:</th>
 		<td class="noheight">
@@ -744,6 +670,10 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="dodatna_informacija"><?php echo $stan['dodatna_informacija'];?></textarea></td>
 		<td></td>
 	</tr>
+	<tr>
+    	<th>Vidljiv do:</th>
+    	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do" value="<?php echo date('d-m-Y', strtotime($stan['vidljiv_do'])); ?>"></td>
+    </tr>  
         
                             <tr>
                                 <th valign="top">Slike:</th>
@@ -879,11 +809,38 @@ $(document).pngFix( );
                                         </tr>
                                         <tr>
                                                 <td><input  type="checkbox" name="vise_telefonskih_linija" <?php if($tagovi['vise_telefonskih_linija']){ echo ' checked';}?>/>Više tel. linija</td>
-                                                <td><input  type="checkbox" name="vertikala" <?php if($tagovi['vertikala']){ echo ' checked';}?>/>Vertikala</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="horizontala" <?php if($tagovi['horizontala']){ echo ' checked';}?>/>Horizontala</td>
-                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
+                                                <td><input  type="checkbox" name="samostojeca_kuca" <?php if($tagovi['samostojeca_kuca']){ echo ' checked';}?>/>Samostojeća kuća</td>
+                                                <td><input  type="checkbox" name="kuca_s_dvoristem" <?php if($tagovi['kuca_s_dvoristem']){ echo ' checked';}?>/>Kuća s dvorištem</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kucni_ljubimci" <?php if($tagovi['kucni_ljubimci']){ echo ' checked';}?>/>Kućni ljubimci</td>
+                                                <td><input  type="checkbox" name="balkon" <?php if($tagovi['balkon']){ echo ' checked';}?>/>Balkon</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="video_nadzor" <?php if($tagovi['video_nadzor']){ echo ' checked';}?>/>Video nadzor</td>
+                                                <td><input  type="checkbox" name="alarm" <?php if($tagovi['alarm']){ echo ' checked';}?>/>Alarm</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="basta" <?php if($tagovi['basta']){ echo ' checked';}?>/>Bašta</td>
+                                                <td><input  type="checkbox" name="pomocni_objekti" <?php if($tagovi['pomocni_objekti']){ echo ' checked';}?>/>Pomoćni objekti</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="ostava" <?php if($tagovi['ostava']){ echo ' checked';}?>/>Ostava</td>
+                                                <td><input  type="checkbox" name="podrum" <?php if($tagovi['podrum']){ echo ' checked';}?>/>podrum</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="opticki_kabl" <?php if($tagovi['opticki_kabl']){ echo ' checked';}?>/>Optički kabl</td>
+                                                <td><input  type="checkbox" name="open_space" <?php if($tagovi['open_space']){ echo ' checked';}?>/>Open space</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pristup_za_invalide" <?php if($tagovi['pristup_za_invalide']){ echo ' checked';}?>/>Pristup za invalide</td>
+                                                <td><input  type="checkbox" name="lokal_na_ulici" <?php if($tagovi['lokal_na_ulici']){ echo ' checked';}?>/>Lokal na ulici</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pravno_lice" <?php if($tagovi['pravno_lice']){ echo ' checked';}?>/>Pravno lice</td>
                                         </tr>
                                     </table>
 				</div>
@@ -975,19 +932,6 @@ $(document).pngFix( );
 	<div class="clear">&nbsp;</div>
 </div>
 <!-- end footer -->
-<script>
-  jQuery(document).ready(function($) {
-      $('a').smoothScroll({
-        speed: 1000,
-        easing: 'easeInOutCubic'
-      });
 
-      $('.showOlderChanges').on('click', function(e){
-        $('.changelog .old').slideDown('slow');
-        $(this).fadeOut();
-        e.preventDefault();
-      })
-  });
-  </script>
 </body>
 </html>

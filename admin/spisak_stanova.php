@@ -8,6 +8,7 @@ if($_SESSION['uloga'] != 1)
                 $username = $_SESSION['username'];
                 if (isset ($_GET['pretrazi'])){
                     $id = isset($_GET['id']) ? $_GET['id'] : null;
+                    $kategorija = isset($_GET['kategorija']) ? $_GET['kategorija'] : null;
                     $tip = isset($_GET['tip']) ? $_GET['tip'] : null;
                     $namestenost = isset($_GET['namestenost']) ? $_GET['namestenost'] : null;
                     $povrsina_od = isset($_GET['povOD']) ? $_GET['povOD'] : null;
@@ -52,12 +53,25 @@ if($_SESSION['uloga'] != 1)
                     $kompjuterska_mreza = isset($_REQUEST['kompjuterska_mreza']) ? '1' : '0';
                     $dva_kupatila = isset($_REQUEST['dva_kupatila']) ? '1' : '0';
                     $vise_telefonskih_linija = isset($_REQUEST['vise_telefonskih_linija']) ? '1' : '0';
-                    $vertikala = isset($_REQUEST['vertikala']) ? '1' : '0';
-                    $horizontala = isset($_REQUEST['horizontala']) ? '1' : '0';
                     $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
+                    $samostojeca_kuca = isset($_REQUEST['samostojeca_kuca']) ? '1' : '0';
+                    $kuca_s_dvoristem = isset($_REQUEST['kuca_s_dvoristem']) ? '1' : '0';
+                    $kucni_ljubimci = isset($_REQUEST['kucni_ljubimci']) ? '1' : '0';
+                    $balkon = isset($_REQUEST['balkon']) ? '1' : '0';
+                    $video_nadzor = isset($_REQUEST['alarm']) ? '1' : '0';
+                    $alarm = isset($_REQUEST['alarm']) ? '1' : '0';
+                    $basta = isset($_REQUEST['basta']) ? '1' : '0';
+                    $pomocni_objekti = isset($_REQUEST['pomocni_objekti']) ? '1' : '0';
+                    $ostava = isset($_REQUEST['ostava']) ? '1' : '0';
+                    $podrum = isset($_REQUEST['podrum']) ? '1' : '0';
+                    $opticki_kabl = isset($_REQUEST['opticki_kabl']) ? '1' : '0';
+                    $open_space = isset($_REQUEST['open_space']) ? '1' : '0';
+                    $pristup_za_invalide = isset($_REQUEST['pristup_za_invalide']) ? '1' : '0';
+                    $lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
+                    $pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
                     
                     
-                    $stanovi = pretraziStanove($id, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+                    $stanovi = pretraziStanove($id, $kategorija, $tip, $namestenost, $povrsina_od, $povrsina_do, $telefon, $ulica, $stan_tip, $opstina, $podlokacija, $cena_od, $cena_do, $sprat, $grejanje, $izdat, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
                 }else{
                     $broj = ukupanBrojStanova();
 
@@ -303,10 +317,14 @@ $(function(){
 });
 
 $(function(){
-    $("#namestenost, #izdat").multiselect({
+    $("#kategorija, #izdat").multiselect({
         height: 48
     });
+    $("#namestenost").multiselect({
+    	height: 72
+    });
 });
+
 
 </script>
 
@@ -504,6 +522,15 @@ $(document).pngFix( );
             <div id="pozicija2">
                 <table>
                     <tr>
+                        <th>Kategorija:</th>
+                        <td style="padding: 5px 0 5px 5px;">
+                                <select id="kategorija" name="kategorija[]" class="admin-input-select"  multiple="multiple">
+                                    <option value="izdavanje">Izdavanje</option>
+                                    <option value="prodaja">Prodaja</option>
+                                </select>   
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Tip:</th>
                         <td style="padding: 5px 0 5px 5px;">
                                 <select id="tip" name="tip[]" class="admin-input-select"  multiple="multiple">
@@ -513,7 +540,7 @@ $(document).pngFix( );
                                     <option value="Magacin">Magacin</option>
                                     <option value="Lokal">Lokal</option>
                                     <option value="Garaža">Garaža</option>
-                                    <option value="Apartman na dan">Apartman na dan</option>
+                                    <option value="Poslovna zgrada">Poslovna zgrada</option>
                                 </select>   
                         </td>
                     </tr>
@@ -534,6 +561,11 @@ $(document).pngFix( );
                                     </select>
                         </td>
                     </tr>
+
+                </table>
+            </div>
+            <div id="pozicija3">
+                <table>
                     <tr>
                         <th>Spratnost:</th>
                         <td style="padding: 5px 0 5px 5px;">
@@ -562,19 +594,6 @@ $(document).pngFix( );
                                 <option value="19. sprat">19. sprat</option>
                                 <option value="20. sprat i više">20. sprat i više</option>
                             </select>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div id="pozicija3">
-                <table>
-                    <tr>
-                        <th>Nameštenost:</th>
-                        <td style="padding: 5px 0 5px 5px; height: 25px;">
-                                    <select class="admin-input-select"  name="namestenost[]" id="namestenost" multiple="multiple">
-                                        <option value="Namešten">Namešten</option>
-                                        <option value="Nenamešten">Nenamešten</option>
-                                    </select>
                         </td>
                     </tr>
                     <tr>
@@ -607,6 +626,16 @@ $(document).pngFix( );
             <div id="pozicija4">
                 <table>
                     <tr>
+                        <th>Nameštenost:</th>
+                        <td style="padding: 5px 0 5px 5px; height: 25px;">
+                                    <select class="admin-input-select"  name="namestenost[]" id="namestenost" multiple="multiple">
+                                        <option value="Namešten">Namešten</option>
+                                        <option value="Polunamešten">Polunamešten</option>
+                                        <option value="Nenamešten">Nenamešten</option>
+                                    </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Grejanje:</th>
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
                             <select name="grejanje[]" id="grejanje" multiple="multiple" class="admin-input-select">
@@ -616,6 +645,10 @@ $(document).pngFix( );
                                 <option value="TA">TA</option>
                                 <option value="PG">PG</option>
                                 <option value="Klima uređaj">Klima uređaj</option>
+                                <option value="Na gas">Na gas</option>
+                                <option value="Na struju">Na struju</option>
+                                <option value="Norveški radijatori">Norveški radijatori</option>
+                                <option value="Mermerni radijatori">Mermerni radijatori</option>
                             </select>
                         </td>
                     </tr>
@@ -628,15 +661,21 @@ $(document).pngFix( );
                             </select>
                         </td>
                     </tr>
-                       <tr>
-                        <th>Kvadratura:</th>
+                </table>
+            </div>
+            <div id="pozicija5">
+                <table>
+                	<tr>
+                        <th style="width:30px;">Kvadratura:</th>
                         <td>
-                        <input type="text" name="povOD" class="admin-input-select" style="width:54px;">
-                        <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
-                        <input type="text" name="povDO" class="admin-input-select" style="width:54px;">
+	                        <input type="text" name="povOD" class="admin-input-select" style="width:54px;">
+	                        <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
+	                        <input type="text" name="povDO" class="admin-input-select" style="width:54px;">
                         </td>
-                        <td style="padding-left:20px;">
-                            <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">Cena od:</span>
+                	</tr>
+                       <tr>
+                       <th style="width:30px;">Cena:</th>
+                        <td>
                             <input type="text" name="cenaOD" class="admin-input-select" style="width:54px;">
                             <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
                             <input type="text" name="cenaDO" class="admin-input-select" style="width:54px;">
@@ -682,9 +721,26 @@ $(document).pngFix( );
                                 <td><label><input type="checkbox" name="kompjuterska_mreza" > Kmpjuterska mreža</label></td>
                                 <td><label><input type="checkbox" name="dva_kupatila" > Dva kupatila</label></td>
                                 <td><label><input type="checkbox" name="vise_telefonskih_linija" > Više telefonskih linija</label></td>
-                                <td><label><input type="checkbox" name="vertikala" > Vertikala</label></td>
-                                <td><label><input type="checkbox" name="horizontala" > Horizontala</label></td>
                                 <td><label><input type="checkbox" name="stan_u_kuci" > Stan u kući</label></td>
+                                <td><label><input type="checkbox" name="samostojeca_kuca" > Samostojeća kuća</label></td>
+                                <td><label><input type="checkbox" name="kuca_s_dvoristem" > Kuća s dvorištem</label></td>
+                                </tr>
+                                <tr>
+                                <td><label><input type="checkbox" name="kucni_ljubimci" > Kućni ljubimci</label></td>
+                                <td><label><input type="checkbox" name="balkon" > Balkon</label></td>
+                                <td><label><input type="checkbox" name="video_nadzor" > Video nadzor</label></td>
+                                <td><label><input type="checkbox" name="alarm" > Alarm</label></td>
+                                <td><label><input type="checkbox" name="basta" > Bašta</label></td>
+                                <td><label><input type="checkbox" name="basta" > Pomoćni objekti</label></td>
+                                <td><label><input type="checkbox" name="ostava" > Ostava</label></td>
+                                <td><label><input type="checkbox" name="podrum" > Podrum</label></td>
+                                </tr>
+                                <tr>
+                                <td><label><input type="checkbox" name="opticki_kabl" > Optički kabl</label></td>
+                                <td><label><input type="checkbox" name="open_space" > Open space</label></td>
+                                <td><label><input type="checkbox" name="pristup_za_invalide" > Pristup za invalide</label></td>
+                                <td><label><input type="checkbox" name="lokal_na_ulici" > Lokal na ulici</label></td>
+                                <td><label><input type="checkbox" name="pravno_lice" > Pravno lice</label></td>
                                 </tr>
                             </table>
                        </div>

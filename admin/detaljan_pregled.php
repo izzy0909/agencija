@@ -505,6 +505,11 @@ $(document).pngFix( );
 			<td><?php echo $stan['cena'];?></td>
 			<td></td>
 		</tr>
+		<tr>
+			<th valign="top">Provizija:</th>
+			<td><?php echo $stan['provizija'];?>%</td>
+			<td></td>
+		</tr>
                 <tr>
 			<th valign="top">Stan dodao:</th>
 			<td><?php echo $stan['dodao'];?></td>
@@ -600,6 +605,11 @@ $(document).pngFix( );
                                 <th valign="top">Dodatna informacija:</th>
                                 <td><?php echo $stan['dodatna_informacija'];?></td>
                                 <td></td>
+                        </tr>
+                        <tr>
+                        		<th valign="top">Vidljiv do:</th>
+                        		<td><?php echo date("d-m-Y", strtotime($stan['vidljiv_do']));?></td>
+                        		<td></td>
                         </tr>
                         <tr>
                                 <th valign="top">Slike:</th>
@@ -724,11 +734,38 @@ $(document).pngFix( );
                                         </tr>
                                         <tr>
                                                 <td><input  type="checkbox" name="vise_telefonskih_linija" <?php if($tagovi['vise_telefonskih_linija']){ echo ' checked';}?>/>Više tel. linija</td>
-                                                <td><input  type="checkbox" name="vertikala" <?php if($tagovi['vertikala']){ echo ' checked';}?>/>Vertikala</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="horizontala" <?php if($tagovi['horizontala']){ echo ' checked';}?>/>Horizontala</td>
-                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($tagovi['stan_u_kuci']){ echo ' checked';}?>/>Stan u kući</td>
+                                                <td><input  type="checkbox" name="samostojeca_kuca" <?php if($tagovi['samostojeca_kuca']){ echo ' checked';}?>/>Samostojeća kuća</td>
+                                                <td><input  type="checkbox" name="kuca_s_dvoristem" <?php if($tagovi['kuca_s_dvoristem']){ echo ' checked';}?>/>Kuća s dvorištem</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kucni_ljubimci" <?php if($tagovi['kucni_ljubimci']){ echo ' checked';}?>/>Kućni ljubimci</td>
+                                                <td><input  type="checkbox" name="balkon" <?php if($tagovi['balkon']){ echo ' checked';}?>/>Balkon</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="video_nadzor" <?php if($tagovi['video_nadzor']){ echo ' checked';}?>/>Video nadzor</td>
+                                                <td><input  type="checkbox" name="alarm" <?php if($tagovi['alarm']){ echo ' checked';}?>/>Alarm</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="basta" <?php if($tagovi['basta']){ echo ' checked';}?>/>Bašta</td>
+                                                <td><input  type="checkbox" name="pomocni_objekti" <?php if($tagovi['pomocni_objekti']){ echo ' checked';}?>/>Pomoćni objekti</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="ostava" <?php if($tagovi['ostava']){ echo ' checked';}?>/>Ostava</td>
+                                                <td><input  type="checkbox" name="podrum" <?php if($tagovi['podrum']){ echo ' checked';}?>/>podrum</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="opticki_kabl" <?php if($tagovi['opticki_kabl']){ echo ' checked';}?>/>Optički kabl</td>
+                                                <td><input  type="checkbox" name="open_space" <?php if($tagovi['open_space']){ echo ' checked';}?>/>Open space</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pristup_za_invalide" <?php if($tagovi['pristup_za_invalide']){ echo ' checked';}?>/>Pristup za invalide</td>
+                                                <td><input  type="checkbox" name="lokal_na_ulici" <?php if($tagovi['lokal_na_ulici']){ echo ' checked';}?>/>Lokal na ulici</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pravno_lice" <?php if($tagovi['pravno_lice']){ echo ' checked';}?>/>Pravno lice</td>
                                         </tr>
                                     </table>
 				</div>

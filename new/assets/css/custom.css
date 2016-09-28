@@ -1,0 +1,53 @@
+.hot__ribon {
+    position: absolute;
+    top: 110px;
+    right: -5px;
+    background: #bb0101;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 15px;
+    font-weight: 600;
+    top: 18px;
+}
+
+.hot__ribon2 {
+    position: absolute;
+    top: 110px;
+    right: -5px;
+    background: #bb0101;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 15px;
+    font-weight: 600;
+    top: 18px;
+}
+
+.gosubmit__title{
+	width:auto !important;
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+.search-price-size .form-control{
+    display:inline-block !important;
+    width: 44%;
+}
+
+.slider__item img{
+    width:100% !important;
+}
+
+@media (max-width: 991px){
+    .width-fix {
+        width: 50%;
+    }
+    .width-fix-2 {
+        width:75%;
+    }
+    .width-fix-3{
+        width:25%;
+    }
+}

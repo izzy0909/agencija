@@ -103,6 +103,10 @@ $(myform).ajaxForm({
 });
 
 }); 
+	
+
+
+}); 
 </script>
 <script type="text/javascript">
 $(function(){
@@ -178,78 +182,30 @@ $(function() {
 });
 </script>
 
+<!-- DATEPICKER -->
+  <link rel="stylesheet" href="js/date/jquery-ui.css">
+  <link rel="stylesheet" href="js/date/jquery-ui.theme.css">
+  
+  <style>
+  	#id-form .ui-helper-hidden-accessible {
+  		position: static !important;
+  	}
+  </style>
 
-<!--  date picker script -->
-<link rel="stylesheet" href="css/datePicker.css" type="text/css" />
-<script src="js/jquery/date.js" type="text/javascript"></script>
-<script src="js/jquery/jquery.datePicker.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-        $(function()
-{
+  <script src="js/date/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'dd-mm-yy'});
+  } );
+  </script>
 
-// initialise the "Select date" link
-$('#date-pick')
-	.datePicker(
-		// associate the link with a date picker
-		{
-			createButton:false,
-			startDate:'01/01/2005',
-			endDate:'31/12/2020'
-		}
-	).bind(
-		// when the link is clicked display the date picker
-		'click',
-		function()
-		{
-			updateSelects($(this).dpGetSelected()[0]);
-			$(this).dpDisplay();
-			return false;
-		}
-	).bind(
-		// when a date is selected update the SELECTs
-		'dateSelected',
-		function(e, selectedDate, $td, state)
-		{
-			updateSelects(selectedDate);
-		}
-	).bind(
-		'dpClosed',
-		function(e, selected)
-		{
-			updateSelects(selected[0]);
-		}
-	);
+  <style>
+  #ui-datepicker-div{
+  	line-height: 1em !important;
+  }
+  </style>
 
-var updateSelects = function (selectedDate)
-{
-	var selectedDate = new Date(selectedDate);
-	$('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
-	$('#m option[value=' + (selectedDate.getMonth()+1) + ']').attr('selected', 'selected');
-	$('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
-}
-// listen for when the selects are changed and update the picker
-$('#d, #m, #y')
-	.bind(
-		'change',
-		function()
-		{
-			var d = new Date(
-						$('#y').val(),
-						$('#m').val()-1,
-						$('#d').val()
-					);
-			$('#date-pick').dpSetSelected(d.asString());
-		}
-	);
 
-// default the position of the selects to today
-var today = new Date();
-updateSelects(today.getTime());
-
-// and update the datePicker to reflect it...
-$('#d').trigger('change');
-});
-</script>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
@@ -509,7 +465,7 @@ $(document).pngFix( );
                                 <option value="Magacin">Magacin</option>
                                 <option value="Lokal">Lokal</option>
                                 <option value="Garaža">Garaža</option>
-                                <option value="Apartman na dan">Apartman na dan</option>
+                                <option value="Poslovna zgrada">Poslovna zgrada</option>
                             </select></td>
 			<td>
 			</td>
@@ -621,6 +577,7 @@ $(document).pngFix( );
                <th>Nameštenost:</th>
                 <td>        <select name="namestenost" class="styledselect_form_1">
                                 <option value="Namešten">Namešten</option>
+                                <option value="Polunamešten">Polunamešten</option>
                                 <option value="Nenamešten">Nenamešten</option>
                             </select></td>
                 </tr>
@@ -634,6 +591,11 @@ $(document).pngFix( );
 			<td><input type="text" class="inp-form" name="cena" /></td>
 			<td></td>
 		</tr>
+		<tr>
+			<th valign="top">Provizija:</th>
+			<td><input type="text" class="inp-form" style="width:25px;" name="provizija" /><span style="margin-left:10px;">%</span></td>
+			<td></td>
+		</tr>  
 		<!--<tr>
 		<th valign="top">Select a date:</th>
 		<td class="noheight">
@@ -731,7 +693,11 @@ $(document).pngFix( );
                                 <option value="1">Vidljiv</option>
                             </select></td>
 			<td></td>
-                </tr>                            
+                </tr>  
+    <tr>
+    	<th>Vidljiv do:</th>
+    	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do"></td>
+    </tr>                          
 
 <tr>  
 	<td>
@@ -834,11 +800,38 @@ $(document).pngFix( );
                                         </tr>
 					<tr>
                                                 <td><input  type="checkbox" name="vise_telefonskih_linija" /> Više tel. linija</td>
-                                                <td><input  type="checkbox" name="vertikala" /> Vertikala</td>
-                                        </tr>
-					<tr>
-                                                <td><input  type="checkbox" name="horizontala" /> Horizontala</td>
                                                 <td><input  type="checkbox" name="stan_u_kuci" /> Stan u kući</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="samostojeca_kuca" />Samostojeća kuća</td>
+                                                <td><input  type="checkbox" name="kuca_s_dvoristem" />Kuća s dvorištem</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kucni_ljubimci" />Kućni ljubimci</td>
+                                                <td><input  type="checkbox" name="balkon" />Balkon</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="video_nadzor" />Video nadzor</td>
+                                                <td><input  type="checkbox" name="alarm" />Alarm</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="basta" />Bašta</td>
+                                                <td><input  type="checkbox" name="pomocni_objekti" />Pomoćni objekti</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="ostava" />Ostava</td>
+                                                <td><input  type="checkbox" name="podrum" />podrum</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="opticki_kabl" />Optički kabl</td>
+                                                <td><input  type="checkbox" name="open_space" />Open space</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pristup_za_invalide" />Pristup za invalide</td>
+                                                <td><input  type="checkbox" name="lokal_na_ulici" />Lokal na ulici</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pravno_lice" />Pravno lice</td>
                                         </tr>
                                     </table>
 				</div>
@@ -957,7 +950,11 @@ if (isset ($_POST['dodaj_stan'])){
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
     $dodatna_informacija = isset($_POST['dodatna_informacija']) ? $_POST['dodatna_informacija'] : null;
     $vidljivost = isset($_POST['vidljivost']) ? $_POST['vidljivost'] : null;
-    
+    if(isset($_POST['vidljiv_do'])){
+        $timestamp = DateTime::createFromFormat('d-m-Y', $_POST['vidljiv_do']);
+        $vidljiv_do = $timestamp->format('Y-m-d');
+    }else $vidljiv_do = null;
+    $provizija = isset($_POST['provizija']) ? $_POST['provizija'] : null;
     
     $kablovska = isset($_POST['kablovska']) ? '1' : '0';
     $tv = isset($_POST['tv']) ? '1' : '0';
@@ -988,13 +985,26 @@ if (isset ($_POST['dodaj_stan'])){
     $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
     $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
     $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
-    $vertikala = isset($_POST['vertikala']) ? '1' : '0';
-    $horizontala = isset($_POST['horizontala']) ? '1' : '0';
     $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
+	$samostojeca_kuca = isset($_REQUEST['samostojeca_kuca']) ? '1' : '0';
+	$kuca_s_dvoristem = isset($_REQUEST['kuca_s_dvoristem']) ? '1' : '0';
+	$kucni_ljubimci = isset($_REQUEST['kucni_ljubimci']) ? '1' : '0';
+	$balkon = isset($_REQUEST['balkon']) ? '1' : '0';
+	$video_nadzor = isset($_REQUEST['alarm']) ? '1' : '0';
+	$alarm = isset($_REQUEST['alarm']) ? '1' : '0';
+	$basta = isset($_REQUEST['basta']) ? '1' : '0';
+	$pomocni_objekti = isset($_REQUEST['pomocni_objekti']) ? '1' : '0';
+	$ostava = isset($_REQUEST['ostava']) ? '1' : '0';
+	$podrum = isset($_REQUEST['podrum']) ? '1' : '0';
+	$opticki_kabl = isset($_REQUEST['opticki_kabl']) ? '1' : '0';
+	$open_space = isset($_REQUEST['open_space']) ? '1' : '0';
+	$pristup_za_invalide = isset($_REQUEST['pristup_za_invalide']) ? '1' : '0';
+	$lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
+	$pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
     
-    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $username, $dodatna_informacija);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $vidljiv_do, $username, $dodatna_informacija, $provizija);
     
-    dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $vertikala, $horizontala, $stan_u_kuci);
+    dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
     
     dodajBroj('vlasnik', $telefon);
     
