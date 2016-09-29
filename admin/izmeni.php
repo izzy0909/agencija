@@ -32,6 +32,13 @@ if (isset ($_GET['id'])){
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
 
+<style>
+  	#id-form .ui-helper-hidden-accessible {
+  		position: static !important;
+  		margin-right: 2px;
+  	}
+</style>
+
 <!--  jquery core -->
 <!-- <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
 <!-- za slike -->
@@ -397,7 +404,7 @@ $(document).pngFix( );
 		<!--  end step-holder -->
 
 		<!-- start id-form -->
-		<table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+		<table border="0" cellpadding="0" cellspacing="0"  id="id-form" >
 		<tr>
 			<th valign="top">Id:</th>
 			<td><input type="hidden" class="inp-form" name="id" value="<?php echo $stan[0];?>" /><?php echo '<strong>' . $stan[0] . '</strong>' ;?></td>
@@ -748,11 +755,11 @@ $(document).pngFix( );
 
 				<div class="left"><a href=""></a></div>
 				<div class="right">
-                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;">
 									
                                         <tr>
                                                 
-                                                <td style="width:110px; "><input  type="checkbox" name="interfon" <?php if($tagovi['interfon']){ echo ' checked';}?>/>Interfon</td>
+                                                <td style="width:100px; "><input  type="checkbox" name="interfon" <?php if($tagovi['interfon']){ echo ' checked';}?>/>Interfon</td>
                                                 <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
                                         </tr>
                                         <tr>

@@ -9,20 +9,40 @@ if(isset($_GET['id'])){
     $stan = prikaziStanZaFront($id);
     if(!$stan){
         header('Location: index.php');
+      // die('aaa');
+
     }
     $tagovi = ispisiDodatneTagove($id);
     $slike = prikaziSlike($id, 'velika');
 }
 else{
+  // die('bbb');
     header('Location: index.php');
 }
 
 
 require_once 'lang/' . checkLang() . '.php';
 
+
 $active = 'details';
 $areas = prikaziSveOpstine();
 
+$fav = 0;
+if(isset($_COOKIE['jevtic_favorites'])){
+  $favorites = $_COOKIE['jevtic_favorites'];
+  if(stripos($favorites, ',')){        // ako ima vise id-eva
+
+    if(stripos($favorites, $stan[0])===0 || stripos($favorites, $stan[0])>0) {
+      $fav = 1;
+    }
+  }
+
+  else{ // ako je samo jedan
+    if($favorites == $stan[0]){
+      $fav = 1;
+    }
+  }
+}
 
 include 'parts/html-open.php'; 
 include 'parts/header.php';
@@ -42,7 +62,7 @@ include 'parts/navigation.php';
                     <div class="property__price"><strong class="property__price-value"><?=$stan['cena']?>&#8364;</strong></div>
                     <h4 class="property__commision"><?=$lang['details.commision']?>: <strong><?=$stan['provizija']?>%</strong></h4>
                     <div class="property__actions">
-                      <button type="button" class="btn--default"><i class="fa fa-star"></i><?=$lang['details.favorite']?></button>
+                      <button type="button" id="setfavorite" class="btn--default" data-func="<?php if($fav){echo 'remove';} else{echo 'add';}?>" data-id="<?=$stan[0]?>"><i class="fa fa-star"></i><?php if($fav){echo $lang['details.favoriteremove'];} else{ echo $lang['details.favorite'];} ?></button>
                     </div>
                   </div>
                   <div class="clearfix"></div>
@@ -135,7 +155,7 @@ include 'parts/navigation.php';
                             if($tagovi['dvoriste']) echo '<li> Dvorište</li>';
                             if($tagovi['potkrovlje']) echo '<li> Potkrovlje</li>';
                             if($tagovi['terasa']) echo '<li> Terasa</li>';
-                            if($tagovi['novogradnja']) echo '<li"> Novogradnja</li>';
+                            if($tagovi['novogradnja']) echo '<li> Novogradnja</li>';
                             if($tagovi['renovirano']) echo '<li> Renovirano</li>';
                             if($tagovi['lux']) echo '<li> Lux</li>';
                             if($tagovi['penthaus']) echo '<li> Penthaus</li>';

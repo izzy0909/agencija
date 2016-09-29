@@ -1120,7 +1120,7 @@ function getFeatured(){
 }
 
     function fixit($name){
-        return "'" . str_replace(array(' ', 'ć', 'ž', 'Č'), array('_', 'c', 'z', 'C'), $name) . "'";
+        return "'" . str_replace(array('ć', 'ž', 'Č'), array('c', 'z', 'C'), $name) . "'";
         // return "'" . $name . "'";
     }
 
@@ -1231,7 +1231,7 @@ function getItems($category, $type, $structure, $location, $heat, $setup, $floor
             INNER JOIN lokacija as l
             ON s.lokacija_id = l.id
             WHERE vidljiv = 1 
-            AND ('vidljiv_do' = NULL OR 'vidljiv_do' >= '$danas') ";
+            AND (vidljiv_do IS NULL OR vidljiv_do >= '$danas') ";
     if(!empty($type)){
         $sql .= "AND tip IN (" . implode(", ", array_map('fixit', $type)) . ") "; // dobijes (:Stan,:Kuca,:Poslovni_prostor)
     }

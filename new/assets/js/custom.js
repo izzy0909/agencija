@@ -17,39 +17,44 @@
 	  });
 
 
-	  $('.addtofav').click(function(e)){
+	  $('#setfavorite').click(function(e){
 	  	e.preventDefault();
-	  	var favid = $('#addtofav').attr("data-id");
+	  	var favid = $('#setfavorite').attr("data-id");
+	  	var favfunc = $('#setfavorite').attr("data-func");
 	  		$.ajax({
 	            type: "GET",
-	            data:  '?add_favorite=1&id=' + favid,
+	            data:  favfunc + '_favorite=1&id=' + favid,
+	            url: "ajax.php",
+	            dataType: "html",
+	            async: false,
+	            success: function (data) {
+	            	if(data=='1'){
+		            	$('#setfavorite').attr('data-func', 'remove');
+		            	$('#setfavorite').html('<i class="fa fa-star"></i>Ukloni iz omiljenih');
+	            	}
+	            	if(data=='2'){
+		            	$('#setfavorite').attr('data-func', 'add');
+		            	$('#setfavorite').html('<i class="fa fa-star"></i>Dodaj u omiljene');
+	            	}
+	            }
+			});
+	  });
+
+	  $('.removefav').click(function(e){
+	  	e.preventDefault();
+	  	var favid = $('.removefav').attr("data-id");
+	  		$.ajax({
+	            type: "GET",
+	            data:  'remove_favorite=1&id=' + favid,
 	            url: "ajax.php",
 	            dataType: "html",
 	            async: false,
 	            success: function (data) {
 	            	if(data){
-	            	$(this).removeClass('addtofav');
-	            	$(this).addClass('removefav');
-	            	$(this).text('Ukloni iz omiljenih');
+		            	$('.removefav').addClass('addtofav');
+		            	$('.removefav').html('<i class="fa fa-star"></i>Dodaj u omiljene');
+		            	$('.removefav').removeClass('removefav');
 	            	}
 	            }
 			});
-	  }
-	  $('.removefav').click(function(e)){
-	  	e.preventDefault();
-	  	var favid = $('#addtofav').attr("data-id");
-	  		$.ajax({
-	            type: "GET",
-	            data:  '?remove_favorite=1&id=' + favid,
-	            url: "ajax.php",
-	            dataType: "html",
-	            async: false,
-	            success: function (data) {
-	            	if(data){
-	            	$(this).removeClass('removefav');
-	            	$(this).addClass('addtofav');
-	            	$(this).text('Dodaj u omiljene');
-	            	}
-	            }
-			});
-	  }
+	  });

@@ -49,6 +49,7 @@ $lang['submit.amenities'] = "Dodatne pogodnosti";
 
 $lang['details.commision'] = "Provizija";
 $lang['details.favorite'] = "Dodaj u omiljene";
+$lang['details.favoriteremove'] = "Ukloni iz omiljenih";
 $lang['details.amenities'] = "Dodatne pogodnosti";
 $lang['details.id'] = "Kataloški broj";
 $lang['details.moreinfo'] = "Prikaži još";

@@ -63,23 +63,29 @@ elseif(isset($_REQUEST['add_favorite'])){
 	if(isset($_COOKIE['jevtic_favorites'])){
 		$newcookie = $_COOKIE['jevtic_favorites'] . ',' . $_REQUEST['id'];
 		setcookie('jevtic_favorites', $newcookie, time() + (86400 * 30));
-		return '2';
+		echo '1';
 	}
 	else{
-		setcookie('jevtic_favorites', $_REQUEST['id']. time() + (86400 * 30));
-		return '1';
+		setcookie('jevtic_favorites', $_REQUEST['id'], time() + (86400 * 30));
+		echo '1';
 	}
 }
 elseif(isset($_REQUEST['remove_favorite'])){
 	$oldcookie = $_COOKIE['jevtic_favorites'];
-	if(stirpos($oldcookie, ',')){
-		$newcookie str_replace(',' . $_REQUEST['id'], '', $oldcookie);
+	if(stripos($oldcookie, ',')){
+		if(stripos($oldcookie, $_REQUEST['id']))
+		{
+			$newcookie = str_replace(',' . $_REQUEST['id'], '', $oldcookie);
+		}
+		else{
+			$newcookie = str_replace($_REQUEST['id'] . ',', '', $oldcookie);
+		}
 		setcookie('jevtic_favorites', $newcookie, time() + (86400 * 30));
-		return '2';
+		echo '2';
 	}
 	else{
 		setcookie('jevtic_favorites', '1', time() - 3600);
-		return '1';
+		echo '2';
 	}
 }
 
