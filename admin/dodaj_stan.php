@@ -37,7 +37,6 @@ if($_SESSION['uloga'] != 1)
 <script src="js/jquery/ui.core.js" type="text/javascript"></script>
 <script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
 <script src="js/jquery/jquery.bind.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/jquery.form.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function() { 
 //elements
@@ -71,40 +70,6 @@ $('#removeFileBox').live('click', function() {
 $("#ShowForm").click(function () {
   $("#uploaderform").slideToggle(); //Slide Toggle upload form on click
 });
-	
-$(myform).ajaxForm({
-	beforeSend: function() { //brfore sending form
-		submitbutton.attr('disabled', ''); // disable upload button
-		statustxt.empty();
-		progressbox.show(); //show progressbar
-		progressbar.width(completed); //initial value 0% of progressbar
-		statustxt.html(completed); //set status text
-		statustxt.css('color','#000'); //initial color of status text
-		
-	},
-	uploadProgress: function(event, position, total, percentComplete) { //on progress
-		progressbar.width(percentComplete + '%') //update progressbar percent complete
-		statustxt.html(percentComplete + '%'); //update status text
-		if(percentComplete>50)
-			{
-				statustxt.css('color','#fff'); //change status text to white after 50%
-			}else{
-				statustxt.css('color','#000');
-			}
-			
-		},
-	complete: function(response) { // on complete
-		output.html(response.responseText); //update element with received data
-		myform.resetForm();  // reset form
-		submitbutton.removeAttr('disabled'); //enable submit button
-		progressbox.hide(); // hide progressbar
-		$("#uploaderform").slideUp(); // hide form after upload
-	}
-});
-
-}); 
-	
-
 
 }); 
 </script>
@@ -950,7 +915,7 @@ if (isset ($_POST['dodaj_stan'])){
     $opis = isset($_POST['opis']) ? $_POST['opis'] : null;
     $dodatna_informacija = isset($_POST['dodatna_informacija']) ? $_POST['dodatna_informacija'] : null;
     $vidljivost = isset($_POST['vidljivost']) ? $_POST['vidljivost'] : null;
-    if(isset($_POST['vidljiv_do'])){
+    if(!empty($_POST['vidljiv_do'])){
         $timestamp = DateTime::createFromFormat('d-m-Y', $_POST['vidljiv_do']);
         $vidljiv_do = $timestamp->format('Y-m-d');
     }else $vidljiv_do = null;
