@@ -64,7 +64,7 @@ if (is_array($ImageName))
 			
 					
 			//Construct a new image name (with random number added) for our new image.
-			$NewImageName = $RandomNumber.'.'.$ImageExt;
+			$NewImageName = $stan_id . '_' . md5($RandomNumber).'.'.$ImageExt;
 			$thumb_NewImageName = 'thumb_' . $NewImageName;
 			//Set the Destination Image path with Random Name
 			$thumb_DestRandImageName 	= $DestinationDirectory.$ThumbPrefix.$NewImageName; //Thumb name

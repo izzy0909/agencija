@@ -155,6 +155,10 @@ $(function() {
   	#id-form .ui-helper-hidden-accessible {
   		position: static !important;
   	}
+	#related-act-inner input[type="checkbox"] {
+		width: 13px;
+		height: 13px;
+	}
   </style>
 
   <script src="js/date/jquery-ui.js"></script>
@@ -693,8 +697,11 @@ $(document).pngFix( );
 	<div id="related-activities">
 
 		<!--  start related-act-top -->
-		<div id="related-act-top">
-		<img src="images/forms/header_related_act.gif" width="271" height="43" alt="" />
+		<!--  start related-act-top -->
+		<div id="step-holder">
+			<div class="step-no"></div>
+			<div class="step-dark-left"><a href="">Dodatni tagovi</a></div>
+
 		</div>
 		<!-- end related-act-top -->
 
@@ -706,7 +713,7 @@ $(document).pngFix( );
 
 				<div class="left"><a href=""></a></div>
 				<div class="right">
-                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;width: 100%;">
                                         <tr>
                                                 <td style="width:100px;"><input  type="checkbox" name="interfon" /> Interfon</td>
                                                 <td style="width:100px;"><input  type="checkbox" name="kablovska" /> Kablovska</td>
@@ -768,35 +775,35 @@ $(document).pngFix( );
                                                 <td><input  type="checkbox" name="stan_u_kuci" /> Stan u kući</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="samostojeca_kuca" />Samostojeća kuća</td>
-                                                <td><input  type="checkbox" name="kuca_s_dvoristem" />Kuća s dvorištem</td>
+                                                <td><input  type="checkbox" name="samostojeca_kuca" /> Samostojeća kuća</td>
+                                                <td><input  type="checkbox" name="kuca_s_dvoristem" /> Kuća s dvorištem</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="kucni_ljubimci" />Kućni ljubimci</td>
-                                                <td><input  type="checkbox" name="balkon" />Balkon</td>
+                                                <td><input  type="checkbox" name="kucni_ljubimci" /> Kućni ljubimci</td>
+                                                <td><input  type="checkbox" name="balkon" /> Balkon</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="video_nadzor" />Video nadzor</td>
-                                                <td><input  type="checkbox" name="alarm" />Alarm</td>
+                                                <td><input  type="checkbox" name="video_nadzor" /> Video nadzor</td>
+                                                <td><input  type="checkbox" name="alarm" /> Alarm</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="basta" />Bašta</td>
-                                                <td><input  type="checkbox" name="pomocni_objekti" />Pomoćni objekti</td>
+                                                <td><input  type="checkbox" name="basta" /> Bašta</td>
+                                                <td><input  type="checkbox" name="pomocni_objekti" /> Pomoćni objekti</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="ostava" />Ostava</td>
-                                                <td><input  type="checkbox" name="podrum" />podrum</td>
+                                                <td><input  type="checkbox" name="ostava" /> Ostava</td>
+                                                <td><input  type="checkbox" name="podrum" /> Podrum</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="opticki_kabl" />Optički kabl</td>
-                                                <td><input  type="checkbox" name="open_space" />Open space</td>
+                                                <td><input  type="checkbox" name="opticki_kabl" /> Optički kabl</td>
+                                                <td><input  type="checkbox" name="open_space" /> Open space</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="pristup_za_invalide" />Pristup za invalide</td>
-                                                <td><input  type="checkbox" name="lokal_na_ulici" />Lokal na ulici</td>
+                                                <td><input  type="checkbox" name="pristup_za_invalide" /> Pristup za invalide</td>
+                                                <td><input  type="checkbox" name="lokal_na_ulici" /> Lokal na ulici</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="pravno_lice" />Pravno lice</td>
+                                                <td><input  type="checkbox" name="pravno_lice" /> Pravno lice</td>
                                         </tr>
                                     </table>
 				</div>

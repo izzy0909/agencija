@@ -37,6 +37,10 @@ if (isset ($_GET['id'])){
   		position: static !important;
   		margin-right: 2px;
   	}
+	#related-act-inner input[type="checkbox"] {
+		width: 13px;
+		height: 13px;
+	}
 </style>
 
 <!--  jquery core -->
@@ -755,11 +759,11 @@ $(document).pngFix( );
 
 				<div class="left"><a href=""></a></div>
 				<div class="right">
-                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px;">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px; width:100%;">
 									
                                         <tr>
                                                 
-                                                <td style="width:100px; "><input  type="checkbox" name="interfon" <?php if($tagovi['interfon']){ echo ' checked';}?>/>Interfon</td>
+                                                <td style="width:153px; "><input  type="checkbox" name="interfon" <?php if($tagovi['interfon']){ echo ' checked';}?>/>Interfon</td>
                                                 <td><input  type="checkbox" name="kablovska" <?php if($tagovi['kablovska']){ echo ' checked';}?>/>Kablovska</td>
                                         </tr>
                                         <tr>

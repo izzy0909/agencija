@@ -322,8 +322,8 @@ this.openLightbox();
                             if($tagovi['kompjuterska_mreza']) echo '<span><img src="images/t.png"> Komp. mreža</span>';
                             if($tagovi['dva_kupatila']) echo '<span><img src="images/t.png"> Dva kupatila</span>';
                             if($tagovi['vise_telefonskih_linija']) echo '<span><img src="images/t.png"> Više tele. linija</span>';
-                            if($tagovi['vertikala']) echo '<span><img src="images/t.png"> Vertikala</span>';
-                            if($tagovi['horizontala']) echo '<span><img src="images/t.png"> Horizontala</span>';
+//                            if($tagovi['vertikala']) echo '<span><img src="images/t.png"> Vertikala</span>';
+//                            if($tagovi['horizontala']) echo '<span><img src="images/t.png"> Horizontala</span>';
                             if($tagovi['stan_u_kuci']) echo '<span><img src="images/t.png"> Stan u kući</span>';
                             
                         ?>
