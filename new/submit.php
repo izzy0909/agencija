@@ -9,6 +9,72 @@ require_once 'lang/' . checkLang() . '.php';
 $active = 'submit';
 $areas = prikaziSveOpstine();
 
+if(isset($_REQUEST['submitform'])){
+  
+  $kategorija = $_REQUEST['category'];
+  $tip = $_REQUEST['type'];
+  $stan_tip = $_REQUEST['structure'];
+  $namestenost = $_REQUEST['setup'];
+  $grejanje = $_REQUEST['heat'];
+  $sprat = $_REQUEST['floor'];
+  $lokacija_id = $_REQUEST['location'];
+  $ulica = $_REQUEST['street'];
+  $br = $_REQUEST['street-no'];
+  $kvadratura = $_REQUEST['size'];
+  $cena = $_REQUEST['price'];
+  $description = isset($_REQUEST['description']) ? $_REQUEST['description'] : null;
+
+  $ime = $_REQUEST['name'];
+  $telefon = $_REQUEST['phone'];
+  $email = $_REQUEST['email'];
+
+    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
+    $tv = isset($_POST['tv']) ? '1' : '0';
+    $klima = isset($_POST['klima']) ? '1' : '0';
+    $internet = isset($_POST['internet']) ? '1' : '0';
+    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
+    $frizider = isset($_POST['frizider']) ? '1' : '0';
+    $sporet = isset($_POST['sporet']) ? '1' : '0';
+    $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
+    $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
+    $plakari = isset($_POST['plakari']) ? '1' : '0';
+    $interfon = isset($_POST['interfon']) ? '1' : '0';
+    $lift = isset($_POST['lift']) ? '1' : '0';
+    $bazen = isset($_POST['bazen']) ? '1' : '0';
+    $garaza = isset($_POST['garaza']) ? '1' : '0';
+    $parking = isset($_POST['parking']) ? '1' : '0';
+    $dvoriste = isset($_POST['dvoriste']) ? '1' : '0';
+    $potkrovlje = isset($_POST['potkrovlje']) ? '1' : '0';
+    $terasa = isset($_POST['terasa']) ? '1' : '0';
+    $novogradnja = isset($_POST['novogradnja']) ? '1' : '0';
+    $renovirano = isset($_POST['renovirano']) ? '1' : '0';
+    $lux = isset($_POST['lux']) ? '1' : '0';
+    $penthaus = isset($_POST['penthaus']) ? '1' : '0';
+    $salonski = isset($_POST['salonski']) ? '1' : '0';
+    $lodja = isset($_POST['lodja']) ? '1' : '0';
+    $duplex = isset($_POST['duplex']) ? '1' : '0';
+    $nov_namestaj = isset($_POST['nov_namestaj']) ? '1' : '0';
+    $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
+    $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
+    $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
+    $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
+    $samostojeca_kuca = isset($_POST['samostojeca_kuca']) ? '1' : '0';
+    $kuca_s_dvoristem = isset($_POST['kuca_s_dvoristem']) ? '1' : '0';
+    $kucni_ljubimci = isset($_POST['kucni_ljubimci']) ? '1' : '0';
+    $balkon = isset($_POST['balkon']) ? '1' : '0';
+    $video_nadzor = isset($_POST['video_nadzor']) ? '1' : '0';
+    $alarm = isset($_POST['alarm']) ? '1' : '0';
+    $basta = isset($_POST['basta']) ? '1' : '0';
+    $pomocni_objekti = isset($_POST['pomocni_objekti']) ? '1' : '0';
+    $opticki_kabl = isset($_POST['opticki_kabl']) ? '1' : '0';
+    $open_space = isset($_POST['open_space']) ? '1' : '0';
+    $pristup_za_invalide = isset($_POST['pristup_za_invalide']) ? '1' : '0';
+    $lokal_na_ulici = isset($_POST['lokal_na_ulici']) ? '1' : '0';
+    $pravno_lice = isset($_POST['pravno_lice']) ? '1' : '0';
+
+}
+
+
 include 'parts/html-open.php'; 
 include 'parts/header.php';
 include 'parts/navigation.php';
@@ -22,14 +88,13 @@ include 'parts/navigation.php';
               <div class="site site--main">
                 <header class="site__header">
                   <h1 class="site__title"><?=$lang['submit.title']?></h1>
-                  <h2 class="site__headline">Add and edit listing information</h2>
                 </header>
                 <div class="site__main">
-                  <form class="form form--flex form--property-add js-form js-form-property">
+                  <form class="form form--flex form--property-add js-form js-form-property" actiom="submit.php" method="POST" enctype="multipart/form-data">
                     <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
                       <div class="widget__header">
                         <h2 class="widget__title"><?=$lang['submit.basicinfo']?></h2>
-                        <h5 class="widget__headline">You should fill all this fields.</h5>
+                        <h5 class="widget__headline"><?=$lang['submit.fillall']?>.</h5>
                       </div>
                       <div class="widget__content">
                         <div class="row">
@@ -157,7 +222,7 @@ include 'parts/navigation.php';
                           </div>
                           <div class="form-group form-group--col-12">
                             <label for="in-131" class="control-label"><?=$lang['search.form.description']?></label>
-                            <textarea id="in-131" name="description" data-parsley-trigger="keyup" data-parsley-minlength="200" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 200 caracters long comment.." class="form-control"></textarea>
+                            <textarea id="in-131" name="description" data-parsley-trigger="keyup" data-parsley-minlength="50" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 50 caracters long comment.." class="form-control"></textarea>
                           </div>
                         </div>
                       </div>
@@ -186,235 +251,193 @@ include 'parts/navigation.php';
                     <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
                       <div class="widget__header">
                         <h2 class="widget__title"><?=$lang['submit.amenities']?></h2>
-                        <h5 class="widget__headline">You can choose all amenities that you have. But think twice before</h5>
+                        <h5 class="widget__headline"><?=$lang['submit.fillsome']?>.</h5>
                       </div>
                       <div class="widget__content">
                         <div class="row">
                           <div class="form-group form-group--col-12">
                             <ul class="form-property__params">
                               <li>
-                                <input id="option_1" type="checkbox" class="in-checkbox">
-                                <label for="option_1" name="kablosvka" class="in-label">Kablovska</label>
+                                <input id="option_1" name="kablosvka" type="checkbox" class="in-checkbox">
+                                <label for="option_1" class="in-label">Kablovska</label>
                               </li>
                               <li>
-                                <input id="option_2" type="checkbox" class="in-checkbox">
-                                <label for="option_2" name="tv" class="in-label">TV</label>
+                                <input id="option_2" name="tv" type="checkbox" class="in-checkbox">
+                                <label for="option_2" class="in-label">TV</label>
                               </li>
                               <li>
-                                <input id="option_3" type="checkbox" class="in-checkbox">
-                                <label for="option_3" name="klima" class="in-label">Klima</label>
+                                <input id="option_3" name="klima" type="checkbox" class="in-checkbox">
+                                <label for="option_3" class="in-label">Klima</label>
                               </li>
                               <li>
-                                <input id="option_4" type="checkbox" class="in-checkbox">
-                                <label for="option_4" name="internet" class="in-label">Internet</label>
+                                <input id="option_4" name="internet" type="checkbox" class="in-checkbox">
+                                <label for="option_4" class="in-label">Internet</label>
                               </li>
                               <li>
-                                <input id="option_5" type="checkbox" class="in-checkbox">
-                                <label for="option_5" name="telefon" class="in-label">Telefon</label>
+                                <input id="option_5" name="telefon" type="checkbox" class="in-checkbox">
+                                <label for="option_5" class="in-label">Telefon</label>
                               </li>
                               <li>
-                                <input id="option_6" type="checkbox" class="in-checkbox">
-                                <label for="option_6" name="frizider" class="in-label">Frižider</label>
+                                <input id="option_6" name="frizider" type="checkbox" class="in-checkbox">
+                                <label for="option_6" class="in-label">Frižider</label>
                               </li>
                               <li>
-                                <input id="option_7" type="checkbox" class="in-checkbox">
-                                <label for="option_7" name="sporet" class="in-label">Šporet</label>
+                                <input id="option_7" name="sporet" type="checkbox" class="in-checkbox">
+                                <label for="option_7" class="in-label">Šporet</label>
                               </li>
                               <li>
-                                <input id="option_8" type="checkbox" class="in-checkbox">
-                                <label for="option_8" name="ves_masina" class="in-label">Veš mašina</label>
+                                <input id="option_8" name="ves_masina" type="checkbox" class="in-checkbox">
+                                <label for="option_8" class="in-label">Veš mašina</label>
                               </li>
                               <li>
-                                <input id="option_9" type="checkbox" class="in-checkbox">
-                                <label for="option_9" name="kuhinjski_elementi" class="in-label">Kuhinjski elementi</label>
+                                <input id="option_9" name="kuhinjski_elementi" type="checkbox" class="in-checkbox">
+                                <label for="option_9" class="in-label">Kuhinjski elementi</label>
                               </li>
                               <li>
-                                <input id="option_10" type="checkbox" class="in-checkbox">
-                                <label for="option_10" name="plakari" class="in-label">Plakari</label>
+                                <input id="option_10" name="plakari" type="checkbox" class="in-checkbox">
+                                <label for="option_10" class="in-label">Plakari</label>
                               </li>
                               <li>
-                                <input id="option_11" type="checkbox" class="in-checkbox">
-                                <label for="option_11" name="interfon" class="in-label">Interfon</label>
+                                <input id="option_11" name="interfon" type="checkbox" class="in-checkbox">
+                                <label for="option_11" class="in-label">Interfon</label>
                               </li>
                               <li>
-                                <input id="option_12" type="checkbox" class="in-checkbox">
-                                <label for="option_12" name="lift" class="in-label">Lift</label>
+                                <input id="option_12" name="lift" type="checkbox" class="in-checkbox">
+                                <label for="option_12" class="in-label">Lift</label>
                               </li>
                               <li>
-                                <input id="option_13" type="checkbox" class="in-checkbox">
-                                <label for="option_13" name="bazen" class="in-label">Bazen</label>
+                                <input id="option_13" name="bazen" type="checkbox" class="in-checkbox">
+                                <label for="option_13" class="in-label">Bazen</label>
                               </li>
                               <li>
-                                <input id="option_14" type="checkbox" class="in-checkbox">
-                                <label for="option_14" name="garaza" class="in-label">Garaža</label>
+                                <input id="option_14" name="garaza" type="checkbox" class="in-checkbox">
+                                <label for="option_14" class="in-label">Garaža</label>
                               </li>
                               <li>
-                                <input id="option_15" type="checkbox" class="in-checkbox">
-                                <label for="option_15" name="parking" class="in-label">Parking</label>
+                                <input id="option_15" name="parking" type="checkbox" class="in-checkbox">
+                                <label for="option_15" class="in-label">Parking</label>
                               </li>
                               <li>
-                                <input id="option_16" type="checkbox" class="in-checkbox">
-                                <label for="option_16" name="dvoriste" class="in-label">Dvorište</label>
+                                <input id="option_16" name="dvoriste" type="checkbox" class="in-checkbox">
+                                <label for="option_16" class="in-label">Dvorište</label>
                               </li>
                               <li>
-                                <input id="option_17" type="checkbox" class="in-checkbox">
-                                <label for="option_17" name="potkrovlje" class="in-label">Potkrovlje</label>
+                                <input id="option_17" name="potkrovlje" type="checkbox" class="in-checkbox">
+                                <label for="option_17" class="in-label">Potkrovlje</label>
                               </li>
                               <li>
-                                <input id="option_18" type="checkbox" class="in-checkbox">
-                                <label for="option_18" name="terasa" class="in-label">Terasa</label>
+                                <input id="option_18" name="terasa" type="checkbox" class="in-checkbox">
+                                <label for="option_18" class="in-label">Terasa</label>
                               </li>
                               <li>
-                                <input id="option_19" type="checkbox" class="in-checkbox">
-                                <label for="option_19" name="novogradnja" class="in-label">Novogradnja</label>
+                                <input id="option_19" name="novogradnja" type="checkbox" class="in-checkbox">
+                                <label for="option_19" class="in-label">Novogradnja</label>
                               </li>
                               <li>
-                                <input id="option_21" type="checkbox" class="in-checkbox">
-                                <label for="option_21" name="renovirano" class="in-label">Renovirano</label>
+                                <input id="option_21" name="renovirano" type="checkbox" class="in-checkbox">
+                                <label for="option_21" class="in-label">Renovirano</label>
                               </li>
                               <li>
-                                <input id="option_22" type="checkbox" class="in-checkbox">
-                                <label for="option_22" name="lux" class="in-label">Lux</label>
+                                <input id="option_22" name="lux" type="checkbox" class="in-checkbox">
+                                <label for="option_22" class="in-label">Lux</label>
                               </li>
                               <li>
-                                <input id="option_23" type="checkbox" class="in-checkbox">
-                                <label for="option_23" name="penthaus" class="in-label">Penthaus</label>
+                                <input id="option_23" name="penthaus" type="checkbox" class="in-checkbox">
+                                <label for="option_23" class="in-label">Penthaus</label>
                               </li>
                               <li>
-                                <input id="option_24" type="checkbox" class="in-checkbox">
-                                <label for="option_24" name="salonski" class="in-label">Salonski</label>
+                                <input id="option_24" name="salonski" type="checkbox" class="in-checkbox">
+                                <label for="option_24" class="in-label">Salonski</label>
                               </li>
                               <li>
-                                <input id="option_25" type="checkbox" class="in-checkbox">
-                                <label for="option_25" name="lodja" class="in-label">Lođa</label>
+                                <input id="option_25" name="lodja" type="checkbox" class="in-checkbox">
+                                <label for="option_25" class="in-label">Lođa</label>
                               </li>
                               <li>
-                                <input id="option_26" type="checkbox" class="in-checkbox">
-                                <label for="option_26" name="duplex" class="in-label">Duplex</label>
+                                <input id="option_26" name="duplex" type="checkbox" class="in-checkbox">
+                                <label for="option_26" class="in-label">Duplex</label>
                               </li>
                               <li>
-                                <input id="option_27" type="checkbox" class="in-checkbox">
-                                <label for="option_27" name="nov_namestaj" class="in-label">Nov nameštaj</label>
+                                <input id="option_27" name="nov_namestaj" type="checkbox" class="in-checkbox">
+                                <label for="option_27" class="in-label">Nov nameštaj</label>
                               </li>
                               <li>
-                                <input id="option_28" type="checkbox" class="in-checkbox">
-                                <label for="option_28" name="kompjuterska_mreza" class="in-label">Kompjuterska mreža</label>
+                                <input id="option_28" name="kompjuterska_mreza" type="checkbox" class="in-checkbox">
+                                <label for="option_28" class="in-label">Kompjuterska mreža</label>
                               </li>
                               <li>
-                                <input id="option_29" type="checkbox" class="in-checkbox">
-                                <label for="option_29" name="dva_kupatila" class="in-label">Dva kupatila</label>
+                                <input id="option_29" name="dva_kupatila" type="checkbox" class="in-checkbox">
+                                <label for="option_29" class="in-label">Dva kupatila</label>
                               </li>
                               <li>
-                                <input id="option_30" type="checkbox" class="in-checkbox">
-                                <label for="option_30" name="vise_telefonskih_linija" class="in-label">Više telefonskih linija</label>
+                                <input id="option_30" name="vise_telefonskih_linija" type="checkbox" class="in-checkbox">
+                                <label for="option_30" class="in-label">Više telefonskih linija</label>
                               </li>
                               <li>
-                                <input id="option_31" type="checkbox" class="in-checkbox">
-                                <label for="option_31" name="stan_u_kuci" class="in-label">Stan u kući</label>
+                                <input id="option_31" name="stan_u_kuci" type="checkbox" class="in-checkbox">
+                                <label for="option_31" class="in-label">Stan u kući</label>
                               </li>
                               <li>
-                                <input id="option_32" type="checkbox" class="in-checkbox">
-                                <label for="option_32" name="samostojeca_kuca" class="in-label">Samostojeća kuća</label>
+                                <input id="option_32" name="samostojeca_kuca" type="checkbox" class="in-checkbox">
+                                <label for="option_32" class="in-label">Samostojeća kuća</label>
                               </li>
                               <li>
-                                <input id="option_33" type="checkbox" class="in-checkbox">
-                                <label for="option_33" name="kuca_s_dvoristem" class="in-label">Kuća s dvorištem</label>
+                                <input id="option_33" name="kuca_s_dvoristem" type="checkbox" class="in-checkbox">
+                                <label for="option_33" class="in-label">Kuća s dvorištem</label>
                               </li>
                               <li>
-                                <input id="option_34" type="checkbox" class="in-checkbox">
-                                <label for="option_34" name="kucni_ljubimci" class="in-label">Kućni ljubimci</label>
+                                <input id="option_34" name="kucni_ljubimci" type="checkbox" class="in-checkbox">
+                                <label for="option_34" class="in-label">Kućni ljubimci</label>
                               </li>
                               <li>
-                                <input id="option_35" type="checkbox" class="in-checkbox">
-                                <label for="option_35" name="balkon" class="in-label">Balkon</label>
+                                <input id="option_35" name="balkon" type="checkbox" class="in-checkbox">
+                                <label for="option_35" class="in-label">Balkon</label>
                               </li>
                               <li>
-                                <input id="option_36" type="checkbox" class="in-checkbox">
-                                <label for="option_36" name="video_nadzor" class="in-label">Video nadzor</label>
+                                <input id="option_36" name="video_nadzor" type="checkbox" class="in-checkbox">
+                                <label for="option_36" class="in-label">Video nadzor</label>
                               </li>
                               <li>
-                                <input id="option_37" type="checkbox" class="in-checkbox">
-                                <label for="option_37" name="alarm" class="in-label">Alarm</label>
+                                <input id="option_37" name="alarm" type="checkbox" class="in-checkbox">
+                                <label for="option_37" class="in-label">Alarm</label>
                               </li>
                               <li>
-                                <input id="option_38" type="checkbox" class="in-checkbox">
-                                <label for="option_38" name="basta" class="in-label">Bašta</label>
+                                <input id="option_38" name="basta" type="checkbox" class="in-checkbox">
+                                <label for="option_38" class="in-label">Bašta</label>
                               </li>
                               <li>
-                                <input id="option_39" type="checkbox" class="in-checkbox">
-                                <label for="option_39" name="pomocni_objekti" class="in-label">Pomoćni objekti</label>
+                                <input id="option_39" name="pomocni_objekti" type="checkbox" class="in-checkbox">
+                                <label for="option_39" class="in-label">Pomoćni objekti</label>
                               </li>
                               <li>
-                                <input id="option_40" type="checkbox" class="in-checkbox">
-                                <label for="option_40" name="ostava" class="in-label">Ostava</label>
+                                <input id="option_40" name="ostava" type="checkbox" class="in-checkbox">
+                                <label for="option_40" class="in-label">Ostava</label>
                               </li>
                               <li>
-                                <input id="option_41" type="checkbox" class="in-checkbox">
-                                <label for="option_41" name="podrum" class="in-label">Podrum</label>
+                                <input id="option_41" name="podrum" type="checkbox" class="in-checkbox">
+                                <label for="option_41" class="in-label">Podrum</label>
                               </li>
                               <li>
-                                <input id="option_42" type="checkbox" class="in-checkbox">
-                                <label for="option_42" name="opticki_kabl" class="in-label">Optički kabl</label>
+                                <input id="option_42" name="opticki_kabl" type="checkbox" class="in-checkbox">
+                                <label for="option_42" class="in-label">Optički kabl</label>
                               </li>
                               <li>
-                                <input id="option_43" type="checkbox" class="in-checkbox">
-                                <label for="option_43" name="open_space" class="in-label">Open space</label>
+                                <input id="option_43" name="open_space" type="checkbox" class="in-checkbox">
+                                <label for="option_43" class="in-label">Open space</label>
                               </li>
                               <li>
-                                <input id="option_44" type="checkbox" class="in-checkbox">
-                                <label for="option_44" name="pristup_za_invalide" class="in-label">Pristup za invalide</label>
+                                <input id="option_44" name="pristup_za_invalide" type="checkbox" class="in-checkbox">
+                                <label for="option_44" class="in-label">Pristup za invalide</label>
                               </li>
                               <li>
-                                <input id="option_45" type="checkbox" class="in-checkbox">
-                                <label for="option_45" name="lokal_na_ulici" class="in-label">Lokal na ulici</label>
+                                <input id="option_45" name="lokal_na_ulici" type="checkbox" class="in-checkbox">
+                                <label for="option_45" class="in-label">Lokal na ulici</label>
                               </li>
                               <li>
-                                <input id="option_46" type="checkbox" class="in-checkbox">
-                                <label for="option_46" name="pravno_lice" class="in-label">Pravno lice</label>
+                                <input id="option_46" name="pravno_lice" type="checkbox" class="in-checkbox">
+                                <label for="option_46" class="in-label">Pravno lice</label>
                               </li>
                             </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
-                      <div class="widget__header">
-                        <h2 class="widget__title">Location</h2>
-                        <h5 class="widget__headline">Google Maps is a desktop and mobile web mapping service application and technology provided by Google.</h5>
-                      </div>
-                      <div class="widget__content">
-                        <div class="map map--location map--dashboard map--submit js-map-location-dashboard-submit">
-                          <div class="map__header">
-                            <button type="button" class="btn--link js-remove-overlays">Delete selected shape</button>
-                          </div>
-                          <div class="map__block">
-                            <div class="row map__autocomplete">
-                              <div class="form-group form-group--autocomplete">
-                                <label for="autocomplete-dashboard submit" class="control-label">GPS Mapping</label>
-                                <input type="text" placeholder="" required="required" id="autocomplete-dashboard submit" class="form-control js-autocomplete"/>
-                              </div>
-                              <button type="button" class="map__geolocation js-geolocate">
-                                <svg>
-                                  <use xlink:href="#icon-geolocation"></use>
-                                </svg>
-                              </button>
-                            </div>
-                            <div class="map__buttons">
-                              <button type="button" class="map__change-map js-map-btn">Address Map</button>
-                            </div>
-                            <div class="map__wrap">
-                              <div data-infobox-theme="white" class="map__view map__view--property-form js-map"></div>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="form-group form-group--coords">
-                              <label for="location-lat-dashboard submit" class="control-label">Lat</label>
-                              <input type="text" placeholder="" id="location-lat-dashboard submit" class="form-control js-location-coords"/>
-                            </div>
-                            <div class="form-group form-group--coords">
-                              <label for="location-lng-dashboard submit" class="control-label">Lng</label>
-                              <input type="text" placeholder="" id="location-lng-dashboard submit" class="form-control js-location-coords"/>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -435,7 +458,7 @@ include 'parts/navigation.php';
                     </div>
                     <h5 class="form-property__condition">If you have filled in all the fields and are confident of the correctness of all information, click on the button below to save data</h5>
                     <div class="row">
-                      <button class="form__submit"><?=$lang['search.form.submit']?></button>
+                      <button name="submitform" class="form__submit"><?=$lang['search.form.submit']?></button>
                     </div>
                   </form>
                 </div>

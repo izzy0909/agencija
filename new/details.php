@@ -90,22 +90,30 @@ include 'parts/navigation.php';
                                             <img data-lazy="../admin/slike/watermark_1219994030.jpg" src="../admin/slike/watermark_1219994030.jpg" alt="">
                                           </a>
                                         </div>
+                                        <div class="slider__item slider__item--2">
+                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='2' class="slider__img js-gallery-item">
+                                            <img data-lazy="../admin/slike/watermark_1136641469.jpg" src="../admin/slike/watermark_1136641469.jpg" alt="">
+                                          </a>
+                                        </div>
                                       </div>
                                     </div>
                                     <div class="slider slider--thumbs">
                                       <div class="slider__wrap">
                                         <div class="slider__block js-slick-slider">
-                                          <div data-slide-rel='0' class="slider__item slider__item--0">
+                                          <div data-slide-rel='0' class="slider__item slider__item--0  img-width-fix">
                                             <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
                                           </div>
-                                          <div data-slide-rel='1' class="slider__item slider__item--1">
+                                          <div data-slide-rel='1' class="slider__item slider__item--1  img-width-fix">
                                             <div class="slider__img"><img data-lazy="../admin/slike/thumb_1219994030.jpg" src="../admin/slike/thumb_1219994030.jpg" alt=""></div>
                                           </div>
-                                          <div data-slide-rel='2' class="slider__item slider__item--2">
+                                          <div data-slide-rel='2' class="slider__item slider__item--2  img-width-fix">
                                             <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
                                           </div>
-                                          <div data-slide-rel='3' class="slider__item slider__item--3">
+                                          <div data-slide-rel='3' class="slider__item slider__item--3  img-width-fix">
                                             <div class="slider__img"><img data-lazy="../admin/slike/thumb_1219994030.jpg" src="../admin/slike/thumb_1219994030.jpg" alt=""></div>
+                                          </div>
+                                          <div data-slide-rel='2' class="slider__item slider__item--2  img-width-fix">
+                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
                                           </div>
                                         </div>
                                         <button type="button" class="slider__control slider__control--prev js-slick-prev">
@@ -204,76 +212,6 @@ include 'parts/navigation.php';
                           <div data-type="panorama" class="map__view map__view--panorama js-map-canvas"></div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="widget js-widget widget--details">
-                    <div class="widget__content">
-                      <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--list worker--details">
-                        <div class="worker__photo"><a href="agent_profile.html" class="item-photo item-photo--static"><img src="assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/>
-                            <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a></div>
-                        <div class="worker__intro">
-                          <div class="worker__intro-head">
-                            <div class="worker__intro-name">
-                              <h3 class="worker__name fn">Christopher Pakulla</h3>
-                              <div class="worker__post">Realtor, West USA Realty</div>
-                            </div>
-                            <div class="worker__intro-brand"><a class="worker__company"><img src="assets/media-demo/partners/logo-company-proera.png" alt="pro"/></a>
-                              <div class="worker__company-name">Pro Era West Realty</div>
-                            </div>
-                            <!-- end of block .worker__listings-->
-                          </div>
-                          <button type="button" class="worker__show js-unhide">Contact agent</button>
-                          <div class="worker__intro-row">
-                            <div class="worker__intro-col">
-                              <div class="worker__contacts">
-                                <div class="tel"><span class="type">Tel.</span><a href="tel:+44(0)2035102390" class="uri value">+44 (0) 20 3510 2390</a></div>
-                                <div class="tel"><span class="type">Mob.</span><a href="tel:+44(0)30345207210" class="uri value">+44 (0) 303 4520 7210</a></div>
-                                <div class="email"><span class="type">Email</span><a href="mailto:rs@realtyspace.com" class="uri value">rs@realtyspace.com</a></div>
-                                <div class="skype"><span class="type">Skype</span><a href="skype:Walkenboy?call" class="uri value">Walkenboy</a></div>
-                              </div>
-                              <!-- end of block .worker__contacts-->
-                            </div>
-                            <div class="worker__intro-col">
-                              <div class="social social--worker"><a href="#" class="social__item"><i class="fa fa-facebook"></i></a><a href="#" class="social__item"><i class="fa fa-linkedin"></i></a><a href="#" class="social__item"><i class="fa fa-twitter"></i></a><a href="#" class="social__item"><i class="fa fa-google-plus"></i></a></div>
-                            </div>
-                          </div>
-                          <div class="worker__intro-row">
-                            <div class="worker__descr">
-                              <p>
-                                I&apos;m an entrepreneur who loves to travel and splits time between New York and Los Angeles. Believer in the golden rule: Do unto others as you would have them do unto you. Favorite destinations include Cabo San Lucas, Costa Rica, Turks &amp; Caicos...sunny beaches are ideal vacation spots
-                                We recognize you have a choice when it comes to working with a real estate professional. We look forward to earning your trust and helping you discover the smarter way to buy or sell a home.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="clearfix"></div>
-                      </div>
-                      <!-- end of block .worker-->
-                      <form action="#" method="POST" class="form form--flex form--property-agent js-contact-form form--properties">
-                        <div class="row">
-                          <div class="form-group form-group--col-4 required">
-                            <label for="in-form-name" class="control-label">Your Name</label>
-                            <input id="in-form-name" type="text" name="name" required class="form-control">
-                          </div>
-                          <div class="form-group form-group--col-4">
-                            <label for="in-form-phone" class="control-label">Telephone</label>
-                            <input id="in-form-phone" type="text" name="phone" class="form-control">
-                          </div>
-                          <div class="form-group form-group--col-4 required">
-                            <label for="in-form-email" class="control-label">E-mail</label>
-                            <input id="in-form-email" type="email" name="email" required data-parsley-trigger="change" class="form-control">
-                          </div>
-                          <div class="form-group required">
-                            <label for="in-form-message" class="control-label">Message</label>
-                            <textarea id="in-form-message" name="message" required data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-validation-threshold="10" data-parsley-minlength-message="You need to enter at least a 20 caracters long comment.." class="form-control"></textarea>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <button type="submit" class="form__submit">Submit</button>
-                        </div>
-                      </form>
-                      <!-- end of block form-->
-                      <div class="clearfix"></div>
                     </div>
                   </div>
                 </div>

@@ -40,6 +40,18 @@
     width:100% !important;
 }
 
+@media (min-width: 992px){
+    .img-width-fix{
+        width:100px !important;
+    }
+}
+
+/*@media (max-width: 991px){
+    .img-width-fix{
+        width:auto;
+    }
+}*/
+
 @media (max-width: 991px){
     .width-fix {
         width: 50%;
@@ -50,4 +62,7 @@
     .width-fix-3{
         width:25%;
     }
+    .search-price-size .form-control{
+    width: 42%;
+}
 }
