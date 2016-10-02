@@ -942,11 +942,13 @@
     var $panoramaCanvas = $(containerPanorama);
     if (!$mapCanvas.length || !$panoramaCanvas) return;
     // We're using here sample coordinates, please replace them with real ones
-    var coordinates = new google.maps.LatLng(property.lat, property.lng);
+    //var coordinates = new google.maps.LatLng(property.lat, property.lng);
+    var geocoder = new google.maps.Geocoder();
     // Default map zoom
     var $mapBtn = $('.js-map-btn');
     var $panoramaBtn = $('.js-panorama-btn');
     var active;
+    var map_address = $('.map-address').attr('data-address');
 
     /**
      * This is a wrapper around original Google Maps object,
@@ -960,101 +962,150 @@
      * See https://developers.google.com/maps/documentation/javascript/
      * for more examples and options
      */
-    app.createMap(
-      // Map container
-      $mapCanvas,
+    if (geocoder) {
+      geocoder.geocode({
+        'address': map_address
+      }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+            var coordinates = new google.maps.LatLng(latitude, longitude);
+            var map_info = $('.map-info').attr('data-info');
+            //console.log(map_address);
+            //console.log(map_info);
 
-      // A button, clicking on which will display the map in a fullscreen popup on small screens
-      $mapBtn,
+            var mapOptions = {
+              center: coordinates,
+              // Disable scrolling wheel for usability purposes
+              scrollwheel: false,
+              zoomControl: true,
+              mapTypeControl: true,
+              autocomplete: {
+                componentRestrictions: {'country': 'us'}
+              },
+              mapTypeControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+              },
+              zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+              },
+              scaleControl: true,
+              scaleControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_TOP
+              },
+              panControl: true,
+              panControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_TOP
+              }
+            };
+            app.createMap(
+                // Map container
+                $mapCanvas,
 
-      /**
-       * This callback is executed when the Google Map is loaded
-       * As first agrument it receives the google map object
-       *
-       * Please place here all the code that needs the google map object
-       */
-      function () {
-        var map = new google.maps.Map($mapCanvas[0], _.merge(mapOptions, {zoom: 7, coordinates : coordinates }));
-        var infoboxHtml = generateMarkerHTML(property);
+                // A button, clicking on which will display the map in a fullscreen popup on small screens
+                $mapBtn,
 
-        /**
-         * app.createInfoboxMarker is a helper which contains:
-         * - preconfigured Marker object (see docs https://developers.google.com/maps/documentation/javascript/markers)
-         * - preconfigured Infobox object (see docs http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs)
-         * to make sure they work and look good with our theme.
-         *
-         * If you want something more sophisticated, please use these libraries directly
-         */
-        app.createGmapInfoboxMarker(
-          map,
-          coordinates,
-          property.address,
-          infoboxHtml,
-          // You can pass directly the 'white' or 'dark' value or get it some other way
-          $mapCanvas.data('infoboxTheme')
-        );
-        // Save the created marker for later use for clustering
-      });
+                /**
+                 * This callback is executed when the Google Map is loaded
+                 * As first agrument it receives the google map object
+                 *
+                 * Please place here all the code that needs the google map object
+                 */
+                function () {
+                  var map = new google.maps.Map($mapCanvas[0], _.merge(mapOptions, {zoom: 15, coordinates : coordinates }));
+                  var infoboxHtml = generateMarkerHTML(map_info);
+                  /**
+                   * app.createInfoboxMarker is a helper which contains:
+                   * - preconfigured Marker object (see docs https://developers.google.com/maps/documentation/javascript/markers)
+                   * - preconfigured Infobox object (see docs http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/docs)
+                   * to make sure they work and look good with our theme.
+                   *
+                   * If you want something more sophisticated, please use these libraries directly
+                   */
+                  app.createGmapInfoboxMarker(
+                      map,
+                      coordinates,
+                      map_info,
+                      infoboxHtml,
+                      // You can pass directly the 'white' or 'dark' value or get it some other way
+                      $mapCanvas.data('infoboxTheme')
+                  );
+                  // Save the created marker for later use for clustering
+                });
 
-    /**
-     * This is a wrapper around original Google Maps Panorama object,
-     * which brings some user experience improvements for mobile users,
-     * So that, when user loads the panorama on small-screen device, it
-     * is replaced by a button, clicking on it will open full screen
-     * popup with the panorama in it.
-     *
-     * If you don't want/need that, you can call `google.maps.StreetViewPanorama` contructor directly
-     *
-     * See https://developers.google.com/maps/documentation/javascript/
-     * for more examples and options
-     */
-    app.createMap(
-      // Map container
-      $panoramaCanvas,
+                /**
+                 * This is a wrapper around original Google Maps Panorama object,
+                 * which brings some user experience improvements for mobile users,
+                 * So that, when user loads the panorama on small-screen device, it
+                 * is replaced by a button, clicking on it will open full screen
+                 * popup with the panorama in it.
+                 *
+                 * If you don't want/need that, you can call `google.maps.StreetViewPanorama` contructor directly
+                 *
+                 * See https://developers.google.com/maps/documentation/javascript/
+                 * for more examples and options
+                 */
+                app.createMap(
+                    // Map container
+                    $panoramaCanvas,
 
-      // A button, clicking on which will display the map in a fullscreen popup on small screens
-      $panoramaBtn,
-      function () {
-        var map = new google.maps.StreetViewPanorama($panoramaCanvas[0], {
-          position: coordinates,
-          pov: {
-            heading: 34,
-            pitch: 10
-          },
-          zoomControl: true,
-          zoomControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_CENTER
-          },
-          panControl: true,
-          panControlOptions: {
-            position: google.maps.ControlPosition.RIGHT_TOP
+                    // A button, clicking on which will display the map in a fullscreen popup on small screens
+                    $panoramaBtn,
+                    function () {
+                      var map = new google.maps.StreetViewPanorama($panoramaCanvas[0], {
+                        position: coordinates,
+                        scrollwheel: false,
+                        pov: {
+                          heading: 34,
+                          pitch: 10
+                        },
+                        zoomControl: true,
+                        zoomControlOptions: {
+                          position: google.maps.ControlPosition.RIGHT_CENTER
+                        },
+                        panControl: true,
+                        panControlOptions: {
+                          position: google.maps.ControlPosition.RIGHT_TOP
+                        }
+                      });
+                    }
+                );
+
+
+                active = $mapBtn.add($panoramaBtn).filter('.active');
+                var toggleActive = function (newActive) {
+                  if (active) {
+                    active.removeClass('active');
+                  }
+                  active = $(newActive);
+                  active.addClass('active');
+                };
+
+                $mapBtn.on('click', function () {
+                  if(app.gridSize.get() === 'xs') return;
+                  toggleActive(this);
+                  $panoramaCanvas.css({zIndex: 5});
+                  $mapCanvas.css({zIndex: 10});
+                });
+                $panoramaBtn.on('click', function () {
+                  if(app.gridSize.get() === 'xs') return;
+                  toggleActive(this);
+                  $panoramaCanvas.css({zIndex: 10});
+                  $mapCanvas.css({zIndex: 5});
+                });
+
+          } else {
+            alert("No results found");
           }
-        });
-      }
-    );
+        } else {
+          alert("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
 
 
-    active = $mapBtn.add($panoramaBtn).filter('.active');
-    var toggleActive = function (newActive) {
-      if (active) {
-        active.removeClass('active');
-      }
-      active = $(newActive);
-      active.addClass('active');
-    };
 
-    $mapBtn.on('click', function () {
-      if(app.gridSize.get() === 'xs') return;
-      toggleActive(this);
-      $panoramaCanvas.css({zIndex: 5});
-      $mapCanvas.css({zIndex: 10});
-    });
-    $panoramaBtn.on('click', function () {
-      if(app.gridSize.get() === 'xs') return;
-      toggleActive(this);
-      $panoramaCanvas.css({zIndex: 10});
-      $mapCanvas.css({zIndex: 5});
-    });
   }
 
   function initSubmitPropertyForm(container) {
@@ -1362,16 +1413,17 @@
 
   // Simple helper for generating html content for infoboxes
   function generateMarkerHTML(data) {
-    var link;
-    link = "assets/media-demo/properties/277x180/" + data.image + ".jpg";
-    return "<span class='map__address'>" + data.address +
-      "</span> <span class='map__info'>" +
-      "<img  class='map__photo' src='" + link + "'/><span class='map__details'> " +
-      "<dl><dt>Type:</dt> <dd>" + data.type + "</dd></dl>" +
-      "<dl><dt>Area:</dt> <dd>" + data.area + " m2</dd></dl>" +
-      "<dl><dt>Bedrooms:</dt> <dd>" + data.bedrooms + "</dd></dl>" +
-      "</span></span> <span class='map__price'><strong>$" + data.price +
-      "</strong></span> <a  class='map__more' href='property_details.html'>Details</a>";
+    //var link;
+    //link = "assets/media-demo/properties/277x180/" + data.image + ".jpg";
+    //return "<span class='map__address'>" + data.address +
+    //  "</span> <span class='map__info'>" +
+    //  "<img  class='map__photo' src='" + link + "'/><span class='map__details'> " +
+    //  "<dl><dt>Type:</dt> <dd>" + data.type + "</dd></dl>" +
+    //  "<dl><dt>Area:</dt> <dd>" + data.area + " m2</dd></dl>" +
+    //  "<dl><dt>Bedrooms:</dt> <dd>" + data.bedrooms + "</dd></dl>" +
+    //  "</span></span> <span class='map__price'><strong>$" + data.price +
+    //  "</strong></span> <a  class='map__more' href='property_details.html'>Details</a>";
+    return data;
   }
 
 

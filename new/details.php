@@ -594,6 +594,8 @@ include 'parts/navigation.php';
                         </div>
                       </div>
                     </form>
+                    <input type="hidden" class="map-address" data-address="<?php echo $stan['ulica'] . ', ' . $stan['opstina']; ?>">
+                    <input type="hidden" class="map-info" data-info="<?php echo ucfirst($stan['kategorija']) . ', ' . $stan['tip'] . ', ', $stan['opstina'] . ', ' . $stan['ulica']; ?>">
                     <!-- end of block-->
                     <!-- END SEARCH-->
                   </div>
