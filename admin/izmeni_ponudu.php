@@ -446,7 +446,7 @@ $(document).pngFix( );
 		</tr>
         <tr>
 			<th valign="top">Sprat:</th>
-			<td><?php echo $stan['sprat'];?>"</td>
+			<td><?php echo $stan['sprat'];?></td>
 			<td></td>
 		</tr>
 		<tr>
@@ -830,22 +830,114 @@ $(document).pngFix( );
                                         </td>
                                         <td>
                                             <?php
-                                            if ($stan['t_vertikala']) { echo "<input type='checkbox' name='vertikala' checked>Vertikala"; }
-                                            else { echo "<input type='checkbox' name='vertikala'>Vertikala"; }
+                                            if ($stan['t_stan_u_kuci']) { echo "<input type='checkbox' name='stan_u_kuci' checked>Stan u kući"; }
+                                            else { echo "<input type='checkbox' name='stan_u_kuci'>Stan u kući"; }
                                             ?>
                                         </td>
                                         </tr>
                                         <tr>                                        
                                         <td>
                                             <?php
-                                            if ($stan['t_horizontala']) { echo "<input type='checkbox' name='horizontala' checked>Horizontala"; }
-                                            else { echo "<input type='checkbox' name='horizontala'>Horizontala"; }
+                                            if ($stan['t_samostojeca_kuca']) { echo "<input type='checkbox' name='samostojeca_kuca' checked>Samostojeća kuća"; }
+                                            else { echo "<input type='checkbox' name='samostojeca_kuca'>Samostojeća kuća"; }
                                             ?>
                                         </td>
                                         <td>
                                             <?php
-                                            if ($stan['t_stan_u_kuci']) { echo "<input type='checkbox' name='stan_u_kuci' checked>Stan u kući"; }
-                                            else { echo "<input type='checkbox' name='stan_u_kuci'>Stan u kući"; }
+                                            if ($stan['t_kuca_s_dvoristem']) { echo "<input type='checkbox' name='kuca_s_dvoristem' checked>Kuća s dvorištem"; }
+                                            else { echo "<input type='checkbox' name='kuca_s_dvoristem'>Kuća s dvorištem"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_kucni_ljubimci']) { echo "<input type='checkbox' name='kucni_ljubimci' checked>Kućni ljubimci"; }
+                                            else { echo "<input type='checkbox' name='kucni_ljubimci'>Kućni ljubimci"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_balkon']) { echo "<input type='checkbox' name='balkon' checked>Balkon"; }
+                                            else { echo "<input type='checkbox' name='balkon'>Balkon"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_video_nadzor']) { echo "<input type='checkbox' name='video_nadzor' checked>Video nadzor"; }
+                                            else { echo "<input type='checkbox' name='video_nadzor'>Video nadzor"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_alarm']) { echo "<input type='checkbox' name='alarm' checked>Alarm"; }
+                                            else { echo "<input type='checkbox' name='alarm'>Alarm"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_basta']) { echo "<input type='checkbox' name='basta' checked>Bašta"; }
+                                            else { echo "<input type='checkbox' name='basta'>Bašta"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_pomocni_objekti']) { echo "<input type='checkbox' name='pomocni_objekti' checked>Pomoćni objekti"; }
+                                            else { echo "<input type='checkbox' name='pomocni_objekti'>Pomoćni objekti"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_ostava']) { echo "<input type='checkbox' name='ostava' checked>Ostava"; }
+                                            else { echo "<input type='checkbox' name='ostava'>Ostava"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_podrum']) { echo "<input type='checkbox' name='podrum' checked>Podrum"; }
+                                            else { echo "<input type='checkbox' name='podrum'>Podrum"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_opticki_kabl']) { echo "<input type='checkbox' name='opticki_kabl' checked>Optički kabl"; }
+                                            else { echo "<input type='checkbox' name='opticki_kabl'>Optički kabl"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_open_space']) { echo "<input type='checkbox' name='open_space' checked>Open space"; }
+                                            else { echo "<input type='checkbox' name='open_space'>Open space"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_pristup_za_invalide']) { echo "<input type='checkbox' name='pristup_za_invalide' checked>Pristup za invalide"; }
+                                            else { echo "<input type='checkbox' name='pristup_za_invalide'>Pristup za invalide"; }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_lokal_na_ulici']) { echo "<input type='checkbox' name='lokal_na_ulici' checked>Lokal na ulici"; }
+                                            else { echo "<input type='checkbox' name='lokal_na_ulici'>Lokal na ulici"; }
+                                            ?>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                            <?php
+                                            if ($stan['t_pravno_lice']) { echo "<input type='checkbox' name='pravno_lice' checked>Pravno lice"; }
+                                            else { echo "<input type='checkbox' name='pravno_lice'>Pravno lice"; }
                                             ?>
                                         </td>
                                         </tr>

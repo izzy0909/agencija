@@ -6,53 +6,21 @@ include_once '../data_base_access/slikeDA.php';
 
 require_once 'lang/' . checkLang() . '.php';
 
-$active = 'sell';
-$areas = prikaziSveOpstine();
-
-if(isset($_REQUEST['search'])){
-
-    $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : null;
-    $structure = isset($_REQUEST['structure']) ? $_REQUEST['structure'] : null;
-    $location = isset($_REQUEST['location']) ? $_REQUEST['location'] : null;
-    $heat = isset($_REQUEST['heat']) ? $_REQUEST['heat'] : null;
-    $setup = isset($_REQUEST['setup']) ? $_REQUEST['setup'] : null;
-    $floor = isset($_REQUEST['floor']) ? $_REQUEST['floor'] : null;
-    $price_from = isset($_REQUEST['price_from']) ? $_REQUEST['price_from'] : null;
-    $price_to = isset($_REQUEST['price_to']) ? $_REQUEST['price_to'] : null;
-    $size_from = isset($_REQUEST['size_from']) ? $_REQUEST['size_from'] : null;
-    $size_to = isset($_REQUEST['size_to']) ? $_REQUEST['size_to'] : null;
-
-    $order = isset($_REQUEST['order']) ? $_REQUEST['order'] : 1;
-
-    $itemsCount = getItemsCount('prodaja', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to);
-    $items =      getItems     ('prodaja', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, 0);
+if(isset($_COOKIE['jevtic_favorites'])){
+  if(stripos($_COOKIE['jevtic_favorites'], ',')){
+    $stanovi = explode(',', $_COOKIE['jevtic_favorites']);
+  }
+  $stan = $_COOKIE['jevtic_favorites'];
 }
 else{
-    $itemsCount = getItemsCount('prodaja', null, null, null, null, null, null, null, null, null, null);
-    $items =      getItems     ('prodaja', null, null, null, null, null, null, null, null, null, null, 1, 0);
+  header('Location: index.php');
 }
+
+$areas = prikaziSveOpstine();
+
+
 
 // var_dump($items);
-
-function echoArray($name){
-    if(isset($_REQUEST[$name])){
-    $array = $_REQUEST[$name];
-    $n = count($array);
-        for($i=0; $i<$n; $i++){
-            echo $array[$i];
-            if($i<$n-1){
-                echo ', ';
-            }
-        }
-    }
-    else echo '---';
-}
-
-function checked($value, $get){
-    if(isset($_REQUEST[$get]) && in_array($value, $_REQUEST[$get])){
-        echo 'checked';
-    }
-}
 
 include 'parts/html-open.php';
 include 'parts/header.php';
@@ -68,25 +36,9 @@ include 'parts/navigation.php';
               <!-- BEGIN site-->
               <div class="site site--main">
                 <header class="site__header">
-                  <h1 class="site__title"><?=$lang['sell.title']?></h1>
-                  <h5 class="site__headline"><?=$lang['results']?>: <strong id="itemsCount"><?=$itemsCount?></strong></h5>
+                  <h1 class="site__title"><?=$lang['rent.title']?></h1>
                 </header>
                 <button type="button" data-goto-target=".js-search-form" class="widget__btn--goto js-goto-btn"><?=$lang['search.showfilter']?></button>
-                <div class="site__panel">
-                  <div class="listing__sort">
-                    <div class="form-group">
-                      <label for="in-listing-sort" class="control-label"><?=$lang['search.sort']?>:</label>
-                      <div class="form-control--select">
-                        <select id="sortiranje" name="sortiranje" class="form-control js-in-select">
-                          <option value="1" ><?=$lang['search.sort.newest']?></option>
-                          <option value="2" <?php if(isset($order)&&($order==2)){echo 'selected';}?> ><?=$lang['search.sort.oldest']?></option>
-                          <option value="3" <?php if(isset($order)&&($order==3)){echo 'selected';}?> ><?=$lang['search.sort.priceasc']?></option>
-                          <option value="4" <?php if(isset($order)&&($order==4)){echo 'selected';}?> ><?=$lang['search.sort.pricedes']?></option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
                 <!--end of block .listing__param-->
                 <div class="site__main">
                   <div class="widget js-widget widget--main">
@@ -94,7 +46,9 @@ include 'parts/navigation.php';
                       <div id="lista" data-page="1" class="listing listing--grid js-properties-list">
 
                       <?php
-                        foreach($items as $item){
+                      if (isset($stanovi)){
+                        foreach($stanovi as $stan){
+                          $item = prikaziStanZaFront($stan);
                             $thumb = prikaziSlikuThumb($item[0]);
 
                             echo '<div class="listing__item">';
@@ -121,13 +75,39 @@ include 'parts/navigation.php';
                             echo '</div>';
 
                         }
+                      }
+                      else{
+                          $item = prikaziStanZaFront($stan);
+                            $thumb = prikaziSlikuThumb($item[0]);
+
+                            echo '<div class="listing__item">';
+                            echo   '<div class="properties properties--grid">';
+                            echo    '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            //    <!-- end of block .properties__thumb-->
+                            echo    '<div class="properties__details">';
+                            echo      '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                            echo                '<div class="properties__offer">';
+                            echo                    '<div class="properties__offer-column">';
+                            echo                        '<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
+                            echo                        '<div class="properties__offer-value"><strong>' . $item['tip'] . '</strong></div>';
+                            echo                    '</div>';
+                            echo                    '<div class="properties__offer-column">';
+                            echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
+                            echo                    '</div>';
+                            echo                '</div>';
+                            echo                '<div class="properties__params--mob"><a href="details.php?id=' . $item[0] . '" class="properties__more">' . $lang['details'] . '</a></div>';
+                            echo           '</div>';
+                            echo        '</div>';
+                            // <!-- end of block .properties__info-->
+                            echo    '</div>';
+                            //  <!-- end of block .properties__item-->
+                            echo '</div>';
+                      }
                       ?>
                       </div>
                     </div>
                   </div>
-                  <?php if($itemsCount > 9){echo '<div class="widget__footer"><a id="loadmore" href="#" class="widget__more js-properties-more">' . $lang['loadmore'] . '</a></div>';}
-                        else { echo '<div class="widget__footer disabled"><a id="loadmore" class="widget__more js-properties-more">- / -</a></div>'; }
-                  ?>
+                  <div class="widget__footer"><a id="loadmore" href="#" class="widget__more js-properties-more"><?=$lang['loadmore']?></a></div>
                 </div>
               </div>
               <!-- END site-->
@@ -140,7 +120,7 @@ include 'parts/navigation.php';
                   </div>
                   <div class="widget__content">
                     <!-- BEGIN SEARCH-->
-                    <form id="searchForm" name="searchForm" data-cat="prodaja" action="prodaja.php" method="GET" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
+                    <form id="searchForm" name="searchForm" data-cat="izdavanje" action="izdavanje.php" method="GET" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
                       <div class="row">
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">
@@ -303,6 +283,10 @@ include 'parts/navigation.php';
                                   <label for="checkbox_setup_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.yes']?></label>
                                 </li>
                                 <li>
+                                  <input id="checkbox_setup_3" type="checkbox" name="setup[]" value="Polunamešten" class="in-checkbox" <?php checked('Polunamešten','setup'); ?>>
+                                  <label for="checkbox_setup_3" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.half']?></label>
+                                </li>
+                                <li>
                                   <input id="checkbox_setup_2" type="checkbox" name="setup[]" value="Nenamešten" class="in-checkbox" <?php checked('Nenamešten','setup'); ?>>
                                   <label for="checkbox_setup_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.no']?></label>
                                 </li>
@@ -414,17 +398,29 @@ include 'parts/navigation.php';
                           </div>
                         </div>
                         <div class="form-group">
+                          <div class="form__mode">
+                            <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
+                          </div>
                           <label for="range_price" class="control-label"><?=$lang['search.form.price']?></label>
-                          <div class="search-price-size">
-                            <input type="text" name="price_from" id="in-price-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($price_from)){echo $price_from; }?>">
-                            <input type="text" name="price_to" id="in-price-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($price_to)){echo $price_to; }?>">
+                          <div class="form__ranges">
+                            <input id="range_price" class="js-search-range form__ranges-in">
+                          </div>
+                          <div class="form__inputs js-search-inputs">
+                            <input type="text" name="price_from" id="in-price-from" placeholder="From" data-input-type="from" class="form-control js-field-range" value="<?php if(isset($price_from)){echo $price_from;} ?>">
+                            <input type="text" name="price_to" id="in-price-to" placeholder="To" data-input-type="to" class="form-control js-field-range" value="<?php if(isset($price_from)){echo $price_to;} ?>">
                           </div>
                         </div>
                         <div class="form-group">
+                          <div class="form__mode">
+                            <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
+                          </div>
                           <label for="range_area" class="control-label"><?=$lang['search.form.size']?></label>
-                          <div class="search-price-size">
-                            <input type="text" name="size_from" id="in-area-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($size_from)){echo $size_from; }?>" >
-                            <input type="text" name="size_to" id="in-area-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($size_to)){echo $size_to; }?>">
+                          <div class="form__ranges">
+                            <input id="range_area" class="js-search-range form__ranges-in">
+                          </div>
+                          <div class="form__inputs js-search-inputs">
+                            <input type="text" name="size_from" id="in-area-from" placeholder="From" data-input-type="from" class="form-control js-field-range">
+                            <input type="text" name="size_to" id="in-area-to" placeholder="To" data-input-type="to" class="form-control js-field-range">
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">

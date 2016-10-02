@@ -40,9 +40,12 @@ $lang['submit.button'] = "Uradite to odmah!";
 // -- Dodajte nekretnienu ---------------------------------------
 
 $lang['submit.title'] = "Dodajte nekretninu";
+$lang['submit.fillall'] = "Popunite sva polja";
+$lang['submit.fillsome'] = "Nije obavezno";
 $lang['submit.basicinfo'] = "Osnovne informacije";
 $lang['submit.ownerinfo'] = "Informacije o vlasniku";
 $lang['submit.amenities'] = "Dodatne pogodnosti";
+
 
 
 // -- Detalji ---------------------------------------------------
@@ -54,6 +57,13 @@ $lang['details.amenities'] = "Dodatne pogodnosti";
 $lang['details.id'] = "Kataloški broj";
 $lang['details.moreinfo'] = "Prikaži još";
 $lang['details.map'] = "Mapa lokacije";
+
+
+
+// -- Favorites -------------------------------------------------
+
+$lang['favorites.title'] = "Omiljene nekretnine";
+$lang['favorites.nofavorites'] = "Nemate omiljenih nekretnina.";
 
 // -- Izdavanje // Prodaja --------------------------------------
 
@@ -139,6 +149,8 @@ $lang['search.form.phone'] = "Telefon";
 $lang['search.form.email'] = "Email";
 $lang['search.form.price'] = "Cena";
 $lang['search.form.size'] = "Kvadratura";
+$lang['search.form.from'] = "Od";
+$lang['search.form.to'] = "Do";
 $lang['search.form.input'] = "Ukucaj";
 $lang['search.form.reset'] = "Reset";
 $lang['search.form.search'] = "Pretraži";

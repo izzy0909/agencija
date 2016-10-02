@@ -125,7 +125,9 @@ include 'parts/navigation.php';
                       </div>
                     </div>
                   </div>
-                  <div class="widget__footer"><a id="loadmore" href="#" class="widget__more js-properties-more"><?=$lang['loadmore']?></a></div>
+                  <?php if($itemsCount > 9){echo '<div class="widget__footer"><a id="loadmore" href="#" class="widget__more js-properties-more">' . $lang['loadmore'] . '</a></div>';}
+                        else { echo '<div class="widget__footer disabled"><a id="loadmore" class="widget__more js-properties-more">- / -</a></div>'; }
+                  ?>
                 </div>
               </div>
               <!-- END site-->
@@ -416,29 +418,17 @@ include 'parts/navigation.php';
                           </div>
                         </div>
                         <div class="form-group">
-                          <div class="form__mode">
-                            <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
-                          </div>
                           <label for="range_price" class="control-label"><?=$lang['search.form.price']?></label>
-                          <div class="form__ranges">
-                            <input id="range_price" class="js-search-range form__ranges-in">
-                          </div>
-                          <div class="form__inputs js-search-inputs">
-                            <input type="text" name="price_from" id="in-price-from" placeholder="From" data-input-type="from" class="form-control js-field-range" value="<?php if(isset($price_from)){echo $price_from;} ?>">
-                            <input type="text" name="price_to" id="in-price-to" placeholder="To" data-input-type="to" class="form-control js-field-range" value="<?php if(isset($price_from)){echo $price_to;} ?>">
+                          <div class="search-price-size">
+                            <input type="text" name="price_from" id="in-price-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($price_from)){echo $price_from; }?>">
+                            <input type="text" name="price_to" id="in-price-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($price_to)){echo $price_to; }?>">
                           </div>
                         </div>
                         <div class="form-group">
-                          <div class="form__mode">
-                            <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
-                          </div>
                           <label for="range_area" class="control-label"><?=$lang['search.form.size']?></label>
-                          <div class="form__ranges">
-                            <input id="range_area" class="js-search-range form__ranges-in">
-                          </div>
-                          <div class="form__inputs js-search-inputs">
-                            <input type="text" name="size_from" id="in-area-from" placeholder="From" data-input-type="from" class="form-control js-field-range">
-                            <input type="text" name="size_to" id="in-area-to" placeholder="To" data-input-type="to" class="form-control js-field-range">
+                          <div class="search-price-size">
+                            <input type="text" name="size_from" id="in-area-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($size_from)){echo $size_from; }?>" >
+                            <input type="text" name="size_to" id="in-area-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($size_to)){echo $size_to; }?>">
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">
