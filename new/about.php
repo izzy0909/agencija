@@ -24,7 +24,7 @@ include 'parts/navigation.php';
                       <article class="article article--list article--details">
                         <div class="article__body">
                           <p><strong><?=$lang['about.line.1']?></strong></p>
-                            <img src="assets/media-demo/properties/870x480/02.jpg" alt="">
+                            <img src="assets/img/about.jpg" alt="">
                           <p><?=$lang['about.line.2']?></p>
                           <h3><?=$lang['about.line.3']?></h3>
                           <p><?=$lang['about.line.4']?></p>
