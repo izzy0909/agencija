@@ -1,4 +1,5 @@
 <?php 
+include_once '../data_base_access/stanoviDA.php';
 
 require_once 'lang/' . checkLang() . '.php';
 
@@ -10,16 +11,6 @@ include 'parts/navigation.php';
 
 ?>
       <div class="site-wrap js-site-wrap">
-        <!-- BEGIN BREADCRUMBS-->
-        <nav class="breadcrumbs">
-          <div class="container">
-            <ul>
-              <li class="breadcrumbs__item"><a href="index.php" class="breadcrumbs__link">Početna</a></li>
-              <li class="breadcrumbs__item"><a class="breadcrumbs__link">O nama</a></li>
-            </ul>
-          </div>
-        </nav>
-        <!-- END BREADCRUMBS-->
         <div class="center">
           <div class="container">
             <div class="row">

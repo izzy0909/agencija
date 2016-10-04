@@ -27,7 +27,7 @@ include 'parts/navigation.php';
                 <div class="slider__block js-slick-slider">
                   <div class="slider__item">
                     <div class="slider__preview">
-                      <div class="slider__img"><img data-lazy="assets/media-demo/banner/banner-1.jpg" src="assets/img/lazy-image.jpg" alt=""></div>
+                      <div class="slider__img"><img data-lazy="assets/img/pobednik.jpg" src="assets/img/lazy-image.jpg" alt=""></div>
                       <div class="slider__container">
                         <div class="container">
                           <div class="row">
@@ -166,29 +166,17 @@ include 'parts/navigation.php';
                             </div>
                           </div>
                           <div class="form-group">
-                            <div class="form__mode">
-                              <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
-                            </div>
                             <label for="range_price" class="control-label"><?=$lang['search.form.price']?></label>
-                            <div class="form__ranges">
-                              <input id="range_price" class="js-search-range form__ranges-in">
-                            </div>
-                            <div class="form__inputs js-search-inputs">
-                              <input type="text" id="in-price-from" placeholder="From" data-input-type="from" class="form-control js-field-range">
-                              <input type="text" id="in-price-to" placeholder="To" data-input-type="to" class="form-control js-field-range">
+                            <div class="search-price-size">
+                              <input type="text" name="price_from" id="in-price-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($price_from)){echo $price_from; }?>">
+                              <input type="text" name="price_to" id="in-price-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($price_to)){echo $price_to; }?>">
                             </div>
                           </div>
                           <div class="form-group">
-                            <div class="form__mode">
-                              <button type="button" data-mode="input" class="form__mode-btn js-input-mode"><?=$lang['search.form.input']?></button>
-                            </div>
                             <label for="range_area" class="control-label"><?=$lang['search.form.size']?></label>
-                            <div class="form__ranges">
-                              <input id="range_area" class="js-search-range form__ranges-in">
-                            </div>
-                            <div class="form__inputs js-search-inputs">
-                              <input type="text" id="in-area-from" placeholder="From" data-input-type="from" class="form-control js-field-range">
-                              <input type="text" id="in-area-to" placeholder="To" data-input-type="to" class="form-control js-field-range">
+                            <div class="search-price-size">
+                              <input type="text" name="size_from" id="in-area-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?php if(isset($size_from)){echo $size_from; }?>" >
+                              <input type="text" name="size_to" id="in-area-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?php if(isset($size_to)){echo $size_to; }?>">
                             </div>
                           </div>
                           <div class="form__buttons">
@@ -208,8 +196,8 @@ include 'parts/navigation.php';
         </div>
         <div class="widget js-widget widget--landing widget--gray">
           <div class="widget__header">
-            <h2 class="widget__title">Real estates</h2>
-            <h5 class="widget__headline">Our agents are licensed professionals that specialise in searching, evaluating and negotiating the purchase of property on behalf of the buyer. They will sell you real estate. Insights, tips & how-to guides on selling property and preparing your home or investment property for sale and working to maximise your sale price.</h5>
+            <h2 class="widget__title"><?=$lang['home.title']?></h2>
+            <h5 class="widget__headline"><?=$lang['home.subtitle']?></h5>
           </div>
           <div class="widget__content">
             <!-- BEGIN PROPERTIES INDEX-->
@@ -264,7 +252,7 @@ include 'parts/navigation.php';
                     $thumb = prikaziSlikuThumb($item[0]);
                     echo '<div class="listing__item">';
                     echo    '<div class="properties properties--grid">';
-                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a><span class="properties__ribon2">' . $item['kategorija'] . '</span><span class="hot__ribon">' . $lang['hot'] . '</span></div>';
+                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a><span class="properties__ribon">' . $item['kategorija'] . '</span><span class="hot__ribon2">' . $lang['hot'] . '</span></div>';
                     //    <!-- end of block .properties__thumb-->
                     echo        '<div class="properties__details">';
                     echo            '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item['0'] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
@@ -299,11 +287,11 @@ include 'parts/navigation.php';
             <div data-sr="flip 45deg over 0.5s" class="gosubmit">
               <div class="container">
                 <div class="gosubmit__title">
-                  <div class="gosubmit__title__row gosubmit__title__row--first"><?=$lang['submit.1']?></div>
-                  <div class="gosubmit__title__row gosubmit__title__row--second"><span class="gosubmit__title__option"><?=$lang['submit.2']?></span> <?=$lang['submit.3']?> <span class="gosubmit__title__option"><?=$lang['submit.4']?></span></div>
-                  <div class="gosubmit__title__row gosubmit__title__row--third"><?=$lang['submit.5']?></div>
+                  <div class="gosubmit__title__row gosubmit__title__row--first"><?=$lang['home.submit.1']?></div>
+                  <div class="gosubmit__title__row gosubmit__title__row--second"><span class="gosubmit__title__option"><?=$lang['home.submit.2']?></span> <?=$lang['home.submit.3']?> <span class="gosubmit__title__option"><?=$lang['home.submit.4']?></span></div>
+                  <div class="gosubmit__title__row gosubmit__title__row--third"><?=$lang['home.submit.5']?></div>
                 </div>
-                <!-- end of block .gosubmit__title--><a href="submit.php" class="gosubmit__btn"><?=$lang['submit.button']?></a>
+                <!-- end of block .gosubmit__title--><a href="submit.php" class="gosubmit__btn"><?=$lang['home.submit.button']?></a>
               </div>
             </div>
             <!-- END BLOCK GO SUBMIT-->

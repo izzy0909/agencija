@@ -12,14 +12,24 @@
 
 .hot__ribon2 {
     position: absolute;
-    top: 110px;
+    top: 60px;
     right: -5px;
     background: #bb0101;
     color: #fff;
     text-transform: uppercase;
     padding: 3px 15px;
     font-weight: 600;
-    top: 18px;
+}
+
+.hot__ribon:after, .hot__ribon2:after {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  border-top: 5px solid #8d0101;
+  width: 5px;
+  content: " ";
+  display: block;
+  border-right: 5px solid #f6f6f6;
 }
 
 .gosubmit__title{

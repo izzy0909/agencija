@@ -365,6 +365,8 @@ ALTER TABLE stanovi ADD COLUMN vidljiv_do DATE AFTER vidljiv;
 ALTER TABLE ponude MODIFY COLUMN grejanje enum('CG', 'EG', 'TA', 'PG', 'Klima uređaj', 'Na gas', 'Na struju', 'Norveški radijatori', 'Mermerni radijatori');
 ALTER TABLE ponude MODIFY COLUMN tip enum('Stan','Kuća','Poslovni prostor','Magacin','Lokal','Garaža','Poslovna zgrada');
 ALTER TABLE ponude MODIFY COLUMN namestenost enum('Namešten', 'Polunamešten', 'Nenamešten');
+ALTER TABLE ponude DROP COLUMN t_vertikala;
+ALTER TABLE ponude DROP COLUMN t_horizontala;
 ALTER TABLE ponude
 ADD t_samostojeca_kuca INT(11),
 ADD t_kuca_s_dvoristem INT(11),

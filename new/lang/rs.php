@@ -23,18 +23,24 @@ $lang['navigation.language'] = "Jezik";
 
 // -- Početna ---------------------------------------------------
 
+$lang['home.title'] = "Nekretnine u Beogradu";
+$lang['home.subtitle'] = "Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.";
+
 $lang['popular'] = 'Popularno';
 $lang['recent'] = 'Najnovije';
 $lang['featured'] = 'Preporučujemo';
 $lang['hot'] = "Preporuka!";
 $lang['details'] = "Detalji";
 
-$lang['submit.1'] = "Želite da";
-$lang['submit.2'] = "prodate";
-$lang['submit.3'] = "ili";
-$lang['submit.4'] = "iznajmite";
-$lang['submit.5'] = "nekretninu?";
-$lang['submit.button'] = "Uradite to odmah!";
+$lang['home.title'] = "Nekretnine u beogradu";
+$lang['home.subtitle'] = "Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.";
+
+$lang['home.submit.1'] = "Želite da";
+$lang['home.submit.2'] = "prodate";
+$lang['home.submit.3'] = "ili";
+$lang['home.submit.4'] = "iznajmite";
+$lang['home.submit.5'] = "nekretninu?";
+$lang['home.submit.button'] = "Uradite to odmah!";
 
 
 // -- Dodajte nekretnienu ---------------------------------------
