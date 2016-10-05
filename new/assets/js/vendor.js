@@ -26211,7 +26211,7 @@
 
 	            _.defaults = {
 	                accessibility: true,
-	                adaptiveHeight: false,
+	                adaptiveHeight: true,
 	                appendArrows: $(element),
 	                appendDots: $(element),
 	                arrows: true,

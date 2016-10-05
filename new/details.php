@@ -70,51 +70,31 @@ include 'parts/navigation.php';
                     <div class="hot__ribon" style="z-index:20;"><?=$lang['hot']?></div>
                                     <div id="properties-thumbs" class="slider slider--small js-slider-thumbs">
                                       <div class="slider__block js-slick-slider">
-                                        <div class="slider__item slider__item--0">
-                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='0' class="slider__img js-gallery-item">
-                                            <img data-lazy="../admin/slike/watermark_1136641469.jpg" src="../admin/slike/watermark_1136641469.jpg" alt="">
-                                          </a>
-                                        </div>
-                                        <div class="slider__item slider__item--1">
-                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='1' class="slider__img js-gallery-item">
-                                            <img data-lazy="../admin/slike/watermark_1219994030.jpg" src="../admin/slike/watermark_1219994030.jpg" alt="">
-                                          </a>
-                                        </div>
-                                        <div class="slider__item slider__item--2">
-                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='2' class="slider__img js-gallery-item">
-                                            <img data-lazy="../admin/slike/watermark_1136641469.jpg" src="../admin/slike/watermark_1136641469.jpg" alt="">
-                                          </a>
-                                        </div>
-                                        <div class="slider__item slider__item--3">
-                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='3' class="slider__img js-gallery-item">
-                                            <img data-lazy="../admin/slike/watermark_1219994030.jpg" src="../admin/slike/watermark_1219994030.jpg" alt="">
-                                          </a>
-                                        </div>
-                                        <div class="slider__item slider__item--2">
-                                          <a href="../admin/slike/watermark_1136641469.jpg" data-size="1740x960" data-gallery-index='2' class="slider__img js-gallery-item">
-                                            <img data-lazy="../admin/slike/watermark_1136641469.jpg" src="../admin/slike/watermark_1136641469.jpg" alt="">
-                                          </a>
-                                        </div>
+                                     <?php
+                                        $i= 0; 
+                                        foreach($slike as $large){
+                                          echo '<div class="slider__item slider__item--0">';
+                                          echo    '<a href="../admin/slike/watermark_' . $large['naziv'] . '" data-size="1740x960" data-gallery-index="' . $i . '" class="slider__img js-gallery-item">';
+                                          echo      '<img data-lazy="../admin/slike/watermark_' . $large['naziv'] . '" src="assets/img/lazy-image.jpg" alt="">';
+                                          echo    '</a>';
+                                          echo '</div>';
+                                          $i++;
+                                        }
+                                      ?>
                                       </div>
                                     </div>
                                     <div class="slider slider--thumbs">
                                       <div class="slider__wrap">
                                         <div class="slider__block js-slick-slider">
-                                          <div data-slide-rel='0' class="slider__item slider__item--0  img-width-fix">
-                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
-                                          </div>
-                                          <div data-slide-rel='1' class="slider__item slider__item--1  img-width-fix">
-                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1219994030.jpg" src="../admin/slike/thumb_1219994030.jpg" alt=""></div>
-                                          </div>
-                                          <div data-slide-rel='2' class="slider__item slider__item--2  img-width-fix">
-                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
-                                          </div>
-                                          <div data-slide-rel='3' class="slider__item slider__item--3  img-width-fix">
-                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1219994030.jpg" src="../admin/slike/thumb_1219994030.jpg" alt=""></div>
-                                          </div>
-                                          <div data-slide-rel='2' class="slider__item slider__item--2  img-width-fix">
-                                            <div class="slider__img"><img data-lazy="../admin/slike/thumb_1136641469.jpg" src="../admin/slike/thumb_1136641469.jpg" alt=""></div>
-                                          </div>
+                                        <?php
+                                        $i = 0;
+                                        foreach($slike as $thumb){
+                                          echo '<div data-slide-rel="' . $i . '" class="slider__item slider__item--0  img-width-fix">';
+                                          echo '<div class="slider__img"><img data-lazy="../admin/slike/thumb_' . $thumb['naziv'] . '" src="assets/img/lazy-image.jpg" alt=""></div>';
+                                          echo '</div>';
+                                          $i++;
+                                        }
+                                        ?>
                                         </div>
                                         <button type="button" class="slider__control slider__control--prev js-slick-prev">
                                           <svg class="slider__control-icon">

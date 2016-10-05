@@ -6,19 +6,39 @@ include_once '../data_base_access/slikeDA.php';
 
 require_once 'lang/' . checkLang() . '.php';
 
+$active = 'favorites';
+
 if(isset($_COOKIE['jevtic_favorites'])){
   if(stripos($_COOKIE['jevtic_favorites'], ',')){
     $stanovi = explode(',', $_COOKIE['jevtic_favorites']);
   }
-  $stan = $_COOKIE['jevtic_favorites'];
+  else{
+    $stan = $_COOKIE['jevtic_favorites'];
+  }
 }
-else{
-  header('Location: index.php');
-}
+
 
 $areas = prikaziSveOpstine();
 
+function echoArray($name){
+    if(isset($_REQUEST[$name])){
+    $array = $_REQUEST[$name];
+    $n = count($array);
+        for($i=0; $i<$n; $i++){
+            echo $array[$i];
+            if($i<$n-1){
+                echo ', ';
+            }
+        }
+    }
+    else echo '---';
+}
 
+function checked($value, $get){
+    if(isset($_REQUEST[$get]) && in_array($value, $_REQUEST[$get])){
+        echo 'checked';
+    }
+}
 
 // var_dump($items);
 
@@ -36,13 +56,13 @@ include 'parts/navigation.php';
               <!-- BEGIN site-->
               <div class="site site--main">
                 <header class="site__header">
-                  <h1 class="site__title"><?=$lang['rent.title']?></h1>
+                  <h1 class="site__title"><?=$lang['favorites.title']?></h1>
                 </header>
                 <button type="button" data-goto-target=".js-search-form" class="widget__btn--goto js-goto-btn"><?=$lang['search.showfilter']?></button>
                 <!--end of block .listing__param-->
                 <div class="site__main">
                   <div class="widget js-widget widget--main">
-                    <div class="widget__content">
+                    <div class="widget__content" style="margin-top:20px;">
                       <div id="lista" data-page="1" class="listing listing--grid js-properties-list">
 
                       <?php
@@ -76,7 +96,7 @@ include 'parts/navigation.php';
 
                         }
                       }
-                      else{
+                      elseif(isset($stan)){
                           $item = prikaziStanZaFront($stan);
                             $thumb = prikaziSlikuThumb($item[0]);
 
@@ -103,11 +123,13 @@ include 'parts/navigation.php';
                             //  <!-- end of block .properties__item-->
                             echo '</div>';
                       }
+                      else{
+                        echo '<div><p>' . $lang['favorites.nofavorites'] . '</p></div>';
+                      }
                       ?>
                       </div>
                     </div>
                   </div>
-                  <div class="widget__footer"><a id="loadmore" href="#" class="widget__more js-properties-more"><?=$lang['loadmore']?></a></div>
                 </div>
               </div>
               <!-- END site-->
