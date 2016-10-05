@@ -683,7 +683,7 @@ $(document).pngFix( );
 	</tr>
 	<tr>
     	<th>Vidljiv do:</th>
-    	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do" value="<?php echo date('d-m-Y', strtotime($stan['vidljiv_do'])); ?>"></td>
+    	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do" value="<?php if($stan['vidljiv_do'] != null) { echo date('d-m-Y', strtotime($stan['vidljiv_do'])); } ?>"></td>
     </tr>  
         
                             <tr>

@@ -27,7 +27,7 @@ include_once 'upload.php';
     $dodatna_informacija = isset($_POST['dodatna_informacija']) ? $_POST['dodatna_informacija'] : null;
     $izdat = isset($_POST['izdat']) ? $_POST['izdat'] : null;
     $provizija = isset($_POST['provizija']) ? $_POST['provizija'] : null;
-    if(isset($_POST['vidljiv_do'])){
+    if(!empty($_POST['vidljiv_do'])){
         $timestamp = DateTime::createFromFormat('d-m-Y', $_POST['vidljiv_do']);
         $vidljiv_do = $timestamp->format('Y-m-d');
     }

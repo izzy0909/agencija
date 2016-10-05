@@ -15,7 +15,7 @@ if($_SESSION['uloga'] != 1)
 		
 		//$page_amount = $page_amount-1;
 		//die($page_amount);
-		$page = $_GET['stranica'];
+		$page = isset($_GET['stranica']) ? $_GET['stranica'] : 1;
 		if($page < "1"){
 			$page = "1";
 		}
