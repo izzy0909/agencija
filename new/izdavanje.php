@@ -24,12 +24,12 @@ if(isset($_REQUEST['search'])){
 
     $order = isset($_REQUEST['order']) ? $_REQUEST['order'] : 1;
 
-    $itemsCount = getItemsCount('izdavanje', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to);
     $items =      getItems     ('izdavanje', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, 0);
+    $itemsCount = count($items);
 }
 else{
-    $itemsCount = getItemsCount('izdavanje', null, null, null, null, null, null, null, null, null, null);
     $items =      getItems     ('izdavanje', null, null, null, null, null, null, null, null, null, null, 1, 0);
+    $itemsCount = count($items);
 }
 
 // var_dump($items);
