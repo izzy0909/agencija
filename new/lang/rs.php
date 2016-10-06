@@ -176,6 +176,20 @@ $lang['about.li.3'] = "možemo da Vam omogućimo da u najkraćem vremenskom peri
 $lang['about.li.4'] = "Vam omogućavamo sastavljanje kupoprodajnih i ugovora o zakupu nepokretnosti";
 
 
+// -- Contracts ------------------------------------------------
+
+$lang['contracts.1'] = "Ugovor o posredovanju 2016";
+$lang['contracts.2'] = "Ugovor o posredovanju - Kupac - Fizičko lice";
+$lang['contracts.3'] = "Ugovor o posredovanju - Kupac - Pravno lice";
+$lang['contracts.4'] = "Ugovor o posredovanju pl 2016";
+$lang['contracts.5'] = "Ugovor o posredovanju sa zakupcem - Fizičko lice";
+$lang['contracts.6'] = "Ugovor o posredovanju sa zakupcem - Pravno lice";
+$lang['contracts.7'] = "Ugovor o posredovanju - Vlanik - Pravno lice";
+$lang['contracts.8'] = "Ugovor o posredovanju sa vlasnikom o prodaji nepokretnosti";
+
+
+
+
 // -- Contact ---------------------------------------------------
 
 $lang['contact.title'] = "Kontakt";
@@ -187,6 +201,7 @@ $lang['contact.weekdays'] = "Radnim danima:";
 $lang['contact.contactus'] = "Posetite nas";
 $lang['contact.info'] = "Mi se nalazimo u Beogradu, na Autokomandi, samoj raskrsnici Bulevara Oslobođenja i Južnog Bulevara u stambeno-poslovnoj zgradi u Bokeljskoj ulici broj 7.";
 $lang['contact.social'] = "Društvene mreže:";
+$lang['contact.map'] = "Naša lokacija";
 
 $lang['contact.form.name'] = "Ime";
 $lang['contact.form.phone'] = "Telefon";

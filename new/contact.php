@@ -14,7 +14,7 @@ include 'parts/navigation.php';
       <div class="site-wrap js-site-wrap">
         <div class="map map--contacts">
           <div class="map__buttons">
-            <button type="button" class="map__change-map js-map-btn">Address Map</button>
+            <button type="button" class="map__change-map js-map-btn"><?=$lang['contact.map']?></button>
           </div>
           <div class="map__wrap">
             <div data-infobox-theme="white" class="map__view js-map-canvas-contact"></div>
