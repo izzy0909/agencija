@@ -61,7 +61,8 @@
 
 	 $('#terms_check').click(function () {
         //check if checkbox is checked
-        if ($(this).is(':checked')) {
+		 var v = grecaptcha.getResponse();
+        if ($(this).is(':checked') && v != 0) {
 
             $('#submitsubmit').removeAttr('disabled'); //enable input
 
@@ -69,3 +70,9 @@
             $('#submitsubmit').attr('disabled', true); //disable input
         }
      });
+
+	  function recaptchaCallback() {
+		  if ($('#terms_check').is(':checked')) {
+			  $('#submitsubmit').removeAttr('disabled');
+		  }
+	  }

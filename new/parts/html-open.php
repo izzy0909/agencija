@@ -26,6 +26,7 @@
     <!--[if lt IE 11]>
     <link rel="stylesheet" href="assets/css/ie-fix.css"><![endif]-->
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
   <body class="index menu-default hover-default scroll-animation">
     <!--
