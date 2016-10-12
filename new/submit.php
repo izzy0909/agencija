@@ -3,13 +3,18 @@
 include_once '../data_base_access/dodatniTagoviDA.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/slikeDA.php';
+include_once '../data_base_access/ponudeDA.php';
 
 require_once 'lang/' . checkLang() . '.php';
 
 $active = 'submit';
 $areas = prikaziSveOpstine();
 
+$msg = 0;
+
 if(isset($_REQUEST['submitform'])){
+
+  if(isset($_REQUEST['terms'])){
   
   $kategorija = $_REQUEST['category'];
   $tip = $_REQUEST['type'];
@@ -22,57 +27,65 @@ if(isset($_REQUEST['submitform'])){
   $br = $_REQUEST['street-no'];
   $kvadratura = $_REQUEST['size'];
   $cena = $_REQUEST['price'];
-  $description = isset($_REQUEST['description']) ? $_REQUEST['description'] : null;
+  $opis = isset($_REQUEST['description']) ? $_REQUEST['description'] : null;
 
-  $ime = $_REQUEST['name'];
+  $vlasnik = $_REQUEST['name'];
   $telefon = $_REQUEST['phone'];
   $email = $_REQUEST['email'];
 
-    $kablovska = isset($_POST['kablovska']) ? '1' : '0';
-    $tv = isset($_POST['tv']) ? '1' : '0';
-    $klima = isset($_POST['klima']) ? '1' : '0';
-    $internet = isset($_POST['internet']) ? '1' : '0';
-    $ima_telefon = isset($_POST['ima_telefon']) ? '1' : '0';
-    $frizider = isset($_POST['frizider']) ? '1' : '0';
-    $sporet = isset($_POST['sporet']) ? '1' : '0';
-    $vesmasina = isset($_POST['vesmasina']) ? '1' : '0';
-    $kuhinjskielementi = isset($_POST['kuhinjskielementi']) ? '1' : '0';
-    $plakari = isset($_POST['plakari']) ? '1' : '0';
-    $interfon = isset($_POST['interfon']) ? '1' : '0';
-    $lift = isset($_POST['lift']) ? '1' : '0';
-    $bazen = isset($_POST['bazen']) ? '1' : '0';
-    $garaza = isset($_POST['garaza']) ? '1' : '0';
-    $parking = isset($_POST['parking']) ? '1' : '0';
-    $dvoriste = isset($_POST['dvoriste']) ? '1' : '0';
-    $potkrovlje = isset($_POST['potkrovlje']) ? '1' : '0';
-    $terasa = isset($_POST['terasa']) ? '1' : '0';
-    $novogradnja = isset($_POST['novogradnja']) ? '1' : '0';
-    $renovirano = isset($_POST['renovirano']) ? '1' : '0';
-    $lux = isset($_POST['lux']) ? '1' : '0';
-    $penthaus = isset($_POST['penthaus']) ? '1' : '0';
-    $salonski = isset($_POST['salonski']) ? '1' : '0';
-    $lodja = isset($_POST['lodja']) ? '1' : '0';
-    $duplex = isset($_POST['duplex']) ? '1' : '0';
-    $nov_namestaj = isset($_POST['nov_namestaj']) ? '1' : '0';
-    $kompjuterska_mreza = isset($_POST['kompjuterska_mreza']) ? '1' : '0';
-    $dva_kupatila = isset($_POST['dva_kupatila']) ? '1' : '0';
-    $vise_telefonskih_linija = isset($_POST['vise_telefonskih_linija']) ? '1' : '0';
-    $stan_u_kuci = isset($_POST['stan_u_kuci']) ? '1' : '0';
-    $samostojeca_kuca = isset($_POST['samostojeca_kuca']) ? '1' : '0';
-    $kuca_s_dvoristem = isset($_POST['kuca_s_dvoristem']) ? '1' : '0';
-    $kucni_ljubimci = isset($_POST['kucni_ljubimci']) ? '1' : '0';
-    $balkon = isset($_POST['balkon']) ? '1' : '0';
-    $video_nadzor = isset($_POST['video_nadzor']) ? '1' : '0';
-    $alarm = isset($_POST['alarm']) ? '1' : '0';
-    $basta = isset($_POST['basta']) ? '1' : '0';
-    $pomocni_objekti = isset($_POST['pomocni_objekti']) ? '1' : '0';
-    $opticki_kabl = isset($_POST['opticki_kabl']) ? '1' : '0';
-    $open_space = isset($_POST['open_space']) ? '1' : '0';
-    $pristup_za_invalide = isset($_POST['pristup_za_invalide']) ? '1' : '0';
-    $lokal_na_ulici = isset($_POST['lokal_na_ulici']) ? '1' : '0';
-    $pravno_lice = isset($_POST['pravno_lice']) ? '1' : '0';
+    $kablovska = isset($_REQUEST['kablovska']) ? '1' : '0';
+    $tv = isset($_REQUEST['tv']) ? '1' : '0';
+    $klima = isset($_REQUEST['klima']) ? '1' : '0';
+    $internet = isset($_REQUEST['internet']) ? '1' : '0';
+    $ima_telefon = isset($_REQUEST['ima_telefon']) ? '1' : '0';
+    $frizider = isset($_REQUEST['frizider']) ? '1' : '0';
+    $sporet = isset($_REQUEST['sporet']) ? '1' : '0';
+    $vesmasina = isset($_REQUEST['vesmasina']) ? '1' : '0';
+    $kuhinjskielementi = isset($_REQUEST['kuhinjskielementi']) ? '1' : '0';
+    $plakari = isset($_REQUEST['plakari']) ? '1' : '0';
+    $interfon = isset($_REQUEST['interfon']) ? '1' : '0';
+    $lift = isset($_REQUEST['lift']) ? '1' : '0';
+    $bazen = isset($_REQUEST['bazen']) ? '1' : '0';
+    $garaza = isset($_REQUEST['garaza']) ? '1' : '0';
+    $parking = isset($_REQUEST['parking']) ? '1' : '0';
+    $dvoriste = isset($_REQUEST['dvoriste']) ? '1' : '0';
+    $potkrovlje = isset($_REQUEST['potkrovlje']) ? '1' : '0';
+    $terasa = isset($_REQUEST['terasa']) ? '1' : '0';
+    $novogradnja = isset($_REQUEST['novogradnja']) ? '1' : '0';
+    $renovirano = isset($_REQUEST['renovirano']) ? '1' : '0';
+    $lux = isset($_REQUEST['lux']) ? '1' : '0';
+    $penthaus = isset($_REQUEST['penthaus']) ? '1' : '0';
+    $salonski = isset($_REQUEST['salonski']) ? '1' : '0';
+    $lodja = isset($_REQUEST['lodja']) ? '1' : '0';
+    $duplex = isset($_REQUEST['duplex']) ? '1' : '0';
+    $nov_namestaj = isset($_REQUEST['nov_namestaj']) ? '1' : '0';
+    $kompjuterska_mreza = isset($_REQUEST['kompjuterska_mreza']) ? '1' : '0';
+    $dva_kupatila = isset($_REQUEST['dva_kupatila']) ? '1' : '0';
+    $vise_telefonskih_linija = isset($_REQUEST['vise_telefonskih_linija']) ? '1' : '0';
+    $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
+    $samostojeca_kuca = isset($_REQUEST['samostojeca_kuca']) ? '1' : '0';
+    $kuca_s_dvoristem = isset($_REQUEST['kuca_s_dvoristem']) ? '1' : '0';
+    $kucni_ljubimci = isset($_REQUEST['kucni_ljubimci']) ? '1' : '0';
+    $balkon = isset($_REQUEST['balkon']) ? '1' : '0';
+    $video_nadzor = isset($_REQUEST['video_nadzor']) ? '1' : '0';
+    $alarm = isset($_REQUEST['alarm']) ? '1' : '0';
+    $basta = isset($_REQUEST['basta']) ? '1' : '0';
+    $pomocni_objekti = isset($_REQUEST['pomocni_objekti']) ? '1' : '0';
+    $ostava = isset($_REQUEST['ostava']) ? '1' : '0';
+    $podrum = isset($_REQUEST['podrum']) ? '1' : '0';
+    $opticki_kabl = isset($_REQUEST['opticki_kabl']) ? '1' : '0';
+    $open_space = isset($_REQUEST['open_space']) ? '1' : '0';
+    $pristup_za_invalide = isset($_REQUEST['pristup_za_invalide']) ? '1' : '0';
+    $lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
+    $pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
 
-}
+    $stan_id = dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
+
+    $msg = 1;
+
+    }
+  }
+
 
 
 include 'parts/html-open.php'; 
@@ -85,6 +98,14 @@ include 'parts/navigation.php';
         <div class="center">
           <div class="container">
             <div class="row">
+              <?php if($msg){
+                    echo '<div class="col-lg-12">';
+                    echo    '<div class="alert alert-dismissable alert-success">';
+                    echo        '<button type="button" data-dismiss="alert" class="close">&#215;</button><strong>Uspešno ste poslali nekretninu </strong>.';
+                    echo    '</div>';
+                    echo  '</div>';
+                    }
+              ?>
               <div class="site site--main">
                 <header class="site__header">
                   <h1 class="site__title"><?=$lang['submit.title']?></h1>
@@ -110,13 +131,13 @@ include 'parts/navigation.php';
                             <label for="in-2" class="control-label"><?=$lang['search.form.type']?></label>
                             <select id="in-2" required name="type" data-placeholder="Izaberite vrstu..." class="form-control js-in-select">
                               <option label=" "></option>
-                              <option value="Private apartment"><?=$lang['search.form.type.stan']?></option>
-                              <option value="Apartment"><?=$lang['search.form.type.kuca']?></option>
-                              <option value="Cottage"><?=$lang['search.form.type.poslovniprostor']?></option>
-                              <option value="Flat"><?=$lang['search.form.type.magacin']?></option>
-                              <option value="House"><?=$lang['search.form.type.lokal']?></option>
-                              <option value="Condominium"><?=$lang['search.form.type.garaza']?></option>
-                              <option value="Cottage"><?=$lang['search.form.type.poslovnazgrada']?></option>
+                              <option value="Stan"><?=$lang['search.form.type.stan']?></option>
+                              <option value="Kuća"><?=$lang['search.form.type.kuca']?></option>
+                              <option value="Poslovni+prostor"><?=$lang['search.form.type.poslovniprostor']?></option>
+                              <option value="Magacin"><?=$lang['search.form.type.magacin']?></option>
+                              <option value="Lokal"><?=$lang['search.form.type.lokal']?></option>
+                              <option value="Garaža"><?=$lang['search.form.type.garaza']?></option>
+                              <option value="Poslovna+zgrada"><?=$lang['search.form.type.poslovnazgrada']?></option>
                             </select>
                           </div>
                           <div class="form-group">
@@ -258,7 +279,7 @@ include 'parts/navigation.php';
                           <div class="form-group form-group--col-12">
                             <ul class="form-property__params">
                               <li>
-                                <input id="option_1" name="kablosvka" type="checkbox" class="in-checkbox">
+                                <input id="option_1" name="kablovska" type="checkbox" class="in-checkbox">
                                 <label for="option_1" class="in-label">Kablovska</label>
                               </li>
                               <li>
@@ -274,7 +295,7 @@ include 'parts/navigation.php';
                                 <label for="option_4" class="in-label">Internet</label>
                               </li>
                               <li>
-                                <input id="option_5" name="telefon" type="checkbox" class="in-checkbox">
+                                <input id="option_5" name="ima_telefon" type="checkbox" class="in-checkbox">
                                 <label for="option_5" class="in-label">Telefon</label>
                               </li>
                               <li>
@@ -286,11 +307,11 @@ include 'parts/navigation.php';
                                 <label for="option_7" class="in-label">Šporet</label>
                               </li>
                               <li>
-                                <input id="option_8" name="ves_masina" type="checkbox" class="in-checkbox">
+                                <input id="option_8" name="vesmasina" type="checkbox" class="in-checkbox">
                                 <label for="option_8" class="in-label">Veš mašina</label>
                               </li>
                               <li>
-                                <input id="option_9" name="kuhinjski_elementi" type="checkbox" class="in-checkbox">
+                                <input id="option_9" name="kuhinjskielementi" type="checkbox" class="in-checkbox">
                                 <label for="option_9" class="in-label">Kuhinjski elementi</label>
                               </li>
                               <li>
@@ -457,8 +478,10 @@ include 'parts/navigation.php';
                       </div>
                     </div>
                     <h5 class="form-property__condition">If you have filled in all the fields and are confident of the correctness of all information, click on the button below to save data</h5>
+                      <input id="terms_check" name="terms" type="checkbox" required class="in-checkbox">
+                      <label for="terms_check" class="in-label">Slažem se sa <a href="ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank">uslovima korišćenja sajta</a>.</label>
                     <div class="row">
-                      <button name="submitform" class="form__submit"><?=$lang['search.form.submit']?></button>
+                      <button id="submitsubmit" name="submitform" value="1" disabled class="form__submit"><?=$lang['search.form.submit']?></button>
                     </div>
                   </form>
                 </div>

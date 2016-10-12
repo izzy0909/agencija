@@ -186,6 +186,8 @@ $lang['contracts.5'] = "Ugovor o posredovanju sa zakupcem - Fizičko lice";
 $lang['contracts.6'] = "Ugovor o posredovanju sa zakupcem - Pravno lice";
 $lang['contracts.7'] = "Ugovor o posredovanju - Vlanik - Pravno lice";
 $lang['contracts.8'] = "Ugovor o posredovanju sa vlasnikom o prodaji nepokretnosti";
+$lang['contracts.9'] = "Zakon o posredovanju u prometu i zakupu nepokretnosti";
+$lang['contracts.10'] = "Privredna komora - letak";
 
 
 

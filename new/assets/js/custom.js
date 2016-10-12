@@ -58,3 +58,14 @@
 	            }
 			});
 	  });
+
+	 $('#terms_check').click(function () {
+        //check if checkbox is checked
+        if ($(this).is(':checked')) {
+
+            $('#submitsubmit').removeAttr('disabled'); //enable input
+
+        } else {
+            $('#submitsubmit').attr('disabled', true); //disable input
+        }
+     });
