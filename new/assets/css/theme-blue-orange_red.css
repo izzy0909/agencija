@@ -20757,17 +20757,17 @@ fieldset[disabled] .subscribe__field {
 }
 
 @media (max-width: 1199px) {
-  .listing__sort {
+/*  .listing__sort {
     max-width: 210px;
-  }
+  }*/
 }
 
 @media (max-width: 767px) {
-  .listing__sort {
+/*  .listing__sort {
     float: none;
     max-width: none;
     width: auto;
-  }
+  }*/
 
   .listing__sort .form-group {
     margin-bottom: 15px;
@@ -20785,9 +20785,9 @@ fieldset[disabled] .subscribe__field {
 }
 
 @media (max-width: 767px) {
-  .listing__sort .form-control--select {
+/*  .listing__sort .form-control--select {
     width: 100%;
-  }
+  }*/
 }
 
 .listing__show {
