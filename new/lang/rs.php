@@ -51,7 +51,8 @@ $lang['submit.fillsome'] = "Nije obavezno";
 $lang['submit.basicinfo'] = "Osnovne informacije";
 $lang['submit.ownerinfo'] = "Informacije o vlasniku";
 $lang['submit.amenities'] = "Dodatne pogodnosti";
-
+$lang['submit.photos'] = "Slike";
+$lang['submit.photos.addmore'] = "Još slika";
 
 
 // -- Detalji ---------------------------------------------------

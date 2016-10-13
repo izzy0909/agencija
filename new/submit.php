@@ -470,19 +470,15 @@ include 'parts/navigation.php';
                     </div>
                     <div class="widget js-widget widget--main widget--no-margin widget--no-border widget--collapse">
                       <div class="widget__header">
-                        <h2 class="widget__title">Photos</h2>
+                        <h2 class="widget__title"><?=$lang['submit.photos']?></h2>
                         <h5 class="widget__headline">Images should have maximum size 1Mb</h5>
                       </div>
                       <div class="widget__content">
-                        <div class="form-property__upload"><span class="form-property__upload-title">Upload main photo:</span>
-                          <div class="form-property__upload-border">
-                            <input type="file" multiple class="form-property__upload-btn-choose">
-                          </div>
-                        </div>
-                        <div action="/file-upload" class="dropzone dropzone--submit"></div>
+                        <div id="AddFileInputBox" style="margin:2px 0 10px 10px; width:100px;"><input type="file"  name="file[]"/></div>
+                        <div class="sep_s"></div>
+                        <div style="float:right;"><span class="small"><a href="#" id="AddMoreFileBox"><?=$lang['submit.photos.addmore']?></a></span></div>
                       </div>
                     </div>
-                    <h5 class="form-property__condition">If you have filled in all the fields and are confident of the correctness of all information, click on the button below to save data</h5>
                       <input id="terms_check" name="terms" type="checkbox" required class="in-checkbox">
                       <label for="terms_check" class="in-label">Slažem se sa <a href="ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank">uslovima korišćenja sajta</a>.</label>
                     <div class="row">

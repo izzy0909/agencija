@@ -76,3 +76,24 @@
 			  $('#submitsubmit').removeAttr('disabled');
 		  }
 	  }
+
+	  // adding and removing file input box
+		var maxi = $('#AddFileInputBox div').size() + 1;
+		MaxFileInputs = 15;
+		$('#AddMoreFileBox').click(function(e){
+				if(maxi < MaxFileInputs)
+				{
+					var newinput = '<span><a href="#" class="removeFileBox"><img src="../images/close_icon.gif" border="0" /></a><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/></span>';
+					$("#AddFileInputBox").append(newinput);
+					maxi++;
+				}
+				return false;
+		});
+		$('body').on('click', '.removeFileBox', function(e) { 
+			e.preventDefault();
+				if( maxi > 1 ) {
+						$(this).parent().remove();
+						maxi--;
+				}
+				return false;
+		});
