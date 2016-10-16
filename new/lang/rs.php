@@ -18,6 +18,7 @@ $lang['navigation.contact'] = "Kontakt";
 
 $lang['navigation.back'] = "Nazad";
 $lang['navigation.language'] = "Jezik";
+$lang['navigation.favorites'] = "Omiljene nekretnine";
 
 
 

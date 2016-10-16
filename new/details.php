@@ -180,6 +180,20 @@ include 'parts/navigation.php';
                     </div>
                     <button type="button" class="property__btn-more js-unhide"><?=$lang['details.moreinfo']?></button>
                   </div>
+                  <?php
+                  if(isset($stan['youtube'])){
+                    preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $stan['youtube'], $matches);
+                    $embed = $matches[1];
+
+                    echo '<div class="widget js-widget widget--details">';
+                    echo    '<div class="widget__content">';
+                    echo        '<div class="property__youtube">';
+                    echo            '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' . $embed . '?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>';
+                    echo        '</div>';
+                    echo    '</div>';
+                    echo '</div>';
+                  }
+                  ?>
                   <div class="widget js-widget widget--details">
                     <div class="widget__content">
                       <div class="map map--properties">

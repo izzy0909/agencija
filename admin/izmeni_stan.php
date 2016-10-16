@@ -32,6 +32,7 @@ include_once 'upload.php';
         $vidljiv_do = $timestamp->format('Y-m-d');
     }
     else $vidljiv_do = null;
+    $youtube = isset($_POST['youtube']) ? $_POST['youtube'] : null;
     
 //DateTime::createFromFormat('d-m-Y', $_POST['vidljiv_do'])
 
@@ -82,7 +83,7 @@ include_once 'upload.php';
     $pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
     
 	//echo $adresa . '///' . $sprat . '///' . $opstina . '///' . $telefon . '///' . $cena . '///' . $kvadratura . '///' . $opis;
-    izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat, $provizija, $vidljiv_do);
+    izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat, $provizija, $vidljiv_do, $youtube);
     izmeniDodatneTagove($id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
     
 	

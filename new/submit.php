@@ -86,6 +86,8 @@ if(isset($_REQUEST['submitform'])){
 
       $stan_id = dodajPonudu($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $ulica, $br, $telefon, $email, $grejanje, $cena, $sprat, $kvadratura, $namestenost, $opis, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
 
+      uploadPonude($_FILES, $stan_id);
+
       $msg = 1;
     }
   }
@@ -491,62 +493,7 @@ include 'parts/navigation.php';
                 </div>
               </div>
               <div class="sidebar">
-                <div class="widget js-widget widget--sidebar widget--dark">
-                  <div class="widget__header">
-                    <h2 class="widget__title">Popular estate</h2>
-                    <h5 class="widget__headline">Find your apartment or house on the exact key parameters.</h5><a class="widget__btn js-widget-btn widget__btn--toggle">Show properties</a>
-                  </div>
-                  <div class="widget__content">
-                    <div class="listing listing--sidebar">
-                      <div class="listing__item">
-                        <div class="properties properties--sidebar">
-                          <div class="properties__thumb"><a href="property_details.html" class="item-photo item-photo--static"><img src="assets/media-demo/properties/554x360/02.jpg" alt=""/>
-                              <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a>
-                          </div>
-                          <!-- end of block .properties__thumb-->
-                          <div class="properties__details">
-                            <div class="properties__info"><a href="property_details.html" class="properties__address">649 West Adams Boulevard, Los Angeles, CA 90007, USA</a>
-                              <!--+price-->
-                            </div>
-                          </div>
-                          <!-- end of block .properties__info-->
-                        </div>
-                        <!-- end of block .properties__item-->
-                      </div>
-                      <div class="listing__item">
-                        <div class="properties properties--sidebar">
-                          <div class="properties__thumb"><a href="property_details.html" class="item-photo item-photo--static"><img src="assets/img/no-image--554x360.jpg" alt=""/>
-                              <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a>
-                          </div>
-                          <!-- end of block .properties__thumb-->
-                          <div class="properties__details">
-                            <div class="properties__info"><a href="property_details.html" class="properties__address">958 Dewey Avenue, Los Angeles, CA 90006, USA</a>
-                              <!--+price-->
-                            </div>
-                          </div>
-                          <!-- end of block .properties__info-->
-                        </div>
-                        <!-- end of block .properties__item-->
-                      </div>
-                      <div class="listing__item">
-                        <div class="properties properties--sidebar">
-                          <div class="properties__thumb"><a href="property_details.html" class="item-photo item-photo--static"><img src="assets/media-demo/properties/554x360/04.jpg" alt=""/>
-                              <figure class="item-photo__hover"><span class="item-photo__more">View Details</span></figure></a>
-                          </div>
-                          <!-- end of block .properties__thumb-->
-                          <div class="properties__details">
-                            <div class="properties__info"><a href="property_details.html" class="properties__address">1026 Ohio Avenue, Long Beach, CA 90804, USA</a>
-                              <!--+price-->
-                            </div>
-                          </div>
-                          <!-- end of block .properties__info-->
-                        </div>
-                        <!-- end of block .properties__item-->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="widget js-widget widget--sidebar widget--dark">
+<!--                 <div class="widget js-widget widget--sidebar widget--dark">
                   <div class="widget__header">
                     <h2 class="widget__title">Our agents</h2>
                     <h5 class="widget__headline">Find your apartment or house on the exact key parameters.</h5><a class="widget__btn js-widget-btn widget__btn--toggle">Show worker</a>
@@ -560,7 +507,6 @@ include 'parts/navigation.php';
                           <h3 class="worker__name fn">Christopher Pakulla</h3>
                           <div class="worker__post">Realtor, West USA Realty</div><a href="tel:+44(0)2035102390" class="worker__tel uri">+44 (0) 20 3510 2390</a>
                         </div>
-                        <!-- end of block .worker-->
                       </div>
                       <div class="listing__item">
                         <div data-sr="enter bottom move 80px, scale(0), over 0.3s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--sidebar">
@@ -569,7 +515,6 @@ include 'parts/navigation.php';
                           <h3 class="worker__name fn">Lisa Wemert</h3>
                           <div class="worker__post">Managing Broker/Partner, e-PRO</div><a href="tel:+44(0)203510567" class="worker__tel uri">+44 (0) 20 3510 567</a>
                         </div>
-                        <!-- end of block .worker-->
                       </div>
                       <div class="listing__item">
                         <div data-sr="enter bottom move 80px, scale(0), over 0.6s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--sidebar">
@@ -578,11 +523,10 @@ include 'parts/navigation.php';
                           <h3 class="worker__name fn">Mariusz Ciesla</h3>
                           <div class="worker__post">Real Estate Professional</div><a href="tel:+44(0)203510334" class="worker__tel uri">+44 (0) 20 3510 334</a>
                         </div>
-                        <!-- end of block .worker-->
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="clearfix"></div>
             </div>

@@ -13,7 +13,8 @@
                 <li class="navbar__item <?php if ($active=='home'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.home']?></a></li>
                 <li class="navbar__item <?php if ($active=='rent'){ echo 'active';}?>"><a href="izdavanje.php" class="navbar__link"><?=$lang['navigation.rent']?></a></li>
                 <li class="navbar__item <?php if ($active=='sell'){ echo 'active';}?>"><a href="prodaja.php" class="navbar__link"><?=$lang['navigation.sell']?></a></li>
-                <li class="navbar__item <?php if ($active=='submit'){ echo 'active';}?>"><a href="submit.php" class="navbar__link"><?=$lang['navigation.submit']?></a></li>
+                <li class="navbar__item <?php if ($active=='sell'){ echo 'active';}?>"><a href="prodaja.php" class="navbar__link"><?=$lang['navigation.sell']?></a></li>
+                <li class="navbar__item navbar__item--mob"><a href="favorites.php" class="navbar__link"><?=$lang['navigation.favorites']?></a></li>
                <li class="navbar__item js-dropdown <?php if ($active=='about'){ echo 'active';}?>"><a class="navbar__link"><?=$lang['navigation.about']?>
                     <svg class="navbar__arrow">
                       <use xlink:href="#icon-arrow-right"></use>

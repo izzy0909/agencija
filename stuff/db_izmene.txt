@@ -383,3 +383,11 @@ ADD t_open_space INT(11),
 ADD t_pristup_za_invalide INT(11),
 ADD t_lokal_na_ulici INT(11),
 ADD t_pravno_lice INT(11);
+
+
+######################
+##### v. 2.0.4
+##### U. Strike
+#####
+######################
+ALTER TABLE stanovi ADD COLUMN youtube varchar(100);

@@ -682,6 +682,11 @@ $(document).pngFix( );
 		<td></td>
 	</tr>
 	<tr>
+		<th valign="top">Youtube:</th>
+		<td><input type="text" class="inp-form" name="youtube" value="<?php echo $stan['youtube'];?>" /></td></td>
+		<td></td>
+	</tr>
+	<tr>
     	<th>Vidljiv do:</th>
     	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do" value="<?php if($stan['vidljiv_do'] != null) { echo date('d-m-Y', strtotime($stan['vidljiv_do'])); } ?>"></td>
     </tr>  

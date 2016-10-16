@@ -3,12 +3,12 @@
 include_once 'connection.php';
 
 
-function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlokacija_id, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $vidljiv_do, $dodao, $dodatna_informacija, $provizija)
+function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlokacija_id, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljiv, $vidljiv_do, $dodao, $dodatna_informacija, $provizija, $youtube)
 {
     global $conn;
 
-    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id, opis_lokacije, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, vidljiv_do, dodao, dodatna_informacija, provizija)
-            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :opis_lokacije, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :vidljiv_do, :dodao, :dodatna_informacija, :provizija)";
+    $sql = "INSERT INTO stanovi (id, kategorija, tip, stan_tip, vlasnik, lokacija_id, podlokacija_id, opis_lokacije, ulica, br, sprat, telefon, email, cena, kvadratura, grejanje, namestenost, opis, vidljiv, vidljiv_do, dodao, dodatna_informacija, provizija, youtube)
+            VALUES              ('', :kategorija, :tip, :stan_tip, :vlasnik, :lokacija_id, :podlokacija_id, :opis_lokacije, :ulica, :br, :sprat, :telefon, :email, :cena, :kvadratura, :grejanje, :namestenost, :opis, :vidljiv, :vidljiv_do, :dodao, :dodatna_informacija, :provizija, :youtube)";
     $query = $conn->prepare($sql);
     $query->execute(array(
         ':kategorija' => $kategorija,
@@ -32,7 +32,8 @@ function dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $lokacija_id, $podlok
         ':vidljiv_do' => $vidljiv_do,
         ':dodao' => $dodao,
         ':dodatna_informacija' => $dodatna_informacija,
-        ':provizija' => $provizija
+        ':provizija' => $provizija,
+        ':youtube' => $youtube
         ));
 
     return $conn->lastInsertID();
@@ -204,11 +205,11 @@ function ukupanBrojStanova(){
     
 }
 
-function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat, $provizija, $vidljiv_do){
+function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_tip, $ulica, $br, $sprat, $opstina, $podlokacija, $opis_lokacije, $grejanje, $namestenost, $cena, $kvadratura, $opis, $dodatna_informacija, $izdat, $provizija, $vidljiv_do, $youtube){
     global $conn;
 
     $sql = "UPDATE stanovi
-            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, opis_lokacije = :opis_lokacije, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija, izdat = :izdat, provizija = :provizija, vidljiv_do = :vidljiv_do 
+            SET vlasnik = :vlasnik, telefon = :telefon, email = :email, kategorija = :kategorija, tip = :tip, stan_tip = :stan_tip, ulica = :ulica, br = :br, sprat = :sprat, lokacija_id = :opstina, podlokacija_id = :podlokacija, opis_lokacije = :opis_lokacije, grejanje = :grejanje, namestenost = :namestenost, cena = :cena, kvadratura = :kvadratura, opis = :opis, dodatna_informacija = :dodatna_informacija, izdat = :izdat, provizija = :provizija, vidljiv_do = :vidljiv_do, youtube = :youtube 
             WHERE id = :id";
     $query = $conn->prepare($sql);
     $query->execute(array(
@@ -233,6 +234,7 @@ function izmeniStan($id, $vlasnik, $telefon, $email, $kategorija, $tip, $stan_ti
         ':izdat' => $izdat,
         ':provizija' => $provizija,
         ':vidljiv_do' => $vidljiv_do,
+        ':youtube' => $youtube,
 		':id' => $id
 		));
 	    

@@ -725,7 +725,7 @@ $(document).pngFix( );
                                 <td><label><input type="checkbox" name="samostojeca_kuca" > Samostojeća kuća</label></td>
                                 <td><label><input type="checkbox" name="kuca_s_dvoristem" > Kuća s dvorištem</label></td>
                                 </tr>
-                                <tr>
+                                <tr style="background-color:#f3f3f3;">
                                 <td><label><input type="checkbox" name="kucni_ljubimci" > Kućni ljubimci</label></td>
                                 <td><label><input type="checkbox" name="balkon" > Balkon</label></td>
                                 <td><label><input type="checkbox" name="video_nadzor" > Video nadzor</label></td>

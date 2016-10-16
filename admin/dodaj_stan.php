@@ -655,6 +655,11 @@ $(document).pngFix( );
 		<td><textarea rows="" cols="" class="form-textarea" name="dodatna_informacija"></textarea></td>
 		<td></td>
 	</tr>
+	<tr>
+		<th valign="top">Youtube:</th>
+		<td><input type="text" class="inp-form" name="youtube" /></td></td>
+		<td></td>
+	</tr>
 		<tr>
 			<th valign="top" >Vidljivost:</th>
                         <td><select name="vidljivost" class="styledselect_form_1">
@@ -927,6 +932,7 @@ if (isset ($_POST['dodaj_stan'])){
         $vidljiv_do = $timestamp->format('Y-m-d');
     }else $vidljiv_do = null;
     $provizija = isset($_POST['provizija']) ? $_POST['provizija'] : null;
+    $youtube = isset($_POST['youtube']) ? $_POST['youtube'] : null;
     
     $kablovska = isset($_POST['kablovska']) ? '1' : '0';
     $tv = isset($_POST['tv']) ? '1' : '0';
@@ -974,7 +980,7 @@ if (isset ($_POST['dodaj_stan'])){
 	$lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
 	$pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
     
-    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $vidljiv_do, $username, $dodatna_informacija, $provizija);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $vidljiv_do, $username, $dodatna_informacija, $provizija, $youtube);
     
     dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
     

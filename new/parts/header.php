@@ -23,13 +23,21 @@
                 </div>
               </div>
             </div>
-            <div class="header__contacts"><a class="header__phone">
-                <svg class="header__phone-icon">
-                  <use xlink:href="#icon-phone"></use>
-                </svg><span class="header__span">060/4480659</span></a></div>
+            <div class="header__contacts">
+              <a class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><span class="header__span">060/4480659</span></a>
+            </div>
             <!-- end of block .header__contacts-->
             <div class="header__social">
-              <div class="social social--header social--circles"><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a><a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a></div>
+              <div class="social social--header social--circles">
+                <a href="favorites.php" class="social__item"><i class="fa fa-heart<?php if(!isset($_COOKIE['jevtic_favorites'])){echo '-o';} ?>"></i></a>
+              </div>
+            </div>
+            <div class="header__social">
+              <div class="social social--header social--circles">
+                <a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a>
+                <a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a>
+              </div>
             </div>
             <button type="button" class="header__navbar-toggle js-navbar-toggle">
               <svg class="header__navbar-show">

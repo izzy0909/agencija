@@ -606,6 +606,15 @@ $(document).pngFix( );
                                 <td><?php echo $stan['dodatna_informacija'];?></td>
                                 <td></td>
                         </tr>
+						<tr>
+							<th valign="top">Youtube:</th>
+							<td><?php if(isset($stan['youtube'])){
+								preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $stan['youtube'], $matches);
+                    			$embed = $matches[1];
+							 	echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/' . $embed . '?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'; } ?>
+							 </td></td>
+							<td></td>
+						</tr>
                         <tr>
                         		<th valign="top">Vidljiv do:</th>
                         		<td><?php echo date("d-m-Y", strtotime($stan['vidljiv_do']));?></td>
