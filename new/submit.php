@@ -4,7 +4,7 @@ include_once '../data_base_access/dodatniTagoviDA.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/slikeDA.php';
 include_once '../data_base_access/ponudeDA.php';
-include_once '../admin/upload.php';
+include_once '../admin/upload-new.php';
 
 require_once 'lang/' . checkLang() . '.php';
 
