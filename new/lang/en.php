@@ -1,10 +1,10 @@
 <?php
 
-$lang['lang'] = 'en';
+$lang['lang'] = 'rs';
 
 // -- Navigation ------------------------------------------------
 
-$lang['navigation.home'] = "Home";
+$lang['navigation.home'] = "Početna";
 $lang['navigation.rent'] = "Izdavanje";
 $lang['navigation.sell'] = "Prodaja";
 $lang['navigation.submit'] = "Dodajte nekretninu";
@@ -18,10 +18,14 @@ $lang['navigation.contact'] = "Kontakt";
 
 $lang['navigation.back'] = "Nazad";
 $lang['navigation.language'] = "Jezik";
+$lang['navigation.favorites'] = "Omiljene nekretnine";
 
 
 
 // -- Početna ---------------------------------------------------
+
+$lang['home.title'] = "Nekretnine u Beogradu";
+$lang['home.subtitle'] = "Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.";
 
 $lang['popular'] = 'Popularno';
 $lang['recent'] = 'Najnovije';
@@ -29,21 +33,45 @@ $lang['featured'] = 'Preporučujemo';
 $lang['hot'] = "Preporuka!";
 $lang['details'] = "Detalji";
 
-$lang['submit.1'] = "Želite da";
-$lang['submit.2'] = "prodate";
-$lang['submit.3'] = "ili";
-$lang['submit.4'] = "iznajmite";
-$lang['submit.5'] = "nekretninu?";
-$lang['submit.button'] = "Uradite to odmah!";
+$lang['home.title'] = "Nekretnine u beogradu";
+$lang['home.subtitle'] = "Tražite stan, kuću ili poslovni prostor u Beogradu? Pozovite nas.";
+
+$lang['home.submit.1'] = "Želite da";
+$lang['home.submit.2'] = "prodate";
+$lang['home.submit.3'] = "ili";
+$lang['home.submit.4'] = "iznajmite";
+$lang['home.submit.5'] = "nekretninu?";
+$lang['home.submit.button'] = "Uradite to odmah!";
 
 
 // -- Dodajte nekretnienu ---------------------------------------
 
 $lang['submit.title'] = "Dodajte nekretninu";
+$lang['submit.fillall'] = "Popunite sva polja";
+$lang['submit.fillsome'] = "Nije obavezno";
 $lang['submit.basicinfo'] = "Osnovne informacije";
 $lang['submit.ownerinfo'] = "Informacije o vlasniku";
 $lang['submit.amenities'] = "Dodatne pogodnosti";
+$lang['submit.photos'] = "Slike";
+$lang['submit.photos.addmore'] = "Još slika";
 
+
+// -- Detalji ---------------------------------------------------
+
+$lang['details.commision'] = "Provizija";
+$lang['details.favorite'] = "Dodaj u omiljene";
+$lang['details.favoriteremove'] = "Ukloni iz omiljenih";
+$lang['details.amenities'] = "Dodatne pogodnosti";
+$lang['details.id'] = "Kataloški broj";
+$lang['details.moreinfo'] = "Prikaži još";
+$lang['details.map'] = "Mapa lokacije";
+
+
+
+// -- Favorites -------------------------------------------------
+
+$lang['favorites.title'] = "Omiljene nekretnine";
+$lang['favorites.nofavorites'] = "Nemate omiljenih nekretnina.";
 
 // -- Izdavanje // Prodaja --------------------------------------
 
@@ -122,12 +150,15 @@ $lang['search.form.floor.s18'] = "18. sprat";
 $lang['search.form.floor.s19'] = "19. sprat";
 $lang['search.form.floor.s20'] = "20. sprat i više";
 $lang['search.form.street'] = "Ulica i broj";
+$lang['search.form.streetonly'] = "Ulica";
 $lang['search.form.description'] = "Dodatne informacije";
 $lang['search.form.name'] = "Ime i prezime";
 $lang['search.form.phone'] = "Telefon";
 $lang['search.form.email'] = "Email";
 $lang['search.form.price'] = "Cena";
 $lang['search.form.size'] = "Kvadratura";
+$lang['search.form.from'] = "Od";
+$lang['search.form.to'] = "Do";
 $lang['search.form.input'] = "Ukucaj";
 $lang['search.form.reset'] = "Reset";
 $lang['search.form.search'] = "Pretraži";
@@ -147,6 +178,22 @@ $lang['about.li.3'] = "možemo da Vam omogućimo da u najkraćem vremenskom peri
 $lang['about.li.4'] = "Vam omogućavamo sastavljanje kupoprodajnih i ugovora o zakupu nepokretnosti";
 
 
+// -- Contracts ------------------------------------------------
+
+$lang['contracts.1'] = "Ugovor o posredovanju 2016";
+$lang['contracts.2'] = "Ugovor o posredovanju - Kupac - Fizičko lice";
+$lang['contracts.3'] = "Ugovor o posredovanju - Kupac - Pravno lice";
+$lang['contracts.4'] = "Ugovor o posredovanju pl 2016";
+$lang['contracts.5'] = "Ugovor o posredovanju sa zakupcem - Fizičko lice";
+$lang['contracts.6'] = "Ugovor o posredovanju sa zakupcem - Pravno lice";
+$lang['contracts.7'] = "Ugovor o posredovanju - Vlanik - Pravno lice";
+$lang['contracts.8'] = "Ugovor o posredovanju sa vlasnikom o prodaji nepokretnosti";
+$lang['contracts.9'] = "Zakon o posredovanju u prometu i zakupu nepokretnosti";
+$lang['contracts.10'] = "Privredna komora - letak";
+
+
+
+
 // -- Contact ---------------------------------------------------
 
 $lang['contact.title'] = "Kontakt";
@@ -158,6 +205,7 @@ $lang['contact.weekdays'] = "Radnim danima:";
 $lang['contact.contactus'] = "Posetite nas";
 $lang['contact.info'] = "Mi se nalazimo u Beogradu, na Autokomandi, samoj raskrsnici Bulevara Oslobođenja i Južnog Bulevara u stambeno-poslovnoj zgradi u Bokeljskoj ulici broj 7.";
 $lang['contact.social'] = "Društvene mreže:";
+$lang['contact.map'] = "Naša lokacija";
 
 $lang['contact.form.name'] = "Ime";
 $lang['contact.form.phone'] = "Telefon";

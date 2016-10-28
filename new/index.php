@@ -32,8 +32,8 @@ include 'parts/navigation.php';
                         <div class="container">
                           <div class="row">
                             <div class="slider__caption">
-                              <h1 class="banner__title">The Best Way to Find Your Perfect Home</h1>
-                              <h3 class="banner__subtitle">With over 700,000 active listings, Realtyspace has the largest inventory of apartments in the United States.</h3>
+                              <h1 class="banner__title">Sa nama ste na pragu željene nekretnine.</h1>
+                              <h3 class="banner__subtitle">Izdavanje luksuznih stanova, poslovnih prostora i kuća u Beogradu.</h3>
                             </div>
                           </div>
                         </div>
@@ -218,7 +218,7 @@ include 'parts/navigation.php';
                     $thumb = prikaziSlikuThumb($item[0]);
                     echo '<div class="listing__item">';
                     echo    '<div class="properties properties--grid">';
-                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a><span class="properties__ribon">' . $item['kategorija'] . '</span></div>';
+                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><div class="thumb-div" style="background-image:url(../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a><span class="properties__ribon">' . $item['kategorija'] . '</span></div>';
                     //    <!-- end of block .properties__thumb-->
                     echo        '<div class="properties__details">';
                     echo            '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item['0'] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
@@ -231,7 +231,7 @@ include 'parts/navigation.php';
                     echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
                     echo                    '</div>';
                     echo                '</div>';
-                    echo                '<div class="properties__params--mob"><a href="#" class="properties__more">View details</a><span class="properties__params">Built-Up - 505 Sq Ft</span><span class="properties__params">Land Size - 1010 Sq Ft</span></div>';
+                    echo                '<div class="properties__params--mob"><a href="details.php?id=' . $item[0] . '" class="properties__more">' . $lang['details'] . '</a><span class="properties__params">Built-Up - 505 Sq Ft</span><span class="properties__params">Land Size - 1010 Sq Ft</span></div>';
                     echo           '</div>';
                     echo        '</div>';
                     // <!-- end of block .properties__info-->
@@ -252,7 +252,7 @@ include 'parts/navigation.php';
                     $thumb = prikaziSlikuThumb($item[0]);
                     echo '<div class="listing__item">';
                     echo    '<div class="properties properties--grid">';
-                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a><span class="properties__ribon">' . $item['kategorija'] . '</span><span class="hot__ribon2">' . $lang['hot'] . '</span></div>';
+                    echo        '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><div class="thumb-div" style="background-image:url(../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a><span class="properties__ribon">' . $item['kategorija'] . '</span><span class="hot__ribon2">' . $lang['hot'] . '</span></div>';
                     //    <!-- end of block .properties__thumb-->
                     echo        '<div class="properties__details">';
                     echo            '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item['0'] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';

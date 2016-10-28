@@ -289,16 +289,22 @@ $(document).pngFix( );
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
 		</ul>                  
-                
+
 		<div class="nav-divider">&nbsp;</div>
 
-		<ul class="select"><li><a href="spisak_trazimo.php"><b>Tražimo za vas</b><!--[if IE 7]><!--></a><!--<![endif]-->
+		<ul class="select"><li><a href="spisak_klijenti.php"><b>Klijenti</b><!--[if IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-
+		<div class="select_sub show">
+			<ul class="sub">
+				<li><a href="dodaj_klijenta.php">Dodaj klijenta</a></li>
+				<li class="sub_show"><a href="spisak_klijenti.php">Spisak klijenata</a></li>
+			</ul>
+		</div>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
-		</ul>
-                
+		</ul>  
+		
+         
 		<div class="nav-divider">&nbsp;</div>
 
 		<ul class="select"><li><a href="podsetnik.php"><b>Podsetnik</b><!--[if IE 7]><!--></a><!--<![endif]-->

@@ -4,6 +4,7 @@ include_once '../data_base_access/dodatniTagoviDA.php';
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/slikeDA.php';
 
+
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $stan = prikaziStanZaFront($id);

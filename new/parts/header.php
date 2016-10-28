@@ -2,9 +2,11 @@
       <header class="header <?php if ($active=='home'){ echo 'header--overlay header--dark';} else { echo 'header--brand';}?> ">
         <div class="container">
           <div class="header__row"><a href="index.php" class="header__logo">
-              <svg>
+<!--               <svg>
                 <use xlink:href="#icon-logo--mob"></use>
-              </svg></a>
+              </svg> -->
+              <img src="assets/img/logo<?php if($active!='home'){echo '3';} else echo '2';?>.png">
+              </a>
             <div class="header__settings">
               <!-- end of block .header__settings-column-->
               <div class="header__settings-column">

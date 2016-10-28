@@ -10,7 +10,7 @@
      * the <body> tag. If you would like to remove that inlined
      * data from the template, please set this to true.
      ==============================================================*/
-    loadSvgWithAjax: false
+    loadSvgWithAjax: true
   });
   /***************************************************************
    * Enables fixed menu
