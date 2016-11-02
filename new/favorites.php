@@ -73,10 +73,10 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
-                            echo      '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                            echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
                             echo                '<div class="properties__offer">';
                             echo                    '<div class="properties__offer-column">';
                             echo                        '<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
@@ -86,7 +86,7 @@ include 'parts/navigation.php';
                             echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
                             echo                    '</div>';
                             echo                '</div>';
-                            echo                '<div class="properties__params--mob"><a href="details.php?id=' . $item[0] . '" class="properties__more">' . $lang['details'] . '</a></div>';
+                            echo                '<div class="properties__params--mob"><a href=/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__more">' . $lang['details'] . '</a></div>';
                             echo           '</div>';
                             echo        '</div>';
                             // <!-- end of block .properties__info-->
@@ -102,10 +102,10 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
-                            echo      '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                            echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
                             echo                '<div class="properties__offer">';
                             echo                    '<div class="properties__offer-column">';
                             echo                        '<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
@@ -115,7 +115,7 @@ include 'parts/navigation.php';
                             echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
                             echo                    '</div>';
                             echo                '</div>';
-                            echo                '<div class="properties__params--mob"><a href="details.php?id=' . $item[0] . '" class="properties__more">' . $lang['details'] . '</a></div>';
+                            echo                '<div class="properties__params--mob"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__more">' . $lang['details'] . '</a></div>';
                             echo           '</div>';
                             echo        '</div>';
                             // <!-- end of block .properties__info-->

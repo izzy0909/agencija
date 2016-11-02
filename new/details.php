@@ -75,8 +75,8 @@ include 'parts/navigation.php';
                                         $i= 0; 
                                         foreach($slike as $large){
                                           echo '<div class="slider__item slider__item--0">';
-                                          echo    '<a href="../admin/slike/watermark_' . $large['naziv'] . '" data-size="1740x960" data-gallery-index="' . $i . '" class="slider__img js-gallery-item">';
-                                          echo      '<img data-lazy="../admin/slike/watermark_' . $large['naziv'] . '" src="assets/img/lazy-image.jpg" alt="">';
+                                          echo    '<a href="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" data-size="1740x960" data-gallery-index="' . $i . '" class="slider__img js-gallery-item">';
+                                          echo      '<img data-lazy="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt="">';
                                           echo    '</a>';
                                           echo '</div>';
                                           $i++;
@@ -91,7 +91,7 @@ include 'parts/navigation.php';
                                         $i = 0;
                                         foreach($slike as $thumb){
                                           echo '<div data-slide-rel="' . $i . '" class="slider__item slider__item--0  img-width-fix">';
-                                          echo '<div class="slider__img"><img data-lazy="../admin/slike/thumb_' . $thumb['naziv'] . '" src="assets/img/lazy-image.jpg" alt=""></div>';
+                                          echo '<div class="slider__img"><img data-lazy="/' . $tempurl . '../admin/slike/thumb_' . $thumb['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt=""></div>';
                                           echo '</div>';
                                           $i++;
                                         }

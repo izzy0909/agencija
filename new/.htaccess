@@ -1,0 +1,23 @@
+Header add Access-Control-Allow-Origin "http://localhost/agencija/new/" 
+Options -MultiViews
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^detalji/([0-9]+)/.+/?$ details.php?id=$1 [QSA,NC]
+
+RewriteRule ^izdavanje/$ izdavanje.php [L]
+RewriteRule ^prodaja/$ prodaja.php [L]
+RewriteRule ^dodajte-nekretninu/$ submit.php [L]
+
+RewriteRule ^o-nama/$ about.php [L]
+RewriteRule ^ugovori/$ contracts.php [L]
+
+RewriteRule ^omiljene-nekretnine/$ favorites.php [L]
+RewriteRule ^kontakt/$ contact.php [L]
+RewriteRule ^izdavanje/$ izdavanje.php [L]
+RewriteRule ^prodaja/$ prodaja.php [L]
+
+RewriteRule ^abc/[^/]+/[^/]+/(.+)$ $1  [L]

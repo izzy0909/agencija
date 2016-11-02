@@ -36,7 +36,7 @@
    *
    * Usually, this should be disabled on live website.
    ==============================================================*/
-  app.activateUIPanel();
+  // app.activateUIPanel();
 
   /**
    * See more options

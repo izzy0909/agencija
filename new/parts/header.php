@@ -5,7 +5,7 @@
 <!--               <svg>
                 <use xlink:href="#icon-logo--mob"></use>
               </svg> -->
-              <img src="assets/img/logo<?php if($active!='home'){echo '3';} else echo '2';?>.png">
+              <img src="/<?=$tempurl?>assets/img/logo<?php if($active!='home'){echo '3';} else echo '2';?>.png">
               </a>
             <div class="header__settings">
               <!-- end of block .header__settings-column-->
@@ -31,7 +31,7 @@
             <!-- end of block .header__contacts-->
             <div class="header__social">
               <div class="social social--header social--circles">
-                <a href="favorites.php" class="social__item"><i class="fa fa-heart<?php if(!isset($_COOKIE['jevtic_favorites'])){echo '-o';} ?>"></i></a>
+                <a href="/<?=$tempurl?>omiljene-nekretnine/" class="social__item"><i class="fa fa-heart<?php if(!isset($_COOKIE['jevtic_favorites'])){echo '-o';} ?>"></i></a>
               </div>
             </div>
             <div class="header__social">

@@ -58,13 +58,12 @@ include 'parts/navigation.php';
                         <p><?=$lang['contact.info']?></p>
                       </div>
                       <div class="contacts__social">
-                        <div class="social social--worker social--contacts"><span class="contacts__social-title"><?=$lang['contact.social']?>:</span><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a><a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-google-plus"></i></a></div>
+                        <div class="social social--worker social--contacts"><span class="contacts__social-title"><?=$lang['contact.social']?>:</span><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a><a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a></div>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                       <div class="contacts__form">
-                        <div class="alert alert-info">Attention! This form requires working php server for successful submit!</div>
                         <form action="#" method="POST" class="form form--flex js-contact-form form--contacts">
                           <div class="row">
                             <div class="form-group required">
