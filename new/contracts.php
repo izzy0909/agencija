@@ -24,16 +24,16 @@ include 'parts/navigation.php';
                       <article class="article article--list article--details">
                         <div class="article__body">
                           <ul>
-                            <li><a href="ugovori/ugovor_o_posredovanju_2016.pdf" target="_blank"><?=$lang['contracts.1']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_kupac_fizicko_lice.pdf" target="_blank"><?=$lang['contracts.2']?></a></li>
-                            <li><a href="ugovori/ugovor_o-posredovanju_kupac_pravno_lice.pdf" target="_blank"><?=$lang['contracts.3']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_pl_2016.pdf" target="_blank"><?=$lang['contracts.4']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_sa_zakupcem_fizicko_lice.pdf" target="_blank"><?=$lang['contracts.5']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_sa_zakupcem_pravno_lice.pdf" target="_blank"><?=$lang['contracts.6']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_vlasnik_pravno_lice.pdf" target="_blank"><?=$lang['contracts.7']?></a></li>
-                            <li><a href="ugovori/ugovor_o_posredovanju_sa_vlasnikom_o_prodaji_nepokretnosti.pdf" target="_blank"><?=$lang['contracts.8']?></a></li>
-                            <li><a href="ugovori/zakon_o_posredovanju_u_prometu_i_zakupu_nepokretnosti" target="_blank"><?=$lang['contracts.9']?></a></li>
-                            <li><a href="ugovori/Privredna_komora_letak.pdf" target="_blank"><?=$lang['contracts.10']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_2016.pdf" target="_blank"><?=$lang['contracts.1']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_kupac_fizicko_lice.pdf" target="_blank"><?=$lang['contracts.2']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o-posredovanju_kupac_pravno_lice.pdf" target="_blank"><?=$lang['contracts.3']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_pl_2016.pdf" target="_blank"><?=$lang['contracts.4']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_sa_zakupcem_fizicko_lice.pdf" target="_blank"><?=$lang['contracts.5']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_sa_zakupcem_pravno_lice.pdf" target="_blank"><?=$lang['contracts.6']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_vlasnik_pravno_lice.pdf" target="_blank"><?=$lang['contracts.7']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/ugovor_o_posredovanju_sa_vlasnikom_o_prodaji_nepokretnosti.pdf" target="_blank"><?=$lang['contracts.8']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/zakon_o_posredovanju_u_prometu_i_zakupu_nepokretnosti" target="_blank"><?=$lang['contracts.9']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/Privredna_komora_letak.pdf" target="_blank"><?=$lang['contracts.10']?></a></li>
                           </ul>
                         </div>
                       </article>

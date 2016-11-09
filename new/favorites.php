@@ -142,7 +142,7 @@ include 'parts/navigation.php';
                   </div>
                   <div class="widget__content">
                     <!-- BEGIN SEARCH-->
-                    <form id="searchForm" name="searchForm" data-cat="izdavanje" action="izdavanje.php" method="GET" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
+                    <form id="searchForm" name="searchForm" data-cat="izdavanje" action="/<?=$tempurl?>izdavanje/" method="POST" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
                       <div class="row">
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">

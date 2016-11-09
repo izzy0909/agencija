@@ -99,14 +99,14 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
-                            echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                            echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
                             echo                '<div class="properties__offer">';
                             echo                    '<div class="properties__offer-column">';
                             echo                        '<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
-                            echo                        '<div class="properties__offer-value"><strong>' . $item['tip'] . '</strong></div>';
+                            echo                        '<div class="properties__offer-value"><strong'; if($item['tip']=='Poslovni prostor' || $item['tip']=='Poslovna zgrada'){echo ' style="font-size:18px"';} echo '>' . $item['tip'] . '</strong></div>';
                             echo                    '</div>';
                             echo                    '<div class="properties__offer-column">';
                             echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
@@ -140,7 +140,7 @@ include 'parts/navigation.php';
                   </div>
                   <div class="widget__content">
                     <!-- BEGIN SEARCH-->
-                    <form id="searchForm" name="searchForm" data-cat="izdavanje" action="izdavanje.php" method="GET" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
+                    <form id="searchForm" name="searchForm" data-cat="izdavanje" action="/<?=$tempurl?>izdavanje/" method="POST" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
                       <div class="row">
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">

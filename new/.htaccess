@@ -14,6 +14,7 @@ RewriteRule ^dodajte-nekretninu/$ submit.php [L]
 
 RewriteRule ^o-nama/$ about.php [L]
 RewriteRule ^ugovori/$ contracts.php [L]
+RewriteRule ^zakoni/$ laws.php [L]
 
 RewriteRule ^omiljene-nekretnine/$ favorites.php [L]
 RewriteRule ^kontakt/$ contact.php [L]

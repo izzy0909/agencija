@@ -16417,8 +16417,8 @@ fieldset[disabled] .dropdown--select .dropdown-toggle {
 
 .navbar__brand-logo {
   fill: #2c3e50;
-  height: 60px;
-  width: 215px;
+/*  height: 60px;
+  width: 215px;*/
 }
 
 @media (max-width: 1199px) {

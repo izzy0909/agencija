@@ -50,7 +50,6 @@ include 'parts/header.php';
 include 'parts/navigation.php';
 
 ?>
-
       <div class="site-wrap js-site-wrap">
         <div class="center">
           <div class="container">

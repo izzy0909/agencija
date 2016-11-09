@@ -12,6 +12,7 @@ $lang['navigation.about'] = "O nama";
 $lang['navigation.about.team'] = "Naš tim";
 $lang['navigation.about.terms'] = "Uslovi poslovanja";
 $lang['navigation.about.contracts'] = "Ugovori";
+$lang['navigation.about.laws'] = "Zakoni";
 $lang['navigation.references'] = "Reference";
 $lang['navigation.career'] = "Karijera";
 $lang['navigation.contact'] = "Kontakt";
@@ -191,6 +192,14 @@ $lang['contracts.8'] = "Ugovor o posredovanju sa vlasnikom o prodaji nepokretnos
 $lang['contracts.9'] = "Zakon o posredovanju u prometu i zakupu nepokretnosti";
 $lang['contracts.10'] = "Privredna komora - letak";
 
+
+// -- Laws ------------------------------------------------------
+
+$lang['laws.1'] = "Zakon o posredovanju nekretninama";
+$lang['laws.2'] = "Oslobadjanje od poreza na prenos apsolutnih prava";
+$lang['laws.3'] = "Povracaj poreza pdv za kupce prvog stana";
+$lang['laws.4'] = "Zakon o javnom beleznistvu";
+$lang['laws.5'] = "Tarifa notari";
 
 
 
