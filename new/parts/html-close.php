@@ -37,5 +37,8 @@
     <!-- endbuild--><!-- inject:ga  -->
     <!-- endinject -->
     <!-- END SCRIPTS and INCLUDES-->
+
+    <script src="/<?=$tempurl?>assets/js/rrssb.min.js"></script>
+
   </body>
 </html>

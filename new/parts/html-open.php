@@ -34,6 +34,7 @@ $tempurl = 'agencija/new/';
     <!-- endbuild-->
     <!-- Your styles should go in this file-->
     <link rel="stylesheet" href="/<?=$tempurl?>assets/css/custom.css">
+    <link rel="stylesheet" href="/<?=$tempurl?>assets/css/rrssb.css" />
     <!-- Fixes for IE-->
     <!--[if lt IE 11]>
     <link rel="stylesheet" href="assets/css/ie-fix.css"><![endif]-->
