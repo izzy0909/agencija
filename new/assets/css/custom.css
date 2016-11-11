@@ -72,7 +72,20 @@
   height: 100%;
 }
 
+.pdf{
+  display:inline-block;
+  float:right;
+  max-width:32px;
+}
 
+.pdf img{
+  width:100%;
+}
+
+.pdf a{
+    color:#2c3e50;
+  text-decoration:none;
+}
 
 
 

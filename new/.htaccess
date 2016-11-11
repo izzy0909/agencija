@@ -21,4 +21,6 @@ RewriteRule ^kontakt/$ contact.php [L]
 RewriteRule ^izdavanje/$ izdavanje.php [L]
 RewriteRule ^prodaja/$ prodaja.php [L]
 
+RewriteRule ^pdf/([0-9]+)/$ pdf.php?id=$1 [QSA,NC]
+
 RewriteRule ^abc/[^/]+/[^/]+/(.+)$ $1  [L]
