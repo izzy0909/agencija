@@ -122,9 +122,9 @@ webpackJsonpapp([0],[
 	"use strict";
 	module.exports = {
 	  colorTheme: 'default',
-	  assetsPathPrefix: 'assets/',
-	  latitude: "33.74229160384012",
-	  longitude: "-117.86845207214355",
+	  assetsPathPrefix: '/agencija/new/assets/', // assetsPathPrefix: 'assets/',
+	  latitude: "44.7918671",
+	  longitude: "20.4679300",
 	  ajaxUrl: null
 	};
 

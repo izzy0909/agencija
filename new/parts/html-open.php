@@ -52,7 +52,7 @@ $tempurl = 'agencija/new/';
         echo '<meta name="twitter:card" content="summary">' . "\n";
         echo '<meta name="twitter:title" content="[' . $stan['kategorija'] . '] ' . $stan['tip'] . ': ' . $stan['opstina'] . ', Beograd - Jevtić Nekretnine">' . "\n";
         echo '<meta name="twitter:description" content="kvadratura: ' . $stan['kvadratura'] . 'm&#13217;, cena: ' . $stan['cena'] . '&#x20AC;">' . "\n";
-        echo '<meta name="twitter:image"http://jevticnekretnine.com/../admin/slike/watermark_' . $thumb['naziv'] . '">' . "\n";
+        echo '<meta name="twitter:image" content="http://jevticnekretnine.com/../admin/slike/watermark_' . $thumb['naziv'] . '">' . "\n";
         echo '<meta name="twitter:url" content="http://jevticnekretnine.com">' . "\n";
     }
     else {

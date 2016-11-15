@@ -43,14 +43,15 @@
    * https://developers.google.com/maps/documentation/javascript/reference#MapOptions
    */
   var mapOptions = {
-    zoom: 10,
-    center: new google.maps.LatLng(33.74229160384012, -117.86845207214355),
+    center: new google.maps.LatLng(44.7918671, 20.4679300),
+    // center: new google.maps.LatLng(33.74229160384012, -117.86845207214355),
+    zoom: 15,
     // Disable scrolling wheel for usability purposes
     scrollwheel: false,
     zoomControl: true,
     mapTypeControl: true,
     autocomplete: {
-      componentRestrictions: {'country': 'us'}
+      componentRestrictions: {'country': 'rs'}
     },
     mapTypeControlOptions: {
     position: google.maps.ControlPosition.LEFT_TOP
@@ -92,9 +93,9 @@
   initGoogleMap('.js-map-canvas-contact', window.demodata[3]);
   initBtnDemo('.js-btn-demo');
   initPopovers('.js-popover');
-  initGeocoderGoogleMap('.js-map-location-dashboard-submit', {lat: 37.7749295, lng: -122.41941550000001});
-  initGeocoderGoogleMap('.js-map-location-dashboard', {lat: 37.7749295, lng: -122.41941550000001});
-  initGeocoderGoogleMap('.js-map-location-dashboard-hidden', {lat: 37.7749295, lng: -122.41941550000001});
+  initGeocoderGoogleMap('.js-map-location-dashboard-submit', {lat: 44.791867, lng: 20.467930000000001});
+  initGeocoderGoogleMap('.js-map-location-dashboard', {lat: 44.791867, lng: 20.467930000000001});
+  initGeocoderGoogleMap('.js-map-location-dashboard-hidden', {lat: 44.791867, lng: 20.467930000000001});
   initLeafletMap('.js-map-canvas-leaflet', window.demodata);
 
 
@@ -1344,7 +1345,7 @@
      * See http://leafletjs.com/reference.html
      * for more examples and options
      ==============================================================*/
-    var coordinates = new L.LatLng(33.74229160384012, -117.86845207214355);
+    var coordinates = new L.LatLng(44.791914, 20.468063);
     var firstRun = false;
     var map;
     app.createMap(
