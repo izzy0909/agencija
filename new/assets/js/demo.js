@@ -778,13 +778,13 @@
     if (!$mapCanvas.length) return;
 
     (function () {
+      //44.7915727,20.4673448
       // We're using here sample coordinates, please replace them with real ones
-      var coordinates = new google.maps.LatLng(location.lat, location.lng);
+      var coordinates = new google.maps.LatLng(44.7918671, 20.4679300);
       // Default map zoom
       // jQuery object with map container
 
       var $mapBtn = $('.js-map-btn');
-
 
       /**
        * This is a wrapper around original Google Maps object,
@@ -812,7 +812,7 @@
          * Please place here all the code that needs the google map object
          */
         function () {
-          var map = new google.maps.Map($mapCanvas[0], _.merge(mapOptions, {zoom: 7, coordinates : coordinates }));
+          var map = new google.maps.Map($mapCanvas[0], _.merge(mapOptions, {zoom: 16, coordinates : coordinates }));
 
           /**
            * app.createMarker is a helper which contains
