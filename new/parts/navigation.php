@@ -2,7 +2,7 @@
       <div id="header-nav-offset"></div>
       <nav id="header-nav" class="navbar navbar--header <?php if ($active=='home'){ echo 'navbar--overlay';}?>">
         <div class="container">
-          <div class="navbar__row js-navbar-row"><a href="index.php" class="navbar__brand">
+          <div class="navbar__row js-navbar-row"><a href="/<?=$tempurl?>" class="navbar__brand">
               <img class="navbar__brand-logo" src="/<?=$tempurl?>assets/img/logo<?php if($active!='home'){echo '3';} else echo '2'; ?>.png">
 <!--               <svg class="navbar__brand-logo">
                 <use xlink:href="#icon-logo"></use>

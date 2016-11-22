@@ -1,10 +1,10 @@
 <?php
 
-$lang['lang'] = 'rs';
+$lang['lang'] = 'en';
 
 // -- Navigation ------------------------------------------------
 
-$lang['navigation.home'] = "Početna";
+$lang['navigation.home'] = "Home";
 $lang['navigation.rent'] = "Izdavanje";
 $lang['navigation.sell'] = "Prodaja";
 $lang['navigation.submit'] = "Dodajte nekretninu";

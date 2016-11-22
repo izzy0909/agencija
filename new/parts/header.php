@@ -1,7 +1,7 @@
       <!-- BEGIN HEADER-->
       <header class="header <?php if ($active=='home'){ echo 'header--overlay header--dark';} else { echo 'header--brand';}?> ">
         <div class="container">
-          <div class="header__row"><a href="index.php" class="header__logo">
+          <div class="header__row"><a href="/<?=$tempurl?>" class="header__logo">
 <!--               <svg>
                 <use xlink:href="#icon-logo--mob"></use>
               </svg> -->

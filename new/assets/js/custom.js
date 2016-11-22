@@ -24,7 +24,7 @@
 	  		$.ajax({
 	            type: "GET",
 	            data:  favfunc + '_favorite=1&id=' + favid,
-	            url: "ajax.php",
+	            url: "/agencija/new/ajax.php",
 	            dataType: "html",
 	            async: false,
 	            success: function (data) {
@@ -46,7 +46,7 @@
 	  		$.ajax({
 	            type: "GET",
 	            data:  'remove_favorite=1&id=' + favid,
-	            url: "ajax.php",
+	            url: "/agencija/new/ajax.php",
 	            dataType: "html",
 	            async: false,
 	            success: function (data) {
@@ -83,7 +83,7 @@
 		$('#AddMoreFileBox').click(function(e){
 				if(maxi < MaxFileInputs)
 				{
-					var newinput = '<span><a href="#" class="removeFileBox"><img src="../images/close_icon.gif" border="0" /></a><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/></span>';
+					var newinput = '<span><a href="#" class="removeFileBox"><img src="/agencija/images/close_icon.gif" border="0" /></a><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/></span>';
 					$("#AddFileInputBox").append(newinput);
 					maxi++;
 				}

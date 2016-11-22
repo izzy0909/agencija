@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-100;
 $ut=50;
-$ttffile='E:\xampp\htdocs\agencija\new\php/font/unifont/Times_New_Roman_Normal.ttf';
+$ttffile='php/font/unifont/Times_New_Roman_Normal.ttf';
 $originalsize=54928;
 $fontkey='timesutf8';
 ?>

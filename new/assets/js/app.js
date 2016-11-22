@@ -1179,7 +1179,7 @@ webpackJsonpapp([0],[
 			  $.ajax({
 	            type: "GET",
 	            data: forma + '&category=' + category + '&order=' + order + '&start=' + page,
-	            url: "ajax.php",
+	            url: "/agencija/new/ajax.php",
 	            dataType: "html",
 	            async: false,
 	            success: function (data) {

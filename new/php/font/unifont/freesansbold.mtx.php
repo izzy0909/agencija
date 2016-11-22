@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-189;
 $ut=69;
-$ttffile='E:\xampp\htdocs\agencija\new\php/font/unifont/FreeSansBold.ttf';
+$ttffile='php/font/unifont/FreeSansBold.ttf';
 $originalsize=359272;
 $fontkey='freesansB';
 ?>

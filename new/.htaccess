@@ -3,7 +3,7 @@ Header add Access-Control-Allow-Origin "http://localhost/agencija/new/"
 Options -MultiViews
 Options +FollowSymlinks
 
-RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt|\.ico|\.svg)$ [NC]
+RewriteCond %{REQUEST_URI} !(\.js|\.png|\.jpg|\.gif|robots\.txt|\.ico|\.svg)$ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^detalji/([0-9]+)/.+/?$ details.php?id=$1 [QSA,NC]

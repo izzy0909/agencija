@@ -59,7 +59,7 @@ include 'parts/navigation.php';
                 <div class="property">
                   <h1 class="property__title">#<?php echo $stan[0] . ' - ' . $stan['opstina']; ?>
                     <div style="display:block;">
-                      <span class="property__city" style="display:inline-block; max-width:93%;"><?php echo $stan['kategorija'] . ' / ' . $stan['tip'] . ' / ' . $stan['stan_tip']; ?></span>
+                      <span class="property__city" style="display:inline-block; max-width:90%;"><?php echo $stan['kategorija'] . ' / ' . $stan['tip'] . ' / ' . $stan['stan_tip']; ?></span>
                       <span class="pdf"><a href="/<?=$tempurl?>pdf/<?=$stan[0]?>/" target="_blank"><img src="/<?=$tempurl?>assets/img/pdf.png" /></a></span>
                     </div>
                   </h1>
@@ -119,47 +119,31 @@ include 'parts/navigation.php';
                   </div>
                   <div class="clearfix"></div>
                   <div class="property__slider">
-                    <div class="hot__ribon" style="z-index:20;"><?=$lang['hot']?></div>
-                                    <div id="properties-thumbs" class="slider slider--small js-slider-thumbs">
-                                      <div class="slider__block js-slick-slider">
-                                     <?php
-                                        $i= 0; 
-                                        foreach($slike as $large){
-                                          echo '<div class="slider__item slider__item--0">';
-                                          echo    '<a href="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" data-size="1740x960" data-gallery-index="' . $i . '" class="slider__img js-gallery-item">';
-                                          echo      '<img data-lazy="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt="">';
-                                          echo    '</a>';
-                                          echo '</div>';
-                                          $i++;
-                                        }
-                                      ?>
-                                      </div>
-                                    </div>
-                                    <div class="slider slider--thumbs">
-                                      <div class="slider__wrap">
-                                        <div class="slider__block js-slick-slider">
-                                        <?php
-                                        $i = 0;
-                                        foreach($slike as $thumb){
-                                          echo '<div data-slide-rel="' . $i . '" class="slider__item slider__item--0  img-width-fix">';
-                                          echo '<div class="slider__img"><img data-lazy="/' . $tempurl . '../admin/slike/thumb_' . $thumb['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt=""></div>';
-                                          echo '</div>';
-                                          $i++;
-                                        }
-                                        ?>
-                                        </div>
-                                        <button type="button" class="slider__control slider__control--prev js-slick-prev">
-                                          <svg class="slider__control-icon">
-                                            <use xlink:href="#icon-arrow-left"></use>
-                                          </svg>
-                                        </button>
-                                        <button type="button" class="slider__control slider__control--next js-slick-next">
-                                          <svg class="slider__control-icon">
-                                            <use xlink:href="#icon-arrow-right"></use>
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
+                      <div style="margin: 0 auto;" class="ui__slider">
+                        <div id="counter-slider" class="slider slider--small slider--small">
+                          <div class="slider__block js-slick-slider">
+                          <?php
+                            foreach($slike as $large){
+                              echo '<div class="slider__item">';
+                              echo '<img data-lazy="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt=""></div>';
+                            }
+
+                          ?>
+                          </div>
+                          <div class="slider__controls">
+                            <button type="button" class="slider__control slider__control--prev js-slick-prev">
+                              <svg class="slider__control-icon">
+                                <use xlink:href="#icon-arrow-left"></use>
+                              </svg>
+                            </button><span class="slider__current js-slick-current">1 /</span><span class="slider__total js-slick-total">5</span>
+                            <button type="button" class="slider__control slider__control--next js-slick-next">
+                              <svg class="slider__control-icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                   </div>
                   <div class="property__info">
                     <div class="property__info-item"><?=$lang['details.id']?>: <strong> #<?=$stan[0]?></strong></div>

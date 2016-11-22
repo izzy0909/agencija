@@ -13,7 +13,7 @@ $desc=array (
 );
 $up=-125;
 $ut=50;
-$ttffile='E:\xampp\htdocs\agencija\new\php/font/unifont/FreeSerifBold.ttf';
+$ttffile='php/font/unifont/FreeSerifBold.ttf';
 $originalsize=615292;
 $fontkey='freeserifB';
 ?>

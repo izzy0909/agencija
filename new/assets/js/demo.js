@@ -245,6 +245,7 @@
         slidesToShow: 5,
         autoplay: true,
         accessibility: false,
+        rtl: true,
         prevArrow: $partnersSlider.find('.js-partners-prev'),
         nextArrow: $partnersSlider.find('.js-partners-next'),
         responsive: [
@@ -450,7 +451,7 @@
         .slick({
           slidesToShow: 5,
           slidesToScroll: 1,
-          focusOnSelect: true,
+          focusOnSelect: false,
           arrows: true,
           accessibility: false,
           centerMode: true,
