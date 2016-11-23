@@ -3,9 +3,15 @@
 
 include_once '../data_base_access/stanoviDA.php';
 include_once '../data_base_access/slikeDA.php';
-require_once '/lang/rs.php';
+// require_once '/lang/rs.php';
+if(isset($_COOKIE['jevtic_lang']) && $_COOKIE['jevtic_lang']=='en'){
+    $lang['hot'] = 'Hot offer';
+}
+else{
+    $lang['hot'] = 'Preporuka';
+}
 
-
+$tempurl = 'agencija/new/';
 
 
 if(isset($_REQUEST['category'])){
@@ -33,22 +39,21 @@ if(isset($_REQUEST['category'])){
 
                             $append .= '<div class="listing__item">';
                             $append .=   '<div class="properties properties--grid">';
-                            $append .=    '<div class="properties__thumb"><a href="details.php?id=' . $item[0] . '" class="item-photo"><img src="../admin/slike/' . $thumb['naziv'] . '" alt=""/></a>';
+                            $append .=    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>';
                                   if($item['hot_offer']){ $append .= '<span class="hot__ribon">' . $lang['hot'] . '</span>';} 
                             $append .=    '</div>';
                             //    <!-- end of block .properties__thumb-->
                             $append .=    '<div class="properties__details">';
-                            $append .=      '<div class="properties__info"><a href="details.php?id=' . $item[0] . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                            $append .=      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
                             $append .=	      '<div class="properties__offer">';
                             $append .=        		'<div class="properties__offer-column">';
                             $append .=		          	'<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
-                            $append .=				  	'<div class="properties__offer-value"><strong>' . $item['tip'] . '</strong></div>';
+                            $append .=				  	'<div class="properties__offer-value"><strong'; if($item['tip']=='Poslovni prostor' || $item['tip']=='Poslovna zgrada'){$append .= ' style="font-size:18px"';} $append .= '>' . $item['tip'] . '</strong></div>';
                             $append .=          	'</div>';
                             $append .=              '<div class="properties__offer-column">';
                             $append .=		              '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
                             $append .=              '</div>';
                             $append .=        '</div>';
-                            $append .=        '<div class="properties__params--mob"><a href="details.php?id=' . $item[0] . '" class="properties__more">' . $lang['details'] . '</a></div>';
                             $append .=      '</div>';
                             $append .=    '</div>';
                             // <!-- end of block .properties__info-->

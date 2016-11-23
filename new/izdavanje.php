@@ -9,7 +9,7 @@ require_once 'lang/' . checkLang() . '.php';
 $active = 'rent';
 $areas = prikaziSveOpstine();
 
-if(isset($_REQUEST['search'])){
+if(isset($_REQUEST['pretraga'])){
 
     $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : null;
     $structure = isset($_REQUEST['structure']) ? $_REQUEST['structure'] : null;
@@ -77,7 +77,7 @@ include 'parts/navigation.php';
                     <div class="form-group">
                       <label for="in-listing-sort" class="control-label"><?=$lang['search.sort']?>:</label>
                       <div class="form-control--select">
-                        <select id="sortiranje" name="sortiranje" class="form-control js-in-select">
+                        <select id="sortiranje" name="order" form="searchForm" class="form-control js-in-select">
                           <option value="1" ><?=$lang['search.sort.newest']?></option>
                           <option value="2" <?php if(isset($order)&&($order==2)){echo 'selected';}?> ><?=$lang['search.sort.oldest']?></option>
                           <option value="3" <?php if(isset($order)&&($order==3)){echo 'selected';}?> ><?=$lang['search.sort.priceasc']?></option>
@@ -432,6 +432,7 @@ include 'parts/navigation.php';
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">
+                          <input type="hidden" name="pretraga" value="1" />
                           <button type="button" class="form__reset js-form-reset"><?=$lang['search.form.reset']?></button>
                           <button type="submit" name="search" value="1" class="form__submit"><?=$lang['search.form.search']?></button>
                         </div>

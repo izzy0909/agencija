@@ -14,8 +14,8 @@
                     <a href="/<?=$tempurl?>prodaja/"><?=$lang['navigation.sell']?></a>
                     <a href="<?=$tempurl?>dodajte-nekretninu/"><?=$lang['navigation.submit']?></a>
                     <a href="/<?=$tempurl?>o-nama/"><?=$lang['navigation.about']?></a>
-                    <a href="index.html"><?=$lang['navigation.references']?></a>
-                    <a href="index.html"><?=$lang['navigation.career']?></a>
+<!--                     <a href="index.html"><?=$lang['navigation.references']?></a>
+                    <a href="index.html"><?=$lang['navigation.career']?></a> -->
                     <a href="/<?=$tempurl?>kontakt/"><?=$lang['navigation.contact']?></a>
                     </nav>
                     <!-- end of block .nav-footer-->
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <!-- end of block .footer__col-third-->
-              <div class="clearfix"></div><span class="footer__copyright">&copy;<?=date('Y') . ' ' . $lang['footer.copyright']; ?><br />Created by <a href="http//www.web-refresh.com" target="_blank">Web.Refresh</a></span>
+              <div class="clearfix"></div><span class="footer__copyright">&copy;<?=date('Y') . ' ' . $lang['footer.copyright']; ?><br />Created by <a href="http://www.web-refresh.com" target="_blank">Web.Refresh</a></span>
               <!-- end of block .footer__copyright-->
             </div>
           </div>

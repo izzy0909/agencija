@@ -1201,7 +1201,8 @@ webpackJsonpapp([0],[
 
 
 	  $('select#sortiranje').change(function(){
-	  	window.location.href = category + '.php?' + forma + '&order=' + $(this).val() + '&search=1';
+	  	// window.location.href = category + '.php?' + forma + '&order=' + $(this).val() + '&search=1';
+	  	$('#searchForm').submit();
 	  });
 
 

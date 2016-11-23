@@ -1,5 +1,5 @@
 RewriteEngine On
-Header add Access-Control-Allow-Origin "http://localhost/agencija/new/" 
+Header add Access-Control-Allow-Origin "http://web-refresh.com/agencija/new/" 
 Options -MultiViews
 Options +FollowSymlinks
 
@@ -22,5 +22,3 @@ RewriteRule ^izdavanje/$ izdavanje.php [L]
 RewriteRule ^prodaja/$ prodaja.php [L]
 
 RewriteRule ^pdf/([0-9]+)/$ pdf.php?id=$1 [QSA,NC]
-
-RewriteRule ^abc/[^/]+/[^/]+/(.+)$ $1  [L]

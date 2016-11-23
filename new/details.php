@@ -125,7 +125,7 @@ include 'parts/navigation.php';
                           <?php
                             foreach($slike as $large){
                               echo '<div class="slider__item">';
-                              echo '<img data-lazy="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt=""></div>';
+                              echo '<img src="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" alt=""></div>';
                             }
 
                           ?>
@@ -217,7 +217,7 @@ include 'parts/navigation.php';
                     <button type="button" class="property__btn-more js-unhide"><?=$lang['details.moreinfo']?></button>
                   </div>
                   <?php
-                  if(isset($stan['youtube'])){
+                  if(isset($stan['youtube']) && $stan['youtube']!=''){
                     preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $stan['youtube'], $matches);
                     $embed = $matches[1];
 

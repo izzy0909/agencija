@@ -29,15 +29,15 @@
                     <div class="navbar__submenu">
                       <ul class="navbar__subnav">
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>o-nama/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.team']?></a></li>
-                        <li class="navbar__subitem"><a href="ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.terms']?></a></li>
+                        <li class="navbar__subitem"><a href="/<?=$temprul?>ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.terms']?></a></li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>ugovori/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.contracts']?></a></li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>zakoni/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.laws']?></a></li>
                       </ul>
                     </div>
                   </div>
                 </li>
-                <li class="navbar__item <?php if ($active=='reference'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.references']?></a></li>
-                <li class="navbar__item <?php if ($active=='career'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.career']?></a></li>
+                <!-- <li class="navbar__item <?php if ($active=='reference'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.references']?></a></li> -->
+                <!-- <li class="navbar__item <?php if ($active=='career'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.career']?></a></li> -->
                 <li class="navbar__item <?php if ($active=='contact'){ echo 'active';}?>"><a href="/<?=$tempurl?>kontakt/" class="navbar__link"><?=$lang['navigation.contact']?></a></li>
                 <li class="navbar__item navbar__item--mob js-dropdown"><a class="navbar__link"><?=$lang['navigation.language']?>
                     <svg class="navbar__arrow">
