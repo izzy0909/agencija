@@ -23,16 +23,22 @@ include 'parts/navigation.php';
                     <div class="widget__content">
                       <article class="article article--list article--details">
                         <div class="article__body">
-                          <p><strong><?=$lang['about.line.1']?></strong></p>
-                            <img src="assets/img/about.jpg" alt="">
-                          <p><?=$lang['about.line.2']?></p>
-                          <h3><?=$lang['about.line.3']?></h3>
-                          <p><?=$lang['about.line.4']?></p>
+                          <img src="/<?=$tempurl?>assets/img/about_01.jpg" alt="" style="float:left; margin-right:20px">
+                          <p><strong><?=$lang['about.line.1']?></strong>
+                          <p><?=$lang['about.line.2']?></p></p>
+                          <div class="clearfix"></div>
+                          <h3><?=$lang['about.subtitle.1']?></h3>
                           <ul>
-                            <li><?=$lang['about.li.1']?></li>
-                            <li>i<?=$lang['about.li.2']?></li>
-                            <li><?=$lang['about.li.3']?></li>
-                            <li><?=$lang['about.li.4']?></li>
+                            <li><?=$lang['about.sub1.li.1']?></li>
+                            <li><?=$lang['about.sub1.li.2']?></li>
+                            <li><?=$lang['about.sub1.li.3']?></li>
+                          </ul>
+                          <h3><?=$lang['about.subtitle.2']?></h3>
+                          <ul>
+                            <li><?=$lang['about.sub2.li.1']?></li>
+                            <li><?=$lang['about.sub2.li.2']?></li>
+                            <li><?=$lang['about.sub2.li.3']?></li>
+                            <li><?=$lang['about.sub2.li.4']?></li>
                           </ul>
                         </div>
                       </article>

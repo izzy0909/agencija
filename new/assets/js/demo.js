@@ -245,7 +245,6 @@
         slidesToShow: 5,
         autoplay: true,
         accessibility: false,
-        rtl: true,
         prevArrow: $partnersSlider.find('.js-partners-prev'),
         nextArrow: $partnersSlider.find('.js-partners-next'),
         responsive: [
@@ -329,18 +328,6 @@
     var stateOpenedMap = false;
 
     function showMap() {
-      if (stateOpenedMap) return;
-      if (app.gridSize.get() === 'lg') {
-        requestAnimationFrame(function () {
-          if ($headerNav.hasClass('navbar--overlay')) {
-            $header.addClass('header--white');
-            $headerNav.addClass('navbar--overlay-map');
-          }
-          $mainBannerMap.addClass('opened');
-          $searchForm.addClass('form--white');
-          stateOpenedMap = true;
-        });
-      }
     }
   }
 
@@ -1098,10 +1085,10 @@
                 });
 
           } else {
-            alert("No results found");
+            // alert("No results found");
           }
         } else {
-          alert("Geocode was not successful for the following reason: " + status);
+          // alert("Geocode was not successful for the following reason: " + status);
         }
       });
     }
@@ -1430,9 +1417,3 @@
 
 
 })(jQuery);
-
-
-$("#in-contract-type").change(function(){
-  var link = $(this).val() + '.php';
-  $('#quick-search').attr("action", link);
-});

@@ -459,6 +459,8 @@ $(document).pngFix( );
                                 <option value="Četvorosoban">Četvorosoban</option>
                                 <option value="Četvoroiposoban">Četvoroiposoban</option>
                                 <option value="Petosoban i veći">Petosoban i veći</option>
+                                <option value="Kuća u osnovi">Kuća u osnovi</option>
+                                <option value="Spratna kuća">Spratna kuća</option>
                             </select></td>
 			<td>
 			</td>
@@ -544,12 +546,20 @@ $(document).pngFix( );
                 <th>Grejanje:</th>
                 <td>        <select name="grejanje" class="styledselect_form_1">
                                 <option value="CG">CG</option>
+                                <option value="CG (gas)">CG (gas)</option>
+                                <option value="CG (kalorimetri)">CG (kalorimetri)</option>
+                                <option value="ET (struja)">ET (struja)</option>
                                 <option value="EG">EG</option>
                                 <option value="TA">TA</option>
                                 <option value="PG">PG</option>
                                 <option value="Klima uređaj">Klima&nbsp;uređaj</option>
+                                <option value="Na gas">Na gas</option>
+                                <option value="Na struju">Na struju</option>
+                                <option value="Norveški radijatori">Noverški radijatori</option>
+                                <option value="Mermerni radijatori">Mermerni radijatori</option>
                             </select></td>
                 </tr>
+                <tr>
                <th>Nameštenost:</th>
                 <td>        <select name="namestenost" class="styledselect_form_1">
                                 <option value="Namešten">Namešten</option>
@@ -667,14 +677,29 @@ $(document).pngFix( );
 		<td><input type="text" class="inp-form" name="youtube" /></td></td>
 		<td></td>
 	</tr>
-		<tr>
+	<tr>
+			<th valign="top" >Zonski parking:</th>
+                        <td><select name="zonski_parking" class="styledselect_form_1">
+                                <option value="Zona 1">Zona 1</option>
+                                <option value="Zona 2">Zona 2</option>
+                                <option value="Zona 3">Zona 3</option>
+                                <option value="Nije zonirano">Nije zonirano</option>
+                            </select></td>
+			<td></td>
+    </tr>  
+	<tr>
+		<th valign="top">Br. parking mesta:</th>
+		<td><input type="text" class="inp-form" name="br_parking_mesta" /></td></td>
+		<td></td>
+	</tr>
+	<tr>
 			<th valign="top" >Vidljivost:</th>
                         <td><select name="vidljivost" class="styledselect_form_1">
                                 <option value="0">Nevidljiv</option>
                                 <option value="1">Vidljiv</option>
                             </select></td>
 			<td></td>
-                </tr>  
+    </tr>  
     <tr>
     	<th>Vidljiv do:</th>
     	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do"></td>
@@ -737,10 +762,6 @@ $(document).pngFix( );
                                         <tr>
                                                 <td><input  type="checkbox" name="internet" /> Internet</td>
                                                 <td><input  type="checkbox" name="ima_telefon" /> Telefon</td>
-                                        </tr>
-					<tr>
-                                                <td><input  type="checkbox" name="frizider" /> Frižider</td>
-                                                <td><input  type="checkbox" name="sporet" /> Šporet</td>
                                         </tr>
 					<tr>
                                                 <td><input  type="checkbox" name="vesmasina" /> Veš mašina</td>
@@ -940,6 +961,8 @@ if (isset ($_POST['dodaj_stan'])){
     }else $vidljiv_do = null;
     $provizija = isset($_POST['provizija']) ? $_POST['provizija'] : null;
     $youtube = isset($_POST['youtube']) ? $_POST['youtube'] : null;
+    $zonski_parking = isset($_POST['zonski_parking']) ? $_POST['zonski_parking'] : null;
+    $br_parking_mesta = isset($_POST['br_parking_mesta']) ? $_POST['br_parking_mesta'] : null;
     
     $kablovska = isset($_POST['kablovska']) ? '1' : '0';
     $tv = isset($_POST['tv']) ? '1' : '0';
@@ -987,7 +1010,7 @@ if (isset ($_POST['dodaj_stan'])){
 	$lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
 	$pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
     
-    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $vidljiv_do, $username, $dodatna_informacija, $provizija, $youtube);
+    $stan_id = dodajStan($kategorija, $tip, $stan_tip, $vlasnik, $opstina, $podlokacija, $opis_lokacije, $ulica, $br, $sprat, $telefon, $email, $cena, $kvadratura, $grejanje, $namestenost, $opis, $vidljivost, $vidljiv_do, $username, $dodatna_informacija, $provizija, $youtube, $zonski_parking, $br_parking_mesta);
     
     dodajDodatneTagove($stan_id, $kablovska, $tv, $klima, $internet, $ima_telefon, $frizider, $sporet, $vesmasina, $kuhinjskielementi, $plakari, $interfon, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
     

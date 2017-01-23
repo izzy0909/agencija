@@ -57,8 +57,8 @@ include 'parts/navigation.php';
                         <h4><?=$lang['contact.contactus']?></h4>
                         <p><?=$lang['contact.info']?></p>
                       </div>
-                      <div class="contacts__social">
-                        <div class="social social--worker social--contacts"><span class="contacts__social-title"><?=$lang['contact.social']?>:</span><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a><a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a></div>
+                      <div class="contacts__social" style="margin-top:25px !important;">
+                        <div class="social social--worker social--contacts"><span class="contacts__social-title"><?=$lang['contact.social']?></span><a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a><a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a><a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a></div>
                       </div>
                     </div>
                   </div>

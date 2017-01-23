@@ -391,3 +391,17 @@ ADD t_pravno_lice INT(11);
 #####
 ######################
 ALTER TABLE stanovi ADD COLUMN youtube varchar(100);
+
+
+######################
+##### v. 2.0.5
+##### U. Strike
+#####
+######################
+ALTER TABLE stanovi ADD COLUMN zonski_parking enum('Zona 1', 'Zona 2', 'Zona 3', 'Nije zonirano');
+ALTER TABLE stanovi ADD COLUMN br_parking_mesta INT(10);
+ALTER TABLE stanovi MODIFY COLUMN stan_tip enum('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći','Kuća u osnovi', 'Spratna kuća');
+ALTER TABLE ponude MODIFY COLUMN stan_tip enum('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći','Kuća u osnovi', 'Spratna kuća');
+ALTER TABLE klijenti MODIFY COLUMN stan_tip enum('Garsonjera','Jednosoban','Jednoiposoban','Dvosoban','Dvoiposoban','Trosoban','Troiposoban','Četvorosoban','Četvoroiposoban','Petosoban i veći','Kuća u osnovi', 'Spratna kuća');
+ALTER TABLE ponude ADD COLUMN namestenost enum('Namešten', 'Polunamešten', 'Nenamešten');
+ALTER TABLE ponude MODIFY COLUMN grejanje enum('CG','CG (gas)','CG (kalorimetri)','ET (struja)','EG','TA','PG','Klima uređaj','Na gas','Na struju','Norveški radijatori','Mermerni radijatori');

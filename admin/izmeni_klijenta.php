@@ -17,13 +17,70 @@ if (isset ($_POST['izmeni_klijenta'])){
         $tip = isset($_POST['tip']) ? $_POST['tip'] : null;
         $stan_tip = isset($_POST['stan_tip']) ? $_POST['stan_tip'] : null;
         $lokacija_id = isset($_POST['opstina']) ? $_POST['opstina'] : null;
-        $cena = isset($_POST['cena']) ? $_POST['cena'] : null;
-        $kvadratura = isset($_POST['kvadratura']) ? $_POST['kvadratura'] : null;
+        $grejanje = isset($_POST['grejanje']) ? $_POST['grejanje'] : null;
+        $namestenost = isset($_POST['namestenost']) ? $_POST['namestenost'] : null;
+        $cena_od = isset($_POST['cena_od']) ? $_POST['cena_od'] : null;
+        $cena_do = isset($_POST['cena_do']) ? $_POST['cena_do'] : null;
+        $kvadratura_od = isset($_POST['kvadratura_od']) ? $_POST['kvadratura_od'] : null;
+        $kvadratura_do = isset($_POST['kvadratura_do']) ? $_POST['kvadratura_do'] : null;
         $agent = isset($_POST['agent']) ? $_POST['agent'] : null;
         $sekretarica = isset($_POST['sekretarica']) ? $_POST['sekretarica'] : null;
+        $napomena = isset($_POST['napomena']) ? $_POST['napomena'] : null;
+        $ponudjeno = isset($_POST['ponudjeno']) ? $_POST['ponudjeno'] : null;
 
+        $interfon = isset($_REQUEST['interfon']) ? '1' : '0';
+        $kablovska = isset($_REQUEST['kablovska']) ? '1' : '0';
+        $klima = isset($_REQUEST['klima']) ? '1' : '0';
+        $internet = isset($_REQUEST['internet']) ? '1' : '0';
+        $ima_telefon = isset($_REQUEST['ima_telefon']) ? '1' : '0';
+        $kuhinjskielementi = isset($_REQUEST['kuhinjski_elementi']) ? '1' : '0';
+        $plakari = isset($_REQUEST['plakari']) ? '1' : '0';
+        $lift = isset($_REQUEST['lift']) ? '1' : '0';
+        $bazen = isset($_REQUEST['bazen']) ? '1' : '0';
+        $garaza = isset($_REQUEST['garaza']) ? '1' : '0';
+        $parking = isset($_REQUEST['parking']) ? '1' : '0';
+        $dvoriste = isset($_REQUEST['dvoriste']) ? '1' : '0';
+        $potkrovlje = isset($_REQUEST['potkrovlje']) ? '1' : '0';
+        $terasa = isset($_REQUEST['terasa']) ? '1' : '0';
+        $novogradnja = isset($_REQUEST['novogradnja']) ? '1' : '0';
+        $renovirano = isset($_REQUEST['renovirano']) ? '1' : '0';
+        $lux = isset($_REQUEST['lux']) ? '1' : '0';
+        $penthaus = isset($_REQUEST['penthaus']) ? '1' : '0';
+        $salonski = isset($_REQUEST['salonski']) ? '1' : '0';
+        $lodja = isset($_REQUEST['lodja']) ? '1' : '0';
+        $duplex = isset($_REQUEST['duplex']) ? '1' : '0';
+        $nov_namestaj = isset($_REQUEST['nov_namestaj']) ? '1' : '0';
+        $kompjuterska_mreza = isset($_REQUEST['kompjuterska_mreza']) ? '1' : '0';
+        $dva_kupatila = isset($_REQUEST['dva_kupatila']) ? '1' : '0';
+        $vise_telefonskih_linija = isset($_REQUEST['vise_telefonskih_linija']) ? '1' : '0';
+        $stan_u_kuci = isset($_REQUEST['stan_u_kuci']) ? '1' : '0';
+        $samostojeca_kuca = isset($_REQUEST['samostojeca_kuca']) ? '1' : '0';
+        $kuca_s_dvoristem = isset($_REQUEST['kuca_s_dvoristem']) ? '1' : '0';
+        $kucni_ljubimci = isset($_REQUEST['kucni_ljubimci']) ? '1' : '0';
+        $balkon = isset($_REQUEST['balkon']) ? '1' : '0';
+        $video_nadzor = isset($_REQUEST['video_nadzor']) ? '1' : '0';
+        $alarm = isset($_REQUEST['alarm']) ? '1' : '0';
+        $basta = isset($_REQUEST['basta']) ? '1' : '0';
+        $pomocni_objekti = isset($_REQUEST['pomocni_objekti']) ? '1' : '0';
+        $ostava = isset($_REQUEST['ostava']) ? '1' : '0';
+        $podrum = isset($_REQUEST['podrum']) ? '1' : '0';
+        $opticki_kabl = isset($_REQUEST['opticki_kabl']) ? '1' : '0';
+        $open_space = isset($_REQUEST['open_space']) ? '1' : '0';
+        $pristup_za_invalide = isset($_REQUEST['pristup_za_invalide']) ? '1' : '0';
+        $lokal_na_ulici = isset($_REQUEST['lokal_na_ulici']) ? '1' : '0';
+        $pravno_lice = isset($_REQUEST['pravno_lice']) ? '1' : '0';
+
+        $zavrseno = isset($_POST['zavrseno']) ? $_POST['zavrseno'] : null;
+        $gde = isset($_POST['gde']) ? $_POST['gde'] : null;
+        $agent_uselio = isset($_POST['agent_uselio']) ? $_POST['agent_uselio'] : null;
+        $cena_zavrsetka = ($_POST['cena_zavrsetka'] != 0) ? $_POST['cena_zavrsetka'] : null;
+	    if(!empty($_POST['datum_zavrsetka'])){
+	        $timestamp = DateTime::createFromFormat('d-m-Y', $_POST['datum_zavrsetka']);
+	        $datum_zavrsetka = $timestamp->format('Y-m-d');
+	    }
+	    else $datum_zavrsetka = null;
         
-	izmeniKlijenta($id, $ime, $telefon, $email, $kategorija, $tip, $stan_tip, $lokacija_id, $cena, $kvadratura, $agent, $sekretarica);
+	izmeniKlijenta($id, $ime, $telefon, $email, $kategorija, $tip, $stan_tip, $lokacija_id, $grejanje, $namestenost, $cena_od, $cena_do, $kvadratura_od, $kvadratura_do, $agent, $sekretarica, $napomena, $ponudjeno, $zavrseno, $gde, $agent_uselio, $cena_zavrsetka, $datum_zavrsetka, $interfon, $kablovska, $klima, $internet, $ima_telefon, $kuhinjskielementi, $plakari, $lift, $bazen, $garaza, $parking, $dvoriste, $potkrovlje, $terasa, $novogradnja, $renovirano, $lux, $penthaus, $salonski, $lodja, $duplex, $nov_namestaj, $kompjuterska_mreza, $dva_kupatila, $vise_telefonskih_linija, $stan_u_kuci, $samostojeca_kuca, $kuca_s_dvoristem, $kucni_ljubimci, $balkon, $video_nadzor, $alarm, $basta, $pomocni_objekti, $ostava, $podrum, $opticki_kabl, $open_space, $pristup_za_invalide, $lokal_na_ulici, $pravno_lice);
 	}
  
 if (isset ($_GET['id'])){
@@ -46,13 +103,8 @@ if (isset ($_GET['id'])){
 <link rel="stylesheet" media="all" type="text/css" href="css/pro_dropline_ie.css" />
 <![endif]-->
 
-<!--  jquery core 
-<script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script> -->
-<!-- za slike -->
-<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
-<script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
-<script src="js/jquery.smooth-scroll.min.js" type="text/javascript"></script>
-<script src="js/lightbox.js" type="text/javascript"></script>
+<!--  jquery core -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 
 <!--  checkbox styling script -->
 <script src="js/jquery/ui.core.js" type="text/javascript"></script>
@@ -133,77 +185,36 @@ $(function() {
 </script>
 
 
-<!--  date picker script -->
-<link rel="stylesheet" href="css/datePicker.css" type="text/css" />
-<script src="js/jquery/date.js" type="text/javascript"></script>
-<script src="js/jquery/jquery.datePicker.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8">
-        $(function()
-{
+<!-- DATEPICKER -->
+  <link rel="stylesheet" href="js/date/jquery-ui.css">
+  <link rel="stylesheet" href="js/date/jquery-ui.theme.css">
 
-// initialise the "Select date" link
-$('#date-pick')
-	.datePicker(
-		// associate the link with a date picker
-		{
-			createButton:false,
-			startDate:'01/01/2005',
-			endDate:'31/12/2020'
-		}
-	).bind(
-		// when the link is clicked display the date picker
-		'click',
-		function()
-		{
-			updateSelects($(this).dpGetSelected()[0]);
-			$(this).dpDisplay();
-			return false;
-		}
-	).bind(
-		// when a date is selected update the SELECTs
-		'dateSelected',
-		function(e, selectedDate, $td, state)
-		{
-			updateSelects(selectedDate);
-		}
-	).bind(
-		'dpClosed',
-		function(e, selected)
-		{
-			updateSelects(selected[0]);
-		}
-	);
+  <style>
+  	#id-form .ui-helper-hidden-accessible {
+  		position: static !important;
+  	}
+	#related-act-inner input[type="checkbox"] {
+		width: 13px;
+		height: 13px;
+	}
 
-var updateSelects = function (selectedDate)
-{
-	var selectedDate = new Date(selectedDate);
-	$('#d option[value=' + selectedDate.getDate() + ']').attr('selected', 'selected');
-	$('#m option[value=' + (selectedDate.getMonth()+1) + ']').attr('selected', 'selected');
-	$('#y option[value=' + (selectedDate.getFullYear()) + ']').attr('selected', 'selected');
-}
-// listen for when the selects are changed and update the picker
-$('#d, #m, #y')
-	.bind(
-		'change',
-		function()
-		{
-			var d = new Date(
-						$('#y').val(),
-						$('#m').val()-1,
-						$('#d').val()
-					);
-			$('#date-pick').dpSetSelected(d.asString());
-		}
-	);
+	.ui-checkbox {
+		margin-right:5px;
+	}
+  </style>
+  
+  <script src="js/date/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({dateFormat: 'dd-mm-yy'});
+  } );
+  </script>
 
-// default the position of the selects to today
-var today = new Date();
-updateSelects(today.getTime());
-
-// and update the datePicker to reflect it...
-$('#d').trigger('change');
-});
-</script>
+  <style>
+  #ui-datepicker-div{
+  	line-height: 1em !important;
+  }
+  </style>
 
 <!-- MUST BE THE LAST SCRIPT IN <HEAD></HEAD></HEAD> png fix -->
 <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
@@ -459,6 +470,7 @@ $(document).pngFix( );
                             </select></td>
 			<td></td>
 		</tr>   
+		<tr>
 			<th valign="top">Tip:</th>
 			<td><select id="tip" name="tip" class="styledselect_form_1">
                                 <option value="Stan" <?php if($stan['tip']=='Stan'){echo 'selected';} ?>>Stan</option>
@@ -471,8 +483,10 @@ $(document).pngFix( );
                             </select></td>
 			<td></td>
 		</tr>    
+		<tr>
 			<th valign="top"></th>
 			<td><select id="stan_tip" name="stan_tip" class="styledselect_form_1">
+								<option value="" ></option>
                                 <option value="Garsonjera" <?php if($stan['stan_tip']=='Garsonjera'){echo 'selected';} ?>>Garsonjera</option>
                                 <option value="Jednosoban" <?php if($stan['stan_tip']=='Jednosoban'){echo 'selected';} ?>>Jednosoban</option>
                                 <option value="Jednoiposoban" <?php if($stan['stan_tip']=='Jednoiposoban'){echo 'selected';} ?>>Jednoiposoban</option>
@@ -483,6 +497,8 @@ $(document).pngFix( );
                                 <option value="Četvorosoban" <?php if($stan['stan_tip']=='Četvorosoban'){echo 'selected';} ?>>Četvorosoban</option>
                                 <option value="Četvoroiposoban" <?php if($stan['stan_tip']=='Četvoroiposoban'){echo 'selected';} ?>>Četvoroiposoban</option>
                                 <option value="Petosoban i veći" <?php if($stan['stan_tip']=='Petosoban i veći'){echo 'selected';} ?>>Petosoban i veći</option>
+                                <option value="Kuća u osnovi" <?php if($stan['stan_tip']=='Kuća u osnovi'){echo 'selected';} ?>>Kuća u osnovi</option>
+                                <option value="Spratna kuća" <?php if($stan['stan_tip']=='Spratna kuća'){echo 'selected';} ?>>Spratna kuća</option>
                             </select></td>
 			<td></td>
 		</tr>        
@@ -491,6 +507,7 @@ $(document).pngFix( );
 		<td>
                   
 		<select id="opstina" class="styledselect_form_1" name="opstina">
+				<option value=""></option>
                  <?php
 
                         foreach($row as $opstina){
@@ -503,14 +520,43 @@ $(document).pngFix( );
 		</td>
 		<td></td>
 		</tr>
+                <tr>
+			<th valign="top">Grejanje:</th>
+                <td>        <select id="grejanje" name="grejanje" class="styledselect_form_1">
+                				<option value="" ></option>
+                                <option value="CG" <?php if($stan['grejanje']=='CG'){echo 'selected';} ?>>CG</option>
+                                <option value="CG (gas)" <?php if($stan['grejanje']=='CG (gas)'){echo 'selected';} ?>>CG (gas)</option>
+                                <option value="CG (kalorimetri)" <?php if($stan['grejanje']=='CG (kalorimetri)'){echo 'selected';} ?>>CG (kalorimetri)</option>
+                                <option value="ET (struja)" <?php if($stan['grejanje']=='ET (struja)'){echo 'selected';} ?>>ET (struja)</option>
+                                <option value="EG" <?php if($stan['grejanje']=='EG'){echo 'selected';} ?>>EG</option>
+                                <option value="TA" <?php if($stan['grejanje']=='TA'){echo 'selected';} ?>>TA</option>
+                                <option value="PG" <?php if($stan['grejanje']=='PG'){echo 'selected';} ?>>PG</option>
+                                <option value="Klima uređaj" <?php if($stan['grejanje']=='Klima uređaj'){echo 'selected';} ?>>Klima uređaj</option>
+                                <option value="Na gas" <?php if($stan['grejanje']=='Na gas'){echo 'selected';} ?>>Na gas</option>
+                                <option value="Na struju" <?php if($stan['grejanje']=='Na struju'){echo 'selected';} ?>>Na struju</option>
+                                <option value="Norveški radijatori" <?php if($stan['grejanje']=='Norveški radijatori'){echo 'selected';} ?>>Norveški radijatori</option>
+                                <option value="Mermerni radijatori" <?php if($stan['grejanje']=='Mermerni radijatori'){echo 'selected';} ?>>Mermerni radijatori</option>
+                            </select></td>
+			<td></td>
+		</tr>  
+                <tr>
+			<th valign="top">Nameštenost:</th>
+                <td>        <select id="namestenost" name="namestenost" class="styledselect_form_1">
+                				<option value="" ></option>
+                                <option value="Namešten" <?php if($stan['namestenost']=='Namešten'){echo 'selected';} ?>>Namešten</option>
+                                <option value="Polunamešten" <?php if($stan['namestenost']=='Polunamešten'){echo 'selected';} ?>>Polunamešten</option>
+                                <option value="Nenamešten" <?php if($stan['namestenost']=='Nenamešten'){echo 'selected';} ?>>Nenamešten</option>
+                            </select></td>
+			<td></td>
+		</tr>  
         <tr>
 			<th valign="top">Kvadratura:</th>
-			<td><input type="text" class="inp-form" name="kvadratura" value="<?php echo $stan['kvadratura'];?>"/></td>
+			<td>od <input style="width:80px;" type="text" class="inp-form" name="kvadratura_od" value="<?php echo $stan['kvadratura_od'];?>"/> do <input style="width:80px;" type="text" class="inp-form" name="kvadratura_do" value="<?php echo $stan['kvadratura_do'];?>"/></td>
 			<td></td>
 		</tr>
-                <tr>
-			<th valign="top">Cena max:</th>
-			<td><input type="text" class="inp-form" name="cena" value="<?php echo $stan['cena'];?>"/></td>
+        <tr>
+			<th valign="top">Cena:</th>
+			<td>od <input style="width:80px;" type="text" class="inp-form" name="cena_od" value="<?php echo $stan['cena_od'];?>"/> do <input style="width:80px;" type="text" class="inp-form" name="cena_do" value="<?php echo $stan['cena_do'];?>"/></td>
 			<td></td>
 		</tr>
         <tr>
@@ -523,7 +569,49 @@ $(document).pngFix( );
 			<td><input type="text" class="inp-form" name="sekretarica" value="<?php echo $stan['sekretarica'];?>"/></td>
 			<td></td>
 		</tr>
+		<tr>
+			<th valign="top">Napomena:</th>
+			<td><textarea rows="" cols="" class="form-textarea" name="napomena"><?php echo $stan['napomena'];?></textarea></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Ponuđene nekretnine:</th>
+			<td><textarea rows="3" cols="" class="form-textarea" name="ponudjeno"><?php echo $stan['ponudjeno'];?></textarea></td>
+			<td></td>
+		</tr>
 
+		<tr><th></th><td></td><td></td></tr>
+		<tr><th></th><td></td><td></td></tr>
+		<tr><th></th><td></td><td></td></tr>
+		<tr><th></th><td></td><td></td></tr>
+		<tr><th></th><td></td><td></td></tr>
+		<tr><th></th><td></td><td></td></tr>
+
+		<tr>
+			<th valign="top">Završeno:</th>
+                        <td><select name="zavrseno" class="styledselect_form_1">
+                        		<option value=""></option>
+                                <option value="Mi uselili" <?php if($stan['zavrseno']=='Mi uselili'){echo 'selected';} ?>>Mi uselili</option>
+                                <option value="Našao sam" <?php if($stan['zavrseno']=='Našao sam'){echo 'selected';} ?>>Našao sam</option>
+                            </select></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th valign="top">Gde je useljen:</th>
+			<td><input type="text" class="inp-form" name="gde" value="<?php echo $stan['gde'];?>"/></td>
+		</tr>  
+		<tr>
+			<th valign="top">Agent uselio:</th>
+			<td><input type="text" class="inp-form" name="agent_uselio" value="<?php echo $stan['agent_uselio'];?>"/></td>
+		</tr>
+		<tr>
+			<th valign="top">Datum zavrsetka:</th>
+			<td><input type="text" class="inp-form" id="datepicker" name="datum_zavrsetka" value="<?php if($stan['datum_zavrsetka'] != null) { echo date('d-m-Y', strtotime($stan['datum_zavrsetka'])); } ?>"></td>
+		</tr>
+		<tr>
+			<th valign="top">Zavrseno po ceni:</th>
+			<td><input type="text" class="inp-form" name="cena_zavrsetka" value="<?php echo $stan['cena_zavrsetka'];?>"/></td>
+		</tr>
 	<tr>
 		<th>&nbsp;</th>
 		<td valign="top">
@@ -539,7 +627,135 @@ $(document).pngFix( );
 	</td>
 	<td>
 	
+        <!--  start related-activities -->
+	<div id="related-activities">
 
+		<!--  start related-act-top -->
+		<!--  start related-act-top -->
+		<div id="step-holder">
+			<div class="step-no"></div>
+			<div class="step-dark-left"><a href="">Dodatni tagovi</a></div>
+
+		</div>
+		<!-- end related-act-top -->
+
+		<!--  start related-act-bottom -->
+		<div id="related-act-bottom">
+
+			<!--  start related-act-inner -->
+			<div id="related-act-inner">
+
+				<div class="left"><a href=""></a></div>
+				<div class="right">
+                                    <table border="0" cellpadding="0" cellspacing="0"  id="id-form" style="font-size:13px; width:100%;">
+									
+                                        <tr>
+                                                
+                                                <td style="width:153px; "><input  type="checkbox" name="interfon" <?php if($stan['t_interfon']){ echo ' checked';}?>/>Interfon</td>
+                                                <td><input  type="checkbox" name="kablovska" <?php if($stan['t_kablovska']){ echo ' checked';}?>/>Kablovska</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="klima" <?php if($stan['t_klima']){ echo ' checked';}?>/>Klima</td>
+                                                <td><input  type="checkbox" name="internet" <?php if($stan['t_internet']){ echo ' checked';}?>/>Internet</td>
+                                        </tr>                                                                             
+                                        <tr>
+                                        		<td><input  type="checkbox" name="ima_telefon" <?php if($stan['t_telefon']){ echo ' checked';}?>/>Telefon</td>
+                                                <td><input  type="checkbox" name="kuhinjski_elementi" <?php if($stan['t_kuhinjskielementi']){ echo ' checked';}?>/>Kuh. elementi</td>
+                                        </tr>                                              
+                                        <tr>
+                                                <td><input  type="checkbox" name="plakari" <?php if($stan['t_plakari']){ echo ' checked';}?>/>Plakari</td>
+                                                <td><input  type="checkbox" name="lift" <?php if($stan['t_lift']){ echo ' checked';}?>/>Lift</td>
+                                        </tr>       
+                                        <tr>
+                                                <td><input  type="checkbox" name="bazen" <?php if($stan['t_bazen']){ echo ' checked';}?>/>Bazen</td>
+                                                <td><input  type="checkbox" name="garaza" <?php if($stan['t_garaza']){ echo ' checked';}?>/>Garaža</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="parking" <?php if($stan['t_parking']){ echo ' checked';}?>/>Parking</td>
+                                                <td><input  type="checkbox" name="dvoriste" <?php if($stan['t_dvoriste']){ echo ' checked';}?>/>Dvorište</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="potkrovlje" <?php if($stan['t_potkrovlje']){ echo ' checked';}?>/>Potkrovlje</td>
+                                                <td><input  type="checkbox" name="terasa" <?php if($stan['t_terasa']){ echo ' checked';}?>/>Terasa</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="novogradnja" <?php if($stan['t_novogradnja']){ echo ' checked';}?>/>Novogradnja</td>
+                                                <td><input  type="checkbox" name="renovirano" <?php if($stan['t_renovirano']){ echo ' checked';}?>/>Renovirano</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="lux" <?php if($stan['t_lux']){ echo ' checked';}?>/>Lux</td>
+                                                <td><input  type="checkbox" name="penthaus" <?php if($stan['t_penthaus']){ echo ' checked';}?>/>Penthaus</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="salonski" <?php if($stan['t_salonski']){ echo ' checked';}?>/>Salonski</td>
+                                                <td><input  type="checkbox" name="lodja" <?php if($stan['t_lodja']){ echo ' checked';}?>/>Lođa</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="duplex" <?php if($stan['t_duplex']){ echo ' checked';}?>/>Duplex</td>
+                                                <td><input  type="checkbox" name="nov_namestaj" <?php if($stan['t_novnamestaj']){ echo ' checked';}?>/>Nov nameštaj</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kompjuterska_mreza" <?php if($stan['t_kompmreza']){ echo ' checked';}?>/>Komp. mreža</td>
+                                                <td><input  type="checkbox" name="dva_kupatila" <?php if($stan['t_dvakupatila']){ echo ' checked';}?>/>Dva kupatila</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="vise_telefonskih_linija" <?php if($stan['t_viselinija']){ echo ' checked';}?>/>Više tel. linija</td>
+                                                <td><input  type="checkbox" name="stan_u_kuci" <?php if($stan['t_stanukuci']){ echo ' checked';}?>/>Stan u kući</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="samostojeca_kuca" <?php if($stan['t_samostojecakuca']){ echo ' checked';}?>/>Samostojeća kuća</td>
+                                                <td><input  type="checkbox" name="kuca_s_dvoristem" <?php if($stan['t_kucasdvoristem']){ echo ' checked';}?>/>Kuća s dvorištem</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="kucni_ljubimci" <?php if($stan['t_kucniljubimci']){ echo ' checked';}?>/>Kućni ljubimci</td>
+                                                <td><input  type="checkbox" name="balkon" <?php if($stan['t_balkon']){ echo ' checked';}?>/>Balkon</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="video_nadzor" <?php if($stan['t_videonadzor']){ echo ' checked';}?>/>Video nadzor</td>
+                                                <td><input  type="checkbox" name="alarm" <?php if($stan['t_alarm']){ echo ' checked';}?>/>Alarm</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="basta" <?php if($stan['t_basta']){ echo ' checked';}?>/>Bašta</td>
+                                                <td><input  type="checkbox" name="pomocni_objekti" <?php if($stan['t_pomocniobjekti']){ echo ' checked';}?>/>Pomoćni objekti</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="ostava" <?php if($stan['t_ostava']){ echo ' checked';}?>/>Ostava</td>
+                                                <td><input  type="checkbox" name="podrum" <?php if($stan['t_podrum']){ echo ' checked';}?>/>podrum</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="opticki_kabl" <?php if($stan['t_optickikabl']){ echo ' checked';}?>/>Optički kabl</td>
+                                                <td><input  type="checkbox" name="open_space" <?php if($stan['t_openspace']){ echo ' checked';}?>/>Open space</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pristup_za_invalide" <?php if($stan['t_pristupzainvalide']){ echo ' checked';}?>/>Pristup za invalide</td>
+                                                <td><input  type="checkbox" name="lokal_na_ulici" <?php if($stan['t_lokalnaulici']){ echo ' checked';}?>/>Lokal na ulici</td>
+                                        </tr>
+                                        <tr>
+                                                <td><input  type="checkbox" name="pravno_lice" <?php if($stan['t_pravnolice']){ echo ' checked';}?>/>Pravno lice</td>
+                                        </tr>
+                                    </table>
+				</div>
+
+				<div class="clear"></div>
+				
+
+				
+
+				<div class="clear"></div>
+				
+
+				
+				
+
+			</div>
+			<!-- end related-act-inner -->
+			<div class="clear"></div>
+
+		</div>
+		<!-- end related-act-bottom -->
+
+	</div>
+	<!-- end related-activities -->
 		
 
 		

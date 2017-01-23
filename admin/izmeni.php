@@ -481,6 +481,8 @@ $(document).pngFix( );
                                 <option value="Četvorosoban" <?php if($stan['stan_tip']=='Četvorosoban'){echo 'selected';} ?>>Četvorosoban</option>
                                 <option value="Četvoroiposoban" <?php if($stan['stan_tip']=='Četvoroiposoban'){echo 'selected';} ?>>Četvoroiposoban</option>
                                 <option value="Petosoban i veći" <?php if($stan['stan_tip']=='Petosoban i veći'){echo 'selected';} ?>>Petosoban i veći</option>
+                                <option value="Kuća u osnovi" <?php if($stan['stan_tip']=='Kuća u osnovi'){echo 'selected';} ?>>Kuća u osnovi</option>
+                                <option value="Spratna kuća" <?php if($stan['stan_tip']=='Spratna kuća'){echo 'selected';} ?>>Spratna kuća</option>
                             </select></td>
 			<td></td>
 		</tr>                     
@@ -563,6 +565,9 @@ $(document).pngFix( );
 			<th valign="top">Grejanje:</th>
                 <td>        <select id="grejanje" name="grejanje" class="styledselect_form_1">
                                 <option value="CG" <?php if($stan['grejanje']=='CG'){echo 'selected';} ?>>CG</option>
+                                <option value="CG (gas)" <?php if($stan['grejanje']=='CG (gas)'){echo 'selected';} ?>>CG (gas)</option>
+                                <option value="CG (kalorimetri)" <?php if($stan['grejanje']=='CG (kalorimetri)'){echo 'selected';} ?>>CG (kalorimetri)</option>
+                                <option value="ET (struja)" <?php if($stan['grejanje']=='ET (struja)'){echo 'selected';} ?>>ET (struja)</option>
                                 <option value="EG" <?php if($stan['grejanje']=='EG'){echo 'selected';} ?>>EG</option>
                                 <option value="TA" <?php if($stan['grejanje']=='TA'){echo 'selected';} ?>>TA</option>
                                 <option value="PG" <?php if($stan['grejanje']=='PG'){echo 'selected';} ?>>PG</option>
@@ -694,6 +699,21 @@ $(document).pngFix( );
 		<td></td>
 	</tr>
 	<tr>
+			<th valign="top" >Zonski parking:</th>
+                        <td><select name="zonski_parking" class="styledselect_form_1">
+                        		<option value="Nije zonirano" >Nije zonirano</option>
+                                <option value="Zona 1" <?php if($stan['zonski_parking']=='Zona 1'){echo 'selected';} ?>>Zona 1</option>
+                                <option value="Zona 2" <?php if($stan['zonski_parking']=='Zona 2'){echo 'selected';} ?>>Zona 2</option>
+                                <option value="Zona 3" <?php if($stan['zonski_parking']=='Zona 3'){echo 'selected';} ?>>Zona 3</option>
+                            </select></td>
+			<td></td>
+    </tr>  
+	<tr>
+		<th valign="top">Br. parking mesta:</th>
+		<td><input type="text" class="inp-form" name="br_parking_mesta" value="<?php echo $stan['br_parking_mesta'];?>" /></td></td>
+		<td></td>
+	</tr>
+	<tr>
     	<th>Vidljiv do:</th>
     	<td><input type="text" class="inp-form" id="datepicker" name="vidljiv_do" value="<?php if($stan['vidljiv_do'] != null) { echo date('d-m-Y', strtotime($stan['vidljiv_do'])); } ?>"></td>
     </tr>  
@@ -785,10 +805,6 @@ $(document).pngFix( );
 					<tr>
                                                 <td><input  type="checkbox" name="internet" <?php if($tagovi['internet']){ echo ' checked';}?>/>Internet</td>
                                                 <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input  type="checkbox" name="frizider" <?php if($tagovi['frizider']){ echo ' checked';}?>/>Frižider</td>
-                                                <td><input  type="checkbox" name="sporet" <?php if($tagovi['sporet']){ echo ' checked';}?>/>Šporet</td>
                                         </tr>                                                                               
                                         <tr>
                                                 <td><input  type="checkbox" name="ves_masina" <?php if($tagovi['ves_masina']){ echo ' checked';}?>/>Veš mašina</td>

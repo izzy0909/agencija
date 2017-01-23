@@ -666,20 +666,6 @@ $(document).pngFix( );
 	                                            else { echo "<input type='checkbox' name='ima_telefon'>Telefon"; }
 	                                            ?>
 	                                        </td>
-	                                         <td>
-	                                            <?php
-	                                            if ($stan['t_frizider']) { echo "<input type='checkbox' name='frizider' checked>Frižider"; }
-	                                            else { echo "<input type='checkbox' name='frizider'>Frižider"; }
-	                                            ?>
-	                                        </td>
-                                        </tr>    
-                                        <tr>                                        
-	                                        <td>
-	                                            <?php
-	                                            if ($stan['t_sporet']) { echo "<input type='checkbox' name='sporet' checked>Šporet"; }
-	                                            else { echo "<input type='checkbox' name='sporet'>Šporet"; }
-	                                            ?>
-	                                        </td>  
 	                                        <td>
 	                                            <?php
 	                                            if ($stan['t_vesmasina']) { echo "<input type='checkbox' name='vesmasina' checked>Veš mašina"; }

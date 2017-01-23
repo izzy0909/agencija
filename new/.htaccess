@@ -8,13 +8,21 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^detalji/([0-9]+)/.+/?$ details.php?id=$1 [QSA,NC]
 
+RewriteRule ^izdavanje-izaberite/$ izbor-izdavanje.php [L]
+RewriteRule ^prodaja-izaberite/$ izbor-prodaja.php [L]
+
 RewriteRule ^izdavanje/$ izdavanje.php [L]
 RewriteRule ^prodaja/$ prodaja.php [L]
 RewriteRule ^dodajte-nekretninu/$ submit.php [L]
 
 RewriteRule ^o-nama/$ about.php [L]
+RewriteRule ^nas-tim/$ team.php [L]
 RewriteRule ^ugovori/$ contracts.php [L]
 RewriteRule ^zakoni/$ laws.php [L]
+
+RewriteRule ^karijera/$ career.php [L]
+RewriteRule ^reference/$ references.php [L]
+RewriteRule ^biznis-paket-plus/$ biznis.php [L]
 
 RewriteRule ^omiljene-nekretnine/$ favorites.php [L]
 RewriteRule ^kontakt/$ contact.php [L]

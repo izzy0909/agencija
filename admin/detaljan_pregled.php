@@ -696,10 +696,6 @@ $(document).pngFix( );
                                                 <td><input  type="checkbox" name="ima_telefon" <?php if($tagovi['telefon']){ echo ' checked';}?>/>Telefon</td>
                                         </tr>
                                         <tr>
-                                                <td><input  type="checkbox" name="frizider" <?php if($tagovi['frizider']){ echo ' checked';}?>/>Frižider</td>
-                                                <td><input  type="checkbox" name="sporet" <?php if($tagovi['sporet']){ echo ' checked';}?>/>Šporet</td>
-                                        </tr>
-                                        <tr>
                                                 <td><input  type="checkbox" name="ves_masina" <?php if($tagovi['ves_masina']){ echo ' checked';}?>/>Veš mašina</td>
                                                 <td><input  type="checkbox" name="kuhinjski_elementi" <?php if($tagovi['kuhinjski_elementi']){ echo ' checked';}?>/>Kuh. elementi</td>
                                         </tr>

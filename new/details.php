@@ -28,6 +28,8 @@ require_once 'lang/' . checkLang() . '.php';
 $active = 'details';
 $areas = prikaziSveOpstine();
 
+$similar = getSimilarProperties($stan[0], $stan['kategorija'], $stan['tip'], $stan['lokacija_id'], $stan['cena']);
+
 $fav = 0;
 if(isset($_COOKIE['jevtic_favorites'])){
   $favorites = $_COOKIE['jevtic_favorites'];
@@ -50,6 +52,17 @@ include 'parts/header.php';
 include 'parts/navigation.php';
 
 ?>
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <!-- <ol class="indicator"></ol> -->
+</div>
+
       <div class="site-wrap js-site-wrap">
         <div class="center">
           <div class="container">
@@ -58,10 +71,7 @@ include 'parts/navigation.php';
                 <!-- BEGIN PROPERTY DETAILS-->
                 <div class="property">
                   <h1 class="property__title">#<?php echo $stan[0] . ' - ' . $stan['opstina']; ?>
-                    <div style="display:block;">
-                      <span class="property__city" style="display:inline-block; max-width:90%;"><?php echo $stan['kategorija'] . ' / ' . $stan['tip'] . ' / ' . $stan['stan_tip']; ?></span>
-                      <span class="pdf"><a href="/<?=$tempurl?>pdf/<?=$stan[0]?>/" target="_blank"><img src="/<?=$tempurl?>assets/img/pdf.png" /></a></span>
-                    </div>
+                  <span class="pdf"><a href="/<?=$tempurl?>pdf/<?=$stan[0]?>/" target="_blank"><img src="/<?=$tempurl?>assets/img/pdf.png" /></a></span>
                   </h1>
                   <div class="property__header">
                     <div>
@@ -118,44 +128,126 @@ include 'parts/navigation.php';
                     </div>
                   </div>
                   <div class="clearfix"></div>
-                  <div class="property__slider">
-                      <div style="margin: 0 auto;" class="ui__slider">
-                        <div id="counter-slider" class="slider slider--small slider--small">
-                          <div class="slider__block js-slick-slider">
-                          <?php
+                  <div class="slajder">
+                      <div id="sync1" class="owl-carousel">
+                        <?php 
+                            $i = 0;
                             foreach($slike as $large){
-                              echo '<div class="slider__item">';
-                              echo '<img src="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" alt=""></div>';
+                              echo '<div class="item">';
+                              echo '<a href="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" class="galleryx" ><img src="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" alt=""></a></div>';
+                              $i++;
                             }
 
-                          ?>
-                          </div>
-                          <div class="slider__controls">
-                            <button type="button" class="slider__control slider__control--prev js-slick-prev">
-                              <svg class="slider__control-icon">
-                                <use xlink:href="#icon-arrow-left"></use>
-                              </svg>
-                            </button><span class="slider__current js-slick-current">1 /</span><span class="slider__total js-slick-total">5</span>
-                            <button type="button" class="slider__control slider__control--next js-slick-next">
-                              <svg class="slider__control-icon">
-                                <use xlink:href="#icon-arrow-right"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
+                        ?>
                       </div>
+                      <div class="slajder-footer">
+                      <button type="button" class="owl-arrow owl-arrow-left slider__control--prev js-slick-prev slick-arrow"></button>
+                        <div id="sync2" clas="owl-carousel">
+                          <?php 
+                              foreach($slike as $large){
+                                echo '<div class="item">';
+                                echo '<img src="/' . $tempurl . '../admin/slike/thumb_' . $large['naziv'] . '" alt=""></div>';
+                              }
+
+                          ?>
+                        </div>  
+                      <button type="button" class="owl-arrow owl-arrow-right slider__control--next js-slick-next slick-arrow"></button>
+                      </div>
+                  </div>
+                  <div class="property__plan">
+<!--                     <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+                        <svg>
+                          <use xlink:href="#icon-money-save"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.price']?></dd>
+                      <dd class="property__plan-value"><?=$stan['cena']?>&#8364;</dd>
+                    </dl> -->
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+                        <svg>
+                          <use xlink:href="#icon-area"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.size']?></dd>
+                      <dd class="property__plan-value"><?=$stan['kvadratura']?>m²</dd>
+                    </dl>
+                    <dl class="property__plan-item garsonjerafix">
+                      <dt class="property__plan-icon property__plan-icon--window">
+                        <svg>
+                          <use xlink:href="#icon-window"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title sobefix">
+                      <?php
+                        if($stan['stan_tip']=='Spratna kuća' || $stan['stan_tip']=='Kuća u osnovi') {echo $lang['search.form.structure'];}
+                        else echo $lang['search.form.structure.brsoba'];
+                        ?>
+                      </dd>
+                      <dd class="property__plan-value">
+                      <?php
+                        switch($stan['stan_tip']){
+                          case 'Garsonjera': echo '0.5'; break;
+                          case 'Jednosoban': echo '1.0'; break;
+                          case 'Jednoiposoban': echo '1.5'; break;
+                          case 'Dvosoban': echo '2.0'; break;
+                          case 'Dvoiposoban': echo '2.5'; break;
+                          case 'Trosoban': echo '3.0'; break;
+                          case 'Troiposoban': echo '3.5'; break;
+                          case 'Četvorosoban': echo '4.0'; break;
+                          case 'Četvoroiposoban': echo '4.5'; break;
+                          case 'Petosoban i veći': echo '5.0'; break;
+                          default: echo $stan['stan_tip']; break;
+                        }
+                      ?>
+                        
+                      </dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon property__plan-icon--bathrooms">
+<!--                         <svg>
+                          <use xlink:href="#icon-bathrooms"></use>
+                        </svg> -->
+                        <img style="margin-top:25px; margin-bottom:4px;" src="/<?=$tempurl?>assets/img/parking.png" />
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.zoneparking']?></dd>
+                      <dd class="property__plan-value">
+                      <?php 
+                      switch($stan['zonski_parking']){
+                        case "Zona 1": echo '1'; break;
+                        case "Zona 2": echo '2'; break;
+                        case "Zona 3": echo '3'; break;
+                        default: echo '/';
+                      }
+                      ?>
+                        
+                      </dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+<!--                         <svg>
+                          <use xlink:href="#icon-garage"></use>
+                        </svg> -->
+                        <img style="margin-top:25px; margin-bottom:4px;" src="/<?=$tempurl?>assets/img/parking.png" />
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.parkingspots']?></dd>
+                      <dd class="property__plan-value"><?php if(isset($stan['br_parking_mesta']) && $stan['br_parking_mesta']>0) echo $stan['br_parking_mesta']; else echo '/'; ?></dd>
+                    </dl>
                   </div>
                   <div class="property__info">
                     <div class="property__info-item"><?=$lang['details.id']?>: <strong> #<?=$stan[0]?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.location']?>: <strong> <?=$stan['opstina']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.type']?>: <strong> <?=$stan['tip']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.streetonly']?>: <strong> <?=$stan['ulica']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.structure']?>: <strong> <?=$stan['stan_tip']?></strong></div>
+                    <div class="property__info-item"><?=$lang['search.form.type2']?>: <strong> <?=$stan['tip']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.floor']?>: <strong> <?=$stan['sprat']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.setup']?>: <strong> <?=$stan['namestenost']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.size']?>: <strong> <?=$stan['kvadratura']?> m²</strong></div>
                     <div class="property__info-item"><?=$lang['search.form.heat']?>: <strong> <?=$stan['grejanje']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.price']?>: <strong> <?=$stan['cena']?> €</strong></div>
+                    <div class="property__info-item"></div>
+                    <div class="property__info-item"><?=$lang['details.commision']?>: <strong><?=$stan['provizija']?>%</strong></div>
+                    
+                    
                   </div>
                   <div class="property__params">
                     <h4 class="property__subtitle"><?=$lang['details.amenities']?></h4>
@@ -166,8 +258,6 @@ include 'parts/navigation.php';
                             if($tagovi['klima']) echo '<li> Klima</li>';
                             if($tagovi['internet']) echo '<li> Internet</li>';
                             if($tagovi['telefon']) echo '<li> Telefon</li>';
-                            if($tagovi['frizider']) echo '<li> Frižider</li>';
-                            if($tagovi['sporet']) echo '<li> Šporet</li>';
                             if($tagovi['ves_masina']) echo '<li> Veš mašina</li>';
                             if($tagovi['kuhinjski_elementi']) echo '<li> Kuhinjski elementi</li>';
                             if($tagovi['plakari']) echo '<li> Plakari</li>';
@@ -259,6 +349,10 @@ include 'parts/navigation.php';
                     <!-- BEGIN SEARCH-->
                     <form id="searchForm" name="searchForm" action="<?=$stan['kategorija']?>.php" class="form form--flex form--search js-search-form form--sidebar">
                       <div class="row">
+                          <div class="form-group">
+                            <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
+                            <input type="text" id="cat-id" name="cat-id" class="form-control" value="<?=$stan[0]?>">
+                          </div>
                         <div class="form-group">
                           <label for="in-contract-type" class="control-label"><?=$lang['search.form.category']?></label>
                           <select id="in-contract-type" data-placeholder="---" class="form-control" disabled>
@@ -545,15 +639,15 @@ include 'parts/navigation.php';
                         <div class="form-group">
                           <label for="range_price" class="control-label"><?=$lang['search.form.price']?></label>
                           <div class="search-price-size">
-                            <input type="text" name="price_from" id="in-price-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?=$stan['cena']?>">
-                            <input type="text" name="price_to" id="in-price-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?=$stan['cena']?>">
+                            <input type="text" name="price_from" id="in-price-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="">
+                            <input type="text" name="price_to" id="in-price-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="range_area" class="control-label"><?=$lang['search.form.size']?></label>
                           <div class="search-price-size">
-                            <input type="text" name="size_from" id="in-area-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="<?=$stan['kvadratura']?>" >
-                            <input type="text" name="size_to" id="in-area-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="<?=$stan['kvadratura']?>">
+                            <input type="text" name="size_from" id="in-area-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="" >
+                            <input type="text" name="size_to" id="in-area-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">
@@ -570,6 +664,50 @@ include 'parts/navigation.php';
                 </div>
               </div>
               <!-- END SIDEBAR-->
+              <div class="clearfix"></div>
+              <div class="container">
+                <div class="widget js-widget widget--landing widget--collapsing">
+                  <div class="widget__header">
+                    <h2 class="widget__title"><?php if(!empty($similar)){echo $lang['details.similar']; }?></h2><a class="widget__btn js-widget-btn widget__btn--toggle"><?php if(!empty($similar)){echo $lang['details.showsimilar']; }?></a>
+                  </div>
+                  <div class="widget__content">
+                    <div class="listing listing--grid listing--lg-4">
+
+
+                  <?php 
+
+                  foreach($similar as $item){
+                    $thumb = prikaziSlikuThumb($item[0]);
+                    echo '<div class="listing__item">';
+                    echo    '<div class="properties properties--grid">';
+                    echo        '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(../admin/slike/watermark_' . $thumb['naziv'] . ');">';
+                    echo        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>';
+                    echo        '</div></a><span class="properties__ribon">' . $item['kategorija'] . '</span></div>';
+                    //    <!-- end of block .properties__thumb-->
+                    echo        '<div class="properties__details">';
+                    echo            '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item['0'] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
+                    echo                '<div class="properties__offer">';
+                    echo                    '<div class="properties__offer-column">';
+                    echo                        '<div class="properties__offer-label">' . ($item['tip'] == 'Stan' ? $item['stan_tip'] : '&nbsp;') . '</div>';
+                    echo                        '<div class="properties__offer-value"><strong>' . $item['tip'] . '</strong></div>';
+                    echo                    '</div>';
+                    echo                    '<div class="properties__offer-column">';
+                    echo                        '<div class="properties__offer-value"><strong>' . $item['cena'] . '</strong><span class="properties__offer-period">&#8364;</span></div>';
+                    echo                    '</div>';
+                    echo                '</div>';
+                    echo           '</div>';
+                    echo        '</div>';
+                    // <!-- end of block .properties__info-->
+                    echo    '</div>';
+                    //  <!-- end of block .properties__item-->
+                    echo '</div>';
+                  }
+                  ?>
+
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

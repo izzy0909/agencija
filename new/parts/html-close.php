@@ -39,6 +39,12 @@
     <!-- END SCRIPTS and INCLUDES-->
 
     <script src="/<?=$tempurl?>assets/js/rrssb.min.js"></script>
+    <script src="/<?=$tempurl?>assets/js/owl.carousel.min.js"></script>
+
+    <script src="/<?=$tempurl?>assets/js/blueimp-gallery.min.js"></script>
+<!-- 
+    <script src="/<?=$tempurl?>assets/js/featherlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/<?=$tempurl?>assets/js/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script> -->
 
   </body>
 </html>

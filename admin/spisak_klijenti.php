@@ -395,16 +395,16 @@ $(document).pngFix( );
 				<table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
 				<tr>
 					<th class="table-header-check"><a id="toggle-all" ></a> </th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Vlasnik</a></th>
-                    <th class="table-header-repeat line-left minwidth-1"><a href="">Kategorija</a></th>
-                    <th class="table-header-repeat line-left minwidth-1"><a href="">Tip</a></th>
-                    <th class="table-header-repeat line-left minwidth-1"><a href="">Struktura</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Opstina</a></th>
+					<th class="table-header-repeat line-left"><a href="">Vlasnik</a></th>
+                    <th class="table-header-repeat line-left"><a href="">Kategorija</a></th>
+                    <th class="table-header-repeat line-left"><a href="">Tip</a></th>
+                    <th class="table-header-repeat line-left"><a href="">Struktura</a></th>
+					<th class="table-header-repeat line-left"><a href="">Opstina</a></th>
 					<th class="table-header-repeat line-left"><a href="">Kvadratura</a></th>
-                    <th class="table-header-repeat line-left"><a href="">Max cena</a></th>
+                    <th class="table-header-repeat line-left" style="min-width:120px;"><a href="">Cena</a></th>
 					<th class="table-header-repeat line-left"><a href="">Datum</a></th>
 					<th class="table-header-repeat line-left"><a href="">Agent</a></th>
-					<th class="table-header-options line-left"><a href="">Sekretarica</a></th>
+					<th class="table-header-repeat line-left"><a href="">Sekretarica</a></th>
 					<th class="table-header-options line-left"><a href="">Opcije</a></th>
 				</tr>
 				<?php
@@ -412,7 +412,7 @@ $(document).pngFix( );
 					
 					foreach($stanovi as $stan){
                           
-                        
+                     $datetime = explode(" ",$stan['timestamp']);
 				?>
 				<tr>
 					<td><input  type="checkbox"/></td>
@@ -421,14 +421,14 @@ $(document).pngFix( );
 					<td><?php echo $stan['tip'];?></td>
 					<td><?php echo $stan['stan_tip'];?></td>
 					<td><?php echo $stan['opstina'];?></td>
-                    <td><?php echo $stan['kvadratura'];?></td>
-					<td><?php echo $stan['cena'];?></td>
-					<td><?php echo $stan['timestamp'];?></td>
+                    <td><?php echo $stan['kvadratura_od'] . ' - ' . $stan['kvadratura_do'];?></td>
+					<td><?php echo $stan['cena_od'] . ' - ' . $stan['cena_do'];?></td>
+					<td><?php echo $datetime[0];?></td>
 					<td><?php echo $stan['agent'];?></td>
 					<td><?php echo $stan['sekretarica'];?></td>
                     <td class="options-width">
 					<a href="izmeni_klijenta.php?id=<?php echo $stan[0];?>" title="Izmeni" class="icon-1 info-tooltip"></a>
-                    <a href="spisak_stanova.php?<?php echo 'kategorija[]=' . $stan['kategorija'] . '&tip[]=' . $stan['tip'] . '&stan_tip[]=' . $stan['stan_tip'] . '&opstina[]=' . $stan['lokacija_id'] . '&povOD=' . $stan['kvadratura'] . '&cenaDO=' . $stan['cena']; ?>&pretrazi=Pretrazi" target="_blank" title="Pretrazi" class="icon-4 info-tooltip"></a>
+                    <a href="spisak_stanova.php?<?php echo 'kategorija[]=' . $stan['kategorija'] . '&tip[]=' . $stan['tip'] . '&stan_tip[]=' . $stan['stan_tip'] . '&opstina[]=' . $stan['lokacija_id'] . '&povOD=' . $stan['kvadratura_od'] . '&povDO=' . $stan['kvadratura_do'] . '&cenaOD=' . $stan['cena_od'] . '&cenaDO=' . $stan['cena_do'] . '&grejanje=' . $stan['grejanje'] . '&namestenost=' . $stan['namestenost']; ?>&pretrazi=Pretrazi" target="_blank" title="Pretrazi" class="icon-4 info-tooltip"></a>
                     <a href="#" onclick="brisanje(<?php echo $stan[0]; ?>);" title="Obrisi" class="icon-2 info-tooltip"></a>
 					<!-- <a href="" title="Edit" class="icon-3 info-tooltip"></a>
 					<a href="" title="Edit" class="icon-4 info-tooltip"></a>

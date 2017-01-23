@@ -29,6 +29,7 @@ include 'parts/navigation.php';
                             <li><a href="/<?=$tempurl?>zakoni/povracaj_poreza_pdv_za_kupce_prvog_stana.pdf" target="_blank"><?=$lang['laws.3']?></a></li>
                             <li><a href="/<?=$tempurl?>zakoni/zakon_o_javnom_beleznistvu.pdf" target="_blank"><?=$lang['laws.4']?></a></li>
                             <li><a href="/<?=$tempurl?>zakoni/tarifa_notari.pdf" target="_blank"><?=$lang['laws.5']?></a></li>
+                            <li><a href="/<?=$tempurl?>ugovori/Privredna_komora_letak.pdf" target="_blank"><?=$lang['laws.6']?></a></li>
                           </ul>
                         </div>
                       </article>

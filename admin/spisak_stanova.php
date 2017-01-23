@@ -504,15 +504,15 @@ $(document).pngFix( );
             <table>
                 <tr>
                     <th>ID:</th>
-                    <td><input class="admin-input-select" type="text" name="id" /></td>
+                    <td><input class="admin-input-select" type="text" name="id" value="<?php if(isset($_GET['id'])){ echo $_GET['id'];} ?>" /></td>
                 </tr>
                 <tr>
                     <th>Telefon:</th>
-                    <td><input class="admin-input-select" type="text" name="telefon" /></td>
+                    <td><input class="admin-input-select" type="text" name="telefon" value="<?php if(isset($_GET['telefon'])){ echo $_GET['telefon'];} ?>" /></td>
                 </tr>
                 <tr>
                     <th>Ulica:</th>
-                    <td><input class="admin-input-select" tyle="text" name="ulica" /></td>
+                    <td><input class="admin-input-select" tyle="text" name="ulica" value="<?php if(isset($_GET['ulica'])){ echo $_GET['ulica'];} ?>" /></td>
                 </tr>
             </table>
             </div>
@@ -522,8 +522,8 @@ $(document).pngFix( );
                         <th>Kategorija:</th>
                         <td style="padding: 5px 0 5px 5px;">
                                 <select id="kategorija" name="kategorija[]" class="admin-input-select"  multiple="multiple">
-                                    <option value="izdavanje">Izdavanje</option>
-                                    <option value="prodaja">Prodaja</option>
+                                    <option value="izdavanje" <?php if(isset($_GET['kategorija']) && in_array('izdavanje', $_GET['kategorija'])) echo 'selected'; ?> >Izdavanje</option>
+                                    <option value="prodaja" <?php if(isset($_GET['kategorija']) && in_array('prodaja', $_GET['kategorija'])) echo 'selected'; ?> >Prodaja</option>
                                 </select>   
                         </td>
                     </tr>
@@ -531,13 +531,13 @@ $(document).pngFix( );
                         <th>Tip:</th>
                         <td style="padding: 5px 0 5px 5px;">
                                 <select id="tip" name="tip[]" class="admin-input-select"  multiple="multiple">
-                                    <option value="Stan">Stan</option>
-                                    <option value="Kuća">Kuća</option>
-                                    <option value="Poslovni prostor">Poslovni prostor</option>
-                                    <option value="Magacin">Magacin</option>
-                                    <option value="Lokal">Lokal</option>
-                                    <option value="Garaža">Garaža</option>
-                                    <option value="Poslovna zgrada">Poslovna zgrada</option>
+                                    <option value="Stan" <?php if(isset($_GET['tip']) && in_array('Stan', $_GET['tip'])) echo 'selected'; ?> >Stan</option>
+                                    <option value="Kuća" <?php if(isset($_GET['tip']) && in_array('Kuća', $_GET['tip'])) echo 'selected'; ?> >Kuća</option>
+                                    <option value="Poslovni prostor" <?php if(isset($_GET['tip']) && in_array('Poslovni prostor', $_GET['tip'])) echo 'selected'; ?> >Poslovni prostor</option>
+                                    <option value="Magacin" <?php if(isset($_GET['tip']) && in_array('Magacin', $_GET['tip'])) echo 'selected'; ?> >Magacin</option>
+                                    <option value="Lokal" <?php if(isset($_GET['tip']) && in_array('Lokal', $_GET['tip'])) echo 'selected'; ?> >Lokal</option>
+                                    <option value="Garaža" <?php if(isset($_GET['tip']) && in_array('Garaža', $_GET['tip'])) echo 'selected'; ?> >Garaža</option>
+                                    <option value="Poslovna zgrada" <?php if(isset($_GET['tip']) && in_array('Poslovna zgrada', $_GET['tip'])) echo 'selected'; ?> >Poslovna zgrada</option>
                                 </select>   
                         </td>
                     </tr>
@@ -545,16 +545,18 @@ $(document).pngFix( );
                         <th>Struktura:</th>
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
                                     <select class="admin-input-select" multiple="multiple" name="stan_tip[]" id="stan_tip">
-                                        <option value="Garsonjera">Garsonjera</option>
-                                        <option value="Jednosoban">Jednosoban</option>
-                                        <option value="Jednoiposoban">Jednoiposoban</option>
-                                        <option value="Dvosoban">Dvosoban</option>
-                                        <option value="Dvoiposoban">Dvoiposoban</option>
-                                        <option value="Trosoban">Trosoban</option>
-                                        <option value="Troiposoban">Troiposoban</option>
-                                        <option value="Četvorosoban">Četvorosoban</option>
-                                        <option value="Četvoroiposoban">Četvoroiposoban</option>
-                                        <option value="Petosoban i veći">Petosoban i veći</option>
+                                        <option value="Garsonjera" <?php if(isset($_GET['stan_tip']) && in_array('Garsonjera', $_GET['stan_tip'])) echo 'selected'; ?> >Garsonjera</option>
+                                        <option value="Jednosoban" <?php if(isset($_GET['stan_tip']) && in_array('Jednosoban', $_GET['stan_tip'])) echo 'selected'; ?> >Jednosoban</option>
+                                        <option value="Jednoiposoban" <?php if(isset($_GET['stan_tip']) && in_array('Jednoiposoban', $_GET['stan_tip'])) echo 'selected'; ?> >Jednoiposoban</option>
+                                        <option value="Dvosoban" <?php if(isset($_GET['stan_tip']) && in_array('Dvosoban', $_GET['stan_tip'])) echo 'selected'; ?> >Dvosoban</option>
+                                        <option value="Dvoiposoban" <?php if(isset($_GET['stan_tip']) && in_array('Dvoiposoban', $_GET['stan_tip'])) echo 'selected'; ?> >Dvoiposoban</option>
+                                        <option value="Trosoban" <?php if(isset($_GET['stan_tip']) && in_array('Trosoban', $_GET['stan_tip'])) echo 'selected'; ?> >Trosoban</option>
+                                        <option value="Troiposoban" <?php if(isset($_GET['stan_tip']) && in_array('Troiposoban', $_GET['stan_tip'])) echo 'selected'; ?> >Troiposoban</option>
+                                        <option value="Četvorosoban" <?php if(isset($_GET['stan_tip']) && in_array('Četvorosoban', $_GET['stan_tip'])) echo 'selected'; ?> >Četvorosoban</option>
+                                        <option value="Četvoroiposoban" <?php if(isset($_GET['stan_tip']) && in_array('Četvoroiposoban', $_GET['stan_tip'])) echo 'selected'; ?> >Četvoroiposoban</option>
+                                        <option value="Petosoban i veći" <?php if(isset($_GET['stan_tip']) && in_array('Petosoban i veći', $_GET['stan_tip'])) echo 'selected'; ?> >Petosoban i veći</option>
+                                        <option value="Kuća u osnovi" <?php if(isset($_GET['stan_tip']) && in_array('Kuća u osnovi', $_GET['stan_tip'])) echo 'selected'; ?> >Kuća u osnovi</option>
+                                        <option value="Spratna kuća" <?php if(isset($_GET['stan_tip']) && in_array('Spratna kuća', $_GET['stan_tip'])) echo 'selected'; ?> >Spratna kuća</option>
                                     </select>
                         </td>
                     </tr>
@@ -567,29 +569,29 @@ $(document).pngFix( );
                         <th>Spratnost:</th>
                         <td style="padding: 5px 0 5px 5px;">
 			<select class="admin-input-select" multiple="multiple" name="sprat[]" id="sprat">
-                                <option value="Suteren">Suteren</option>
-                                <option value="Prizemlje">Prizemlje</option>
-                                <option value="Visoko prizemlje">Visoko prizemlje</option>
-                                <option value="1. sprat">1. sprat</option>
-                                <option value="2. sprat">2. sprat</option>
-                                <option value="3. sprat">3. sprat</option>
-                                <option value="4. sprat">4. sprat</option>
-                                <option value="5. sprat">5. sprat</option>
-                                <option value="6. sprat">6. sprat</option>
-                                <option value="7. sprat">7. sprat</option>
-                                <option value="8. sprat">8. sprat</option>
-                                <option value="9. sprat">9. sprat</option>
-                                <option value="10. sprat">10. sprat</option>
-                                <option value="11. sprat">11. sprat</option>
-                                <option value="12. sprat">12. sprat</option>
-                                <option value="13. sprat">13. sprat</option>
-                                <option value="14. sprat">14. sprat</option>
-                                <option value="15. sprat">15. sprat</option>
-                                <option value="16. sprat">16. sprat</option>
-                                <option value="17. sprat">17. sprat</option>
-                                <option value="18. sprat">18. sprat</option>
-                                <option value="19. sprat">19. sprat</option>
-                                <option value="20. sprat i više">20. sprat i više</option>
+                                <option value="Suteren" <?php if(isset($_GET['sprat']) && in_array('Suteren', $_GET['sprat'])) echo 'selected'; ?> >Suteren</option>
+                                <option value="Prizemlje" <?php if(isset($_GET['sprat']) && in_array('Prizemlje', $_GET['sprat'])) echo 'selected'; ?> >Prizemlje</option>
+                                <option value="Visoko prizemlje" <?php if(isset($_GET['sprat']) && in_array('Visoko prizemlje', $_GET['sprat'])) echo 'selected'; ?> >Visoko prizemlje</option>
+                                <option value="1. sprat" <?php if(isset($_GET['sprat']) && in_array('1. sprat', $_GET['sprat'])) echo 'selected'; ?> >1. sprat</option>
+                                <option value="2. sprat" <?php if(isset($_GET['sprat']) && in_array('2. sprat', $_GET['sprat'])) echo 'selected'; ?> >2. sprat</option>
+                                <option value="3. sprat" <?php if(isset($_GET['sprat']) && in_array('3. sprat', $_GET['sprat'])) echo 'selected'; ?> >3. sprat</option>
+                                <option value="4. sprat" <?php if(isset($_GET['sprat']) && in_array('4. sprat', $_GET['sprat'])) echo 'selected'; ?> >4. sprat</option>
+                                <option value="5. sprat" <?php if(isset($_GET['sprat']) && in_array('5. sprat', $_GET['sprat'])) echo 'selected'; ?> >5. sprat</option>
+                                <option value="6. sprat" <?php if(isset($_GET['sprat']) && in_array('6. sprat', $_GET['sprat'])) echo 'selected'; ?> >6. sprat</option>
+                                <option value="7. sprat" <?php if(isset($_GET['sprat']) && in_array('7. sprat', $_GET['sprat'])) echo 'selected'; ?> >7. sprat</option>
+                                <option value="8. sprat" <?php if(isset($_GET['sprat']) && in_array('8. sprat', $_GET['sprat'])) echo 'selected'; ?> >8. sprat</option>
+                                <option value="9. sprat" <?php if(isset($_GET['sprat']) && in_array('9. sprat', $_GET['sprat'])) echo 'selected'; ?> >9. sprat</option>
+                                <option value="10. sprat" <?php if(isset($_GET['sprat']) && in_array('10. sprat', $_GET['sprat'])) echo 'selected'; ?> >10. sprat</option>
+                                <option value="11. sprat" <?php if(isset($_GET['sprat']) && in_array('11. sprat', $_GET['sprat'])) echo 'selected'; ?> >11. sprat</option>
+                                <option value="12. sprat" <?php if(isset($_GET['sprat']) && in_array('12. sprat', $_GET['sprat'])) echo 'selected'; ?> >12. sprat</option>
+                                <option value="13. sprat" <?php if(isset($_GET['sprat']) && in_array('13. sprat', $_GET['sprat'])) echo 'selected'; ?> >13. sprat</option>
+                                <option value="14. sprat" <?php if(isset($_GET['sprat']) && in_array('14. sprat', $_GET['sprat'])) echo 'selected'; ?> >14. sprat</option>
+                                <option value="15. sprat" <?php if(isset($_GET['sprat']) && in_array('15. sprat', $_GET['sprat'])) echo 'selected'; ?> >15. sprat</option>
+                                <option value="16. sprat" <?php if(isset($_GET['sprat']) && in_array('16. sprat', $_GET['sprat'])) echo 'selected'; ?> >16. sprat</option>
+                                <option value="17. sprat" <?php if(isset($_GET['sprat']) && in_array('17. sprat', $_GET['sprat'])) echo 'selected'; ?> >17. sprat</option>
+                                <option value="18. sprat" <?php if(isset($_GET['sprat']) && in_array('18. sprat', $_GET['sprat'])) echo 'selected'; ?> >18. sprat</option>
+                                <option value="19. sprat" <?php if(isset($_GET['sprat']) && in_array('19. sprat', $_GET['sprat'])) echo 'selected'; ?> >19. sprat</option>
+                                <option value="20. sprat i više" <?php if(isset($_GET['sprat']) && in_array('20. sprat i više', $_GET['sprat'])) echo 'selected'; ?> >20. sprat i više</option>
                             </select>
                         </td>
                     </tr>
@@ -599,7 +601,7 @@ $(document).pngFix( );
                             <select class="admin-input-select"  name="opstina[]" id="opstina" multiple="multiple">
                             <?php
                                 foreach($row as $opstina){
-                                echo '<option value="'.$opstina['id'].'">'.$opstina['opstina'].'</option>';
+                                echo '<option value="'. $opstina['id'] . '"'; if(isset($_GET['opstina']) && in_array($opstina['id'], $_GET['opstina'])){ echo ' selected "';} echo '>' . $opstina['opstina'] . '</option>';
                                 }
                             ?>
                             </select>
@@ -612,7 +614,7 @@ $(document).pngFix( );
                             <option value="">Izaberi...</option>
                             <?php
                                 foreach($red as $podlokacija){
-                                echo '<option value="'.$podlokacija['id'].'">'.$podlokacija['podlokacija'].'</option>';
+                                echo '<option value="'.$podlokacija['id'].'"'; if(isset($_GET['podlokacija']) && in_array($podlokacija['id'], $_GET['podlokacija'])){ echo ' selected "';} echo '>'.$podlokacija['podlokacija'].'</option>';
                                 }
                             ?>
                             </select>
@@ -626,9 +628,9 @@ $(document).pngFix( );
                         <th>Nameštenost:</th>
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
                                     <select class="admin-input-select"  name="namestenost[]" id="namestenost" multiple="multiple">
-                                        <option value="Namešten">Namešten</option>
-                                        <option value="Polunamešten">Polunamešten</option>
-                                        <option value="Nenamešten">Nenamešten</option>
+                                        <option value="Namešten" <?php if(isset($_GET['namestenost']) && in_array('Namešten', $_GET['namestenost'])) echo 'selected'; ?> >Namešten</option>
+                                        <option value="Polunamešten" <?php if(isset($_GET['namestenost']) && in_array('Polunamešten', $_GET['namestenost'])) echo 'selected'; ?> >Polunamešten</option>
+                                        <option value="Nenamešten" <?php if(isset($_GET['namestenost']) && in_array('Nenamešten', $_GET['namestenost'])) echo 'selected'; ?> >Nenamešten</option>
                                     </select>
                         </td>
                     </tr>
@@ -637,15 +639,18 @@ $(document).pngFix( );
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
                             <select name="grejanje[]" id="grejanje" multiple="multiple" class="admin-input-select">
                                 <option value="">Izaberi...</option>
-                                <option value="CG">CG</option>
-                                <option value="EG">EG</option>
-                                <option value="TA">TA</option>
-                                <option value="PG">PG</option>
-                                <option value="Klima uređaj">Klima uređaj</option>
-                                <option value="Na gas">Na gas</option>
-                                <option value="Na struju">Na struju</option>
-                                <option value="Norveški radijatori">Norveški radijatori</option>
-                                <option value="Mermerni radijatori">Mermerni radijatori</option>
+                                <option value="CG" <?php if(isset($_GET['grejanje']) && in_array('CG', $_GET['grejanje'])) echo 'selected'; ?> >CG</option>
+                                <option value="CG (gas)" <?php if(isset($_GET['grejanje']) && in_array('CG (gas)', $_GET['grejanje'])) echo 'selected'; ?> >CG (gas)</option>
+                                <option value="CG (kalorimetri)" <?php if(isset($_GET['grejanje']) && in_array('CG (kalorimetri)', $_GET['grejanje'])) echo 'selected'; ?> >CG (kalorimetri)</option>
+                                <option value="ET (struja)" <?php if(isset($_GET['grejanje']) && in_array('ET (struja)', $_GET['grejanje'])) echo 'selected'; ?> >ET (struja)</option>
+                                <option value="EG" <?php if(isset($_GET['grejanje']) && in_array('EG', $_GET['grejanje'])) echo 'selected'; ?> >EG</option>
+                                <option value="TA" <?php if(isset($_GET['grejanje']) && in_array('TA', $_GET['grejanje'])) echo 'selected'; ?> >TA</option>
+                                <option value="PG" <?php if(isset($_GET['grejanje']) && in_array('PG', $_GET['grejanje'])) echo 'selected'; ?> >PG</option>
+                                <option value="Klima uređaj" <?php if(isset($_GET['grejanje']) && in_array('Klima uređaj', $_GET['grejanje'])) echo 'selected'; ?> >Klima uređaj</option>
+                                <option value="Na gas" <?php if(isset($_GET['grejanje']) && in_array('Na gas', $_GET['grejanje'])) echo 'selected'; ?> >Na gas</option>
+                                <option value="Na struju" <?php if(isset($_GET['grejanje']) && in_array('Na struju', $_GET['grejanje'])) echo 'selected'; ?> >Na struju</option>
+                                <option value="Norveški radijatori" <?php if(isset($_GET['grejanje']) && in_array('Norveški radijatori', $_GET['grejanje'])) echo 'selected'; ?> >Norveški radijatori</option>
+                                <option value="Mermerni radijatori" <?php if(isset($_GET['grejanje']) && in_array('Mermerni radijatori', $_GET['grejanje'])) echo 'selected'; ?> >Mermerni radijatori</option>
                             </select>
                         </td>
                     </tr>
@@ -653,8 +658,8 @@ $(document).pngFix( );
                         <th>Dostupnost:</th>
                         <td style="padding: 5px 0 5px 5px; height: 25px;">
                             <select name="izdat[]" id="izdat" multiple="multiple" class="admin-input-select">
-                                <option value="0">Nije izdat</option>
-                                <option value="1">Izdat</option>
+                                <option value="0" <?php if(isset($_GET['izdat']) && in_array('0', $_GET['izdat'])) echo 'selected'; ?> >Nije izdat</option>
+                                <option value="1" <?php if(isset($_GET['izdat']) && in_array('1', $_GET['izdat'])) echo 'selected'; ?> >Izdat</option>
                             </select>
                         </td>
                     </tr>
@@ -665,17 +670,17 @@ $(document).pngFix( );
                 	<tr>
                         <th style="width:30px;">Kvadratura:</th>
                         <td>
-	                        <input type="text" name="povOD" class="admin-input-select" style="width:54px;">
+	                        <input type="text" name="povOD" class="admin-input-select" style="width:54px;" value="<?php if(isset($_GET['povOD'])){ echo $_GET['povOD'];} ?>" >
 	                        <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
-	                        <input type="text" name="povDO" class="admin-input-select" style="width:54px;">
+	                        <input type="text" name="povDO" class="admin-input-select" style="width:54px;" value="<?php if(isset($_GET['povDO'])){ echo $_GET['povDO'];} ?>" >
                         </td>
                 	</tr>
                        <tr>
                        <th style="width:30px;">Cena:</th>
                         <td>
-                            <input type="text" name="cenaOD" class="admin-input-select" style="width:54px;">
+                            <input type="text" name="cenaOD" class="admin-input-select" style="width:54px;" value="<?php if(isset($_GET['cenaOD'])){ echo $_GET['cenaOD'];} ?>" >
                             <span style="margin: 0px 0px 0px 5px; font-weight: bold; display: inline-block;">do</span>
-                            <input type="text" name="cenaDO" class="admin-input-select" style="width:54px;">
+                            <input type="text" name="cenaDO" class="admin-input-select" style="width:54px;" value="<?php if(isset($_GET['cenaDO'])){ echo $_GET['cenaDO'];} ?>" >
                         </td>
                     </tr> 
                 </table>
@@ -688,53 +693,51 @@ $(document).pngFix( );
                                 <td style="width: 153px;"><label><input type="checkbox" name="klima"> Klima</label></td>
                                 <td style="width: 153px;"><label><input type="checkbox" name="internet" > Internet</label></td>
                                 <td style="width: 153px;"><label><input type="checkbox" name="ima_telefon" > Telefon</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="frizider" > Frižider</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="sporet" > Šporet</label></td>
                                 <td style="width: 153px;"><label><input type="checkbox" name="vesmasina" > Veš mašina</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="kuhinjskielementi" > Kuhinjski elementi</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="plakari" > Plakari</label></td>
                                 </tr>    
                                 <tr>
-                                <td><label><input type="checkbox" name="kuhinjskielementi" > Kuhinjski elementi</label></td>
-                                <td><label><input type="checkbox" name="plakari" > Plakari</label></td>
                                 <td><label><input type="checkbox" name="interfon" > Interfon</label></td>
                                 <td><label><input type="checkbox" name="lift" > Lift</label></td>   
                                 <td><label><input type="checkbox" name="bazen" > Bazen</label></td>
                                 <td><label><input type="checkbox" name="garaza" > Garaža</label></td>
                                 <td><label><input type="checkbox" name="parking" > Parking</label></td>
                                 <td><label><input type="checkbox" name="dvoriste" > Dvorište</label></td>
-                                </tr>
-                                <tr style="background-color:#f3f3f3;">
                                 <td><label><input type="checkbox" name="potkrovlje" > Potkrovlje</label></td>
                                 <td><label><input type="checkbox" name="terasa" > Terasa</label></td> 
+                                </tr>
+                                <tr style="background-color:#f3f3f3;">
                                 <td><label><input type="checkbox" name="novogradnja" > Novogradnja</label></td>
                                 <td><label><input type="checkbox" name="renovirano" > Renovirano</label></td>
                                 <td><label><input type="checkbox" name="lux" > Lux</label></td>   
                                 <td><label><input type="checkbox" name="penthaus" > Penthaus</label></td>
                                 <td><label><input type="checkbox" name="salonski" > Salonski</label></td>
                                 <td><label><input type="checkbox" name="lodja" > Lođa</label></td>
-                                </tr>
-                                <tr>
                                 <td><label><input type="checkbox" name="duplex" > Duplex</label></td>
                                 <td><label><input type="checkbox" name="nov_namestaj" > Nov nameštaj</label></td>
+                                </tr>
+                                <tr>
                                 <td><label><input type="checkbox" name="kompjuterska_mreza" > Kmpjuterska mreža</label></td>
                                 <td><label><input type="checkbox" name="dva_kupatila" > Dva kupatila</label></td>
                                 <td><label><input type="checkbox" name="vise_telefonskih_linija" > Više telefonskih linija</label></td>
                                 <td><label><input type="checkbox" name="stan_u_kuci" > Stan u kući</label></td>
                                 <td><label><input type="checkbox" name="samostojeca_kuca" > Samostojeća kuća</label></td>
                                 <td><label><input type="checkbox" name="kuca_s_dvoristem" > Kuća s dvorištem</label></td>
-                                </tr>
-                                <tr style="background-color:#f3f3f3;">
                                 <td><label><input type="checkbox" name="kucni_ljubimci" > Kućni ljubimci</label></td>
                                 <td><label><input type="checkbox" name="balkon" > Balkon</label></td>
+                                </tr>
+                                <tr style="background-color:#f3f3f3;">
                                 <td><label><input type="checkbox" name="video_nadzor" > Video nadzor</label></td>
                                 <td><label><input type="checkbox" name="alarm" > Alarm</label></td>
                                 <td><label><input type="checkbox" name="basta" > Bašta</label></td>
                                 <td><label><input type="checkbox" name="basta" > Pomoćni objekti</label></td>
                                 <td><label><input type="checkbox" name="ostava" > Ostava</label></td>
                                 <td><label><input type="checkbox" name="podrum" > Podrum</label></td>
-                                </tr>
-                                <tr>
                                 <td><label><input type="checkbox" name="opticki_kabl" > Optički kabl</label></td>
                                 <td><label><input type="checkbox" name="open_space" > Open space</label></td>
+                                </tr>
+                                <tr>
                                 <td><label><input type="checkbox" name="pristup_za_invalide" > Pristup za invalide</label></td>
                                 <td><label><input type="checkbox" name="lokal_na_ulici" > Lokal na ulici</label></td>
                                 <td><label><input type="checkbox" name="pravno_lice" > Pravno lice</label></td>

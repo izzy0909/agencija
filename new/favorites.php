@@ -73,7 +73,9 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');">';
+                            echo        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>';
+                            echo    '</div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
                             echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
@@ -102,7 +104,9 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');">';
+                            echo        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>';
+                            echo    '</div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
                             echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';

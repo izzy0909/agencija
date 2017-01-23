@@ -162,6 +162,8 @@ include 'parts/navigation.php';
                               <option value="Četvorosoban"><?=$lang['search.form.structure.cetvorosoban']?></option>
                               <option value="Četvoroiposoban"><?=$lang['search.form.structure.cetvoroiposoban']?></option>
                               <option value="Petosoban i veći"><?=$lang['search.form.structure.petosobaniveci']?></option>
+                              <option value="Kuća u osnovi"><?=$lang['search.form.structure.kucauosnovi']?></option>
+                              <option value="Spratna kuća"><?=$lang['search.form.structure.spratnakuca']?></option>
                             </select>
                             <!-- end of block .form-property__control-->
                           </div>
@@ -179,7 +181,10 @@ include 'parts/navigation.php';
                             <select id="in-81" name="heat" data-placeholder="Izaberite grejanje..." required class="form-control js-in-select">
                               <option label=" "></option>
                               <option value="CG"><?=$lang['search.form.heat.cg']?></option>
+                              <option value="CG (gas)"><?=$lang['search.form.heat.cggas']?></option>
+                              <option value="CG (kalorimetri)"><?=$lang['search.form.heat.cgkalorimetri']?></option>
                               <option value="EG"><?=$lang['search.form.heat.eg']?></option>
+                              <option value="ET (struja)"><?=$lang['search.form.heat.etstruja']?></option>
                               <option value="TA"><?=$lang['search.form.heat.ta']?></option>
                               <option value="PG"><?=$lang['search.form.heat.pg']?></option>
                               <option value="Klima"><?=$lang['search.form.heat.klima']?></option>
@@ -305,14 +310,6 @@ include 'parts/navigation.php';
                               <li>
                                 <input id="option_5" name="ima_telefon" type="checkbox" class="in-checkbox">
                                 <label for="option_5" class="in-label">Telefon</label>
-                              </li>
-                              <li>
-                                <input id="option_6" name="frizider" type="checkbox" class="in-checkbox">
-                                <label for="option_6" class="in-label">Frižider</label>
-                              </li>
-                              <li>
-                                <input id="option_7" name="sporet" type="checkbox" class="in-checkbox">
-                                <label for="option_7" class="in-label">Šporet</label>
                               </li>
                               <li>
                                 <input id="option_8" name="vesmasina" type="checkbox" class="in-checkbox">

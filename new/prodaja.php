@@ -11,6 +11,7 @@ $areas = prikaziSveOpstine();
 
 if(isset($_REQUEST['pretraga'])){
 
+    $id = isset($_REQUEST['cat-id']) ? $_REQUEST['cat-id'] : null;
     $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : null;
     $structure = isset($_REQUEST['structure']) ? $_REQUEST['structure'] : null;
     $location = isset($_REQUEST['location']) ? $_REQUEST['location'] : null;
@@ -24,12 +25,12 @@ if(isset($_REQUEST['pretraga'])){
 
     $order = isset($_REQUEST['order']) ? $_REQUEST['order'] : 1;
 
-    $itemsCount = getItemsCount('prodaja', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to);
-    $items =      getItems     ('prodaja', $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, 0);
+    $itemsCount = getItemsCount('prodaja', $id, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to);
+    $items =      getItems     ('prodaja', $id, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, 0);
 }
 else{
-    $itemsCount = getItemsCount('prodaja', null, null, null, null, null, null, null, null, null, null);
-    $items =      getItems     ('prodaja', null, null, null, null, null, null, null, null, null, null, 1, 0);
+    $itemsCount = getItemsCount('prodaja', null, null, null, null, null, null, null, null, null, null, null);
+    $items =      getItems     ('prodaja', null, null, null, null, null, null, null, null, null, null, null, 1, 0);
 }
 
 // var_dump($items);
@@ -99,7 +100,9 @@ include 'parts/navigation.php';
 
                             echo '<div class="listing__item">';
                             echo   '<div class="properties properties--grid">';
-                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
+                            echo    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');">';
+                            echo        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>';
+                            echo    '</div></a>'; if($item['hot_offer']){ echo '<span class="hot__ribon">' . $lang['hot'] . '</span>';} echo '</div>';
                             //    <!-- end of block .properties__thumb-->
                             echo    '<div class="properties__details">';
                             echo      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';
@@ -142,6 +145,10 @@ include 'parts/navigation.php';
                     <!-- BEGIN SEARCH-->
                     <form id="searchForm" name="searchForm" data-cat="prodaja" action="/<?=$tempurl?>prodaja/" method="POST" class="form form--flex form--search js-search-form form--sidebar" enctype="multipart/form-data">
                       <div class="row">
+                          <div class="form-group">
+                            <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
+                            <input type="text" name="cat-id" id="cat-id" class="form-control">
+                          </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">
                             <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?php echoArray('type');?></button>

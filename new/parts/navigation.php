@@ -11,11 +11,11 @@
             <div id="navbar-collapse-1" class="navbar__wrap">
               <ul class="navbar__nav">
                 <li class="navbar__item <?php if ($active=='home'){ echo 'active';}?>"><a href="/<?=$tempurl?>" class="navbar__link"><?=$lang['navigation.home']?></a></li>
-                <li class="navbar__item <?php if ($active=='rent'){ echo 'active';}?>"><a href="/<?=$tempurl?>izdavanje/" class="navbar__link"><?=$lang['navigation.rent']?></a></li>
-                <li class="navbar__item <?php if ($active=='sell'){ echo 'active';}?>"><a href="/<?=$tempurl?>prodaja/" class="navbar__link"><?=$lang['navigation.sell']?></a></li>
+                <li class="navbar__item <?php if ($active=='rent'){ echo 'active';}?>"><a href="/<?=$tempurl?>izdavanje-izaberite/" class="navbar__link"><?=$lang['navigation.rent']?></a></li>
+                <li class="navbar__item <?php if ($active=='sell'){ echo 'active';}?>"><a href="/<?=$tempurl?>prodaja-izaberite/" class="navbar__link"><?=$lang['navigation.sell']?></a></li>
                 <li class="navbar__item <?php if ($active=='submit'){ echo 'active';}?>"><a href="/<?=$tempurl?>dodajte-nekretninu/" class="navbar__link"><?=$lang['navigation.submit']?></a></li>
                 <li class="navbar__item navbar__item--mob"><a href="/<?=$tempurl?>omiljene-nekretnine/" class="navbar__link"><?=$lang['navigation.favorites']?></a></li>
-               <li class="navbar__item js-dropdown <?php if ($active=='about'){ echo 'active';}?>"><a class="navbar__link"><?=$lang['navigation.about']?>
+               <li class="navbar__item js-dropdown <?php if ($active=='about'){ echo 'active';}?>"><a class="navbar__link" href="/<?=$tempurl?>o-nama/"><?=$lang['navigation.about']?>
                     <svg class="navbar__arrow">
                       <use xlink:href="#icon-arrow-right"></use>
                     </svg></a>
@@ -28,16 +28,31 @@
 
                     <div class="navbar__submenu">
                       <ul class="navbar__subnav">
-                        <li class="navbar__subitem"><a href="/<?=$tempurl?>o-nama/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.team']?></a></li>
-                        <li class="navbar__subitem"><a href="/<?=$temprul?>ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.terms']?></a></li>
+                        <li class="navbar__subitem"><a href="/<?=$tempurl?>nas-tim/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.team']?></a></li>
+                        <li class="navbar__subitem navbar__subitem-dropdown js-dropdown"><a class="navbar__sublink js-navbar-sublink"><?=$lang['navigation.about.terms']?>
+                            <svg class="navbar__arrow">
+                              <use xlink:href="#icon-arrow-right"></use>
+                            </svg></a>
+                          <div class="navbar__submenu navbar__submenu--level">
+                            <button class="navbar__back js-navbar-submenu-back">
+                              <svg class="navbar__arrow">
+                                <use xlink:href="#icon-arrow-left"></use>
+                              </svg><?=$lang['navigation.back']?>
+                            </button>
+                            <ul class="navbar__subnav">
+                              <li class="navbar__subitem"><a href="/<?=$tempurl?>ugovori/opsti_uslovi_poslovanja_jevtic_nekretnine.pdf" target="_blank" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.terms.general']?></a></li>
+                            </ul>
+                          </div>
+                        </li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>ugovori/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.contracts']?></a></li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>zakoni/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.laws']?></a></li>
+                        <li class="navbar__subitem"><a href="/<?=$tempurl?>reference/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.references']?></a></li>
                       </ul>
                     </div>
                   </div>
                 </li>
-                <!-- <li class="navbar__item <?php if ($active=='reference'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.references']?></a></li> -->
-                <!-- <li class="navbar__item <?php if ($active=='career'){ echo 'active';}?>"><a href="index.php" class="navbar__link"><?=$lang['navigation.career']?></a></li> -->
+                <li class="navbar__item <?php if ($active=='biznis'){ echo 'active';}?>"><a href="/<?=$tempurl?>biznis-paket-plus/" class="navbar__link"><?=$lang['navigation.biznis']?></a></li>
+                <li class="navbar__item <?php if ($active=='career'){ echo 'active';}?>"><a href="/<?=$tempurl?>karijera/" class="navbar__link"><?=$lang['navigation.career']?></a></li>
                 <li class="navbar__item <?php if ($active=='contact'){ echo 'active';}?>"><a href="/<?=$tempurl?>kontakt/" class="navbar__link"><?=$lang['navigation.contact']?></a></li>
                 <li class="navbar__item navbar__item--mob js-dropdown"><a class="navbar__link"><?=$lang['navigation.language']?>
                     <svg class="navbar__arrow">

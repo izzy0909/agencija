@@ -35,7 +35,15 @@ $tempurl = 'agencija/new/';
     <!-- Your styles should go in this file-->
     <link rel="stylesheet" href="/<?=$tempurl?>assets/css/custom.css">
     <link rel="stylesheet" href="/<?=$tempurl?>assets/css/rrssb.css" />
-    <!-- Fixes for IE-->
+    <link rel="stylesheet" href="/<?=$tempurl?>assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="/<?=$tempurl?>assets/css/owl.theme.css">
+    <link rel="stylesheet" href="/<?=$tempurl?>assets/css/owl.transitions.css">
+
+    <link rel="stylesheet" href="/<?=$tempurl?>assets/css/blueimp-gallery.min.css">
+
+<!--     <link type="text/css" rel="stylesheet" href="/<?=$tempurl?>assets/css/featherlight.css" />
+    <link type="text/css" rel="stylesheet" href="/<?=$tempurl?>assets/css/featherlight.gallery.css" /> -->
+    <!-- Fixes for IE-->                        
     <!--[if lt IE 11]>
     <link rel="stylesheet" href="assets/css/ie-fix.css"><![endif]-->
     <link rel="icon" href="/<?=$tempurl?>assets/img/favicon.ico" type="image/x-icon">

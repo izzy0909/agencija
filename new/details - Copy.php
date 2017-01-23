@@ -58,10 +58,7 @@ include 'parts/navigation.php';
                 <!-- BEGIN PROPERTY DETAILS-->
                 <div class="property">
                   <h1 class="property__title">#<?php echo $stan[0] . ' - ' . $stan['opstina']; ?>
-                    <div style="display:block;">
-                      <span class="property__city" style="display:inline-block; max-width:93%;"><?php echo $stan['kategorija'] . ' / ' . $stan['tip'] . ' / ' . $stan['stan_tip']; ?></span>
-                      <span class="pdf"><a href="/<?=$tempurl?>pdf/<?=$stan[0]?>/" target="_blank"><img src="/<?=$tempurl?>assets/img/pdf.png" /></a></span>
-                    </div>
+                  <span class="pdf"><a href="/<?=$tempurl?>pdf/<?=$stan[0]?>/" target="_blank"><img src="/<?=$tempurl?>assets/img/pdf.png" /></a></span>
                   </h1>
                   <div class="property__header">
                     <div>
@@ -111,67 +108,98 @@ include 'parts/navigation.php';
                       </ul>
                     </div>
                     <br />
-                    <div class="property__price"><strong class="property__price-value"><?=$stan['cena']?>&#8364;</strong></div>
-                    <h4 class="property__commision"><?=$lang['details.commision']?>: <strong><?=$stan['provizija']?>%</strong></h4>
                     <div class="property__actions">
                       <button type="button" id="setfavorite" class="btn--default" data-func="<?php if($fav){echo 'remove';} else{echo 'add';}?>" data-id="<?=$stan[0]?>"><i class="fa fa-star"></i><?php if($fav){echo $lang['details.favoriteremove'];} else{ echo $lang['details.favorite'];} ?></button>
                     </div>
                   </div>
                   <div class="clearfix"></div>
                   <div class="property__slider">
-                    <div class="hot__ribon" style="z-index:20;"><?=$lang['hot']?></div>
-                                    <div id="properties-thumbs" class="slider slider--small js-slider-thumbs">
-                                      <div class="slider__block js-slick-slider">
-                                     <?php
-                                        $i= 0; 
-                                        foreach($slike as $large){
-                                          echo '<div class="slider__item slider__item--0">';
-                                          echo    '<a href="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" data-size="1740x960" data-gallery-index="' . $i . '" class="slider__img js-gallery-item">';
-                                          echo      '<img data-lazy="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt="">';
-                                          echo    '</a>';
-                                          echo '</div>';
-                                          $i++;
-                                        }
-                                      ?>
-                                      </div>
-                                    </div>
-                                    <div class="slider slider--thumbs">
-                                      <div class="slider__wrap">
-                                        <div class="slider__block js-slick-slider">
-                                        <?php
-                                        $i = 0;
-                                        foreach($slike as $thumb){
-                                          echo '<div data-slide-rel="' . $i . '" class="slider__item slider__item--0  img-width-fix">';
-                                          echo '<div class="slider__img"><img data-lazy="/' . $tempurl . '../admin/slike/thumb_' . $thumb['naziv'] . '" src="/' . $tempurl . 'assets/img/lazy-image.jpg" alt=""></div>';
-                                          echo '</div>';
-                                          $i++;
-                                        }
-                                        ?>
-                                        </div>
-                                        <button type="button" class="slider__control slider__control--prev js-slick-prev">
-                                          <svg class="slider__control-icon">
-                                            <use xlink:href="#icon-arrow-left"></use>
-                                          </svg>
-                                        </button>
-                                        <button type="button" class="slider__control slider__control--next js-slick-next">
-                                          <svg class="slider__control-icon">
-                                            <use xlink:href="#icon-arrow-right"></use>
-                                          </svg>
-                                        </button>
-                                      </div>
-                                    </div>
+                      <div style="margin: 0 auto;" class="ui__slider">
+                        <div id="counter-slider" class="slider slider--small slider--small">
+                          <div class="slider__block js-slick-slider">
+                          <?php
+                            foreach($slike as $large){
+                              echo '<div class="slider__item">';
+                              echo '<img src="/' . $tempurl . '../admin/slike/watermark_' . $large['naziv'] . '" alt=""></div>';
+                            }
+
+                          ?>
+                          </div>
+                          <div class="slider__controls">
+                            <button type="button" class="slider__control slider__control--prev js-slick-prev">
+                              <svg class="slider__control-icon">
+                                <use xlink:href="#icon-arrow-left"></use>
+                              </svg>
+                            </button><span class="slider__current js-slick-current">1 /</span><span class="slider__total js-slick-total">5</span>
+                            <button type="button" class="slider__control slider__control--next js-slick-next">
+                              <svg class="slider__control-icon">
+                                <use xlink:href="#icon-arrow-right"></use>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="property__plan">
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+                        <svg>
+                          <use xlink:href="#icon-money-save"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.price']?></dd>
+                      <dd class="property__plan-value"><?=$stan['cena']?> &#8364;</dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+                        <svg>
+                          <use xlink:href="#icon-area"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.size']?></dd>
+                      <dd class="property__plan-value"><?=$stan['kvadratura']?> m²</dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon property__plan-icon--window">
+                        <svg>
+                          <use xlink:href="#icon-window"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.structure']?></dd>
+                      <dd class="property__plan-value"><?=$stan['stan_tip'] ?></dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon property__plan-icon--bathrooms">
+                        <svg>
+                          <use xlink:href="#icon-bathrooms"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.zoneparking']?></dd>
+                      <dd class="property__plan-value">Da</dd>
+                    </dl>
+                    <dl class="property__plan-item">
+                      <dt class="property__plan-icon">
+                        <svg>
+                          <use xlink:href="#icon-bedrooms"></use>
+                        </svg>
+                      </dt>
+                      <dd class="property__plan-title"><?=$lang['search.form.parkingspots']?></dd>
+                      <dd class="property__plan-value">2</dd>
+                    </dl>
                   </div>
                   <div class="property__info">
                     <div class="property__info-item"><?=$lang['details.id']?>: <strong> #<?=$stan[0]?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.location']?>: <strong> <?=$stan['opstina']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.type']?>: <strong> <?=$stan['tip']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.streetonly']?>: <strong> <?=$stan['ulica']?></strong></div>
-                    <div class="property__info-item"><?=$lang['search.form.structure']?>: <strong> <?=$stan['stan_tip']?></strong></div>
+                    <div class="property__info-item"><?=$lang['search.form.type2']?>: <strong> <?=$stan['tip']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.floor']?>: <strong> <?=$stan['sprat']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.setup']?>: <strong> <?=$stan['namestenost']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.size']?>: <strong> <?=$stan['kvadratura']?> m²</strong></div>
                     <div class="property__info-item"><?=$lang['search.form.heat']?>: <strong> <?=$stan['grejanje']?></strong></div>
                     <div class="property__info-item"><?=$lang['search.form.price']?>: <strong> <?=$stan['cena']?> €</strong></div>
+                    <div class="property__info-item"></div>
+                    <div class="property__info-item"><?=$lang['details.commision']?>: <strong><?=$stan['provizija']?>%</strong></div>
+                    
+                    
                   </div>
                   <div class="property__params">
                     <h4 class="property__subtitle"><?=$lang['details.amenities']?></h4>
@@ -182,8 +210,6 @@ include 'parts/navigation.php';
                             if($tagovi['klima']) echo '<li> Klima</li>';
                             if($tagovi['internet']) echo '<li> Internet</li>';
                             if($tagovi['telefon']) echo '<li> Telefon</li>';
-                            if($tagovi['frizider']) echo '<li> Frižider</li>';
-                            if($tagovi['sporet']) echo '<li> Šporet</li>';
                             if($tagovi['ves_masina']) echo '<li> Veš mašina</li>';
                             if($tagovi['kuhinjski_elementi']) echo '<li> Kuhinjski elementi</li>';
                             if($tagovi['plakari']) echo '<li> Plakari</li>';
@@ -233,7 +259,7 @@ include 'parts/navigation.php';
                     <button type="button" class="property__btn-more js-unhide"><?=$lang['details.moreinfo']?></button>
                   </div>
                   <?php
-                  if(isset($stan['youtube'])){
+                  if(isset($stan['youtube']) && $stan['youtube']!=''){
                     preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $stan['youtube'], $matches);
                     $embed = $matches[1];
 

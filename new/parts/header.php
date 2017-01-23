@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="header__contacts">
-              <a class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><span class="header__span">060/4480659</span></a>
+              <a class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><span class="header__span">060/4480659</span><span class="header__span">011/4054325</span></a>
             </div>
             <!-- end of block .header__contacts-->
             <div class="header__social">
@@ -37,8 +37,8 @@
             <div class="header__social">
               <div class="social social--header social--circles">
                 <a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a>
-                <a href="http://twitter.com/Jevticnekretine" target="_blank" class="social__item"><i class="fa fa-twitter"></i></a>
-                <a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a>
+                <a href="https://plus.google.com/112809676147441559550" target="_blank" class="social__item"><i class="fa fa-google-plus"></i></a>
+                <a href="viber://add?number=0123456789" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
             <button type="button" class="header__navbar-toggle js-navbar-toggle">
