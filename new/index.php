@@ -370,7 +370,7 @@ include 'parts/navigation.php';
         </div>
         <div class="widget js-widget widget--landing">
           <div class="widget__header">
-            <h2 class="widget__title"><?=$lang['home.partners']?></h2>
+            <h2 class="widget__title"><?=$lang['navigation.references']?></h2>
             <!-- <h5 class="widget__headline">At RS, our partners make great digital experiences possible by offering our products, consulting expertise and the products of our technology partners</h5> -->
           </div>
           <div class="widget__content">

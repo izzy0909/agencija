@@ -688,14 +688,14 @@ $(document).pngFix( );
                        <div id="napredna">
                             <table id="id-form" >
                                 <tr style="background-color:#f3f3f3;">
-                                <td style="width: 153px;"><label><input type="checkbox" name="kablovska" class="napredna_input"> Kablovska/Sat</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="tv"> TV</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="klima"> Klima</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="internet" > Internet</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="ima_telefon" > Telefon</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="vesmasina" > Veš mašina</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="kuhinjskielementi" > Kuhinjski elementi</label></td>
-                                <td style="width: 153px;"><label><input type="checkbox" name="plakari" > Plakari</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="kablovska" class="napredna_input" <?php if(isset($_GET['kablovska'])){echo 'checked';} ?> > Kablovska/Sat</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="tv" <?php if(isset($_GET['tv'])){echo 'checked';} ?> > TV</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="klima" <?php if(isset($_GET['klima'])){echo 'checked';} ?> > Klima</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="internet"  <?php if(isset($_GET['internet'])){echo 'checked';} ?> > Internet</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="ima_telefon" <?php if(isset($_GET['ima_telefon'])){echo 'checked';} ?> > Telefon</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="vesmasina"  <?php if(isset($_GET['vesmasina'])){echo 'checked';} ?> > Veš mašina</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="kuhinjskielementi"  <?php if(isset($_GET['kuhinjskielementi'])){echo 'checked';} ?> > Kuhinjski elementi</label></td>
+                                <td style="width: 153px;"><label><input type="checkbox" name="plakari" <?php if(isset($_GET['plakari'])){echo 'checked';} ?> > Plakari</label></td>
                                 </tr>    
                                 <tr>
                                 <td><label><input type="checkbox" name="interfon" > Interfon</label></td>
