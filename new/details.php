@@ -687,7 +687,7 @@ include 'parts/navigation.php';
                     $thumb = prikaziSlikuThumb($item[0]);
                     echo '<div class="listing__item">';
                     echo    '<div class="properties properties--grid">';
-                    echo        '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(../admin/slike/watermark_' . $thumb['naziv'] . ');">';
+                    echo        '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" class="item-photo"><div class="thumb-div" style="background-image:url(/../admin/slike/watermark_' . $thumb['naziv'] . ');">';
                     echo        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>';
                     echo        '</div></a><span class="properties__ribon">' . $item['kategorija'] . '</span></div>';
                     //    <!-- end of block .properties__thumb-->
