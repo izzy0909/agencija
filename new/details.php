@@ -122,7 +122,14 @@ include 'parts/navigation.php';
                     </div>
                     <br />
                     <div class="property__price"><strong class="property__price-value"><?=$stan['cena']?>&#8364;</strong></div>
-                    <h4 class="property__commision"><?=$lang['details.commision']?>: <strong><?=$stan['provizija']?>%</strong></h4>
+                    <h4 class="property__commision">
+                      <?=$lang['details.commision']?>:
+                    <?php if(!empty($stan['provizija']) && $stan['provizija'] != 0) { ?>
+                      <strong><?=$stan['provizija']?>%</strong>
+                    <?php } else { ?>
+                      <strong>50%</strong>
+                    <?php } ?>
+                    </h4>
                     <div class="property__actions">
                       <button type="button" id="setfavorite" class="btn--default" data-func="<?php if($fav){echo 'remove';} else{echo 'add';}?>" data-id="<?=$stan[0]?>"><i class="fa fa-star"></i><?php if($fav){echo $lang['details.favoriteremove'];} else{ echo $lang['details.favorite'];} ?></button>
                     </div>
