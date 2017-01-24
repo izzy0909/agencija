@@ -16,6 +16,7 @@ $tempurl = 'agencija/new/';
 
 if(isset($_REQUEST['category'])){
 	$category = $_REQUEST['category'];
+    $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
 	$type = isset($_REQUEST['type']) ? $_REQUEST['type'] : null;
     $structure = isset($_REQUEST['structure']) ? $_REQUEST['structure'] : null;
     $location = isset($_REQUEST['location']) ? $_REQUEST['location'] : null;
@@ -26,11 +27,11 @@ if(isset($_REQUEST['category'])){
     $price_to = isset($_REQUEST['price_to']) ? $_REQUEST['price_to'] : null;
     $size_from = isset($_REQUEST['size_from']) ? $_REQUEST['size_from'] : null;
     $size_to = isset($_REQUEST['size_to']) ? $_REQUEST['size_to'] : null;
-    $start = isset($_REQUEST['start']) ? $_REQUEST['start'] : 0;
+    $start = isset($_REQUEST['start']) ? $_REQUEST['start'] : 1;
 
     $order = isset($_REQUEST['order']) ? $_REQUEST['order'] : 1;
 
-    $items =      getItems     ($category, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, $start);
+    $items =      getItems     ($category, $id, $type, $structure, $location, $heat, $setup, $floor, $price_from, $price_to, $size_from, $size_to, $order, $start);
 
     $append = '';
 
