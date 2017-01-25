@@ -377,7 +377,7 @@ include 'parts/navigation.php';
             <!-- BEGIN PARTNERS-->
             <div id="partners-slider" class="partners">
               <div class="partners__slider js-slick-slider">
-                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_komora.jpg" alt=""><span class="partners__name">Privredna komora Srbije</span></a>
+                <!-- <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_komora.jpg" alt=""><span class="partners__name">Privredna komora Srbije</span></a> -->
                 <!-- <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_firma.jpg" alt=""><span class="partners__name">Firma od poverenja</span></a> -->
                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_jungle.jpg" alt=""><span class="partners__name">Jungle Tribe</span></a>
                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_meda.jpg" alt=""><span class="partners__name">Meda</span></a>

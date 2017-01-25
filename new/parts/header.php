@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="header__contacts">
-              <a class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><span class="header__span">060/4480659</span><span class="header__span">011/4054325</span></a>
+              <span class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><a class="header__span" href="tel:+381604480659" style="color:#fff;">060/4480659</a><a class="header__span" href="tel:+381114054325" style="color:#fff;">011/4054325</a></span>
             </div>
             <!-- end of block .header__contacts-->
             <div class="header__social">

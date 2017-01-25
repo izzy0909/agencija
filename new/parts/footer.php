@@ -51,8 +51,9 @@
                     </div>
                   </div> -->
                   <div class="widget__content" style="text-align: center;">
-                    <img src="/<?=$tempurl?>assets/img/firma_od_poverenja.png" />
-                    <div>
+                    <img src="/<?=$tempurl?>assets/img/firma_od_poverenja.png" style="padding-right:5px;"/>
+                    <img src="/<?=$tempurl?>assets/img/partner_komora.jpg" />
+                    <div style="padding-top:10px;">
                       <span>Broj posrednika u registru: 150</span>
                     </div>
                   </div>
