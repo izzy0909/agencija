@@ -39,7 +39,7 @@ include 'parts/navigation.php';
                           </dl>
                           <dl class="contacts__address-column">
                             <dt class="contacts__address-column__title"><?=$lang['contact.telephones']?>:</dt>
-                            <dd>011/4054325<br>060/4480659</dd>
+                            <dd><a href="tel:+381114054325">011/4054325</a><br><a href="tel:+381604480659">060/4480659</a></dd>
                             <dt class="contacts__address-column__title">Fax:</dt>
                             <dd>011/4054325</dd>
                           </dl>
