@@ -147,7 +147,7 @@ include 'parts/navigation.php';
                       <div class="row">
                           <div class="form-group">
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
-                            <input type="text" name="cat-id" id="cat-id" class="form-control">
+                            <input type="text" name="cat-id" id="cat-id" class="form-control" value="<?php if(isset($id)){echo $id; }?>">
                           </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">

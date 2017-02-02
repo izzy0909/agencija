@@ -22,6 +22,7 @@ RewriteRule ^zakoni/$ laws.php [L]
 
 RewriteRule ^karijera/$ career.php [L]
 RewriteRule ^reference/$ references.php [L]
+RewriteRule ^partneri/$ partners.php [L]
 RewriteRule ^biznis-paket-plus/$ biznis.php [L]
 
 RewriteRule ^omiljene-nekretnine/$ favorites.php [L]

@@ -354,7 +354,7 @@ include 'parts/navigation.php';
                   </div>
                   <div class="widget__content">
                     <!-- BEGIN SEARCH-->
-                    <form id="searchForm" name="searchForm" action="<?=$stan['kategorija']?>.php" class="form form--flex form--search js-search-form form--sidebar">
+                    <form id="searchForm" name="searchForm" action="/<?php echo $tempurl . $stan['kategorija'];?>/" method="POST" class="form form--flex form--search js-search-form form--sidebar">
                       <div class="row">
                           <div class="form-group">
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
@@ -658,6 +658,7 @@ include 'parts/navigation.php';
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">
+                        <input type="hidden" name="pretraga" value="1" />
                           <button type="button" class="form__reset js-form-reset"><?=$lang['search.form.reset']?></button>
                           <button type="submit" name="search" value="1" class="form__submit"><?=$lang['search.form.search']?></button>
                         </div>

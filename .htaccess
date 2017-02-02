@@ -25,3 +25,10 @@ RewriteRule ^(.*)$ /new/$1
 
 RewriteCond %{HTTP_HOST} ^(www.)?jevticnekretnine.rs$
 RewriteRule ^(/)?$ new/index.php [L]
+
+RewriteCond %{HTTP_HOST} ^(www.)?jevticnekretnine.rs$
+Redirect izdavanje.php /izdavanje/
+
+RedirectMatch "^/prodaja\.php/?$" "http://jevticnekretnine.rs/prodaja/"
+RedirectMatch "^/izdavanje\.php/?$" "http://jevticnekretnine.rs/izdavanje/"
+RedirectMatch "^/kontakt\.php/?$" "http://jevticnekretnine.rs/kontakt/"

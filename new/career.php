@@ -38,7 +38,7 @@ include 'parts/navigation.php';
                           <h3>OPERATER-KOORDINATOR</h3>
                           <p><strong>OPIS POSLA:</strong><br />Posao je kancelarijskog tipa I zasniva se na poznavanju psihologije rada u prodaji i veštini efikasne komunikacije. Posao je dinamičan, omogućava kvalitetne kontakte, brzo napredovanje, stalnu edukaciju i dobru zaradu.</p>
                           <ul>
-                            <li>Svakodnevni kontak sa klijentima</li>
+                            <li>Svakodnevni kontakt sa klijentima</li>
                             <li>Prezentovanje usluga</li>
                             <li>Zakazivanje sastanaka između klijenata</li>
                             <li>Pregovaranje o ceni nekretnine</li>

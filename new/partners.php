@@ -16,10 +16,10 @@ include 'parts/navigation.php';
             <div class="row">
               <!-- BEGIN site-->
                 <header class="site__header">
-                  <h1 class="site__title"><?=$lang['navigation.references']?></h1>
+                  <h1 class="site__title"><?=$lang['home.partners']?></h1>
                 </header>
                 <div class="site__main">
-                                            <br />
+                <br />
                   <div class="widget js-widget widget--main widget--no-margin">
                     <div class="widget__content" style="background-color:white; padding-top:10px; padding-bottom:10px;">
                       <article class="article article--list article--details">
@@ -27,14 +27,8 @@ include 'parts/navigation.php';
                           <div class="widget__content">
                             <div id="partners-slider" class="partners">
                               <div class="partners__slider js-slick-slider">
-<!--                                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_komora.jpg" alt=""><span class="partners__name">Privredna komora Srbije</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_firma.jpg" alt=""><span class="partners__name">Firma od poverenja</span></a> -->
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_jungle.jpg" alt=""><span class="partners__name">Jungle Tribe</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_meda.jpg" alt=""><span class="partners__name">Meda</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_medicinska.jpg" alt=""><span class="partners__name">Srednja medicinska škola Beograd</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_tethyan.jpg" alt=""><span class="partners__name">Tethyan Resources</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_tpservis.jpg" alt=""><span class="partners__name">TP Servis</span></a>
-                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_fonlider.jpg" alt=""><span class="partners__name">Fonlider</span></a>
+                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_rightplace.jpg" alt=""><span class="partners__name">Right Place</span></a>
+                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_righttravel.jpg" alt=""><span class="partners__name">Right Travel</span></a>
                               </div>
                               <div class="partners__controls">
                                 <button class="partners__arrow partners__arrow--prev js-partners-prev"></button>

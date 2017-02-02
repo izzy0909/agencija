@@ -47,6 +47,7 @@
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>ugovori/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.contracts']?></a></li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>zakoni/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.about.laws']?></a></li>
                         <li class="navbar__subitem"><a href="/<?=$tempurl?>reference/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['navigation.references']?></a></li>
+                        <li class="navbar__subitem"><a href="/<?=$tempurl?>partneri/" class="navbar__sublink js-navbar-sub-sublink"><?=$lang['home.partners']?></a></li>
                       </ul>
                     </div>
                   </div>

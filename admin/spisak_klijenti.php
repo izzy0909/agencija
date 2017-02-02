@@ -466,7 +466,7 @@ $(document).pngFix( );
 				if($page != "0"){
 					$prev = $page-1;
 					//echo "<a href=\"spisak_stanova.php?q=$section&p=$prev\">Prev</a>";
-					echo '<a href="spisak_ponuda.php?stranica='.$prev.'" class="page-left"></a>';
+					echo '<a href="spisak_klijenti.php?stranica='.$prev.'" class="page-left"></a>';
 				}
 				 	 
 					  
@@ -480,7 +480,7 @@ $(document).pngFix( );
 				if($page < $page_amount){
 					$next = $page+1;
 					//echo "<a href=\"spisak_stanova.php?q=$section&p=$next\">Next</a>";
-					echo '<a href="spisak_ponuda.php?stranica='.$next.'" class="page-right"></a>';
+					echo '<a href="spisak_klijenti.php?stranica='.$next.'" class="page-right"></a>';
 				}
 				
 				
