@@ -31,7 +31,7 @@
                   </div>
                   <div class="widget__content">
                     <section class="address address--footer">
-                      <address class="address__main"><span>Bokeljska 7, Beograd.</span><a href="mailto:info@jevticnekretnine.rs">info@jevticnekretnine.rs</a><a href="tel:+381114054325">011/4054325</a><a href="tel:+381604480659">060/4480659</a></address>
+                      <address class="address__main"><span>Bokeljska 7, Beograd.</span><a href="mailto:info@jevticnekretnine.rs">info@jevticnekretnine.rs</a><a href="tel:+381114054325" onclick="ga('send', 'event', 'Telefon', 'Klik', 'TelefonFooter', '<?php if(isset($_REQUEST['id'])){echo $_REQUEST['id'];} else {echo $active;} ?>'">011/4054325</a><a href="tel:+381604480659" onclick="ga('send', 'event', 'Telefon', 'Klik', 'TelefonFooter', '<?php if(isset($_REQUEST['id'])){echo $_REQUEST['id'];} else {echo $active;} ?>'">060/4480659</a></address>
                     </section>
                     <!-- end of block .address-->
                   </div>

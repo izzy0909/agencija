@@ -110,12 +110,38 @@ include 'parts/navigation.php';
                             <span class="rrssb-text">linkedin</span>
                           </a>
                         </li>
-                        <li class="rrssb-whatsapp">
-                          <a href="whatsapp://send?text=http://jevticnekretnine.com/detalji/<?php echo $stan[0] . '/' . $stan['kategorija'] . '-' . str_replace(' ', '-', $stan['tip']) . '-' . str_replace(' ', '-', $stan['opstina']) ?>/" data-action="share/whatsapp/share">
+                        <li class="rrssb-viber">
+                          <a href="viber://forward?text=http://jevticnekretnine.com/detalji/<?php echo $stan[0] . '/' . $stan['kategorija'] . '-' . str_replace(' ', '-', $stan['tip']) . '-' . str_replace(' ', '-', $stan['opstina']) ?>/" data-action="share/viber/share">
                             <span class="rrssb-icon">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90"><path d="M90 43.84c0 24.214-19.78 43.842-44.182 43.842a44.256 44.256 0 0 1-21.357-5.455L0 90l7.975-23.522a43.38 43.38 0 0 1-6.34-22.637C1.635 19.63 21.415 0 45.818 0 70.223 0 90 19.628 90 43.84zM45.818 6.983c-20.484 0-37.146 16.535-37.146 36.86 0 8.064 2.63 15.533 7.076 21.61l-4.64 13.688 14.274-4.537A37.122 37.122 0 0 0 45.82 80.7c20.48 0 37.145-16.533 37.145-36.857S66.3 6.983 45.818 6.983zm22.31 46.956c-.272-.447-.993-.717-2.075-1.254-1.084-.537-6.41-3.138-7.4-3.495-.993-.36-1.717-.54-2.438.536-.72 1.076-2.797 3.495-3.43 4.212-.632.72-1.263.81-2.347.27-1.082-.536-4.57-1.672-8.708-5.332-3.22-2.848-5.393-6.364-6.025-7.44-.63-1.076-.066-1.657.475-2.192.488-.482 1.084-1.255 1.625-1.882.543-.628.723-1.075 1.082-1.793.363-.718.182-1.345-.09-1.884-.27-.537-2.438-5.825-3.34-7.977-.902-2.15-1.803-1.793-2.436-1.793-.63 0-1.353-.09-2.075-.09-.722 0-1.896.27-2.89 1.344-.99 1.077-3.788 3.677-3.788 8.964 0 5.288 3.88 10.397 4.422 11.113.54.716 7.49 11.92 18.5 16.223 11.01 4.3 11.01 2.866 12.996 2.686 1.984-.18 6.406-2.6 7.312-5.107.9-2.513.9-4.664.63-5.112z"/></svg>
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322 322" style="enable-background:new 0 0 322 322;" xml:space="preserve">
+                              <g id="XMLID_7_">
+                                <path id="XMLID_8_" d="M275.445,135.123c0.387-45.398-38.279-87.016-86.192-92.771c-0.953-0.113-1.991-0.285-3.09-0.467
+                                  c-2.372-0.393-4.825-0.797-7.3-0.797c-9.82,0-12.445,6.898-13.136,11.012c-0.672,4-0.031,7.359,1.902,9.988
+                                  c3.252,4.422,8.974,5.207,13.57,5.836c1.347,0.186,2.618,0.359,3.682,0.598c43.048,9.619,57.543,24.742,64.627,67.424
+                                  c0.173,1.043,0.251,2.328,0.334,3.691c0.309,5.102,0.953,15.717,12.365,15.717h0.001c0.95,0,1.971-0.082,3.034-0.244
+                                  c10.627-1.615,10.294-11.318,10.134-15.98c-0.045-1.313-0.088-2.555,0.023-3.381C275.429,135.541,275.444,135.332,275.445,135.123z
+                                  "/>
+                                <path id="XMLID_9_" d="M176.077,25.688c1.275,0.092,2.482,0.18,3.487,0.334c70.689,10.871,103.198,44.363,112.207,115.605
+                                  c0.153,1.211,0.177,2.688,0.202,4.252c0.09,5.566,0.275,17.145,12.71,17.385l0.386,0.004c3.9,0,7.002-1.176,9.221-3.498
+                                  c3.871-4.049,3.601-10.064,3.383-14.898c-0.053-1.186-0.104-2.303-0.091-3.281C318.481,68.729,255.411,2.658,182.614,0.201
+                                  c-0.302-0.01-0.59,0.006-0.881,0.047c-0.143,0.021-0.408,0.047-0.862,0.047c-0.726,0-1.619-0.063-2.566-0.127
+                                  C177.16,0.09,175.862,0,174.546,0c-11.593,0-13.797,8.24-14.079,13.152C159.817,24.504,170.799,25.303,176.077,25.688z"/>
+                                <path id="XMLID_10_" d="M288.36,233.703c-1.503-1.148-3.057-2.336-4.512-3.508c-7.718-6.211-15.929-11.936-23.87-17.473
+                                  c-1.648-1.148-3.296-2.297-4.938-3.449c-10.172-7.145-19.317-10.617-27.957-10.617c-11.637,0-21.783,6.43-30.157,19.109
+                                  c-3.71,5.621-8.211,8.354-13.758,8.354c-3.28,0-7.007-0.936-11.076-2.783c-32.833-14.889-56.278-37.717-69.685-67.85
+                                  c-6.481-14.564-4.38-24.084,7.026-31.832c6.477-4.396,18.533-12.58,17.679-28.252c-0.967-17.797-40.235-71.346-56.78-77.428
+                                  c-7.005-2.576-14.365-2.6-21.915-0.06c-19.02,6.394-32.669,17.623-39.475,32.471C2.365,64.732,2.662,81.578,9.801,99.102
+                                  c20.638,50.666,49.654,94.84,86.245,131.293c35.816,35.684,79.837,64.914,130.839,86.875c4.597,1.978,9.419,3.057,12.94,3.844
+                                  c1.2,0.27,2.236,0.5,2.991,0.707c0.415,0.113,0.843,0.174,1.272,0.178l0.403,0.002c0.001,0,0,0,0.002,0
+                                  c23.988,0,52.791-21.92,61.637-46.91C313.88,253.209,299.73,242.393,288.36,233.703z"/>
+                                <path id="XMLID_11_" d="M186.687,83.564c-4.107,0.104-12.654,0.316-15.653,9.021c-1.403,4.068-1.235,7.6,0.5,10.498
+                                  c2.546,4.252,7.424,5.555,11.861,6.27c16.091,2.582,24.355,11.48,26.008,28c0.768,7.703,5.955,13.082,12.615,13.082h0.001
+                                  c0.492,0,0.995-0.029,1.496-0.09c8.01-0.953,11.893-6.838,11.542-17.49c0.128-11.117-5.69-23.738-15.585-33.791
+                                  C209.543,88.98,197.574,83.301,186.687,83.564z"/>
+                              </g>
+                              </svg>
                             </span>
-                            <span class="rrssb-text">Whatsapp</span>
+                            <span class="rrssb-text">Viber</span>
                           </a>
                         </li>
                       </ul>
@@ -358,47 +384,46 @@ include 'parts/navigation.php';
                       <div class="row">
                           <div class="form-group">
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
-                            <input type="text" id="cat-id" name="cat-id" class="form-control" value="<?=$stan[0]?>">
+                            <input type="text" id="cat-id" name="cat-id" class="form-control">
                           </div>
                         <div class="form-group">
                           <label for="in-contract-type" class="control-label"><?=$lang['search.form.category']?></label>
-                          <select id="in-contract-type" data-placeholder="---" class="form-control" disabled>
-                            <option label=" "></option>
+                          <select id="in-contract-type" data-placeholder="---" class="form-control catfix">
                             <option value="izdavanje" <?php if($stan['kategorija']=='izdavanje'){echo 'selected';} ?> >Izdavanje</option>
                             <option value="prodaja" <?php if($stan['kategorija']=='prodaja'){echo 'selected';} ?> >Prodaja</option>
                           </select>
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['tip']?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                                 <li>
-                                  <input id="checkbox_type_1" name="type[]" type="checkbox" value="Stan" class="in-checkbox" <?php if($stan['tip']=='Stan'){echo 'checked';}?> >
+                                  <input id="checkbox_type_1" name="type[]" type="checkbox" value="Stan" class="in-checkbox">
                                   <label for="checkbox_type_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.stan']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_2" name="type[]" type="checkbox" value="Kuća" class="in-checkbox" <?php if($stan['tip']=='Kuća'){echo 'checked';}?> >
+                                  <input id="checkbox_type_2" name="type[]" type="checkbox" value="Kuća" class="in-checkbox" >
                                   <label for="checkbox_type_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.kuca']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_3" name="type[]" type="checkbox" value="Poslovni prostor" class="in-checkbox" <?php if($stan['tip']=='Poslovni prostor'){echo 'checked';}?> >
+                                  <input id="checkbox_type_3" name="type[]" type="checkbox" value="Poslovni prostor" class="in-checkbox" >
                                   <label for="checkbox_type_3" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.poslovniprostor']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_4" name="type[]" type="checkbox" value="Magacin" class="in-checkbox" <?php if($stan['tip']=='Magacin'){echo 'checked';}?> >
+                                  <input id="checkbox_type_4" name="type[]" type="checkbox" value="Magacin" class="in-checkbox" >
                                   <label for="checkbox_type_4" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.magacin']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_5" name="type[]" type="checkbox" value="Lokal" class="in-checkbox" <?php if($stan['tip']=='Lokal'){echo 'checked';}?> >
+                                  <input id="checkbox_type_5" name="type[]" type="checkbox" value="Lokal" class="in-checkbox">
                                   <label for="checkbox_type_5" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.lokal']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_6" name="type[]" type="checkbox" value="Garaža" class="in-checkbox" <?php if($stan['tip']=='Garaža'){echo 'checked';}?> >
+                                  <input id="checkbox_type_6" name="type[]" type="checkbox" value="Garaža" class="in-checkbox" >
                                   <label for="checkbox_type_6" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.garaza']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_type_7" name="type[]" type="checkbox" value="Poslovna zgrada" class="in-checkbox" <?php if($stan['tip']=='Poslovna zgrada'){echo 'checked';}?> >
+                                  <input id="checkbox_type_7" name="type[]" type="checkbox" value="Poslovna zgrada" class="in-checkbox" >
                                   <label for="checkbox_type_7" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.type.poslovnazgrada']?></label>
                                 </li>
                               </ul>
@@ -408,47 +433,47 @@ include 'parts/navigation.php';
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.structure']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['stan_tip'];?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                                 <li>
-                                  <input id="checkbox_structure_1" name= "structure[]" type="checkbox" value="Garsonjera" class="in-checkbox" <?php if($stan['stan_tip']=='Garsonjera'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_1" name= "structure[]" type="checkbox" value="Garsonjera" class="in-checkbox" >
                                   <label for="checkbox_structure_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.garsonjera']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_2" name= "structure[]" type="checkbox" value="Jednosoban" class="in-checkbox" <?php if($stan['stan_tip']=='Jednosoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_2" name= "structure[]" type="checkbox" value="Jednosoban" class="in-checkbox" >
                                   <label for="checkbox_structure_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.jednosoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_3" name= "structure[]" type="checkbox" value="Jednoiposoban" class="in-checkbox" <?php if($stan['stan_tip']=='Jednoiposoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_3" name= "structure[]" type="checkbox" value="Jednoiposoban" class="in-checkbox" >
                                   <label for="checkbox_structure_3" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.jednoiposoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_4" name= "structure[]" type="checkbox" value="Dvosoban" class="in-checkbox" <?php if($stan['stan_tip']=='Dvosoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_4" name= "structure[]" type="checkbox" value="Dvosoban" class="in-checkbox" >
                                   <label for="checkbox_structure_4" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.dvosoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_5" name= "structure[]" type="checkbox" value="Dvoiposoban" class="in-checkbox" <?php if($stan['stan_tip']=='Dvoiposoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_5" name= "structure[]" type="checkbox" value="Dvoiposoban" class="in-checkbox" >
                                   <label for="checkbox_structure_5" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.dvoiposoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_6" name= "structure[]" type="checkbox" value="Trosoban" class="in-checkbox" <?php if($stan['stan_tip']=='Trosoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_6" name= "structure[]" type="checkbox" value="Trosoban" class="in-checkbox" >
                                   <label for="checkbox_structure_6" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.trosoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_7" name= "structure[]" type="checkbox" value="Troiposoban" class="in-checkbox" <?php if($stan['stan_tip']=='Troiposoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_7" name= "structure[]" type="checkbox" value="Troiposoban" class="in-checkbox" >
                                   <label for="checkbox_structure_7" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.troiposoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_8" name= "structure[]" type="checkbox" value="Četvorosoban" class="in-checkbox" <?php if($stan['stan_tip']=='Četvorosoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_8" name= "structure[]" type="checkbox" value="Četvorosoban" class="in-checkbox" >
                                   <label for="checkbox_structure_8" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.cetvorosoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_9" name= "structure[]" type="checkbox" value="Četvoroiposoban" class="in-checkbox" <?php if($stan['stan_tip']=='Četvoroiposoban'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_9" name= "structure[]" type="checkbox" value="Četvoroiposoban" class="in-checkbox" >
                                   <label for="checkbox_structure_9" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.cetvoroiposoban']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_structure_10" name= "structure[]" type="checkbox" value="Petosoban i veći" class="in-checkbox" <?php if($stan['stan_tip']=='Petosoban i veći'){echo 'checked';}?> >
+                                  <input id="checkbox_structure_10" name= "structure[]" type="checkbox" value="Petosoban i veći" class="in-checkbox" >
                                   <label for="checkbox_structure_10" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.structure.petosobaniveci']?></label>
                                 </li>
                               </ul>
@@ -458,12 +483,12 @@ include 'parts/navigation.php';
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.location']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['opstina']?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                               <?php foreach($areas as $lokacija){
                                 echo '<li>';
-                                echo '<input id="checkbox_location_' . $lokacija['id'] . '" type="checkbox" name="location[]"  value="' . $lokacija['opstina'] . '" class="in-checkbox"'; if($stan['opstina']==$lokacija['opstina']){echo 'checked';} echo '>';
+                                echo '<input id="checkbox_location_' . $lokacija['id'] . '" type="checkbox" name="location[]"  value="' . $lokacija['opstina'] . '" class="in-checkbox">';
                                 echo '<label for="checkbox_location_' . $lokacija['id'] . '" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label">' . $lokacija['opstina'] . '</label>';
                                 echo '</li>';
                               };
@@ -475,43 +500,43 @@ include 'parts/navigation.php';
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.heat']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['grejanje']?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                                 <li>
-                                  <input id="checkbox_heat_1" type="checkbox" name="heat[]" value="CG" class="in-checkbox" <?php if($stan['grejanje']=='CG'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_1" type="checkbox" name="heat[]" value="CG" class="in-checkbox" >
                                   <label for="checkbox_heat_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.cg']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_2" type="checkbox" name="heat[]" value="EG" class="in-checkbox" <?php if($stan['grejanje']=='EG'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_2" type="checkbox" name="heat[]" value="EG" class="in-checkbox" >
                                   <label for="checkbox_heat_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.eg']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_3" type="checkbox" name="heat[]" value="TA" class="in-checkbox" <?php if($stan['grejanje']=='TA'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_3" type="checkbox" name="heat[]" value="TA" class="in-checkbox" >
                                   <label for="checkbox_heat_3" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.ta']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_4" type="checkbox" name="heat[]" navalueme="PG" class="in-checkbox" <?php if($stan['grejanje']=='PG'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_4" type="checkbox" name="heat[]" navalueme="PG" class="in-checkbox" >
                                   <label for="checkbox_heat_4" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.pg']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_5" type="checkbox" name="heat[]" value="Klima uređaj" class="in-checkbox" <?php if($stan['grejanje']=='Klima uređaj'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_5" type="checkbox" name="heat[]" value="Klima uređaj" class="in-checkbox" >
                                   <label for="checkbox_heat_5" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.klima']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_6" type="checkbox" name="heat[]" value="Na gas" class="in-checkbox" <?php if($stan['grejanje']=='Na gas'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_6" type="checkbox" name="heat[]" value="Na gas" class="in-checkbox" >
                                   <label for="checkbox_heat_6" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.gas']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_7" type="checkbox" name="heat[]" value="Na struju" class="in-checkbox" <?php if($stan['grejanje']=='Na struju'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_7" type="checkbox" name="heat[]" value="Na struju" class="in-checkbox" >
                                   <label for="checkbox_heat_7" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.struja']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_8" type="checkbox" name="heat[]" value="Norveški radijatori" class="in-checkbox" <?php if($stan['grejanje']=='Norveški radijatori'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_8" type="checkbox" name="heat[]" value="Norveški radijatori" class="in-checkbox" >
                                   <label for="checkbox_heat_8" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.norveski']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_heat_9" type="checkbox" name="heat[]" value="Mermerni radijatori" class="in-checkbox" <?php if($stan['grejanje']=='Mermerni radijatori'){echo 'checked';}?> >
+                                  <input id="checkbox_heat_9" type="checkbox" name="heat[]" value="Mermerni radijatori" class="in-checkbox" >
                                   <label for="checkbox_heat_9" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.heat.mermerni']?></label>
                                 </li>
                               </ul>
@@ -521,19 +546,19 @@ include 'parts/navigation.php';
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.setup']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['namestenost']?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                                 <li>
-                                  <input id="checkbox_setup_1" type="checkbox" name="setup[]" value="Namešten" class="in-checkbox" <?php if($stan['namestenost']=='Namešten'){echo 'checked';}?> >
+                                  <input id="checkbox_setup_1" type="checkbox" name="setup[]" value="Namešten" class="in-checkbox" >
                                   <label for="checkbox_setup_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.yes']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_setup_3" type="checkbox" name="setup[]" value="Polunamešten" class="in-checkbox" <?php if($stan['namestenost']=='Polunamešten'){echo 'checked';}?> >
+                                  <input id="checkbox_setup_3" type="checkbox" name="setup[]" value="Polunamešten" class="in-checkbox" >
                                   <label for="checkbox_setup_3" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.half']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_setup_2" type="checkbox" name="setup[]" value="Nenamešten" class="in-checkbox" <?php if($stan['namestenost']=='Nenamešten'){echo 'checked';}?> >
+                                  <input id="checkbox_setup_2" type="checkbox" name="setup[]" value="Nenamešten" class="in-checkbox" >
                                   <label for="checkbox_setup_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.no']?></label>
                                 </li>
                               </ul>
@@ -543,99 +568,99 @@ include 'parts/navigation.php';
                         </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.floor']?></span>
                           <div class="dropdown dropdown--select">
-                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?=$stan['sprat']?></button>
+                            <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn">---</button>
                             <div class="dropdown-menu js-dropdown-menu js-select-checkboxes">
                               <ul>
                                 <li>
-                                  <input id="checkbox_floor_1" type="checkbox" name="floor[]" value="Suteren" class="in-checkbox" <?php if($stan['sprat']=='Suteren'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_1" type="checkbox" name="floor[]" value="Suteren" class="in-checkbox" >
                                   <label for="checkbox_floor_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.suteren']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_2" type="checkbox" name="floor[]" value="Prizemlje" class="in-checkbox" <?php if($stan['sprat']=='Prizemlje'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_2" type="checkbox" name="floor[]" value="Prizemlje" class="in-checkbox" >
                                   <label for="checkbox_floor_2" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.prizemlje']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_25" type="checkbox" name="floor[]" value="Visoko prizemlje" class="in-checkbox" <?php if($stan['sprat']=='Visoko prizemlje'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_25" type="checkbox" name="floor[]" value="Visoko prizemlje" class="in-checkbox" >
                                   <label for="checkbox_floor_25" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.visokoprizemlje']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_3" type="checkbox" name="floor[]" value="1. sprat" class="in-checkbox" <?php if($stan['sprat']=='1. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_3" type="checkbox" name="floor[]" value="1. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_3" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s1']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_4" type="checkbox" name="floor[]" value="2. sprat" class="in-checkbox" <?php if($stan['sprat']=='2. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_4" type="checkbox" name="floor[]" value="2. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_4" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s2']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_5" type="checkbox" name="floor[]" value="3. sprat" class="in-checkbox" <?php if($stan['sprat']=='3. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_5" type="checkbox" name="floor[]" value="3. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_5" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s3']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_6" type="checkbox" name="floor[]" value="4. sprat" class="in-checkbox" <?php if($stan['sprat']=='4. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_6" type="checkbox" name="floor[]" value="4. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_6" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s4']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_7" type="checkbox" name="floor[]" value="5. sprat" class="in-checkbox" <?php if($stan['sprat']=='5. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_7" type="checkbox" name="floor[]" value="5. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_7" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s5']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_8" type="checkbox" name="floor[]" value="6. sprat" class="in-checkbox" <?php if($stan['sprat']=='6. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_8" type="checkbox" name="floor[]" value="6. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_8" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s6']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_9" type="checkbox" name="floor[]" value="7. sprat" class="in-checkbox" <?php if($stan['sprat']=='7. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_9" type="checkbox" name="floor[]" value="7. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_9" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s7']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_10" type="checkbox" name="floor[]" value="8. sprat" class="in-checkbox" <?php if($stan['sprat']=='8. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_10" type="checkbox" name="floor[]" value="8. sprat" class="in-checkbox"  >
                                   <label for="checkbox_floor_10" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s8']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_11" type="checkbox" name="floor[]" value="9. sprat" class="in-checkbox" <?php if($stan['sprat']=='9. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_11" type="checkbox" name="floor[]" value="9. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_11" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s9']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_12" type="checkbox" name="floor[]" value="10. sprat" class="in-checkbox" <?php if($stan['sprat']=='10. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_12" type="checkbox" name="floor[]" value="10. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_12" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_13" type="checkbox" name="floor[]" value="11. sprat" class="in-checkbox" <?php if($stan['sprat']=='11. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_13" type="checkbox" name="floor[]" value="11. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_13" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_14" type="checkbox" name="floor[]" value="12. sprat" class="in-checkbox" <?php if($stan['sprat']=='12. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_14" type="checkbox" name="floor[]" value="12. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_14" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_15" type="checkbox" name="floor[]" value="13. sprat" class="in-checkbox" <?php if($stan['sprat']=='13. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_15" type="checkbox" name="floor[]" value="13. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_15" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_16" type="checkbox" name="floor[]" value="14. sprat" class="in-checkbox" <?php if($stan['sprat']=='14. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_16" type="checkbox" name="floor[]" value="14. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_16" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_17" type="checkbox" name="floor[]" value="15. sprat" class="in-checkbox" <?php if($stan['sprat']=='15. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_17" type="checkbox" name="floor[]" value="15. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_17" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_18" type="checkbox" name="floor[]" value="16. sprat" class="in-checkbox" <?php if($stan['sprat']=='16. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_18" type="checkbox" name="floor[]" value="16. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_18" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_19" type="checkbox" name="floor[]" value="17. sprat" class="in-checkbox" <?php if($stan['sprat']=='17. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_19" type="checkbox" name="floor[]" value="17. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_19" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_20" type="checkbox" name="floor[]" value="18. sprat" class="in-checkbox" <?php if($stan['sprat']=='18. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_20" type="checkbox" name="floor[]" value="18. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_20" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_21" type="checkbox" name="floor[]" value="19. sprat" class="in-checkbox" <<?php if($stan['sprat']=='19. sprat'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_21" type="checkbox" name="floor[]" value="19. sprat" class="in-checkbox" >
                                   <label for="checkbox_floor_21" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                                 <li>
-                                  <input id="checkbox_floor_22" type="checkbox" name="floor[]" value="20. sprat i više" class="in-checkbox" <?php if($stan['sprat']=='20. sprat i više'){echo 'checked';}?> >
+                                  <input id="checkbox_floor_22" type="checkbox" name="floor[]" value="20. sprat i više" class="in-checkbox" >
                                   <label for="checkbox_floor_22" data-toggle="tooltip" data-placement="bottom" title="Tooltip on top" class="in-label"><?=$lang['search.form.floor.s10']?></label>
                                 </li>
                               </ul>
@@ -646,15 +671,15 @@ include 'parts/navigation.php';
                         <div class="form-group">
                           <label for="range_price" class="control-label"><?=$lang['search.form.price']?></label>
                           <div class="search-price-size">
-                            <input type="text" name="price_from" id="in-price-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="">
-                            <input type="text" name="price_to" id="in-price-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
+                            <input type="text" name="price_from" id="in-price-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="">
+                            <input type="text" name="price_to" id="in-price-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
                           </div>
                         </div>
                         <div class="form-group">
                           <label for="range_area" class="control-label"><?=$lang['search.form.size']?></label>
                           <div class="search-price-size">
-                            <input type="text" name="size_from" id="in-area-from" placeholder="From" data-input-type="from" class="form-control" style="margin-right:10px;" value="" >
-                            <input type="text" name="size_to" id="in-area-to" placeholder="To" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
+                            <input type="text" name="size_from" id="in-area-from" placeholder="<?=$lang['search.form.from']?>" data-input-type="from" class="form-control" style="margin-right:10px;" value="" >
+                            <input type="text" name="size_to" id="in-area-to" placeholder="<?=$lang['search.form.to']?>" data-input-type="to" class="form-control" style="margin-left:10px;" value="">
                           </div>
                         </div>
                         <div class="form__buttons form__buttons--double">

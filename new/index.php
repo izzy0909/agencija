@@ -23,7 +23,7 @@ include 'parts/navigation.php';
         <div class="widget js-widget">
           <div class="widget__content">
             <div class="banner js-banner banner--wide">
-              <div style="background-image: url(&quot;assets/img/banner-1.jpg&quot;);" class="banner__item">
+              <div style="background-image: url(&quot;assets/img/banner-2.jpg&quot;);" class="banner__item">
                 <div class="container">
                   <div class="row">
                     <div class="banner__caption">
@@ -385,6 +385,7 @@ include 'parts/navigation.php';
                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_tethyan.jpg" alt=""><span class="partners__name">Tethyan Resources</span></a>
                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_tpservis.jpg" alt=""><span class="partners__name">TP Servis</span></a>
                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_fonlider.jpg" alt=""><span class="partners__name">Fonlider</span></a>
+                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_blackbox.jpg" alt=""><span class="partners__name">BlackBox Photo</span></a>
               </div>
               <div class="partners__controls">
                 <button class="partners__arrow partners__arrow--prev js-partners-prev"></button>

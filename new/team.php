@@ -24,7 +24,7 @@ include 'parts/navigation.php';
                       <div class="listing listing--grid">
                         <div class="listing__item">
                           <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--grid">
-                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
+                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/marko.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
                             <div class="worker__intro">
                               <h3 class="worker__name fn"><?=$lang['about.team.member1']?></h3>
                               <div class="worker__post"><?=$lang['about.team.member1.pos']?></div>
@@ -36,7 +36,7 @@ include 'parts/navigation.php';
                         </div>
                         <div class="listing__item">
                           <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--grid">
-                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
+                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/ivana.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
                             <div class="worker__intro">
                               <h3 class="worker__name fn"><?=$lang['about.team.member2']?></h3>
                               <div class="worker__post"><?=$lang['about.team.member2.pos']?></div>
@@ -48,19 +48,7 @@ include 'parts/navigation.php';
                         </div>
                         <div class="listing__item">
                           <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--grid">
-                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
-                            <div class="worker__intro">
-                              <h3 class="worker__name fn"><?=$lang['about.team.member3']?></h3>
-                              <div class="worker__post"><?=$lang['about.team.member3.pos']?></div>
-                              <!-- end of block .worker__listings-->
-                            </div>
-                            <!-- end of block .worker__descr-->
-                          </div>
-                          <!-- end of block .worker-->
-                        </div>
-                        <div class="listing__item">
-                          <div data-sr="enter bottom move 80px, scale(0), over 0s" data-animate-end="animate-end" class="worker js-unhide-block vcard worker--grid">
-                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/worker-1.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
+                            <div class="worker__photo"><a class="item-photo item-photo--static"><img src="/<?=$tempurl?>assets/media-demo/workers/adriana.jpg" alt="Christopher Pakulla" class="photo"/></a></div>
                             <div class="worker__intro">
                               <h3 class="worker__name fn"><?=$lang['about.team.member4']?></h3>
                               <div class="worker__post"><?=$lang['about.team.member4.pos']?></div>

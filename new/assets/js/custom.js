@@ -107,6 +107,11 @@
 		  $('#quick-search').attr("action", link);
 		});
 
+		$(".catfix").change(function(){
+		  var link = '/agencija/new/' + $(this).val() + '/';
+		  $('#searchForm').attr("action", link);
+		});
+
 
 		$(".cat-link").click(function(e){
 			e.preventDefault();

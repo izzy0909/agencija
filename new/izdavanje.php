@@ -37,10 +37,16 @@ else{
 
 function echoArray($name){
     if(isset($_REQUEST[$name])){
+
     $array = $_REQUEST[$name];
     $n = count($array);
         for($i=0; $i<$n; $i++){
-            echo $array[$i];
+            if($array[$i]=="Nenamešten"){
+              echo "Prazan";
+            }
+            else {
+              echo $array[$i];
+            }
             if($i<$n-1){
                 echo ', ';
             }
@@ -148,6 +154,13 @@ include 'parts/navigation.php';
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
                             <input type="text" name="cat-id" id="cat-id" class="form-control" value="<?php if(isset($id)){echo $id; }?>">
                           </div>
+                        <div class="form-group">
+                          <label for="in-contract-type" class="control-label"><?=$lang['search.form.category']?></label>
+                          <select id="in-contract-type" data-placeholder="---" class="form-control catfix">
+                            <option value="izdavanje" selected>Izdavanje</option>
+                            <option value="prodaja" >Prodaja</option>
+                          </select>
+                        </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">
                             <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?php echoArray('type');?></button>

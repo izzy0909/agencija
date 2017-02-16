@@ -1183,7 +1183,6 @@ webpackJsonpapp([0],[
 	            dataType: "html",
 	            async: false,
 	            success: function (data) {
-	            	alert(page);
 	            		$('#lista').append(data);
 						$btnMore.removeClass('button--loading');
 	            }

@@ -26,7 +26,7 @@
               </div>
             </div>
             <div class="header__contacts">
-              <span class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><a class="header__span" href="tel:+381604480659" style="color:#fff;">060/4480659</a><a class="header__span" href="tel:+381114054325" style="color:#fff;">011/4054325</a></span>
+              <span class="header__phone"><svg class="header__phone-icon"><use xlink:href="#icon-phone"></use></svg><a class="header__span" href="tel:+381604480659" onclick="ga('send', 'event', 'Telefon', 'Klik', 'TelefonHeader', '<?php if(isset($_REQUEST['id'])){echo $_REQUEST['id'];} else {echo $active;} ?>'" style="color:#fff;">060/4480659</a><a class="header__span" href="tel:+381114054325" onclick="ga('send', 'event', 'Telefon', 'Klik', 'TelefonHeader', '<?php if(isset($_REQUEST['id'])){echo $_REQUEST['id'];} else {echo $active;} ?>'" style="color:#fff;">011/4054325</a></span>
             </div>
             <!-- end of block .header__contacts-->
             <div class="header__social">
@@ -38,7 +38,7 @@
               <div class="social social--header social--circles">
                 <a href="http://www.facebook.com/pages/Jevtic-nekretnine-doo/542807059085029" target="_blank" class="social__item"><i class="fa fa-facebook"></i></a>
                 <a href="https://plus.google.com/112809676147441559550" target="_blank" class="social__item"><i class="fa fa-google-plus"></i></a>
-                <a href="viber://add?number=0123456789" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a>
+                <a href="http://rs.linkedin.com/pub/jevtic-nekretnine/65/aa1/57a" target="_blank" class="social__item"><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
             <button type="button" class="header__navbar-toggle js-navbar-toggle">

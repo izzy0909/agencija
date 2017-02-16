@@ -37,10 +37,16 @@ else{
 
 function echoArray($name){
     if(isset($_REQUEST[$name])){
+
     $array = $_REQUEST[$name];
     $n = count($array);
         for($i=0; $i<$n; $i++){
-            echo $array[$i];
+            if($array[$i]=="Nenamešten"){
+              echo "Prazan";
+            }
+            else {
+              echo $array[$i];
+            }
             if($i<$n-1){
                 echo ', ';
             }
@@ -149,6 +155,13 @@ include 'parts/navigation.php';
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
                             <input type="text" name="cat-id" id="cat-id" class="form-control" value="<?php if(isset($id)){echo $id; }?>">
                           </div>
+                        <div class="form-group">
+                          <label for="in-contract-type" class="control-label"><?=$lang['search.form.category']?></label>
+                          <select id="in-contract-type" data-placeholder="---" class="form-control catfix">
+                            <option value="izdavanje">Izdavanje</option>
+                            <option value="prodaja" selected>Prodaja</option>
+                          </select>
+                        </div>
                         <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                           <div class="dropdown dropdown--select">
                             <button type="button" data-toggle="dropdown" data-placeholder="---" class="dropdown-toggle js-select-checkboxes-btn"><?php echoArray('type');?></button>
@@ -308,6 +321,10 @@ include 'parts/navigation.php';
                                 <li>
                                   <input id="checkbox_setup_1" type="checkbox" name="setup[]" value="Namešten" class="in-checkbox" <?php checked('Namešten','setup'); ?>>
                                   <label for="checkbox_setup_1" data-toggle="tooltip" data-placement="left" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.yes']?></label>
+                                </li>
+                                <li>
+                                  <input id="checkbox_setup_3" type="checkbox" name="setup[]" value="Polunamešten" class="in-checkbox" <?php checked('Polunamešten','setup'); ?>>
+                                  <label for="checkbox_setup_3" data-toggle="tooltip" data-placement="top" title="Tooltip on top" class="in-label"><?=$lang['search.form.setup.half']?></label>
                                 </li>
                                 <li>
                                   <input id="checkbox_setup_2" type="checkbox" name="setup[]" value="Nenamešten" class="in-checkbox" <?php checked('Nenamešten','setup'); ?>>
