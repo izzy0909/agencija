@@ -80,11 +80,32 @@ function prikaziSveKlijente($start, $limit){
     $sql = "SELECT * FROM klijenti as ds 
 			INNER JOIN lokacija as l 
 			ON ds.lokacija_id = l.id 
+            ORDER BY timestamp DESC
 			LIMIT $start, $limit";
 	$query = $conn->prepare($sql);
 	$query->execute();
 	return $query->fetchAll(PDO::FETCH_BOTH);
     
+}
+
+function pretraziKlijente($ime, $telefon, $email){
+    global $conn;
+
+    $sql = "SELECT * FROM klijenti as ds
+            INNER JOIN lokacija as l
+            ON ds.lokacija_id = l.id
+            WHERE 1=1 ";
+            if(!empty($ime)){
+                $sql .= "AND ds.ime = '$ime' ";}
+            if(!empty($telefon)){
+                $sql .= "AND ds.telefon = '$telefon' ";} 
+            if(!empty($email)){
+                $sql .= "AND ds.email = '$email' ";}
+            $sql .= "ORDER BY timestamp DESC";
+
+    $query = $conn->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_BOTH);
 }
 
 function prikaziKlijenta($id){

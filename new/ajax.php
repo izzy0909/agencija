@@ -40,10 +40,11 @@ if(isset($_REQUEST['category'])){
 
                             $append .= '<div class="listing__item">';
                             $append .=   '<div class="properties properties--grid">';
-                            $append .=    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');"></div></a>';
-                                  if($item['hot_offer']){ $append .= '<span class="hot__ribon">' . $lang['hot'] . '</span>';}
+                            $append .=    '<div class="properties__thumb"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="item-photo"><div class="thumb-div" style="background-image:url(/' . $tempurl . '../admin/slike/watermark_' . $thumb['naziv'] . ');">';
                             $append .=        '<figure class="item-photo__hover item-photo__hover--params"><span class="properties__params">' . $item['kvadratura'] . ' m²</span><span class="properties__intro">' . kratakOpis($item['opis']) . '...</span></figure>'; 
-                            $append .=    '</div>';
+                            $append .=    '</div></a>';
+                                if($item['hot_offer']){ $append .= '<span class="hot__ribon">' . $lang['hot'] . '</span>';}
+                            $append .=   '</div>';
                             //    <!-- end of block .properties__thumb-->
                             $append .=    '<div class="properties__details">';
                             $append .=      '<div class="properties__info"><a href="/' . $tempurl . 'detalji/' . $item[0] . '/' . $item['kategorija'] . '-' . str_replace(' ', '-', $item['tip']) . '-' . str_replace(' ', '-', $item['opstina']) . '" target="_blank" class="properties__address"><span class="properties__address-street">#' . $item[0] . ' - ' . $item['opstina'] .'</span><span class="properties__address-city">' . $item['namestenost'] . '</span></a>';

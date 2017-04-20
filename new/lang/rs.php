@@ -191,14 +191,14 @@ $lang['search.form.submit'] = "Pošalji";
 
 $lang['about.title'] = "O nama";
 $lang['about.line.1'] = "Pronalaženje prave nekretnine je vrlo važna odluka koju često nije lako doneti. Posedovanje prave informacije u datom trenutku je od presudne važnosti. Stručan i tehnički
-osposobljen tim naše kompanije će skratiti Vaše vreme i uraditi potragu sa nekretninama umesto Vas - Vi samo trebate odabrati koja od ponudjenih nekretnina najbolje odgovara svim Vašim potrebama.";
+osposobljen tim naše kompanije će skratiti Vaše vreme i uraditi potragu za nekretninama umesto Vas - Vi samo trebate odabrati koja od ponudjenih nekretnina najbolje odgovara svim Vašim potrebama.";
 $lang['about.line.2'] = "Agenti sa dugogodišnjim iskustvom i tehničko osoblje naše kuće će Vam pružiti brzu, efikasnu i pouzdanu uslugu ukoliko tražite novi dom, poslovni prostor, magacin ili garažno
 mesto za zakup ili kupovinu. Naše usluge naplaćujemo po realizaciji i to je jedini način da ništa ne izgubite dok Vam ne pronađemo nekretninu koju tražite. Pozovite nas zato što mi zaista razumemo kakvu nekretninu tražite i pružite nam poverenje jer ste sa nama na pragu željene nekretnine.";
 $lang['about.subtitle.1'] = "Ukoliko prodajete kupujete ili iznajmljujete nekretninu mi Vam pružamo pomoć jer:";
 $lang['about.sub1.li.1'] = "Možemo da Vam omogućimo da u najkraćem vremenskom periodu postignete adekvatnu cenu,dogovor i realizaciju posla za nekretninu koju nudite ili tražite.";
 $lang['about.sub1.li.2'] = "Imamo uvid u promene cene i aktivnosti odredjenih lokacija na tržištu nekretnina";
 $lang['about.sub1.li.3'] = "Uvek smo dobro obavešteni o promenama u zakonodavstvu.";
-$lang['about.subtitle.2'] = "Brinemo o klijetu:";
+$lang['about.subtitle.2'] = "Brinemo o klijentu:";
 $lang['about.sub2.li.1'] = "Omogućavamo Vam sastavljanje kupoprodajnih Ugovora i Ugovora o zakupu";
 $lang['about.sub2.li.2'] = "Pomažemo Vam u oglašavanju Vaše nekretnine";
 $lang['about.sub2.li.3'] = "U našem radu koristimo najsavremeniju opremu kako bi na najbolji način prezentovali Vašu nekretninu potencijalnim kupcima/zakupcima";
@@ -280,7 +280,7 @@ $lang['contact.form.submit'] = "Pošalji";
 $lang['footer.menu'] = "Navigacija";
 $lang['footer.social'] = "Mreže";
 $lang['footer.contact'] = "Kontakt";
-$lang['footer.copyright'] = "JEVTIĆ I.M.J NEKRETNINE d.o.o. Sva prava zadržana.";
+$lang['footer.copyright'] = "JEVTIĆ I.M.J NEKRETNINE d.o.o. Sva prava zadržana.<br />Informacije na sajtu su informativnog karaktera.";
 
 
 

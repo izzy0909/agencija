@@ -6,6 +6,19 @@ if($_SESSION['uloga'] != 1)
     header('Location: login.php');
 	
 }
+else{
+
+	if(isset ($_GET['pretrazi'])){
+		$ime = isset($_GET['ime']) ? $_GET['ime'] : null;
+        $telefon = isset($_GET['telefon']) ? $_GET['telefon'] : null;
+        $email = isset($_GET['email']) ? $_GET['email'] : null;
+
+        $stanovi = pretraziKlijente($ime, $telefon, $email);
+        $page = 1;
+        $page_amount = 1;
+	}
+
+	else{
 		$broj = ukupanBrojKlijenata();
 		$num_rows = $broj['broj'];
 		$items = 20;
@@ -21,7 +34,9 @@ if($_SESSION['uloga'] != 1)
 		}
 		$p_num = $items*($page - 1);
 		
-		$stanovi = prikaziSveKlijente($p_num, $items);                   
+		$stanovi = prikaziSveKlijente($p_num, $items);
+	}
+}
                         
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -366,11 +381,41 @@ $(document).pngFix( );
 <div id="content-outer">
 <!-- start content -->
 <div id="content">
-
+    <div id="admin-pretraga">
+    <form id="pretrazi" action="spisak_klijenti.php" method="get">
 	<!--  start page-heading -->
 	<div id="page-heading">
-		<h1>Spisak Klijenti</h1>
+            <div id="pozicija1">
+	            <table>
+	                <tr>
+	                    <th>Ime:</th>
+	                    <td><input class="admin-input-select" type="text" name="ime" value="<?php if(isset($_GET['ime'])){ echo $_GET['ime'];} ?>" /></td>
+	                </tr>
+	            </table>
+            </div>
+            <div id="pozicija2">
+                <table>
+                    <tr>
+	                    <th>Telefon:</th>
+	                    <td><input class="admin-input-select" type="text" name="telefon" value="<?php if(isset($_GET['telefon'])){ echo $_GET['telefon'];} ?>" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="pozicija3">
+                <table>
+                    <tr>
+	                    <th>Email:</th>
+	                    <td><input class="admin-input-select" type="text" name="email" value="<?php if(isset($_GET['email'])){ echo $_GET['email'];} ?>" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="clear:both; float:right;  margin:10px 10px 10px 0;">
+                <input type="submit" value="Pretrazi" name="pretrazi" id="pretrazi" style="width:55px; height:25px;" />
+		<input type="reset" value="Reset" style="width:55px; height:25px;" />
+            </div>
 	</div>
+</form>
+    </div>
 	<!-- end page-heading -->
         
 	<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">

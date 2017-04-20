@@ -1169,7 +1169,7 @@ webpackJsonpapp([0],[
 	  $('#loadmore').click(function(e){
 	  	e.preventDefault();
 
-	  	// alert(forma + '&category=' + category + '&order=' + order + '&start=' + page);
+	  	alert(forma + '&category=' + category + '&start=' + page);
 
 	  	page = $("#lista").attr("data-page");
 	  	// alert(page);
@@ -1178,7 +1178,8 @@ webpackJsonpapp([0],[
 		  	$btnMore.addClass('button--loading');
 			  $.ajax({
 	            type: "GET",
-	            data: forma + '&category=' + category + '&order=' + order + '&start=' + page,
+	            // data: forma + '&category=' + category + '&order=' + order + '&start=' + page,
+	            data: forma + '&category=' + category + '&start=' + page,
 	            url: "/agencija/new/ajax.php",
 	            dataType: "html",
 	            async: false,
