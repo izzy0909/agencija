@@ -221,11 +221,29 @@
 			// });
 
 
-document.getElementById('sync1').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-        link = target.src ? target.parentNode : target,
-        options = {index: link, event: event},
-        links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-};
+$('.homepage-submit').click(function(e){
+	e.preventDefault();
+	var category = $('.category-homepage');
+
+	if(category.val() == '') {
+		$('.category-error').show();
+		category.parent().children('.select2').css('border', '1px red solid');
+	} else {
+		$('.homapage-search').submit();
+	}
+
+});
+
+	  var sync = $('#sync1');
+	  // alert(sync.length);
+	  if(sync.length) {
+		  sync.onclick = function (event) {
+			  alert('qweqwe');
+			  event = event || window.event;
+			  var target = event.target || event.srcElement,
+				  link = target.src ? target.parentNode : target,
+				  options = {index: link, event: event},
+				  links = this.getElementsByTagName('a');
+			  blueimp.Gallery(links, options);
+		  };
+	  }

@@ -45,7 +45,7 @@ include 'parts/navigation.php';
                     <div class="banner__search">
                       <h4 class="banner__sidebar-title"><?=$lang['home.slider.title']?></h4>
                       <!-- BEGIN SEARCH-->
-                      <form id="quick-search" action="/<?=$tempurl?>izdavanje/" method="POST" class="form form--flex form--search js-search-form form--banner-sidebar">
+                      <form id="quick-search" action="/<?=$tempurl?>izdavanje/" method="POST" class="form form--flex form--search js-search-form form--banner-sidebar homapage-search">
                         <div class="row">
                           <div class="form-group">
                             <label for="cat-id" class="control-label"><?=$lang['search.form.cat-id']?></label>
@@ -53,11 +53,12 @@ include 'parts/navigation.php';
                           </div>
                           <div class="form-group">
                             <label for="in-contract-type" class="control-label"><?=$lang['search.form.category']?></label>
-                            <select id="in-contract-type" data-placeholder="<?=$lang['search.form.category.rent']?>" class="form-control">
-                              <option label=" "></option>
-                              <option value="izdavanje" selected><?=$lang['search.form.category.rent']?></option>
+                            <select id="in-contract-type" class="category-homepage" data-placeholder="---" class="form-control">
+                              <option value="" selected></option>
+                              <option value="izdavanje" ><?=$lang['search.form.category.rent']?></option>
                               <option value="prodaja"><?=$lang['search.form.category.sell']?></option>
                             </select>
+                            <span class="category-error" style="color: red; display: none;">Molimo izaberite kategoriju</span>
                           </div>
                           <div class="form-group"><span class="control-label"><?=$lang['search.form.type']?></span>
                             <div class="dropdown dropdown--select">
@@ -202,7 +203,7 @@ include 'parts/navigation.php';
                           </div>
                           <div class="form__buttons">
                           <input type="hidden" name="pretraga" value="1" />
-                            <button name="search" type="submit" class="form__submit"><?=$lang['search.form.search']?></button>
+                            <button name="search" type="submit" class="form__submit homepage-submit"><?=$lang['search.form.search']?></button>
                           </div>
                         </div>
                       </form>
