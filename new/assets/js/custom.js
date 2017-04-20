@@ -234,16 +234,13 @@ $('.homepage-submit').click(function(e){
 
 });
 
-	  var sync = $('#sync1');
-	  // alert(sync.length);
-	  if(sync.length) {
-		  sync.onclick = function (event) {
-			  alert('qweqwe');
-			  event = event || window.event;
-			  var target = event.target || event.srcElement,
-				  link = target.src ? target.parentNode : target,
-				  options = {index: link, event: event},
-				  links = this.getElementsByTagName('a');
-			  blueimp.Gallery(links, options);
-		  };
-	  }
+if($('#sync1').length) {
+ document.getElementById('sync1').onclick = function (event) {
+  event = event || window.event;
+  var target = event.target || event.srcElement,
+   link = target.src ? target.parentNode : target,
+   options = {index: link, event: event},
+   links = this.getElementsByTagName('a');
+  blueimp.Gallery(links, options);
+ };
+}
