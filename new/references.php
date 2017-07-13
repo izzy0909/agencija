@@ -43,6 +43,8 @@ include 'parts/navigation.php';
                                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_vig.jpg" alt=""><span class="partners__name">VIG Plaza</span></a>
                                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_corporesano.jpg" alt=""><span class="partners__name">Corpore Sano</span></a>
                                 <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_estera.jpg" alt=""><span class="partners__name">Estera</span></a>
+                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_itbo.jpg" alt=""><span class="partners__name">ITBO</span></a>
+                                <a class="partners__item"><img src="/<?=$tempurl?>assets/img/partner_enekod.jpg" alt=""><span class="partners__name">Enekod</span></a>
                               </div>
                               <div class="partners__controls">
                                 <button class="partners__arrow partners__arrow--prev js-partners-prev"></button>
